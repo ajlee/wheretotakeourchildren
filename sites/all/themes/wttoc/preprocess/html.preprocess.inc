@@ -23,5 +23,4 @@ function wttoc_preprocess_html(&$variables) {
   else {
     $variables['attributes_array']['class'][] = 'no-sidebars';
   }
-  dpm($variables);
 }
