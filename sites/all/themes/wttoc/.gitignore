@@ -8,4 +8,4 @@ node_modules
 libraries
 
 #Ignore bower imports from gulp
-sass/bowerimports
+#sass/bowerimports
