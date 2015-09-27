@@ -17,5 +17,8 @@
     "libraries",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "cssowl": "~1.3.1"
+  }
 }
