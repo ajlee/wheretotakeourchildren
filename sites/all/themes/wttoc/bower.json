@@ -1,0 +1,21 @@
+{
+  "name": "wttoc bower",
+  "version": "0.0.0",
+  "homepage": "https://github.com/galeaspablo/wheretotakeourchildren",
+  "description": "wttoc bower",
+  "main": "",
+  "moduleType": [],
+  "authors": [
+    "galeaspablo"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "libraries",
+    "test",
+    "tests"
+  ]
+}
