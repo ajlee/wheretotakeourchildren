@@ -6,3 +6,6 @@ node_modules
 
 #Ignore bower libraries
 libraries
+
+#Ignore bower imports from gulp
+sass/bowerimports
