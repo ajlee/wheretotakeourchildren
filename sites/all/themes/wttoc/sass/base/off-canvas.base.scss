@@ -1,9 +1,13 @@
 /*******************************************************************************
  * Modified styling of the Off Canvas layout.
  ******************************************************************************/
+$theme_path : "/sites/all/themes/wttoc";
+
 /*******************************************************************************
  * Off canvas portion of styling for the Off Canvas layout.
  ******************************************************************************/
+
+
 .l-off-canvas-show,
 .l-off-canvas-hide {
   display: none;
@@ -12,36 +16,47 @@
   right: 0;
   width: 24px;
   height: 24px;
-  background: transparent url("/sites/all/themes/wttoc/images/close.png") center center no-repeat;
+  background: transparent url("#{$theme_path}/images/close.png") center center no-repeat;
   text-indent: -119988px;
   overflow: hidden;
   text-align: left;
-  text-transform: capitalize; }
+  text-transform: capitalize;
+}
 
 .l-off-canvas-show {
-  background: transparent url("/sites/all/themes/wttoc/images/menu.png") center center no-repeat; }
+  background: transparent url("#{$theme_path}/images/menu.png") center center no-repeat;
+}
 
 @media (min-width: 0) and (max-width: 44em) {
   .no-js .l-off-canvas {
     position: relative;
     min-height: 24px;
-    padding-right: 24px; }
+    padding-right: 24px;
+  }
   .no-js .l-off-canvas .l-region {
     position: relative;
-    overflow: hidden; }
+    overflow: hidden;
+  }
   .no-js .l-off-canvas .l-off-canvas-hide {
-    display: block; }
+    display: block;
+  }
   .no-js .l-off-canvas:not(:target) .l-region {
     min-height: 0;
-    height: 0; }
+    height: 0;
+  }
   .no-js .l-off-canvas:not(:target) .l-off-canvas-show {
-    display: block; }
+    display: block;
+  }
   .no-js .l-off-canvas:not(:target) .l-off-canvas-hide {
-    display: none; }
+    display: none;
+  }
+
   .js .l-page {
     position: relative;
     height: 100%;
-    padding-left: 12%; }
+    padding-left: 12%;
+  }
+
   .js .l-off-canvas {
     position: absolute;
     z-index: 99;
@@ -50,18 +65,26 @@
     bottom: 0;
     left: -70%;
     padding-top: 24px;
+    -moz-transition: left 0.2s ease-in;
+    -o-transition: left 0.2s ease-in;
+    -webkit-transition: left 0.2s ease-in;
     transition: left 0.2s ease-in;
-    cursor: pointer; }
+    cursor: pointer;
+  }
   .js .l-off-canvas.is-visible {
     left: 0;
-    cursor: auto; }
+    cursor: auto;
+  }
   .js .l-off-canvas.is-visible .l-off-canvas-show {
-    display: none; }
+    display: none;
+  }
   .js .l-off-canvas.is-visible .l-off-canvas-hide {
-    display: block; }
+    display: block;
+  }
   .js .l-off-canvas .l-off-canvas-show {
-    display: block; } }
-
+    display: block;
+  }
+}
 .l-header,
 .l-main,
 .l-footer {
@@ -69,46 +92,57 @@
   margin-left: auto;
   margin-right: auto;
   *zoom: 1;
-  margin-bottom: 20px; }
-
+  margin-bottom: 20px;
+}
 .l-header:after,
 .l-main:after,
 .l-footer:after {
   content: " ";
   display: block;
-  clear: both; }
-
+  clear: both;
+}
 .l-header:after,
 .l-main:after,
 .l-footer:after {
   content: "";
   display: table;
-  clear: both; }
+  clear: both;
+}
 
 .l-off-canvas {
-  clear: both; }
+  clear: both;
+}
 
 @media (min-width: 44em) {
   .l-header,
   .l-main,
   .l-footer {
-    max-width: 1100px; }
+    max-width: 1100px;
+  }
+
   .l-branding {
     width: 32.20339%;
     float: left;
-    margin-right: 1.69492%; }
+    margin-right: 1.69492%;
+  }
+
   .l-region--header {
     width: 66.10169%;
     float: right;
-    margin-right: 0; }
+    margin-right: 0;
+  }
+
   .l-region--navigation {
-    clear: both; }
+    clear: both;
+  }
+
   .has-sidebar-first .l-content,
   .has-sidebar-second .l-content,
   .has-two-sidebars .l-content {
     width: 66.10169%;
     float: left;
-    margin-right: 1.69492%; }
+    margin-right: 1.69492%;
+  }
   .has-sidebar-first .l-region--sidebar-first,
   .has-sidebar-first .l-region--sidebar-second,
   .has-sidebar-second .l-region--sidebar-first,
@@ -117,53 +151,68 @@
   .has-two-sidebars .l-region--sidebar-second {
     width: 32.20339%;
     float: right;
-    margin-right: 0; }
+    margin-right: 0;
+  }
   .has-sidebar-first .l-region--sidebar-second,
   .has-sidebar-second .l-region--sidebar-second,
   .has-two-sidebars .l-region--sidebar-second {
-    clear: right; } }
-
+    clear: right;
+  }
+}
 @media (min-width: 70em) {
   .l-branding {
     width: 36.70886%;
     float: left;
-    margin-right: 1.26582%; }
+    margin-right: 1.26582%;
+  }
+
   .l-region--header {
     width: 62.02532%;
     float: right;
-    margin-right: 0; }
+    margin-right: 0;
+  }
+
   .has-sidebar-first .l-content {
     width: 74.68354%;
     float: right;
-    margin-right: 0; }
+    margin-right: 0;
+  }
   .has-sidebar-first .l-region--sidebar-first {
     width: 24.05063%;
     float: left;
-    margin-right: 1.26582%; }
+    margin-right: 1.26582%;
+  }
+
   .has-sidebar-second .l-content {
     width: 74.68354%;
     float: left;
-    margin-right: 1.26582%; }
+    margin-right: 1.26582%;
+  }
   .has-sidebar-second .l-region--sidebar-second {
     width: 24.05063%;
     float: right;
     margin-right: 0;
-    clear: none; }
+    clear: none;
+  }
+
   .has-two-sidebars .l-content {
     width: 49.36709%;
     float: left;
     margin-right: 1.26582%;
-    margin-left: 25.31646%; }
+    margin-left: 25.31646%;
+  }
   .has-two-sidebars .l-region--sidebar-first,
   .has-two-sidebars .l-region--sidebar-second {
     width: 24.05063%;
     float: left;
-    margin-right: 1.26582%; }
+    margin-right: 1.26582%;
+  }
   .has-two-sidebars .l-region--sidebar-first {
-    margin-left: -75.94937%; }
+    margin-left: -75.94937%;
+  }
   .has-two-sidebars .l-region--sidebar-second {
     float: right;
     margin-right: 0;
-    clear: none; } }
-
-/*# sourceMappingURL=wttoc.styles.css.map */
+    clear: none;
+  }
+}
