@@ -1,5 +1,10 @@
 @import "bowerimports/cssowl/lib/scss/cssowl";
-@import "bowerimports/compass-breakpoint/stylesheets/_breakpoint.scss";
+@import "bowerimports/compass-breakpoint/stylesheets/_breakpoint";
+
+@import "variables/variables";
+@import "abstractions/abstractions";
+@import "base/base";
+@import "components/components";
 
 // Import variables, abstractions, base styles and components.
 // Uncomment the next lines and adjust them to your needs.

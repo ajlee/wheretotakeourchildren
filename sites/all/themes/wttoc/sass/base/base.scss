@@ -1,0 +1,22 @@
+
+/*
+ * Background Image for Content Area
+ */
+body .l-main {
+    background-color: #f3efef;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAIAAAAmkwkpAAAAIUlEQVR4AWN48+zZxzdvPr9/D0QMcBZQlAHCgsiDOHCVAIb0LI0GCKCPAAAAAElFTkSuQmCC');
+    background-repeat: repeat;
+}
+
+/*
+ * Set Up Font Size % For Rem
+ */
+html {
+	font-size: 62.5%; /* Sets up the Base 10 stuff */
+	@include breakpoint($tablet2Wide){
+		font-size: 60%;		
+	};
+	@include breakpoint($breakpointWideP1){
+		font-size: 57.5%;	
+	};
+}

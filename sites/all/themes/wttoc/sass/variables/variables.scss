@@ -1,0 +1,53 @@
+/*
+ * General settings
+ */
+$defaultWindowSize: 1100px;
+$columnPercentSpacer:1%;
+
+/*
+ * Breakpoints
+ */
+$breakpointXWide:1500px;
+$breakpointWide:1100px;
+$breakpointTablet:768px;
+$breakpointMobile:400px;
+$breakpointMini:320px;
+
+/*
+ * Breakpoints Plus 1px
+ */
+$breakpointXWideP1:$breakpointXWide + 1px;
+$breakpointWideP1:$breakpointWide + 1px;
+$breakpointTabletP1:$breakpointTablet + 1px;
+$breakpointMobileP1: $breakpointMobile + 1px;
+$breakpointMiniP1: $breakpointMini + 1px;
+
+/*
+ * Combined Breakpoints - 1 Level
+ */
+$wide2XWide: $breakpointWideP1 $breakpointXWide;
+$tablet2Wide: $breakpointTabletP1 $breakpointWide;
+$mobile2Tablet: $breakpointMobileP1 $breakpointTablet;
+$mini2Mobile: $breakpointMiniP1 $breakpointMobile;
+
+/*
+ * Combined Breakpoints - 2 Level
+ */
+$tablet2XWide: $breakpointTabletP1 $breakpointXWide;
+$mobile2Wide: $breakpointMobileP1 $breakpointWide;
+$mini2Tablet: $breakpointMiniP1 $breakpointTablet;
+
+/*
+ * Font Size (1 =~ 10px)
+ * Do not use px, rem, or em here. 
+ */
+$fontXXXL:4.3;
+$fontXXL:3.5;
+$fontXL:2.4;
+$fontL:2.2;
+$fontM:1.9;
+$fontS:1.7;
+$fontXS:1.5;
+$fontXXS:1.3;
+
+

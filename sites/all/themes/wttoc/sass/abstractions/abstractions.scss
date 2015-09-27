@@ -1,0 +1,77 @@
+/*
+ * Region Container Boxes
+ */
+@mixin defaultBigBox{
+	max-width: $defaultWindowSize;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 20px;
+}
+
+/*
+ * Clearfix
+ */ 
+@mixin clearfix {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+@mixin clearboth{
+	clear:both;
+}
+
+/*
+ * Split Columns
+ */
+@mixin splitLeft($percentWidth){
+	float: left;
+	margin-right: $columnPercentSpacer / 2;
+	width: $percentWidth - $columnPercentSpacer / 2;
+}
+@mixin splitRight($percentWidth){
+	float: right;
+	margin-left: $columnPercentSpacer / 2;
+	width: $percentWidth - $columnPercentSpacer / 2;
+}
+
+/*
+ * Chop 3 Columns
+ */
+@mixin chop3Left($percentWidth){
+	float:left;
+	margin-right: $columnPercentSpacer / 4;
+	width: $percentWidth - $columnPercentSpacer / 4;
+}
+@mixin chop3Middle($percentWidth){
+	float:left;
+	margin-left: $columnPercentSpacer / 4;
+	margin-right: $columnPercentSpacer / 4;
+	width: $percentWidth - $columnPercentSpacer / 2;
+}
+@mixin chop3Right($percentWidth){
+	float:right;
+	margin-left: $columnPercentSpacer / 4;
+	width: $percentWidth - $columnPercentSpacer / 4;
+}
+/* 
+ * Headers Font Style
+ */
+@mixin headerFontStyle{	
+    line-height: 120%;
+    padding: 0;
+    margin: 20px 0 10px 0;
+    font-family: 'Raleway', Arial, sans-serif;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #333;
+}
+
+/* 
+ * Rem Font Size With FallBack
+ */
+@mixin remFontSize($sizeValue: 1.6) {
+  font-size: ($sizeValue * 10) + px;
+  font-size: $sizeValue + rem;
+}
