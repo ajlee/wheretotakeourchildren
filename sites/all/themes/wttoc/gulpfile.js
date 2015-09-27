@@ -4,6 +4,12 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
+var bower = require('gulp-bower');
+ 
+gulp.task('bower', function() {
+  return bower('./libraries')
+    .pipe(gulp.dest('./sass/bowerimports'))
+});
 
 gulp.task('sass:prod', function () {
   gulp.src('./sass/*.scss')
@@ -29,4 +35,4 @@ gulp.task('sass:watch', function () {
   gulp.watch('./sass/**/*.scss', ['sass:dev']);
 });
 
-gulp.task('default', ['sass:dev', 'sass:watch']);
+gulp.task('default', ['sass:dev', 'bower']);
