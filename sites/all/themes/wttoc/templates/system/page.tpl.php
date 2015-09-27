@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * Default theme implementation to display a single Drupal page.
@@ -70,8 +69,7 @@
  * @see omega_preprocess_page()
  */
 ?>
-
-<div<?php print $attributes; ?>>
+<div class="l-page">
   <header class="l-header" role="banner">
     <div class="l-branding">
       <?php if ($logo): ?>
@@ -94,12 +92,7 @@
     </div>
 
     <?php print render($page['header']); ?>
-
-    <div id="off-canvas" class="l-off-canvas">
-      <a id="off-canvas-show" href="#off-canvas" class="l-off-canvas-show"><?php print t('Show Navigation'); ?></a>
-      <a id="off-canvas-hide" href="#" class="l-off-canvas-hide"><?php print t('Hide Navigation'); ?></a>
-      <?php print render($page['navigation']); ?>
-    </div>
+    <?php print render($page['navigation']); ?>
   </header>
 
   <div class="l-main">
