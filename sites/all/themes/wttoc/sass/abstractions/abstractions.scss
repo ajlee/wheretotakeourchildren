@@ -2,7 +2,6 @@
  * Region Container Boxes
  */
 @mixin defaultBigBox{
-	max-width: $defaultWindowSize;
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 20px;
@@ -59,13 +58,12 @@
  * Headers Font Style
  */
 @mixin headerFontStyle{	
-    line-height: 120%;
-    padding: 0;
-    margin: 20px 0 10px 0;
-    font-family: 'Raleway', Arial, sans-serif;
-    font-weight: 500;
-    text-transform: uppercase;
-    color: #333;
+	line-height: 120%;
+	padding: 0;
+	margin: 20px 0 10px 0;
+	font-family: 'Raleway', Arial, sans-serif;
+	font-weight: 500;
+	text-transform: uppercase;
 }
 
 /* 
@@ -74,4 +72,48 @@
 @mixin remFontSize($sizeValue: 1.6) {
   font-size: ($sizeValue * 10) + px;
   font-size: $sizeValue + rem;
+}
+
+/*
+ * Color Descendants
+ */
+@mixin colorDescendantsFont($color){
+	a{
+		color:$color;
+		text-decoration:underline;
+	}
+	a:hover{
+		text-decoration:none;
+	}
+	span,p,h1,h2,h3,h4,h5,h6{
+		color:$color
+	}
+}
+
+/*
+ * Hide Text Without Breaking Accessibility
+ */
+@mixin accesibleHide{
+	position: absolute;
+	text-indent: -119988px;
+	overflow: hidden;
+	text-align: left;
+	text-transform: capitalize;
+}
+
+/*
+ * Background Opacity Function
+ */
+@mixin backgroundOpacity($color, $opacity: 0.3) {
+	background: $color; /* The Fallback */
+	background: rgba($color, $opacity);
+}
+/*
+ * CSS Transition Cross Browser
+ */
+@mixin cssTransition($argument){
+	-moz-transition: $argument;
+	-o-transition: $argument;
+	-webkit-transition: $argument;
+	transition: $argument;
 }

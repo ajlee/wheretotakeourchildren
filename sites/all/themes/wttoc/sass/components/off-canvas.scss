@@ -1,0 +1,93 @@
+/*******************************************************************************
+ * Off Canvas portion adapted from the Off Canvas Layout
+ ******************************************************************************/
+
+.l-off-canvas-show, .l-off-canvas-hide {
+	display: none;
+	position: absolute;
+	top: 5px - 1px;
+	right: 0;
+	z-index: 51;
+	width: $superheaderMinHeight - 5px;
+	height: $superheaderMinHeight - 5px;
+	background: transparent url("#{$pathToTheme}/images/close.png") center center no-repeat;
+	@include accesibleHide;
+}
+.l-off-canvas-show {
+	background: transparent url("#{$pathToTheme}/images/menu.png") center center no-repeat;
+}
+@include breakpoint(0 $breakpointTablet) {
+	// No JS Fallbacks
+	.no-js .l-off-canvas {
+		position: relative;
+		min-height: 24px;
+		padding-right: 24px;
+		.l-region {
+			position: relative;
+			overflow: hidden;
+		}
+		.l-off-canvas-hide {
+			display: block;
+		}
+		&:not(:target) {
+			.l-region {
+				min-height: 0;
+				height: 0;
+			}
+			.l-off-canvas-show {
+				display: block;
+			}
+			.l-off-canvas-hide {
+				display: none;
+			}
+		}
+	}
+
+	// JS Enabled Styles
+	.js .l-page {
+		position: relative;
+		height: 100%;
+		padding-left: 0%;
+	}
+	.js .l-off-canvas {
+		position: absolute;
+		z-index: 99;
+		width: 80%;
+		top: 0;
+		bottom: 0;
+		left:-68%;
+		@include breakpoint($mobile2Tablet){
+			left: -73%;
+		};
+		@include breakpoint($mini2Mobile){
+			left: -71%;
+		};
+		@include cssTransition(left 0.2s ease-in);
+		cursor: pointer;
+		height:$superheaderMinHeight;
+		&.is-visible {
+			left: 0;
+			cursor: auto;
+			height:auto;
+			@include backgroundOpacity($DARKGRAY , 0.92);
+			.l-region--navigation{
+				display: block;
+				padding-top: $superheaderMinHeight;
+			}
+			.l-off-canvas-show {
+				display: none;
+			}
+			.l-off-canvas-hide {
+				display: block;
+			}
+		}
+		.l-region--navigation{
+			display: none;
+		}
+		.l-off-canvas-show {
+			display: block;
+		}
+	}
+}
+
+

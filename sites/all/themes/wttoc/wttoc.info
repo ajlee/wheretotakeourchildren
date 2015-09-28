@@ -19,6 +19,7 @@ scripts[] = js/wttoc.behaviors.js
 ; ========================================
 ; Regions
 ; ========================================
+regions[superheader] = Super Header
 regions[branding] = Branding
 regions[header] = Header
 regions[navigation] = Navigation

@@ -3,12 +3,14 @@
  */
 $defaultWindowSize: 1100px;
 $columnPercentSpacer:1%;
-
+$logoMobileHeight:40px;
+$pathToTheme:"/sites/all/themes/wttoc";
+$superheaderMinHeight:40px;
 /*
  * Breakpoints
  */
-$breakpointXWide:1500px;
-$breakpointWide:1100px;
+$breakpointXWide:1300px;
+$breakpointWide:1024px;
 $breakpointTablet:768px;
 $breakpointMobile:400px;
 $breakpointMini:320px;
@@ -49,5 +51,25 @@ $fontM:1.9;
 $fontS:1.7;
 $fontXS:1.5;
 $fontXXS:1.3;
+
+/*
+ * Colors
+ */
+$BLACK:#000;
+$DARKGRAY:#333;
+$LIGHTGRAY:#f3efef;
+$WHITE:#fff;
+
+
+/*
+ * Theme Palette
+ */
+$color1:#00CBE9;/*Light Blue*/
+$color2:#FD8A33;/*Orange*/
+$color3:#8BC53F;/*Light Green*/
+$color1Light:#C3DAE3;/*Light Blue Gray*/
+$color1Dark:#015063;/*Dark Blue Gray*/
+$colorAlt:#E792B5;/*Dull Pink*/
+
 
 
