@@ -2,13 +2,16 @@
  * Region Containers
  */
 
-.l-header, .l-main, .l-footer{
-	@include defaultBigBox;
+.l-main{
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 20px;
 	@include clearfix;
 }
-.l-header{
-	background-color:$color1;
-	@include colorDescendantsFont($WHITE);
+.l-header, .l-footer{
+	margin-left: auto;
+	margin-right: auto;
+	@include clearfix;
 }
 .l-main{
 	max-width: $defaultWindowSize;
@@ -21,12 +24,12 @@
 /*
  * Header Regions
  */
-.l-superheader{
-	min-height:$superheaderMinHeight;
-	background-color:$color1Dark;
+.l-header .l-superheader{
+	min-height: $superheaderMinHeight;
+	background-color: $color1Dark;
 	@include colorDescendantsFont($WHITE);
 }
-.l-region--header{
+.l-header .l-region--header{
 	width:100%;
 	@include breakpoint($breakpointWideP1){
 		@include splitRight(66.5%);	
@@ -35,7 +38,7 @@
 		@include splitRight(50%);	
 	};
 }
-.l-branding{
+.l-header .l-branding{
 	width:100%;
 	@include breakpoint($breakpointWideP1){
 		@include splitLeft(33.5%);
@@ -45,22 +48,21 @@
 	};
 	.site-logo{
 		img{
-			height:$logoMobileHeight;
-			padding:5px 10px;
-			padding-left:$superheaderMinHeight / 3;
+			height: $logoMobileHeight;
+			padding: 5px 10px;
+			padding-left: $superheaderMinHeight / 3;
 			@include breakpoint($breakpointWideP1){
-				height:$logoMobileHeight * $breakpointWide / $breakpointMobile;
+				height: $logoMobileHeight * $breakpointWide / $breakpointMobile;
 			};
 			@include breakpoint($tablet2Wide){
-				height:$logoMobileHeight * $breakpointTablet / $breakpointMobile;
+				height: $logoMobileHeight * $breakpointTablet / $breakpointMobile;
 			};
 		}
 	}
 }
-.l-region--navigation{
+.l-header .l-region--navigation{
 	@include clearboth;
 }
-
 /*
  * Content Regions
  */ 
@@ -91,20 +93,20 @@ body.two-sidebars{
 			@include chop3Middle(50%);
 			/* BECAUSE .l-region--sidebar-first COMES AFTER .l-content */
 			/* MARGIN-LEFT = WIDTH(.l-region--sidebar-first) + $columnPercentSpacer / 4  */
-			margin-left:25% + $columnPercentSpacer / 4;
+			margin-left: 25% + $columnPercentSpacer / 4;
 		};
 		@include breakpoint($tablet2Wide){
 			@include splitLeft(66.66%);
 		};
 	}
 	.l-region--sidebar-first{
-		width:100%;
-		float:left;
+		width: 100%;
+		float: left;
 		@include breakpoint($breakpointWideP1){
 			@include chop3Left(25%);
 			/* BECAUSE .l-region--sidebar-first COMES AFTER .l-content */
 			/* MARGIN-LEFT = -1 * WIDTH(.l-region--sidebar-first + .l-content)  */
-			margin-left:-75%;
+			margin-left: -75%;
 		};
 		@include breakpoint($tablet2Wide){
 			@include splitRight(33.33%);
@@ -177,7 +179,8 @@ footer.l-footer{
  * Default Font Size
  */
 body{
-	@include remFontSize($fontS);
+	//Do not use REM here
+	font-size:16px;
 }
 /*
  * Headings

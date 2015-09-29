@@ -2,7 +2,11 @@
  * Set Up Font Size % For Rem
  */
 html {
-	font-size: 62.5%; /* Sets up the Base 10 stuff */
+	font-family:"Open Sans", Arial, Helvetica, sans-serif;
+	/* Sets up the Base 10 stuff */
+	@include breakpoint(0 $breakpointTablet){
+		font-size: 62.5%; 
+	};
 	@include breakpoint($tablet2Wide){
 		font-size: 60%;		
 	};
@@ -10,13 +14,7 @@ html {
 		font-size: 57.5%;	
 	};
 }
-/*
- * Img Reset
- */
-img{
-	width:auto;
-	height:auto;
-}
+
 /*
  * Admin Menu Margin
  */
@@ -28,4 +26,11 @@ body.admin-menu{
 	.l-page{
 		margin-top:80px;
 	}
+}
+
+/*
+ * Links Transition
+ */
+a{
+	@include cssTransition(all 0.35s ease-in-out);
 }

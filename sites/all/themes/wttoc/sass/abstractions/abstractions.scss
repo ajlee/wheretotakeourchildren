@@ -60,7 +60,6 @@
 @mixin headerFontStyle{	
 	line-height: 120%;
 	padding: 0;
-	margin: 20px 0 10px 0;
 	font-family: 'Raleway', Arial, sans-serif;
 	font-weight: 500;
 	text-transform: uppercase;
@@ -78,14 +77,10 @@
  * Color Descendants
  */
 @mixin colorDescendantsFont($color){
-	a{
-		color:$color;
-		text-decoration:underline;
+	span,p,h1,h2,h3,h4,h5,h6,a,div,li{
+		color:$color
 	}
 	a:hover{
-		text-decoration:none;
-	}
-	span,p,h1,h2,h3,h4,h5,h6{
 		color:$color
 	}
 }
@@ -96,13 +91,16 @@
 @mixin accesibleHide{
 	position: absolute;
 	text-indent: -119988px;
+	left: -119988px;
 	overflow: hidden;
 	text-align: left;
 	text-transform: capitalize;
+	height:1px;
+	width:1px;
 }
 
 /*
- * Background Opacity Function
+ * Background Color To Opacity Function
  */
 @mixin backgroundOpacity($color, $opacity: 0.3) {
 	background: $color; /* The Fallback */

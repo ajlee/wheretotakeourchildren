@@ -34,4 +34,17 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+/*
+ * Img Reset
+ */
+img {
+  width: auto;
+  height: auto; }
+
+/*
+ * Active Link Reset
+ */
+a.active {
+  color: inherit; }
+
 /*# sourceMappingURL=wttoc.reset.css.map */
