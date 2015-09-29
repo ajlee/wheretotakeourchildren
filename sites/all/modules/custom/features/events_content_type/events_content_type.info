@@ -1,0 +1,13 @@
+name = Events Content Type
+core = 7.x
+package = Content Types
+dependencies[] = business_service_or_attraction
+dependencies[] = dragndrop_upload_image
+dependencies[] = features
+dependencies[] = image
+dependencies[] = text
+features[features_api][] = api:2
+features[field_instance][] = node-event-field_general_information
+features[field_instance][] = node-event-field_image_gallery
+features[node][] = event
+project path = sites/all/modules/custom/features
