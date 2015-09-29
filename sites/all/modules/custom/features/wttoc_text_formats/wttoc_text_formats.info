@@ -1,6 +1,6 @@
-name = Text Formats
+name = WTTOC Text Formats
 core = 7.x
-package = Text Formats
+package = Features
 dependencies[] = features
 dependencies[] = filter
 features[features_api][] = api:2

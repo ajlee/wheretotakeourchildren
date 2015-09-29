@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * text_formats.features.filter.inc
+ * wttoc_text_formats.features.filter.inc
  */
 
 /**
  * Implements hook_filter_default_formats().
  */
-function text_formats_filter_default_formats() {
+function wttoc_text_formats_filter_default_formats() {
   $formats = array();
 
   // Exported format: Filtered HTML.

@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * business_service_or_attraction.features.field_base.inc
+ * wttoc_field_base.features.field_base.inc
  */
 
 /**
  * Implements hook_field_default_field_bases().
  */
-function business_service_or_attraction_field_default_field_bases() {
+function wttoc_field_base_field_default_field_bases() {
   $field_bases = array();
 
   // Exported field_base: 'field_category'

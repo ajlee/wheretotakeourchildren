@@ -1,0 +1,10 @@
+name = WTTOC Extra Field Configs
+core = 7.x
+package = Features
+dependencies[] = eim
+dependencies[] = hierarchical_select
+dependencies[] = hs_taxonomy
+dependencies[] = wttoc_field_base
+features[features_api][] = api:2
+features[hierarchical_select][] = taxonomy-field_category
+project path = sites/all/modules/custom/features

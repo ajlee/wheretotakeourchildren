@@ -1,0 +1,17 @@
+name = WTTOC Field Base
+core = 7.x
+package = Features
+dependencies[] = features
+dependencies[] = image
+dependencies[] = office_hours
+dependencies[] = taxonomy
+dependencies[] = text
+features[features_api][] = api:2
+features[field_base][] = field_category
+features[field_base][] = field_general_information
+features[field_base][] = field_image_gallery
+features[field_base][] = field_opening_hours
+features[field_base][] = field_prices_information
+features[field_base][] = field_vouchers_information
+features[taxonomy][] = business_type
+project path = sites/all/modules/custom/features

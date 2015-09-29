@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Business, Service, or Attraction feature.
- */
-
-include_once 'business_service_or_attraction.features.inc';

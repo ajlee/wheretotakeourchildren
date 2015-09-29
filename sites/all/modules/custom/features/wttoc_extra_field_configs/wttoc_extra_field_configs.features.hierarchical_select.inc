@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * business_service_or_attraction.features.hierarchical_select.inc
+ * wttoc_extra_field_configs.features.hierarchical_select.inc
  */
 
 /**
  * Implements hook_hierarchical_select_default_configs().
  */
-function business_service_or_attraction_hierarchical_select_default_configs() {
+function wttoc_extra_field_configs_hierarchical_select_default_configs() {
 $configs = array();
 $config = array(
   'config_id'       => 'taxonomy-field_category',

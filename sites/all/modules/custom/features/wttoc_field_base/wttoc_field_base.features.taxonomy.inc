@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * business_service_or_attraction.features.taxonomy.inc
+ * wttoc_field_base.features.taxonomy.inc
  */
 
 /**
  * Implements hook_taxonomy_default_vocabularies().
  */
-function business_service_or_attraction_taxonomy_default_vocabularies() {
+function wttoc_field_base_taxonomy_default_vocabularies() {
   return array(
     'business_type' => array(
       'name' => 'Categories and Features',
