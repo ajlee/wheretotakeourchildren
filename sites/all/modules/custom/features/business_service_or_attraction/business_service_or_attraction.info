@@ -1,0 +1,17 @@
+name = Business, Service, or Attraction
+core = 7.x
+package = Content Types
+dependencies[] = features
+dependencies[] = hierarchical_select
+dependencies[] = hs_taxonomy
+dependencies[] = taxonomy
+dependencies[] = text
+features[features_api][] = api:2
+features[field_base][] = body
+features[field_base][] = field_category
+features[field_instance][] = node-business_service_or_attraction-body
+features[field_instance][] = node-business_service_or_attraction-field_category
+features[hierarchical_select][] = taxonomy-field_category
+features[node][] = business_service_or_attraction
+features[taxonomy][] = business_type
+project path = sites/all/modules/custom/features
