@@ -10,7 +10,7 @@
 }
 .l-header{
 	@include breakpoint($breakpointTablet){
-		border-bottom:1px;
+		padding-bottom:1px;
 	};
 }
 .l-header, .l-footer{

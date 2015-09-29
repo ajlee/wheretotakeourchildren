@@ -47,4 +47,10 @@ img {
 a.active {
   color: inherit; }
 
+/*
+ * Input Max Width - Keep them inside the screen in all circumstances
+ */
+input {
+  max-width: 95%; }
+
 /*# sourceMappingURL=wttoc.reset.css.map */
