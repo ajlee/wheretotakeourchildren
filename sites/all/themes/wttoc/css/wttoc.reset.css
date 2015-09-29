@@ -53,4 +53,11 @@ a.active {
 input {
   max-width: 95%; }
 
+/*
+ * Responsive Tables - Focus On Full Support
+ */
+table {
+  overflow-x: auto;
+  display: block; }
+
 /*# sourceMappingURL=wttoc.reset.css.map */
