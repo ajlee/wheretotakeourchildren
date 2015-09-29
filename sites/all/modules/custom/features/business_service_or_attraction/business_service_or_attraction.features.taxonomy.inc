@@ -10,10 +10,10 @@
 function business_service_or_attraction_taxonomy_default_vocabularies() {
   return array(
     'business_type' => array(
-      'name' => 'Category',
+      'name' => 'Categories and Features',
       'machine_name' => 'business_type',
       'description' => 'Describes a business, services, or attraction category. Contains subcategories as well.',
-      'hierarchy' => 1,
+      'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => 0,
       'rdf_mapping' => array(
