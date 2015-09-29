@@ -69,7 +69,12 @@
       $('#off-canvas').click(function(e) {
         if (!$(this).hasClass('is-visible')) {
           $(this).addClass('is-visible');
-          e.preventDefault();
+          //Uncommenting this line means links inside #off-canvas don't have to be double clicked
+          //Uncommenting this line also means that after opening the off canvas region,
+          ////clicking on a link, outside of the off canvas region will close the off
+          ////canvas region and take you to the link.
+          //drupal.org/node/2153175#comment-8307933
+          //e.preventDefault();
           e.stopPropagation();
         }
       });
