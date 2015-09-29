@@ -1,0 +1,10 @@
+name = Text Formats
+core = 7.x
+package = Text Formats
+dependencies[] = features
+dependencies[] = filter
+features[features_api][] = api:2
+features[filter][] = filtered_html
+features[filter][] = full_html
+features[filter][] = plain_text
+project path = sites/all/modules/custom/features
