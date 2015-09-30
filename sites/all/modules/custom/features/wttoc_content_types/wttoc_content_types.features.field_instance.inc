@@ -11,6 +11,64 @@ function wttoc_content_types_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance:
+  // 'node-business_service_or_attraction-field_address'
+  $field_instances['node-business_service_or_attraction-field_address'] = array(
+    'bundle' => 'business_service_or_attraction',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'addressfield',
+        'settings' => array(
+          'format_handlers' => array(
+            0 => 'address',
+          ),
+          'use_widget_handlers' => 1,
+        ),
+        'type' => 'addressfield_default',
+        'weight' => 7,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_address',
+    'label' => 'Address',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'addressfield',
+      'settings' => array(
+        'available_countries' => array(
+          'GB' => 'GB',
+        ),
+        'default_country' => 'GB',
+        'format_handlers' => array(
+          'address' => 'address',
+          'address-hide-country' => 'address-hide-country',
+          'address-hide-postal-code' => 0,
+          'address-hide-street' => 0,
+          'organisation' => 0,
+          'name-full' => 0,
+          'name-oneline' => 0,
+          'address-optional' => 0,
+        ),
+      ),
+      'type' => 'addressfield_standard',
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance:
   // 'node-business_service_or_attraction-field_category'
   $field_instances['node-business_service_or_attraction-field_category'] = array(
     'bundle' => 'business_service_or_attraction',
@@ -34,7 +92,7 @@ function wttoc_content_types_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_category',
-    'label' => 'Category',
+    'label' => 'Business: Categories and Features',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -44,7 +102,7 @@ function wttoc_content_types_field_default_field_instances() {
       'module' => 'hs_taxonomy',
       'settings' => array(),
       'type' => 'taxonomy_hs',
-      'weight' => 2,
+      'weight' => 4,
     ),
   );
 
@@ -86,6 +144,66 @@ function wttoc_content_types_field_default_field_instances() {
       ),
       'type' => 'text_textarea',
       'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'node-business_service_or_attraction-field_hidden_address_geofield'
+  $field_instances['node-business_service_or_attraction-field_hidden_address_geofield'] = array(
+    'bundle' => 'business_service_or_attraction',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'geofield',
+        'settings' => array(
+          'data' => 'full',
+        ),
+        'type' => 'geofield_wkt',
+        'weight' => 8,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_hidden_address_geofield',
+    'label' => 'Hidden Address Geofield',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'geocoder',
+      'settings' => array(
+        'delta_handling' => 'default',
+        'geocoder_field' => 'field_address',
+        'geocoder_handler' => 'google',
+        'handler_settings' => array(
+          'google' => array(
+            'all_results' => 0,
+            'biasing' => array(
+              'bounds' => '',
+              'components' => '',
+              'region' => '',
+            ),
+            'geometry_type' => 'point',
+            'reject_results' => array(
+              'APPROXIMATE' => 0,
+              'GEOMETRIC_CENTER' => 0,
+              'RANGE_INTERPOLATED' => 0,
+              'ROOFTOP' => 0,
+            ),
+          ),
+        ),
+      ),
+      'type' => 'geocoder',
+      'weight' => 9,
     ),
   );
 
@@ -145,7 +263,7 @@ function wttoc_content_types_field_default_field_instances() {
         'upload_event' => 'auto',
       ),
       'type' => 'dragndrop_upload_image',
-      'weight' => 3,
+      'weight' => 6,
     ),
   );
 
@@ -201,7 +319,7 @@ function wttoc_content_types_field_default_field_instances() {
       'module' => 'office_hours',
       'settings' => array(),
       'type' => 'office_hours',
-      'weight' => 4,
+      'weight' => 7,
     ),
   );
 
@@ -242,7 +360,70 @@ function wttoc_content_types_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 5,
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'node-business_service_or_attraction-field_social_media_pages'
+  $field_instances['node-business_service_or_attraction-field_social_media_pages'] = array(
+    'bundle' => 'business_service_or_attraction',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'socialfield',
+        'settings' => array(
+          'link_text' => FALSE,
+        ),
+        'type' => 'socialfield_formatter',
+        'weight' => 9,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_social_media_pages',
+    'label' => 'Social Media Pages',
+    'required' => 0,
+    'settings' => array(
+      'services' => array(
+        'facebook' => 'facebook',
+        'googleplus' => 'googleplus',
+        'twitter' => 'twitter',
+        'youtube' => 'youtube',
+      ),
+      'used_services' => array(
+        'delicious' => 'delicious',
+        'digg' => 'digg',
+        'facebook' => 'facebook',
+        'flickr' => 'flickr',
+        'googleplus' => 'googleplus',
+        'linkedin' => 'linkedin',
+        'myspace' => 'myspace',
+        'pinterest' => 'pinterest',
+        'reddit' => 'reddit',
+        'slideshare' => 'slideshare',
+        'stumbleupon' => 'stumbleupon',
+        'twitter' => 'twitter',
+        'vimeo' => 'vimeo',
+        'yahoo' => 'yahoo',
+        'youtube' => 'youtube',
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'socialfield',
+      'settings' => array(),
+      'type' => 'socialfield_widget',
+      'weight' => 10,
     ),
   );
 
@@ -283,7 +464,154 @@ function wttoc_content_types_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'node-event-field_address'
+  $field_instances['node-event-field_address'] = array(
+    'bundle' => 'event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'addressfield',
+        'settings' => array(
+          'format_handlers' => array(
+            0 => 'address',
+          ),
+          'use_widget_handlers' => 1,
+        ),
+        'type' => 'addressfield_default',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_address',
+    'label' => 'Address',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'addressfield',
+      'settings' => array(
+        'available_countries' => array(
+          'GB' => 'GB',
+        ),
+        'default_country' => 'GB',
+        'format_handlers' => array(
+          'address' => 'address',
+          'address-hide-country' => 'address-hide-country',
+          'address-hide-postal-code' => 0,
+          'address-hide-street' => 0,
+          'organisation' => 0,
+          'name-full' => 0,
+          'name-oneline' => 0,
+          'address-optional' => 0,
+        ),
+      ),
+      'type' => 'addressfield_standard',
       'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'node-event-field_category_event'
+  $field_instances['node-event-field_category_event'] = array(
+    'bundle' => 'event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 6,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_category_event',
+    'label' => 'Events: Categories and Features',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'hs_taxonomy',
+      'settings' => array(),
+      'type' => 'taxonomy_hs',
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'node-event-field_date_of_event'
+  $field_instances['node-event-field_date_of_event'] = array(
+    'bundle' => 'event',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+          'show_remaining_days' => FALSE,
+        ),
+        'type' => 'date_default',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_date_of_event',
+    'label' => 'Date of Event',
+    'required' => FALSE,
+    'settings' => array(
+      'default_value' => 'now',
+      'default_value2' => 'same',
+      'default_value_code' => '',
+      'default_value_code2' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'date',
+      'settings' => array(
+        'increment' => 15,
+        'input_format' => 'm/d/Y - H:i:s',
+        'input_format_custom' => '',
+        'label_position' => 'above',
+        'text_parts' => array(),
+        'year_range' => '-3:+3',
+      ),
+      'type' => 'date_popup',
+      'weight' => 1,
     ),
   );
 
@@ -323,7 +651,67 @@ function wttoc_content_types_field_default_field_instances() {
         'rows' => 5,
       ),
       'type' => 'text_textarea',
-      'weight' => 0,
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'node-event-field_hidden_address_geofield'
+  $field_instances['node-event-field_hidden_address_geofield'] = array(
+    'bundle' => 'event',
+    'default_value' => array(),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'geofield',
+        'settings' => array(
+          'data' => 'full',
+        ),
+        'type' => 'geofield_wkt',
+        'weight' => 5,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_hidden_address_geofield',
+    'label' => 'Hidden Address Geofield',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'geocoder',
+      'settings' => array(
+        'delta_handling' => 'default',
+        'geocoder_field' => 'field_address',
+        'geocoder_handler' => 'google',
+        'handler_settings' => array(
+          'google' => array(
+            'all_results' => 0,
+            'biasing' => array(
+              'bounds' => '',
+              'components' => '',
+              'region' => '',
+            ),
+            'geometry_type' => 'point',
+            'reject_results' => array(
+              'APPROXIMATE' => 0,
+              'GEOMETRIC_CENTER' => 0,
+              'RANGE_INTERPOLATED' => 0,
+              'ROOFTOP' => 0,
+            ),
+          ),
+        ),
+      ),
+      'type' => 'geocoder',
+      'weight' => 7,
     ),
   );
 
@@ -382,17 +770,164 @@ function wttoc_content_types_field_default_field_instances() {
         'upload_event' => 'auto',
       ),
       'type' => 'dragndrop_upload_image',
-      'weight' => -2,
+      'weight' => 8,
+    ),
+  );
+
+  // Exported field_instance: 'node-event-field_prices_information'
+  $field_instances['node-event-field_prices_information'] = array(
+    'bundle' => 'event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 7,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_prices_information',
+    'label' => 'Prices Information',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'node-event-field_social_media_pages'
+  $field_instances['node-event-field_social_media_pages'] = array(
+    'bundle' => 'event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'socialfield',
+        'settings' => array(
+          'link_text' => FALSE,
+        ),
+        'type' => 'socialfield_formatter',
+        'weight' => 9,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_social_media_pages',
+    'label' => 'Social Media Pages',
+    'required' => 0,
+    'settings' => array(
+      'services' => array(
+        'facebook' => 'facebook',
+        'googleplus' => 'googleplus',
+        'twitter' => 'twitter',
+        'youtube' => 'youtube',
+      ),
+      'used_services' => array(
+        'delicious' => 'delicious',
+        'digg' => 'digg',
+        'facebook' => 'facebook',
+        'flickr' => 'flickr',
+        'googleplus' => 'googleplus',
+        'linkedin' => 'linkedin',
+        'myspace' => 'myspace',
+        'pinterest' => 'pinterest',
+        'reddit' => 'reddit',
+        'slideshare' => 'slideshare',
+        'stumbleupon' => 'stumbleupon',
+        'twitter' => 'twitter',
+        'vimeo' => 'vimeo',
+        'yahoo' => 'yahoo',
+        'youtube' => 'youtube',
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'socialfield',
+      'settings' => array(),
+      'type' => 'socialfield_widget',
+      'weight' => 10,
+    ),
+  );
+
+  // Exported field_instance: 'node-event-field_vouchers_information'
+  $field_instances['node-event-field_vouchers_information'] = array(
+    'bundle' => 'event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 8,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_vouchers_information',
+    'label' => 'Vouchers Information',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 4,
     ),
   );
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Category');
+  t('Address');
+  t('Business: Categories and Features');
+  t('Date of Event');
+  t('Events: Categories and Features');
   t('General Information');
+  t('Hidden Address Geofield');
   t('Image Gallery');
   t('Opening Hours');
   t('Prices Information');
+  t('Social Media Pages');
   t('The first image will be used as the default image throughout the site. Don\'t forget to fill the image\'s Alt and Title fields for impaired users.');
   t('Vouchers Information');
 

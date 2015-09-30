@@ -7,4 +7,5 @@ dependencies[] = hs_taxonomy
 dependencies[] = wttoc_field_base
 features[features_api][] = api:2
 features[hierarchical_select][] = taxonomy-field_category
+features[hierarchical_select][] = taxonomy-field_category_event
 project path = sites/all/modules/custom/features
