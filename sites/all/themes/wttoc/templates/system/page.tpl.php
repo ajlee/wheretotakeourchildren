@@ -102,13 +102,14 @@
   </header>
 
   <div class="l-main">
-    <div class="l-content" role="main">
+    <?php /*lc-region--inner is an inner div for the content region container and sidebar regions*/ ?>
+    <div class="l-content" role="main"><div class="lc-region--inner">
       <?php print render($page['highlighted']); ?>
-      <?php print $breadcrumb; ?>
+      <?php /* print $breadcrumb; */?>
       <a id="main-content"></a>
       <?php print render($title_prefix); ?>
       <?php if ($title): ?>
-        <h1><?php print $title; ?></h1>
+        <h1 class="mainPageTitle"><?php print $title; ?></h1>
       <?php endif; ?>
       <?php print render($title_suffix); ?>
       <?php print $messages; ?>
@@ -117,9 +118,9 @@
       <?php if ($action_links): ?>
         <ul class="action-links"><?php print render($action_links); ?></ul>
       <?php endif; ?>
-      <?php print render($page['content']); ?>
+      <div class="mainContentC"><div class="mcc--inner"><?php print render($page['content']); ?></div></div>
       <?php print $feed_icons; ?>
-    </div>
+    </div></div>
 
     <?php print render($page['sidebar_first']); ?>
     <?php print render($page['sidebar_second']); ?>

@@ -1,0 +1,35 @@
+/*
+ * Headings
+ */
+h1, h2, h3, h4, h5, h6{
+	@include headerFontStyle;
+}
+h1 {
+	@include remFontSize($fontXXL);
+}
+h2 {
+	@include remFontSize($fontXL);
+}
+h3 {
+	@include remFontSize($fontL);
+}
+h4,h5,h6{
+	@include remFontSize($fontM);
+}
+
+/*
+ * Default Buttons Mixin
+ */
+body{
+	@include buttonColor1;
+}
+
+/*
+ * Lists
+ */
+ul{
+	list-style: square;
+}
+
+
+

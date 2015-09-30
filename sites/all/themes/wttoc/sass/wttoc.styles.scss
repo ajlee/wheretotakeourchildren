@@ -4,8 +4,10 @@
 @import "variables/variables";
 @import "abstractions/abstractions";
 @import "base/base";
-@import "components/components";
 @import "components/off-canvas";
+@import "components/componentsResponsive";
+@import "components/componentsColorings";
+@import "components/componentsElements";
 
 // Import variables, abstractions, base styles and components.
 // Uncomment the next lines and adjust them to your needs.

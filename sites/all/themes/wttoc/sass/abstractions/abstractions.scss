@@ -13,17 +13,33 @@
 }
 
 /*
+ * One Column 
+ */
+
+@mixin oneColumn($percentWidth){
+	display:block;
+	@include clearfix;
+	@include clearboth;
+	padding: $columnPercentpadder - 2 * $columnPercentPadder;
+	width:$percentWidth - 2 * $columnPercentPadder;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*
  * Split Columns
  */
 @mixin splitLeft($percentWidth){
 	float: left;
 	margin-right: $columnPercentSpacer / 2;
-	width: $percentWidth - $columnPercentSpacer / 2;
+	padding: $columnPercentPadder / 2;
+	width: $percentWidth - $columnPercentSpacer / 2 - $columnPercentPadder;
 }
 @mixin splitRight($percentWidth){
 	float: right;
 	margin-left: $columnPercentSpacer / 2;
-	width: $percentWidth - $columnPercentSpacer / 2;
+	padding: $columnPercentPadder / 2 ;
+	width: $percentWidth - $columnPercentSpacer / 2 - $columnPercentPadder;
 }
 
 /*
@@ -32,18 +48,21 @@
 @mixin chop3Left($percentWidth){
 	float:left;
 	margin-right: $columnPercentSpacer / 4;
-	width: $percentWidth - $columnPercentSpacer / 4;
+	padding: $columnPercentPadder / 2;
+	width: $percentWidth - $columnPercentSpacer / 4 - $columnPercentPadder;	
 }
 @mixin chop3Middle($percentWidth){
 	float:left;
 	margin-left: $columnPercentSpacer / 4;
 	margin-right: $columnPercentSpacer / 4;
-	width: $percentWidth - $columnPercentSpacer / 2;
+	padding: $columnPercentPadder / 2;
+	width: $percentWidth - $columnPercentSpacer / 2 - $columnPercentPadder; 
 }
 @mixin chop3Right($percentWidth){
 	float:right;
 	margin-left: $columnPercentSpacer / 4;
-	width: $percentWidth - $columnPercentSpacer / 4;
+	padding: $columnPercentPadder / 2;
+	width: $percentWidth - $columnPercentSpacer / 4 - $columnPercentPadder;
 }
 /* 
  * Headers Font Style
@@ -106,3 +125,100 @@
 	-webkit-transition: $argument;
 	transition: $argument;
 }
+/*
+ * Quick Box Wizard
+ */
+@mixin boxBorderRadiusMarginPadding($border, $radius, $margin, $padding){
+	border: $border;
+	border-radius: $radius;
+	margin: $margin;
+	padding: $padding;
+}
+
+/*
+ * Box Shadow Small
+ */
+@mixin boxshadowSmall{
+	-webkit-box-shadow: 2px 2px 6px 1px $BLACK;
+	-moz-box-shadow: 2px 2px 6px 1px $BLACK;
+	box-shadow: 2px 2px 6px 1px $BLACK;
+	-webkit-box-shadow: 2px 2px 6px 1px rgba($BLACK,.75);
+	-moz-box-shadow: 2px 2px 6px 1px rgba($BLACK,.75);
+	box-shadow: 2px 2px 6px 1px rgba($BLACK,.75);
+}
+
+/*
+ * Box Shadow Medium
+ */
+@mixin boxshadowMedium{
+	-webkit-box-shadow: 3px 3px 10px 1px $BLACK;
+	-moz-box-shadow: 3px 3px 10px 1px $BLACK;
+	box-shadow: 3px 3px 10px 1px $BLACK;
+	-webkit-box-shadow: 3px 3px 10px 1px rgba($BLACK,.75);
+	-moz-box-shadow: 3px 3px 10px 1px rgba($BLACK,.75);
+	box-shadow: 3px 3px 10px 1px rgba($BLACK,.75);
+}
+
+/*
+ * Box Shadow Large
+ */
+@mixin boxshadowLarge{
+	-webkit-box-shadow: 6px 6px 13px 1px $BLACK;
+	-moz-box-shadow: 6px 6px 13px 1px $BLACK;
+	box-shadow: 6px 6px 13px 1px $BLACK;
+	-webkit-box-shadow: 6px 6px 13px 1px rgba($BLACK,.75);
+	-moz-box-shadow: 6px 6px 13px 1px rgba($BLACK,.75);
+	box-shadow: 6px 6px 13px 1px rgba($BLACK,.75);
+}
+
+/*
+ * Buttons Mixins
+ */
+@mixin buttonBackgroundTextHoverBorder($backgroundColor, $textColor, $hoverTextColor, $borderColor){
+	input[type=submit]{
+		@include boxBorderRadiusMarginPadding(1px solid $borderColor, 0, 8px 2px, 10px 20px);
+		@include cssTransition(all 0.35s ease-in-out);
+		background-color: $backgroundColor;
+		color:$textColor;
+		cursor:pointer;
+		font-weight:bold;
+		&:hover {
+			color: $hoverTextColor;
+		}
+	}
+}
+@mixin buttonColor1{@include buttonBackgroundTextHoverBorder($color1, $WHITE, $DARKGRAY, #{darken($color1, 5%)} );}
+@mixin buttonColor1Opp{@include buttonBackgroundTextHoverBorder($WHITE, $color1, #{darken($color1, 13%)}, $color1 );}
+
+@mixin buttonColor2{@include buttonBackgroundTextHoverBorder($color2, $WHITE, $DARKGRAY, #{darken($color2, 5%)} );}
+@mixin buttonColor2Opp{@include buttonBackgroundTextHoverBorder($WHITE, $color2, #{darken($color2, 13%)}, $color2 );}
+
+@mixin buttonColor3{@include buttonBackgroundTextHoverBorder($color3, $WHITE, $DARKGRAY, #{darken($color3, 5%)} );}
+@mixin buttonColor3Opp{@include buttonBackgroundTextHoverBorder($WHITE, $color3, #{darken($color3, 13%)}, $color3 );}
+
+@mixin buttonAlt{@include buttonBackgroundTextHoverBorder($colorAlt, $DARKGRAY, $WHITE, #{darken($colorAlt, 5%)} );}
+@mixin buttonAltOpp{@include buttonBackgroundTextHoverBorder($WHITE, $colorAlt, #{darken($colorAlt, 13%)}, $colorAlt );}
+
+/*
+ * Region Color Scheme
+ */
+
+@mixin regionInnerSchemer($headerBackground, $headerTextColor, $textColor, $bordersColor){
+	.block{
+		border: 1px solid $bordersColor;
+		> .block__title{
+			background: $headerBackground;
+			color: $headerTextColor;
+			@include colorDescendantsFont($headerTextColor);
+			padding: 2 * $columnPercentPadder;
+		}
+		@include colorDescendantsFont($textColor);
+		> .block__content, > ul.menu{
+			padding: 2 * $columnPercentPadder;
+		}
+		margin-top:5px;
+		margin-bottom:5px;
+	}
+}
+
+

@@ -1,8 +1,9 @@
 /*
  * General settings
  */
-$defaultWindowSize: 1250px;
+$defaultWindowSize: 1300px;
 $columnPercentSpacer:1%;
+$columnPercentPadder:1%;
 $logoMobileHeight:40px;
 $pathToTheme:"/sites/all/themes/wttoc";
 $superheaderMinHeight:60px;
@@ -58,20 +59,27 @@ $fontXXXS:1.1;
  */
 $BLACK:#000;
 $DARKGRAY:#333;
+$GRAY:#888;
 $LIGHTGRAY:#f3efef;
 $WHITE:#fff;
 
 
 /*
  * Theme Palette
+ * Light and Blue Colors Work Better If They're Desaturated As Well
  */
 $color1:#00CBE9;/*Light Blue*/
+$color1Light:#C3DAE3;
+$color1Dark:#015063;
 $color2:#FD8A33;/*Orange*/
+$color2Light:#FFB882;
+$color2Dark:#B04D00;
 $color3:#8BC53F;/*Light Green*/
-$color1Light:#C3DAE3;/*Light Blue Gray*/
-$color1Dark:#015063;/*Dark Blue Gray*/
-$colorAlt:#E792B5;/*Dull Pink*/
-
+$color3Light:#C8F094;
+$color3Dark:#51870B;
+$colorAlt:#ffde00;/*BrightYellow*/
+$colorAltLight: lighten($colorAlt, 3.5%);
+$colorAltDark: darken($colorAlt, 3.5%);
 /*
  * Other Possible Palette
  * $color1:#aa6c39;

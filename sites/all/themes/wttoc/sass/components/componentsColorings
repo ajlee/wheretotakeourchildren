@@ -1,0 +1,68 @@
+/*
+ * Region Containers
+ */
+
+.l-main{
+}
+.l-main{
+	@include colorDescendantsFont($DARKGRAY);
+}
+.l-header, .l-footer{
+}
+.l-footer{
+}
+
+
+/*
+ * Header Regions Stylings
+ */
+.l-header .l-superheader{
+	background-color: $color1Dark;
+	border-bottom: 1px solid $DARKGRAY;
+	@include colorDescendantsFont($WHITE);
+}
+.l-header .l-region--header{
+}
+.l-header .l-branding{
+
+}
+.l-header .l-region--navigation{
+	border-bottom: 1px solid $LIGHTGRAY;
+}
+
+/*
+ * Content Regions - Stylings
+ */ 
+
+.l-content {
+	.lc-region--inner{
+		@include boxBorderRadiusMarginPadding(2px solid $color1Light, 3px, 10px 0, 2%);
+		@include regionInnerSchemer($color1, $WHITE, $DARKGRAY, $color1);
+		@include buttonColor1;
+		.mainContentC .mccinner{
+		}
+	}	
+}
+.l-region--sidebar-first{
+	.lc-region--inner{
+		@include boxBorderRadiusMarginPadding(2px solid $color2Light, 3px, 10px 0, 3%);
+		@include regionInnerSchemer($color2, $WHITE, $DARKGRAY, $color2);
+		@include buttonColor2;
+	}	
+}
+.l-region--sidebar-second{
+		.lc-region--inner{
+			@include boxBorderRadiusMarginPadding(2px solid $color3Light, 3px, 10px 0, 3%);
+			@include regionInnerSchemer($color3, $WHITE, $DARKGRAY, $color3);
+			@include buttonColor3;
+		}
+}
+
+/*
+ * Footer Stylings
+ */
+footer.l-footer{
+	background-color:$DARKGRAY;
+	padding:2%;
+	@include colorDescendantsFont($WHITE);
+}

@@ -1,8 +1,9 @@
 /*
  * Set Up Font Size % For Rem
  */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
 html {
-	font-family:"Open Sans", Arial, Helvetica, sans-serif;
+	font-family:"Open Sans", sans-serif, Helvetica;
 	/* Sets up the Base 10 stuff */
 	@include breakpoint(0 $breakpointTablet){
 		font-size: 62.5%; 
@@ -16,12 +17,23 @@ html {
 }
 
 /*
+ * Default Font Size
+ */
+body{
+	//Do not use REM here
+	font-size:16px;
+}
+
+/*
  * Admin Menu Margin
  */
 body.admin-menu{
 	#admin-menu{
 	    min-width: 50px;
 	    height: 80px;
+	}
+	.admin-menu-icon{
+		max-width:15px;
 	}
 	.l-page{
 		margin-top:80px;
@@ -33,5 +45,12 @@ body.admin-menu{
  */
 a{
 	@include cssTransition(all 0.35s ease-in-out);
+}
+
+/*
+ * Omega Debug - Ungray
+ */
+.region--debug{
+	background:transparent;
 }
 

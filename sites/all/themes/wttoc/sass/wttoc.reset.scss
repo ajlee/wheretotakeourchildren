@@ -22,8 +22,9 @@ body {
   line-height: 1;
 }
 
-ol, ul {
+body ol, body ul, body ol.menu, body ul.menu {
   list-style: none;
+  list-style-position:inside;
 }
 
 blockquote, q {

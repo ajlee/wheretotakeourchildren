@@ -1,0 +1,151 @@
+/*
+ * Region Containers
+ */
+
+.l-main{
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 20px;
+	@include clearfix;
+}
+.l-header, .l-footer{
+	margin-left: auto;
+	margin-right: auto;
+	@include clearfix;
+}
+.l-main{
+	width:98%;
+	max-width: $defaultWindowSize;
+}
+.l-footer{
+	margin-bottom:0;
+}
+
+/*
+ * Header Regions Responsive Behavior
+ */
+
+.l-header .l-superheader{
+	min-height: $superheaderMinHeight;
+}
+.l-header .l-region--header{
+	width:100%;
+	@include breakpoint($breakpointWideP1){
+		@include splitRight(66.5%);	
+	};
+	@include breakpoint($tablet2Wide){
+		@include splitRight(50%);	
+	};
+}
+.l-header .l-branding{
+	width:100%;
+	@include breakpoint($breakpointWideP1){
+		@include splitLeft(33.5%);
+	};
+	@include breakpoint($tablet2Wide){
+		@include splitLeft(50%);	
+	};
+	.site-logo{
+		img{
+			height: $logoMobileHeight;
+			padding: 5px 10px;
+			padding-left: $superheaderMinHeight / 3;
+			@include breakpoint($breakpointWideP1){
+				height: $logoMobileHeight * $breakpointWide / $breakpointMobile;
+			};
+			@include breakpoint($tablet2Wide){
+				height: $logoMobileHeight * $breakpointTablet / $breakpointMobile;
+			};
+		}
+	}
+}
+.l-header .l-region--navigation{
+	@include clearboth;
+}
+
+/*
+ * Content Regions Responsive Behavior
+ */ 
+
+@mixin contentsidebarDefault{
+	width:100% - 2 * $columnPercentPadder;
+	padding: $columnPercentPadder;
+}
+
+/*Two sidebars.*/
+body.two-sidebars{
+	/* Content Area Behavior Default, Tablet2Wide, and Wide. */
+	.l-content{
+		@include contentsidebarDefault;
+		float:left;
+		@include breakpoint($breakpointWideP1){
+			@include chop3Middle(53%);
+			/* BECAUSE .l-region--sidebar-first SHOULD COME BEFORE .l-content */
+			/* MARGIN-LEFT = WIDTH(.l-region--sidebar-first) + $columnPercentSpacer / 4  */
+			margin-left: 23.5% + $columnPercentSpacer / 4;
+		};
+		@include breakpoint($tablet2Wide){
+			@include splitLeft(73%);
+		};
+	}
+	/* Sidebar Behavior Default, and Tablet2Wide. */
+	.l-region--sidebar-first, .l-region--sidebar-second{
+		@include contentsidebarDefault;
+		@include breakpoint($tablet2Wide){
+			@include splitRight(27%);
+		};
+	}
+	/* Sidebar Behavior Wide. */
+	.l-region--sidebar-first{
+		float: left;
+		@include breakpoint($breakpointWideP1){
+			@include chop3Left(23.5%);
+			/* BECAUSE .l-region--sidebar-first SHOULD COME BEFORE .l-content */
+			/* MARGIN-LEFT = -1 * WIDTH(.l-region--sidebar-first + .l-content)  */
+			margin-left: -76.5%;
+		};
+
+	}
+	.l-region--sidebar-second{
+		float:right;
+		@include breakpoint($breakpointWideP1){
+			@include chop3Right(23.5%);
+		};
+	}
+
+}
+
+/* One sidebar */
+body.one-sidebar.sidebar-first, body.one-sidebar.sidebar-second{
+	/* Content Area*/
+	.l-content{
+		@include contentsidebarDefault;
+		float:left;
+		@include breakpoint($breakpointWideP1){
+			@include splitLeft(75%);
+		};
+		@include breakpoint($tablet2Wide){
+			@include splitLeft(66.66%);
+		};
+	}
+	/* Sidebar Area*/
+	.l-region--sidebar-first, .l-region--sidebar-second{
+		@include contentsidebarDefault;
+		float:left;
+		@include breakpoint($breakpointWideP1){
+			@include splitRight(25%);
+		};
+		@include breakpoint($tablet2Wide){
+			@include splitRight(33.33%);
+		};
+	}
+}
+
+/* Highlighted & Help*/
+.l-region--highlighted,.l-region--help{
+	@include clearfix;
+	@include clearboth;
+}
+
+
+
