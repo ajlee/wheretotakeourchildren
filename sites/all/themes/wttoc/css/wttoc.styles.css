@@ -707,32 +707,4 @@ ul {
 .breadcrumb a {
   text-decoration: none; }
 
-/**
- * $FORM-ITEM
- */
-.form-item {
-  color: #6a7076; }
-
-.form-item label {
-  margin-bottom: 0.4em; }
-
-.form-item .form-select,
-.form-item .form-text,
-.form-item .form-textarea {
-  width: 100%;
-  padding: 0.6em;
-  background-color: #fff;
-  border: 1px solid #dddddd;
-  color: #6a7076;
-  vertical-align: middle; }
-
-.form-item .description {
-  margin-top: 0.2em;
-  font-style: italic; }
-
-.container-inline .form-select,
-.container-inline .form-text,
-.container-inline .form-textarea {
-  width: auto; }
-
 /*# sourceMappingURL=wttoc.styles.css.map */
