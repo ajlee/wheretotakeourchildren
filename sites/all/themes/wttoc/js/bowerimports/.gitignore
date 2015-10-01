@@ -1,0 +1,7 @@
+#Blacklist all files
+*
+#Whitelist subdirectories
+!*/
+#Whitelist .js files
+!*.js
+!.gitignore

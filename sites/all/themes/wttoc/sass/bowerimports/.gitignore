@@ -1,0 +1,8 @@
+#Blacklist all files
+*
+#Whitelist subdirectories
+!*/
+#Whitelist .scss files
+!*.scss
+!.gitignore
+

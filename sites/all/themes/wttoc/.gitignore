@@ -6,6 +6,3 @@ node_modules
 
 #Ignore bower libraries
 libraries
-
-sass/bowerimports
-js/bowerimports
