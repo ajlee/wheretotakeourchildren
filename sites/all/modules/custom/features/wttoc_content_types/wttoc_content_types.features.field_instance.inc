@@ -396,6 +396,7 @@ function wttoc_content_types_field_default_field_instances() {
       'services' => array(
         'facebook' => 'facebook',
         'googleplus' => 'googleplus',
+        'pinterest' => 'pinterest',
         'twitter' => 'twitter',
         'youtube' => 'youtube',
       ),
@@ -465,6 +466,51 @@ function wttoc_content_types_field_default_field_instances() {
       ),
       'type' => 'text_textarea',
       'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'node-business_service_or_attraction-field_website'
+  $field_instances['node-business_service_or_attraction-field_website'] = array(
+    'bundle' => 'business_service_or_attraction',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'url',
+        'settings' => array(
+          'nofollow' => FALSE,
+          'trim_length' => 80,
+        ),
+        'type' => 'url_default',
+        'weight' => 10,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_website',
+    'label' => 'Website Address',
+    'required' => 0,
+    'settings' => array(
+      'title_fetch' => 0,
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'url',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'url_external',
+      'weight' => 11,
     ),
   );
 
@@ -916,11 +962,56 @@ function wttoc_content_types_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-event-field_website'
+  $field_instances['node-event-field_website'] = array(
+    'bundle' => 'event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'url',
+        'settings' => array(
+          'nofollow' => FALSE,
+          'trim_length' => 80,
+        ),
+        'type' => 'url_default',
+        'weight' => 10,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_website',
+    'label' => 'Event Website',
+    'required' => 0,
+    'settings' => array(
+      'title_fetch' => 0,
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'url',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'url_external',
+      'weight' => 12,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Address');
   t('Business: Categories and Features');
   t('Date of Event');
+  t('Event Website');
   t('Events: Categories and Features');
   t('General Information');
   t('Hidden Address Geofield');
@@ -930,6 +1021,7 @@ function wttoc_content_types_field_default_field_instances() {
   t('Social Media Pages');
   t('The first image will be used as the default image throughout the site. Don\'t forget to fill the image\'s Alt and Title fields for impaired users.');
   t('Vouchers Information');
+  t('Website Address');
 
   return $field_instances;
 }

@@ -272,5 +272,20 @@ function wttoc_field_base_field_default_field_bases() {
     'type' => 'text_long',
   );
 
+  // Exported field_base: 'field_website'
+  $field_bases['field_website'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_website',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'url',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'url',
+  );
+
   return $field_bases;
 }
