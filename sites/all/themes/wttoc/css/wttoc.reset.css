@@ -52,7 +52,8 @@ a.active {
  * Input Max Width - Keep them inside the screen in all circumstances
  */
 input {
-  max-width: 95%; }
+  max-width: 95%;
+  width: 100%; }
 
 /*
  * Responsive Tables - Focus On Full Support

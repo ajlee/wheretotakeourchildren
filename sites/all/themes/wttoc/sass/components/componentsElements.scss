@@ -31,5 +31,23 @@ ul{
 	list-style: square;
 }
 
+/*
+ * BREADCRUMB
+ */
+.breadcrumb li {
+  padding-right: 0.4em;
+}
+.breadcrumb li:after {
+  content: "»";
+  padding-left: 0.4em;
+  vertical-align: baseline;
+}
+.breadcrumb li:last-child:after {
+  content: "";
+}
+.breadcrumb a {
+  text-decoration: none;
+}
+
 
 

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*
  * General settings
  */
@@ -688,5 +689,50 @@ body input[type=submit] {
  */
 ul {
   list-style: square; }
+
+/*
+ * BREADCRUMB
+ */
+.breadcrumb li {
+  padding-right: 0.4em; }
+
+.breadcrumb li:after {
+  content: "»";
+  padding-left: 0.4em;
+  vertical-align: baseline; }
+
+.breadcrumb li:last-child:after {
+  content: ""; }
+
+.breadcrumb a {
+  text-decoration: none; }
+
+/**
+ * $FORM-ITEM
+ */
+.form-item {
+  color: #6a7076; }
+
+.form-item label {
+  margin-bottom: 0.4em; }
+
+.form-item .form-select,
+.form-item .form-text,
+.form-item .form-textarea {
+  width: 100%;
+  padding: 0.6em;
+  background-color: #fff;
+  border: 1px solid #dddddd;
+  color: #6a7076;
+  vertical-align: middle; }
+
+.form-item .description {
+  margin-top: 0.2em;
+  font-style: italic; }
+
+.container-inline .form-select,
+.container-inline .form-text,
+.container-inline .form-textarea {
+  width: auto; }
 
 /*# sourceMappingURL=wttoc.styles.css.map */
