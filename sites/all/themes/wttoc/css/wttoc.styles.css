@@ -469,7 +469,7 @@ body.one-sidebar.sidebar-first, body.one-sidebar.sidebar-second {
         float: left;
         margin-right: 0.5%;
         padding: 0.5%;
-        width: 73.5%; } }
+        width: 68.5%; } }
     @media (min-width: 769px) and (max-width: 1024px) {
       body.one-sidebar.sidebar-first .l-content, body.one-sidebar.sidebar-second .l-content {
         float: left;
@@ -485,7 +485,7 @@ body.one-sidebar.sidebar-first, body.one-sidebar.sidebar-second {
         float: right;
         margin-left: 0.5%;
         padding: 0.5%;
-        width: 23.5%; } }
+        width: 28.5%; } }
     @media (min-width: 769px) and (max-width: 1024px) {
       body.one-sidebar.sidebar-first .l-region--sidebar-first, body.one-sidebar.sidebar-first .l-region--sidebar-second, body.one-sidebar.sidebar-second .l-region--sidebar-first, body.one-sidebar.sidebar-second .l-region--sidebar-second {
         float: right;
@@ -557,7 +557,8 @@ body.one-sidebar.sidebar-first, body.one-sidebar.sidebar-second {
   .l-content .lc-region--inner .ui-state-default, .l-content .lc-region--inner .ui-widget-content .ui-state-default, .l-content .lc-region--inner .ui-widget-header .ui-state-default {
     border-color: #00CBE9;
     background: #00CBE9;
-    color: #fff; }
+    color: #fff;
+    border-radius: 0; }
   .l-content .lc-region--inner .ui-selectmenu-button span.ui-selectmenu-text {
     color: #fff; }
   .l-content .lc-region--inner input[type=submit] {
@@ -601,7 +602,8 @@ body.one-sidebar.sidebar-first, body.one-sidebar.sidebar-second {
   .l-region--sidebar-first .lc-region--inner .ui-state-default, .l-region--sidebar-first .lc-region--inner .ui-widget-content .ui-state-default, .l-region--sidebar-first .lc-region--inner .ui-widget-header .ui-state-default {
     border-color: #FD8A33;
     background: #FD8A33;
-    color: #fff; }
+    color: #fff;
+    border-radius: 0; }
   .l-region--sidebar-first .lc-region--inner .ui-selectmenu-button span.ui-selectmenu-text {
     color: #fff; }
   .l-region--sidebar-first .lc-region--inner input[type=submit] {
@@ -645,7 +647,8 @@ body.one-sidebar.sidebar-first, body.one-sidebar.sidebar-second {
   .l-region--sidebar-second .lc-region--inner .ui-state-default, .l-region--sidebar-second .lc-region--inner .ui-widget-content .ui-state-default, .l-region--sidebar-second .lc-region--inner .ui-widget-header .ui-state-default {
     border-color: #8BC53F;
     background: #8BC53F;
-    color: #fff; }
+    color: #fff;
+    border-radius: 0; }
   .l-region--sidebar-second .lc-region--inner .ui-selectmenu-button span.ui-selectmenu-text {
     color: #fff; }
   .l-region--sidebar-second .lc-region--inner input[type=submit] {
@@ -745,5 +748,11 @@ ul {
 
 .breadcrumb a {
   text-decoration: none; }
+
+/*
+ * Fieldsets
+ */
+fieldset {
+  clear: both; }
 
 /*# sourceMappingURL=wttoc.styles.css.map */

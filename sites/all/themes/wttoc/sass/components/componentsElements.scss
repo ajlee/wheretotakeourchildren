@@ -49,5 +49,12 @@ ul{
   text-decoration: none;
 }
 
+/*
+ * Fieldsets
+ */
+
+fieldset{
+	@include clearboth;
+}
 
 
