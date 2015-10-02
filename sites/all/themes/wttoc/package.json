@@ -16,7 +16,7 @@
     "gulp-watch": "^4.3.3"
   },
   "description": "wttoc subtheme from omega 4",
-  "main": "gulpfile.js",
+  "main": "package.json",
   "author": "wttoc",
   "license": "none"
 }

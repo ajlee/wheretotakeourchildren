@@ -100,7 +100,9 @@
       <?php print render($page['navigation']); ?>
     </div>
   </header>
-
+  <div class="l-widetop">
+	    <?php print render($page['widetop']); ?>
+  </div>
   <div class="l-main">
     <?php /*lc-region--inner is an inner div for the content region container and sidebar regions*/ ?>
     <div class="l-content" role="main"><div class="lc-region--inner">

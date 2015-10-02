@@ -112,3 +112,21 @@
 })(jQuery, Drupal);
 
 
+/*
+ * Slider with Unslider
+ */
+(function ($, Drupal) {
+  Drupal.behaviors.wttocSliderUnslider = {
+    attach: function (context) {
+	$('.view-image-slider .views-field-field-image-gallery .field-content').unslider({
+		speed: 500,
+		delay: 300000,
+		complete: function() {}, 
+		keys: true,
+		dots: true,
+		fluid: true
+		});
+    }
+  };
+
+})(jQuery, Drupal);

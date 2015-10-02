@@ -755,4 +755,56 @@ ul {
 fieldset {
   clear: both; }
 
+/*
+ * Unslider
+ */
+.view-image-slider .views-field-field-image-gallery .field-content {
+  position: relative;
+  width: 100%;
+  height: 200px !important;
+  overflow: auto;
+  font-size: 17px;
+  line-height: 19px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.3);
+  background: #333;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25); }
+  .view-image-slider .views-field-field-image-gallery .field-content li {
+    list-style: none; }
+  .view-image-slider .views-field-field-image-gallery .field-content ul li {
+    float: left; }
+    .view-image-slider .views-field-field-image-gallery .field-content ul li img {
+      height: 200px !important;
+      width: 100% !important; }
+    .view-image-slider .views-field-field-image-gallery .field-content ul li:after {
+      content: "";
+      display: table;
+      clear: both; }
+  .view-image-slider .views-field-field-image-gallery .field-content ol.dots {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 20px; }
+    .view-image-slider .views-field-field-image-gallery .field-content ol.dots .dot {
+      -webkit-filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+      -moz-filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+      -ms-filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+      -o-filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+      filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3)); }
+    .view-image-slider .views-field-field-image-gallery .field-content ol.dots li {
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      margin: 0 4px;
+      text-indent: -999em;
+      border: 2px solid #fff;
+      border-radius: 6px;
+      cursor: pointer;
+      opacity: .4;
+      transition: background 0.5s, opacity 0.5s; }
+      .view-image-slider .views-field-field-image-gallery .field-content ol.dots li.active {
+        background: #fff;
+        opacity: 1; }
+
 /*# sourceMappingURL=wttoc.styles.css.map */
