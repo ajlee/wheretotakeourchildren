@@ -95,3 +95,18 @@
   };
 
 })(jQuery, Drupal);
+
+/**
+* Select Elements, Using Jquery UI
+*/
+(function ($, Drupal) {
+  Drupal.behaviors.wttocSelectElements = {
+    attach: function (context) {
+          $(".l-page select")
+              .selectmenu()
+              .selectmenu("menuWidget")
+              .addClass("overflow");
+    }
+  };
+
+})(jQuery, Drupal);

@@ -93,6 +93,7 @@
 	a:hover{
 		color:$color
 	}
+	color:$color;
 }
 
 /*
@@ -204,6 +205,7 @@
  */
 
 @mixin regionInnerSchemer($headerBackground, $headerTextColor, $textColor, $bordersColor){
+	//BLOCK
 	.block{
 		border: 1px solid $bordersColor;
 		> .block__title{
@@ -218,6 +220,15 @@
 		}
 		margin-top:5px;
 		margin-bottom:5px;
+	}
+	//JQUERY OVERRIDES 
+	.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default{
+		border-color: $bordersColor;
+		background: $headerBackground;
+		color: $headerTextColor;
+	}
+	.ui-selectmenu-button span.ui-selectmenu-text{
+		color: $headerTextColor;
 	}
 }
 

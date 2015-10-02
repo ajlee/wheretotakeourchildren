@@ -2,8 +2,9 @@
 *
 #Whitelist subdirectories
 !*/
-#Whitelist .scss files
+#Whitelist css & .scss files
 !*.scss
+!*.css
 !.gitignore
 #Ignore other gitignore files
 */.gitignore

@@ -66,3 +66,14 @@ footer.l-footer{
 	padding:2%;
 	@include colorDescendantsFont($WHITE);
 }
+
+/*
+ * Jquery UI Overrides
+ */
+body{
+	.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus{
+		border-color: $GRAY;
+		background: $GRAY;
+		color: $WHITE;
+	}
+}

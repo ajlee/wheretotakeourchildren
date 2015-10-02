@@ -41,4 +41,4 @@ gulp.task('sass:watch', function () {
   gulp.watch('./sass/**/*.scss', ['sass:dev']);
 });
 
-gulp.task('default', ['sass:dev', 'bower:sass', 'bower:js']);
+gulp.task('default', ['sass:dev']);

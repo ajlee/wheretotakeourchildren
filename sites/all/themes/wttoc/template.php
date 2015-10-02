@@ -6,9 +6,3 @@
  * wttoc theme.
  */
 
-/*
- * Add Drupal's Jquery UI
- */
-
-drupal_add_library('system', 'ui', TRUE);
-
