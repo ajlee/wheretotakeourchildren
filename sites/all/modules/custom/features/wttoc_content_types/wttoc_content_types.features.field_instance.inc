@@ -10,6 +10,46 @@
 function wttoc_content_types_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'node-basic_page-field_body'
+  $field_instances['node-basic_page-field_body'] = array(
+    'bundle' => 'basic_page',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_body',
+    'label' => 'Body',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => -4,
+    ),
+  );
+
   // Exported field_instance:
   // 'node-business_service_or_attraction-field_address'
   $field_instances['node-business_service_or_attraction-field_address'] = array(
@@ -28,7 +68,7 @@ function wttoc_content_types_field_default_field_instances() {
           'use_widget_handlers' => 1,
         ),
         'type' => 'addressfield_default',
-        'weight' => 7,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -161,7 +201,7 @@ function wttoc_content_types_field_default_field_instances() {
           'data' => 'full',
         ),
         'type' => 'geofield_wkt',
-        'weight' => 8,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -220,9 +260,15 @@ function wttoc_content_types_field_default_field_instances() {
         'settings' => array(
           'image_link' => '',
           'image_style' => '',
+          'link_image' => 'none',
+          'link_thumbnail' => 'none',
+          'slide_nav_arrows' => 1,
+          'slide_style' => 'square500x500',
+          'thumb_style' => 'rectangle200x80',
+          'thumb_width' => 210,
         ),
         'type' => 'image',
-        'weight' => 6,
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -379,7 +425,7 @@ function wttoc_content_types_field_default_field_instances() {
           'link_text' => FALSE,
         ),
         'type' => 'socialfield_formatter',
-        'weight' => 9,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -485,7 +531,7 @@ function wttoc_content_types_field_default_field_instances() {
           'trim_length' => 80,
         ),
         'type' => 'url_default',
-        'weight' => 10,
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -820,6 +866,56 @@ function wttoc_content_types_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-event-field_linked_business'
+  $field_instances['node-event-field_linked_business'] = array(
+    'bundle' => 'event',
+    'default_value' => array(),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 11,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_linked_business',
+    'label' => 'Linked Business',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'inline_entity_form',
+      'settings' => array(
+        'fields' => array(),
+        'type_settings' => array(
+          'allow_existing' => 1,
+          'allow_new' => 1,
+          'delete_references' => 0,
+          'label_plural' => 'nodes',
+          'label_singular' => 'node',
+          'match_operator' => 'STARTS_WITH',
+          'override_labels' => 0,
+        ),
+      ),
+      'type' => 'inline_entity_form',
+      'weight' => 13,
+    ),
+  );
+
   // Exported field_instance: 'node-event-field_prices_information'
   $field_instances['node-event-field_prices_information'] = array(
     'bundle' => 'event',
@@ -1009,6 +1105,7 @@ function wttoc_content_types_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Address');
+  t('Body');
   t('Business: Categories and Features');
   t('Date of Event');
   t('Event Website');
@@ -1016,6 +1113,7 @@ function wttoc_content_types_field_default_field_instances() {
   t('General Information');
   t('Hidden Address Geofield');
   t('Image Gallery');
+  t('Linked Business');
   t('Opening Hours');
   t('Prices Information');
   t('Social Media Pages');

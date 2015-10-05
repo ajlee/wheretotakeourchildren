@@ -9,6 +9,14 @@
  */
 function wttoc_content_types_node_info() {
   $items = array(
+    'basic_page' => array(
+      'name' => t('Basic Page'),
+      'base' => 'node_content',
+      'description' => t('Just a basic page.'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
     'business_service_or_attraction' => array(
       'name' => t('Business, Service, or Attraction'),
       'base' => 'node_content',
