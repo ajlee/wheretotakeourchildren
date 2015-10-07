@@ -70,10 +70,38 @@ footer.l-footer{
 /*
  * Jquery UI Overrides
  */
-body{
+.js body{
 	.ui-state-hover, .ui-widget-content .ui-state-hover, .ui-widget-header .ui-state-hover, .ui-state-focus, .ui-widget-content .ui-state-focus, .ui-widget-header .ui-state-focus{
 		border-color: $GRAY;
 		background: $GRAY;
 		color: $WHITE;
 	}
 }
+
+/*
+ * Tab Blocks With Jquery
+ */
+
+.js .tabJS{
+    display: inline-block;
+    margin-right: 5px;
+    margin-top: 3px;
+    background-color: $LIGHTGRAY;
+    border: 1px solid $DARKGRAY;
+    border-bottom:0;
+    padding: 10px;
+    padding-bottom: 3px;
+	a{
+		text-decoration:none;
+		color:$DARKGRAY;
+	}
+	&.active, &:hover{
+		background-color:$DARKGRAY;
+		a{
+			text-decoration:none;
+			color:$WHITE;
+		}
+	}
+}
+
+

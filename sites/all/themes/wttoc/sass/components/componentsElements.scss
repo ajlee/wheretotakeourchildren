@@ -58,7 +58,21 @@ fieldset{
 }
 
 /*
- * Unslider
+ * Social Media Icons
+ */
+.social-links ul{
+	@include clearfix;
+	li{
+		padding-top:20px !important;
+		padding-bottom:20px !important;
+		i.icon{
+		border-radius:5px;
+		}	
+	}
+}
+
+/*
+ * Views: Unslider
  */
 .view-image-slider .views-field-field-image-gallery .field-content { 
 	position: relative;
@@ -116,5 +130,48 @@ fieldset{
 	}
 }
 
-
-
+/* 
+ * Views
+ */
+.view-business-display{
+	.views-field{
+		border-bottom: 1px solid lightgray;
+		padding: 10px 10px;
+		margin: 10px 0;
+		.field-content{
+			h3{
+				display:inline-block;
+			}
+			i.icon{
+				font-size: 23px;
+				padding:5px;
+				margin: 9px;
+				margin-left: 0;
+				border-radius:10px;
+			}
+			.wttocFieldEnclose{
+				margin-top: 10px;
+				margin-bottom: 10px;
+			}
+		}
+	}
+	.view-footer{
+		border-bottom: 1px solid lightgray;
+		padding: 10px 10px;
+		margin: 10px 0;
+		h3{
+			display:inline-block;
+		}
+		i.icon{
+			font-size: 23px;
+			padding:5px;
+			margin: 9px;
+			margin-left: 0;
+			border-radius:10px;
+		}
+		.wttocFieldEnclose{
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+	}
+}
