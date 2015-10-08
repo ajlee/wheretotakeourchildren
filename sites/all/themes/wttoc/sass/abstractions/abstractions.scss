@@ -11,7 +11,17 @@
 @mixin clearboth{
 	clear:both;
 }
-
+/*
+ *
+ */
+@mixin breakWord{
+	word-wrap: break-word;
+	/*word-break:break-all;
+	white-space: -moz-pre-wrap;
+	white-space: -o-pre-wrap; 
+	white-space: pre-wrap;  
+	white-space: pre-line; */ 
+}
 /*
  * One Column 
  */
@@ -20,7 +30,7 @@
 	display:block;
 	@include clearfix;
 	@include clearboth;
-	padding: $columnPercentpadder - 2 * $columnPercentPadder;
+	padding: $columnPercentPadder;
 	width:$percentWidth - 2 * $columnPercentPadder;
 	margin-left: auto;
 	margin-right: auto;
@@ -40,6 +50,20 @@
 	margin-left: $columnPercentSpacer / 2;
 	padding: $columnPercentPadder / 2 ;
 	width: $percentWidth - $columnPercentSpacer / 2 - $columnPercentPadder;
+}
+
+/*
+ * Split Columns for Views
+ */
+@mixin splitVLeft($percentWidth){
+	float: left;
+	margin-right: $columnPercentSpacer;
+	width: $percentWidth - $columnPercentSpacer;
+}
+@mixin splitVRight($percentWidth){
+	float: right;
+	margin-left: $columnPercentSpacer;
+	width: $percentWidth - $columnPercentSpacer;
 }
 
 /*
@@ -64,6 +88,28 @@
 	padding: $columnPercentPadder / 2;
 	width: $percentWidth - $columnPercentSpacer / 4 - $columnPercentPadder;
 }
+
+/*
+ * Chop 3 Columns For Views
+ */
+@mixin chop3VLeft($percentWidth){
+	float:left;
+	margin-right: $columnPercentSpacer;
+	width: $percentWidth - $columnPercentSpacer;	
+}
+@mixin chop3VMiddle($percentWidth){
+	float:left;
+	margin-left: $columnPercentSpacer / 2;
+	margin-right: $columnPercentSpacer / 2;
+	width: $percentWidth - $columnPercentSpacer; 
+}
+@mixin chop3VRight($percentWidth){
+	float:right;
+	margin-left: $columnPercentSpacer;
+	width: $percentWidth - $columnPercentSpacer;
+}
+
+
 /* 
  * Headers Font Style
  */
@@ -127,6 +173,40 @@
 	transition: $argument;
 }
 /*
+ * Fontello Maker & Remover
+ */
+@mixin fontelloBefore{
+	&:before{
+		//default icon
+		content:'\e81f';
+		//fontello
+		font-family: "fontello";
+		font-style: normal;
+		font-weight: normal;
+		speak: none;
+		display: inline-block;
+		text-decoration: inherit;
+		width: 1em;
+		margin-right: .2em;
+		text-align: center;
+		/* opacity: .8; */
+		font-variant: normal;
+		text-transform: none;
+		line-height: 1em;
+		margin-left: .2em;
+		/* font-size: 120%; */
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+		/* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+	}
+}
+@mixin fontelloBeforeClear{
+	&:before{
+		content:none;
+		display:none;
+	}
+}
+/*
  * Quick Box Wizard
  */
 @mixin boxBorderRadiusMarginPadding($border, $radius, $margin, $padding){
@@ -170,6 +250,17 @@
 	-webkit-box-shadow: 6px 6px 13px 1px rgba($BLACK,.75);
 	-moz-box-shadow: 6px 6px 13px 1px rgba($BLACK,.75);
 	box-shadow: 6px 6px 13px 1px rgba($BLACK,.75);
+}
+/*
+ * Box Shadow View Row
+ */
+@mixin boxShadowView{
+	-webkit-box-shadow: 0 0 3px 3px $GRAY;
+	-moz-box-shadow: 0 0 3px 3px $GRAY;
+	box-shadow: 0 0 3px 3px $GRAY;
+	-webkit-box-shadow: 0 0 3px 3px rgba($GRAY,.75);
+	-moz-box-shadow: 0 0 3px 3px rgba($GRAY,.75);
+	box-shadow: 0 0 3px 3px rgba($GRAY,.75);
 }
 
 /*
@@ -237,5 +328,17 @@
 	    color: $WHITE;
 	}
 }
+/*
+ * Zoom Image Transition
+ */
+@mixin zoomImage{
+	-webkit-transform: scale(1.05,1.07);
+	-webkit-transition-timing-function: ease-out;
+	-webkit-transition-duration: 250ms;
+	-moz-transform: scale(1.05,1.07);
+	-moz-transition-timing-function: ease-out;
+	-moz-transition-duration: 250ms;
+}
+
 
 

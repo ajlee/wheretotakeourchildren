@@ -103,7 +103,9 @@
   <div class="l-widetop">
 	    <?php print render($page['widetop']); ?>
   </div>
+
   <div class="l-main">
+   <?php print render($page['sidebar_first']); ?>	
     <?php /*lc-region--inner is an inner div for the content region container and sidebar regions*/ ?>
     <div class="l-content" role="main"><div class="lc-region--inner">
       <?php print render($page['highlighted']); ?>
@@ -124,7 +126,6 @@
       <?php print $feed_icons; ?>
     </div></div>
 
-    <?php print render($page['sidebar_first']); ?>
     <?php print render($page['sidebar_second']); ?>
   </div>
 

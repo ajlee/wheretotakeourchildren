@@ -1,0 +1,123 @@
+/*
+ * Business & Events Displays
+ */
+.view-id-businesses_events.view-display-id-page_1{
+	.view-content{	
+		.views-row{
+			margin-top:5px;
+			margin-bottom:5px;
+			padding-bottom:2px;
+			//Wide Columns
+			@include breakpoint($breakpointWideP1){
+				&:nth-child(3n+1){
+					clear:both;
+					@include chop3VLeft(33.33%);
+				}
+				&:nth-child(3n+2){
+					@include chop3VMiddle(33.33%);
+				}
+				&:nth-child(3n+3){
+					@include chop3VRight(33.33%);
+				}
+			};
+			//Tablet Columns
+			@include breakpoint($mobile2Wide){
+				&:nth-child(2n+1){
+					@include splitVLeft(50%);
+					clear:both;
+				}
+				&:nth-child(2n+2){
+					@include splitVRight(50%);
+				}
+
+			};
+			//Mobile Columns
+			@include breakpoint(0 $breakpointMobile){
+				@include oneColumn(100%);
+			};
+			//Row Styling
+			.views-field{
+				position:relative;
+				padding:7px 0;
+				margin-left:7px;
+				margin-right:7px;
+				border-top:1px solid $LIGHTGRAY;
+				@include fontelloBefore;
+				&:before{
+					background-color: $color1;
+					color:$WHITE;
+					line-height: 20px;
+					height:20px;
+					width: 20px;
+					padding:2px;
+					border-radius: 3px;
+					position:absolute;
+					bottom:0;
+					top:0;
+					left:8px;
+					margin:auto;
+				}
+				.field-content{
+					display:block;
+					padding-left:40px;
+				}
+			}
+			.views-field.views-field-field-image-gallery{
+				@include fontelloBeforeClear;
+				padding:0;
+				margin:0;
+				border:0;
+				.field-content{
+					padding:0;
+				}
+				img{
+					max-width:100%;
+				}
+			}
+			.views-field.views-field-title{
+				@include fontelloBeforeClear;
+				border:0;
+				.field-content{
+					padding-left:4px;
+				}
+				@include colorDescendantsFont($color1);
+				span,a{
+					@include remFontSize($fontL);
+					text-decoration:none;
+				}
+			}
+			//Fontello icons 
+			.views-field-field-date-of-event{
+				&:before{
+					content:'\e81c';
+				}
+			}
+			.views-field-field-address{
+				&:before{
+					content:'\e816';
+				}
+			}
+			.views-field-field-category-event, .views-field-field-category{
+				&:before{
+					content:'\e81e';
+				}
+			}
+			//Row Border
+			outline:1px solid $LIGHTGRAY;
+			@include clearfix;
+			//Row Focus Effect
+			&:hover{
+				@include boxShadowView;
+				.views-field.views-field-field-image-gallery{ 
+					img{
+						@include zoomImage;
+					}
+					outline:1px solid $GRAY;
+					overflow:hidden;
+				}
+			}
+		}
+		//View content
+		@include clearfix;
+	}
+}

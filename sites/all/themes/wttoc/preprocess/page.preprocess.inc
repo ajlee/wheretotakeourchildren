@@ -17,13 +17,12 @@ function wttoc_preprocess_page(&$variables) {
                 '/js/bowerimports/jquery-ui/ui/minified/selectmenu.min.js',
 		'/js/bowerimports/jquery.event.swipe/js/jquery.event.swipe.js',
 		'/js/otherimports/unslider/unslider.min.js',
+		'/js/bowerimports/matchHeight/jquery.matchHeight-min.js',
                 );
         for($i=0; $i<count($loadedJSinTheme); $i++){
                 drupal_add_js(drupal_get_path('theme', 'wttoc') . $loadedJSinTheme[$i],
                         array('type' => 'file', 'scope' => 'footer', 'every_page' => TRUE, 'weight' => (5 + $i))
                 );
-//		drupal_add_js("http://unslider.com/unslider.min.js", array('type' => 'external', 'scope' => 'footer', 'every_page'=> TRUE,
-//		'weight' => 20));
         }
 	//LOAD CSS IN THEME
         $loadedCSSinTheme = array(

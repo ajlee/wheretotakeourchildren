@@ -25,8 +25,14 @@
 			var currentTitleBlock = parentOfBlocks.children(currentBlockSelector).children(blockTitleSelector);
 			//Give the block an ID
 			parentOfBlocks.children(currentBlockSelector).attr('id', 'tabBlock' + ip1);
-			//Create a tab and give it a link to its block
-			firstBlock.before('<div class="tabJS"> <a href="#tabBlock' + ip1 + '" title="Toggle to tab '+ ip1 + '">'+ currentTitleBlock.text() + '</a></div>');
+			//Create a tab and give it a link to its block id along with some classes
+			var classList = parentOfBlocks.children(currentBlockSelector).attr('class').split(/\s+/);
+			classesToPutInTabString = "tabJS";
+			$.each(classList, function(index, item) {
+				var classToAdd = "tabJS_" + item;
+				classesToPutInTabString = classesToPutInTabString + " " + classToAdd;
+			});
+			firstBlock.before('<div class="' + classesToPutInTabString +'"> <a href="#tabBlock' + ip1 + '" title="Toggle to tab '+ ip1 + '">'+ currentTitleBlock.text() + '</a></div>');
 			//Hide block titles
 			parentOfBlocks.children(currentBlockSelector).children(blockTitleSelector).hide();
 		}

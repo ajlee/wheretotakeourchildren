@@ -16,6 +16,7 @@
 .l-main{
 	width:98%;
 	max-width: $defaultWindowSize;
+	@include breakWord;
 }
 .l-footer{
 	margin-bottom:0;
@@ -39,6 +40,7 @@
 }
 .l-header .l-branding{
 	width:100%;
+	margin-top:7px;
 	@include breakpoint($breakpointWideP1){
 		@include splitLeft(33.5%);
 	};
@@ -82,17 +84,23 @@ body.two-sidebars{
 			@include chop3Middle(53%);
 			/* BECAUSE .l-region--sidebar-first SHOULD COME BEFORE .l-content */
 			/* MARGIN-LEFT = WIDTH(.l-region--sidebar-first) + $columnPercentSpacer / 4  */
-			margin-left: 23.5% + $columnPercentSpacer / 4;
+			/* margin-left: 23.5% + $columnPercentSpacer / 4; COMMENTED OUT - REARRANGED */
 		};
 		@include breakpoint($tablet2Wide){
 			@include splitLeft(73%);
 		};
 	}
 	/* Sidebar Behavior Default, and Tablet2Wide. */
-	.l-region--sidebar-first, .l-region--sidebar-second{
+	.l-region--sidebar-first{
 		@include contentsidebarDefault;
 		@include breakpoint($tablet2Wide){
-			@include splitRight(27%);
+			@include splitLeft(27%);
+		};
+	}
+	.l-region--sidebar-second{
+		@include contentsidebarDefault;
+		@include breakpoint($tablet2Wide){
+			/*@include splitRight(100%);*/
 		};
 	}
 	/* Sidebar Behavior Wide. */
@@ -102,7 +110,7 @@ body.two-sidebars{
 			@include chop3Left(23.5%);
 			/* BECAUSE .l-region--sidebar-first SHOULD COME BEFORE .l-content */
 			/* MARGIN-LEFT = -1 * WIDTH(.l-region--sidebar-first + .l-content)  */
-			margin-left: -76.5%;
+			/* margin-left: -76.5%; COMMENTED OUT - REARRANGED*/
 		};
 
 	}
@@ -120,12 +128,12 @@ body.one-sidebar.sidebar-first, body.one-sidebar.sidebar-second{
 	/* Content Area*/
 	.l-content{
 		@include contentsidebarDefault;
-		float:left;
+		float:right;
 		@include breakpoint($breakpointWideP1){
-			@include splitLeft(70%);
+			@include splitRight(70%);
 		};
 		@include breakpoint($tablet2Wide){
-			@include splitLeft(66.66%);
+			@include splitRight(66.66%);
 		};
 	}
 	/* Sidebar Area*/
@@ -133,10 +141,10 @@ body.one-sidebar.sidebar-first, body.one-sidebar.sidebar-second{
 		@include contentsidebarDefault;
 		float:left;
 		@include breakpoint($breakpointWideP1){
-			@include splitRight(30%);
+			@include splitLeft(30%);
 		};
 		@include breakpoint($tablet2Wide){
-			@include splitRight(33.33%);
+			@include splitLeft(33.33%);
 		};
 	}
 }

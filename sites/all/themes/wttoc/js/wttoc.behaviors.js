@@ -130,3 +130,21 @@
   };
 
 })(jQuery, Drupal);
+
+
+/**
+* Select Elements, Using Jquery UI
+*/
+(function ($, Drupal) {
+  Drupal.behaviors.wttocMatchHeight = {
+    attach: function (context) {
+	$(".view-id-businesses_events.view-display-id-page_1 .view-content .views-row").matchHeight({
+	byRow: true,
+	property: 'min-height',
+	target: null,
+	remove: false
+	});
+    }
+  };
+
+})(jQuery, Drupal)
