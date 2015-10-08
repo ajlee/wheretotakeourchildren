@@ -60,14 +60,8 @@ function wttoc_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'addressfield',
-        'settings' => array(
-          'format_handlers' => array(
-            0 => 'address',
-          ),
-          'use_widget_handlers' => 1,
-        ),
-        'type' => 'addressfield_default',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 6,
       ),
       'teaser' => array(
@@ -104,7 +98,7 @@ function wttoc_content_types_field_default_field_instances() {
         ),
       ),
       'type' => 'addressfield_standard',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -118,9 +112,8 @@ function wttoc_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
+        'type' => 'hidden',
         'weight' => 1,
       ),
       'teaser' => array(
@@ -142,7 +135,7 @@ function wttoc_content_types_field_default_field_instances() {
       'module' => 'hs_taxonomy',
       'settings' => array(),
       'type' => 'taxonomy_hs',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -156,9 +149,8 @@ function wttoc_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'hidden',
         'weight' => 4,
       ),
       'teaser' => array(
@@ -196,12 +188,9 @@ function wttoc_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'geofield',
-        'settings' => array(
-          'data' => 'full',
-        ),
-        'type' => 'geofield_wkt',
-        'weight' => 7,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -256,18 +245,8 @@ function wttoc_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => '',
-          'link_image' => 'none',
-          'link_thumbnail' => 'none',
-          'slide_nav_arrows' => 1,
-          'slide_style' => 'square500x500',
-          'thumb_style' => 'rectangle200x80',
-          'thumb_width' => 210,
-        ),
-        'type' => 'image',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'teaser' => array(
@@ -309,7 +288,47 @@ function wttoc_content_types_field_default_field_instances() {
         'upload_event' => 'auto',
       ),
       'type' => 'dragndrop_upload_image',
-      'weight' => 6,
+      'weight' => 7,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'node-business_service_or_attraction-field_more_information'
+  $field_instances['node-business_service_or_attraction-field_more_information'] = array(
+    'bundle' => 'business_service_or_attraction',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 10,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_more_information',
+    'label' => 'More Information',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 4,
     ),
   );
 
@@ -323,28 +342,8 @@ function wttoc_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'office_hours',
-        'settings' => array(
-          'closedformat' => 'Closed',
-          'compress' => FALSE,
-          'current_status' => array(
-            'closed_text' => 'Currently closed',
-            'open_text' => 'Currently open!',
-            'position' => 'hide',
-          ),
-          'date_first_day' => 0,
-          'daysformat' => 'long',
-          'grouped' => FALSE,
-          'hoursformat' => 0,
-          'separator_day_hours' => ': ',
-          'separator_days' => '<br />',
-          'separator_grouped_days' => ' - ',
-          'separator_hours_hours' => '-',
-          'separator_more_hours' => ', ',
-          'showclosed' => 'all',
-          'timezone_field' => '',
-        ),
-        'type' => 'office_hours',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 5,
       ),
       'teaser' => array(
@@ -357,15 +356,16 @@ function wttoc_content_types_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_opening_hours',
     'label' => 'Opening Hours',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 0,
       'module' => 'office_hours',
       'settings' => array(),
       'type' => 'office_hours',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -379,10 +379,9 @@ function wttoc_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 2,
+        'type' => 'hidden',
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -419,13 +418,13 @@ function wttoc_content_types_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'socialfield',
         'settings' => array(
-          'link_text' => FALSE,
+          'link_text' => 1,
         ),
         'type' => 'socialfield_formatter',
-        'weight' => 8,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -484,10 +483,9 @@ function wttoc_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 3,
+        'type' => 'hidden',
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -525,12 +523,8 @@ function wttoc_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'url',
-        'settings' => array(
-          'nofollow' => FALSE,
-          'trim_length' => 80,
-        ),
-        'type' => 'url_default',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 9,
       ),
       'teaser' => array(
@@ -569,15 +563,9 @@ function wttoc_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'addressfield',
-        'settings' => array(
-          'format_handlers' => array(
-            0 => 'address',
-          ),
-          'use_widget_handlers' => 1,
-        ),
-        'type' => 'addressfield_default',
-        'weight' => 4,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -613,7 +601,7 @@ function wttoc_content_types_field_default_field_instances() {
         ),
       ),
       'type' => 'addressfield_standard',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -626,10 +614,9 @@ function wttoc_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 6,
+        'type' => 'hidden',
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -650,7 +637,7 @@ function wttoc_content_types_field_default_field_instances() {
       'module' => 'hs_taxonomy',
       'settings' => array(),
       'type' => 'taxonomy_hs',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -662,17 +649,9 @@ function wttoc_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'date',
-        'settings' => array(
-          'format_type' => 'long',
-          'fromto' => 'both',
-          'multiple_from' => '',
-          'multiple_number' => '',
-          'multiple_to' => '',
-          'show_remaining_days' => FALSE,
-        ),
-        'type' => 'date_default',
-        'weight' => 3,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -716,10 +695,9 @@ function wttoc_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 2,
+        'type' => 'hidden',
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -756,12 +734,9 @@ function wttoc_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'geofield',
-        'settings' => array(
-          'data' => 'full',
-        ),
-        'type' => 'geofield_wkt',
-        'weight' => 5,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -803,7 +778,7 @@ function wttoc_content_types_field_default_field_instances() {
         ),
       ),
       'type' => 'geocoder',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -815,13 +790,9 @@ function wttoc_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => '',
-        ),
-        'type' => 'image',
-        'weight' => 1,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -862,7 +833,7 @@ function wttoc_content_types_field_default_field_instances() {
         'upload_event' => 'auto',
       ),
       'type' => 'dragndrop_upload_image',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -875,12 +846,9 @@ function wttoc_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 11,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 10,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -912,7 +880,46 @@ function wttoc_content_types_field_default_field_instances() {
         ),
       ),
       'type' => 'inline_entity_form',
-      'weight' => 13,
+      'weight' => 12,
+    ),
+  );
+
+  // Exported field_instance: 'node-event-field_more_information'
+  $field_instances['node-event-field_more_information'] = array(
+    'bundle' => 'event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 11,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_more_information',
+    'label' => 'More Information',
+    'required' => 0,
+    'settings' => array(
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 5,
     ),
   );
 
@@ -925,10 +932,9 @@ function wttoc_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 7,
+        'type' => 'hidden',
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -964,13 +970,13 @@ function wttoc_content_types_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'socialfield',
         'settings' => array(
           'link_text' => FALSE,
         ),
         'type' => 'socialfield_formatter',
-        'weight' => 9,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1027,10 +1033,9 @@ function wttoc_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
-        'weight' => 8,
+        'type' => 'hidden',
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1067,13 +1072,9 @@ function wttoc_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'url',
-        'settings' => array(
-          'nofollow' => FALSE,
-          'trim_length' => 80,
-        ),
-        'type' => 'url_default',
-        'weight' => 10,
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1098,7 +1099,7 @@ function wttoc_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'url_external',
-      'weight' => 12,
+      'weight' => 11,
     ),
   );
 
@@ -1114,6 +1115,7 @@ function wttoc_content_types_field_default_field_instances() {
   t('Hidden Address Geofield');
   t('Image Gallery');
   t('Linked Business');
+  t('More Information');
   t('Opening Hours');
   t('Prices Information');
   t('Social Media Pages');

@@ -254,7 +254,7 @@ function wttoc_field_base_field_default_field_bases() {
   // Exported field_base: 'field_opening_hours'
   $field_bases['field_opening_hours'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_opening_hours',
@@ -262,7 +262,7 @@ function wttoc_field_base_field_default_field_bases() {
     'locked' => 0,
     'module' => 'office_hours',
     'settings' => array(
-      'cardinality' => 2,
+      'cardinality' => 1,
       'granularity' => 15,
       'hoursformat' => 0,
       'limitend' => '',
@@ -290,6 +290,31 @@ function wttoc_field_base_field_default_field_bases() {
     'settings' => array(),
     'translatable' => 0,
     'type' => 'text_long',
+  );
+
+  // Exported field_base: 'field_show_on_homepage'
+  $field_bases['field_show_on_homepage'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_show_on_homepage',
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => 'no',
+        1 => 'yes',
+      ),
+      'allowed_values_function' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_boolean',
   );
 
   // Exported field_base: 'field_social_media_pages'
