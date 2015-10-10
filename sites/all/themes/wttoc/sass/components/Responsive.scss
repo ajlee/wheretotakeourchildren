@@ -29,40 +29,53 @@
 .l-header .l-superheader{
 	min-height: $superheaderMinHeight;
 }
-.l-header .l-region--header{
-	width:100%;
-	@include breakpoint($breakpointWideP1){
-		@include splitRight(66.5%);	
-	};
-	@include breakpoint($tablet2Wide){
-		@include splitRight(50%);	
-	};
-}
 .l-header .l-branding{
 	width:100%;
 	margin-top:7px;
 	@include breakpoint($breakpointWideP1){
-		@include splitLeft(33.5%);
+		@include splitLeft(29%);
 	};
 	@include breakpoint($tablet2Wide){
-		@include splitLeft(50%);	
+		@include splitLeft(25%);	
 	};
 	.site-logo{
 		img{
 			height: $logoMobileHeight;
-			padding: 5px 10px;
-			padding-left: $superheaderMinHeight / 3;
+			padding: 3px 10px;
+			padding-left: $superheaderMinHeight / 6;
 			@include breakpoint($breakpointWideP1){
-				height: $logoMobileHeight * $breakpointWide / $breakpointMobile;
+				height: $logoWideHeight;
 			};
 			@include breakpoint($tablet2Wide){
-				height: $logoMobileHeight * $breakpointTablet / $breakpointMobile;
+				height: $logoTablet2WideHeight;
 			};
 		}
 	}
 }
-.l-header .l-region--navigation{
-	@include clearboth;
+.l-header .l-region--header, .l-header .l-region--navigation{
+	width:100%;
+	@include breakpoint($breakpointWideP1){
+		@include splitRight(71%);	
+	};
+	@include breakpoint($tablet2Wide){
+		@include splitRight(75%);	
+	};
+}
+body.noHeaderRegion .l-header .l-region--navigation{
+	@include breakpoint($breakpointWideP1){
+		margin-top: $logoWideHeight * 3 / 5;
+	};
+	@include breakpoint($tablet2Wide){
+		margin-top: $logoTablet2WideHeight * 3 / 5;
+	};
+}
+body.hasHeaderRegion .l-header .l-region--navigation{
+	@include breakpoint($breakpointWideP1){
+		margin-top: $logoWideHeight / 4;
+	};
+	@include breakpoint($tablet2Wide){
+		margin-top: $logoTablet2WideHeight / 5;
+	};
 }
 
 /*
@@ -146,6 +159,15 @@ body.one-sidebar.sidebar-first, body.one-sidebar.sidebar-second{
 		@include breakpoint($tablet2Wide){
 			@include splitLeft(33.33%);
 		};
+	}
+}
+/*Move second sidebar to the right*/
+body.one-sidebar.sidebar-second{
+	.l-content{
+		float:left;
+	}
+	.l-region--sidebar-second{
+		float:right;
 	}
 }
 

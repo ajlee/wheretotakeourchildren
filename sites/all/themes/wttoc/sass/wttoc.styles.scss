@@ -4,11 +4,14 @@
 @import "variables/variables";
 @import "abstractions/abstractions";
 @import "base/base";
-@import "components/off-canvas";
-@import "components/componentsResponsive";
-@import "components/componentsColorings";
-@import "components/componentsElements";
-@import "components/componentsBusinessEventsDisplayView";
+@import "components/Off_Canvas";
+@import "components/Responsive";
+@import "components/General_Colorings";
+@import "components/General_Elements";
+@import "components/Extras_TabBlocks";
+@import "components/Views_All_BusinessesAndEvents";
+@import "components/Views_One_BusinessesAndEvents";
+@import "components/Views_Unslider";
 
 // Import variables, abstractions, base styles and components.
 // Uncomment the next lines and adjust them to your needs.

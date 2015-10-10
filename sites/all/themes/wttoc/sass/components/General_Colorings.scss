@@ -9,6 +9,9 @@
 }
 .l-header, .l-footer{
 }
+.l-header{
+	border-bottom: 1px solid $LIGHTGRAY;
+}
 .l-footer{
 }
 
@@ -27,7 +30,6 @@
 
 }
 .l-header .l-region--navigation{
-	border-bottom: 1px solid $LIGHTGRAY;
 }
 
 /*
@@ -75,54 +77,6 @@ footer.l-footer{
 		border-color: $GRAY;
 		background: $GRAY;
 		color: $WHITE;
-	}
-}
-
-/*
- * Tab Blocks With Jquery
- */
-
-.js .tabJS{
-	display: inline-block;
-	margin-right: 5px;
-	margin-top: 3px;
-	background-color: $LIGHTGRAY;
-	border: 1px solid $DARKGRAY;
-	border-bottom:0;
-	padding: 10px;
-	padding-bottom: 3px;
-	a{
-		text-decoration:none;
-		color:$DARKGRAY;
-	}
-	&.active, &:hover{
-		background-color:$DARKGRAY;
-		a{
-			text-decoration:none;
-			color:$WHITE;
-		}
-		&:before{
-			//fontello icon color
-			color:$WHITE;
-		}
-	}
-	&.tabJS_block--views-events-display-block, &.tabJS_block--views-business-display-block{
-		&:before{
-			//fontello icon
-			content:'\e820';	
-		}
-	}
-	&.tabJS_block--views-events-display-block-3, &.tabJS_block--views-business-display-block-3{
-		&:before{
-			//fontello icon
-			content:'\e821';
-		}
-	}
-	&.tabJS_block--views-events-display-block-1, &.tabJS_block--views-business-display-block-1{
-		&:before{
-			//fontello icon
-			content:'\e822';
-		}
 	}
 }
 

@@ -23,6 +23,7 @@
     "compass-breakpoint": "breakpoint-sass#~2.6.1",
     "jquery-ui": "1.11.4",
     "jquery.event.swipe": "~0.5.4",
-    "matchHeight": "matchheight#~0.6.0"
+    "matchHeight": "matchheight#~0.6.0",
+    "Readmore.js": "readmore#~2.0.5"
   }
 }

@@ -340,5 +340,36 @@
 	-moz-transition-duration: 250ms;
 }
 
+/*
+ * Tab JS Active Vs Inactive (Background, and Color)
+ */
+ @mixin tabJScolorings($normalBackground, $normalText, $activeBackground, $activeText, $borderNormal, $borderActive){
+ 		//Normal tab
+		border: $borderNormal;
+		border-bottom:0;
+		background-color: $normalBackground;
+		color: $normalText;
+		a{		
+			@include remFontSize($fontS);
+			color:$normalText;
+		}
+		//Active tabs
+		&.active, &:hover{
+			border: $borderActive;
+			border-bottom:0;
+			background-color:$activeBackground;
+			color:$activeText;
+			a{
+				color:$activeText;
+			}
+		}
+}	
 
-
+@mixin borderRadiusIconbgIcon($borderColor, $borderRadius, $iconBackgroundColor, $iconColor){
+		border: $borderColor;
+		border-radius: $borderRadius;
+		.view i.icon{
+			background-color: $iconBackgroundColor;
+			color: $iconColor;
+		}
+}  

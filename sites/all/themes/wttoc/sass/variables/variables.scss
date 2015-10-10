@@ -7,6 +7,7 @@ $columnPercentPadder:1%;
 $logoMobileHeight:33px;
 $pathToTheme:"/sites/all/themes/wttoc";
 $superheaderMinHeight:50px;
+
 /*
  * Breakpoints
  */
@@ -59,8 +60,10 @@ $fontXXXS:1.1;
  */
 $BLACK:#000;
 $DARKGRAY:#333;
+$LIGHTERDARKGRAY: #565656;
 $GRAY:#888;
-$LIGHTGRAY:#f3efef;
+$DARKERLIGHTGRAY: #a2a2a2;
+$LIGHTGRAY:#e8eaea;
 $WHITE:#fff;
 
 
@@ -68,9 +71,16 @@ $WHITE:#fff;
  * Theme Palette
  * Light and Blue Colors Work Better If They're Desaturated As Well
  */
-$color1:#00CBE9;/*Light Blue*/
-$color1Light:#C3DAE3;
+//$color1:#00CBE9;/*Light Blue*/
+//$color1Light:#C3DAE3;
+//$color1Dark:#015063;
+//$color1:#035163;/* Blue*/
+//$color1Light:#407D8B;
+//$color1Dark:#002A34;
+$color1:#5573b4;/* Blue*/
+$color1Light:#7696cf;
 $color1Dark:#015063;
+
 $color2:#FD8A33;/*Orange*/
 $color2Light:#FFB882;
 $color2Dark:#B04D00;
@@ -90,4 +100,9 @@ $colorAltDark: darken($colorAlt, 3.5%);
  * $colorAlt:#5a5;
  */
 
+/*
+ *  Extra Derived Variables
+ */
+$logoWideHeight: 0.85 * $logoMobileHeight * $breakpointWide / $breakpointMobile;
+$logoTablet2WideHeight: 0.85 * $logoMobileHeight * $breakpointTablet / $breakpointMobile;
 

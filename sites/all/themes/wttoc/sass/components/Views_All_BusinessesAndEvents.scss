@@ -1,6 +1,7 @@
 /*
  * Business & Events Displays
  */
+ //All results
 .view-id-businesses_events.view-display-id-page_1{
 	.view-content{	
 		.views-row{
@@ -41,7 +42,7 @@
 				padding:7px 0;
 				margin-left:7px;
 				margin-right:7px;
-				border-top:1px solid $LIGHTGRAY;
+				border-top:1px solid $DARKERLIGHTGRAY;
 				@include fontelloBefore;
 				&:before{
 					background-color: $color1;
@@ -103,7 +104,7 @@
 				}
 			}
 			//Row Border
-			outline:1px solid $LIGHTGRAY;
+			outline:1px solid $DARKERLIGHTGRAY;
 			@include clearfix;
 			//Row Focus Effect
 			&:hover{
@@ -120,4 +121,18 @@
 		//View content
 		@include clearfix;
 	}
+}
+
+/* 
+ * We have two submission forms on the Businesses & Events Results Page
+ */
+ 
+//One of the forms is hidden, such that it can still serve as a filter for its results
+//The second one is shown, such that it can trigger the first one. See theme's js/wttoc.syncinputs.js
+.views-exposed-form-businesses-events-page-1{
+	display:none;
+}
+//Hide one of the pagers since it's being controlled by another pager. See theme's js/wttoc.syncinputs.js
+.view-id-businesses_events.view-display-id-block_2 ul.pager{
+	display:none;
 }

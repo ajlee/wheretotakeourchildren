@@ -15,9 +15,11 @@ stylesheets[all][] = css/wttoc.styles.css
 ; Scripts
 ; ========================================
 scripts[] = js/wttoc.behaviors.js
+scripts[] = js/wttoc.readmore.js
 scripts[] = js/wttoc.tabblocks.js
 scripts[] = js/wttoc.noflash.js
-
+scripts[] = js/wttoc.syncinputs.js
+scripts[] = js/wttoc.matchheight.js
 ; ========================================
 ; Regions
 ; ========================================

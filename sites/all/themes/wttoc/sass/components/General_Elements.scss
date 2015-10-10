@@ -1,0 +1,74 @@
+/*
+ * Headings
+ */
+h1, h2, h3, h4, h5, h6{
+	@include headerFontStyle;
+}
+h1 {
+	@include remFontSize($fontXXL);
+}
+h2 {
+	@include remFontSize($fontXL);
+}
+h3 {
+	@include remFontSize($fontL);
+}
+h4,h5,h6{
+	@include remFontSize($fontM);
+}
+
+/*
+ * Default Buttons Mixin
+ */
+body{
+	@include buttonColor1;
+}
+
+/*
+ * Lists
+ */
+ul{
+	list-style: none;
+}
+
+/*
+ * BREADCRUMB
+ */
+.breadcrumb li {
+  padding-right: 0.4em;
+}
+.breadcrumb li:after {
+  content: "»";
+  padding-left: 0.4em;
+  vertical-align: baseline;
+}
+.breadcrumb li:last-child:after {
+  content: "";
+}
+.breadcrumb a {
+  text-decoration: none;
+}
+
+/*
+ * Fieldsets
+ */
+
+fieldset{
+	@include clearboth;
+}
+
+/*
+ * Social Media Icons
+ */
+.social-links ul{
+	@include clearfix;
+	li{
+		padding-top:20px !important;
+		padding-bottom:20px !important;
+		i.icon{
+		border-radius:5px;
+		}	
+	}
+}
+
+

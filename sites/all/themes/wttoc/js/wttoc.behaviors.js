@@ -120,31 +120,16 @@
     attach: function (context) {
 	$('.view-image-slider .views-field-field-image-gallery .field-content').unslider({
 		speed: 500,
-		delay: 300000,
-		complete: function() {}, 
+		delay: 3000,
+		complete: function(){
+		},
 		keys: true,
 		dots: true,
 		fluid: true
 		});
+	//images haven't been loaded yet. so the height will be set to zero by the slider. undo this
+	$('.view-image-slider .views-field-field-image-gallery .field-content').height('auto');
     }
   };
 
 })(jQuery, Drupal);
-
-
-/**
-* Select Elements, Using Jquery UI
-*/
-(function ($, Drupal) {
-  Drupal.behaviors.wttocMatchHeight = {
-    attach: function (context) {
-	$(".view-id-businesses_events.view-display-id-page_1 .view-content .views-row").matchHeight({
-	byRow: true,
-	property: 'min-height',
-	target: null,
-	remove: false
-	});
-    }
-  };
-
-})(jQuery, Drupal)

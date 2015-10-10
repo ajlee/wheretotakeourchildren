@@ -1,0 +1,107 @@
+/* 
+ * Content Type Displays
+ */
+.view-id-business_display, .view-id-events_display{
+	.views-row{
+		@include clearfix;
+	}
+	.views-field{
+		border-bottom: 1px solid lightgray;
+		padding: 10px 10px;
+		margin: 10px 0;
+		.field-content{
+			h3{
+				display:inline-block;
+			}
+			i.icon{
+				display:inline-block;
+				font-size: 25px;
+				padding:8px 5px;
+				margin: 9px;
+				margin-left: 0;
+				border-radius:10px;
+			}
+			.wttocFieldEnclose{
+				margin-top: 10px;
+				margin-bottom: 10px;
+			}
+		}
+		&.views-field-field-address, &.views-field-field-date-of-event, &.views-field-field-website{
+			@include breakpoint($breakpointWideP1){
+				@include chop3Left(33%);
+				border-bottom:0;
+			};
+			@include breakpoint($mobile2Wide){
+				@include splitLeft(50%);
+				border-bottom:0;
+			};
+			@include breakpoint(0 $breakpointMobile){
+				
+			};	
+		}
+		&.views-field-field-website{
+			@include breakpoint($mobile2Wide){
+				clear:both;
+			};
+		}	
+	}
+}
+/*
+ * Icon Colorings 
+ */
+ .js, .no-js{
+	//General Block
+	.block--views-events-display-block, .block.block--views-business-display-block{
+			@include borderRadiusIconbgIcon($color1Light 2px solid, 3px, $color1, $WHITE);
+			.block__title{
+				background-color: $color1;
+				@include colorDescendantsFont($WHITE);
+			}
+	}
+	//Details Block
+	.block--views-events-display-block-3, .block.block--views-business-display-block-3{
+			@include borderRadiusIconbgIcon($color2Light 2px solid, 3px, $color2, $WHITE);
+			.block__title{
+				background-color: $color2;
+				@include colorDescendantsFont($WHITE);
+			}
+	}
+	//More Info Block
+	.block--views-events-display-block-1, .block.block--views-business-display-block-1{
+			@include borderRadiusIconbgIcon($color3Light 2px solid, 3px, $color3, $WHITE);
+			.block__title{
+				background-color: $color3;
+				@include colorDescendantsFont($WHITE);
+			}
+	}
+	
+}
+/*
+ * Tab JS Blocks Tabs
+ */
+.js .tabJS{
+ //General Tab
+	&.tabJS_block--views-events-display-block, &.tabJS_block--views-business-display-block{
+		&:before{
+			//fontello icon
+			content:'\e820';	
+		}
+		@include tabJScolorings($color1Light, $LIGHTERDARKGRAY, $color1, $WHITE, 2px solid transparent, 2px solid $color1Light);
+	}
+	//Details Tab
+	&.tabJS_block--views-events-display-block-3, &.tabJS_block--views-business-display-block-3{
+		&:before{
+			//fontello icon
+			content:'\e821';	
+		}
+		@include tabJScolorings($color2Light, $LIGHTERDARKGRAY, $color2, $WHITE, 2px solid transparent, 2px solid $color2Light);
+	}
+	//More Info Tab
+	&.tabJS_block--views-events-display-block-1, &.tabJS_block--views-business-display-block-1{
+		&:before{
+			//fontello icon
+			content:'\e822';	
+		}
+		@include tabJScolorings($color3Light, $LIGHTERDARKGRAY, $color3, $WHITE, 2px solid transparent, 2px solid $color3Light);
+	}
+}

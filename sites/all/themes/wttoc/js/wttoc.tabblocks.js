@@ -36,15 +36,17 @@
 			//Hide block titles
 			parentOfBlocks.children(currentBlockSelector).children(blockTitleSelector).hide();
 		}
-		//Only Show First Tab Content Initially
-		$(containerSelector + " " + blockSelector).not(containerSelector + " " + blockSelector + ':eq(0)').css("display", "none");
+		//Only Show First Tab Content Initially 
+		//Hide/Show Using Height:0 and visibility hidden
+		//Such that other jquery plugins can still calculate heights inside hidden Tabs e.g. using .outerHeight()
+		$(containerSelector + " " + blockSelector).not(containerSelector + " " + blockSelector + ':eq(0)').css("visibility","hidden").css("height","0");
 		$('.tabJS:eq(0) a').parent('.tabJS').addClass('active');
 		//Hide/Show Tabs Accordingly On Click + Add/Remove active class
 		$('.tabJS a').click(function (event) {
 			event.preventDefault();
 			var tabJSclickedLink = $(this).attr("href");
-			$(containerSelector + " " + blockSelector).not(tabJSclickedLink).css("display", "none");
-			$(tabJSclickedLink).fadeIn();
+			$(containerSelector + " " + blockSelector).not(tabJSclickedLink).css("visibility","hidden").css("height","0");
+			$(tabJSclickedLink).css("visibility","visible").css("height","");
 			$(this).parent('.tabJS').siblings('.tabJS').removeClass('active');
 			$(this).parent('.tabJS').addClass('active');
 		});

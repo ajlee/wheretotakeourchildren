@@ -18,6 +18,7 @@ function wttoc_preprocess_page(&$variables) {
 		'/js/bowerimports/jquery.event.swipe/js/jquery.event.swipe.js',
 		'/js/otherimports/unslider/unslider.min.js',
 		'/js/bowerimports/matchHeight/jquery.matchHeight-min.js',
+		'/js/bowerimports/Readmore.js/readmore.min.js',
                 );
         for($i=0; $i<count($loadedJSinTheme); $i++){
                 drupal_add_js(drupal_get_path('theme', 'wttoc') . $loadedJSinTheme[$i],

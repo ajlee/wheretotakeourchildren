@@ -1,0 +1,44 @@
+/*
+ * TabBlocks: Tabs Display Fontello Icon
+ */
+.js .tabJS{
+	@include fontelloBefore;
+}
+
+/*
+ * Tab Blocks With Jquery
+ */
+
+.js .tabJS{
+	display: inline-block;
+	margin-right: 5px;
+	margin-top: 3px;
+	border: 1px solid $DARKGRAY;
+	border-bottom:0;
+	padding: 8px;
+	padding-top:12px;
+	padding-bottom: 4px;
+	vertical-align:bottom;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	&:before{
+		@include cssTransition(all 0.35s ease-in-out);
+	}
+	//normal tabs
+	background-color: $LIGHTGRAY;
+	color: $DARKGRAY;
+	a{
+		text-decoration:none;
+		color:$DARKGRAY;
+	}
+	//active tabs
+	&.active, &:hover{
+		background-color:$DARKGRAY;
+		padding-bottom:12px;
+		color:$WHITE;
+		a{
+			text-decoration:none;
+			color:$WHITE;
+		}
+	}
+}

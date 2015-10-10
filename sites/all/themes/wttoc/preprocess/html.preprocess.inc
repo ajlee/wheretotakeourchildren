@@ -23,4 +23,11 @@ function wttoc_preprocess_html(&$variables) {
   else {
     $variables['attributes_array']['class'][] = 'no-sidebars';
   }
+  //Add Information about header
+  if(!empty($variables['page']['header'])){
+    $variables['attributes_array']['class'][] = 'hasHeaderRegion';
+  }
+  else{
+    $variables['attributes_array']['class'][] = 'noHeaderRegion';
+  }
 }

@@ -1,4 +1,5 @@
-document.write('<style type="text/css">.mcc--inner{visibility:hidden}</style>');
+document.write('<style type="text/css">.l-main{visibility:hidden}.view-image-slider{visibility:hidden}</style>');
 jQuery(function($) {
-	$('.mcc--inner').css('visibility','visible');
+	$('.l-main').css('visibility','visible');
+	$('.view-image-slider').css('visibility','visible');
 });
