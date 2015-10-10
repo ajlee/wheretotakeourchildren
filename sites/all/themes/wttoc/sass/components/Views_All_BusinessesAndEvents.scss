@@ -133,6 +133,7 @@
 	display:none;
 }
 //Hide one of the pagers since it's being controlled by another pager. See theme's js/wttoc.syncinputs.js
-.view-id-businesses_events.view-display-id-block_2 ul.pager{
+//.view-id-businesses_events.view-display-id-block_2 ul.pager can still be seen
+.view-id-businesses_events.view-display-id-page_1 ul.pager{
 	display:none;
 }

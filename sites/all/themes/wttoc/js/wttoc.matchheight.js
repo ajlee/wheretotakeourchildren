@@ -18,7 +18,6 @@
 			$.each(timeoutMatchHeightArray, function(index, value){
 				var timeoutID = window.setTimeout(function(){
 					$.fn.matchHeight._update();
-					console.log("timeoutpassed");
 				}, value);
 			});
 		}

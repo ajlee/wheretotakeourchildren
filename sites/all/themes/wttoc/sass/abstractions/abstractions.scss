@@ -357,6 +357,12 @@
 		&.active, &:hover{
 			border: $borderActive;
 			border-bottom:0;
+		}
+		//hover tabs - making this a bit different from active helps on mobile
+		&:hover{
+		}
+		//active tabs
+		&.active{
 			background-color:$activeBackground;
 			color:$activeText;
 			a{

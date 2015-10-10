@@ -13,11 +13,11 @@
                 $("#views-exposed-form-businesses-events-page-1 input#edit-submit-businesses-events").click();
         });
 	//Main Page Pager To Search Block Submit
-	$(".view-id-businesses_events.view-display-id-page_1 .pager-next a").click(function(){
-		$("#block-views-businesses-events-block-2 .pager-next a").click();
+	$("#block-views-businesses-events-block-2 .pager-next a").click(function(){
+		$(".view-id-businesses_events.view-display-id-page_1 .pager-next a").click();
 	});
-        $(".view-id-businesses_events.view-display-id-page_1 .pager-previous a").click(function(){
-                $("#block-views-businesses-events-block-2 .pager-previous a").click();
+        $("#block-views-businesses-events-block-2 .pager-previous a").click(function(){
+                $(".view-id-businesses_events.view-display-id-page_1 .pager-previous a").click();
         });
     }
   };

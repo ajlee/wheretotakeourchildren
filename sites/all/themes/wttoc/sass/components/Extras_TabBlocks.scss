@@ -31,13 +31,22 @@
 		text-decoration:none;
 		color:$DARKGRAY;
 	}
-	//active tabs
+	//active and hover tabs
 	&.active, &:hover{
-		background-color:$DARKGRAY;
 		padding-bottom:12px;
 		color:$WHITE;
 		a{
 			text-decoration:none;
+		}
+	}
+	//hover tabs - making this a bit different from active helps on mobile
+	&:hover{
+	}
+	//active tabs
+	&.active{
+		background-color:$DARKGRAY;
+		color:$WHITE;
+		a{
 			color:$WHITE;
 		}
 	}
