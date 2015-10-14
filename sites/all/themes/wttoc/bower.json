@@ -24,6 +24,7 @@
     "jquery-ui": "1.11.4",
     "jquery.event.swipe": "~0.5.4",
     "matchHeight": "matchheight#~0.6.0",
-    "Readmore.js": "readmore#~2.0.5"
+    "Readmore.js": "readmore#~2.0.5",
+    "sumoselect": "~2.0.2"
   }
 }

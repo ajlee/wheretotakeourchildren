@@ -2,7 +2,7 @@
  * Business & Events Displays
  */
  //All results
-.view-id-businesses_events.view-display-id-page_1{
+.view-id-businesses_and_events.view-display-id-page_results{
 	.view-content{	
 		.views-row{
 			margin-top:5px;
@@ -130,10 +130,10 @@
 //One of the forms is hidden, such that it can still serve as a filter for its results
 //The second one is shown, such that it can trigger the first one. See theme's js/wttoc.syncinputs.js
 .views-exposed-form-businesses-events-page-1{
-	display:none;
+	//display:none;
 }
 //Hide one of the pagers since it's being controlled by another pager. See theme's js/wttoc.syncinputs.js
 //.view-id-businesses_events.view-display-id-block_2 ul.pager can still be seen
 .view-id-businesses_events.view-display-id-page_1 ul.pager{
-	display:none;
+	//display:none;
 }

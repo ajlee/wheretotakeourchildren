@@ -15,16 +15,29 @@ function wttoc_preprocess_page(&$variables) {
                 '/js/bowerimports/jquery-ui/ui/minified/position.min.js',
                 '/js/bowerimports/jquery-ui/ui/minified/menu.min.js',
                 '/js/bowerimports/jquery-ui/ui/minified/selectmenu.min.js',
+		//jquery ui might not be neededin the end
 		'/js/bowerimports/jquery.event.swipe/js/jquery.event.swipe.js',
 		'/js/otherimports/unslider/unslider.min.js',
 		'/js/bowerimports/matchHeight/jquery.matchHeight-min.js',
 		'/js/bowerimports/Readmore.js/readmore.min.js',
+		'/js/bowerimports/sumoselect/jquery.sumoselect.min.js',
                 );
         for($i=0; $i<count($loadedJSinTheme); $i++){
                 drupal_add_js(drupal_get_path('theme', 'wttoc') . $loadedJSinTheme[$i],
                         array('type' => 'file', 'scope' => 'footer', 'every_page' => TRUE, 'weight' => (5 + $i))
                 );
+		$lastweight=5+$i;
         }
+	//LOAD EXTERNAL JAVASCRIPT
+	$loadedJSexternal = array(
+		'https://maps.googleapis.com/maps/api/js',
+		);
+        for($i=0; $i<count($loadedJSexternal); $i++){
+                drupal_add_js($loadedJSexternal[$i],
+                        array('type' => 'external', 'scope' => 'footer', 'every_page' => TRUE, 'weight' => ($lastweight + $i))
+                );
+        }
+
 	//LOAD CSS IN THEME
         $loadedCSSinTheme = array(
                 '/sass/bowerimports/jquery-ui/themes/excite-bike/jquery-ui.min.css',

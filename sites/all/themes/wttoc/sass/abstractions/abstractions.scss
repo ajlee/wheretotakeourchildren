@@ -267,9 +267,10 @@
  * Buttons Mixins
  */
 @mixin buttonBackgroundTextHoverBorder($backgroundColor, $textColor, $hoverTextColor, $borderColor){
-	input[type=submit]{
+	input[type=submit], div.fakeButton{
 		@include boxBorderRadiusMarginPadding(1px solid $borderColor, 0, 8px 2px, 10px 20px);
 		@include cssTransition(all 0.35s ease-in-out);
+		@include remFontSize($fontS);
 		background-color: $backgroundColor;
 		color:$textColor;
 		cursor:pointer;
@@ -277,6 +278,9 @@
 		&:hover {
 			color: $hoverTextColor;
 		}
+	}
+	div.fakeButton{
+		text-align:center;
 	}
 }
 @mixin buttonColor1{@include buttonBackgroundTextHoverBorder($color1, $WHITE, $DARKGRAY, #{darken($color1, 5%)} );}
