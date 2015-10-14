@@ -1,0 +1,20 @@
+Search API Location 2.x, dev (xx/xx/xxxx):
+------------------------------------------
+- #2061639 by das-peter, randallknutson, drunken monkey: Added Views argument
+  handler for filtering by a bounding box.
+- #2366857 by das-peter: Fixed unchecked assumptions in
+  search_api_location_views_views_data_alter().
+
+Search API Location 2.0, Beta 2 (2014-09-08):
+---------------------------------------------
+- #2298075 by drunken monkey, ufku: Fixed distance filter issues.
+- #2304149 by ufku: Fixed failure in point format detection.
+- #1812528 by das-peter, drunken monkey, ufku: Added proximity/distance
+  information to search results.
+- #2171459 by drunken monkey: Fixed fatal error when plugin is unknown.
+- #2221411 by drunken monkey: Fixed typo in module description.
+- #2147557 by drunken monkey: Improved error handling.
+
+Search API Location 2.0, Beta 1 (2013-07-26):
+---------------------------------------------
+Basic module functionality and Views integration is working.

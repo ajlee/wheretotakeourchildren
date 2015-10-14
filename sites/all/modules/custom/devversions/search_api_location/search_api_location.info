@@ -1,0 +1,14 @@
+name = Search API location
+description = adds location based search to the Search API module
+package = Search
+core = 7.x
+
+dependencies[] = search_api
+dependencies[] = ctools
+
+; Information added by Drupal.org packaging script on 2015-08-31
+version = "7.x-2.0-beta2+4-dev"
+core = "7.x"
+project = "search_api_location"
+datestamp = "1441016640"
+
