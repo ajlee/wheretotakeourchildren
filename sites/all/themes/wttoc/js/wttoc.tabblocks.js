@@ -5,6 +5,7 @@
 (function ($, Drupal) {
   Drupal.behaviors.wttocTabBlock = {
     attach: function (context) {
+	if( $('body.node-type-business-service-or-attraction').length || $('body.node-type-event').length){
 		//Container Selector: The block container, to contain block selectors. 
 		//Block Selector: These blocks will have their title converted  
 		//Block Title Selector: Each block title will have its text converted into a tab link
@@ -50,6 +51,7 @@
 			$(this).parent('.tabJS').siblings('.tabJS').removeClass('active');
 			$(this).parent('.tabJS').addClass('active');
 		});
+	}
     }
   };
 

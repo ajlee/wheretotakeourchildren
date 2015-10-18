@@ -155,6 +155,17 @@
 	height:1px;
 	width:1px;
 }
+//be careful with this
+@mixin accesibleUnhide{
+	position: initial;
+	text-indent: initial;
+	left: initial;
+	overflow: initial;
+	text-align: initial;
+	text-transform: initial;
+	height:initial;
+	width:initial;
+}
 
 /*
  * Background Color To Opacity Function
@@ -171,6 +182,12 @@
 	-o-transition: $argument;
 	-webkit-transition: $argument;
 	transition: $argument;
+}
+@mixin noCssTransition{
+	-moz-transition: none;
+    -webkit-transition: none;
+    -o-transition: color 0 ease-in;
+    transition: none;
 }
 /*
  * Fontello Maker & Remover
@@ -383,3 +400,65 @@
 			color: $iconColor;
 		}
 }  
+
+@mixin centerXYAbsoluteNoIE8{
+	//IE8 and below not supported
+	position: absolute;
+    left: 50%;
+    top: 50%;
+	-webkit-transform: translate(-50%,-50%); 
+	-ms-transform: translate(-50%,-50%); 
+	transform: translate(-50%,-50%); 
+}
+@mixin centerYAbsoluteNoIE8{
+	//IE8 and below not supported
+	position: absolute;
+    top: 50%;
+	-webkit-transform: translate(0,-50%); 
+	-ms-transform: translate(0,-50%); 
+	transform: translate(0,-50%); 
+}
+@mixin centerXAbsoluteNoIE8{
+	//IE8 and below not supported
+	position: absolute;
+    left: 50%;
+	-webkit-transform: translate(-50%,0); 
+	-ms-transform: translate(-50%,0); 
+	transform: translate(-50%,0); 
+}
+
+@mixin views3Wide1MobileDefault{
+	.views-row{
+		margin-top:5px;
+		margin-bottom:5px;
+		padding-bottom:2px;
+		position:relative;
+		//Wide Columns
+		@include breakpoint($breakpointWideP1){
+			&:nth-child(3n+1){
+				clear:both;
+				@include chop3VLeft(33.33%);
+			}
+			&:nth-child(3n+2){
+				@include chop3VMiddle(33.33%);
+			}
+			&:nth-child(3n+3){
+				@include chop3VRight(33.33%);
+			}
+		};
+		//Tablet Columns
+		@include breakpoint($mobile2Wide){
+			&:nth-child(2n+1){
+				@include splitVLeft(50%);
+				clear:both;
+			}
+			&:nth-child(2n+2){
+				@include splitVRight(50%);
+			}
+		};
+		//Mobile Columns
+		@include breakpoint(0 $breakpointMobile){
+			@include oneColumn(100%);
+		};
+	}
+}

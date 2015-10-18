@@ -26,7 +26,13 @@ body{
 	//Do not use REM here
 	font-size:16px;
 }
-
+/*
+ * Max Width Responsive  
+ */
+body{
+    max-width: 100%;
+    overflow-x: hidden;
+}
 /*
  * Admin Menu Margin
  */

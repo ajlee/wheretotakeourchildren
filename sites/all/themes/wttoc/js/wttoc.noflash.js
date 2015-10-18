@@ -1,5 +1,12 @@
-document.write('<style type="text/css">.l-main{visibility:hidden}.view-image-slider{visibility:hidden}</style>');
-jQuery(function($) {
-	$('.l-main').css('visibility','visible');
-	$('.view-image-slider').css('visibility','visible');
-});
+document.write('<style type="text/css">.l-widetop,.l-main > div, .l-main > aside{visibility:hidden;}.l-widetop{display:none;}</style>');
+document.write('<style type="text/css">.l-main{background:url("/sites/all/themes/wttoc/images/loadingNoFlash.gif");background-repeat: no-repeat;background-position: center 20px;background-size: 100px;opacity: .2;}</style>');
+(function ($, Drupal) {
+  Drupal.behaviors.wttocNoFlashJS = {
+    attach: function (context) {
+		$('.l-main').css('background','none').css('opacity','1');
+		$('.l-widetop').css('display','block').css('visibility','visible');
+		$('.l-main > aside').css('visibility','visible');
+		$('.l-main > div').css('visibility','visible');
+    }//end of drupal attach
+  };//end of drupal behavior
+})(jQuery, Drupal);
