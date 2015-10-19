@@ -1,0 +1,5 @@
+name = Search View Modify
+description = Alters search view results page. Does things such as forcing the results page to load the leaflet library.
+core = 7.x
+package = Custom
+dependencies[] = views

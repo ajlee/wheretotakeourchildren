@@ -1,0 +1,11 @@
+<?php
+//echo "test";
+function searchviewmodify_page_alter(&$page){
+	if("search/businesses-and-events" == current_path()){
+		libraries_load('leaflet');
+		drupal_add_library('leaflet_markercluster', 'leaflet_markercluster');
+		// Increase weight so we're included after 'leaflet.drupal.js'
+		$options = array('type' => 'file', 'weight' => 1);
+		drupal_add_js(drupal_get_path('module', 'leaflet_markercluster') . '/leaflet_markercluster.drupal.js', $options);
+	}
+}
