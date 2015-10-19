@@ -21,6 +21,7 @@ function wttoc_preprocess_page(&$variables) {
 		'/js/bowerimports/matchHeight/jquery.matchHeight-min.js',
 		'/js/bowerimports/Readmore.js/readmore.min.js',
 		'/js/bowerimports/sumoselect/jquery.sumoselect.min.js',
+		'/js/bowerimports/jquery-placeholder/jquery.placeholder.min.js',
                 );
         for($i=0; $i<count($loadedJSinTheme); $i++){
                 drupal_add_js(drupal_get_path('theme', 'wttoc') . $loadedJSinTheme[$i],

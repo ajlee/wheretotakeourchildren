@@ -167,12 +167,11 @@
 						}
 						//Fix bug with select elements in exposed filters
 						options.url = "/views/ajax";
-						//console.log(form_values, element, options);
 					};
 				}
 				//DONE ABOVE - watch during testing
 				//DONE fix bug from ajax behavior: won't work when the url has arguments
-			//delete window.location.search;
+				//works with custom patch to views/ajax/ajax_view.js
 			}
 		}//end of attach
 	};//end of behavior
