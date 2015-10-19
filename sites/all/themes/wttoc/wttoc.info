@@ -16,7 +16,7 @@ stylesheets[all][] = css/wttoc.styles.css
 ; ========================================
 ; Library Scripts needed for these are provided at:
 ; preprocess/page.preprocess.inc
-;scripts[] = js/wttoc.selectui.js
+scripts[] = js/wttoc.selectui.js
 scripts[] = js/wttoc.behaviors.js
 scripts[] = js/wttoc.readmore.js
 scripts[] = js/wttoc.tabblocks.js

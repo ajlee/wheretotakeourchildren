@@ -1433,6 +1433,13 @@ body.front .l-region--widetop .views-exposed-form-businesses-and-events-page-res
  * Only one of each filter/pager should be visible
  * More at theme's js/wttoc.allBizEvents.js
  */
+body.page-search-businesses-and-events #block-views-d400f6dac6873ec2ddd895ba96987fce, body.page-search-businesses-and-events form#views-exposed-form-businesses-and-events-page-results {
+  display: none; }
+
+.view-id-businesses_and_events .views-widget-filter-field_hidden_address_geofield_latlon_1,
+form#views-exposed-form-businesses-and-events-page-results .views-widget-filter-field_hidden_address_geofield_latlon_1 {
+  display: none; }
+
 /* 
  * Content Type Displays
  */

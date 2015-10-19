@@ -142,8 +142,8 @@
 			}
 		}//end of attach
 	};//end of behavior
-	// 1)Prevents addresses from being sent throguh Ajax to Drupals geocoder
-	// 2) Fix a bug from views, that prevents entity reference fields from being sent if the URL defines them
+	// 1)Prevents addresses from being sent through Ajax to Drupals geocoder
+	// 2) Fix a bug from views, that prevents select fields from being sent if the URL defines them
 	Drupal.behaviors.wttocBesrBeforeSubmit = {
 		attach: function (context) {
 			if($('form#views-exposed-form-businesses-and-events-page-results').length){
@@ -167,12 +167,12 @@
 						}
 						//Fix bug with select elements in exposed filters
 						options.url = "/views/ajax";
-						console.log(form_values,element,options);
+						//console.log(form_values, element, options);
 					};
 				}
 				//DONE ABOVE - watch during testing
-				//DONE todo overwrite all select values in prototype.beforeSubmit to take values from the form
-				//otherwise ajax behavior won't work when the url has arguments
+				//DONE fix bug from ajax behavior: won't work when the url has arguments
+			//delete window.location.search;
 			}
 		}//end of attach
 	};//end of behavior
