@@ -46,8 +46,7 @@ Drupal.views.ajaxView = function(settings) {
   }
 
   this.element_settings = {
-    //url: ajax_path + queryString,
-    url: ajax_path,
+    url: ajax_path + queryString,
     submit: settings,
     setClick: true,
     event: 'click',
