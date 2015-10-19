@@ -142,30 +142,36 @@
 			}
 		}//end of attach
 	};//end of behavior
-	//Prevents addresses from being sent throguh Ajax to Drupals geocoder
+	// 1)Prevents addresses from being sent throguh Ajax to Drupals geocoder
+	// 2) Fix a bug from views, that prevents entity reference fields from being sent if the URL defines them
 	Drupal.behaviors.wttocBesrBeforeSubmit = {
 		attach: function (context) {
 			if($('form#views-exposed-form-businesses-and-events-page-results').length){
 				if(typeof(Drupal)!="undefined" && typeof(Drupal.ajax)!="undefined" && typeof(Drupal.ajax.prototype)!="undefined" && typeof(Drupal.ajax.prototype.beforeSubmit)!="undefined"){
-					Drupal.ajax.prototype.beforeSubmit = function (form_values, element, options) {	
+					Drupal.ajax.prototype.beforeSubmit = function (form_values, element, options) {
 						var formIdBlock = "views-exposed-form-businesses-and-events-map-and-filters";
 						var formIdPage = "views-exposed-form-businesses-and-events-page-results";
 						//Modify Search Page & Block Submission
-						var elementIdAddress = "field_hidden_address_geofield_latlon";
 						if(element["context"]["id"] == formIdPage || element["context"]["id"] == formIdBlock){
+							var elementIdAddress = "field_hidden_address_geofield_latlon";
 							var elementMatched = ithElement = 0;
-							while(elementMatched==0 && ithElement<15){//stop searching after 15 fields
+							//stop searching when the element is matched, or when the search extends past 25 elements
+							while(elementMatched==0 && ithElement<25){
 								if(form_values[ithElement]["name"] === elementIdAddress){
 									elementMatched = true;
 									//remove address value from search page submission
-									form_values[ithElement]["value"] ="";
+									form_values[ithElement]["value"]="";
 								}
 								ithElement = ithElement + 1;
 							}
 						}
+						//Fix bug with select elements in exposed filters
+						options.url = "/views/ajax";
+						console.log(form_values,element,options);
 					};
 				}
-				//todo overwrite all values in prototype.beforeSubmit to take values from the form
+				//DONE ABOVE - watch during testing
+				//DONE todo overwrite all select values in prototype.beforeSubmit to take values from the form
 				//otherwise ajax behavior won't work when the url has arguments
 			}
 		}//end of attach
