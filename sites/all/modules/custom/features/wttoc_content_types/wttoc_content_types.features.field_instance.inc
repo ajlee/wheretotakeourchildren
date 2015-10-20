@@ -18,7 +18,7 @@ function wttoc_content_types_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
@@ -74,7 +74,7 @@ function wttoc_content_types_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_address',
     'label' => 'Address',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
@@ -126,16 +126,69 @@ function wttoc_content_types_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_category',
     'label' => 'Business: Categories and Features',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'term_reference_tree',
+      'settings' => array(
+        'cascading_selection' => 0,
+        'filter_view' => '',
+        'leaves_only' => 0,
+        'max_depth' => '',
+        'parent_term_id' => '',
+        'select_parents' => 1,
+        'start_minimized' => 1,
+        'token_display' => '',
+        'track_list' => 0,
+      ),
+      'type' => 'term_reference_tree',
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'node-business_service_or_attraction-field_featured_content'
+  $field_instances['node-business_service_or_attraction-field_featured_content'] = array(
+    'bundle' => 'business_service_or_attraction',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 11,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_featured_content',
+    'label' => 'Featured Content',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'hs_taxonomy',
-      'settings' => array(),
-      'type' => 'taxonomy_hs',
-      'weight' => 5,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 12,
     ),
   );
 
@@ -163,7 +216,7 @@ function wttoc_content_types_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_general_information',
     'label' => 'General Information',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'text_processing' => 1,
       'user_register_form' => FALSE,
@@ -219,7 +272,7 @@ function wttoc_content_types_field_default_field_instances() {
             'biasing' => array(
               'bounds' => '',
               'components' => '',
-              'region' => '',
+              'region' => 'UK',
             ),
             'geometry_type' => 'point',
             'reject_results' => array(
@@ -393,7 +446,7 @@ function wttoc_content_types_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_prices_information',
     'label' => 'Prices Information',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'text_processing' => 1,
       'user_register_form' => FALSE,
@@ -577,7 +630,7 @@ function wttoc_content_types_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_address',
     'label' => 'Address',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
@@ -628,15 +681,25 @@ function wttoc_content_types_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_category_event',
     'label' => 'Events: Categories and Features',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'hs_taxonomy',
-      'settings' => array(),
-      'type' => 'taxonomy_hs',
+      'module' => 'term_reference_tree',
+      'settings' => array(
+        'cascading_selection' => 0,
+        'filter_view' => '',
+        'leaves_only' => 0,
+        'max_depth' => '',
+        'parent_term_id' => '',
+        'select_parents' => 1,
+        'start_minimized' => 1,
+        'token_display' => '',
+        'track_list' => 0,
+      ),
+      'type' => 'term_reference_tree',
       'weight' => 6,
     ),
   );
@@ -663,7 +726,7 @@ function wttoc_content_types_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_date_of_event',
     'label' => 'Date of Event',
-    'required' => FALSE,
+    'required' => 1,
     'settings' => array(
       'default_value' => 'now',
       'default_value2' => 'same',
@@ -672,17 +735,61 @@ function wttoc_content_types_field_default_field_instances() {
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'date',
       'settings' => array(
         'increment' => 15,
         'input_format' => 'm/d/Y - H:i:s',
         'input_format_custom' => '',
         'label_position' => 'above',
+        'no_fieldset' => 0,
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
       'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'node-event-field_featured_content'
+  $field_instances['node-event-field_featured_content'] = array(
+    'bundle' => 'event',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 12,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_featured_content',
+    'label' => 'Featured Content',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 14,
     ),
   );
 
@@ -709,9 +816,9 @@ function wttoc_content_types_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_general_information',
     'label' => 'General Information',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -765,7 +872,7 @@ function wttoc_content_types_field_default_field_instances() {
             'biasing' => array(
               'bounds' => '',
               'components' => '',
-              'region' => '',
+              'region' => 'UK',
             ),
             'geometry_type' => 'point',
             'reject_results' => array(
@@ -946,9 +1053,9 @@ function wttoc_content_types_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_prices_information',
     'label' => 'Prices Information',
-    'required' => 0,
+    'required' => 1,
     'settings' => array(
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -1049,7 +1156,7 @@ function wttoc_content_types_field_default_field_instances() {
     'label' => 'Vouchers Information',
     'required' => 0,
     'settings' => array(
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -1111,6 +1218,7 @@ function wttoc_content_types_field_default_field_instances() {
   t('Date of Event');
   t('Event Website');
   t('Events: Categories and Features');
+  t('Featured Content');
   t('General Information');
   t('Hidden Address Geofield');
   t('Image Gallery');
