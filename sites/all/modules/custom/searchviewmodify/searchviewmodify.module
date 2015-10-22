@@ -1,5 +1,8 @@
 <?php
-//echo "test";
+
+/*
+ * Implementation of hook_page_alter
+ */
 function searchviewmodify_page_alter(&$page){
 	if("search/businesses-and-events" == current_path()){
 		libraries_load('leaflet');
@@ -7,5 +10,28 @@ function searchviewmodify_page_alter(&$page){
 		// Increase weight so we're included after 'leaflet.drupal.js'
 		$options = array('type' => 'file', 'weight' => 1);
 		drupal_add_js(drupal_get_path('module', 'leaflet_markercluster') . '/leaflet_markercluster.drupal.js', $options);
+	}
+}
+
+/*
+ * Implementation of hook_search_api_views_query_alter 
+ */
+function searchviewmodify_search_api_views_query_alter(&$view, &$query){
+	//Modify Views Query For businesses_and_events
+	if($view->name=="businesses_and_events"){
+		//get the conditions
+		$whereArray = $query->where[1]['conditions'];
+		//check all conditions, and find the condition set for start date
+		foreach($whereArray as $key => $value){		
+			if($value[0]=="field_date_of_event:value"){
+				$prevVal = $query->where[1]['conditions'][$key][1];
+				//we are filtering an end date in our exposed filters
+				//that is greater than or equal than this start date field
+				//this end date filter, should be at the end of the day, 
+				//so let's add a day to the queried
+				$newVal = $prevVal + 24*3600+100;//add a day+100 seconds
+				$query->where[1]['conditions'][$key][1] = $newVal;
+			}
+		}
 	}
 }
