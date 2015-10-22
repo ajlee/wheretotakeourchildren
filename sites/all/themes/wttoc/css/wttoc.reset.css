@@ -51,9 +51,12 @@ a.active {
 /*
  * Input Max Width - Keep them inside the screen in all circumstances
  */
-input {
+input, select {
   max-width: 99%;
   width: 100%; }
+
+.SumoSelect .SlectBox {
+  width: 180px; }
 
 /*
  * Responsive Tables - Focus On Full Support
@@ -61,5 +64,3 @@ input {
 table {
   overflow-x: auto;
   display: block; }
-
-/*# sourceMappingURL=wttoc.reset.css.map */

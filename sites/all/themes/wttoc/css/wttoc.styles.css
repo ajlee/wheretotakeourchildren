@@ -372,6 +372,9 @@
  * Color Descendants
  */
 /*
+ * Linear Gradient 
+ */
+/*
  * Hide Text Without Breaking Accessibility
  */
 /*
@@ -894,58 +897,6 @@ body.one-sidebar.sidebar-second .l-region--sidebar-second {
 /*
  * Content Regions - Stylings
  */
-.l-content .lc-region--inner {
-  border: 2px solid #7696cf;
-  border-radius: 3px;
-  margin: 10px 0;
-  padding: 2%; }
-  .l-content .lc-region--inner .block {
-    border: 1px solid #5573b4;
-    color: #333;
-    margin-top: 5px;
-    margin-bottom: 5px; }
-    .l-content .lc-region--inner .block > .block__title {
-      background: #5573b4;
-      color: #fff;
-      color: #fff;
-      padding: 2%; }
-      .l-content .lc-region--inner .block > .block__title span, .l-content .lc-region--inner .block > .block__title p, .l-content .lc-region--inner .block > .block__title h1, .l-content .lc-region--inner .block > .block__title h2, .l-content .lc-region--inner .block > .block__title h3, .l-content .lc-region--inner .block > .block__title h4, .l-content .lc-region--inner .block > .block__title h5, .l-content .lc-region--inner .block > .block__title h6, .l-content .lc-region--inner .block > .block__title a, .l-content .lc-region--inner .block > .block__title div, .l-content .lc-region--inner .block > .block__title li {
-        color: #fff; }
-      .l-content .lc-region--inner .block > .block__title a:hover {
-        color: #fff; }
-    .l-content .lc-region--inner .block span, .l-content .lc-region--inner .block p, .l-content .lc-region--inner .block h1, .l-content .lc-region--inner .block h2, .l-content .lc-region--inner .block h3, .l-content .lc-region--inner .block h4, .l-content .lc-region--inner .block h5, .l-content .lc-region--inner .block h6, .l-content .lc-region--inner .block a, .l-content .lc-region--inner .block div, .l-content .lc-region--inner .block li {
-      color: #333; }
-    .l-content .lc-region--inner .block a:hover {
-      color: #333; }
-    .l-content .lc-region--inner .block > .block__content, .l-content .lc-region--inner .block > ul.menu {
-      padding: 2%; }
-  .l-content .lc-region--inner .ui-state-default, .l-content .lc-region--inner .ui-widget-content .ui-state-default, .l-content .lc-region--inner .ui-widget-header .ui-state-default {
-    border-color: #5573b4;
-    background: #5573b4;
-    color: #fff;
-    border-radius: 0; }
-  .l-content .lc-region--inner .ui-selectmenu-button span.ui-selectmenu-text {
-    color: #fff; }
-  .l-content .lc-region--inner .view i.icon {
-    background-color: #5573b4;
-    color: #fff; }
-  .l-content .lc-region--inner input[type=submit], .l-content .lc-region--inner div.fakeButton {
-    border: 1px solid #4967a6;
-    border-radius: 0;
-    margin: 8px 2px;
-    padding: 10px 20px;
-    transition: all 0.35s ease-in-out;
-    font-size: 17px;
-    font-size: 1.7rem;
-    background-color: #5573b4;
-    color: #fff;
-    cursor: pointer;
-    font-weight: bold; }
-    .l-content .lc-region--inner input[type=submit]:hover, .l-content .lc-region--inner div.fakeButton:hover {
-      color: #333; }
-  .l-content .lc-region--inner div.fakeButton {
-    text-align: center; }
-
 .l-region--sidebar-first .lc-region--inner {
   border: 2px solid #FFB882;
   border-radius: 3px;
@@ -1167,6 +1118,17 @@ fieldset {
   z-index: 1000; }
 
 /*
+ * DatePicker
+ */
+#ui-datepicker-div {
+  z-index: 501 !important; }
+  #ui-datepicker-div table.ui-datepicker-calendar {
+    text-align: center;
+    overflow: visible; }
+    #ui-datepicker-div table.ui-datepicker-calendar thead, #ui-datepicker-div table.ui-datepicker-calendar tbody {
+      display: inline-block; }
+
+/*
  * TabBlocks: Tabs Display Fontello Icon
  */
 .js .tabJS:before {
@@ -1197,6 +1159,7 @@ fieldset {
   display: inline-block;
   margin-right: 5px;
   margin-top: 3px;
+  margin-bottom: 6px;
   border: 1px solid #333;
   border-bottom: 0;
   padding: 8px;
@@ -1223,14 +1186,143 @@ fieldset {
     .js .tabJS.active a {
       color: #fff; }
 
+.js .tabBlockJSBlock {
+  overflow: hidden; }
+  .js .tabBlockJSBlock a {
+    transition: none; }
+
+body.front h1.mainPageTitle {
+  display: none; }
+
+body.front h2.block__title {
+  font-size: 22px;
+  font-size: 2.2rem;
+  background: #565656;
+  /* Old browsers */
+  /* FF3.6+ */
+  /* Chrome,Safari4+ */
+  /* Chrome10+,Safari5.1+ */
+  /* Opera 11.10+ */
+  /* IE10+ */
+  background: linear-gradient(to bottom, #565656 0%, #888 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 );
+  /* IE6-9 */
+  color: white;
+  padding: 10px 3px;
+  text-align: center;
+  margin: 15px 0 5px 0; }
+
+body.front #block-views-9bc9d8ca0a25d6b82e61cd69a69f3fa4 h2.block__title {
+  background: #FD8A33;
+  /* Old browsers */
+  /* FF3.6+ */
+  /* Chrome,Safari4+ */
+  /* Chrome10+,Safari5.1+ */
+  /* Opera 11.10+ */
+  /* IE10+ */
+  background: linear-gradient(to bottom, #FD8A33 0%, #FFB882 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 );
+  /* IE6-9 */ }
+
+body.front #block-views-d336072e15ef9d7cf7595da1f2eae2c8 h2.block__title {
+  background: #8BC53F;
+  /* Old browsers */
+  /* FF3.6+ */
+  /* Chrome,Safari4+ */
+  /* Chrome10+,Safari5.1+ */
+  /* Opera 11.10+ */
+  /* IE10+ */
+  background: linear-gradient(to bottom, #8BC53F 0%, #C8F094 100%);
+  /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 );
+  /* IE6-9 */ }
+
 body.front .l-region--widetop .views-exposed-form-businesses-and-events-page-results {
   padding: 20px 5%;
   text-align: center; }
   body.front .l-region--widetop .views-exposed-form-businesses-and-events-page-results .views-exposed-form {
-    text-align: left;
+    padding-top: 20px;
     display: inline-block; }
-    body.front .l-region--widetop .views-exposed-form-businesses-and-events-page-results .views-exposed-form .views-exposed-widget .form-submit {
-      margin-top: 0; }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      body.front .l-region--widetop .views-exposed-form-businesses-and-events-page-results .views-exposed-form {
+        padding-top: 35px; } }
+    @media (min-width: 1025px) {
+      body.front .l-region--widetop .views-exposed-form-businesses-and-events-page-results .views-exposed-form {
+        padding-top: 50px; } }
+    body.front .l-region--widetop .views-exposed-form-businesses-and-events-page-results .views-exposed-form .views-exposed-widget {
+      float: none;
+      padding-top: 10px;
+      display: inline-block;
+      vertical-align: top; }
+      body.front .l-region--widetop .views-exposed-form-businesses-and-events-page-results .views-exposed-form .views-exposed-widget .views-widget {
+        text-align: left; }
+      body.front .l-region--widetop .views-exposed-form-businesses-and-events-page-results .views-exposed-form .views-exposed-widget:before {
+        content: '\e81f';
+        font-family: "fontello";
+        font-style: normal;
+        font-weight: normal;
+        speak: none;
+        display: inline-block;
+        text-decoration: inherit;
+        width: 1em;
+        margin-right: .2em;
+        text-align: center;
+        /* opacity: .8; */
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1em;
+        margin-left: .2em;
+        /* font-size: 120%; */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
+      body.front .l-region--widetop .views-exposed-form-businesses-and-events-page-results .views-exposed-form .views-exposed-widget:before {
+        font-size: 24px;
+        margin-bottom: 10px;
+        background: #5573b4;
+        /* The Fallback */
+        background: rgba(85, 115, 180, 0.75);
+        color: #fff;
+        padding: 12px;
+        border-radius: 5px 5px 30px 30px; }
+      body.front .l-region--widetop .views-exposed-form-businesses-and-events-page-results .views-exposed-form .views-exposed-widget .form-submit {
+        margin-top: 0; }
+      body.front .l-region--widetop .views-exposed-form-businesses-and-events-page-results .views-exposed-form .views-exposed-widget#edit-field-category-wrapper:before {
+        content: '\e81b';
+        background: #FD8A33;
+        /* The Fallback */
+        background: rgba(253, 138, 51, 0.75); }
+      body.front .l-region--widetop .views-exposed-form-businesses-and-events-page-results .views-exposed-form .views-exposed-widget#edit-field-category-event-wrapper:before {
+        content: '\e81c';
+        background: #8BC53F;
+        /* The Fallback */
+        background: rgba(139, 197, 63, 0.75); }
+      body.front .l-region--widetop .views-exposed-form-businesses-and-events-page-results .views-exposed-form .views-exposed-widget#edit-field-hidden-address-geofield-latlon-wrapper:before {
+        content: '\e816';
+        background: #ffde00;
+        /* The Fallback */
+        background: rgba(255, 222, 0, 0.75); }
+      body.front .l-region--widetop .views-exposed-form-businesses-and-events-page-results .views-exposed-form .views-exposed-widget.views-submit-button {
+        min-width: 40%;
+        vertical-align: bottom; }
+        body.front .l-region--widetop .views-exposed-form-businesses-and-events-page-results .views-exposed-form .views-exposed-widget.views-submit-button:before {
+          content: none;
+          display: none; }
+
+body.front .l-region--widetop #block-views-d400f6dac6873ec2ddd895ba96987fce {
+  background: url("/sites/all/themes/wttoc/images/prevImg/footer.png");
+  background-size: 300% auto;
+  background-repeat: no-repeat;
+  min-height: 250px;
+  background-position: center center; }
+  @media (min-width: 769px) and (max-width: 1024px) {
+    body.front .l-region--widetop #block-views-d400f6dac6873ec2ddd895ba96987fce {
+      background-size: 200% auto; } }
+  @media (min-width: 1025px) {
+    body.front .l-region--widetop #block-views-d400f6dac6873ec2ddd895ba96987fce {
+      background-size: 150% auto; } }
 
 /*
  * Business & Events Displays
@@ -1328,8 +1420,8 @@ body.front .l-region--widetop .views-exposed-form-businesses-and-events-page-res
     position: absolute;
     top: 0;
     right: 0;
-    min-width: 30px;
-    max-width: 30px;
+    min-width: 115px;
+    max-width: 115px;
     min-height: 30px;
     z-index: 1;
     margin: 0 0 0 0;
@@ -1343,35 +1435,54 @@ body.front .l-region--widetop .views-exposed-form-businesses-and-events-page-res
       background-color: #fff;
       color: #7696cf; }
     .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row .views-field.views-field-type .field-content {
-      position: absolute;
-      text-indent: -119988px;
-      left: -119988px;
-      overflow: hidden;
-      text-align: left;
-      text-transform: capitalize;
-      height: 1px;
-      width: 1px;
       min-width: 80px;
       color: #fff;
       font-weight: bold;
       margin-top: 5px;
-      text-align: center; }
-  .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row.rowContentType-business-service-or-attraction .views-field.views-field-type:before {
-    content: '\e81b'; }
-  .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row.rowContentType-event .views-field.views-field-type:before {
-    content: '\e81c'; }
+      text-align: left; }
   .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row:hover .views-field.views-field-type {
-    max-width: 150px; }
+    min-width: 145px;
+    max-width: 145px; }
     .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row:hover .views-field.views-field-type .field-content {
-      position: initial;
-      text-indent: initial;
-      left: initial;
-      overflow: initial;
-      text-align: initial;
-      text-transform: initial;
-      height: initial;
-      width: initial;
-      text-align: center; }
+      text-align: left; }
+  .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row.rowContentType-business-service-or-attraction .views-field.views-field-type {
+    background: #5573b4;
+    /* The Fallback */
+    background: rgba(85, 115, 180, 0.8); }
+    .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row.rowContentType-business-service-or-attraction .views-field.views-field-type:before {
+      content: '\e81b';
+      background-color: #fff;
+      color: #5573b4; }
+    .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row.rowContentType-business-service-or-attraction .views-field.views-field-type .field-content {
+      color: #fff; }
+  .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row.rowContentType-business-service-or-attraction .views-field.views-field-title {
+    color: #5573b4; }
+    .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row.rowContentType-business-service-or-attraction .views-field.views-field-title span, .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row.rowContentType-business-service-or-attraction .views-field.views-field-title p, .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row.rowContentType-business-service-or-attraction .views-field.views-field-title h1, .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row.rowContentType-business-service-or-attraction .views-field.views-field-title h2, .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row.rowContentType-business-service-or-attraction .views-field.views-field-title h3, .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row.rowContentType-business-service-or-attraction .views-field.views-field-title h4, .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row.rowContentType-business-service-or-attraction .views-field.views-field-title h5, .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row.rowContentType-business-service-or-attraction .views-field.views-field-title h6, .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row.rowContentType-business-service-or-attraction .views-field.views-field-title a, .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row.rowContentType-business-service-or-attraction .views-field.views-field-title div, .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row.rowContentType-business-service-or-attraction .views-field.views-field-title li {
+      color: #5573b4; }
+    .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row.rowContentType-business-service-or-attraction .views-field.views-field-title a:hover {
+      color: #5573b4; }
+  .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row.rowContentType-business-service-or-attraction .views-field:before {
+    background-color: #5573b4;
+    color: white; }
+  .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row.rowContentType-event .views-field.views-field-type {
+    background: #015063;
+    /* The Fallback */
+    background: rgba(1, 80, 99, 0.8); }
+    .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row.rowContentType-event .views-field.views-field-type:before {
+      content: '\e81c';
+      background-color: #fff;
+      color: #015063; }
+    .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row.rowContentType-event .views-field.views-field-type .field-content {
+      color: #fff; }
+  .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row.rowContentType-event .views-field.views-field-title {
+    color: #015063; }
+    .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row.rowContentType-event .views-field.views-field-title span, .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row.rowContentType-event .views-field.views-field-title p, .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row.rowContentType-event .views-field.views-field-title h1, .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row.rowContentType-event .views-field.views-field-title h2, .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row.rowContentType-event .views-field.views-field-title h3, .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row.rowContentType-event .views-field.views-field-title h4, .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row.rowContentType-event .views-field.views-field-title h5, .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row.rowContentType-event .views-field.views-field-title h6, .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row.rowContentType-event .views-field.views-field-title a, .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row.rowContentType-event .views-field.views-field-title div, .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row.rowContentType-event .views-field.views-field-title li {
+      color: #015063; }
+    .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row.rowContentType-event .views-field.views-field-title a:hover {
+      color: #015063; }
+  .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row.rowContentType-event .views-field:before {
+    background-color: #015063;
+    color: white; }
   .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row .views-field.views-field-field-image-gallery {
     padding: 0;
     margin: 0;
@@ -1428,6 +1539,46 @@ body.front .l-region--widetop .views-exposed-form-businesses-and-events-page-res
   display: table;
   clear: both; }
 
+/*
+ *  Form Stylings
+ */
+.view-id-businesses_and_events.view-display-id-page_results .SlectBox span.placeholder, .view-id-businesses_and_events.view-display-id-page_results input[type="text"], .view-id-businesses_and_events.view-display-id-page_results .SlectBox span, #block-views-d400f6dac6873ec2ddd895ba96987fce .SlectBox span.placeholder,
+#block-views-d400f6dac6873ec2ddd895ba96987fce input[type="text"],
+#block-views-d400f6dac6873ec2ddd895ba96987fce .SlectBox span,
+form#views-exposed-form-businesses-and-events-page-results .SlectBox span.placeholder, form#views-exposed-form-businesses-and-events-page-results input[type="text"], form#views-exposed-form-businesses-and-events-page-results .SlectBox span, form#views-exposed-form-businesses-and-events-map-and-filters .SlectBox span.placeholder, form#views-exposed-form-businesses-and-events-map-and-filters input[type="text"], form#views-exposed-form-businesses-and-events-map-and-filters .SlectBox span {
+  font-style: normal;
+  padding: 5px;
+  border-radius: 1px;
+  font-size: 17px;
+  font-size: 1.7rem; }
+
+.view-id-businesses_and_events.view-display-id-page_results .SlectBox span.placeholder, #block-views-d400f6dac6873ec2ddd895ba96987fce .SlectBox span.placeholder,
+form#views-exposed-form-businesses-and-events-page-results .SlectBox span.placeholder, form#views-exposed-form-businesses-and-events-map-and-filters .SlectBox span.placeholder {
+  font-style: normal;
+  color: #000; }
+
+.view-id-businesses_and_events.view-display-id-page_results .SlectBox span, #block-views-d400f6dac6873ec2ddd895ba96987fce .SlectBox span,
+form#views-exposed-form-businesses-and-events-page-results .SlectBox span, form#views-exposed-form-businesses-and-events-map-and-filters .SlectBox span {
+  font-style: italic;
+  color: #888; }
+
+.view-id-businesses_and_events.view-display-id-page_results .fakeButton, #block-views-d400f6dac6873ec2ddd895ba96987fce .fakeButton,
+form#views-exposed-form-businesses-and-events-page-results .fakeButton, form#views-exposed-form-businesses-and-events-map-and-filters .fakeButton {
+  border-radius: 1px;
+  margin: 0;
+  font-size: 17px;
+  font-size: 1.7rem; }
+
+.js .view-id-businesses_and_events.view-display-id-page_results #edit-field-start-datepicker-wrapper .form-item .description, .js .view-id-businesses_and_events.view-display-id-page_results #edit-field-end-datepicker-wrapper .form-item .description, .js #block-views-d400f6dac6873ec2ddd895ba96987fce #edit-field-start-datepicker-wrapper .form-item .description,
+.js #block-views-d400f6dac6873ec2ddd895ba96987fce #edit-field-end-datepicker-wrapper .form-item .description,
+.js form#views-exposed-form-businesses-and-events-page-results #edit-field-start-datepicker-wrapper .form-item .description, .js form#views-exposed-form-businesses-and-events-page-results #edit-field-end-datepicker-wrapper .form-item .description, .js form#views-exposed-form-businesses-and-events-map-and-filters #edit-field-start-datepicker-wrapper .form-item .description, .js form#views-exposed-form-businesses-and-events-map-and-filters #edit-field-end-datepicker-wrapper .form-item .description {
+  display: none; }
+
+.no-js .view-id-businesses_and_events.view-display-id-page_results #edit-field-start-datepicker-wrapper .form-item label, .no-js .view-id-businesses_and_events.view-display-id-page_results #edit-field-end-datepicker-wrapper .form-item label, .no-js #block-views-d400f6dac6873ec2ddd895ba96987fce #edit-field-start-datepicker-wrapper .form-item label,
+.no-js #block-views-d400f6dac6873ec2ddd895ba96987fce #edit-field-end-datepicker-wrapper .form-item label,
+.no-js form#views-exposed-form-businesses-and-events-page-results #edit-field-start-datepicker-wrapper .form-item label, .no-js form#views-exposed-form-businesses-and-events-page-results #edit-field-end-datepicker-wrapper .form-item label, .no-js form#views-exposed-form-businesses-and-events-map-and-filters #edit-field-start-datepicker-wrapper .form-item label, .no-js form#views-exposed-form-businesses-and-events-map-and-filters #edit-field-end-datepicker-wrapper .form-item label {
+  display: none; }
+
 /* 
  * We have two Views, one as a Block and one as a Page
  * Only one of each filter/pager should be visible
@@ -1443,6 +1594,58 @@ form#views-exposed-form-businesses-and-events-page-results .views-widget-filter-
 /* 
  * Content Type Displays
  */
+.body.node-type-event .l-content .lc-region--inner, .node-type-business-service-or-attraction .l-content .lc-region--inner {
+  border: 2px solid #7696cf;
+  border-radius: 3px;
+  margin: 10px 0;
+  padding: 2%; }
+  .body.node-type-event .l-content .lc-region--inner .block, .node-type-business-service-or-attraction .l-content .lc-region--inner .block {
+    border: 1px solid #5573b4;
+    color: #333;
+    margin-top: 5px;
+    margin-bottom: 5px; }
+    .body.node-type-event .l-content .lc-region--inner .block > .block__title, .node-type-business-service-or-attraction .l-content .lc-region--inner .block > .block__title {
+      background: #5573b4;
+      color: #fff;
+      color: #fff;
+      padding: 2%; }
+      .body.node-type-event .l-content .lc-region--inner .block > .block__title span, .body.node-type-event .l-content .lc-region--inner .block > .block__title p, .body.node-type-event .l-content .lc-region--inner .block > .block__title h1, .body.node-type-event .l-content .lc-region--inner .block > .block__title h2, .body.node-type-event .l-content .lc-region--inner .block > .block__title h3, .body.node-type-event .l-content .lc-region--inner .block > .block__title h4, .body.node-type-event .l-content .lc-region--inner .block > .block__title h5, .body.node-type-event .l-content .lc-region--inner .block > .block__title h6, .body.node-type-event .l-content .lc-region--inner .block > .block__title a, .body.node-type-event .l-content .lc-region--inner .block > .block__title div, .body.node-type-event .l-content .lc-region--inner .block > .block__title li, .node-type-business-service-or-attraction .l-content .lc-region--inner .block > .block__title span, .node-type-business-service-or-attraction .l-content .lc-region--inner .block > .block__title p, .node-type-business-service-or-attraction .l-content .lc-region--inner .block > .block__title h1, .node-type-business-service-or-attraction .l-content .lc-region--inner .block > .block__title h2, .node-type-business-service-or-attraction .l-content .lc-region--inner .block > .block__title h3, .node-type-business-service-or-attraction .l-content .lc-region--inner .block > .block__title h4, .node-type-business-service-or-attraction .l-content .lc-region--inner .block > .block__title h5, .node-type-business-service-or-attraction .l-content .lc-region--inner .block > .block__title h6, .node-type-business-service-or-attraction .l-content .lc-region--inner .block > .block__title a, .node-type-business-service-or-attraction .l-content .lc-region--inner .block > .block__title div, .node-type-business-service-or-attraction .l-content .lc-region--inner .block > .block__title li {
+        color: #fff; }
+      .body.node-type-event .l-content .lc-region--inner .block > .block__title a:hover, .node-type-business-service-or-attraction .l-content .lc-region--inner .block > .block__title a:hover {
+        color: #fff; }
+    .body.node-type-event .l-content .lc-region--inner .block span, .body.node-type-event .l-content .lc-region--inner .block p, .body.node-type-event .l-content .lc-region--inner .block h1, .body.node-type-event .l-content .lc-region--inner .block h2, .body.node-type-event .l-content .lc-region--inner .block h3, .body.node-type-event .l-content .lc-region--inner .block h4, .body.node-type-event .l-content .lc-region--inner .block h5, .body.node-type-event .l-content .lc-region--inner .block h6, .body.node-type-event .l-content .lc-region--inner .block a, .body.node-type-event .l-content .lc-region--inner .block div, .body.node-type-event .l-content .lc-region--inner .block li, .node-type-business-service-or-attraction .l-content .lc-region--inner .block span, .node-type-business-service-or-attraction .l-content .lc-region--inner .block p, .node-type-business-service-or-attraction .l-content .lc-region--inner .block h1, .node-type-business-service-or-attraction .l-content .lc-region--inner .block h2, .node-type-business-service-or-attraction .l-content .lc-region--inner .block h3, .node-type-business-service-or-attraction .l-content .lc-region--inner .block h4, .node-type-business-service-or-attraction .l-content .lc-region--inner .block h5, .node-type-business-service-or-attraction .l-content .lc-region--inner .block h6, .node-type-business-service-or-attraction .l-content .lc-region--inner .block a, .node-type-business-service-or-attraction .l-content .lc-region--inner .block div, .node-type-business-service-or-attraction .l-content .lc-region--inner .block li {
+      color: #333; }
+    .body.node-type-event .l-content .lc-region--inner .block a:hover, .node-type-business-service-or-attraction .l-content .lc-region--inner .block a:hover {
+      color: #333; }
+    .body.node-type-event .l-content .lc-region--inner .block > .block__content, .body.node-type-event .l-content .lc-region--inner .block > ul.menu, .node-type-business-service-or-attraction .l-content .lc-region--inner .block > .block__content, .node-type-business-service-or-attraction .l-content .lc-region--inner .block > ul.menu {
+      padding: 2%; }
+  .body.node-type-event .l-content .lc-region--inner .ui-state-default, .body.node-type-event .l-content .lc-region--inner .ui-widget-content .ui-state-default, .body.node-type-event .l-content .lc-region--inner .ui-widget-header .ui-state-default, .node-type-business-service-or-attraction .l-content .lc-region--inner .ui-state-default, .node-type-business-service-or-attraction .l-content .lc-region--inner .ui-widget-content .ui-state-default, .node-type-business-service-or-attraction .l-content .lc-region--inner .ui-widget-header .ui-state-default {
+    border-color: #5573b4;
+    background: #5573b4;
+    color: #fff;
+    border-radius: 0; }
+  .body.node-type-event .l-content .lc-region--inner .ui-selectmenu-button span.ui-selectmenu-text, .node-type-business-service-or-attraction .l-content .lc-region--inner .ui-selectmenu-button span.ui-selectmenu-text {
+    color: #fff; }
+  .body.node-type-event .l-content .lc-region--inner .view i.icon, .node-type-business-service-or-attraction .l-content .lc-region--inner .view i.icon {
+    background-color: #5573b4;
+    color: #fff; }
+  .body.node-type-event .l-content .lc-region--inner input[type=submit], .body.node-type-event .l-content .lc-region--inner div.fakeButton, .node-type-business-service-or-attraction .l-content .lc-region--inner input[type=submit], .node-type-business-service-or-attraction .l-content .lc-region--inner div.fakeButton {
+    border: 1px solid #4967a6;
+    border-radius: 0;
+    margin: 8px 2px;
+    padding: 10px 20px;
+    transition: all 0.35s ease-in-out;
+    font-size: 17px;
+    font-size: 1.7rem;
+    background-color: #5573b4;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold; }
+    .body.node-type-event .l-content .lc-region--inner input[type=submit]:hover, .body.node-type-event .l-content .lc-region--inner div.fakeButton:hover, .node-type-business-service-or-attraction .l-content .lc-region--inner input[type=submit]:hover, .node-type-business-service-or-attraction .l-content .lc-region--inner div.fakeButton:hover {
+      color: #333; }
+  .body.node-type-event .l-content .lc-region--inner div.fakeButton, .node-type-business-service-or-attraction .l-content .lc-region--inner div.fakeButton {
+    text-align: center; }
+
 .view-id-business_display .views-row:after, .view-id-events_display .views-row:after {
   content: "";
   display: table;
@@ -1485,46 +1688,136 @@ form#views-exposed-form-businesses-and-events-page-results .views-widget-filter-
 /*
  * Icon Colorings 
  */
-.js .block.block--views-events-display-block, .js .block.block--views-business-display-block, .no-js .block.block--views-events-display-block, .no-js .block.block--views-business-display-block {
+.js body.node-type-event .block.block--views-events-display-block, .js body.node-type-event .block.block--views-business-display-block, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block,
+.node-type-business-service-or-attraction .l-content .block.block--views-business-display-block,
+.no-js .body.node-type-event .block.block--views-events-display-block, .no-js .body.node-type-event .block.block--views-business-display-block, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block, .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block {
   border: #7696cf 2px solid;
   border-radius: 3px; }
-  .js .block.block--views-events-display-block .view i.icon, .js .block.block--views-business-display-block .view i.icon, .no-js .block.block--views-events-display-block .view i.icon, .no-js .block.block--views-business-display-block .view i.icon {
+  .js body.node-type-event .block.block--views-events-display-block .view i.icon, .js body.node-type-event .block.block--views-business-display-block .view i.icon, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block .view i.icon,
+  .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block .view i.icon,
+  .no-js .body.node-type-event .block.block--views-events-display-block .view i.icon, .no-js .body.node-type-event .block.block--views-business-display-block .view i.icon, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block .view i.icon, .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block .view i.icon {
     background-color: #5573b4;
     color: #fff; }
-  .js .block.block--views-events-display-block .block__title, .js .block.block--views-business-display-block .block__title, .no-js .block.block--views-events-display-block .block__title, .no-js .block.block--views-business-display-block .block__title {
+  .js body.node-type-event .block.block--views-events-display-block .block__title, .js body.node-type-event .block.block--views-business-display-block .block__title, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block .block__title,
+  .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block .block__title,
+  .no-js .body.node-type-event .block.block--views-events-display-block .block__title, .no-js .body.node-type-event .block.block--views-business-display-block .block__title, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block .block__title, .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block .block__title {
     background-color: #5573b4;
     color: #fff; }
-    .js .block.block--views-events-display-block .block__title span, .js .block.block--views-events-display-block .block__title p, .js .block.block--views-events-display-block .block__title h1, .js .block.block--views-events-display-block .block__title h2, .js .block.block--views-events-display-block .block__title h3, .js .block.block--views-events-display-block .block__title h4, .js .block.block--views-events-display-block .block__title h5, .js .block.block--views-events-display-block .block__title h6, .js .block.block--views-events-display-block .block__title a, .js .block.block--views-events-display-block .block__title div, .js .block.block--views-events-display-block .block__title li, .js .block.block--views-business-display-block .block__title span, .js .block.block--views-business-display-block .block__title p, .js .block.block--views-business-display-block .block__title h1, .js .block.block--views-business-display-block .block__title h2, .js .block.block--views-business-display-block .block__title h3, .js .block.block--views-business-display-block .block__title h4, .js .block.block--views-business-display-block .block__title h5, .js .block.block--views-business-display-block .block__title h6, .js .block.block--views-business-display-block .block__title a, .js .block.block--views-business-display-block .block__title div, .js .block.block--views-business-display-block .block__title li, .no-js .block.block--views-events-display-block .block__title span, .no-js .block.block--views-events-display-block .block__title p, .no-js .block.block--views-events-display-block .block__title h1, .no-js .block.block--views-events-display-block .block__title h2, .no-js .block.block--views-events-display-block .block__title h3, .no-js .block.block--views-events-display-block .block__title h4, .no-js .block.block--views-events-display-block .block__title h5, .no-js .block.block--views-events-display-block .block__title h6, .no-js .block.block--views-events-display-block .block__title a, .no-js .block.block--views-events-display-block .block__title div, .no-js .block.block--views-events-display-block .block__title li, .no-js .block.block--views-business-display-block .block__title span, .no-js .block.block--views-business-display-block .block__title p, .no-js .block.block--views-business-display-block .block__title h1, .no-js .block.block--views-business-display-block .block__title h2, .no-js .block.block--views-business-display-block .block__title h3, .no-js .block.block--views-business-display-block .block__title h4, .no-js .block.block--views-business-display-block .block__title h5, .no-js .block.block--views-business-display-block .block__title h6, .no-js .block.block--views-business-display-block .block__title a, .no-js .block.block--views-business-display-block .block__title div, .no-js .block.block--views-business-display-block .block__title li {
+    .js body.node-type-event .block.block--views-events-display-block .block__title span, .js body.node-type-event .block.block--views-events-display-block .block__title p, .js body.node-type-event .block.block--views-events-display-block .block__title h1, .js body.node-type-event .block.block--views-events-display-block .block__title h2, .js body.node-type-event .block.block--views-events-display-block .block__title h3, .js body.node-type-event .block.block--views-events-display-block .block__title h4, .js body.node-type-event .block.block--views-events-display-block .block__title h5, .js body.node-type-event .block.block--views-events-display-block .block__title h6, .js body.node-type-event .block.block--views-events-display-block .block__title a, .js body.node-type-event .block.block--views-events-display-block .block__title div, .js body.node-type-event .block.block--views-events-display-block .block__title li, .js body.node-type-event .block.block--views-business-display-block .block__title span, .js body.node-type-event .block.block--views-business-display-block .block__title p, .js body.node-type-event .block.block--views-business-display-block .block__title h1, .js body.node-type-event .block.block--views-business-display-block .block__title h2, .js body.node-type-event .block.block--views-business-display-block .block__title h3, .js body.node-type-event .block.block--views-business-display-block .block__title h4, .js body.node-type-event .block.block--views-business-display-block .block__title h5, .js body.node-type-event .block.block--views-business-display-block .block__title h6, .js body.node-type-event .block.block--views-business-display-block .block__title a, .js body.node-type-event .block.block--views-business-display-block .block__title div, .js body.node-type-event .block.block--views-business-display-block .block__title li, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block .block__title span,
+    .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block .block__title p,
+    .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block .block__title h1,
+    .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block .block__title h2,
+    .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block .block__title h3,
+    .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block .block__title h4,
+    .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block .block__title h5,
+    .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block .block__title h6,
+    .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block .block__title a,
+    .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block .block__title div,
+    .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block .block__title li,
+    .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block .block__title span,
+    .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block .block__title p,
+    .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block .block__title h1,
+    .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block .block__title h2,
+    .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block .block__title h3,
+    .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block .block__title h4,
+    .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block .block__title h5,
+    .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block .block__title h6,
+    .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block .block__title a,
+    .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block .block__title div,
+    .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block .block__title li,
+    .no-js .body.node-type-event .block.block--views-events-display-block .block__title span, .no-js .body.node-type-event .block.block--views-events-display-block .block__title p, .no-js .body.node-type-event .block.block--views-events-display-block .block__title h1, .no-js .body.node-type-event .block.block--views-events-display-block .block__title h2, .no-js .body.node-type-event .block.block--views-events-display-block .block__title h3, .no-js .body.node-type-event .block.block--views-events-display-block .block__title h4, .no-js .body.node-type-event .block.block--views-events-display-block .block__title h5, .no-js .body.node-type-event .block.block--views-events-display-block .block__title h6, .no-js .body.node-type-event .block.block--views-events-display-block .block__title a, .no-js .body.node-type-event .block.block--views-events-display-block .block__title div, .no-js .body.node-type-event .block.block--views-events-display-block .block__title li, .no-js .body.node-type-event .block.block--views-business-display-block .block__title span, .no-js .body.node-type-event .block.block--views-business-display-block .block__title p, .no-js .body.node-type-event .block.block--views-business-display-block .block__title h1, .no-js .body.node-type-event .block.block--views-business-display-block .block__title h2, .no-js .body.node-type-event .block.block--views-business-display-block .block__title h3, .no-js .body.node-type-event .block.block--views-business-display-block .block__title h4, .no-js .body.node-type-event .block.block--views-business-display-block .block__title h5, .no-js .body.node-type-event .block.block--views-business-display-block .block__title h6, .no-js .body.node-type-event .block.block--views-business-display-block .block__title a, .no-js .body.node-type-event .block.block--views-business-display-block .block__title div, .no-js .body.node-type-event .block.block--views-business-display-block .block__title li, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block .block__title span, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block .block__title p, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block .block__title h1, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block .block__title h2, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block .block__title h3, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block .block__title h4, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block .block__title h5, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block .block__title h6, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block .block__title a, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block .block__title div, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block .block__title li, .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block .block__title span, .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block .block__title p, .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block .block__title h1, .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block .block__title h2, .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block .block__title h3, .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block .block__title h4, .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block .block__title h5, .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block .block__title h6, .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block .block__title a, .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block .block__title div, .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block .block__title li {
       color: #fff; }
-    .js .block.block--views-events-display-block .block__title a:hover, .js .block.block--views-business-display-block .block__title a:hover, .no-js .block.block--views-events-display-block .block__title a:hover, .no-js .block.block--views-business-display-block .block__title a:hover {
+    .js body.node-type-event .block.block--views-events-display-block .block__title a:hover, .js body.node-type-event .block.block--views-business-display-block .block__title a:hover, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block .block__title a:hover,
+    .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block .block__title a:hover,
+    .no-js .body.node-type-event .block.block--views-events-display-block .block__title a:hover, .no-js .body.node-type-event .block.block--views-business-display-block .block__title a:hover, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block .block__title a:hover, .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block .block__title a:hover {
       color: #fff; }
 
-.js .block.block--views-events-display-block-3, .js .block.block--views-business-display-block-3, .no-js .block.block--views-events-display-block-3, .no-js .block.block--views-business-display-block-3 {
+.js body.node-type-event .block.block--views-events-display-block-3, .js body.node-type-event .block.block--views-business-display-block-3, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3,
+.node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3,
+.no-js .body.node-type-event .block.block--views-events-display-block-3, .no-js .body.node-type-event .block.block--views-business-display-block-3, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3, .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 {
   border: #FFB882 2px solid;
   border-radius: 3px; }
-  .js .block.block--views-events-display-block-3 .view i.icon, .js .block.block--views-business-display-block-3 .view i.icon, .no-js .block.block--views-events-display-block-3 .view i.icon, .no-js .block.block--views-business-display-block-3 .view i.icon {
+  .js body.node-type-event .block.block--views-events-display-block-3 .view i.icon, .js body.node-type-event .block.block--views-business-display-block-3 .view i.icon, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3 .view i.icon,
+  .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 .view i.icon,
+  .no-js .body.node-type-event .block.block--views-events-display-block-3 .view i.icon, .no-js .body.node-type-event .block.block--views-business-display-block-3 .view i.icon, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3 .view i.icon, .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 .view i.icon {
     background-color: #FD8A33;
     color: #fff; }
-  .js .block.block--views-events-display-block-3 .block__title, .js .block.block--views-business-display-block-3 .block__title, .no-js .block.block--views-events-display-block-3 .block__title, .no-js .block.block--views-business-display-block-3 .block__title {
+  .js body.node-type-event .block.block--views-events-display-block-3 .block__title, .js body.node-type-event .block.block--views-business-display-block-3 .block__title, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3 .block__title,
+  .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 .block__title,
+  .no-js .body.node-type-event .block.block--views-events-display-block-3 .block__title, .no-js .body.node-type-event .block.block--views-business-display-block-3 .block__title, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3 .block__title, .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 .block__title {
     background-color: #FD8A33;
     color: #fff; }
-    .js .block.block--views-events-display-block-3 .block__title span, .js .block.block--views-events-display-block-3 .block__title p, .js .block.block--views-events-display-block-3 .block__title h1, .js .block.block--views-events-display-block-3 .block__title h2, .js .block.block--views-events-display-block-3 .block__title h3, .js .block.block--views-events-display-block-3 .block__title h4, .js .block.block--views-events-display-block-3 .block__title h5, .js .block.block--views-events-display-block-3 .block__title h6, .js .block.block--views-events-display-block-3 .block__title a, .js .block.block--views-events-display-block-3 .block__title div, .js .block.block--views-events-display-block-3 .block__title li, .js .block.block--views-business-display-block-3 .block__title span, .js .block.block--views-business-display-block-3 .block__title p, .js .block.block--views-business-display-block-3 .block__title h1, .js .block.block--views-business-display-block-3 .block__title h2, .js .block.block--views-business-display-block-3 .block__title h3, .js .block.block--views-business-display-block-3 .block__title h4, .js .block.block--views-business-display-block-3 .block__title h5, .js .block.block--views-business-display-block-3 .block__title h6, .js .block.block--views-business-display-block-3 .block__title a, .js .block.block--views-business-display-block-3 .block__title div, .js .block.block--views-business-display-block-3 .block__title li, .no-js .block.block--views-events-display-block-3 .block__title span, .no-js .block.block--views-events-display-block-3 .block__title p, .no-js .block.block--views-events-display-block-3 .block__title h1, .no-js .block.block--views-events-display-block-3 .block__title h2, .no-js .block.block--views-events-display-block-3 .block__title h3, .no-js .block.block--views-events-display-block-3 .block__title h4, .no-js .block.block--views-events-display-block-3 .block__title h5, .no-js .block.block--views-events-display-block-3 .block__title h6, .no-js .block.block--views-events-display-block-3 .block__title a, .no-js .block.block--views-events-display-block-3 .block__title div, .no-js .block.block--views-events-display-block-3 .block__title li, .no-js .block.block--views-business-display-block-3 .block__title span, .no-js .block.block--views-business-display-block-3 .block__title p, .no-js .block.block--views-business-display-block-3 .block__title h1, .no-js .block.block--views-business-display-block-3 .block__title h2, .no-js .block.block--views-business-display-block-3 .block__title h3, .no-js .block.block--views-business-display-block-3 .block__title h4, .no-js .block.block--views-business-display-block-3 .block__title h5, .no-js .block.block--views-business-display-block-3 .block__title h6, .no-js .block.block--views-business-display-block-3 .block__title a, .no-js .block.block--views-business-display-block-3 .block__title div, .no-js .block.block--views-business-display-block-3 .block__title li {
+    .js body.node-type-event .block.block--views-events-display-block-3 .block__title span, .js body.node-type-event .block.block--views-events-display-block-3 .block__title p, .js body.node-type-event .block.block--views-events-display-block-3 .block__title h1, .js body.node-type-event .block.block--views-events-display-block-3 .block__title h2, .js body.node-type-event .block.block--views-events-display-block-3 .block__title h3, .js body.node-type-event .block.block--views-events-display-block-3 .block__title h4, .js body.node-type-event .block.block--views-events-display-block-3 .block__title h5, .js body.node-type-event .block.block--views-events-display-block-3 .block__title h6, .js body.node-type-event .block.block--views-events-display-block-3 .block__title a, .js body.node-type-event .block.block--views-events-display-block-3 .block__title div, .js body.node-type-event .block.block--views-events-display-block-3 .block__title li, .js body.node-type-event .block.block--views-business-display-block-3 .block__title span, .js body.node-type-event .block.block--views-business-display-block-3 .block__title p, .js body.node-type-event .block.block--views-business-display-block-3 .block__title h1, .js body.node-type-event .block.block--views-business-display-block-3 .block__title h2, .js body.node-type-event .block.block--views-business-display-block-3 .block__title h3, .js body.node-type-event .block.block--views-business-display-block-3 .block__title h4, .js body.node-type-event .block.block--views-business-display-block-3 .block__title h5, .js body.node-type-event .block.block--views-business-display-block-3 .block__title h6, .js body.node-type-event .block.block--views-business-display-block-3 .block__title a, .js body.node-type-event .block.block--views-business-display-block-3 .block__title div, .js body.node-type-event .block.block--views-business-display-block-3 .block__title li, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3 .block__title span,
+    .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3 .block__title p,
+    .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3 .block__title h1,
+    .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3 .block__title h2,
+    .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3 .block__title h3,
+    .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3 .block__title h4,
+    .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3 .block__title h5,
+    .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3 .block__title h6,
+    .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3 .block__title a,
+    .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3 .block__title div,
+    .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3 .block__title li,
+    .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 .block__title span,
+    .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 .block__title p,
+    .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 .block__title h1,
+    .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 .block__title h2,
+    .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 .block__title h3,
+    .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 .block__title h4,
+    .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 .block__title h5,
+    .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 .block__title h6,
+    .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 .block__title a,
+    .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 .block__title div,
+    .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 .block__title li,
+    .no-js .body.node-type-event .block.block--views-events-display-block-3 .block__title span, .no-js .body.node-type-event .block.block--views-events-display-block-3 .block__title p, .no-js .body.node-type-event .block.block--views-events-display-block-3 .block__title h1, .no-js .body.node-type-event .block.block--views-events-display-block-3 .block__title h2, .no-js .body.node-type-event .block.block--views-events-display-block-3 .block__title h3, .no-js .body.node-type-event .block.block--views-events-display-block-3 .block__title h4, .no-js .body.node-type-event .block.block--views-events-display-block-3 .block__title h5, .no-js .body.node-type-event .block.block--views-events-display-block-3 .block__title h6, .no-js .body.node-type-event .block.block--views-events-display-block-3 .block__title a, .no-js .body.node-type-event .block.block--views-events-display-block-3 .block__title div, .no-js .body.node-type-event .block.block--views-events-display-block-3 .block__title li, .no-js .body.node-type-event .block.block--views-business-display-block-3 .block__title span, .no-js .body.node-type-event .block.block--views-business-display-block-3 .block__title p, .no-js .body.node-type-event .block.block--views-business-display-block-3 .block__title h1, .no-js .body.node-type-event .block.block--views-business-display-block-3 .block__title h2, .no-js .body.node-type-event .block.block--views-business-display-block-3 .block__title h3, .no-js .body.node-type-event .block.block--views-business-display-block-3 .block__title h4, .no-js .body.node-type-event .block.block--views-business-display-block-3 .block__title h5, .no-js .body.node-type-event .block.block--views-business-display-block-3 .block__title h6, .no-js .body.node-type-event .block.block--views-business-display-block-3 .block__title a, .no-js .body.node-type-event .block.block--views-business-display-block-3 .block__title div, .no-js .body.node-type-event .block.block--views-business-display-block-3 .block__title li, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3 .block__title span, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3 .block__title p, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3 .block__title h1, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3 .block__title h2, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3 .block__title h3, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3 .block__title h4, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3 .block__title h5, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3 .block__title h6, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3 .block__title a, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3 .block__title div, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3 .block__title li, .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 .block__title span, .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 .block__title p, .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 .block__title h1, .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 .block__title h2, .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 .block__title h3, .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 .block__title h4, .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 .block__title h5, .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 .block__title h6, .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 .block__title a, .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 .block__title div, .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 .block__title li {
       color: #fff; }
-    .js .block.block--views-events-display-block-3 .block__title a:hover, .js .block.block--views-business-display-block-3 .block__title a:hover, .no-js .block.block--views-events-display-block-3 .block__title a:hover, .no-js .block.block--views-business-display-block-3 .block__title a:hover {
+    .js body.node-type-event .block.block--views-events-display-block-3 .block__title a:hover, .js body.node-type-event .block.block--views-business-display-block-3 .block__title a:hover, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3 .block__title a:hover,
+    .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 .block__title a:hover,
+    .no-js .body.node-type-event .block.block--views-events-display-block-3 .block__title a:hover, .no-js .body.node-type-event .block.block--views-business-display-block-3 .block__title a:hover, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3 .block__title a:hover, .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 .block__title a:hover {
       color: #fff; }
 
-.js .block.block--views-events-display-block-1, .js .block.block--views-business-display-block-1, .no-js .block.block--views-events-display-block-1, .no-js .block.block--views-business-display-block-1 {
+.js body.node-type-event .block.block--views-events-display-block-1, .js body.node-type-event .block.block--views-business-display-block-1, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1,
+.node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1,
+.no-js .body.node-type-event .block.block--views-events-display-block-1, .no-js .body.node-type-event .block.block--views-business-display-block-1, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1, .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 {
   border: #C8F094 2px solid;
   border-radius: 3px; }
-  .js .block.block--views-events-display-block-1 .view i.icon, .js .block.block--views-business-display-block-1 .view i.icon, .no-js .block.block--views-events-display-block-1 .view i.icon, .no-js .block.block--views-business-display-block-1 .view i.icon {
+  .js body.node-type-event .block.block--views-events-display-block-1 .view i.icon, .js body.node-type-event .block.block--views-business-display-block-1 .view i.icon, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1 .view i.icon,
+  .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 .view i.icon,
+  .no-js .body.node-type-event .block.block--views-events-display-block-1 .view i.icon, .no-js .body.node-type-event .block.block--views-business-display-block-1 .view i.icon, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1 .view i.icon, .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 .view i.icon {
     background-color: #8BC53F;
     color: #fff; }
-  .js .block.block--views-events-display-block-1 .block__title, .js .block.block--views-business-display-block-1 .block__title, .no-js .block.block--views-events-display-block-1 .block__title, .no-js .block.block--views-business-display-block-1 .block__title {
+  .js body.node-type-event .block.block--views-events-display-block-1 .block__title, .js body.node-type-event .block.block--views-business-display-block-1 .block__title, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1 .block__title,
+  .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 .block__title,
+  .no-js .body.node-type-event .block.block--views-events-display-block-1 .block__title, .no-js .body.node-type-event .block.block--views-business-display-block-1 .block__title, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1 .block__title, .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 .block__title {
     background-color: #8BC53F;
     color: #fff; }
-    .js .block.block--views-events-display-block-1 .block__title span, .js .block.block--views-events-display-block-1 .block__title p, .js .block.block--views-events-display-block-1 .block__title h1, .js .block.block--views-events-display-block-1 .block__title h2, .js .block.block--views-events-display-block-1 .block__title h3, .js .block.block--views-events-display-block-1 .block__title h4, .js .block.block--views-events-display-block-1 .block__title h5, .js .block.block--views-events-display-block-1 .block__title h6, .js .block.block--views-events-display-block-1 .block__title a, .js .block.block--views-events-display-block-1 .block__title div, .js .block.block--views-events-display-block-1 .block__title li, .js .block.block--views-business-display-block-1 .block__title span, .js .block.block--views-business-display-block-1 .block__title p, .js .block.block--views-business-display-block-1 .block__title h1, .js .block.block--views-business-display-block-1 .block__title h2, .js .block.block--views-business-display-block-1 .block__title h3, .js .block.block--views-business-display-block-1 .block__title h4, .js .block.block--views-business-display-block-1 .block__title h5, .js .block.block--views-business-display-block-1 .block__title h6, .js .block.block--views-business-display-block-1 .block__title a, .js .block.block--views-business-display-block-1 .block__title div, .js .block.block--views-business-display-block-1 .block__title li, .no-js .block.block--views-events-display-block-1 .block__title span, .no-js .block.block--views-events-display-block-1 .block__title p, .no-js .block.block--views-events-display-block-1 .block__title h1, .no-js .block.block--views-events-display-block-1 .block__title h2, .no-js .block.block--views-events-display-block-1 .block__title h3, .no-js .block.block--views-events-display-block-1 .block__title h4, .no-js .block.block--views-events-display-block-1 .block__title h5, .no-js .block.block--views-events-display-block-1 .block__title h6, .no-js .block.block--views-events-display-block-1 .block__title a, .no-js .block.block--views-events-display-block-1 .block__title div, .no-js .block.block--views-events-display-block-1 .block__title li, .no-js .block.block--views-business-display-block-1 .block__title span, .no-js .block.block--views-business-display-block-1 .block__title p, .no-js .block.block--views-business-display-block-1 .block__title h1, .no-js .block.block--views-business-display-block-1 .block__title h2, .no-js .block.block--views-business-display-block-1 .block__title h3, .no-js .block.block--views-business-display-block-1 .block__title h4, .no-js .block.block--views-business-display-block-1 .block__title h5, .no-js .block.block--views-business-display-block-1 .block__title h6, .no-js .block.block--views-business-display-block-1 .block__title a, .no-js .block.block--views-business-display-block-1 .block__title div, .no-js .block.block--views-business-display-block-1 .block__title li {
+    .js body.node-type-event .block.block--views-events-display-block-1 .block__title span, .js body.node-type-event .block.block--views-events-display-block-1 .block__title p, .js body.node-type-event .block.block--views-events-display-block-1 .block__title h1, .js body.node-type-event .block.block--views-events-display-block-1 .block__title h2, .js body.node-type-event .block.block--views-events-display-block-1 .block__title h3, .js body.node-type-event .block.block--views-events-display-block-1 .block__title h4, .js body.node-type-event .block.block--views-events-display-block-1 .block__title h5, .js body.node-type-event .block.block--views-events-display-block-1 .block__title h6, .js body.node-type-event .block.block--views-events-display-block-1 .block__title a, .js body.node-type-event .block.block--views-events-display-block-1 .block__title div, .js body.node-type-event .block.block--views-events-display-block-1 .block__title li, .js body.node-type-event .block.block--views-business-display-block-1 .block__title span, .js body.node-type-event .block.block--views-business-display-block-1 .block__title p, .js body.node-type-event .block.block--views-business-display-block-1 .block__title h1, .js body.node-type-event .block.block--views-business-display-block-1 .block__title h2, .js body.node-type-event .block.block--views-business-display-block-1 .block__title h3, .js body.node-type-event .block.block--views-business-display-block-1 .block__title h4, .js body.node-type-event .block.block--views-business-display-block-1 .block__title h5, .js body.node-type-event .block.block--views-business-display-block-1 .block__title h6, .js body.node-type-event .block.block--views-business-display-block-1 .block__title a, .js body.node-type-event .block.block--views-business-display-block-1 .block__title div, .js body.node-type-event .block.block--views-business-display-block-1 .block__title li, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1 .block__title span,
+    .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1 .block__title p,
+    .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1 .block__title h1,
+    .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1 .block__title h2,
+    .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1 .block__title h3,
+    .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1 .block__title h4,
+    .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1 .block__title h5,
+    .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1 .block__title h6,
+    .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1 .block__title a,
+    .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1 .block__title div,
+    .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1 .block__title li,
+    .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 .block__title span,
+    .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 .block__title p,
+    .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 .block__title h1,
+    .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 .block__title h2,
+    .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 .block__title h3,
+    .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 .block__title h4,
+    .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 .block__title h5,
+    .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 .block__title h6,
+    .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 .block__title a,
+    .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 .block__title div,
+    .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 .block__title li,
+    .no-js .body.node-type-event .block.block--views-events-display-block-1 .block__title span, .no-js .body.node-type-event .block.block--views-events-display-block-1 .block__title p, .no-js .body.node-type-event .block.block--views-events-display-block-1 .block__title h1, .no-js .body.node-type-event .block.block--views-events-display-block-1 .block__title h2, .no-js .body.node-type-event .block.block--views-events-display-block-1 .block__title h3, .no-js .body.node-type-event .block.block--views-events-display-block-1 .block__title h4, .no-js .body.node-type-event .block.block--views-events-display-block-1 .block__title h5, .no-js .body.node-type-event .block.block--views-events-display-block-1 .block__title h6, .no-js .body.node-type-event .block.block--views-events-display-block-1 .block__title a, .no-js .body.node-type-event .block.block--views-events-display-block-1 .block__title div, .no-js .body.node-type-event .block.block--views-events-display-block-1 .block__title li, .no-js .body.node-type-event .block.block--views-business-display-block-1 .block__title span, .no-js .body.node-type-event .block.block--views-business-display-block-1 .block__title p, .no-js .body.node-type-event .block.block--views-business-display-block-1 .block__title h1, .no-js .body.node-type-event .block.block--views-business-display-block-1 .block__title h2, .no-js .body.node-type-event .block.block--views-business-display-block-1 .block__title h3, .no-js .body.node-type-event .block.block--views-business-display-block-1 .block__title h4, .no-js .body.node-type-event .block.block--views-business-display-block-1 .block__title h5, .no-js .body.node-type-event .block.block--views-business-display-block-1 .block__title h6, .no-js .body.node-type-event .block.block--views-business-display-block-1 .block__title a, .no-js .body.node-type-event .block.block--views-business-display-block-1 .block__title div, .no-js .body.node-type-event .block.block--views-business-display-block-1 .block__title li, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1 .block__title span, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1 .block__title p, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1 .block__title h1, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1 .block__title h2, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1 .block__title h3, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1 .block__title h4, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1 .block__title h5, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1 .block__title h6, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1 .block__title a, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1 .block__title div, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1 .block__title li, .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 .block__title span, .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 .block__title p, .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 .block__title h1, .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 .block__title h2, .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 .block__title h3, .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 .block__title h4, .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 .block__title h5, .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 .block__title h6, .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 .block__title a, .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 .block__title div, .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 .block__title li {
       color: #fff; }
-    .js .block.block--views-events-display-block-1 .block__title a:hover, .js .block.block--views-business-display-block-1 .block__title a:hover, .no-js .block.block--views-events-display-block-1 .block__title a:hover, .no-js .block.block--views-business-display-block-1 .block__title a:hover {
+    .js body.node-type-event .block.block--views-events-display-block-1 .block__title a:hover, .js body.node-type-event .block.block--views-business-display-block-1 .block__title a:hover, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1 .block__title a:hover,
+    .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 .block__title a:hover,
+    .no-js .body.node-type-event .block.block--views-events-display-block-1 .block__title a:hover, .no-js .body.node-type-event .block.block--views-business-display-block-1 .block__title a:hover, .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1 .block__title a:hover, .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 .block__title a:hover {
       color: #fff; }
 
 /*
@@ -1593,196 +1886,235 @@ form#views-exposed-form-businesses-and-events-page-results .views-widget-filter-
 /*
  * Business & Events Displays
  */
-.view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row,
-.view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row {
-  margin-top: 5px;
-  margin-bottom: 5px;
-  padding-bottom: 2px;
-  position: relative; }
-  @media (min-width: 1025px) {
-    .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row:nth-child(3n+1),
-    .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row:nth-child(3n+1) {
-      clear: both;
-      float: left;
-      margin-right: 1%;
-      width: 32.33%; }
-    .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row:nth-child(3n+2),
-    .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row:nth-child(3n+2) {
-      float: left;
-      margin-left: 0.5%;
-      margin-right: 0.5%;
-      width: 32.33%; }
-    .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row:nth-child(3n+3),
-    .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row:nth-child(3n+3) {
-      float: right;
-      margin-left: 1%;
-      width: 32.33%; } }
-  @media (min-width: 431px) and (max-width: 1024px) {
-    .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row:nth-child(2n+1),
-    .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row:nth-child(2n+1) {
-      float: left;
-      margin-right: 1%;
-      width: 49%;
-      clear: both; }
-    .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row:nth-child(2n+2),
-    .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row:nth-child(2n+2) {
-      float: right;
-      margin-left: 1%;
-      width: 49%; } }
-  @media (min-width: 0) and (max-width: 430px) {
-    .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row,
-    .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row {
-      display: block;
-      clear: both;
-      padding: 1%;
-      width: 98%;
-      margin-left: auto;
-      margin-right: auto; }
-      .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row:after,
-      .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row:after {
-        content: "";
-        display: table;
-        clear: both; } }
-
-.view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row,
-.view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row {
-  padding-bottom: 0;
-  outline: 1px solid #a2a2a2; }
-  .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row .views-field,
-  .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row .views-field {
-    position: relative;
-    padding: 7px 0;
-    margin-left: 7px;
-    margin-right: 7px;
-    border-top: 1px solid #a2a2a2; }
-    .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row .views-field:before,
-    .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row .views-field:before {
-      content: '\e81f';
-      font-family: "fontello";
-      font-style: normal;
-      font-weight: normal;
-      speak: none;
-      display: inline-block;
-      text-decoration: inherit;
-      width: 1em;
-      margin-right: .2em;
-      text-align: center;
-      /* opacity: .8; */
-      font-variant: normal;
-      text-transform: none;
-      line-height: 1em;
-      margin-left: .2em;
-      /* font-size: 120%; */
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
-    .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row .views-field:before,
-    .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row .views-field:before {
-      background-color: #5573b4;
-      color: #fff;
-      line-height: 20px;
-      height: 20px;
-      width: 20px;
-      padding: 2px;
-      border-radius: 3px;
-      position: absolute;
-      bottom: 0;
-      top: 0;
-      left: 8px;
-      margin: auto; }
-    .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row .views-field .field-content,
-    .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row .views-field .field-content {
-      display: block;
-      padding-left: 40px; }
-  .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row .views-field.views-field-field-category-image,
-  .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row .views-field.views-field-field-category-image {
-    padding: 0;
-    margin: 0;
-    border: 0;
-    overflow: hidden; }
-    .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row .views-field.views-field-field-category-image:before,
-    .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row .views-field.views-field-field-category-image:before {
-      content: none;
-      display: none; }
-    .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row .views-field.views-field-field-category-image .field-content,
-    .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row .views-field.views-field-field-category-image .field-content {
+.view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content,
+.view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content {
+  text-align: center;
+  margin: 6px 0 3px 0; }
+  .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row,
+  .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-bottom: 2px;
+    position: relative; }
+    @media (min-width: 1025px) {
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row:nth-child(5n+1),
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row:nth-child(5n+1) {
+        clear: both;
+        float: left;
+        margin-right: 1%;
+        width: 32.33%; }
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row:nth-child(5n+2),
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row:nth-child(5n+2) {
+        float: left;
+        margin-left: 0.5%;
+        margin-right: 0.5%;
+        width: 32.33%; }
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row:nth-child(5n+3),
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row:nth-child(5n+3) {
+        float: right;
+        margin-left: 1%;
+        width: 32.33%; }
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row:nth-child(5n+4),
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row:nth-child(5n+4) {
+        clear: both;
+        float: left;
+        margin-right: 1%;
+        width: 49%; }
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row:nth-child(5n+5),
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row:nth-child(5n+5) {
+        float: right;
+        margin-left: 1%;
+        width: 49%; }
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row.views-row-last:nth-child(5n+1),
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row.views-row-last:nth-child(5n+4),
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row.views-row-last:nth-child(5n+1), .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row.views-row-last:nth-child(5n+4) {
+        display: inline-block;
+        float: none;
+        width: 50%; } }
+    @media (min-width: 431px) and (max-width: 1024px) {
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row:nth-child(3n+1),
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row:nth-child(3n+1) {
+        float: left;
+        margin-right: 1%;
+        width: 49%;
+        clear: both; }
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row:nth-child(3n+2),
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row:nth-child(3n+2) {
+        float: right;
+        margin-left: 1%;
+        width: 49%; }
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row:nth-child(3n+3),
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row:nth-child(3n+3) {
+        width: 100%;
+        clear: both; }
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row.views-row-last:nth-child(3n+1),
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row.views-row-last:nth-child(3n+1) {
+        display: inline-block;
+        float: none;
+        width: 50%; } }
+    @media (min-width: 0) and (max-width: 430px) {
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row,
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row {
+        display: block;
+        clear: both;
+        padding: 1%;
+        width: 98%;
+        margin-left: auto;
+        margin-right: auto; }
+        .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row:after,
+        .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row:after {
+          content: "";
+          display: table;
+          clear: both; } }
+  .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row,
+  .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row {
+    padding-bottom: 0;
+    outline: 1px solid #a2a2a2; }
+    .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row .views-field,
+    .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row .views-field {
+      position: relative;
+      padding: 7px 0;
+      margin-left: 7px;
+      margin-right: 7px;
+      border-top: 1px solid #a2a2a2; }
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row .views-field:before,
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row .views-field:before {
+        content: '\e81f';
+        font-family: "fontello";
+        font-style: normal;
+        font-weight: normal;
+        speak: none;
+        display: inline-block;
+        text-decoration: inherit;
+        width: 1em;
+        margin-right: .2em;
+        text-align: center;
+        /* opacity: .8; */
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1em;
+        margin-left: .2em;
+        /* font-size: 120%; */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row .views-field:before,
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row .views-field:before {
+        background-color: #5573b4;
+        color: #fff;
+        line-height: 20px;
+        height: 20px;
+        width: 20px;
+        padding: 2px;
+        border-radius: 3px;
+        position: absolute;
+        bottom: 0;
+        top: 0;
+        left: 8px;
+        margin: auto; }
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row .views-field .field-content,
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row .views-field .field-content {
+        display: block;
+        padding-left: 40px; }
+    .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row .views-field.views-field-field-category-image,
+    .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row .views-field.views-field-field-category-image {
       padding: 0;
-      line-height: 0; }
-    .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row .views-field.views-field-field-category-image img,
-    .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row .views-field.views-field-field-category-image img {
-      max-width: 100%; }
-  .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row .views-field.views-field-name,
-  .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row .views-field.views-field-name {
-    position: absolute;
-    left: 50%;
-    -webkit-transform: translate(-50%, 0);
-    transform: translate(-50%, 0);
-    background: #5573b4;
-    /* The Fallback */
-    background: rgba(85, 115, 180, 0.68);
-    padding: 10px 2%;
-    border: 0;
-    margin: 0;
-    bottom: 0;
-    width: 96%;
-    text-align: center;
-    color: WHITE; }
-    .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row .views-field.views-field-name:before,
-    .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row .views-field.views-field-name:before {
-      content: none;
-      display: none; }
-    .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row .views-field.views-field-name .field-content,
-    .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row .views-field.views-field-name .field-content {
-      padding-left: 4px; }
-    .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row .views-field.views-field-name span,
-    .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row .views-field.views-field-name p,
-    .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row .views-field.views-field-name h1,
-    .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row .views-field.views-field-name h2,
-    .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row .views-field.views-field-name h3,
-    .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row .views-field.views-field-name h4,
-    .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row .views-field.views-field-name h5,
-    .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row .views-field.views-field-name h6,
-    .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row .views-field.views-field-name a,
-    .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row .views-field.views-field-name div,
-    .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row .views-field.views-field-name li,
-    .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row .views-field.views-field-name span, .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row .views-field.views-field-name p, .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row .views-field.views-field-name h1, .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row .views-field.views-field-name h2, .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row .views-field.views-field-name h3, .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row .views-field.views-field-name h4, .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row .views-field.views-field-name h5, .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row .views-field.views-field-name h6, .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row .views-field.views-field-name a, .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row .views-field.views-field-name div, .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row .views-field.views-field-name li {
+      margin: 0;
+      border: 0;
+      overflow: hidden; }
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row .views-field.views-field-field-category-image:before,
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row .views-field.views-field-field-category-image:before {
+        content: none;
+        display: none; }
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row .views-field.views-field-field-category-image .field-content,
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row .views-field.views-field-field-category-image .field-content {
+        padding: 0;
+        line-height: 0; }
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row .views-field.views-field-field-category-image img,
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row .views-field.views-field-field-category-image img {
+        width: 100%; }
+    .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row .views-field.views-field-name,
+    .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row .views-field.views-field-name {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      background: #565656;
+      /* The Fallback */
+      background: rgba(86, 86, 86, 0.48);
+      width: 50%;
+      margin: 0;
+      border: 0;
+      padding: 0;
       color: WHITE; }
-    .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row .views-field.views-field-name a:hover,
-    .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row .views-field.views-field-name a:hover {
-      color: WHITE; }
-    .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row .views-field.views-field-name span,
-    .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row .views-field.views-field-name a,
-    .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row .views-field.views-field-name span, .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row .views-field.views-field-name a {
-      font-size: 22px;
-      font-size: 2.2rem;
-      text-decoration: none; }
-  .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row:after,
-  .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row:after {
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row .views-field.views-field-name:before,
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row .views-field.views-field-name:before {
+        content: none;
+        display: none; }
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row .views-field.views-field-name .field-content,
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row .views-field.views-field-name .field-content {
+        padding: 10px;
+        padding-left: 0;
+        text-align: center; }
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row .views-field.views-field-name span,
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row .views-field.views-field-name p,
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row .views-field.views-field-name h1,
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row .views-field.views-field-name h2,
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row .views-field.views-field-name h3,
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row .views-field.views-field-name h4,
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row .views-field.views-field-name h5,
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row .views-field.views-field-name h6,
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row .views-field.views-field-name a,
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row .views-field.views-field-name div,
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row .views-field.views-field-name li,
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row .views-field.views-field-name span, .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row .views-field.views-field-name p, .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row .views-field.views-field-name h1, .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row .views-field.views-field-name h2, .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row .views-field.views-field-name h3, .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row .views-field.views-field-name h4, .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row .views-field.views-field-name h5, .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row .views-field.views-field-name h6, .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row .views-field.views-field-name a, .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row .views-field.views-field-name div, .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row .views-field.views-field-name li {
+        color: WHITE; }
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row .views-field.views-field-name a:hover,
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row .views-field.views-field-name a:hover {
+        color: WHITE; }
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row .views-field.views-field-name span,
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row .views-field.views-field-name a,
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row .views-field.views-field-name span, .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row .views-field.views-field-name a {
+        font-size: 22px;
+        font-size: 2.2rem;
+        text-decoration: none; }
+    .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row:after,
+    .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row:after {
+      content: "";
+      display: table;
+      clear: both; }
+    .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row:hover,
+    .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row:hover {
+      box-shadow: 0 0 3px 3px #888;
+      box-shadow: 0 0 3px 3px rgba(136, 136, 136, 0.75); }
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row:hover .views-field.views-field-field-category-image,
+      .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row:hover .views-field.views-field-field-category-image {
+        outline: 1px solid #888;
+        overflow: hidden; }
+        .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row:hover .views-field.views-field-field-category-image img,
+        .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row:hover .views-field.views-field-field-category-image img {
+          -webkit-transform: scale(1.05, 1.07);
+          -webkit-transition-timing-function: ease-out;
+          -webkit-transition-duration: 250ms;
+          -moz-transform: scale(1.05, 1.07);
+          -moz-transition-timing-function: ease-out;
+          -moz-transition-duration: 250ms; }
+  .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content:after,
+  .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content:after {
     content: "";
     display: table;
     clear: both; }
-  .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row:hover,
-  .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row:hover {
-    box-shadow: 0 0 3px 3px #888;
-    box-shadow: 0 0 3px 3px rgba(136, 136, 136, 0.75); }
-    .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row:hover .views-field.views-field-field-category-image,
-    .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row:hover .views-field.views-field-field-category-image {
-      outline: 1px solid #888;
-      overflow: hidden; }
-      .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row:hover .views-field.views-field-field-category-image img,
-      .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row:hover .views-field.views-field-field-category-image img {
-        -webkit-transform: scale(1.05, 1.07);
-        -webkit-transition-timing-function: ease-out;
-        -webkit-transition-duration: 250ms;
-        -moz-transform: scale(1.05, 1.07);
-        -moz-transition-timing-function: ease-out;
-        -moz-transition-duration: 250ms; }
 
-.view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content:after,
-.view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content:after {
-  content: "";
-  display: table;
-  clear: both; }
+body .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row .views-field.views-field-name {
+  background: #FD8A33;
+  /* The Fallback */
+  background: rgba(253, 138, 51, 0.68); }
+
+body .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row .views-field.views-field-name {
+  background: #8BC53F;
+  /* The Fallback */
+  background: rgba(139, 197, 63, 0.68); }
 
 /* 
  * We have two Views, one as a Block and one as a Page
@@ -1876,5 +2208,3 @@ form#views-exposed-form-businesses-and-events-page-results .views-widget-filter-
       .view-image-slider .views-field-field-image-gallery .field-content ol.dots li.active {
         background: #fff;
         opacity: 1; }
-
-/*# sourceMappingURL=wttoc.styles.css.map */

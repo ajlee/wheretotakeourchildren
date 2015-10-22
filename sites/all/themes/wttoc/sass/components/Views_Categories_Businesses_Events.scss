@@ -6,7 +6,7 @@
 .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories,
 .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories{
 	.view-content{	
-		@include views3Wide1MobileDefault;
+		@include views3Wide1MobileStyle1;
 		.views-row{
 			padding-bottom:0;
 			//Field Row Styling
@@ -47,21 +47,21 @@
 					line-height:0;
 				}
 				img{
-					max-width:100%;
+					width:100%;
 				}
 			}
 			.views-field.views-field-name{
-				@include centerXAbsoluteNoIE8;
-				@include backgroundOpacity($color1, $opacity: 0.68);
+				@include centerXYAbsoluteNoIE8;
+				@include backgroundOpacity($LIGHTERDARKGRAY, $opacity: 0.48);
 				@include fontelloBeforeClear;
-				    padding: 10px 2%;
-					border: 0;
-					margin: 0;
-					bottom: 0;
-					width: 96%;
-					text-align: center;
+				width: 50%;
+				margin:0;
+				border:0;
+				padding:0;
 				.field-content{
-					padding-left:4px;
+					padding:10px;
+					padding-left:0;
+					text-align:center;
 				}
 				@include colorDescendantsFont(WHITE);
 				span,a{
@@ -86,6 +86,22 @@
 		}
 		//View content
 		@include clearfix;
+		margin:6px 0 3px 0;
+	}
+}
+// Different Colors For Titles
+body .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories{
+	.view-content .views-row{
+		.views-field.views-field-name{
+			@include backgroundOpacity($color2, $opacity: 0.68);
+		}
+	}
+}
+body .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories{
+	.view-content .views-row{
+		.views-field.views-field-name{
+			@include backgroundOpacity($color3, $opacity: 0.68);
+		}
 	}
 }
 

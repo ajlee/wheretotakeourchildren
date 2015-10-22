@@ -1,6 +1,6 @@
 /**
-* Select Elements, Using Jquery UI
-*/
+ * Select Elements, Using Jquery UI
+ */
 (function ($, Drupal) {
   Drupal.behaviors.wttocSelectElements = {
     attach: function (context) {
@@ -47,6 +47,15 @@
 				var findAttrLabel = $('label[for="' + attrId + '"]');
 				if(typeof(findAttrLabel) != "undefined"){
 					var placeHolderText = findAttrLabel.first().text();
+					//special placeholder in some cases
+					if ($(this).attr('name')=='field_start_datepicker[date]'){
+						placeHolderText = "Start Date";
+						$('label[for="edit-field-start-datepicker"').hide();
+					}
+					if ($(this).attr('name')=='field_end_datepicker[date]'){
+						placeHolderText = "End Date";
+						$('label[for="edit-field-end-datepicker"').hide();
+					}
 					//hide the label, if there was a placeholder text
 					findAttrLabel.hide();
 					//remove multiple spaces from the placeholder text

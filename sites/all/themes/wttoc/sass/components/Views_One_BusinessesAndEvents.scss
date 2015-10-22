@@ -1,6 +1,19 @@
 /* 
  * Content Type Displays
  */
+.body.node-type-event,.node-type-business-service-or-attraction{ 
+ .l-content {
+	.lc-region--inner{
+		@include boxBorderRadiusMarginPadding(2px solid $color1Light, 3px, 10px 0, 2%);
+		@include regionInnerSchemer($color1, $WHITE, $DARKGRAY, $color1);
+		@include buttonColor1;
+		.mainContentC .mccinner{
+		}
+	}	
+}
+}
+ 
+ 
 .view-id-business_display, .view-id-events_display{
 	.views-row{
 		@include clearfix;
@@ -49,7 +62,8 @@
 /*
  * Icon Colorings 
  */
- .js, .no-js{
+ .js body.node-type-event,.node-type-business-service-or-attraction .l-content, 
+ .no-js .body.node-type-event,.node-type-business-service-or-attraction .l-content{
 	//General Block
 	.block.block--views-events-display-block, .block.block--views-business-display-block{
 			@include borderRadiusIconbgIcon($color1Light 2px solid, 3px, $color1, $WHITE);

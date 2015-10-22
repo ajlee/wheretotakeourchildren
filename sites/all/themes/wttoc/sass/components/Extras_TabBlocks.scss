@@ -13,6 +13,7 @@
 	display: inline-block;
 	margin-right: 5px;
 	margin-top: 3px;
+	margin-bottom: 6px;
 	border: 1px solid $DARKGRAY;
 	border-bottom:0;
 	padding: 8px;
@@ -49,5 +50,12 @@
 		a{
 			color:$WHITE;
 		}
+	}
+}
+//Blocks (not the tab)
+.js .tabBlockJSBlock{
+	overflow:hidden;
+	a{
+		@include cssTransition(none);
 	}
 }

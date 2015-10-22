@@ -143,6 +143,20 @@
 }
 
 /*
+ * Linear Gradient 
+ */
+@mixin linearGradient($top, $bottom){
+    background: $top; /* Old browsers */
+    background: -moz-linear-gradient(top,  $top 0%, $bottom 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$top), color-stop(100%,$bottom)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  $top 0%,$bottom 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  $top 0%,$bottom 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  $top 0%,$bottom 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  $top 0%,$bottom 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+}
+
+/*
  * Hide Text Without Breaking Accessibility
  */
 @mixin accesibleHide{
@@ -426,7 +440,15 @@
 	-ms-transform: translate(-50%,0); 
 	transform: translate(-50%,0); 
 }
-
+@mixin centerXYAbsoluteNoIE8{
+	//IE8 and below not supported
+	position: absolute;
+    top: 50%;
+    left: 50%;
+	-webkit-transform: translate(-50%,-50%); 
+	-ms-transform: translate(-50%,-50%); 
+	transform: translate(-50%,-50%); 
+}
 @mixin views3Wide1MobileDefault{
 	.views-row{
 		margin-top:5px;
@@ -454,6 +476,63 @@
 			}
 			&:nth-child(2n+2){
 				@include splitVRight(50%);
+			}
+		};
+		//Mobile Columns
+		@include breakpoint(0 $breakpointMobile){
+			@include oneColumn(100%);
+		};
+	}
+}
+@mixin views3Wide1MobileStyle1{
+	text-align:center;
+	.views-row{
+		margin-top:5px;
+		margin-bottom:5px;
+		padding-bottom:2px;
+		position:relative;
+		//Wide Columns
+		@include breakpoint($breakpointWideP1){
+			&:nth-child(5n+1){
+				clear:both;
+				@include chop3VLeft(33.33%);
+			}
+			&:nth-child(5n+2){
+				@include chop3VMiddle(33.33%);
+			}
+			&:nth-child(5n+3){
+				@include chop3VRight(33.33%);
+			}
+			&:nth-child(5n+4){
+			clear:both;
+				@include splitVLeft(50%);
+			}
+			&:nth-child(5n+5){
+				@include splitVRight(50%);
+			}
+			&.views-row-last:nth-child(5n+1),&.views-row-last:nth-child(5n+4){
+				display: inline-block;
+				float: none;
+				width: 50%;
+			}
+		};
+		//Tablet Columns
+		@include breakpoint($mobile2Wide){
+			&:nth-child(3n+1){
+				@include splitVLeft(50%);
+				clear:both;
+			}
+			&:nth-child(3n+2){
+				@include splitVRight(50%);
+			}
+			&:nth-child(3n+3){
+				width:100%;
+				clear:both;
+			}
+			&.views-row-last:nth-child(3n+1){
+				display: inline-block;
+				float: none;
+				width: 50%;
 			}
 		};
 		//Mobile Columns

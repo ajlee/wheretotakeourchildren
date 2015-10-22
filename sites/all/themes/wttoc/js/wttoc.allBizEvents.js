@@ -93,7 +93,7 @@
 				var viewsBlockSelector = '.view-id-businesses_and_events.view-display-id-map_and_filters';
 				var sFormSelector = 'form .views-exposed-form .views-exposed-widgets';
 				var exposedSubmitSelector = 'input#edit-submit-businesses-and-events';
-				var fieldSyncB2PArray = ['#edit-field-category','#edit-field-category-event','#edit-field-hidden-address-geofield-latlon','#edit-field-hidden-address-geofield-latlon-1'];
+				var fieldSyncB2PArray = ['#edit-type', '#edit-field-category','#edit-field-category-event','#edit-field-hidden-address-geofield-latlon','#edit-field-hidden-address-geofield-latlon-1'];
 				//On Block Submit Click
 				$(viewsBlockSelector + sp + sFormSelector + sp + exposedSubmitSelector).on("click",function(){
 					//sync values to page
@@ -266,6 +266,81 @@
 				}
 			}
 		}//end of attach
+	};//end of behavior
+	// If Content Type Business Is Selected, Reset All Event Filters' Values and Display Business Filters
+	// If Content Type Events Is Selected, Reset All Business Filters' Values and Display Event Filters
+	// If Both Content Types Are Selected, Display Both Filters 
+	// If No Content Type Is Selected, Reset All Values and Hide Both Filters
+	Drupal.behaviors.wttocContentTypeDisplay = {
+		attach: function (context) {
+				var sp = ' ';
+				var viewsExposedFormSelector = 'form#views-exposed-form-businesses-and-events-page-results';
+				var viewsBlockSelector = '.view-id-businesses_and_events.view-display-id-map_and_filters';
+				var contentTypeSelect = '#edit-type';
+				var optionBusiness = 'business_service_or_attraction';
+				var optionEvent =  'event';
+				var fieldsBusinessesArray = ['#edit-field-category-wrapper'];
+				var fieldsEventsArray = ['#edit-field-category-event-wrapper'];
+				//no values are selected at the start, so hide both business and event fields
+				$.each(fieldsBusinessesArray, function(){
+					$(viewsBlockSelector + sp + this).hide();
+				});
+				$.each(fieldsEventsArray, function(){
+					$(viewsBlockSelector + sp + this).hide();
+				});
+				//$(viewsExposedFormSelector + sp + contentTypeSelect + "," + viewsBlockSelector + sp + contentTypeSelect).change(function(){
+				$(viewsBlockSelector + sp + contentTypeSelect).change(function(){
+					var currentVal = $(this).val();
+					var combinedA = optionEvent+","+optionBusiness;
+					var combinedB = optionBusiness+","+optionEvent;
+					//we can't join a null, so don't try that
+					if(currentVal!=null){
+						switch(currentVal.join(",")){
+							//Business Content Type Selected
+							case optionBusiness:
+								console.log("business");
+								$.each(fieldsBusinessesArray, function(){
+									$(viewsBlockSelector + sp + this).show();
+								});
+								$.each(fieldsEventsArray, function(){
+									$(viewsBlockSelector + sp + this).hide();
+								});
+								break;
+							//Event Content Type Selected
+							case optionEvent:
+								console.log("event");
+								$.each(fieldsBusinessesArray, function(){
+									$(viewsBlockSelector + sp + this).hide();
+								});
+								$.each(fieldsEventsArray, function(){
+									$(viewsBlockSelector + sp + this).show();
+								});
+								break;
+							//Both Values Selected	
+							default:
+								console.log("both values selected");
+								$.each(fieldsBusinessesArray, function(){
+									$(viewsBlockSelector + sp + this).hide();
+								});
+								$.each(fieldsEventsArray, function(){
+									$(viewsBlockSelector + sp + this).hide();
+								});
+						}
+					}
+					//No Values Selected
+					else{
+						console.log("no values selected");
+						$.each(fieldsBusinessesArray, function(){
+							$(viewsBlockSelector + sp + this).hide();
+						});
+						$.each(fieldsEventsArray, function(){
+							$(viewsBlockSelector + sp + this).hide();
+						});
+					}
+				});
+				
+				
+			}//end of attach
 	};//end of behavior
 })(jQuery, Drupal)
 

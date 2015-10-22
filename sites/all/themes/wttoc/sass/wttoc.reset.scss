@@ -68,9 +68,12 @@ a.active{
 /*
  * Input Max Width - Keep them inside the screen in all circumstances
  */
-input{
+input, select{
 	max-width:99%;
 	width:100%;
+}
+.SumoSelect .SlectBox{//slectbox is for sumo select
+	width: 180px;
 }
 
 /*

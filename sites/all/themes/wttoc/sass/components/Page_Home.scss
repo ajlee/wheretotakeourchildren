@@ -1,14 +1,99 @@
 body.front{
-	.l-region--widetop .views-exposed-form-businesses-and-events-page-results{
-		    padding: 20px 5%;
-		    text-align:center;
-		    .views-exposed-form{
-				text-align:left;
+	h1.mainPageTitle{
+		display:none;
+	}
+	h2.block__title{
+		@include remFontSize($fontL);
+		@include linearGradient($LIGHTERDARKGRAY, $GRAY);
+		color:white;
+		padding: 10px 3px;
+		text-align:center;
+		margin: 15px 0 5px 0;
+	}
+	//events categories block
+	#block-views-9bc9d8ca0a25d6b82e61cd69a69f3fa4{
+		h2.block__title{
+		@include linearGradient($color2, $color2Light);
+		}
+	}
+	//business categories block
+	#block-views-d336072e15ef9d7cf7595da1f2eae2c8{
+		h2.block__title{
+			@include linearGradient($color3, $color3Light);
+		}
+	}
+	.l-region--widetop{ 
+		.views-exposed-form-businesses-and-events-page-results{
+			padding: 20px 5%;
+			text-align:center;
+			.views-exposed-form{
+				padding-top:20px;
+				@include breakpoint($tablet2Wide){
+					padding-top:35px;
+				};
+				@include breakpoint($breakpointWideP1){
+					padding-top:50px;
+				};
 				display: inline-block;
-				.views-exposed-widget .form-submit{
-					margin-top:0;
+				.views-exposed-widget{
+					.views-widget{
+						text-align:left;
+					}
+					@include fontelloBefore;
+					&:before{
+						font-size: 24px;
+						margin-bottom: 10px;
+						@include backgroundOpacity($color1, .75);
+						color: #fff;
+						padding: 12px;
+						border-radius: 5px 5px 30px 30px;
+					}
+					float: none;
+					padding-top: 10px;
+					display: inline-block;
+					vertical-align: top;
+					.form-submit{
+						margin-top:0;
+					}
+					&#edit-field-category-wrapper{
+						&:before{
+							content:'\e81b';
+							@include backgroundOpacity($color2, .75);
+						}
+					}
+					&#edit-field-category-event-wrapper{
+						&:before{
+							content:'\e81c';
+							@include backgroundOpacity($color3, .75);
+						}
+					}
+					&#edit-field-hidden-address-geofield-latlon-wrapper{
+						&:before{
+							content:'\e816';
+							@include backgroundOpacity($colorAlt, .75);
+						}
+					}
+					&.views-submit-button{
+						@include fontelloBeforeClear;
+						min-width:40%;
+						vertical-align:bottom;
+					}
 				}
 			}
-			
+		}
+		#block-views-d400f6dac6873ec2ddd895ba96987fce{
+			//background		
+			background: url("/sites/all/themes/wttoc/images/prevImg/footer.png");
+			background-size: 300% auto;
+			@include breakpoint($tablet2Wide){
+						background-size: 200% auto;
+					};
+					@include breakpoint($breakpointWideP1){
+						background-size: 150% auto;
+					};
+			background-repeat: no-repeat;
+			min-height: 250px;
+			background-position: center center;
+		}
 	}
 }

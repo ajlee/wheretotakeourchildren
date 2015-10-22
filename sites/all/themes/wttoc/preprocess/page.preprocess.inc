@@ -41,7 +41,7 @@ function wttoc_preprocess_page(&$variables) {
 
 	//LOAD CSS IN THEME
         $loadedCSSinTheme = array(
-                '/sass/bowerimports/jquery-ui/themes/excite-bike/jquery-ui.min.css',
+                '/sass/bowerimports/jquery-ui/themes/smoothness/jquery-ui.min.css',
                 );
         for($i=0; $i<count($loadedCSSinTheme); $i++){
                 drupal_add_css(drupal_get_path('theme', 'wttoc') . $loadedCSSinTheme[$i],

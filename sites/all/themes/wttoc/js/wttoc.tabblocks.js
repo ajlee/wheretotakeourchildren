@@ -25,7 +25,7 @@
 			var currentBlockSelector = blockSelector + ':eq(' + i + ')';
 			var currentTitleBlock = parentOfBlocks.children(currentBlockSelector).children(blockTitleSelector);
 			//Give the block an ID
-			parentOfBlocks.children(currentBlockSelector).attr('id', 'tabBlock' + ip1);
+			parentOfBlocks.children(currentBlockSelector).attr('id', 'tabBlock' + ip1).addClass('tabBlockJSBlock');
 			//Create a tab and give it a link to its block id along with some classes
 			var classList = parentOfBlocks.children(currentBlockSelector).attr('class').split(/\s+/);
 			classesToPutInTabString = "tabJS";

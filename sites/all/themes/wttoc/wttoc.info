@@ -16,11 +16,11 @@ stylesheets[all][] = css/wttoc.styles.css
 ; ========================================
 ; Library Scripts needed for these are provided at:
 ; preprocess/page.preprocess.inc
+scripts[] = js/wttoc.noflash.js
 scripts[] = js/wttoc.inputsui.js
 scripts[] = js/wttoc.behaviors.js
 scripts[] = js/wttoc.readmore.js
 scripts[] = js/wttoc.tabblocks.js
-scripts[] = js/wttoc.noflash.js
 scripts[] = js/wttoc.matchheight.js
 scripts[] = js/wttoc.allBizEvents.js
 ; ========================================

@@ -38,9 +38,9 @@
 
 .l-content {
 	.lc-region--inner{
-		@include boxBorderRadiusMarginPadding(2px solid $color1Light, 3px, 10px 0, 2%);
-		@include regionInnerSchemer($color1, $WHITE, $DARKGRAY, $color1);
-		@include buttonColor1;
+		//@include boxBorderRadiusMarginPadding(2px solid $color1Light, 3px, 10px 0, 2%);
+		//@include regionInnerSchemer($color1, $WHITE, $DARKGRAY, $color1);
+		//@include buttonColor1;
 		.mainContentC .mccinner{
 		}
 	}	

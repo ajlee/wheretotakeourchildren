@@ -77,4 +77,19 @@ fieldset{
 	z-index:1000;
 }
 
+/*
+ * DatePicker
+ */ 
+	#ui-datepicker-div{
+		//go above google maps widgets
+		z-index:501 !important;
+		table.ui-datepicker-calendar{
+			text-align: center;
+			overflow: visible;
+			thead,tbody{
+				display: inline-block;
+			}
+		}
+	}
+
 
