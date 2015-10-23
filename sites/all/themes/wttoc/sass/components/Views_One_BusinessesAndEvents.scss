@@ -2,22 +2,34 @@
  * Content Type Displays
  */
 body.node-type-event,body.node-type-business-service-or-attraction{ 
- .l-content {
-	.lc-region--inner{
-		@include boxBorderRadiusMarginPadding(2px solid $color1Light, 3px, 10px 0, 2%);
-		@include regionInnerSchemer($color1, $WHITE, $DARKGRAY, $color1);
-		@include buttonColor1;
-		.mainContentC .mccinner{
+	.l-content {
+		.lc-region--inner{
+			@include boxBorderRadiusMarginPadding(2px solid $color1Light, 3px, 10px 0, 2%);
+			@include regionInnerSchemer($color1, $WHITE, $DARKGRAY, $color1);
+			@include buttonColor1;
+		}
+		h1.mainPageTitle{
+			@include fontelloBefore;
+			@include remFontSize($fontXXL);
+			color:white;
+			padding: 14px 7px;
+			margin: 15px 0 5px 0;
+		}	
+	}
+	.l-region--sidebar-first{
+		.lc-region--inner{
+			@include boxBorderRadiusMarginPadding(2px solid $color2Light, 3px, 10px 0, 3%);
+			@include regionInnerSchemer($color2, $WHITE, $DARKGRAY, $color2);
+			@include buttonColor2;
+		}	
+	}
+	.l-region--sidebar-second{
+		.lc-region--inner{
+			@include boxBorderRadiusMarginPadding(2px solid $color3Light, 3px, 10px 0, 3%);
+			@include regionInnerSchemer($color3, $WHITE, $DARKGRAY, $color3);
+			@include buttonColor3;
 		}
 	}
-	h1.mainPageTitle{
-		@include fontelloBefore;
-		@include remFontSize($fontXXL);
-		color:white;
-		padding: 14px 7px;
-		margin: 15px 0 5px 0;
-	}	
-  }
 }
 body.node-type-business-service-or-attraction{
 	h1.mainPageTitle{

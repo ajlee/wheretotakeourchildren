@@ -1,25 +1,43 @@
 $vsbImageWidth: 75px;
 $vsbImageHeight: $vsbImageWidth;
-$vsbPadMarg: 10px;
+$vsbPadMarg: 8px;
 
 .view-id-small_blocks_businesses_and_or_events{
 	.view-content{
+		@include breakpoint($mobile2Tablet){
+			@include clearfix;
+			.views-row{
+				@include clearfix;
+			}
+			@include clearfix;
+			.views-row{
+			    @include clearfix;
+			}
+			.views-row:nth-child(2n+1){
+				@include splitVLeft(50%);
+				clear:both;
+			}
+			.views-row:nth-child(2n+2){
+				@include splitVRight(50%);
+				clear:none;
+			}
+		}
 		.views-row{
+			clear:both;
 			border-bottom: 1px solid $DARKERLIGHTGRAY;
 			margin-bottom: $vsbPadMarg;
-			padding-bottom: $vsbPadMarg;
+			padding-bottom: $vsbPadMarg/2;
 			padding-top: $vsbPadMarg/2;
 			position:relative;
-			min-height:$vsbImageHeight + ($vsbPadMarg * 3 / 2);
+			min-height:$vsbImageHeight + ($vsbPadMarg);
 			.views-field.views-field-nothing{
 				max-width:$vsbImageWidth;
 				overflow:hidden;
 				position:absolute;
-				top:0;
+				top:$vsbPadMarg/2;
 				left:0;
 				padding-left:0;
-				@include centerYAbsoluteNoIE8;
-				.teaser__left-wrapper{
+				.teaser__first-wrapper{
 					max-height: $vsbImageHeight;
 					.verified-container{
 						display:none;
@@ -38,6 +56,7 @@ $vsbPadMarg: 10px;
 							top: 5px;
 							left: 5px;
 							border-radius:10px;
+							z-index:1;
 						}
 						.verified-container-inner{
 							@include accesibleHide;
@@ -60,6 +79,7 @@ $vsbPadMarg: 10px;
 							right: 0;
 							bottom: 0;
 							border-top-left-radius:5px;
+							z-index:1;
 						}
 						.type-container-inner{
 							@include accesibleHide;
@@ -69,13 +89,40 @@ $vsbPadMarg: 10px;
 			}//end of views-field-nothing
 			//views fields
 			.views-field{
-				padding-left: $vsbImageWidth + $vsbPadMarg;
+				padding-left: $vsbImageWidth;
+			}
+			.views-field-title,.views-field-field-address,
+			.views-field-field-date-of-event{
+				.field-content{
+					display: block;
+				}
+			}
+			.views-field-title .field-content{
+				@include colorDescendantsFont($color3);
+				@include remFontSize($fontS);
+				padding: 0 5px 5px 10px;
+			}
+			.views-field-field-address .field-content,.views-field-field-date-of-event .field-content{
+				position:relative;
+				@include fontelloBefore;
+				&:before{
+					@include centerYAbsoluteNoIE8;
+					color:$color3;
+				}
+				> div, >span{
+					display:inline-block;
+					padding-left:22px;
+				}
+				padding: 2px 5px 2px 2px;
+				.locality, .state, .postal-code,span{
+					@include remFontSize($fontXXS);
+				}
 			}
 			//per content type rows
 			//business content type
 			&.rowContentType-business-service-or-attraction{
 				.views-field.views-field-nothing{
-					.teaser__left-wrapper{
+					.teaser__first-wrapper{
 						.verified-container:before, .type-container:before{
 							background-color:$color3;
 						}
@@ -88,14 +135,33 @@ $vsbPadMarg: 10px;
 			//event content type 
 			&.rowContentType-event{
 				.views-field.views-field-nothing{
-					.teaser__left-wrapper{
+					.teaser__first-wrapper{
 						.verified-container:before, .type-container:before{
 							background-color:$color3Dark;
 						}
 						.type-container:before{
 							content:'\e81c';
+							background-color:$color3Dark;
 						}
 					}
+				}
+				.views-field-title .field-content{
+					@include colorDescendantsFont($color3Dark);
+				}
+				.views-field-field-address .field-content,.views-field-field-date-of-event .field-content{
+					&:before{
+						color:$color3Dark;
+					}
+				}
+			}
+			//Row Focus Effect
+			&:hover{
+				.image-container{ 
+					img{
+						@include zoomImage;
+					}
+					outline:1px solid $GRAY;
+					overflow:hidden;
 				}
 			}
 		}//end of views row

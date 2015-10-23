@@ -4,7 +4,7 @@ body.front{
 	}
 	.mainContentC{
 		h2.block__title{
-			margin: 15px 0 5px 0;
+			margin: 0 0 1px 0;
 		}
 	}
 	h2.block__title{
@@ -30,16 +30,38 @@ body.front{
 			}
 		}
 	}
-	// Business Categories Block, Category Title
+	// Business Categories Block, Block Title
 	#block-views-d336072e15ef9d7cf7595da1f2eae2c8{
+		border-color:$color1Light;
+		.block__content{
+			padding: #{$columnPercentPadder * 1} #{$columnPercentPadder * 2};
+		}
 		h2.block__title{
 			@include linearGradient(darken($color1Light,12%), $color1Light);
 		}
 	}
 	// Event Categories Block, Block Title
 	#block-views-9bc9d8ca0a25d6b82e61cd69a69f3fa4{
+		border-color:$color1Dark;
+		.block__content{
+			padding: #{$columnPercentPadder * 1} #{$columnPercentPadder * 2};
+		}
 		h2.block__title{
-			@include linearGradient($color1Dark, lighten($color1Dark,8%));
+			@include linearGradient(darken($color1Dark,4%), $color1Dark);
+		}
+	}
+	//Latest Businesses Block, Block Title
+	#block-views-e0c0dc6a7c147131ae1e55e7c269dfeb{
+		border-color: $color3;
+		h2.block__title{
+			@include linearGradient(darken($color3,4%), $color3);
+		}
+	}
+	//Upcoming Events Block, Block Title
+	#block-views-f25193e5e6ef9e46d427bbbc9f2e9000{
+		border-color: $color3Dark;
+		h2.block__title{
+			@include linearGradient(darken($color3Dark,4%), $color3Dark);
 		}
 	}
 	//Main Form
