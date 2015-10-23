@@ -34,3 +34,6 @@
 .icon-ellipsis:before { content: '\e820'; } /* '' */
 .icon-list-alt:before { content: '\e821'; } /* '' */
 .icon-plus-outline:before { content: '\e822'; } /* '' */
+.icon-right-circled:before { content: '\e823'; } /* '' */
+.icon-left-circled:before { content: '\e824'; } /* '' */
+.icon-ok:before { content: '\e825'; } /* '' */

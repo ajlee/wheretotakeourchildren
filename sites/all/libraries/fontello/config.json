@@ -25,6 +25,12 @@
       "src": "fontawesome"
     },
     {
+      "uid": "12f4ece88e46abd864e40b35e05b11cd",
+      "css": "ok",
+      "code": 59429,
+      "src": "fontawesome"
+    },
+    {
       "uid": "e15f0d620a7897e2035c18c80142f6d9",
       "css": "link-ext",
       "code": 59421,
@@ -70,6 +76,18 @@
       "uid": "5278ef7773e948d56c4d442c8c8c98cf",
       "css": "lightbulb",
       "code": 59411,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "6855131631509e8795730ce062045ea1",
+      "css": "left-circled",
+      "code": 59428,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "19b04848ae7332d2c0ea2a9e19064037",
+      "css": "right-circled",
+      "code": 59427,
       "src": "fontawesome"
     },
     {
