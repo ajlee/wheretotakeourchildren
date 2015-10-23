@@ -11,6 +11,13 @@
                 target: null,
                 remove: false
         });
+	//More Initial Match Height
+	$(".view-id-small_blocks_businesses_and_or_events .view-content .views-row").matchHeight({
+		byRow:true,
+		property: 'min-height',
+		target:null,
+		remove:false
+	});
 	//Update on Ajax - use a timeout to play it safe
         $( document ).ajaxStop(function() {
 		if( $(".view-id-businesses_and_events.view-display-id-page_results .view-content .views-row").length ){
