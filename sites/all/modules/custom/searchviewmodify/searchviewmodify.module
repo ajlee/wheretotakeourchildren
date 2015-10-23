@@ -35,3 +35,10 @@ function searchviewmodify_search_api_views_query_alter(&$view, &$query){
 		}
 	}
 }
+
+/**
+ * Implements hook_form_alter()
+ */
+// @TODO possible, hide optional field elements in homepage
+//function searchviewmodify_form_alter(&$form, $form_state, $form_id) {
+//}
