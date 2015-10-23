@@ -73,11 +73,11 @@
 			//content type: icons & colorings
 			&.rowContentType-business-service-or-attraction{
 				.views-field.views-field-type{//top icon
-					@include backgroundOpacity($color1,0.8);
+					@include backgroundOpacity($color1Light,0.8);
 					&:before{
 						content:'\e81b';
 						background-color:$WHITE;
-						color:$color1;
+						color:$color1Light;
 					}
 					.field-content{
 						color:$WHITE;
@@ -106,11 +106,11 @@
 					}
 				}	
 				.views-field.views-field-title{//title
-					@include colorDescendantsFont($color1Dark);
+					@include colorDescendantsFont($color1);
 				}
 				.views-field{//other icons
 					&:before{
-						background-color:$color1Dark;
+						background-color:$color1;
 						color:white;
 					}
 				}
@@ -186,15 +186,16 @@ form#views-exposed-form-businesses-and-events-page-results, form#views-exposed-f
 		font-style: normal;
 		padding: 5px;
 		border-radius: 1px;
+		width:160px;
 		@include remFontSize($fontS);
 	}
 	.SlectBox span.placeholder{
 		font-style:normal;
-		color:$BLACK;
+		color:$GRAY;
 	}
 	.SlectBox span{
 		font-style:italic;
-		color:$GRAY;
+		color:$BLACK;
 	}
 	.fakeButton{
 		border-radius:1px;

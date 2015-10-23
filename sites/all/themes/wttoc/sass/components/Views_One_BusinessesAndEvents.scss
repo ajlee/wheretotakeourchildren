@@ -1,7 +1,7 @@
 /* 
  * Content Type Displays
  */
-.body.node-type-event,.node-type-business-service-or-attraction{ 
+body.node-type-event,body.node-type-business-service-or-attraction{ 
  .l-content {
 	.lc-region--inner{
 		@include boxBorderRadiusMarginPadding(2px solid $color1Light, 3px, 10px 0, 2%);
@@ -9,8 +9,35 @@
 		@include buttonColor1;
 		.mainContentC .mccinner{
 		}
+	}
+	h1.mainPageTitle{
+		@include fontelloBefore;
+		@include remFontSize($fontXXL);
+		color:white;
+		padding: 14px 7px;
+		margin: 15px 0 5px 0;
 	}	
+  }
 }
+body.node-type-business-service-or-attraction{
+	h1.mainPageTitle{
+		@include linearGradient(darken($color1,10%), $color1);
+		&:before{
+			background-color:transparent;
+			color:$WHITE;
+			content:'\e81b' !important;
+		}		
+	}
+}
+body.node-type-event{
+	h1.mainPageTitle{
+		@include linearGradient(darken($color1,10%), $color1);
+		&:before{
+			background-color:transparent;
+			color:$WHITE;
+			content:'\e81c' !important;
+		}	
+	}
 }
  
  
@@ -62,8 +89,8 @@
 /*
  * Icon Colorings 
  */
- .js body.node-type-event,.node-type-business-service-or-attraction .l-content, 
- .no-js .body.node-type-event,.node-type-business-service-or-attraction .l-content{
+ .js body.node-type-event .l-content, .js .node-type-business-service-or-attraction .l-content, 
+ .no-js body.node-type-event .l-content, .no-js .node-type-business-service-or-attraction .l-content{
 	//General Block
 	.block.block--views-events-display-block, .block.block--views-business-display-block{
 			@include borderRadiusIconbgIcon($color1Light 2px solid, 3px, $color1, $WHITE);

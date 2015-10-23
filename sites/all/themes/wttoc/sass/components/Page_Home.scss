@@ -2,26 +2,47 @@ body.front{
 	h1.mainPageTitle{
 		display:none;
 	}
+	.mainContentC{
+		h2.block__title{
+			margin: 15px 0 5px 0;
+		}
+	}
 	h2.block__title{
 		@include remFontSize($fontL);
 		@include linearGradient($LIGHTERDARKGRAY, $GRAY);
 		color:white;
 		padding: 10px 3px;
 		text-align:center;
-		margin: 15px 0 5px 0;
 	}
-	//events categories block
-	#block-views-9bc9d8ca0a25d6b82e61cd69a69f3fa4{
-		h2.block__title{
-		@include linearGradient($color2, $color2Light);
+	// Business Categories Block, Category Title
+	.view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories{
+		.view-content .views-row{
+			.views-field.views-field-name{
+				@include backgroundOpacity($color1Light, $opacity: 0.68);
+			}
 		}
 	}
-	//business categories block
+	// Event Categories Block, Category Title
+	.view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories{
+		.view-content .views-row{
+			.views-field.views-field-name{
+				@include backgroundOpacity($color1Dark, $opacity: 0.68);
+			}
+		}
+	}
+	// Business Categories Block, Category Title
 	#block-views-d336072e15ef9d7cf7595da1f2eae2c8{
 		h2.block__title{
-			@include linearGradient($color3, $color3Light);
+			@include linearGradient(darken($color1Light,12%), $color1Light);
 		}
 	}
+	// Event Categories Block, Block Title
+	#block-views-9bc9d8ca0a25d6b82e61cd69a69f3fa4{
+		h2.block__title{
+			@include linearGradient($color1Dark, lighten($color1Dark,8%));
+		}
+	}
+	//Main Form
 	.l-region--widetop{ 
 		.views-exposed-form-businesses-and-events-page-results{
 			padding: 20px 5%;
@@ -58,13 +79,25 @@ body.front{
 					&#edit-field-category-wrapper{
 						&:before{
 							content:'\e81b';
-							@include backgroundOpacity($color2, .75);
+							@include backgroundOpacity($color1Light, .87);
 						}
 					}
 					&#edit-field-category-event-wrapper{
 						&:before{
 							content:'\e81c';
-							@include backgroundOpacity($color3, .75);
+							@include backgroundOpacity($color1Dark, .75);
+						}
+					}
+					&#edit-field-start-datepicker-wrapper{
+						&:before{
+							content:'\e823';
+							@include backgroundOpacity($color1Dark, .75);
+						}
+					}
+					&#edit-field-end-datepicker-wrapper{
+						&:before{
+							content:'\e824';
+							@include backgroundOpacity($color1Dark, .75);
 						}
 					}
 					&#edit-field-hidden-address-geofield-latlon-wrapper{

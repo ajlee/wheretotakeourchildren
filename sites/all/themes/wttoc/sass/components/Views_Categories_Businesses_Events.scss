@@ -54,18 +54,21 @@
 				@include centerXYAbsoluteNoIE8;
 				@include backgroundOpacity($LIGHTERDARKGRAY, $opacity: 0.48);
 				@include fontelloBeforeClear;
-				width: 50%;
+				width: 65%;
 				margin:0;
 				border:0;
 				padding:0;
 				.field-content{
-					padding:10px;
-					padding-left:0;
+					padding:6px;
+					padding-left:6px;
 					text-align:center;
 				}
 				@include colorDescendantsFont(WHITE);
 				span,a{
 					@include remFontSize($fontL);
+					@include breakpoint($breakpointWideP1){
+						@include remFontSize($fontM);
+					};
 					text-decoration:none;
 				}
 			}
@@ -87,21 +90,6 @@
 		//View content
 		@include clearfix;
 		margin:6px 0 3px 0;
-	}
-}
-// Different Colors For Titles
-body .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories{
-	.view-content .views-row{
-		.views-field.views-field-name{
-			@include backgroundOpacity($color2, $opacity: 0.68);
-		}
-	}
-}
-body .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories{
-	.view-content .views-row{
-		.views-field.views-field-name{
-			@include backgroundOpacity($color3, $opacity: 0.68);
-		}
 	}
 }
 

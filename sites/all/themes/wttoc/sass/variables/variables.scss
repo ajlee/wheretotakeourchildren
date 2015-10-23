@@ -78,15 +78,18 @@ $WHITE:#fff;
 //$color1Light:#407D8B;
 //$color1Dark:#002A34;
 $color1:#5573b4;/* Blue*/
-$color1Light:#7696cf;
+//$color1Light:#7696cf;
+$color1Light:#8CAFBE;
 $color1Dark:#015063;
 
 $color2:#FD8A33;/*Orange*/
 $color2Light:#FFB882;
 $color2Dark:#B04D00;
-$color3:#8BC53F;/*Light Green*/
-$color3Light:#C8F094;
+$color3:#8CC541;/*Light Green*/
+//$color3Light:#C8F094;
+$color3Light:#AEEC54;
 $color3Dark:#51870B;
+//$color3Dark:#62872C;
 $colorAlt:#ffde00;/*BrightYellow*/
 $colorAltLight: lighten($colorAlt, 3.5%);
 $colorAltDark: darken($colorAlt, 3.5%);

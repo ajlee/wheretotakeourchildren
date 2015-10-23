@@ -1,0 +1,103 @@
+$vsbImageWidth: 75px;
+$vsbImageHeight: $vsbImageWidth;
+$vsbPadMarg: 10px;
+
+.view-id-small_blocks_businesses_and_or_events{
+	.view-content{
+		.views-row{
+			border-bottom: 1px solid $DARKERLIGHTGRAY;
+			margin-bottom: $vsbPadMarg;
+			padding-bottom: $vsbPadMarg;
+			padding-top: $vsbPadMarg/2;
+			position:relative;
+			min-height:$vsbImageHeight + ($vsbPadMarg * 3 / 2);
+			.views-field.views-field-nothing{
+				max-width:$vsbImageWidth;
+				overflow:hidden;
+				position:absolute;
+				top:0;
+				left:0;
+				padding-left:0;
+				@include centerYAbsoluteNoIE8;
+				.teaser__left-wrapper{
+					max-height: $vsbImageHeight;
+					.verified-container{
+						display:none;
+						&.typeContainerShow{//if the content is verified, this class will exist
+							display:block;
+						}
+						@include fontelloBefore;
+						&:before{
+							content:'\e825';
+							font-size: 12px;
+							background-color: $color1;
+							color: white;
+							padding: 3px;
+							position: absolute;
+							margin: 0 !important;
+							top: 5px;
+							left: 5px;
+							border-radius:10px;
+						}
+						.verified-container-inner{
+							@include accesibleHide;
+						}
+					}
+					.image-container{
+						img{
+							width: $vsbImageWidth;
+						}
+					}
+					.type-container{
+						@include fontelloBefore;
+						&:before{
+							font-size: 17px;
+							background-color: $color1;
+							color: white;
+							padding: 3px;
+							position: absolute;
+							margin: 0 !important;
+							right: 0;
+							bottom: 0;
+							border-top-left-radius:5px;
+						}
+						.type-container-inner{
+							@include accesibleHide;
+						}
+					}
+				}//end of-teaser left-wrapper
+			}//end of views-field-nothing
+			//views fields
+			.views-field{
+				padding-left: $vsbImageWidth + $vsbPadMarg;
+			}
+			//per content type rows
+			//business content type
+			&.rowContentType-business-service-or-attraction{
+				.views-field.views-field-nothing{
+					.teaser__left-wrapper{
+						.verified-container:before, .type-container:before{
+							background-color:$color3;
+						}
+						.type-container:before{
+							content:'\e81b';
+						}
+					}
+				}
+			}
+			//event content type 
+			&.rowContentType-event{
+				.views-field.views-field-nothing{
+					.teaser__left-wrapper{
+						.verified-container:before, .type-container:before{
+							background-color:$color3Dark;
+						}
+						.type-container:before{
+							content:'\e81c';
+						}
+					}
+				}
+			}
+		}//end of views row
+	}
+}

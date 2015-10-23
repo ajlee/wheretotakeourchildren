@@ -49,11 +49,11 @@
 					var placeHolderText = findAttrLabel.first().text();
 					//special placeholder in some cases
 					if ($(this).attr('name')=='field_start_datepicker[date]'){
-						placeHolderText = "Start Date";
+						placeHolderText = "Events From";
 						$('label[for="edit-field-start-datepicker"').hide();
 					}
 					if ($(this).attr('name')=='field_end_datepicker[date]'){
-						placeHolderText = "End Date";
+						placeHolderText = "Events Until";
 						$('label[for="edit-field-end-datepicker"').hide();
 					}
 					//hide the label, if there was a placeholder text

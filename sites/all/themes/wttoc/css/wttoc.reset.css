@@ -58,6 +58,14 @@ input, select {
 .SumoSelect .SlectBox {
   width: 180px; }
 
+body .container-inline-date .form-item, body .container-inline-date .form-item input {
+  max-width: 99%;
+  width: 100%; }
+
+body .SumoSelect > .CaptionCont {
+  border: 0;
+  outline: 1px solid #a2a2a2; }
+
 /*
  * Responsive Tables - Focus On Full Support
  */

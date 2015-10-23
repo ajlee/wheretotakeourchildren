@@ -75,6 +75,14 @@ input, select{
 .SumoSelect .SlectBox{//slectbox is for sumo select
 	width: 180px;
 }
+body .container-inline-date .form-item, body .container-inline-date .form-item input{//views datepicker reset
+	max-width:99%;
+	width:100%;
+}
+body .SumoSelect > .CaptionCont{
+	border: 0;
+	outline: 1px solid #a2a2a2;
+}
 
 /*
  * Responsive Tables - Focus On Full Support
