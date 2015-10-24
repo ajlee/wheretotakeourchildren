@@ -35,18 +35,19 @@
 						var address = $(viewsBlockFormSelector + sp +exposedAddressSelector).val();
 						//geocode it
 						geocodeAsync(address, function(ret){
-							//remove the address field value
-							$(viewsBlockFormSelector + sp + exposedAddressSelector).val("");
 							if(ret !== "empty address" && ret !== "error"){
 								//fill out the lat lon field with the geocoded data
 								$(viewsBlockFormSelector + sp + exposedLatLongSelector).val(ret);
-								$globalPreviousAddressSubmitted = address;
+								$.cookie("globalPreviousAddressSubmitted", address, 7);
 							}
 							if(ret ==="empty address"){
 								//fill out the lat lon field with the geocoded data
 								$(viewsBlockFormSelector + sp + exposedLatLongSelector).val("");
-								$globalPreviousAddressSubmitted = "";
+								$.cookie("globalPreviousAddressSubmitted", null, 7);
 							}
+							//remove the address field value
+							$(viewsBlockFormSelector + sp + exposedAddressSelector).attr("placeholder", address);
+							$(viewsBlockFormSelector + sp + exposedAddressSelector).val("");
 							//click the actual button
 							$(viewsBlockFormSelector + sp + exposedSubmitSelector).click();
 						});
@@ -55,7 +56,7 @@
 					return false;
 				});
 				//Preserve Address Field After Reloads
-				$globalPreviousAddressSubmitted = typeof($globalPreviousAddressSubmitted)=="undefined" ? "" : $globalPreviousAddressSubmitted  ;
+				$globalPreviousAddressSubmitted =  $.cookie("globalPreviousAddressSubmitted") === null  ? "" : $.cookie("globalPreviousAddressSubmitted");
 				$(viewsBlockFormSelector + sp + exposedAddressSelector).val($globalPreviousAddressSubmitted);
 				//Helper Functions For Geocoding Client Side
 				geocodeAsync = function(address, f){
@@ -160,7 +161,7 @@
 							while(elementMatched==0 && ithElement<25){
 								if(form_values[ithElement]["name"] === elementIdAddress){
 									elementMatched = true;
-									//remove address value from search page submission
+									//remove address value from search page & exposed form submission
 									form_values[ithElement]["value"]="";
 								}
 								ithElement = ithElement + 1;
@@ -210,18 +211,19 @@
 						var address = $(viewsExposedFormSelector + sp + exposedAddressSelector).val();
 						//geocode it
 						geocodeAsync(address, function(ret){
-							//remove the address field value
-							$(viewsExposedFormSelector + sp + exposedAddressSelector).val("");
 							if(ret !== "empty address" && ret !== "error"){
 								//fill out the lat lon field with the geocoded data
 								$(viewsExposedFormSelector + sp + exposedLatLongSelector).val(ret);
-								$globalPreviousAddressSubmitted = address;
+								$.cookie("globalPreviousAddressSubmitted", address, 7);
 							}
 							if(ret ==="empty address"){
 								//fill out the lat lon field with the geocoded data
 								$(viewsExposedFormSelector + sp + exposedLatLongSelector).val("");
-								$globalPreviousAddressSubmitted = "";
+								$.cookie("globalPreviousAddressSubmitted", null, 7);
 							}
+							//remove the address field value
+							$(viewsBlockFormSelector + sp + exposedAddressSelector).attr("placeholder", address);
+							$(viewsExposedFormSelector + sp + exposedAddressSelector).val("");
 							//click the actual button
 							$(viewsExposedFormSelector + sp + exposedSubmitSelector).click();
 						});
@@ -241,7 +243,7 @@
 					});
 				});
 				//Preserve Address Field After Reloads
-				$globalPreviousAddressSubmitted = typeof($globalPreviousAddressSubmitted)=="undefined" ? "" : $globalPreviousAddressSubmitted  ;
+				$globalPreviousAddressSubmitted = ( $.cookie("globalPreviousAddressSubmitted") == null ) ? "" : $.cookie("globalPreviousAddressSubmitted");
 				$(viewsExposedFormSelector + sp + exposedAddressSelector).val($globalPreviousAddressSubmitted);
 				//Helper Functions For Geocoding Client Side
 				geocodeAsync = function(address, f){

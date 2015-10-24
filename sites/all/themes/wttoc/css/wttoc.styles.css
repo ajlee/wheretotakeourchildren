@@ -869,6 +869,10 @@ body.one-sidebar.sidebar-second .l-region--sidebar-second {
     display: table;
     clear: both; }
 
+/* Padding Top Fix - Content Area*/
+body.html .l-page .l-main .l-content {
+  padding-top: 0; }
+
 /*
  * Region Containers
  */
@@ -1254,7 +1258,7 @@ body.front h1.mainPageTitle {
 body.front .mainContentC h2.block__title {
   margin: 0 0 1px 0; }
 
-body.front h2.block__title {
+body.front .lc-region--inner .block > h2.block__title {
   font-size: 22px;
   font-size: 2.2rem;
   background: #565656;
@@ -1269,7 +1273,7 @@ body.front h2.block__title {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 );
   /* IE6-9 */
   color: white;
-  padding: 10px 3px;
+  padding: 15px 5px;
   text-align: center; }
 
 body.front .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row .views-field.views-field-name {
@@ -1283,7 +1287,7 @@ body.front .view-id-listings_business_and_event_categories.view-display-id-homep
   background: rgba(0, 70, 86, 0.68); }
 
 body.front #block-views-d336072e15ef9d7cf7595da1f2eae2c8 {
-  border-color: #A6B3CE; }
+  border-color: transparent; }
   body.front #block-views-d336072e15ef9d7cf7595da1f2eae2c8 .block__content {
     padding: 1% 2%; }
   body.front #block-views-d336072e15ef9d7cf7595da1f2eae2c8 h2.block__title {
@@ -1300,7 +1304,7 @@ body.front #block-views-d336072e15ef9d7cf7595da1f2eae2c8 {
     /* IE6-9 */ }
 
 body.front #block-views-9bc9d8ca0a25d6b82e61cd69a69f3fa4 {
-  border-color: #004656; }
+  border-color: transparent; }
   body.front #block-views-9bc9d8ca0a25d6b82e61cd69a69f3fa4 .block__content {
     padding: 1% 2%; }
   body.front #block-views-9bc9d8ca0a25d6b82e61cd69a69f3fa4 h2.block__title {
@@ -1317,7 +1321,7 @@ body.front #block-views-9bc9d8ca0a25d6b82e61cd69a69f3fa4 {
     /* IE6-9 */ }
 
 body.front #block-views-e0c0dc6a7c147131ae1e55e7c269dfeb {
-  border-color: #8CC541; }
+  border-color: transparent; }
   body.front #block-views-e0c0dc6a7c147131ae1e55e7c269dfeb h2.block__title {
     background: #82b939;
     /* Old browsers */
@@ -1332,7 +1336,7 @@ body.front #block-views-e0c0dc6a7c147131ae1e55e7c269dfeb {
     /* IE6-9 */ }
 
 body.front #block-views-f25193e5e6ef9e46d427bbbc9f2e9000 {
-  border-color: #51870B; }
+  border-color: transparent; }
   body.front #block-views-f25193e5e6ef9e46d427bbbc9f2e9000 h2.block__title {
     background: #467409;
     /* Old browsers */
@@ -1440,6 +1444,15 @@ body.front .l-region--widetop #block-views-d400f6dac6873ec2ddd895ba96987fce {
   @media (min-width: 1025px) {
     body.front .l-region--widetop #block-views-d400f6dac6873ec2ddd895ba96987fce {
       background-size: 150% auto; } }
+
+/*
+ * Body and Block Backgrounds
+ */
+body.front .l-header, body.front .l-main .block__content {
+  background-color: #fff; }
+
+body.front {
+  background-color: #D8D8D8; }
 
 /*
  * Business & Events Displays
@@ -2855,3 +2868,5 @@ body.node-type-event h1.mainPageTitle {
       -moz-transform: scale(1.05, 1.07);
       -moz-transition-timing-function: ease-out;
       -moz-transition-duration: 250ms; }
+
+/*# sourceMappingURL=wttoc.styles.css.map */

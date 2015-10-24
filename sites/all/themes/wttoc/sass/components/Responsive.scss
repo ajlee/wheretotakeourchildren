@@ -176,6 +176,8 @@ body.one-sidebar.sidebar-second{
 	@include clearfix;
 	@include clearboth;
 }
+/* Padding Top Fix - Content Area*/
+body.html .l-page .l-main .l-content{padding-top:0;}
 
 
 

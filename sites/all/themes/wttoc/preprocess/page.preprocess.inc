@@ -29,6 +29,8 @@ function wttoc_preprocess_page(&$variables) {
                 );
 		$lastweight=5+$i;
         }
+	//LOAD DRUPAL LIBRARIES
+		drupal_add_library('system', 'jquery.cookie');
 	//LOAD EXTERNAL JAVASCRIPT
 	$loadedJSexternal = array(
 		'https://maps.googleapis.com/maps/api/js',

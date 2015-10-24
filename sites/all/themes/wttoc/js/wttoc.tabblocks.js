@@ -42,12 +42,15 @@
 		//Such that other jquery plugins can still calculate heights inside hidden Tabs e.g. using .outerHeight()
 		$(containerSelector + " " + blockSelector).not(containerSelector + " " + blockSelector + ':eq(0)').css("visibility","hidden").css("height","0");
 		$('.tabJS:eq(0) a').parent('.tabJS').addClass('active');
+		setTimeout(function(){
+					$(containerSelector + " " + blockSelector).not(containerSelector + " " + blockSelector + ':eq(0)').hide();
+		},300);//settimeout to hide content completely 300 ms later - otherwise there's problems with page height extending past
 		//Hide/Show Tabs Accordingly On Click + Add/Remove active class
 		$('.tabJS a').click(function (event) {
 			event.preventDefault();
 			var tabJSclickedLink = $(this).attr("href");
-			$(containerSelector + " " + blockSelector).not(tabJSclickedLink).css("visibility","hidden").css("height","0");
-			$(tabJSclickedLink).css("visibility","visible").css("height","");
+			$(containerSelector + " " + blockSelector).not(tabJSclickedLink).css("visibility","hidden").css("height","0").hide();
+			$(tabJSclickedLink).css("visibility","visible").css("height","").show();
 			$(this).parent('.tabJS').siblings('.tabJS').removeClass('active');
 			$(this).parent('.tabJS').addClass('active');
 		});
