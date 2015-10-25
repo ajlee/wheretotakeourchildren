@@ -62,7 +62,13 @@
 					placeHolderText=placeHolderText.replace(/ +(?= )/g,'');
 					$(this).attr("placeholder",placeHolderText);
 					//older browser placeholder compatibility
-					$(this).placeholder();
+					//***in some older browsers (older ie) this technique adds a text instead of a placeholder to the input
+					//*** this text then shows up when we use jquery's .val("") to set the input's value to null
+					//*** when jquery uses .val("") to set the inputs value to null
+					//*** hence, we skip those fields here
+					if(attrId != "edit-field-hidden-address-geofield-latlon" && attrId != "edit-field-hidden-address-geofield-latlon-1"){
+						$(this).placeholder();
+					}
 				}
 		});
     }

@@ -30,8 +30,8 @@ body.front{
 			}
 		}
 	}
-	// Business Categories Block, Block Title
-	#block-views-d336072e15ef9d7cf7595da1f2eae2c8{
+	// Business Categories Block, Block Title & Featured Businesses, Block Title
+	#block-views-d336072e15ef9d7cf7595da1f2eae2c8, #block-views-1ea9486ceb6c01756421c03c0c8cc067{
 		border-color: transparent;
 		.block__content{
 			padding: #{$columnPercentPadder * 1} #{$columnPercentPadder * 2};
@@ -40,8 +40,8 @@ body.front{
 			@include linearGradient(darken($color1Light,12%), $color1Light);
 		}
 	}
-	// Event Categories Block, Block Title
-	#block-views-9bc9d8ca0a25d6b82e61cd69a69f3fa4{
+	// Event Categories Block, Block Title & Featured Events, Block Title
+	#block-views-9bc9d8ca0a25d6b82e61cd69a69f3fa4, #block-views-4c2750af452669f48149adba863f8fb0{
 		border-color: transparent;
 		.block__content{
 			padding: #{$columnPercentPadder * 1} #{$columnPercentPadder * 2};
@@ -51,14 +51,14 @@ body.front{
 		}
 	}
 	//Latest Businesses Block, Block Title
-	#block-views-e0c0dc6a7c147131ae1e55e7c269dfeb{
+	#block-views-e768e4c726034a3167a98d3b47ea3c24{
 		border-color: transparent;
 		h2.block__title{
 			@include linearGradient(darken($color3,4%), $color3);
 		}
 	}
 	//Upcoming Events Block, Block Title
-	#block-views-f25193e5e6ef9e46d427bbbc9f2e9000{
+	#block-views-35f66bb9fb85279b474668b2fc85ac61{
 		border-color: transparent;
 		h2.block__title{
 			@include linearGradient(darken($color3Dark,4%), $color3Dark);
@@ -139,13 +139,10 @@ body.front{
 		#block-views-d400f6dac6873ec2ddd895ba96987fce{
 			//background		
 			background: url("/sites/all/themes/wttoc/images/prevImg/footer.png");
-			background-size: 300% auto;
-			@include breakpoint($tablet2Wide){
-						background-size: 200% auto;
-					};
-					@include breakpoint($breakpointWideP1){
-						background-size: 150% auto;
-					};
+			background-size: auto 230%;
+			@include breakpoint($breakpointTabletP1){
+				background-size: 150% auto;
+			};
 			background-repeat: no-repeat;
 			min-height: 250px;
 			background-position: center center;

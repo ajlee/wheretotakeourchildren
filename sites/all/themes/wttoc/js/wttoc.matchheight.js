@@ -4,25 +4,30 @@
 (function ($, Drupal) {
   Drupal.behaviors.wttocMatchHeights = {
     attach: function (context) {
-	//Initial Match Height
-        $(".view-id-businesses_and_events.view-display-id-page_results .view-content .views-row").matchHeight({
-                byRow: true,
-                property: 'min-height',
-                target: null,
-                remove: false
-        });
-	//Update on Ajax - use a timeout to play it safe
-        $( document ).ajaxStop(function() {
-		if( $(".view-id-businesses_and_events.view-display-id-page_results .view-content .views-row").length ){
-			var timeoutMatchHeightArray = [400];
-			$.each(timeoutMatchHeightArray, function(index, value){
-				var timeoutID = window.setTimeout(function(){
-					$.fn.matchHeight._update();
-				}, value);
+		var arrEqualHeight = [".view-id-small_blocks_businesses_and_or_events .views-row", ".view-id-businesses_and_events.view-display-id-page_results .view-content .views-row"]
+		$.each(arrEqualHeight, function(key, element){
+			//Initial Match Height
+			$(element).matchHeight({
+					byRow: true,
+					property: 'min-height',
+					target: null,
+					remove: false
 			});
-		}
-        });
-    }
+		});
+		$( document ).ajaxStop(function() {
+			$.each(arrEqualHeight, function(key, element){
+				//Update on Ajax - use a timeout to play it safe
+				if( $(element).length ){
+					var timeoutMatchHeightArray = [400];
+					$.each(timeoutMatchHeightArray, function(index, value){
+						var timeoutID = window.setTimeout(function(){
+							$.fn.matchHeight._update();
+						}, value);
+					});
+				}
+			});
+		});
+	}
   };
 })(jQuery, Drupal);
 

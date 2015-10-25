@@ -1270,7 +1270,7 @@ body.front .lc-region--inner .block > h2.block__title {
   /* IE10+ */
   background: linear-gradient(to bottom, #565656 0%, #888 100%);
   /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 );
+  /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=' #565656 ', endColorstr=' #888 ',GradientType=0 );*/
   /* IE6-9 */
   color: white;
   padding: 15px 5px;
@@ -1286,11 +1286,11 @@ body.front .view-id-listings_business_and_event_categories.view-display-id-homep
   /* The Fallback */
   background: rgba(0, 70, 86, 0.68); }
 
-body.front #block-views-d336072e15ef9d7cf7595da1f2eae2c8 {
+body.front #block-views-d336072e15ef9d7cf7595da1f2eae2c8, body.front #block-views-1ea9486ceb6c01756421c03c0c8cc067 {
   border-color: transparent; }
-  body.front #block-views-d336072e15ef9d7cf7595da1f2eae2c8 .block__content {
+  body.front #block-views-d336072e15ef9d7cf7595da1f2eae2c8 .block__content, body.front #block-views-1ea9486ceb6c01756421c03c0c8cc067 .block__content {
     padding: 1% 2%; }
-  body.front #block-views-d336072e15ef9d7cf7595da1f2eae2c8 h2.block__title {
+  body.front #block-views-d336072e15ef9d7cf7595da1f2eae2c8 h2.block__title, body.front #block-views-1ea9486ceb6c01756421c03c0c8cc067 h2.block__title {
     background: #7f91b8;
     /* Old browsers */
     /* FF3.6+ */
@@ -1300,14 +1300,14 @@ body.front #block-views-d336072e15ef9d7cf7595da1f2eae2c8 {
     /* IE10+ */
     background: linear-gradient(to bottom, #7f91b8 0%, #A6B3CE 100%);
     /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 );
+    /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=' #7f91b8 ', endColorstr=' #A6B3CE ',GradientType=0 );*/
     /* IE6-9 */ }
 
-body.front #block-views-9bc9d8ca0a25d6b82e61cd69a69f3fa4 {
+body.front #block-views-9bc9d8ca0a25d6b82e61cd69a69f3fa4, body.front #block-views-4c2750af452669f48149adba863f8fb0 {
   border-color: transparent; }
-  body.front #block-views-9bc9d8ca0a25d6b82e61cd69a69f3fa4 .block__content {
+  body.front #block-views-9bc9d8ca0a25d6b82e61cd69a69f3fa4 .block__content, body.front #block-views-4c2750af452669f48149adba863f8fb0 .block__content {
     padding: 1% 2%; }
-  body.front #block-views-9bc9d8ca0a25d6b82e61cd69a69f3fa4 h2.block__title {
+  body.front #block-views-9bc9d8ca0a25d6b82e61cd69a69f3fa4 h2.block__title, body.front #block-views-4c2750af452669f48149adba863f8fb0 h2.block__title {
     background: #003542;
     /* Old browsers */
     /* FF3.6+ */
@@ -1317,12 +1317,12 @@ body.front #block-views-9bc9d8ca0a25d6b82e61cd69a69f3fa4 {
     /* IE10+ */
     background: linear-gradient(to bottom, #003542 0%, #004656 100%);
     /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 );
+    /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=' #003542 ', endColorstr=' #004656 ',GradientType=0 );*/
     /* IE6-9 */ }
 
-body.front #block-views-e0c0dc6a7c147131ae1e55e7c269dfeb {
+body.front #block-views-e768e4c726034a3167a98d3b47ea3c24 {
   border-color: transparent; }
-  body.front #block-views-e0c0dc6a7c147131ae1e55e7c269dfeb h2.block__title {
+  body.front #block-views-e768e4c726034a3167a98d3b47ea3c24 h2.block__title {
     background: #82b939;
     /* Old browsers */
     /* FF3.6+ */
@@ -1332,12 +1332,12 @@ body.front #block-views-e0c0dc6a7c147131ae1e55e7c269dfeb {
     /* IE10+ */
     background: linear-gradient(to bottom, #82b939 0%, #8CC541 100%);
     /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 );
+    /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=' #82b939 ', endColorstr=' #8CC541 ',GradientType=0 );*/
     /* IE6-9 */ }
 
-body.front #block-views-f25193e5e6ef9e46d427bbbc9f2e9000 {
+body.front #block-views-35f66bb9fb85279b474668b2fc85ac61 {
   border-color: transparent; }
-  body.front #block-views-f25193e5e6ef9e46d427bbbc9f2e9000 h2.block__title {
+  body.front #block-views-35f66bb9fb85279b474668b2fc85ac61 h2.block__title {
     background: #467409;
     /* Old browsers */
     /* FF3.6+ */
@@ -1347,7 +1347,7 @@ body.front #block-views-f25193e5e6ef9e46d427bbbc9f2e9000 {
     /* IE10+ */
     background: linear-gradient(to bottom, #467409 0%, #51870B 100%);
     /* W3C */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 );
+    /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=' #467409 ', endColorstr=' #51870B ',GradientType=0 );*/
     /* IE6-9 */ }
 
 body.front .l-region--widetop .views-exposed-form-businesses-and-events-page-results {
@@ -1434,14 +1434,11 @@ body.front .l-region--widetop .views-exposed-form-businesses-and-events-page-res
 
 body.front .l-region--widetop #block-views-d400f6dac6873ec2ddd895ba96987fce {
   background: url("/sites/all/themes/wttoc/images/prevImg/footer.png");
-  background-size: 300% auto;
+  background-size: auto 230%;
   background-repeat: no-repeat;
   min-height: 250px;
   background-position: center center; }
-  @media (min-width: 769px) and (max-width: 1024px) {
-    body.front .l-region--widetop #block-views-d400f6dac6873ec2ddd895ba96987fce {
-      background-size: 200% auto; } }
-  @media (min-width: 1025px) {
+  @media (min-width: 769px) {
     body.front .l-region--widetop #block-views-d400f6dac6873ec2ddd895ba96987fce {
       background-size: 150% auto; } }
 
@@ -2077,7 +2074,7 @@ body.node-type-business-service-or-attraction h1.mainPageTitle {
   /* IE10+ */
   background: linear-gradient(to bottom, #445b82 0%, #5573a4 100%);
   /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 );
+  /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=' #445b82 ', endColorstr=' #5573a4 ',GradientType=0 );*/
   /* IE6-9 */ }
   body.node-type-business-service-or-attraction h1.mainPageTitle:before {
     background-color: transparent;
@@ -2094,7 +2091,7 @@ body.node-type-event h1.mainPageTitle {
   /* IE10+ */
   background: linear-gradient(to bottom, #445b82 0%, #5573a4 100%);
   /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 );
+  /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=' #445b82 ', endColorstr=' #5573a4 ',GradientType=0 );*/
   /* IE6-9 */ }
   body.node-type-event h1.mainPageTitle:before {
     background-color: transparent;
@@ -2660,36 +2657,75 @@ body.node-type-event h1.mainPageTitle {
         background: #fff;
         opacity: 1; }
 
+.l-content .view-id-small_blocks_businesses_and_or_events .view-content:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+.l-content .view-id-small_blocks_businesses_and_or_events .view-content .views-row {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-bottom: 2px;
+  position: relative; }
+  @media (min-width: 1025px) {
+    .l-content .view-id-small_blocks_businesses_and_or_events .view-content .views-row:nth-child(3n+1) {
+      clear: both;
+      float: left;
+      margin-right: 1%;
+      width: 32.33%; }
+    .l-content .view-id-small_blocks_businesses_and_or_events .view-content .views-row:nth-child(3n+2) {
+      float: left;
+      margin-left: 0.5%;
+      margin-right: 0.5%;
+      width: 32.33%; }
+    .l-content .view-id-small_blocks_businesses_and_or_events .view-content .views-row:nth-child(3n+3) {
+      float: right;
+      margin-left: 1%;
+      width: 32.33%; } }
+  @media (min-width: 431px) and (max-width: 1024px) {
+    .l-content .view-id-small_blocks_businesses_and_or_events .view-content .views-row:nth-child(2n+1) {
+      float: left;
+      margin-right: 1%;
+      width: 49%;
+      clear: both; }
+    .l-content .view-id-small_blocks_businesses_and_or_events .view-content .views-row:nth-child(2n+2) {
+      float: right;
+      margin-left: 1%;
+      width: 49%; } }
+  @media (min-width: 0) and (max-width: 430px) {
+    .l-content .view-id-small_blocks_businesses_and_or_events .view-content .views-row {
+      display: block;
+      clear: both;
+      padding: 1%;
+      width: 98%;
+      margin-left: auto;
+      margin-right: auto; }
+      .l-content .view-id-small_blocks_businesses_and_or_events .view-content .views-row:after {
+        content: "";
+        display: table;
+        clear: both; } }
+
 @media (min-width: 431px) and (max-width: 768px) {
-  .view-id-small_blocks_businesses_and_or_events .view-content:after {
+  .l-region--sidebar-second .view-id-small_blocks_businesses_and_or_events .view-content:after, .l-region--sidebar-first .view-id-small_blocks_businesses_and_or_events .view-content:after {
     content: "";
     display: table;
     clear: both; }
-  .view-id-small_blocks_businesses_and_or_events .view-content .views-row:after {
+  .l-region--sidebar-second .view-id-small_blocks_businesses_and_or_events .view-content .views-row:after, .l-region--sidebar-first .view-id-small_blocks_businesses_and_or_events .view-content .views-row:after {
     content: "";
     display: table;
     clear: both; }
-  .view-id-small_blocks_businesses_and_or_events .view-content:after {
-    content: "";
-    display: table;
-    clear: both; }
-  .view-id-small_blocks_businesses_and_or_events .view-content .views-row:after {
-    content: "";
-    display: table;
-    clear: both; }
-  .view-id-small_blocks_businesses_and_or_events .view-content .views-row:nth-child(2n+1) {
+  .l-region--sidebar-second .view-id-small_blocks_businesses_and_or_events .view-content .views-row:nth-child(2n+1), .l-region--sidebar-first .view-id-small_blocks_businesses_and_or_events .view-content .views-row:nth-child(2n+1) {
     float: left;
     margin-right: 1%;
     width: 49%;
     clear: both; }
-  .view-id-small_blocks_businesses_and_or_events .view-content .views-row:nth-child(2n+2) {
+  .l-region--sidebar-second .view-id-small_blocks_businesses_and_or_events .view-content .views-row:nth-child(2n+2), .l-region--sidebar-first .view-id-small_blocks_businesses_and_or_events .view-content .views-row:nth-child(2n+2) {
     float: right;
     margin-left: 1%;
     width: 49%;
     clear: none; } }
 
 .view-id-small_blocks_businesses_and_or_events .view-content .views-row {
-  clear: both;
   border-bottom: 1px solid #a2a2a2;
   margin-bottom: 8px;
   padding-bottom: 4px;
@@ -2732,13 +2768,11 @@ body.node-type-event h1.mainPageTitle {
         .view-id-small_blocks_businesses_and_or_events .view-content .views-row .views-field.views-field-nothing .teaser__first-wrapper .verified-container:before {
           content: '\e825';
           font-size: 12px;
-          background-color: #5573a4;
-          color: white;
           padding: 3px;
           position: absolute;
           margin: 0 !important;
           top: 5px;
-          left: 5px;
+          right: 5px;
           border-radius: 10px;
           z-index: 1; }
         .view-id-small_blocks_businesses_and_or_events .view-content .views-row .views-field.views-field-nothing .teaser__first-wrapper .verified-container .verified-container-inner {
@@ -2774,14 +2808,12 @@ body.node-type-event h1.mainPageTitle {
         /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
       .view-id-small_blocks_businesses_and_or_events .view-content .views-row .views-field.views-field-nothing .teaser__first-wrapper .type-container:before {
         font-size: 17px;
-        background-color: #5573a4;
-        color: white;
         padding: 3px;
         position: absolute;
         margin: 0 !important;
-        right: 0;
+        left: 0;
         bottom: 0;
-        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
         z-index: 1; }
       .view-id-small_blocks_businesses_and_or_events .view-content .views-row .views-field.views-field-nothing .teaser__first-wrapper .type-container .type-container-inner {
         position: absolute;
@@ -2798,14 +2830,9 @@ body.node-type-event h1.mainPageTitle {
   .view-id-small_blocks_businesses_and_or_events .view-content .views-row .views-field-field-date-of-event .field-content {
     display: block; }
   .view-id-small_blocks_businesses_and_or_events .view-content .views-row .views-field-title .field-content {
-    color: #8CC541;
     font-size: 17px;
     font-size: 1.7rem;
     padding: 0 5px 5px 10px; }
-    .view-id-small_blocks_businesses_and_or_events .view-content .views-row .views-field-title .field-content span, .view-id-small_blocks_businesses_and_or_events .view-content .views-row .views-field-title .field-content p, .view-id-small_blocks_businesses_and_or_events .view-content .views-row .views-field-title .field-content h1, .view-id-small_blocks_businesses_and_or_events .view-content .views-row .views-field-title .field-content h2, .view-id-small_blocks_businesses_and_or_events .view-content .views-row .views-field-title .field-content h3, .view-id-small_blocks_businesses_and_or_events .view-content .views-row .views-field-title .field-content h4, .view-id-small_blocks_businesses_and_or_events .view-content .views-row .views-field-title .field-content h5, .view-id-small_blocks_businesses_and_or_events .view-content .views-row .views-field-title .field-content h6, .view-id-small_blocks_businesses_and_or_events .view-content .views-row .views-field-title .field-content a, .view-id-small_blocks_businesses_and_or_events .view-content .views-row .views-field-title .field-content div, .view-id-small_blocks_businesses_and_or_events .view-content .views-row .views-field-title .field-content li {
-      color: #8CC541; }
-    .view-id-small_blocks_businesses_and_or_events .view-content .views-row .views-field-title .field-content a:hover {
-      color: #8CC541; }
   .view-id-small_blocks_businesses_and_or_events .view-content .views-row .views-field-field-address .field-content, .view-id-small_blocks_businesses_and_or_events .view-content .views-row .views-field-field-date-of-event .field-content {
     position: relative;
     padding: 2px 5px 2px 2px; }
@@ -2833,31 +2860,21 @@ body.node-type-event h1.mainPageTitle {
       position: absolute;
       top: 50%;
       -webkit-transform: translate(0, -50%);
-      transform: translate(0, -50%);
-      color: #8CC541; }
+      transform: translate(0, -50%); }
     .view-id-small_blocks_businesses_and_or_events .view-content .views-row .views-field-field-address .field-content > div, .view-id-small_blocks_businesses_and_or_events .view-content .views-row .views-field-field-address .field-content > span, .view-id-small_blocks_businesses_and_or_events .view-content .views-row .views-field-field-date-of-event .field-content > div, .view-id-small_blocks_businesses_and_or_events .view-content .views-row .views-field-field-date-of-event .field-content > span {
       display: inline-block;
       padding-left: 22px; }
     .view-id-small_blocks_businesses_and_or_events .view-content .views-row .views-field-field-address .field-content .locality, .view-id-small_blocks_businesses_and_or_events .view-content .views-row .views-field-field-address .field-content .state, .view-id-small_blocks_businesses_and_or_events .view-content .views-row .views-field-field-address .field-content .postal-code, .view-id-small_blocks_businesses_and_or_events .view-content .views-row .views-field-field-address .field-content span, .view-id-small_blocks_businesses_and_or_events .view-content .views-row .views-field-field-date-of-event .field-content .locality, .view-id-small_blocks_businesses_and_or_events .view-content .views-row .views-field-field-date-of-event .field-content .state, .view-id-small_blocks_businesses_and_or_events .view-content .views-row .views-field-field-date-of-event .field-content .postal-code, .view-id-small_blocks_businesses_and_or_events .view-content .views-row .views-field-field-date-of-event .field-content span {
       font-size: 13px;
       font-size: 1.3rem; }
-  .view-id-small_blocks_businesses_and_or_events .view-content .views-row.rowContentType-business-service-or-attraction .views-field.views-field-nothing .teaser__first-wrapper .verified-container:before, .view-id-small_blocks_businesses_and_or_events .view-content .views-row.rowContentType-business-service-or-attraction .views-field.views-field-nothing .teaser__first-wrapper .type-container:before {
-    background-color: #8CC541; }
+  .view-id-small_blocks_businesses_and_or_events .view-content .views-row .views-field-field-address .field-content:before {
+    content: '\e816'; }
+  .view-id-small_blocks_businesses_and_or_events .view-content .views-row .views-field-field-date-of-event .field-content:before {
+    content: '\e81c'; }
   .view-id-small_blocks_businesses_and_or_events .view-content .views-row.rowContentType-business-service-or-attraction .views-field.views-field-nothing .teaser__first-wrapper .type-container:before {
     content: '\e81b'; }
-  .view-id-small_blocks_businesses_and_or_events .view-content .views-row.rowContentType-event .views-field.views-field-nothing .teaser__first-wrapper .verified-container:before, .view-id-small_blocks_businesses_and_or_events .view-content .views-row.rowContentType-event .views-field.views-field-nothing .teaser__first-wrapper .type-container:before {
-    background-color: #51870B; }
   .view-id-small_blocks_businesses_and_or_events .view-content .views-row.rowContentType-event .views-field.views-field-nothing .teaser__first-wrapper .type-container:before {
-    content: '\e81c';
-    background-color: #51870B; }
-  .view-id-small_blocks_businesses_and_or_events .view-content .views-row.rowContentType-event .views-field-title .field-content {
-    color: #51870B; }
-    .view-id-small_blocks_businesses_and_or_events .view-content .views-row.rowContentType-event .views-field-title .field-content span, .view-id-small_blocks_businesses_and_or_events .view-content .views-row.rowContentType-event .views-field-title .field-content p, .view-id-small_blocks_businesses_and_or_events .view-content .views-row.rowContentType-event .views-field-title .field-content h1, .view-id-small_blocks_businesses_and_or_events .view-content .views-row.rowContentType-event .views-field-title .field-content h2, .view-id-small_blocks_businesses_and_or_events .view-content .views-row.rowContentType-event .views-field-title .field-content h3, .view-id-small_blocks_businesses_and_or_events .view-content .views-row.rowContentType-event .views-field-title .field-content h4, .view-id-small_blocks_businesses_and_or_events .view-content .views-row.rowContentType-event .views-field-title .field-content h5, .view-id-small_blocks_businesses_and_or_events .view-content .views-row.rowContentType-event .views-field-title .field-content h6, .view-id-small_blocks_businesses_and_or_events .view-content .views-row.rowContentType-event .views-field-title .field-content a, .view-id-small_blocks_businesses_and_or_events .view-content .views-row.rowContentType-event .views-field-title .field-content div, .view-id-small_blocks_businesses_and_or_events .view-content .views-row.rowContentType-event .views-field-title .field-content li {
-      color: #51870B; }
-    .view-id-small_blocks_businesses_and_or_events .view-content .views-row.rowContentType-event .views-field-title .field-content a:hover {
-      color: #51870B; }
-  .view-id-small_blocks_businesses_and_or_events .view-content .views-row.rowContentType-event .views-field-field-address .field-content:before, .view-id-small_blocks_businesses_and_or_events .view-content .views-row.rowContentType-event .views-field-field-date-of-event .field-content:before {
-    color: #51870B; }
+    content: '\e81c'; }
   .view-id-small_blocks_businesses_and_or_events .view-content .views-row:hover .image-container {
     outline: 1px solid #888;
     overflow: hidden; }
@@ -2868,5 +2885,119 @@ body.node-type-event h1.mainPageTitle {
       -moz-transform: scale(1.05, 1.07);
       -moz-transition-timing-function: ease-out;
       -moz-transition-duration: 250ms; }
+
+/*
+ * Local helper mixin for row coloring
+ */
+/*
+ * Color depending on region & Content Type
+ */
+.l-content .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field.views-field-nothing .teaser__first-wrapper .verified-container:before {
+  background-color: #A6B3CE;
+  color: #fff; }
+
+.l-content .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field.views-field-nothing .teaser__first-wrapper .type-container:before {
+  background-color: #A6B3CE;
+  color: #fff; }
+
+.l-content .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field-title .field-content {
+  color: #A6B3CE; }
+  .l-content .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field-title .field-content span, .l-content .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field-title .field-content p, .l-content .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field-title .field-content h1, .l-content .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field-title .field-content h2, .l-content .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field-title .field-content h3, .l-content .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field-title .field-content h4, .l-content .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field-title .field-content h5, .l-content .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field-title .field-content h6, .l-content .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field-title .field-content a, .l-content .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field-title .field-content div, .l-content .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field-title .field-content li {
+    color: #A6B3CE; }
+  .l-content .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field-title .field-content a:hover {
+    color: #A6B3CE; }
+
+.l-content .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field-field-address .field-content:before, .l-content .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field-field-date-of-event .field-content:before {
+  color: #A6B3CE; }
+
+.l-content .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field.views-field-nothing .teaser__first-wrapper .verified-container:before {
+  background-color: #004656;
+  color: #fff; }
+
+.l-content .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field.views-field-nothing .teaser__first-wrapper .type-container:before {
+  background-color: #004656;
+  color: #fff; }
+
+.l-content .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field-title .field-content {
+  color: #004656; }
+  .l-content .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field-title .field-content span, .l-content .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field-title .field-content p, .l-content .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field-title .field-content h1, .l-content .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field-title .field-content h2, .l-content .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field-title .field-content h3, .l-content .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field-title .field-content h4, .l-content .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field-title .field-content h5, .l-content .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field-title .field-content h6, .l-content .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field-title .field-content a, .l-content .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field-title .field-content div, .l-content .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field-title .field-content li {
+    color: #004656; }
+  .l-content .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field-title .field-content a:hover {
+    color: #004656; }
+
+.l-content .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field-field-address .field-content:before, .l-content .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field-field-date-of-event .field-content:before {
+  color: #004656; }
+
+.l-region--sidebar-first .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field.views-field-nothing .teaser__first-wrapper .verified-container:before {
+  background-color: #FD8A33;
+  color: #fff; }
+
+.l-region--sidebar-first .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field.views-field-nothing .teaser__first-wrapper .type-container:before {
+  background-color: #FD8A33;
+  color: #fff; }
+
+.l-region--sidebar-first .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field-title .field-content {
+  color: #FD8A33; }
+  .l-region--sidebar-first .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field-title .field-content span, .l-region--sidebar-first .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field-title .field-content p, .l-region--sidebar-first .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field-title .field-content h1, .l-region--sidebar-first .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field-title .field-content h2, .l-region--sidebar-first .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field-title .field-content h3, .l-region--sidebar-first .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field-title .field-content h4, .l-region--sidebar-first .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field-title .field-content h5, .l-region--sidebar-first .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field-title .field-content h6, .l-region--sidebar-first .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field-title .field-content a, .l-region--sidebar-first .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field-title .field-content div, .l-region--sidebar-first .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field-title .field-content li {
+    color: #FD8A33; }
+  .l-region--sidebar-first .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field-title .field-content a:hover {
+    color: #FD8A33; }
+
+.l-region--sidebar-first .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field-field-address .field-content:before, .l-region--sidebar-first .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field-field-date-of-event .field-content:before {
+  color: #FD8A33; }
+
+.l-region--sidebar-first .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field.views-field-nothing .teaser__first-wrapper .verified-container:before {
+  background-color: #B04D00;
+  color: #fff; }
+
+.l-region--sidebar-first .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field.views-field-nothing .teaser__first-wrapper .type-container:before {
+  background-color: #B04D00;
+  color: #fff; }
+
+.l-region--sidebar-first .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field-title .field-content {
+  color: #B04D00; }
+  .l-region--sidebar-first .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field-title .field-content span, .l-region--sidebar-first .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field-title .field-content p, .l-region--sidebar-first .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field-title .field-content h1, .l-region--sidebar-first .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field-title .field-content h2, .l-region--sidebar-first .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field-title .field-content h3, .l-region--sidebar-first .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field-title .field-content h4, .l-region--sidebar-first .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field-title .field-content h5, .l-region--sidebar-first .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field-title .field-content h6, .l-region--sidebar-first .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field-title .field-content a, .l-region--sidebar-first .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field-title .field-content div, .l-region--sidebar-first .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field-title .field-content li {
+    color: #B04D00; }
+  .l-region--sidebar-first .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field-title .field-content a:hover {
+    color: #B04D00; }
+
+.l-region--sidebar-first .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field-field-address .field-content:before, .l-region--sidebar-first .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field-field-date-of-event .field-content:before {
+  color: #B04D00; }
+
+.l-region--sidebar-second .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field.views-field-nothing .teaser__first-wrapper .verified-container:before {
+  background-color: #8CC541;
+  color: #fff; }
+
+.l-region--sidebar-second .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field.views-field-nothing .teaser__first-wrapper .type-container:before {
+  background-color: #8CC541;
+  color: #fff; }
+
+.l-region--sidebar-second .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field-title .field-content {
+  color: #8CC541; }
+  .l-region--sidebar-second .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field-title .field-content span, .l-region--sidebar-second .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field-title .field-content p, .l-region--sidebar-second .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field-title .field-content h1, .l-region--sidebar-second .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field-title .field-content h2, .l-region--sidebar-second .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field-title .field-content h3, .l-region--sidebar-second .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field-title .field-content h4, .l-region--sidebar-second .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field-title .field-content h5, .l-region--sidebar-second .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field-title .field-content h6, .l-region--sidebar-second .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field-title .field-content a, .l-region--sidebar-second .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field-title .field-content div, .l-region--sidebar-second .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field-title .field-content li {
+    color: #8CC541; }
+  .l-region--sidebar-second .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field-title .field-content a:hover {
+    color: #8CC541; }
+
+.l-region--sidebar-second .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field-field-address .field-content:before, .l-region--sidebar-second .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field-field-date-of-event .field-content:before {
+  color: #8CC541; }
+
+.l-region--sidebar-second .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field.views-field-nothing .teaser__first-wrapper .verified-container:before {
+  background-color: #51870B;
+  color: #fff; }
+
+.l-region--sidebar-second .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field.views-field-nothing .teaser__first-wrapper .type-container:before {
+  background-color: #51870B;
+  color: #fff; }
+
+.l-region--sidebar-second .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field-title .field-content {
+  color: #51870B; }
+  .l-region--sidebar-second .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field-title .field-content span, .l-region--sidebar-second .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field-title .field-content p, .l-region--sidebar-second .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field-title .field-content h1, .l-region--sidebar-second .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field-title .field-content h2, .l-region--sidebar-second .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field-title .field-content h3, .l-region--sidebar-second .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field-title .field-content h4, .l-region--sidebar-second .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field-title .field-content h5, .l-region--sidebar-second .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field-title .field-content h6, .l-region--sidebar-second .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field-title .field-content a, .l-region--sidebar-second .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field-title .field-content div, .l-region--sidebar-second .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field-title .field-content li {
+    color: #51870B; }
+  .l-region--sidebar-second .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field-title .field-content a:hover {
+    color: #51870B; }
+
+.l-region--sidebar-second .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field-field-address .field-content:before, .l-region--sidebar-second .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field-field-date-of-event .field-content:before {
+  color: #51870B; }
 
 /*# sourceMappingURL=wttoc.styles.css.map */

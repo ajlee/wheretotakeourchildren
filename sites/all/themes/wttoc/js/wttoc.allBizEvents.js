@@ -222,7 +222,7 @@
 								$.cookie("globalPreviousAddressSubmitted", null, 7);
 							}
 							//remove the address field value
-							$(viewsBlockFormSelector + sp + exposedAddressSelector).attr("placeholder", address);
+							$(viewsExposedFormSelector + sp + exposedAddressSelector).attr("placeholder", address);
 							$(viewsExposedFormSelector + sp + exposedAddressSelector).val("");
 							//click the actual button
 							$(viewsExposedFormSelector + sp + exposedSubmitSelector).click();

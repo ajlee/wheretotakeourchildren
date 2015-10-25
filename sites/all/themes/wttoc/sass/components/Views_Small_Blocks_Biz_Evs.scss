@@ -2,13 +2,14 @@ $vsbImageWidth: 75px;
 $vsbImageHeight: $vsbImageWidth;
 $vsbPadMarg: 8px;
 
-.view-id-small_blocks_businesses_and_or_events{
-	.view-content{
+.l-content .view-id-small_blocks_businesses_and_or_events .view-content{
+	@include clearfix;
+	@include views3Wide1MobileDefault;
+}
+
+.l-region--sidebar-second, .l-region--sidebar-first{
+	.view-id-small_blocks_businesses_and_or_events .view-content{
 		@include breakpoint($mobile2Tablet){
-			@include clearfix;
-			.views-row{
-				@include clearfix;
-			}
 			@include clearfix;
 			.views-row{
 			    @include clearfix;
@@ -21,15 +22,20 @@ $vsbPadMarg: 8px;
 				@include splitVRight(50%);
 				clear:none;
 			}
-		}
+		};	
+	}
+}
+
+.view-id-small_blocks_businesses_and_or_events{
+	.view-content{
 		.views-row{
-			clear:both;
 			border-bottom: 1px solid $DARKERLIGHTGRAY;
 			margin-bottom: $vsbPadMarg;
 			padding-bottom: $vsbPadMarg/2;
 			padding-top: $vsbPadMarg/2;
 			position:relative;
 			min-height:$vsbImageHeight + ($vsbPadMarg);
+			//left image & icons region
 			.views-field.views-field-nothing{
 				max-width:$vsbImageWidth;
 				overflow:hidden;
@@ -39,6 +45,7 @@ $vsbPadMarg: 8px;
 				padding-left:0;
 				.teaser__first-wrapper{
 					max-height: $vsbImageHeight;
+					//verified icon
 					.verified-container{
 						display:none;
 						&.typeContainerShow{//if the content is verified, this class will exist
@@ -48,13 +55,11 @@ $vsbPadMarg: 8px;
 						&:before{
 							content:'\e825';
 							font-size: 12px;
-							background-color: $color1;
-							color: white;
 							padding: 3px;
 							position: absolute;
 							margin: 0 !important;
 							top: 5px;
-							left: 5px;
+							right: 5px;
 							border-radius:10px;
 							z-index:1;
 						}
@@ -62,23 +67,23 @@ $vsbPadMarg: 8px;
 							@include accesibleHide;
 						}
 					}
+					//image 
 					.image-container{
 						img{
 							width: $vsbImageWidth;
 						}
 					}
+					//content type icon
 					.type-container{
 						@include fontelloBefore;
 						&:before{
 							font-size: 17px;
-							background-color: $color1;
-							color: white;
 							padding: 3px;
 							position: absolute;
 							margin: 0 !important;
-							right: 0;
+							left: 0;
 							bottom: 0;
-							border-top-left-radius:5px;
+							border-top-right-radius:5px;
 							z-index:1;
 						}
 						.type-container-inner{
@@ -98,7 +103,6 @@ $vsbPadMarg: 8px;
 				}
 			}
 			.views-field-title .field-content{
-				@include colorDescendantsFont($color3);
 				@include remFontSize($fontS);
 				padding: 0 5px 5px 10px;
 			}
@@ -107,7 +111,6 @@ $vsbPadMarg: 8px;
 				@include fontelloBefore;
 				&:before{
 					@include centerYAbsoluteNoIE8;
-					color:$color3;
 				}
 				> div, >span{
 					display:inline-block;
@@ -118,40 +121,26 @@ $vsbPadMarg: 8px;
 					@include remFontSize($fontXXS);
 				}
 			}
+			//per field icons
+			//address icon
+			.views-field-field-address .field-content:before{
+				content:'\e816';
+			}
+			//date icon
+			.views-field-field-date-of-event .field-content:before{
+				content: '\e81c';
+			}
 			//per content type rows
 			//business content type
-			&.rowContentType-business-service-or-attraction{
-				.views-field.views-field-nothing{
-					.teaser__first-wrapper{
-						.verified-container:before, .type-container:before{
-							background-color:$color3;
-						}
-						.type-container:before{
-							content:'\e81b';
-						}
-					}
+			&.rowContentType-business-service-or-attraction .views-field.views-field-nothing .teaser__first-wrapper{
+				.type-container:before{
+					content:'\e81b';
 				}
 			}
 			//event content type 
-			&.rowContentType-event{
-				.views-field.views-field-nothing{
-					.teaser__first-wrapper{
-						.verified-container:before, .type-container:before{
-							background-color:$color3Dark;
-						}
-						.type-container:before{
-							content:'\e81c';
-							background-color:$color3Dark;
-						}
-					}
-				}
-				.views-field-title .field-content{
-					@include colorDescendantsFont($color3Dark);
-				}
-				.views-field-field-address .field-content,.views-field-field-date-of-event .field-content{
-					&:before{
-						color:$color3Dark;
-					}
+			&.rowContentType-event .views-field.views-field-nothing .teaser__first-wrapper{
+				.type-container:before{
+					content:'\e81c';
 				}
 			}
 			//Row Focus Effect
@@ -166,4 +155,66 @@ $vsbPadMarg: 8px;
 			}
 		}//end of views row
 	}
+}
+
+
+/*
+ * Local helper mixin for row coloring
+ */
+@mixin schemeRowColorSmallBlocksBE($colorRow){
+	.views-field.views-field-nothing .teaser__first-wrapper{
+		//verified icon color
+		.verified-container:before{
+			background-color:$colorRow;
+			color: $WHITE;
+		}
+		//content type icon color
+		.type-container:before{
+			background-color:$colorRow;
+			color: $WHITE;
+		}
+	}
+	//title color
+	.views-field-title .field-content{
+		@include colorDescendantsFont($colorRow);
+	}
+	//other icons color
+	.views-field-field-address .field-content,.views-field-field-date-of-event .field-content{
+		&:before{
+			color:$colorRow;
+		}
+	}
+}
+/*
+ * Color depending on region & Content Type
+ */ 
+.l-content{
+	.view-id-small_blocks_businesses_and_or_events .views-row{
+		&.rowContentType-business-service-or-attraction{
+			@include schemeRowColorSmallBlocksBE($color1Light);
+		}
+		&.rowContentType-event{
+			@include schemeRowColorSmallBlocksBE($color1Dark);
+		}
+	}
+}
+.l-region--sidebar-first{
+	.view-id-small_blocks_businesses_and_or_events .views-row{
+		&.rowContentType-business-service-or-attraction{
+			@include schemeRowColorSmallBlocksBE($color2);
+		}
+		&.rowContentType-event{
+			@include schemeRowColorSmallBlocksBE($color2Dark);
+		}
+	}
+}
+.l-region--sidebar-second{
+	.view-id-small_blocks_businesses_and_or_events .views-row{
+		&.rowContentType-business-service-or-attraction{
+			@include schemeRowColorSmallBlocksBE($color3);
+		}
+		&.rowContentType-event{
+			@include schemeRowColorSmallBlocksBE($color3Dark);
+		}
+	}	
 }
