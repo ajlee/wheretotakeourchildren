@@ -43,6 +43,18 @@
       "src": "fontawesome"
     },
     {
+      "uid": "ab95e1351ebaec5850101097cbf7097f",
+      "css": "quote-left",
+      "code": 59431,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "d745d7c05b94e609decabade2cae12cb",
+      "css": "quote-right",
+      "code": 59432,
+      "src": "fontawesome"
+    },
+    {
       "uid": "41087bc74d4b20b55059c60a33bf4008",
       "css": "edit",
       "code": 59403,
@@ -197,6 +209,12 @@
       "css": "yahoo",
       "code": 59400,
       "src": "fontawesome"
+    },
+    {
+      "uid": "bcb868184ff9c35f8aef564f50c0d649",
+      "css": "feather",
+      "code": 59430,
+      "src": "entypo"
     },
     {
       "uid": "64f5a50cf7ac972a56a9a511acb5d28e",
