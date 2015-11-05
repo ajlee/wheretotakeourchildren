@@ -4,7 +4,7 @@
 (function ($, Drupal) {
   Drupal.behaviors.wttocMatchHeights = {
     attach: function (context) {
-		var arrEqualHeight = [".view-id-small_blocks_businesses_and_or_events .views-row", ".view-id-businesses_and_events.view-display-id-page_results .view-content .views-row"]
+		var arrEqualHeight = [".view-id-small_blocks_businesses_and_or_events .view-content .views-row", ".view-id-businesses_and_events.view-display-id-page_results .view-content .views-row", ".view-id-small_blocks_blogs_news .view-content .views-row"]
 		$.each(arrEqualHeight, function(key, element){
 			//Initial Match Height
 			$(element).matchHeight({

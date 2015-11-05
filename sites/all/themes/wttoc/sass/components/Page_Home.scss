@@ -31,7 +31,7 @@ body.front{
 		}
 	}
 	// Business Categories Block, Block Title & Featured Businesses, Block Title
-	#block-views-d336072e15ef9d7cf7595da1f2eae2c8, #block-views-1ea9486ceb6c01756421c03c0c8cc067{
+	.homepage_business_categories-container.block, .small_blocks_feat_biz-container.block{
 		border-color: transparent;
 		.block__content{
 			padding: #{$columnPercentPadder * 1} #{$columnPercentPadder * 2};
@@ -41,7 +41,7 @@ body.front{
 		}
 	}
 	// Event Categories Block, Block Title & Featured Events, Block Title
-	#block-views-9bc9d8ca0a25d6b82e61cd69a69f3fa4, #block-views-4c2750af452669f48149adba863f8fb0{
+	.homepage_events_categories-container.block, .small_blocks_feat_evs-container.block{
 		border-color: transparent;
 		.block__content{
 			padding: #{$columnPercentPadder * 1} #{$columnPercentPadder * 2};
@@ -51,18 +51,22 @@ body.front{
 		}
 	}
 	//Latest Businesses Block, Block Title
-	#block-views-e768e4c726034a3167a98d3b47ea3c24{
+	.smallblocks_businesses-container.block{
 		border-color: transparent;
 		h2.block__title{
 			@include linearGradient(darken($color3,4%), $color3);
 		}
 	}
 	//Upcoming Events Block, Block Title
-	#block-views-35f66bb9fb85279b474668b2fc85ac61{
+	.smallblocks_events-container.block{
 		border-color: transparent;
 		h2.block__title{
 			@include linearGradient(darken($color3Dark,4%), $color3Dark);
 		}
+	}
+	//Small Block Blog and News, Border
+	.small_block_bn_blogs_news-container.block{
+		border-color: transparent;
 	}
 	//Main Form
 	.l-region--widetop{ 
@@ -138,7 +142,7 @@ body.front{
 		}
 		#block-views-d400f6dac6873ec2ddd895ba96987fce{
 			//background		
-			background: url("/sites/all/themes/wttoc/images/prevImg/footer.png");
+			background: url("/sites/all/themes/wttoc/images/prevImg/header.png");
 			background-size: auto 230%;
 			@include breakpoint($breakpointTabletP1){
 				background-size: 150% auto;

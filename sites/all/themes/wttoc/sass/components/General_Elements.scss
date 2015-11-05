@@ -92,4 +92,35 @@ fieldset{
 	}
 }
 
+/*
+ *  Footer Background
+ */
+footer.l-footer{
+		//background		
+		//background: url("/sites/all/themes/wttoc/images/prevImg/footer.png");
+		//background-size: 200% auto;
+		//background-repeat: no-repeat;
+		//background-position: center center;
+		.l-region--footer{
+			//@include backgroundOpacity($DARKGRAY,.6); 
+			padding:2%;
+		}
+		nav{
+			ul{
+				text-align:center;
+				>li{
+					display:inline-block;
+					margin-right: 15px;
+					margin-bottom: 8px;
+					a{
+						text-decoration:none;
+					}
+					li{
+						display:none;
+					}
+				}
+			}
+		}
+}
+
 

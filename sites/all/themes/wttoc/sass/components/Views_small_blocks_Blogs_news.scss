@@ -1,0 +1,91 @@
+/*
+ * Block & Blogs Displays
+ */
+
+ /*
+  * Responsive Stylings
+  */
+.l-content .view-id-small_blocks_blogs_news .view-content{
+	@include clearfix;
+	@include views3Wide1MobileDefault;
+}
+
+.l-region--sidebar-second, .l-region--sidebar-first{
+	.view-id-small_blocks_blogs_news .view-content{
+		@include breakpoint($mobile2Tablet){
+			@include clearfix;
+			.views-row{
+			    @include clearfix;
+			}
+			.views-row:nth-child(2n+1){
+				@include splitVLeft(50%);
+				clear:both;
+			}
+			.views-row:nth-child(2n+2){
+				@include splitVRight(50%);
+				clear:none;
+			}
+		};	
+	}
+}
+/*
+ * Decorative Stylings
+ */
+$vsbBnFieldSidePadder: 60px;
+$vsbBnFieldSideIconPadding: 20px;
+$vsbBnFieldSideIconSize: 20px;
+
+.view-id-small_blocks_blogs_news{
+	.views-row{
+		border-bottom: 1px solid #a2a2a2;
+		margin-bottom: 15px;
+		padding-bottom: 15px;
+		padding-top: 4px;
+		position: relative;
+		.views-field{
+			position:relative;
+		}
+		&.views-row{
+			.views-field-title{
+				@include fontelloBefore;
+				&:before{
+					margin:0;
+					font-size: $vsbBnFieldSideIconSize;
+					left:$vsbBnFieldSideIconPadding;
+					@include centerYAbsoluteNoIE8;
+					content:'\e826';
+				}
+				padding-left:$vsbBnFieldSidePadder;
+				padding-right:$vsbBnFieldSidePadder * 3 / 4;
+				margin-bottom: 8px;
+			}
+			.views-field-field-body{
+				@include colorDescendantsFont($DARKERLIGHTGRAY);
+				span.field-content{
+					@include remFontSize($fontXXS);
+				}
+				text-align:justify;
+				@include fontelloAfter;
+				&:after{
+					font-size: $vsbBnFieldSideIconSize * 2 / 3;
+					margin:0;
+					right: $vsbBnFieldSideIconPadding * 2 / 3;
+					@include centerYAbsoluteNoIE8;
+					content:'\e828';
+				}
+				padding-left:$vsbBnFieldSidePadder / 2;
+				padding-right:$vsbBnFieldSidePadder * 3 / 4;
+			}
+			.views-field-created{
+				padding-left:$vsbBnFieldSidePadder / 2;
+				padding-right:$vsbBnFieldSidePadder * 3 / 4;
+				@include colorDescendantsFont($DARKERLIGHTGRAY);
+				text-align:right;
+				span.field-content{
+					@include remFontSize($fontXXXS);
+					font-style:italic;
+				}
+			}
+		}
+	}
+}

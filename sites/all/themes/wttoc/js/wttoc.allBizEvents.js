@@ -38,12 +38,12 @@
 							if(ret !== "empty address" && ret !== "error"){
 								//fill out the lat lon field with the geocoded data
 								$(viewsBlockFormSelector + sp + exposedLatLongSelector).val(ret);
-								$.cookie("globalPreviousAddressSubmitted", address, 7);
+								$.cookie("globalPreviousAddress", address, {expires: 7, path: '/'});
 							}
 							if(ret ==="empty address"){
 								//fill out the lat lon field with the geocoded data
 								$(viewsBlockFormSelector + sp + exposedLatLongSelector).val("");
-								$.cookie("globalPreviousAddressSubmitted", null, 7);
+								$.cookie("globalPreviousAddress", "", {expires: 7, path: '/'});
 							}
 							//remove the address field value
 							$(viewsBlockFormSelector + sp + exposedAddressSelector).attr("placeholder", address);
@@ -56,8 +56,8 @@
 					return false;
 				});
 				//Preserve Address Field After Reloads
-				$globalPreviousAddressSubmitted =  $.cookie("globalPreviousAddressSubmitted") === null  ? "" : $.cookie("globalPreviousAddressSubmitted");
-				$(viewsBlockFormSelector + sp + exposedAddressSelector).val($globalPreviousAddressSubmitted);
+				$globalPreviousAddress =  $.cookie("globalPreviousAddress") === ""  ? "" : $.cookie("globalPreviousAddress");
+				$(viewsBlockFormSelector + sp + exposedAddressSelector).val($globalPreviousAddress);
 				//Helper Functions For Geocoding Client Side
 				geocodeAsync = function(address, f){
 					//returns a string "empty address", "error", or "lat,lon" (where lat lon are coordinates) 
@@ -214,12 +214,12 @@
 							if(ret !== "empty address" && ret !== "error"){
 								//fill out the lat lon field with the geocoded data
 								$(viewsExposedFormSelector + sp + exposedLatLongSelector).val(ret);
-								$.cookie("globalPreviousAddressSubmitted", address, 7);
+								$.cookie("globalPreviousAddress", address, {expires: 7, path: '/'});
 							}
 							if(ret ==="empty address"){
 								//fill out the lat lon field with the geocoded data
 								$(viewsExposedFormSelector + sp + exposedLatLongSelector).val("");
-								$.cookie("globalPreviousAddressSubmitted", null, 7);
+								$.cookie("globalPreviousAddress", "", {expires: 7, path: '/'});
 							}
 							//remove the address field value
 							$(viewsExposedFormSelector + sp + exposedAddressSelector).attr("placeholder", address);
@@ -243,8 +243,8 @@
 					});
 				});
 				//Preserve Address Field After Reloads
-				$globalPreviousAddressSubmitted = ( $.cookie("globalPreviousAddressSubmitted") == null ) ? "" : $.cookie("globalPreviousAddressSubmitted");
-				$(viewsExposedFormSelector + sp + exposedAddressSelector).val($globalPreviousAddressSubmitted);
+				$globalPreviousAddress = ( $.cookie("globalPreviousAddress") == "" ) ? "" : $.cookie("globalPreviousAddress");
+				$(viewsExposedFormSelector + sp + exposedAddressSelector).val($globalPreviousAddress);
 				//Helper Functions For Geocoding Client Side
 				geocodeAsync = function(address, f){
 					//returns a string "empty address", "error", or "lat,lon" (where lat lon are coordinates) 
