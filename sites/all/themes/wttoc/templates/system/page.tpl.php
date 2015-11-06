@@ -123,6 +123,7 @@
         <ul class="action-links"><?php print render($action_links); ?></ul>
       <?php endif; ?>
       <div class="mainContentC"><div class="mcc--inner"><?php print render($page['content']); ?></div></div>
+      <?php print render($page['underlighted']); ?>
       <?php print $feed_icons; ?>
     </div></div>
 

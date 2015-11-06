@@ -1366,7 +1366,8 @@ body.front .smallblocks_events-container.block {
     /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=' #467409 ', endColorstr=' #51870B ',GradientType=0 );*/
     /* IE6-9 */ }
 
-body.front .small_block_bn_blogs_news-container.block {
+body.front .small_block_bn_blogs-container.block,
+body.front .small_block_bn_news-container.block {
   border-color: transparent; }
 
 body.front .l-region--widetop .views-exposed-form-businesses-and-events-page-results {
