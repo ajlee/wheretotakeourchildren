@@ -127,6 +127,12 @@ body.front{
 							@include backgroundOpacity($color1Dark, .75);
 						}
 					}
+					&#edit-field-ages-wrapper{
+						&:before{
+							content:'\e826';
+							@include backgroundOpacity($color3, .75);
+						}
+					}
 					&#edit-field-hidden-address-geofield-latlon-wrapper{
 						&:before{
 							content:'\e816';

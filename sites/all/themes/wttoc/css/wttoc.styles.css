@@ -1440,6 +1440,11 @@ body.front .l-region--widetop .views-exposed-form-businesses-and-events-page-res
         background: #004656;
         /* The Fallback */
         background: rgba(0, 70, 86, 0.75); }
+      body.front .l-region--widetop .views-exposed-form-businesses-and-events-page-results .views-exposed-form .views-exposed-widget#edit-field-ages-wrapper:before {
+        content: '\e826';
+        background: #8CC541;
+        /* The Fallback */
+        background: rgba(140, 197, 65, 0.75); }
       body.front .l-region--widetop .views-exposed-form-businesses-and-events-page-results .views-exposed-form .views-exposed-widget#edit-field-hidden-address-geofield-latlon-wrapper:before {
         content: '\e816';
         background: #ffde00;
@@ -2767,6 +2772,34 @@ body.node-type-event h1.mainPageTitle {
       font-size: 11px;
       font-size: 1.1rem;
       font-style: italic; }
+
+.view-id-small_blocks_blogs_news .view-footer .blognews_seeall {
+  border: 1px solid #494949;
+  border-radius: 0;
+  margin: 4px 2px;
+  padding: 7px 15px;
+  transition: all 0.35s ease-in-out;
+  font-size: 15px;
+  font-size: 1.5rem;
+  display: inline-block;
+  background-color: #565656;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+  float: right; }
+  .view-id-small_blocks_blogs_news .view-footer .blognews_seeall a {
+    color: #fff; }
+  .view-id-small_blocks_blogs_news .view-footer .blognews_seeall:hover {
+    color: #333; }
+    .view-id-small_blocks_blogs_news .view-footer .blognews_seeall:hover a {
+      color: #333; }
+  .view-id-small_blocks_blogs_news .view-footer .blognews_seeall a {
+    text-decoration: none; }
+
+.view-id-small_blocks_blogs_news:after {
+  content: "";
+  display: table;
+  clear: both; }
 
 /*
  * Views: Unslider

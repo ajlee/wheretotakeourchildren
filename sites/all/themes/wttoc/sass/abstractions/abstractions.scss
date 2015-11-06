@@ -340,8 +340,28 @@
 		text-align:center;
 	}
 }
+@mixin buttonBackgroundTextHoverBorderOnWrapperSmall($backgroundColor, $textColor, $hoverTextColor, $borderColor){
+	@include boxBorderRadiusMarginPadding(1px solid $borderColor, 0, 4px 2px, 7px 15px);
+	@include cssTransition(all 0.35s ease-in-out);
+	@include remFontSize($fontXS);
+	display: inline-block;
+	background-color: $backgroundColor;
+	color:$textColor;
+	a{
+		color:$textColor
+	}
+	cursor:pointer;
+	font-weight:bold;
+	&:hover{
+		color: $hoverTextColor;
+		a{
+			color: $hoverTextColor;
+		}
+	}
+}
 @mixin buttonColor1{@include buttonBackgroundTextHoverBorder($color1, $WHITE, $DARKGRAY, #{darken($color1, 5%)} );}
 @mixin buttonColor1Opp{@include buttonBackgroundTextHoverBorder($WHITE, $color1, #{darken($color1, 13%)}, $color1 );}
+@mixin buttonColor1OnWrapperSmall{@include buttonBackgroundTextHoverBorderOnWrapperSmall($color1, $WHITE, $DARKGRAY, #{darken($color1, 5%)} );}
 
 @mixin buttonColor2{@include buttonBackgroundTextHoverBorder($color2, $WHITE, $DARKGRAY, #{darken($color2, 5%)} );}
 @mixin buttonColor2Opp{@include buttonBackgroundTextHoverBorder($WHITE, $color2, #{darken($color2, 13%)}, $color2 );}
@@ -352,6 +372,8 @@
 @mixin buttonAlt{@include buttonBackgroundTextHoverBorder($colorAlt, $DARKGRAY, $WHITE, #{darken($colorAlt, 5%)} );}
 @mixin buttonAltOpp{@include buttonBackgroundTextHoverBorder($WHITE, $colorAlt, #{darken($colorAlt, 13%)}, $colorAlt );}
 
+
+@mixin buttonColorGRAYOnWrapperSmall{@include buttonBackgroundTextHoverBorderOnWrapperSmall($LIGHTERDARKGRAY, $WHITE, $DARKGRAY, #{darken($LIGHTERDARKGRAY, 5%)} );}
 /*
  * Region Color Scheme
  */

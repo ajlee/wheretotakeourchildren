@@ -88,4 +88,12 @@ $vsbBnFieldSideIconSize: 20px;
 			}
 		}
 	}
+	.view-footer .blognews_seeall{
+		@include buttonColorGRAYOnWrapperSmall;
+		float:right;
+		a{
+			text-decoration:none;
+		}
+	}
+	@include clearfix;
 }
