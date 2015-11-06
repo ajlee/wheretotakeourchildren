@@ -29,9 +29,9 @@ function wttoc_text_formats_filter_default_formats() {
         'weight' => 1,
         'status' => 1,
         'settings' => array(
-          'allowed_html' => '<a> <em> <strong> <cite> <blockquote> <code> <ul> <ol> <li> <dl> <dt> <dd>',
+          'allowed_html' => '<a> <em> <strong> <cite> <blockquote> <code> <ul> <ol> <li> <dl> <dt> <dd><h4><h5><h3>',
           'filter_html_help' => 1,
-          'filter_html_nofollow' => 0,
+          'filter_html_nofollow' => 1,
         ),
       ),
       'filter_autop' => array(
@@ -55,13 +55,6 @@ function wttoc_text_formats_filter_default_formats() {
     'status' => 1,
     'weight' => 1,
     'filters' => array(
-      'filter_url' => array(
-        'weight' => 0,
-        'status' => 1,
-        'settings' => array(
-          'filter_url_length' => 72,
-        ),
-      ),
       'filter_htmlcorrector' => array(
         'weight' => 10,
         'status' => 1,

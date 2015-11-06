@@ -1,0 +1,15 @@
+name = WTTOC Image Styles
+core = 7.x
+package = Features
+dependencies[] = image
+features[features_api][] = api:2
+features[image][] = big_rectangle
+features[image][] = big_rectangle_900_x_250
+features[image][] = big_rectangle__1200x220_
+features[image][] = bigrectangle_1200x260_
+features[image][] = rectangle200x80
+features[image][] = rectangle_500x370
+features[image][] = rectangle_700x370
+features[image][] = square500x500
+features[image][] = square_100x100
+features[image][] = square_50x50

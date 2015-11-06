@@ -1,8 +1,12 @@
-name = WTTOC Text Formats
+name = WTTOC Text Formats (& CKEditor)
 core = 7.x
 package = Features
+dependencies[] = ckeditor
 dependencies[] = features
 dependencies[] = filter
+features[ckeditor_profile][] = Advanced
+features[ckeditor_profile][] = CKEditor Global Profile
+features[ckeditor_profile][] = Full
 features[features_api][] = api:2
 features[filter][] = filtered_html
 features[filter][] = full_html

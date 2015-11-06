@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the WTTOC Views feature.
+ */
+
+include_once 'wttoc_views.features.inc';

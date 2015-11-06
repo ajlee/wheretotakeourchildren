@@ -50,6 +50,182 @@ function wttoc_content_types_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-blog_post-field_body'
+  $field_instances['node-blog_post-field_body'] = array(
+    'bundle' => 'blog_post',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_body',
+    'label' => 'Body',
+    'required' => 1,
+    'settings' => array(
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'node-blog_post-field_image_gallery'
+  $field_instances['node-blog_post-field_image_gallery'] = array(
+    'bundle' => 'blog_post',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => '',
+        ),
+        'type' => 'image',
+        'weight' => 1,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_image_gallery',
+    'label' => 'Image Gallery',
+    'required' => 1,
+    'settings' => array(
+      'alt_field' => 1,
+      'alt_field_required' => 1,
+      'default_image' => 0,
+      'file_directory' => '',
+      'file_extensions' => 'png gif jpg jpeg',
+      'max_filesize' => '',
+      'max_resolution' => '',
+      'min_resolution' => '',
+      'title_field' => 1,
+      'title_field_required' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'dragndrop_upload_image',
+      'settings' => array(
+        'allow_replace' => 0,
+        'droppable_area_text' => 'Drop files here to upload',
+        'media_browser' => 0,
+        'multiupload' => 1,
+        'preview_image_style' => 'thumbnail',
+        'progress_indicator' => 'throbber',
+        'standard_upload' => 1,
+        'upload_button_text' => 'Upload',
+        'upload_event' => 'auto',
+      ),
+      'type' => 'dragndrop_upload_image',
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'node-blog_post-field_post_categories'
+  $field_instances['node-blog_post-field_post_categories'] = array(
+    'bundle' => 'blog_post',
+    'default_value' => array(),
+    'deleted' => 0,
+    'description' => 'Post Categories',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_post_categories',
+    'label' => 'Post Categories',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'options',
+      'settings' => array(
+        'autocomplete_path' => 'taxonomy/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'options_select',
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'node-blog_post-field_post_type'
+  $field_instances['node-blog_post-field_post_type'] = array(
+    'bundle' => 'blog_post',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_post_type',
+    'label' => 'Post Type',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 4,
+    ),
+  );
+
   // Exported field_instance:
   // 'node-business_service_or_attraction-field_address'
   $field_instances['node-business_service_or_attraction-field_address'] = array(
@@ -99,6 +275,42 @@ function wttoc_content_types_field_default_field_instances() {
       ),
       'type' => 'addressfield_standard',
       'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'node-business_service_or_attraction-field_ages'
+  $field_instances['node-business_service_or_attraction-field_ages'] = array(
+    'bundle' => 'business_service_or_attraction',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 51,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_ages',
+    'label' => 'Ages',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 17,
     ),
   );
 
@@ -176,7 +388,7 @@ function wttoc_content_types_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_featured_content',
-    'label' => 'Featured Content',
+    'label' => 'Featured Business',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -423,6 +635,45 @@ function wttoc_content_types_field_default_field_instances() {
   );
 
   // Exported field_instance:
+  // 'node-business_service_or_attraction-field_phone_number'
+  $field_instances['node-business_service_or_attraction-field_phone_number'] = array(
+    'bundle' => 'business_service_or_attraction',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 13,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_phone_number',
+    'label' => 'Phone Number',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'telephone',
+      'settings' => array(
+        'placeholder' => '',
+      ),
+      'type' => 'telephone_default',
+      'weight' => 14,
+    ),
+  );
+
+  // Exported field_instance:
   // 'node-business_service_or_attraction-field_prices_information'
   $field_instances['node-business_service_or_attraction-field_prices_information'] = array(
     'bundle' => 'business_service_or_attraction',
@@ -477,7 +728,7 @@ function wttoc_content_types_field_default_field_instances() {
           'link_text' => 1,
         ),
         'type' => 'socialfield_formatter',
-        'weight' => 7,
+        'weight' => 50,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -493,10 +744,7 @@ function wttoc_content_types_field_default_field_instances() {
     'settings' => array(
       'services' => array(
         'facebook' => 'facebook',
-        'googleplus' => 'googleplus',
-        'pinterest' => 'pinterest',
         'twitter' => 'twitter',
-        'youtube' => 'youtube',
       ),
       'used_services' => array(
         'delicious' => 'delicious',
@@ -523,6 +771,49 @@ function wttoc_content_types_field_default_field_instances() {
       'settings' => array(),
       'type' => 'socialfield_widget',
       'weight' => 10,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'node-business_service_or_attraction-field_verified_content'
+  $field_instances['node-business_service_or_attraction-field_verified_content'] = array(
+    'bundle' => 'business_service_or_attraction',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 14,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_verified_content',
+    'label' => 'Verified Business',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 15,
     ),
   );
 
@@ -658,6 +949,42 @@ function wttoc_content_types_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-event-field_ages'
+  $field_instances['node-event-field_ages'] = array(
+    'bundle' => 'event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 51,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_ages',
+    'label' => 'Ages',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 21,
+    ),
+  );
+
   // Exported field_instance: 'node-event-field_category_event'
   $field_instances['node-event-field_category_event'] = array(
     'bundle' => 'event',
@@ -743,6 +1070,7 @@ function wttoc_content_types_field_default_field_instances() {
         'input_format_custom' => '',
         'label_position' => 'above',
         'no_fieldset' => 0,
+        'repeat_collapsed' => 0,
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
@@ -777,7 +1105,7 @@ function wttoc_content_types_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_featured_content',
-    'label' => 'Featured Content',
+    'label' => 'Featured Event',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -893,7 +1221,7 @@ function wttoc_content_types_field_default_field_instances() {
   $field_instances['node-event-field_image_gallery'] = array(
     'bundle' => 'event',
     'deleted' => 0,
-    'description' => '',
+    'description' => 'The first image will be used as the default image throughout the site. Don\'t forget to fill the image\'s Alt and Title fields for impaired users.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -1030,6 +1358,44 @@ function wttoc_content_types_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-event-field_phone_number'
+  $field_instances['node-event-field_phone_number'] = array(
+    'bundle' => 'event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 14,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_phone_number',
+    'label' => 'Phone Number',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'telephone',
+      'settings' => array(
+        'placeholder' => '',
+      ),
+      'type' => 'telephone_default',
+      'weight' => 18,
+    ),
+  );
+
   // Exported field_instance: 'node-event-field_prices_information'
   $field_instances['node-event-field_prices_information'] = array(
     'bundle' => 'event',
@@ -1083,7 +1449,7 @@ function wttoc_content_types_field_default_field_instances() {
           'link_text' => FALSE,
         ),
         'type' => 'socialfield_formatter',
-        'weight' => 8,
+        'weight' => 50,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1099,9 +1465,7 @@ function wttoc_content_types_field_default_field_instances() {
     'settings' => array(
       'services' => array(
         'facebook' => 'facebook',
-        'googleplus' => 'googleplus',
         'twitter' => 'twitter',
-        'youtube' => 'youtube',
       ),
       'used_services' => array(
         'delicious' => 'delicious',
@@ -1128,6 +1492,48 @@ function wttoc_content_types_field_default_field_instances() {
       'settings' => array(),
       'type' => 'socialfield_widget',
       'weight' => 10,
+    ),
+  );
+
+  // Exported field_instance: 'node-event-field_verified_content'
+  $field_instances['node-event-field_verified_content'] = array(
+    'bundle' => 'event',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 15,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_verified_content',
+    'label' => 'Verified Event',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 1,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 20,
     ),
   );
 
@@ -1213,21 +1619,28 @@ function wttoc_content_types_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('Address');
+  t('Ages');
   t('Body');
   t('Business: Categories and Features');
   t('Date of Event');
   t('Event Website');
   t('Events: Categories and Features');
-  t('Featured Content');
+  t('Featured Business');
+  t('Featured Event');
   t('General Information');
   t('Hidden Address Geofield');
   t('Image Gallery');
   t('Linked Business');
   t('More Information');
   t('Opening Hours');
+  t('Phone Number');
+  t('Post Categories');
+  t('Post Type');
   t('Prices Information');
   t('Social Media Pages');
   t('The first image will be used as the default image throughout the site. Don\'t forget to fill the image\'s Alt and Title fields for impaired users.');
+  t('Verified Business');
+  t('Verified Event');
   t('Vouchers Information');
   t('Website Address');
 

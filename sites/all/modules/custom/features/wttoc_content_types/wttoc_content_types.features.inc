@@ -17,6 +17,14 @@ function wttoc_content_types_node_info() {
       'title_label' => t('Title'),
       'help' => '',
     ),
+    'blog_post' => array(
+      'name' => t('Post'),
+      'base' => 'node_content',
+      'description' => t('Create a post. You can give them a type: news or blog.'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
     'business_service_or_attraction' => array(
       'name' => t('Business'),
       'base' => 'node_content',
