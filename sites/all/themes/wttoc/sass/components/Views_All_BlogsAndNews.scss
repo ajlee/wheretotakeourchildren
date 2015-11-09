@@ -1,1 +1,87 @@
-
+.view-id-pages_blogs_news.view-display-id-page_blog,
+.view-id-pages_blogs_news.view-display-id-page_news{
+	.views-row{
+		@include clearfix;
+		.views-field{
+			width:65% - $columnPercentSpacer;
+			margin-left: $columnPercentSpacer;
+			float:right;
+		}
+		.views-field.views-field-field-image-gallery{
+			width:35% - $columnPercentSpacer;
+			margin-right: $columnPercentSpacer;
+			margin-left:0;
+			float:left;
+			img{
+				width:100%;
+			}
+		}
+		.views-field.views-field-title{
+			@include remFontSize($fontXL);
+			font-weight:bold;
+			margin-bottom: 8px;
+			a{
+				text-decoration:none;
+			}
+		}
+		.views-field.views-field-field-body{
+			color: $DARKGRAY;
+			a{
+				color:$color1;
+			}
+		}
+		.views-field.views-field-created{
+		}
+		.views-field.views-field-field-post-type{
+		}
+		@include breakpoint(0 $breakpointTablet){
+			.views-field.views-field-field-body{
+				display:none;
+			}
+		}
+		@include breakpoint(0 $breakpointMobile){
+			.views-field{
+				width:65% - $columnPercentSpacer;
+				margin-left: $columnPercentSpacer;
+			}
+			.views-field.views-field-field-image-gallery{
+				width:35% - $columnPercentSpacer;
+				margin-right: $columnPercentSpacer;
+				margin-left:0;
+			}
+		};
+		@include breakpoint($mobile2Tablet){
+			.views-field{
+				width:70% - $columnPercentSpacer;
+				margin-left: $columnPercentSpacer;
+			}
+			.views-field.views-field-field-image-gallery{
+				width:30% - $columnPercentSpacer;
+				margin-right: $columnPercentSpacer;
+				margin-left:0;
+			}
+		}
+		@include breakpoint($tablet2Wide){
+			.views-field{
+				width:74% - $columnPercentSpacer;
+				margin-left: $columnPercentSpacer;
+			}
+			.views-field.views-field-field-image-gallery{
+				width:26% - $columnPercentSpacer;
+				margin-right: $columnPercentSpacer;
+				margin-left:0;
+			}
+		}
+		@include breakpoint($breakpointWideP1){
+			.views-field{
+				width:78% - $columnPercentSpacer;
+				margin-left: $columnPercentSpacer;
+			}
+			.views-field.views-field-field-image-gallery{
+				width:22% - $columnPercentSpacer;
+				margin-right: $columnPercentSpacer;
+				margin-left:0;
+			}
+		}
+	}
+}

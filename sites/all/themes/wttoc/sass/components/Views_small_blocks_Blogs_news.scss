@@ -87,6 +87,12 @@ $vsbBnFieldSideIconSize: 20px;
 				}
 			}
 		}
+		&.views-row.blognews-type-tid-193 .views-field-title:before{
+			content:'\e826';
+		}
+		&.views-row.blognews-type-tid-194 .views-field-title:before{
+			content:'\e82a';
+		}
 	}
 	.view-footer .blognews_seeall{
 		@include buttonColorGRAYOnWrapperSmall;

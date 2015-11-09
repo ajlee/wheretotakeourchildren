@@ -95,7 +95,7 @@
 				var sFormSelector = 'form .views-exposed-form .views-exposed-widgets';
 				var exposedSubmitSelector = 'input#edit-submit-businesses-and-events';
 				var fieldSyncB2PArray = ['#edit-type', '#edit-field-category','#edit-field-category-event','#edit-field-hidden-address-geofield-latlon',
-				'#edit-field-hidden-address-geofield-latlon-1','input[name="field_start_datepicker[date]"]','input[name="field_end_datepicker[date]"]'];
+				'#edit-field-hidden-address-geofield-latlon-1','#edit-field-ages','input[name="field_start_datepicker[date]"]','input[name="field_end_datepicker[date]"]'];
 				//On Block Submit Click
 				$(viewsBlockSelector + sp + sFormSelector + sp + exposedSubmitSelector).on("click",function(){
 					//sync values to page
@@ -290,6 +290,7 @@
 					var fieldsEventsSelectsArray = ['select[name="field_category_event[]"]'];//separate these because of SumoSelect - see js/selectui.js
 					var fieldEventsInputsArray = ['input[name="field_start_datepicker[date]"]','input[name="field_end_datepicker[date]"]'];
 					//Helper functions
+					//Hide and unset either the business, or event select/inputs of a form (considering that we're using SumoSelect- see js/selectui.js).
 					function hideResetSearch(typeToHideReset,formSelector){
 						if(typeToHideReset === "business"){
 							$.each(fieldsBusinessesWrappersArray, function(){
@@ -298,7 +299,7 @@
 							$.each(fieldsBusinessesSelectsArray, function(){
 								$(formSelector + sp + this).hide();
 								$(formSelector + sp + this).val("");
-								//if there is a corresponding SumoSelect, reload it - see js/selectui.js
+								//if there is a corresponding SumoSelect, reload it
 								if($(formSelector + sp + this)[0] && $(formSelector + sp + this)[0].sumo){
 									$(formSelector + sp + this)[0].sumo.reload();
 								}
@@ -315,7 +316,7 @@
 							$.each(fieldsEventsSelectsArray, function(){
 								$(formSelector + sp + this).hide();
 								$(formSelector + sp + this).val("");
-								//if there is a corresponding SumoSelect, reload it- see js/selectui.js
+								//if there is a corresponding SumoSelect, reload it
 								if($(formSelector + sp + this)[0] && $(formSelector + sp + this)[0].sumo){
 									$(formSelector + sp + this)[0].sumo.reload();
 								}
@@ -327,10 +328,12 @@
 							});
 						}
 					}		
+					//Show either the business, or event select/inputs of a form (considering that we're using SumoSelect- see js/selectui.js).
 					function showValuesSearch(typeToHideReset, formSelector){
 						if(typeToHideReset === "business"){
 							$.each(fieldsBusinessesWrappersArray, function(){
 								$(formSelector + sp + this).show();
+								sumoSelectResetHierarchy(this);
 							});
 							$.each(fieldsBusinessesInputsArray, function(){
 								$(formSelector + sp + this).show();
@@ -339,12 +342,14 @@
 						if(typeToHideReset === "event"){
 							$.each(fieldsEventsWrappersArray, function(){
 								$(formSelector + sp + this).show();
+								sumoSelectResetHierarchy(this);
 							});
 							$.each(fieldEventsInputsArray, function(){
 								$(formSelector + sp + this).show();
 							});
 						}
 					}
+					//The function that should execute, when the business/event value changes
 					function businessOrEventChangeEvent(valueChangedTo, formSelector){			
 						var currentVal = valueChangedTo;
 						//We can't join a null, so don't try that
@@ -371,7 +376,112 @@
 							hideResetSearch("event",formSelector);
 							hideResetSearch("business",formSelector);
 						}
-					}// end of helper functions	
+					}
+					//use hierarchy (based on dashes) inside a particular sumoselect
+					function sumoSelectResetHierarchy(wrapperSelector){ 
+						var listElements = $(wrapperSelector + ' .SumoSelect ul li');
+						//1) hide all children elements (not top level) initially, unless they're selected
+						$.each(listElements, function(index, value){	
+							var liStartingDashes = startingDashes($(value).text());
+							//exception: very first children shouldn't be hidden
+							if(liStartingDashes>0){
+								//exception: selected elements shouldn't be hidden
+								if( !($(value).hasClass("selected")) ){
+									$(value).hide();
+								}
+								// and give elements an indent, depending on the hierarchy
+								$(value).css("margin-left",(10 * liStartingDashes) + "px");
+							};
+						});
+						//2 show all children of selected categories
+						$.each(listElements, function(index, value){
+							if($(value).hasClass("selected")){	
+								var parentElementDashes = startingDashes($(value).text());
+								var currentElement = $(value);
+								//keep searching until we run into an element in the same level as the clicked element
+								while( (parentElementDashes ) < startingDashes(currentElement.next().text()) ){
+									//only show those that are direct children
+									if( (parentElementDashes + 1) === startingDashes(currentElement.next().text()) ){
+										currentElement.next().show();
+									}
+									currentElement = currentElement.next();
+								}
+							}
+						});						
+					
+						//3) select(tick) and show all parent elements, of selected children
+						$.each(listElements, function(index, value){
+							//only execute this for selected elements
+							if($(value).hasClass("selected")){	
+								var childElementDashes = startingDashes($(value).text());
+								//only execute this for child elements, not first level elements, since first level elements don't have parents
+								if(childElementDashes !== 0){
+									//find parents with levels between 0 and childElementDashes -1 
+									for(i=childElementDashes-1; i>=0; i--){
+										//if the previous element is a parent, select it (by clicking) and show it
+										var currentElement = $(value);
+										while(startingDashes(currentElement.text()) !== i 
+											&& startingDashes(currentElement.text()) !== 0 
+										){
+											if( startingDashes(currentElement.prev().text()) === i){
+												currentElement.prev().show();
+												if(!(currentElement.prev().hasClass("selected")) ){
+													currentElement.prev().click();
+												}	
+											}
+											currentElement = currentElement.prev();
+										}
+									}
+								}
+							}
+						});
+						$(wrapperSelector + ' .SumoSelect ul li').click(function(){
+							//4) show direct children elements, when an item is selected
+							if($(this).hasClass("selected")){
+								var parentElementDashes = startingDashes($(this).text());
+								var currentElement = $(this);
+								//keep searching until we run into an element in the same level as the clicked element
+								while( (parentElementDashes ) < startingDashes(currentElement.next().text()) ){
+									//only show those that are direct children
+									if( (parentElementDashes + 1) === startingDashes(currentElement.next().text()) ){
+										currentElement.next().show();
+									}
+									currentElement = currentElement.next();
+								}
+							}
+							//5) when an item is unselected
+							// hide all its children elements and unselect those children (by clicking, if they're selected)
+							else{
+								var parentElementDashes = startingDashes($(this).text());
+								var currentElement = $(this);
+								while( parentElementDashes < startingDashes(currentElement.next().text()) ){
+									currentElement.next().hide();
+									if(currentElement.next().hasClass("selected")){
+										currentElement.next().click();
+									}
+									currentElement = currentElement.next();
+								}
+							}
+						});
+					}
+					//calculate the number of starting dashes in a string
+					function startingDashes(string){
+						var numberOfDashes = 0;
+						var stringLength = string.length;
+						var index = 0;
+						var keepSearching = true;
+						while(index<stringLength && keepSearching){
+							if(string.slice(index,index+1) === '-'){
+								numberOfDashes++;
+							}
+							else{
+								keepSearching = false;
+							}
+							index++;
+						}
+						return numberOfDashes;   
+					}	
+					// end of helper functions	
 					//On Change Of Business/Event Field
 					if($('body.front').length){
 						var currentVal = $(viewsExposedFormSelector + sp + contentTypeSelect).val();
@@ -388,9 +498,9 @@
 							var currentVal = $(this).val();
 							businessOrEventChangeEvent(currentVal, viewsBlockSelector);
 						});	
-					}			
+					}				
 				}//end of check for homepage or search page
-			}//end of attach
+		}//end of attach
 	};//end of behavior
 })(jQuery, Drupal)
 

@@ -16,14 +16,16 @@
 				}
 				else{
 					var placeHolderText = "Select"
-				}	
+				}
+				//SumoSelect to make it look nice - using the placeholder text as a placeholder	
 				$(this).SumoSelect({
 				    placeholder: placeHolderText,
 				    csvDispCount: 2,
 				    captionFormat: '{0} Selected',
 				    floatWidth: 400,
 				    forceCustomRendering: false,
-				    nativeOnDevice: ['Android', 'BlackBerry', 'iPhone', 'iPad', 'iPod', 'Opera Mini', 'IEMobile', 'Silk'],
+				    //nativeOnDevice: ['Android', 'BlackBerry', 'iPhone', 'iPad', 'iPod', 'Opera Mini', 'IEMobile', 'Silk'],
+				    nativeOnDevice: [],
 				    outputAsCSV : false,
 				    csvSepChar : ',', 
 				    okCancelInMulti: false, 
@@ -32,10 +34,6 @@
 				    selectAlltext: 'Select All'
 				});
 		});
-		//these lines were using jquery ui
-		//($(".l-page select").selectmenu()
-		//.selectmenu("menuWidget")
-		//.addClass("overflow");
     }
   };//end of behavior
   Drupal.behaviors.wttocPlaceHoldersUI = {
@@ -73,6 +71,7 @@
 		});
     }
   };//end of behavior
+  
   		
 })(jQuery, Drupal);
 

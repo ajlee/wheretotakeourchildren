@@ -1441,10 +1441,10 @@ body.front .l-region--widetop .views-exposed-form-businesses-and-events-page-res
         /* The Fallback */
         background: rgba(0, 70, 86, 0.75); }
       body.front .l-region--widetop .views-exposed-form-businesses-and-events-page-results .views-exposed-form .views-exposed-widget#edit-field-ages-wrapper:before {
-        content: '\e826';
-        background: #8CC541;
+        content: '\e829';
+        background: #FD8A33;
         /* The Fallback */
-        background: rgba(140, 197, 65, 0.75); }
+        background: rgba(253, 138, 51, 0.75); }
       body.front .l-region--widetop .views-exposed-form-businesses-and-events-page-results .views-exposed-form .views-exposed-widget#edit-field-hidden-address-geofield-latlon-wrapper:before {
         content: '\e816';
         background: #ffde00;
@@ -2772,6 +2772,10 @@ body.node-type-event h1.mainPageTitle {
       font-size: 11px;
       font-size: 1.1rem;
       font-style: italic; }
+  .view-id-small_blocks_blogs_news .views-row.views-row.blognews-type-tid-193 .views-field-title:before {
+    content: '\e826'; }
+  .view-id-small_blocks_blogs_news .views-row.views-row.blognews-type-tid-194 .views-field-title:before {
+    content: '\e82a'; }
 
 .view-id-small_blocks_blogs_news .view-footer .blognews_seeall {
   border: 1px solid #494949;
@@ -3225,5 +3229,93 @@ body.node-type-event h1.mainPageTitle {
 
 .l-region--sidebar-second .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field-field-address .field-content:before, .l-region--sidebar-second .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field-field-date-of-event .field-content:before {
   color: #51870B; }
+
+.view-id-pages_blogs_news.view-display-id-page_blog .views-row:after,
+.view-id-pages_blogs_news.view-display-id-page_news .views-row:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+.view-id-pages_blogs_news.view-display-id-page_blog .views-row .views-field,
+.view-id-pages_blogs_news.view-display-id-page_news .views-row .views-field {
+  width: 64%;
+  margin-left: 1%;
+  float: right; }
+
+.view-id-pages_blogs_news.view-display-id-page_blog .views-row .views-field.views-field-field-image-gallery,
+.view-id-pages_blogs_news.view-display-id-page_news .views-row .views-field.views-field-field-image-gallery {
+  width: 34%;
+  margin-right: 1%;
+  margin-left: 0;
+  float: left; }
+  .view-id-pages_blogs_news.view-display-id-page_blog .views-row .views-field.views-field-field-image-gallery img,
+  .view-id-pages_blogs_news.view-display-id-page_news .views-row .views-field.views-field-field-image-gallery img {
+    width: 100%; }
+
+.view-id-pages_blogs_news.view-display-id-page_blog .views-row .views-field.views-field-title,
+.view-id-pages_blogs_news.view-display-id-page_news .views-row .views-field.views-field-title {
+  font-size: 24px;
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin-bottom: 8px; }
+  .view-id-pages_blogs_news.view-display-id-page_blog .views-row .views-field.views-field-title a,
+  .view-id-pages_blogs_news.view-display-id-page_news .views-row .views-field.views-field-title a {
+    text-decoration: none; }
+
+.view-id-pages_blogs_news.view-display-id-page_blog .views-row .views-field.views-field-field-body,
+.view-id-pages_blogs_news.view-display-id-page_news .views-row .views-field.views-field-field-body {
+  color: #333; }
+  .view-id-pages_blogs_news.view-display-id-page_blog .views-row .views-field.views-field-field-body a,
+  .view-id-pages_blogs_news.view-display-id-page_news .views-row .views-field.views-field-field-body a {
+    color: #5573a4; }
+
+@media (min-width: 0) and (max-width: 768px) {
+  .view-id-pages_blogs_news.view-display-id-page_blog .views-row .views-field.views-field-field-body,
+  .view-id-pages_blogs_news.view-display-id-page_news .views-row .views-field.views-field-field-body {
+    display: none; } }
+
+@media (min-width: 0) and (max-width: 430px) {
+  .view-id-pages_blogs_news.view-display-id-page_blog .views-row .views-field,
+  .view-id-pages_blogs_news.view-display-id-page_news .views-row .views-field {
+    width: 64%;
+    margin-left: 1%; }
+  .view-id-pages_blogs_news.view-display-id-page_blog .views-row .views-field.views-field-field-image-gallery,
+  .view-id-pages_blogs_news.view-display-id-page_news .views-row .views-field.views-field-field-image-gallery {
+    width: 34%;
+    margin-right: 1%;
+    margin-left: 0; } }
+
+@media (min-width: 431px) and (max-width: 768px) {
+  .view-id-pages_blogs_news.view-display-id-page_blog .views-row .views-field,
+  .view-id-pages_blogs_news.view-display-id-page_news .views-row .views-field {
+    width: 69%;
+    margin-left: 1%; }
+  .view-id-pages_blogs_news.view-display-id-page_blog .views-row .views-field.views-field-field-image-gallery,
+  .view-id-pages_blogs_news.view-display-id-page_news .views-row .views-field.views-field-field-image-gallery {
+    width: 29%;
+    margin-right: 1%;
+    margin-left: 0; } }
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .view-id-pages_blogs_news.view-display-id-page_blog .views-row .views-field,
+  .view-id-pages_blogs_news.view-display-id-page_news .views-row .views-field {
+    width: 73%;
+    margin-left: 1%; }
+  .view-id-pages_blogs_news.view-display-id-page_blog .views-row .views-field.views-field-field-image-gallery,
+  .view-id-pages_blogs_news.view-display-id-page_news .views-row .views-field.views-field-field-image-gallery {
+    width: 25%;
+    margin-right: 1%;
+    margin-left: 0; } }
+
+@media (min-width: 1025px) {
+  .view-id-pages_blogs_news.view-display-id-page_blog .views-row .views-field,
+  .view-id-pages_blogs_news.view-display-id-page_news .views-row .views-field {
+    width: 77%;
+    margin-left: 1%; }
+  .view-id-pages_blogs_news.view-display-id-page_blog .views-row .views-field.views-field-field-image-gallery,
+  .view-id-pages_blogs_news.view-display-id-page_news .views-row .views-field.views-field-field-image-gallery {
+    width: 21%;
+    margin-right: 1%;
+    margin-left: 0; } }
 
 /*# sourceMappingURL=wttoc.styles.css.map */
