@@ -127,6 +127,12 @@
       "src": "fontawesome"
     },
     {
+      "uid": "032bd8bbd70adf90ead98b6813bfe446",
+      "css": "newspaper",
+      "code": 59434,
+      "src": "fontawesome"
+    },
+    {
       "uid": "6975c4c656d41a0283d9c52516bf38ed",
       "css": "delicious",
       "code": 59405,
@@ -220,6 +226,12 @@
       "uid": "64f5a50cf7ac972a56a9a511acb5d28e",
       "css": "map",
       "code": 59416,
+      "src": "entypo"
+    },
+    {
+      "uid": "7f6916533c0842b6cec699fd773693d3",
+      "css": "hourglass",
+      "code": 59433,
       "src": "entypo"
     },
     {
