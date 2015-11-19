@@ -25,7 +25,7 @@
 				    floatWidth: 400,
 				    forceCustomRendering: false,
 				    //nativeOnDevice: ['Android', 'BlackBerry', 'iPhone', 'iPad', 'iPod', 'Opera Mini', 'IEMobile', 'Silk'],
-				    nativeOnDevice: [],
+				    nativeOnDevice: ['Android', 'BlackBerry', 'iPhone', 'iPod', 'Opera Mini', 'IEMobile'],
 				    outputAsCSV : false,
 				    csvSepChar : ',', 
 				    okCancelInMulti: false, 

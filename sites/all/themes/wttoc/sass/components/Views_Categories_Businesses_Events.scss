@@ -1,113 +1,124 @@
-
-/*
- * Business & Events Displays
- */
- //All results
-.view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories,
-.view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories{
-	.view-content{	
-		@include views3Wide1MobileStyle1;
-		.views-row{
-			padding-bottom:0;
-			//Field Row Styling
-			.views-field{
+.l-widetop, .l-content, .l-region--sidebar-first, .l-region--sidebar-second{
+	.homepage_events_categories-container, .homepage_business_categories-container{
+		.b_title_cont{
+			@include doubleLineBackgroundBefore(4px, $LIGHTGRAY);
+			&:before{
+				z-index:-1;
+			}
+			text-align:left;
+			.block__title{
 				position:relative;
-				padding:7px 0;
-				margin-left:7px;
-				margin-right:7px;
-				border-top:1px solid $DARKERLIGHTGRAY;
-				@include fontelloBefore;
-				&:before{
-					background-color: $color1;
-					color:$WHITE;
-					line-height: 20px;
-					height:20px;
-					width: 20px;
-					padding:2px;
-					border-radius: 3px;
-					position:absolute;
-					bottom:0;
-					top:0;
-					left:8px;
-					margin:auto;
-				}
-				.field-content{
-					display:block;
-					padding-left:40px;
-				}
-			}
-			.views-field.views-field-field-category-image{
-				@include fontelloBeforeClear;
-				padding:0;
-				margin:0;
-				border:0;
-				overflow:hidden;
-				.field-content{
-					padding:0;
-					line-height:0;
-				}
-				img{
-					width:100%;
-				}
-			}
-			.views-field.views-field-name{
-				@include centerXYAbsoluteNoIE8;
-				@include backgroundOpacity($LIGHTERDARKGRAY, $opacity: 0.48);
-				@include fontelloBeforeClear;
-				width: 65%;
-				margin:0;
-				border:0;
-				padding:0;
-				.field-content{
-					padding:6px;
-					padding-left:6px;
-					text-align:center;
-				}
-				@include colorDescendantsFont(WHITE);
-				span,a{
-					@include remFontSize($fontL);
-					@include breakpoint($breakpointWideP1){
-						@include remFontSize($fontM);
-					};
-					text-decoration:none;
-				}
-			}
-			//Row Border
-			outline:1px solid $DARKERLIGHTGRAY;
-			@include clearfix;
-			//Row Focus Effect
-			&:hover{
-				@include boxShadowView;
-				.views-field.views-field-field-category-image{ 
-					img{
-						@include zoomImage;
-					}
-					outline:1px solid $GRAY;
-					overflow:hidden;
-				}
+				top:4px;
+				text-align: left;
+				padding: 5px 15px 5px 0;
+				display: inline-block;
+				background-color:$WHITE;
+				z-index:1;
 			}
 		}
-		//View content
-		@include clearfix;
-		margin:6px 0 3px 0;
+	}
+}
+.l-content{
+	.view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories,
+	.view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories{
+		.view-content{	
+			@include views3Wide2Tablet1MobileDefault;
+			.views-row{
+				margin-bottom:10px;
+				//Field Row Styling
+				.views-field{
+					position:relative;
+					padding:7px 0;
+					margin-left:7px;
+					margin-right:7px;
+					border-top:1px solid $DARKERLIGHTGRAY;
+					@include fontelloBefore;
+					&:before{
+						background-color: $color3;
+						color:$WHITE;
+						line-height: 20px;
+						height:20px;
+						width: 20px;
+						padding:2px;
+						border-radius: 3px;
+						position:absolute;
+						bottom:0;
+						top:0;
+						left:8px;
+						margin:auto;
+					}
+					.field-content{
+						display:block;
+						padding-left:40px;
+					}
+				}
+				.views-field.views-field-field-category-image{
+					@include fontelloBeforeClear;
+					padding:0;
+					margin:0;
+					border:0;
+					overflow:hidden;
+					line-height:0;
+					.field-content{
+						padding:0;
+						line-height:0;
+					}
+					img{
+						width:100%;
+					}
+				}
+				.views-field.views-field-name{
+					position:absolute;
+					bottom:0;
+					left:0;
+					@include backgroundOpacity($WHITE, $opacity: 1);
+					@include fontelloBeforeClear;
+					width: 65%;
+					margin:0;
+					border:0;
+					padding:0;
+					.field-content{
+						padding:6px;
+						padding-left:6px;
+						text-align:center;
+					}
+					span,a{
+						@include remFontSize($fontM);
+						@include breakpoint($breakpointWideP1){
+							@include remFontSize($fontS);
+						};
+						text-decoration:none;
+					}
+				}
+				//Row Border
+				@include clearfix;
+				//Row Focus Effect
+				&:hover{
+					@include boxShadowView;
+					padding-bottom:0;
+					.views-field.views-field-field-category-image{ 
+						img{
+							@include zoomImage;
+						}
+					}
+				}
+			}//end of view row
+			@include clearfix;
+			margin:6px 0 3px 0;
+		}//end of view content
 	}
 }
 
-/* 
- * We have two Views, one as a Block and one as a Page
- * Only one of each filter/pager should be visible
- * More at theme's js/wttoc.allBizEvents.js
- */
- 
-//Hide Views Page Filters
-.view-id-businesses_and_events.view-display-id-page_results #views-exposed-form-businesses-and-events-page-results{
-	display:none;
-}
-//Hide Views Page Pagers
-.view-id-businesses_and_events.view-display-id-page_results ul.pager{
-	//display:none;
-}
-//Hide Views Block Lat Lon Field 
-.view-display-id-map_and_filters .views-widget-filter-field_hidden_address_geofield_latlon_1{
-	display:none;
+
+.view-id-listings_business_and_event_categories{
+	&.view-display-id-homepage_event_categories{
+		.views-field.views-field-name{
+			@include colorDescendantsFont($color1Dark);
+		}
+	}
+	&.view-display-id-homepage_business_categories{
+		.views-field.views-field-name{
+			@include colorDescendantsFont($color3Dark);
+		}
+	}
 }

@@ -1,50 +1,48 @@
-$vsbImageWidth: 75px;
-$vsbImageHeight: $vsbImageWidth;
-$vsbPadMarg: 8px;
-
-.l-content .view-id-small_blocks_businesses_and_or_events .view-content{
-	@include clearfix;
-	@include views3Wide1MobileDefault;
-}
-
-.l-region--sidebar-second, .l-region--sidebar-first{
-	.view-id-small_blocks_businesses_and_or_events .view-content{
-		@include breakpoint($mobile2Tablet){
-			@include clearfix;
-			.views-row{
-			    @include clearfix;
+.l-widetop, .l-content, .l-region--sidebar-first, .l-region--sidebar-second{
+	.small_blocks_feat_biz-container, .small_blocks_feat_evs-container,
+	.smallblocks_businesses-container, .smallblocks_events-container, 
+	.smallblocks_busineses_n_events-container{
+		.b_title_cont{
+			@include doubleLineBackgroundBefore(4px, $LIGHTGRAY);
+			&:before{
+				z-index:-1;
 			}
-			.views-row:nth-child(2n+1){
-				@include splitVLeft(50%);
-				clear:both;
+			text-align:left;
+			.block__title{
+				position:relative;
+				top:4px;
+				text-align: left;
+				padding: 5px 15px 5px 0;
+				display: inline-block;
+				background-color:$WHITE;
+				z-index:1;
 			}
-			.views-row:nth-child(2n+2){
-				@include splitVRight(50%);
-				clear:none;
-			}
-		};	
+		}
 	}
 }
-
-.view-id-small_blocks_businesses_and_or_events{
+.l-widetop{
+	.small_blocks_feat_biz-container, .small_blocks_feat_evs-container,
+	.smallblocks_businesses-container, .smallblocks_events-container, 
+	.smallblocks_busineses_n_events-container{
+		.b_title_cont{
+			text-align:center !important;
+			.block__title{
+				padding: 5px 15px;
+			}
+		}
+	}
+}
+.l-widetop .view-id-small_blocks_businesses_and_or_events{
+	@include clearfix;
+	@include views6Tablet3Mobile2MiniMobileNoPadding;
 	.view-content{
 		.views-row{
-			border-bottom: 1px solid $DARKERLIGHTGRAY;
-			margin-bottom: $vsbPadMarg;
-			padding-bottom: $vsbPadMarg/2;
-			padding-top: $vsbPadMarg/2;
-			position:relative;
-			min-height:$vsbImageHeight + ($vsbPadMarg);
+			text-align:center;
 			//left image & icons region
 			.views-field.views-field-nothing{
-				max-width:$vsbImageWidth;
-				overflow:hidden;
-				position:absolute;
-				top:$vsbPadMarg/2;
-				left:0;
-				padding-left:0;
+				max-width:100%;
+				position:relative;
 				.teaser__first-wrapper{
-					max-height: $vsbImageHeight;
 					//verified icon
 					.verified-container{
 						display:none;
@@ -69,22 +67,28 @@ $vsbPadMarg: 8px;
 					}
 					//image 
 					.image-container{
-						img{
-							width: $vsbImageWidth;
+						line-height:0;
+						overflow:hidden;
+						display:block;
+						a{
+							img{
+								width:100%;
+							}
 						}
 					}
 					//content type icon
 					.type-container{
 						@include fontelloBefore;
 						&:before{
-							font-size: 17px;
-							padding: 3px;
+							@include centerXAbsoluteNoIE8;
+							font-size: 20px;
+							padding: 10px;
 							position: absolute;
 							margin: 0 !important;
-							left: 0;
-							bottom: 0;
-							border-top-right-radius:5px;
+							bottom: -20px;
+							border-radius:35px;
 							z-index:1;
+							color:white;
 						}
 						.type-container-inner{
 							@include accesibleHide;
@@ -93,18 +97,23 @@ $vsbPadMarg: 8px;
 				}//end of-teaser left-wrapper
 			}//end of views-field-nothing
 			//views fields
-			.views-field{
-				padding-left: $vsbImageWidth;
-			}
 			.views-field-title,.views-field-field-address,
 			.views-field-field-date-of-event{
+				text-align:center;
 				.field-content{
 					display: block;
 				}
 			}
 			.views-field-title .field-content{
 				@include remFontSize($fontS);
+				@include remLineHeight($fontS * 1.3);
+				margin-top:22px;
 				padding: 0 5px 5px 10px;
+				a{
+					text-decoration: none;
+    				border-bottom: 2px dotted $DARKGRAY;
+    				font-weight:bold;
+				}
 			}
 			.views-field-field-address .field-content,.views-field-field-date-of-event .field-content{
 				position:relative;
@@ -117,8 +126,8 @@ $vsbPadMarg: 8px;
 					padding-left:22px;
 				}
 				padding: 2px 5px 2px 2px;
-				.locality, .state, .postal-code,span{
-					@include remFontSize($fontXXS);
+				.locality, .state, .postal-code,span, .date-display-range{
+					@include remFontSize($fontXS);
 				}
 			}
 			//per field icons
@@ -149,8 +158,6 @@ $vsbPadMarg: 8px;
 					img{
 						@include zoomImage;
 					}
-					outline:1px solid $GRAY;
-					overflow:hidden;
 				}
 			}
 		}//end of views row
@@ -158,9 +165,166 @@ $vsbPadMarg: 8px;
 }
 
 
+$vsbImageWidth: 100px;
+$vsbImageHeight: 90px;
+$vsbPadMarg: 4px;
+.l-region--sidebar-first, .l-region--sidebar-second{
+	.view-id-small_blocks_businesses_and_or_events{
+		.views-row{
+			width:100% !important;
+		}
+	} 
+}
+.l-region--sidebar-first, .l-region--sidebar-second, .l-content{ 
+	.view-id-small_blocks_businesses_and_or_events{
+		@include clearfix;
+		@include views3Wide1MobileDefault;
+		.view-content{
+			.views-row{
+				margin-bottom: $vsbPadMarg/2;
+				padding-bottom: $vsbPadMarg/2;
+				padding-top: $vsbPadMarg/2;
+				position:relative;
+				min-height:$vsbImageHeight + ($vsbPadMarg);
+				//left image & icons region
+				.views-field.views-field-nothing{
+					max-width:$vsbImageWidth;
+					position:absolute;
+					top:$vsbPadMarg/2;
+					left:0;
+					padding-left:0;
+					.teaser__first-wrapper{
+						max-height: $vsbImageHeight;
+						//verified icon
+						.verified-container{
+							display:none;
+							&.typeContainerShow{//if the content is verified, this class will exist
+								display:block;
+							}
+							@include fontelloBefore;
+							&:before{
+								content:'\e825';
+								font-size: 12px;
+								padding: 3px;
+								position: absolute;
+								margin: 0 !important;
+								top: 5px;
+								right: 5px;
+								border-radius:10px;
+								z-index:1;
+							}
+							.verified-container-inner{
+								@include accesibleHide;
+							}
+						}
+						//image 
+						.image-container{
+							line-height:0;
+							overflow:hidden;
+							display:block;
+							img{
+								width: $vsbImageWidth;
+								@include breakpoint($breakpointWideP1 ($breakpointWideP1 + 100px)){
+									width: $vsbImageWidth - 20px;
+								}
+							}
+						}
+						//content type icon
+						.type-container{
+							@include fontelloBefore;
+							&:before{
+								@include centerXAbsoluteNoIE8;
+								font-size: 15px;
+								padding: 7.5px;
+								position: absolute;
+								margin: 0 !important;
+								bottom: -15px;
+								border-radius:35px;
+								z-index:1;
+								color:white;
+							}
+							.type-container-inner{
+								@include accesibleHide;
+							}
+						}
+					}//end of-teaser left-wrapper
+				}//end of views-field-nothing
+				//views fields
+				.views-field{
+					padding-left: $vsbImageWidth + 4px;
+					@include breakpoint($breakpointWideP1 ($breakpointWideP1 + 100px)){
+						padding-left: $vsbImageWidth + 4px - 20px;
+					}
+				}
+				.views-field-title,.views-field-field-address,
+				.views-field-field-date-of-event{
+					.field-content{
+						display: block;
+					}
+				}
+				.views-field-title .field-content{
+					@include remFontSize($fontXS);
+					padding: 0 5px 5px 10px;
+					a{
+						text-decoration:none;
+						font-weight:bold;
+					}
+				}
+				.views-field-field-address .field-content,.views-field-field-date-of-event .field-content{
+					position:relative;
+					@include fontelloBefore;
+					&:before{
+						@include centerYAbsoluteNoIE8;
+					}
+					> div, >span{
+						display:inline-block;
+						padding-left:22px;
+					}
+					padding: 2px 5px 2px 2px;
+					.locality, .state, .postal-code,span, .date-display-range{
+						@include remFontSize($fontXXS);
+					}
+				}
+				//per field icons
+				//address icon
+				.views-field-field-address .field-content:before{
+					content:'\e816';
+				}
+				//date icon
+				.views-field-field-date-of-event .field-content:before{
+					content: '\e81c';
+				}
+				//per content type rows
+				//business content type
+				&.rowContentType-business-service-or-attraction .views-field.views-field-nothing .teaser__first-wrapper{
+					.type-container:before{
+						content:'\e81b';
+					}
+				}
+				//event content type 
+				&.rowContentType-event .views-field.views-field-nothing .teaser__first-wrapper{
+					.type-container:before{
+						content:'\e81c';
+					}
+				}
+				//Row Focus Effect
+				&:hover{
+					.image-container{ 
+						img{
+							@include zoomImage;
+						}
+						overflow:hidden;
+					}
+				}
+			}//end of views row
+		}
+	}
+}
+
 /*
  * Local helper mixin for row coloring
  */
+ 
 @mixin schemeRowColorSmallBlocksBE($colorRow){
 	.views-field.views-field-nothing .teaser__first-wrapper{
 		//verified icon color
@@ -173,10 +337,16 @@ $vsbPadMarg: 8px;
 			background-color:$colorRow;
 			color: $WHITE;
 		}
+		//image bottom border color
+		.image-container{
+			border-bottom: 3px solid $colorRow;
+		}
 	}
 	//title color
 	.views-field-title .field-content{
-		@include colorDescendantsFont($colorRow);
+		a{
+			border-color: $colorRow !important;;
+		}
 	}
 	//other icons color
 	.views-field-field-address .field-content,.views-field-field-date-of-event .field-content{
@@ -185,36 +355,17 @@ $vsbPadMarg: 8px;
 		}
 	}
 }
+
 /*
- * Color depending on region & Content Type
+ * Color depending on Content Type
  */ 
-.l-content{
-	.view-id-small_blocks_businesses_and_or_events .views-row{
-		&.rowContentType-business-service-or-attraction{
-			@include schemeRowColorSmallBlocksBE($color1Light);
-		}
-		&.rowContentType-event{
-			@include schemeRowColorSmallBlocksBE($color1Dark);
-		}
+ 
+.view-id-small_blocks_businesses_and_or_events .views-row{
+	&.rowContentType-business-service-or-attraction{
+		@include schemeRowColorSmallBlocksBE($color3);
+	}
+	&.rowContentType-event{
+		@include schemeRowColorSmallBlocksBE($color1);
 	}
 }
-.l-region--sidebar-first{
-	.view-id-small_blocks_businesses_and_or_events .views-row{
-		&.rowContentType-business-service-or-attraction{
-			@include schemeRowColorSmallBlocksBE($color2);
-		}
-		&.rowContentType-event{
-			@include schemeRowColorSmallBlocksBE($color2Dark);
-		}
-	}
-}
-.l-region--sidebar-second{
-	.view-id-small_blocks_businesses_and_or_events .views-row{
-		&.rowContentType-business-service-or-attraction{
-			@include schemeRowColorSmallBlocksBE($color3);
-		}
-		&.rowContentType-event{
-			@include schemeRowColorSmallBlocksBE($color3Dark);
-		}
-	}	
-}
+

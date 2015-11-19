@@ -43,7 +43,6 @@
 .l-content {
 	.lc-region--inner{
 		@include boxBorderRadiusMarginPadding(2px solid transparent, 3px, 10px 0, 1%);
-		@include regionInnerSchemer($color1, $WHITE, $DARKGRAY, $color1);
 		@include buttonColor1;
 		.mainContentC .mccinner{
 		}
@@ -52,14 +51,12 @@
 .l-region--sidebar-first{
 	.lc-region--inner{
 		@include boxBorderRadiusMarginPadding(2px solid transparent, 3px, 10px 0, 1%);
-		@include regionInnerSchemer($color2, $WHITE, $DARKGRAY, $color2);
 		@include buttonColor2;
 	}	
 }
 .l-region--sidebar-second{
 		.lc-region--inner{
 			@include boxBorderRadiusMarginPadding(2px solid transparent, 3px, 10px 0, 1%);
-			@include regionInnerSchemer($color3, $WHITE, $DARKGRAY, $color3);
 			@include buttonColor3;
 		}
 }

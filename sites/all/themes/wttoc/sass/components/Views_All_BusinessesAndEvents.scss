@@ -15,7 +15,7 @@
 				border-top:1px solid $DARKERLIGHTGRAY;
 				@include fontelloBefore;
 				&:before{
-					background-color: $color1;
+					background-color: $color3;
 					color:$WHITE;
 					line-height: 20px;
 					height:20px;
@@ -47,11 +47,11 @@
 				margin:0 0 0 0;
 				border-bottom-left-radius:3px;
 				overflow:hidden;
-				@include backgroundOpacity($color1Light,0.8);
+				@include backgroundOpacity($color3,0.8);
 				@include cssTransition(all 0.35s ease-in-out);
 				&:before{
 					background-color:$WHITE;
-					color:$color1Light;
+					color:$color3;
 				}
 				.field-content{
 					min-width:80px;
@@ -73,44 +73,44 @@
 			//content type: icons & colorings
 			&.rowContentType-business-service-or-attraction{
 				.views-field.views-field-type{//top icon
-					@include backgroundOpacity($color1Light,0.8);
+					@include backgroundOpacity($color3,0.8);
 					&:before{
 						content:'\e81b';
 						background-color:$WHITE;
-						color:$color1Light;
+						color:$color3;
 					}
 					.field-content{
 						color:$WHITE;
 					}
 				}	
 				.views-field.views-field-title{//title
-					@include colorDescendantsFont($color1);
+					@include colorDescendantsFont($color3);
 				}
 				.views-field{//other icons
 					&:before{
-						background-color:$color1; 
+						background-color:$color3; 
 						color:white;
 					}
 				}
 			}
 			&.rowContentType-event{
 				.views-field.views-field-type{//top color1
-					@include backgroundOpacity($color1Dark,0.8);
+					@include backgroundOpacity($color1,0.8);
 					&:before{
 						content:'\e81c';
 						background-color:$WHITE;
-						color:$color1Dark;
+						color:$color1;
 					}
 					.field-content{
 						color:$WHITE;
 					}
 				}	
 				.views-field.views-field-title{//title
-					@include colorDescendantsFont($color1);
+					@include colorDescendantsFont($color3);
 				}
 				.views-field{//other icons
 					&:before{
-						background-color:$color1;
+						background-color:$color3;
 						color:white;
 					}
 				}
@@ -134,7 +134,7 @@
 				.field-content{
 					padding-left:4px;
 				}
-				@include colorDescendantsFont($color1);
+				@include colorDescendantsFont($color3);
 				span,a{
 					@include remFontSize($fontL);
 					text-decoration:none;
@@ -179,6 +179,7 @@
 /*
  *  Form Stylings
  */ 
+ 
 .view-id-businesses_and_events.view-display-id-page_results,#block-views-d400f6dac6873ec2ddd895ba96987fce, 
 form#views-exposed-form-businesses-and-events-page-results, form#views-exposed-form-businesses-and-events-map-and-filters{
 	//PlaceHolder and Input Text
@@ -234,9 +235,10 @@ form#views-exposed-form-businesses-and-events-page-results, form#views-exposed-f
  * More at theme's js/wttoc.allBizEvents.js
  */
  //only do this on the page, not everywhere else
+ 
  body.page-search-businesses-and-events{
 	//Hide Views Page Filters
-	#block-views-d400f6dac6873ec2ddd895ba96987fce, form#views-exposed-form-businesses-and-events-page-results{
+	.v_page_search_results-container form#views-exposed-form-businesses-and-events-page-results{
 		display:none;
 	}
 	//Hide Views Page Pagers - disabled
@@ -250,14 +252,29 @@ form#views-exposed-form-businesses-and-events-page-results .views-widget-filter-
 	display:none;
 }
 
+//Hide Views Page Filters
+.view-id-businesses_and_events.view-display-id-page_results #views-exposed-form-businesses-and-events-page-results{
+	display:none;
+}
+//Hide Views Page Pagers
+.view-id-businesses_and_events.view-display-id-page_results ul.pager{
+	//display:none;
+}
+//Hide Views Block Lat Lon Field 
+.view-display-id-map_and_filters .views-widget-filter-field_hidden_address_geofield_latlon_1{
+	display:none;
+}
+
+
 /*
  * Layout Region Schemer For Search Business and Events Page
  */
+ /*
 body.page-search-businesses-and-events{
 	.l-content {
 		.lc-region--inner{
-			@include boxBorderRadiusMarginPadding(2px solid $color1Light, 3px, 10px 0, 2%);
-			@include regionInnerSchemer($color1, $WHITE, $DARKGRAY, $color1);
+			@include boxBorderRadiusMarginPadding(2px solid $color3, 3px, 10px 0, 2%);
+			@include regionInnerSchemer($color3, $WHITE, $DARKGRAY, $color3);
 			@include buttonColor1;
 		}
 	}
@@ -270,9 +287,10 @@ body.page-search-businesses-and-events{
 	}
 	.l-region--sidebar-second{
 		.lc-region--inner{
-			@include boxBorderRadiusMarginPadding(2px solid $color3Light, 3px, 10px 0, 3%);
-			@include regionInnerSchemer($color3, $WHITE, $DARKGRAY, $color2);
+			@include boxBorderRadiusMarginPadding(2px solid $color1Light, 3px, 10px 0, 3%);
+			@include regionInnerSchemer($color1, $WHITE, $DARKGRAY, $color2);
 			@include buttonColor3;
 		}
 	}
 }
+*/

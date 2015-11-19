@@ -4,27 +4,25 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 html {
 	font-family:"Open Sans", sans-serif, Helvetica;
-	/* Sets up the Base 10 stuff */
-	@include breakpoint(0 $breakpointTablet){
-		font-size: 62.5%; 
-	};
-	@include breakpoint($tablet2Wide){
-		font-size: 60%;		
-	};
-	@include breakpoint($breakpointWideP1){
-		font-size: 57.5%;	
-	};
 	input, button{
 		font-family:"Open Sans", sans-serif, Helvetica;
 	}
+	font-size:10px;
+	margin:0 auto;
+	@include breakpoint($breakpointXWideP1){
+		max-width:$breakpointXWide;
+	}
+	@include breakpoint($wide2XWide){
+		max-width: 92.5%;
+	}
+	@include breakpoint(0 $breakpointMini){
+		min-width: $breakpointMini;
+		overflow-x:scroll;
+	}
 }
-
-/*
- * Default Font Size
- */
 body{
-	//Do not use REM here
-	font-size:16px;
+	@include remFontSize($fontS);
+	color:$DARKGRAY;
 }
 /*
  * Max Width Responsive  
@@ -54,6 +52,7 @@ body.admin-menu{
  */
 a{
 	@include cssTransition(all 0.35s ease-in-out);
+	color:$DARKGRAY;
 }
 
 /*

@@ -109,6 +109,32 @@
 	width: $percentWidth - $columnPercentSpacer;
 }
 
+/*
+ * Chop 6 Columns For Views
+ */
+@mixin chop6VLeft($percentWidth){
+	float:left;
+	margin-right: $columnPercentSpacer/2;
+	width: $percentWidth - $columnPercentSpacer / 2;	
+}
+@mixin chop6VMiddle($percentWidth){
+	float:left;
+	margin-left: $columnPercentSpacer / 2;
+	margin-right: $columnPercentSpacer / 2;
+	width: $percentWidth - $columnPercentSpacer; 
+}
+@mixin chop6VRight($percentWidth){
+	float:right;
+	margin-left: $columnPercentSpacer/2;
+	width: $percentWidth - $columnPercentSpacer / 2;
+}
+/*
+ * Chop left - No Padding
+ */
+@mixin chopLeftNoPadding($percentWidth){
+	float:left;
+	width: $percentWidth; 
+}
 
 /* 
  * Headers Font Style
@@ -121,12 +147,51 @@
 	text-transform: uppercase;
 }
 
+/*
+ * singleLineBackground
+ */
+@mixin singleLineBackgroundBefore($colorLine){
+	position:relative;
+	&:before{
+		content:" ";
+		position:absolute;
+		width:100%;
+		border-bottom:2px solid $colorLine;
+		top:50%;
+		left:0;
+	}
+}
+/*
+ * doubleLineBackground
+ */
+@mixin doubleLineBackgroundBefore($pixelSeparation, $colorLine){
+	position:relative;
+	&:before{
+		content:" ";
+		position:absolute;
+		width:100%;
+		height:$pixelSeparation;
+		border-top:2px double $colorLine;
+		border-bottom:2px double $colorLine;
+		top:50%;
+		left:0;
+	}
+}
+
 /* 
  * Rem Font Size With FallBack
  */
 @mixin remFontSize($sizeValue: 1.6) {
   font-size: ($sizeValue * 10) + px;
   font-size: $sizeValue + rem;
+}
+
+/*
+ * Rem Line Height
+ */
+@mixin remLineHeight($sizeValue: 1.6) {
+  line-height: ($sizeValue * 10) + px;
+  line-height: $sizeValue + rem;
 }
 
 /*
@@ -372,6 +437,10 @@
 @mixin buttonAlt{@include buttonBackgroundTextHoverBorder($colorAlt, $DARKGRAY, $WHITE, #{darken($colorAlt, 5%)} );}
 @mixin buttonAltOpp{@include buttonBackgroundTextHoverBorder($WHITE, $colorAlt, #{darken($colorAlt, 13%)}, $colorAlt );}
 
+@mixin buttonColor1OnWrapperSmall{@include buttonBackgroundTextHoverBorderOnWrapperSmall($color1, $WHITE, $DARKGRAY, #{darken($color1, 5%)} );}
+@mixin buttonColor2OnWrapperSmall{@include buttonBackgroundTextHoverBorderOnWrapperSmall($color2, $WHITE, $DARKGRAY, #{darken($color2, 5%)} );}
+@mixin buttonColor3OnWrapperSmall{@include buttonBackgroundTextHoverBorderOnWrapperSmall($color3, $WHITE, $DARKGRAY, #{darken($color3, 5%)} );}
+@mixin buttonColorAltOnWrapperSmall{@include buttonBackgroundTextHoverBorderOnWrapperSmall($colorAlt, $WHITE, $DARKGRAY, #{darken($colorAlt, 5%)} );}
 
 @mixin buttonColorGRAYOnWrapperSmall{@include buttonBackgroundTextHoverBorderOnWrapperSmall($LIGHTERDARKGRAY, $WHITE, $DARKGRAY, #{darken($LIGHTERDARKGRAY, 5%)} );}
 /*
@@ -453,7 +522,6 @@
 			}
 		}
 }	
-
 @mixin borderRadiusIconbgIcon($borderColor, $borderRadius, $iconBackgroundColor, $iconColor){
 		border: $borderColor;
 		border-radius: $borderRadius;
@@ -532,9 +600,80 @@
 		};
 	}
 }
+@mixin views3Wide2Tablet1MobileDefault{
+	.views-row{
+		margin-top:5px;
+		margin-bottom:5px;
+		padding-bottom:2px;
+		position:relative;
+		//Wide Columns
+		@include breakpoint($breakpointWideP1){
+			&:nth-child(3n+1){
+				clear:both;
+				@include chop3VLeft(33.33%);
+			}
+			&:nth-child(3n+2){
+				@include chop3VMiddle(33.33%);
+			}
+			&:nth-child(3n+3){
+				@include chop3VRight(33.33%);
+			}
+		};
+		//Tablet Columns
+		@include breakpoint($mobile2Wide){
+			&:nth-child(2n+1){
+				@include splitVLeft(50%);
+				clear:both;
+			}
+			&:nth-child(2n+2){
+				@include splitVRight(50%);
+			}
+		};
+		//Mobile Columns
+		@include breakpoint(0 $breakpointMobile){
+			@include oneColumn(100%);
+		};
+	}
+}
+@mixin views3XWide2Tablet1MobileDefault{
+	.views-row{
+		margin-top:5px;
+		margin-bottom:5px;
+		padding-bottom:2px;
+		position:relative;
+		//Wide Columns
+		@include breakpoint($breakpointXWideP1){
+			&:nth-child(3n+1){
+				clear:both;
+				@include chop3VLeft(33.33%);
+			}
+			&:nth-child(3n+2){
+				@include chop3VMiddle(33.33%);
+			}
+			&:nth-child(3n+3){
+				@include chop3VRight(33.33%);
+			}
+		};
+		//Tablet Columns
+		@include breakpoint($mobile2XWide){
+			&:nth-child(2n+1){
+				@include splitVLeft(50%);
+				clear:both;
+			}
+			&:nth-child(2n+2){
+				@include splitVRight(50%);
+			}
+		};
+		//Mobile Columns
+		@include breakpoint(0 $breakpointMobile){
+			@include oneColumn(100%);
+		};
+	}
+}
 @mixin views3Wide1MobileStyle1{
 	text-align:center;
 	.views-row{
+		text-align:left;
 		margin-top:5px;
 		margin-bottom:5px;
 		padding-bottom:2px;
@@ -588,4 +727,98 @@
 			@include oneColumn(100%);
 		};
 	}
+}
+@mixin views6Wide3Tablet2Mobile{
+	text-align:center;
+	.views-row{
+		text-align:left;
+		margin-top:5px;
+		margin-bottom:5px;
+		padding-bottom:2px;
+		position:relative;
+		//Wide Columns
+		@include breakpoint($breakpointWideP1){
+			&:nth-child(6n+1){
+				clear:both;
+				@include chop6VLeft(16.66%);
+			}
+			&:nth-child(6n+2), &:nth-child(6n+3),
+			&:nth-child(6n+4), &:nth-child(6n+5){
+				@include chop6VMiddle(16.66%);
+			}
+			&:nth-child(6n+6){
+				@include chop6VRight(16.66%);
+			}
+		};
+		//Tablet Columns
+		@include breakpoint($mobile2Tablet){
+			&:nth-child(3n+1){
+				clear:both;
+				@include chop3VLeft(33.33%);
+			}
+			&:nth-child(3n+2){
+				@include chop3VMiddle(33.33%);
+			}
+			&:nth-child(3n+3){
+				@include chop3VRight(33.33%);
+			}
+		};
+		//Mobile Columns
+		@include breakpoint(0 $breakpointMobile){
+			&:nth-child(2n+1){
+				@include splitVLeft(50%);
+				clear:both;
+			}
+			&:nth-child(2n+2){
+				@include splitVRight(50%);
+			}
+		};
+	}	
+}
+@mixin views6Tablet3Mobile2MiniMobileNoPadding{
+	text-align:center;
+	.views-row{
+		text-align:left;
+		margin-top:5px;
+		margin-bottom:5px;
+		padding-bottom:2px;
+		position:relative;
+		//Wide Columns
+		@include breakpoint($breakpointTabletP1){
+			&:nth-child(6n+1){
+				clear:both;
+				@include chopLeftNoPadding(16.66%);
+			}
+			&:nth-child(6n+2), &:nth-child(6n+3),
+			&:nth-child(6n+4), &:nth-child(6n+5){
+				@include chopLeftNoPadding(16.66%);
+			}
+			&:nth-child(6n+6){
+				@include chopLeftNoPadding(16.66%);
+			}
+		};
+		//Tablet Columns
+		@include breakpoint($mobile2Wide){
+			&:nth-child(3n+1){
+				clear:both;
+				@include chopLeftNoPadding(33.33%);
+			}
+			&:nth-child(3n+2){
+				@include chopLeftNoPadding(33.33%);
+			}
+			&:nth-child(3n+3){
+				@include chopLeftNoPadding(33.33%);
+			}
+		};
+		//Mobile Columns
+		@include breakpoint(0 $breakpointMobile){
+			&:nth-child(2n+1){
+				@include chopLeftNoPadding(50%);
+				clear:both;
+			}
+			&:nth-child(2n+2){
+				@include chopLeftNoPadding(50%);
+			}
+		};
+	}	
 }
