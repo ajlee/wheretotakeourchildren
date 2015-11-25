@@ -1,0 +1,99 @@
+.social-links-block-wttoc-container{
+  @include clearfix;
+  .b_title_cont{
+    @include clearfix;
+    display:inline-block;
+    float:left;
+    padding: 22px 3px !important;
+    margin: 5px 2px !important;
+    .block__title{
+      display:inline-block;
+      float:left;
+    }
+  } 
+  .block__content{
+    display:inline-block;
+    float:left;
+    padding: 10px 3px !important;
+    margin: 5px 2px !important;
+  }
+  .social-links-block-wttoc {
+    list-style: none;
+    overflow: auto;
+    padding: 0 !important;
+    @include clearfix;
+
+    .views-row {
+      display: block;
+      margin: 5px 3px;
+      padding: 10px 0;
+      border-radius: 50px;
+      overflow: hidden;
+      float: left;
+    }
+  }
+}
+.social-links-block-wttoc .icon {
+  color: #FFF;
+  font-size: 24px;
+  padding: 8px 4px;
+
+  background-color: #4a6ea9;
+}
+
+.social-links-block-wttoc.circle-icons .icon {
+  border-radius: 50%;
+}
+
+/* Service-specific style */
+.social-links-block-wttoc .service-reddit .icon {
+  padding: 8px 7px 8px 1px;
+  background-color: #ff4500;
+}
+.social-links-block-wttoc .service-slideshare .icon {
+  padding: 8px 2px 8px 6px;
+  background-color: #4a6ea9;
+}
+.social-links-block-wttoc .service-yahoo .icon {
+  padding: 8px 8px 8px 0px;
+  background-color: #720e9e;
+}
+.social-links-block-wttoc .service-facebook .icon {
+  background-color: #3b5998;
+}
+.social-links-block-wttoc .service-twitter .icon {
+  background-color: #55acee;
+}
+.social-links-block-wttoc .service-googleplus .icon {
+  background-color: #dc4a38;
+}
+.social-links-block-wttoc .service-linkedin .icon {
+  background-color: #0e76a8;
+}
+.social-links-block-wttoc .service-youtube .icon {
+  background-color: #c4302b;
+}
+.social-links-block-wttoc .service-vimeo .icon {
+  background-color: #44bbff;
+}
+.social-links-block-wttoc .service-delicious .icon {
+  background-color: #222222;
+}
+.social-links-block-wttoc .service-digg .icon {
+  background-color: #7a9ac2;
+}
+.social-links-block-wttoc .service-flickr .icon {
+  background-color: #ff0084;
+}
+.social-links-block-wttoc .service-google .icon {
+  background-color: #4285f4;
+}
+.social-links-block-wttoc .service-myspace .icon {
+  background-color: #6087bb;
+}
+.social-links-block-wttoc .service-pinterest .icon {
+  background-color: #c8232c;
+}
+.social-links-block-wttoc .service-stumbleupon .icon {
+  background-color: #f74425;
+}

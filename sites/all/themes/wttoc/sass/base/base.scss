@@ -1,11 +1,12 @@
 /*
  * Set Up Font Size % For Rem
  */
-@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700);
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700);
 html {
-	font-family:"Open Sans", sans-serif, Helvetica;
+	font-family:"Roboto Condensed", sans-serif, Helvetica;
 	input, button{
-		font-family:"Open Sans", sans-serif, Helvetica;
+		font-family:"Roboto Condensed", sans-serif, Helvetica;
 	}
 	font-size:10px;
 	margin:0 auto;

@@ -1,7 +1,9 @@
 /*
  * Region Containers
  */
-
+html{
+	min-width:320px;
+}
 .l-main{
 	margin-left: auto;
 	margin-right: auto;
@@ -26,8 +28,11 @@
  * Header Regions Responsive Behavior
  */
 
-.l-header .l-superheader{
+.l-header .l-superheader .l-superheader-inner{
 	min-height: $superheaderMinHeight;
+	.l-region, .l-region > .block{
+		min-height: $superheaderMinHeight;
+	}
 }
 .l-header .l-branding{
 	width:100%;

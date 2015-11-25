@@ -25,7 +25,7 @@
 	.smallblocks_businesses-container, .smallblocks_events-container, 
 	.smallblocks_busineses_n_events-container{
 		.b_title_cont{
-			text-align:center !important;
+			text-align:left !important;
 			.block__title{
 				padding: 5px 15px;
 			}
@@ -137,19 +137,19 @@
 			}
 			//date icon
 			.views-field-field-date-of-event .field-content:before{
-				content: '\e81c';
+				content: '\e82b';
 			}
 			//per content type rows
 			//business content type
 			&.rowContentType-business-service-or-attraction .views-field.views-field-nothing .teaser__first-wrapper{
 				.type-container:before{
-					content:'\e81b';
+					content:'\e82c';
 				}
 			}
 			//event content type 
 			&.rowContentType-event .views-field.views-field-nothing .teaser__first-wrapper{
 				.type-container:before{
-					content:'\e81c';
+					content:'\e82b';
 				}
 			}
 			//Row Focus Effect
@@ -298,13 +298,13 @@ $vsbPadMarg: 4px;
 				//business content type
 				&.rowContentType-business-service-or-attraction .views-field.views-field-nothing .teaser__first-wrapper{
 					.type-container:before{
-						content:'\e81b';
+						content:'\e82c';
 					}
 				}
 				//event content type 
 				&.rowContentType-event .views-field.views-field-nothing .teaser__first-wrapper{
 					.type-container:before{
-						content:'\e81c';
+						content:'\e82b';
 					}
 				}
 				//Row Focus Effect

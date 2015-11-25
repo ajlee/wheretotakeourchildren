@@ -87,7 +87,13 @@ body.front{
 	//Main Form
 	.l-region--widetop{ 
 		.views-exposed-form-businesses-and-events-page-results{
-			padding: 20px 5%;
+			padding: 20px 35% 130px 5%;
+			@include breakpoint($mobile2Tablet){
+				padding: 20px 15% 100px 5%;
+			}
+			@include breakpoint(0 $breakpointMobile){
+				padding: 15px 5% 60px 5%;
+			}
 			text-align:center;
 			.views-exposed-form{
 				padding-top:15px;
@@ -110,6 +116,7 @@ body.front{
 						color: #fff;
 						padding: 12px;
 						border-radius: 5px 5px 30px 30px;
+						display:none;
 					}
 					float: none;
 					padding-top: 10px;
@@ -164,10 +171,10 @@ body.front{
 		}
 		.v_page_search_results-container{
 			//background		
-			background: url("/sites/all/themes/wttoc/images/prevImg/header.png");
-			background-size: auto 230%;
+			background: url("/sites/all/themes/wttoc/images/prevImg/header.jpg");
+			background-size: auto 100%;
 			@include breakpoint($breakpointTabletP1){
-				background-size: 150% auto;
+				background-size: auto 100%;
 			};
 			background-repeat: no-repeat;
 			min-height: 200px;
@@ -177,3 +184,17 @@ body.front{
 }
 
 
+/* Space Changes */
+body.front .l-widetop .small_blocks_feat_biz-container{
+  margin-top:40px;
+}
+body.front .l-widetop .small_blocks_feat_biz-container .block__content{
+  margin-top:20px;
+}
+
+body.front .l-main  .block{
+  margin-top:65px
+}
+body.front .l-main  .block__content{
+  margin-top:35px
+}

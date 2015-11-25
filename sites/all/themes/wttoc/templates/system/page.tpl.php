@@ -72,7 +72,9 @@
 <div class="l-page">
   <header class="l-header" role="banner">
     <div class="l-superheader">
+      <div class="l-superheader-inner">
       <?php print render($page['superheader']); ?>
+      </div>
     </div>
     <div class="l-branding">
       <?php if ($logo): ?>

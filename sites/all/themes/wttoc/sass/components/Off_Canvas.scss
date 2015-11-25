@@ -152,7 +152,7 @@
 					border-bottom: 1px solid transparent;
 					margin-bottom: -1px;
 					margin-top: 1px;
-					&:hover, &.active{
+					&:hover{
 						background-color:$color1;
 						color:$WHITE;
 						border-bottom: 1px solid $color1Dark;
@@ -205,3 +205,62 @@
 }
 
 
+/*
+ * Top Menu
+ */ 
+.l-superheader{
+	nav{
+		position:relative;
+		> ul.menu{
+			width: 100%;
+			font-size: 14px;
+			line-height: 25px;
+			@include breakpoint(0 $breakpointTablet){
+				display:none;
+			}
+			text-align: right;
+			@include centerYAbsoluteNoIE8;
+			> li{
+				list-style: none;
+				display: inline-block;
+				> a{
+					display: block;
+					text-decoration:none;
+					padding: 12px 30px;
+  					border-left: 1px solid white;
+  					@include fontelloBefore;
+  					&:before{
+  						position:relative;
+  						margin-right:8px;
+  						color: $WHITE;
+						font-size: 14px;
+						font-weight:bold;
+  					}
+  					&#tmenu-SignIn:before{
+  						content:'\e82d';
+  					}
+  					&#tmenu-SubmitListing:before{
+  						content:'\e82c';
+  						bottom:1px;
+  						font-size:16px;
+  					}
+  					&#tmenu-SubmitEvent:before{
+  						content:'\e82b';
+  					}
+  					&#tmenu-LogOut:before{
+  						content:'\e82e';
+  					}
+				}
+			}
+			ul{
+				display:none;
+			}
+		}
+	}
+}
+
+.l-header #block-menu-menu-top-menu--2{
+	@include breakpoint($breakpointTabletP1){
+		display:none;
+	}
+}

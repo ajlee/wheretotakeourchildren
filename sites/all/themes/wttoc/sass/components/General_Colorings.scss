@@ -10,7 +10,12 @@
 .l-header, .l-footer{
 }
 .l-header{
-	border-bottom: 1px solid $LIGHTGRAY;
+	//@include boxshadowBottomLightInset;
+	background: url($pathToTheme +'/images/lineMulticolor.png');
+    background-position: bottom center;
+    background-size: 100% 4px;
+    background-repeat: no-repeat;
+    padding-bottom:5px;
 }
 .l-footer{
 }
@@ -19,10 +24,16 @@
 /*
  * Header Regions Stylings
  */
-.l-header .l-superheader{
-	background-color: $color1Dark;
-	border-bottom: 1px solid $DARKGRAY;
+ .l-header .l-superheader {
+	background-color: $color1;
 	@include colorDescendantsFont($WHITE);
+	@include boxshadowBottomLight;
+}
+.l-header .l-superheader .l-superheader-inner{
+	background: url($pathToTheme +'/images/lineGreen.png');
+    background-position: bottom center;
+    background-size: 100% 2px;
+    background-repeat: no-repeat;
 }
 .l-header .l-region--header{
 }
@@ -65,8 +76,24 @@
  * Footer Stylings
  */
 footer.l-footer{
-	background-color:$DARKGRAY;
-	@include colorDescendantsFont($WHITE);
+	position:relative;
+	color: #333;
+    background: url($pathToTheme + '/images/prevImg/footer.jpg');
+    background-size: 150% auto;
+    @include breakpoint(0 $breakpointTablet){
+    	background-size: auto 100%;
+    }
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    min-height: 200px;
+    #block-menu-menu-footer-links{
+    	@include centerXAbsoluteNoIE8;
+    	position:absolute;
+    	bottom:0; 
+    	width:70%;
+    	@include backgroundOpacity($WHITE, 0.5);
+    	padding: 5px;
+    }
 }
 
 /*

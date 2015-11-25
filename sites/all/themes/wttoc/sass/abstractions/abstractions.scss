@@ -142,9 +142,7 @@
 @mixin headerFontStyle{	
 	line-height: 120%;
 	padding: 0;
-	font-family: 'Raleway', Arial, sans-serif;
-	font-weight: 500;
-	text-transform: uppercase;
+	font-weight: bold;
 }
 
 /*
@@ -384,7 +382,25 @@
 	-moz-box-shadow: 0 0 3px 3px rgba($GRAY,.75);
 	box-shadow: 0 0 3px 3px rgba($GRAY,.75);
 }
-
+/*
+ * Box Shadow Bottom Light
+ */
+@mixin boxshadowBottomLight{
+	-webkit-box-shadow: 0px 2px 5px -1px $BLACK;
+	-moz-box-shadow: 0px 2px 5px -1px $BLACK;
+	box-shadow: 0px 2px 5px -1px $BLACK;
+	-webkit-box-shadow: 0px 2px 5px -1px rgba($BLACK,.75);
+	-moz-box-shadow: 0px 2px 5px -1px rgba($BLACK,.75);
+	box-shadow: 0px 2px 5px -1px rgba($BLACK,.75);
+}
+@mixin boxshadowBottomLightInset{
+	-webkit-box-shadow: inset 0px -5px 5px -6px $BLACK;
+	-moz-box-shadow: inset 0px -5px 5px -6px $BLACK;
+	box-shadow: inset 0px -5px 5px -6px $BLACK;
+	-webkit-box-shadow: inset 0px -5px 5px -6px rgba($BLACK,.75);
+	-moz-box-shadow: inset 0px -5px 5px -6px rgba($BLACK,.75);
+	box-shadow: inset 0px -5px 5px -6px rgba($BLACK,.75);
+}
 /*
  * Buttons Mixins
  */
