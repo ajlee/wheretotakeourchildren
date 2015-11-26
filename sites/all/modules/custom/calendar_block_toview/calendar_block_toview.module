@@ -1,0 +1,167 @@
+<?php
+/**
+ * Calendar Helper Function - Generate Calendar
+ */
+
+function cbtv_build_calendar($month,$year) {
+
+    //Save a numeric value of the month
+    $monthNumeric = $month;
+
+    // Create array containing abbreviations of days of week.
+    $daysOfWeek = array('S','M','T','W','T','F','S');
+
+    // What is the first day of the month in question?
+    $firstDayOfMonth = mktime(0,0,0,$month,1,$year);
+
+    // How many days does this month contain?
+    $numberDays = date('t',$firstDayOfMonth);
+
+    // Retrieve some information about the first day of the
+    // month in question.
+    $dateComponents = getdate($firstDayOfMonth);
+
+    // What is the name of the month in question?
+    $monthName = $dateComponents['month'];
+
+    // What is the index value (0-6) of the first day of the
+    // month in question.
+    $dayOfWeek = $dateComponents['wday'];
+
+    // Create the table tag opener and day headers
+
+    $calendar = "<div class='wttoc_calendar'>";
+    $calendar .= "<div class='wttoc_cal_month'>$monthName $year</div>";
+    $calendar .= "<div class='wttoc_calendar_row'>";
+
+
+    // Create the calendar headers
+
+    foreach($daysOfWeek as $day) {
+        $calendar .= "<div class='wttoc_calendar_header'><div class='wttoc_header_inner'>$day</div></div>";
+    }
+
+    // Create the rest of the calendar
+
+    // Initiate the day counter, starting with the 1st.
+
+    $currentDay = 1;
+
+    $calendar .= "</div><div class='wttoc_calendar_row'>";
+
+    // The variable $dayOfWeek is used to
+    // ensure that the calendar
+    // display consists of exactly 7 columns.
+
+    if ($dayOfWeek > 0) {
+        for($i = 0; $i<$dayOfWeek; $i++){
+            $calendar .= "<div class='wttoc_calendar_day wttoc_calendar_empty_day'><div class='wttoc_day_inner'>-</div></div>";
+        }
+    }
+
+    $month = str_pad($month, 2, "0", STR_PAD_LEFT);
+
+    while ($currentDay <= $numberDays) {
+
+        // Seventh column (Saturday) reached. Start a new row.
+
+        if ($dayOfWeek == 7) {
+
+            $dayOfWeek = 0;
+            $calendar .= "</div><div class='wttoc_calendar_row'>";
+
+        }
+
+        $currentDayRel = str_pad($currentDay, 2, "0", STR_PAD_LEFT);
+
+        $date = "$year-$month-$currentDayRel";
+
+        $calendar .= "<div class='wttoc_calendar_day' rel='$date'><div class='wttoc_day_inner'>";
+        $calendar .= "<a href='";
+        $calendar .= cbtv_linkOneDay($currentDay, $monthNumeric, $year);
+        $calendar .= "' 'title='Search This Day'> $currentDay</a>";
+        $calendar .= "</div></div>";
+
+        // Increment counters
+
+        $currentDay++;
+        $dayOfWeek++;
+
+    }
+
+
+
+    // Complete the row of the last week in month, if necessary
+
+    if ($dayOfWeek != 7) {
+
+        $remainingDays = 7 - $dayOfWeek;
+        for($i = 0; $i<$remainingDays; $i++){
+            $calendar .= "<div class='wttoc_calendar_day wttoc_calendar_empty_day'><div class='wttoc_day_inner'>-</div></div>";
+        }
+
+    }
+
+    $calendar .= "</div>";
+
+    $calendar .= "</div>";
+
+    return $calendar;
+
+}
+
+/**
+ * Helper Function - Create Link Out Of Date
+ */
+function cbtv_linkOneDay($day, $month, $year){
+    $basepath = 'search/businesses-and-events?';
+    $arguments = array(
+        "type[]" => "event",
+        "field_start_datepicker[date]" => $month . "/"  . ($day) . "/" .$year,
+        "field_end_datepicker[date]" => $month . "/" . ($day + 1) . "/" .$year,
+    );
+    $return = $basepath;
+    foreach($arguments as $key => $value){
+        $return .= $key ."=" . $value . "&";
+    }
+    return $return;
+}
+
+/**
+ * Drupal Implementation Using Hooks
+ */
+
+function calendar_block_toview_block_view($delta = '') {
+    $block = array();
+    switch ($delta) {
+        case 'calendar':
+            $block['subject'] = t('Events Calendar');
+            $dateString = "now";
+            $dateComponents = getdate(strtotime($dateString));
+            $month = $dateComponents['mon'];
+            $year = $dateComponents['year'];
+            $blockHtml = cbtv_build_calendar($month,$year);
+            $block['content'] = $blockHtml;
+            break;
+        case 'whatson':
+            $block['subject'] = t('What\'s on this month?');
+            $blockHtml = "<div class='whatson_block_imageholder'></div>";
+            $block['content'] = $blockHtml;
+            break;
+    }
+    return $block;
+}
+
+function calendar_block_toview_block_info() {
+    // This example comes from node.module.
+    $blocks['calendar'] = array(
+        'info' => t('WTTOC Calendar'),
+        'cache' => DRUPAL_CACHE_GLOBAL
+    );
+    $blocks['whatson'] = array(
+        'info' => t('WTTOC Calendar Header'),
+        'cache' => DRUPAL_CACHE_GLOBAL
+    );
+
+    return $blocks;
+}
