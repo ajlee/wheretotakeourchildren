@@ -37,6 +37,7 @@ regions[content] = Content
 regions[underlighted] = Underlighted
 regions[sidebar_first] = First Sidebar
 regions[sidebar_second] = Second Sidebar
+regions[widebottom] = Wide Bottom
 regions[footer] = Footer
 
 ; ========================================

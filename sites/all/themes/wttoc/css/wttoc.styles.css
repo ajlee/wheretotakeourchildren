@@ -524,7 +524,7 @@ a {
     .no-js .l-off-canvas .l-off-canvas-hide {
       display: block; }
     .no-js .l-off-canvas:target .l-region {
-      overflow: visibile; }
+      overflow: visible; }
     .no-js .l-off-canvas:not(:target) .l-region {
       min-height: 0;
       height: 0; }
@@ -1516,6 +1516,14 @@ body.front .l-main .block {
 
 body.front .l-main .block__content {
   margin-top: 35px; }
+
+body.front .l-main #block-calendar-block-toview-whatson .block__content {
+  margin-top: 5px; }
+
+body.front .l-main #block-calendar-block-toview-calendar {
+  margin-top: 10px; }
+  body.front .l-main #block-calendar-block-toview-calendar .block__content {
+    margin-top: 5px; }
 
 /*
  * Business & Events Displays
@@ -3353,5 +3361,62 @@ body.node-type-event{
 
 .social-links-block-wttoc .service-stumbleupon .icon {
   background-color: #f74425; }
+
+#block-calendar-block-toview-calendar .block__title {
+  margin-bottom: 3px;
+  font-size: 22px;
+  font-size: 2.2rem;
+  color: #69D1F5; }
+
+#block-calendar-block-toview-calendar .wttoc_calendar .wttoc_cal_month {
+  margin-bottom: 3px;
+  font-size: 19px;
+  font-size: 1.9rem;
+  color: #69D1F5; }
+
+#block-calendar-block-toview-calendar .wttoc_calendar .wttoc_calendar_row {
+  width: 100%; }
+  #block-calendar-block-toview-calendar .wttoc_calendar .wttoc_calendar_row .wttoc_calendar_header, #block-calendar-block-toview-calendar .wttoc_calendar .wttoc_calendar_row .wttoc_calendar_day {
+    display: inline-block;
+    width: 30px;
+    max-width: 14.28571%;
+    height: 30px;
+    text-align: center;
+    font-size: 17px;
+    font-size: 1.7rem; }
+  #block-calendar-block-toview-calendar .wttoc_calendar .wttoc_calendar_row .wttoc_calendar_header .wttoc_header_inner {
+    background-color: #1981CE;
+    color: #fff;
+    padding: 5px 0;
+    margin: 2px; }
+  #block-calendar-block-toview-calendar .wttoc_calendar .wttoc_calendar_row .wttoc_calendar_day .wttoc_day_inner {
+    margin: 2px;
+    background-color: #69D1F5;
+    color: #fff; }
+    #block-calendar-block-toview-calendar .wttoc_calendar .wttoc_calendar_row .wttoc_calendar_day .wttoc_day_inner:hover {
+      background-color: #1981CE; }
+    #block-calendar-block-toview-calendar .wttoc_calendar .wttoc_calendar_row .wttoc_calendar_day .wttoc_day_inner span, #block-calendar-block-toview-calendar .wttoc_calendar .wttoc_calendar_row .wttoc_calendar_day .wttoc_day_inner p, #block-calendar-block-toview-calendar .wttoc_calendar .wttoc_calendar_row .wttoc_calendar_day .wttoc_day_inner h1, #block-calendar-block-toview-calendar .wttoc_calendar .wttoc_calendar_row .wttoc_calendar_day .wttoc_day_inner h2, #block-calendar-block-toview-calendar .wttoc_calendar .wttoc_calendar_row .wttoc_calendar_day .wttoc_day_inner h3, #block-calendar-block-toview-calendar .wttoc_calendar .wttoc_calendar_row .wttoc_calendar_day .wttoc_day_inner h4, #block-calendar-block-toview-calendar .wttoc_calendar .wttoc_calendar_row .wttoc_calendar_day .wttoc_day_inner h5, #block-calendar-block-toview-calendar .wttoc_calendar .wttoc_calendar_row .wttoc_calendar_day .wttoc_day_inner h6, #block-calendar-block-toview-calendar .wttoc_calendar .wttoc_calendar_row .wttoc_calendar_day .wttoc_day_inner a, #block-calendar-block-toview-calendar .wttoc_calendar .wttoc_calendar_row .wttoc_calendar_day .wttoc_day_inner div, #block-calendar-block-toview-calendar .wttoc_calendar .wttoc_calendar_row .wttoc_calendar_day .wttoc_day_inner li {
+      color: #fff; }
+    #block-calendar-block-toview-calendar .wttoc_calendar .wttoc_calendar_row .wttoc_calendar_day .wttoc_day_inner a:hover {
+      color: #fff; }
+    #block-calendar-block-toview-calendar .wttoc_calendar .wttoc_calendar_row .wttoc_calendar_day .wttoc_day_inner a {
+      display: block;
+      text-decoration: none;
+      padding: 5px 0; }
+  #block-calendar-block-toview-calendar .wttoc_calendar .wttoc_calendar_row .wttoc_calendar_empty_day {
+    visibility: hidden; }
+
+#block-calendar-block-toview-whatson .block__title {
+  margin-bottom: 3px;
+  font-size: 22px;
+  font-size: 2.2rem;
+  color: #69D1F5; }
+
+#block-calendar-block-toview-whatson .block__content .whatson_block_imageholder {
+  background: url("/sites/all/themes/wttoc/images/prevImg/Boy-flying-200.jpg");
+  min-height: 150px;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: 20px 0; }
 
 /*# sourceMappingURL=wttoc.styles.css.map */

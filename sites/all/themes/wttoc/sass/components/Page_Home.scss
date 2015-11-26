@@ -170,8 +170,8 @@ body.front{
 			}
 		}
 		.v_page_search_results-container{
-			//background		
-			background: url("/sites/all/themes/wttoc/images/prevImg/header.jpg");
+			//background
+			background: url("#{$pathToTheme}/images/prevImg/header.jpg");
 			background-size: auto 100%;
 			@include breakpoint($breakpointTabletP1){
 				background-size: auto 100%;
@@ -197,4 +197,15 @@ body.front .l-main  .block{
 }
 body.front .l-main  .block__content{
   margin-top:35px
+}
+body.front .l-main #block-calendar-block-toview-whatson{
+	.block__content{
+		margin-top:5px;
+	}
+}
+body.front .l-main #block-calendar-block-toview-calendar{
+	margin-top:10px;
+	.block__content{
+		margin-top:5px;
+	}
 }

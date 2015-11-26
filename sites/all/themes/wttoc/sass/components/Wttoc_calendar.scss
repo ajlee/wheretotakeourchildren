@@ -1,0 +1,69 @@
+#block-calendar-block-toview-calendar{
+  .block__title{
+    margin-bottom: 3px;
+    @include remFontSize($fontL);
+    color:$color1Light;
+  }
+  .wttoc_calendar{
+    .wttoc_cal_month{
+      margin-bottom: 3px;
+      @include remFontSize($fontM);
+      color:$color1Light;
+    }
+    .wttoc_calendar_row{
+      width:100%;
+      .wttoc_calendar_header, .wttoc_calendar_day{
+        display:inline-block;
+        width: 30px;
+        max-width: (100% / 7);
+        height:30px;
+        text-align:center;
+        @include remFontSize($fontS);
+      }
+      .wttoc_calendar_header{
+        .wttoc_header_inner{
+          background-color:$color1;
+          color:$WHITE;
+          padding:5px 0;
+          margin:2px;
+        }
+      }
+      .wttoc_calendar_day{
+        .wttoc_day_inner{
+          margin:2px;
+          background-color:$color1Light;
+          &:hover{
+            background-color:$color1;
+          }
+          @include colorDescendantsFont($WHITE);
+          a{
+            display:block;
+            text-decoration: none;
+            padding:5px 0;
+          }
+        }
+      }
+      .wttoc_calendar_empty_day{
+        visibility: hidden;
+      }
+    }
+  }
+}
+
+
+#block-calendar-block-toview-whatson{
+  .block__title{
+    margin-bottom: 3px;
+    @include remFontSize($fontL);
+    color:$color1Light;
+  }
+  .block__content{
+    .whatson_block_imageholder{
+      background: url("#{$pathToTheme}/images/prevImg/Boy-flying-200.jpg");
+      min-height: 150px;
+      background-repeat: no-repeat;
+      background-size: auto 100%;
+      background-position: 20px 0;
+    }
+  }
+}
