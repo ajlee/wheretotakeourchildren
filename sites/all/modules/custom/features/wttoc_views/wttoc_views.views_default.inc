@@ -15,7 +15,7 @@ function wttoc_views_views_default_views() {
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'Content Type: Business Display';
+  $view->human_name = 'Content Type: Family Guide Display';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -141,7 +141,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['field_more_information']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_more_information']['alter']['text'] = '<i class="icon icon-article-alt"><span class="element-invisible">more information</span></i><h3>More Information</h3><div class="wttocFieldEnclose">[field_more_information]</div>';
   $handler->display->display_options['fields']['field_more_information']['element_label_colon'] = FALSE;
-  /* Field: Content: Business: Categories and Features */
+  /* Field: Content: Family Guide: Categories and Features */
   $handler->display->display_options['fields']['field_category']['id'] = 'field_category';
   $handler->display->display_options['fields']['field_category']['table'] = 'field_data_field_category';
   $handler->display->display_options['fields']['field_category']['field'] = 'field_category';
@@ -153,7 +153,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['field_category']['type'] = 'taxonomy_term_reference_plain';
   $handler->display->display_options['fields']['field_category']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_category']['multi_type'] = 'ul';
-  /* Field: Content: Business: Categories and Features */
+  /* Field: Content: Family Guide: Categories and Features */
   $handler->display->display_options['fields']['field_category_1']['id'] = 'field_category_1';
   $handler->display->display_options['fields']['field_category_1']['table'] = 'field_data_field_category';
   $handler->display->display_options['fields']['field_category_1']['field'] = 'field_category';
@@ -167,8 +167,8 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['field_category_1']['delta_offset'] = '0';
   $handler->display->display_options['fields']['field_category_1']['multi_type'] = 'ul';
 
-  /* Display: Business Map */
-  $handler = $view->new_display('block', 'Business Map', 'block_2');
+  /* Display: Family Guide Map */
+  $handler = $view->new_display('block', 'Family Guide Map', 'block_2');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Map';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
@@ -230,8 +230,8 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
 
-  /* Display: Business Details */
-  $handler = $view->new_display('block', 'Business Details', 'block_3');
+  /* Display: Family Guide Details */
+  $handler = $view->new_display('block', 'Family Guide Details', 'block_3');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Business Details';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
@@ -294,7 +294,7 @@ function wttoc_views_views_default_views() {
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'search_api_index_index_businesses_and_events';
-  $view->human_name = 'Page: Businesses and Events';
+  $view->human_name = 'Page: Family Guide and Events';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -319,7 +319,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['empty']['area_text_custom']['id'] = 'area_text_custom';
   $handler->display->display_options['empty']['area_text_custom']['table'] = 'views';
   $handler->display->display_options['empty']['area_text_custom']['field'] = 'area_text_custom';
-  /* Field: Indexed Node: Featured Business */
+  /* Field: Indexed Node: Featured Family Guide */
   $handler->display->display_options['fields']['field_featured_content']['id'] = 'field_featured_content';
   $handler->display->display_options['fields']['field_featured_content']['table'] = 'search_api_index_index_businesses_and_events';
   $handler->display->display_options['fields']['field_featured_content']['field'] = 'field_featured_content';
@@ -432,7 +432,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['type']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['type']['format_name'] = 1;
-  /* Field: Indexed Node: Business: Categories and Features */
+  /* Field: Indexed Node: Family Guide: Categories and Features */
   $handler->display->display_options['fields']['field_category']['id'] = 'field_category';
   $handler->display->display_options['fields']['field_category']['table'] = 'search_api_index_index_businesses_and_events';
   $handler->display->display_options['fields']['field_category']['field'] = 'field_category';
@@ -470,7 +470,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['nothing']['label'] = '';
   $handler->display->display_options['fields']['nothing']['alter']['text'] = '<a class="buttonReadMoreListing" href="[url]">Read More</a>';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-  /* Sort criterion: Indexed Node: Featured Business */
+  /* Sort criterion: Indexed Node: Featured Family Guide */
   $handler->display->display_options['sorts']['field_featured_content']['id'] = 'field_featured_content';
   $handler->display->display_options['sorts']['field_featured_content']['table'] = 'search_api_index_index_businesses_and_events';
   $handler->display->display_options['sorts']['field_featured_content']['field'] = 'field_featured_content';
@@ -514,7 +514,7 @@ function wttoc_views_views_default_views() {
     3 => 0,
   );
   $handler->display->display_options['filters']['type']['expose']['reduce'] = 1;
-  /* Filter criterion: Indexed Node: Business: Categories and Features */
+  /* Filter criterion: Indexed Node: Family Guide: Categories and Features */
   $handler->display->display_options['filters']['field_category']['id'] = 'field_category';
   $handler->display->display_options['filters']['field_category']['table'] = 'search_api_index_index_businesses_and_events';
   $handler->display->display_options['filters']['field_category']['field'] = 'field_category';
@@ -1101,7 +1101,7 @@ function wttoc_views_views_default_views() {
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'node';
-  $view->human_name = 'Events and Businesses: Image Slider';
+  $view->human_name = 'Events and Family Guide: Image Slider';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -1170,7 +1170,7 @@ function wttoc_views_views_default_views() {
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'search_api_index_business_and_events_categories';
-  $view->human_name = 'Listings: Business and Event Categories';
+  $view->human_name = 'Listings: Family Guide and Event Categories';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -1623,7 +1623,7 @@ function wttoc_views_views_default_views() {
   $view->description = '';
   $view->tag = 'default';
   $view->base_table = 'search_api_index_index_businesses_and_events';
-  $view->human_name = 'Small Blocks: Businesses and/or Events';
+  $view->human_name = 'Small Blocks: Family Guide and/or Events';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
@@ -1800,7 +1800,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '4';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Indexed Node: Featured Business */
+  /* Sort criterion: Indexed Node: Featured Family Guide */
   $handler->display->display_options['sorts']['field_featured_content']['id'] = 'field_featured_content';
   $handler->display->display_options['sorts']['field_featured_content']['table'] = 'search_api_index_index_businesses_and_events';
   $handler->display->display_options['sorts']['field_featured_content']['field'] = 'field_featured_content';
@@ -1924,7 +1924,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['type_2']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['type_2']['format_name'] = 0;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Indexed Node: Featured Business */
+  /* Sort criterion: Indexed Node: Featured Family Guide */
   $handler->display->display_options['sorts']['field_featured_content']['id'] = 'field_featured_content';
   $handler->display->display_options['sorts']['field_featured_content']['table'] = 'search_api_index_index_businesses_and_events';
   $handler->display->display_options['sorts']['field_featured_content']['field'] = 'field_featured_content';

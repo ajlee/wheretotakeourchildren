@@ -33,10 +33,10 @@ function wttoc_field_base_taxonomy_default_vocabularies() {
       ),
     ),
     'business_type' => array(
-      'name' => 'Business: Categories and Features',
+      'name' => 'Family Guide: Categories and Features',
       'machine_name' => 'business_type',
       'description' => 'Describes a business, services, or attraction category. Contains subcategories as well.',
-      'hierarchy' => 1,
+      'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => 0,
       'rdf_mapping' => array(

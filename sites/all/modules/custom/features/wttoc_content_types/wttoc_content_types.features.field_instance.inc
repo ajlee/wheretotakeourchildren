@@ -337,7 +337,7 @@ function wttoc_content_types_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_category',
-    'label' => 'Business: Categories and Features',
+    'label' => 'Family Guide: Categories and Features',
     'required' => 1,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -388,7 +388,7 @@ function wttoc_content_types_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_featured_content',
-    'label' => 'Featured Business',
+    'label' => 'Featured Family Guide',
     'required' => 0,
     'settings' => array(
       'user_register_form' => FALSE,
@@ -1536,12 +1536,12 @@ function wttoc_content_types_field_default_field_instances() {
   t('Address');
   t('Ages');
   t('Body');
-  t('Business: Categories and Features');
   t('Date of Event');
   t('Event Website');
   t('Events: Categories and Features');
-  t('Featured Business');
+  t('Family Guide: Categories and Features');
   t('Featured Event');
+  t('Featured Family Guide');
   t('General Information');
   t('Hidden Address Geofield');
   t('Image Gallery');
