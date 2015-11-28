@@ -4,6 +4,8 @@
  */
 
 function cbtv_build_calendar($month,$year) {
+    $todayDate=getdate();
+    $todayDateDayNumeric = $todayDate['mday'];
 
     //Save a numeric value of the month
     $monthNumeric = $month;
@@ -76,7 +78,13 @@ function cbtv_build_calendar($month,$year) {
 
         $date = "$year-$month-$currentDayRel";
 
-        $calendar .= "<div class='wttoc_calendar_day' rel='$date'><div class='wttoc_day_inner'>";
+        $calendar .= "<div class='wttoc_calendar_day' rel='$date'>";
+        if($todayDateDayNumeric == $currentDay){
+            $calendar .= "<div class='wttoc_day_inner wttoc_day_inner_today'>";
+        }
+        else{
+            $calendar .= "<div class='wttoc_day_inner'>";
+        }
         $calendar .= "<a href='";
         $calendar .= cbtv_linkOneDay($currentDay, $monthNumeric, $year);
         $calendar .= "' 'title='Search This Day'> $currentDay</a>";
