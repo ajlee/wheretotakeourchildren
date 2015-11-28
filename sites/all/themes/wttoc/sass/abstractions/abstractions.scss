@@ -130,6 +130,28 @@
 	width: $percentWidth - $columnPercentSpacer / 2;
 }
 
+/*
+ * Chop 4 Columns - Carousel Substitute
+ */
+@mixin chop4CsLeft($percentWidth){
+	float:left;
+	margin-left: 2 * $columnPercentSpacer;
+	margin-right: 2 * $columnPercentSpacer;
+	width: $percentWidth -  (4 * $columnPercentSpacer);
+}
+@mixin chop4CsMiddle($percentWidth){
+	float:left;
+	margin-left: 2 * $columnPercentSpacer;
+	margin-right: 2 * $columnPercentSpacer;
+	width: $percentWidth -  (4 * $columnPercentSpacer);
+}
+@mixin chop4CsRight($percentWidth){
+	float:right;
+	margin-left: 2 * $columnPercentSpacer;
+	margin-right: 2 * $columnPercentSpacer;
+	width: $percentWidth -  (4 * $columnPercentSpacer);
+}
+
 
 /*
  * Chop 6 Columns For Views
@@ -451,9 +473,9 @@
 	background-color: $backgroundColor;
 	color:$textColor;
 	a{
-		color:$textColor
+		color:$textColor;
+		cursor:pointer;
 	}
-	cursor:pointer;
 	font-weight:bold;
 	&:hover{
 		color: $hoverTextColor;
@@ -742,6 +764,42 @@
 		};
 		//Tablet Columns
 		@include breakpoint($mobile2Tablet){
+			&:nth-child(2n+1){
+				@include splitVLeft(50%);
+				clear:both;
+			}
+			&:nth-child(2n+2){
+				@include splitVRight(50%);
+			}
+		};
+		//Mobile Columns
+		@include breakpoint(0 $breakpointMobile){
+			@include oneColumn(100%);
+		};
+	}
+}
+@mixin views4Wide2Tablet1MobileDefaultCarouselSubstitute{
+	.views-row{
+		margin-top:5px;
+		margin-bottom:5px;
+		padding-bottom:2px;
+		position:relative;
+		//Wide Columns
+		@include breakpoint($breakpointWideP1){
+			&:nth-child(4n+1){
+				clear:both;
+				@include chop4CsLeft(25%);
+			}
+			&:nth-child(4n+2),
+			&:nth-child(4n+3){
+				@include chop4CsMiddle(25%);
+			}
+			&:nth-child(4n+4){
+				@include chop4CsRight(25%);
+			}
+		};
+		//Tablet Columns
+		@include breakpoint($mobile2Wide){
 			&:nth-child(2n+1){
 				@include splitVLeft(50%);
 				clear:both;

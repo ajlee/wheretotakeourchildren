@@ -52,7 +52,7 @@ body.admin-menu{
  * Links Transition
  */
 a{
-	@include cssTransition(all 0.35s ease-in-out);
+	//@include cssTransition(all 0.35s ease-in-out);
 	color:$DARKGRAY;
 }
 

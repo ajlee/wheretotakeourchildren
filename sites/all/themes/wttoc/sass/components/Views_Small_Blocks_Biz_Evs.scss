@@ -30,11 +30,15 @@
 				padding: 5px 15px;
 			}
 		}
+		.view-content{
+			width:90%;
+			margin:0 auto;
+		}
 	}
 }
 .l-widetop .view-id-small_blocks_businesses_and_or_events{
 	@include clearfix;
-	@include views6Tablet3Mobile2MiniMobileNoPadding;
+	@include views4Wide2Tablet1MobileDefaultCarouselSubstitute;
 	.view-content{
 		.views-row{
 			text-align:center;

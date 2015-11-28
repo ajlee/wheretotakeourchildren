@@ -14,8 +14,6 @@ stylesheets[all][] = css/wttoc.styles.css
 ; ========================================
 ; Scripts
 ; ========================================
-; Library Scripts needed for these are provided at:
-; preprocess/page.preprocess.inc
 scripts[] = js/wttoc.noflash.js
 scripts[] = js/wttoc.inputsui.js
 scripts[] = js/wttoc.behaviors.js
@@ -23,6 +21,7 @@ scripts[] = js/wttoc.readmore.js
 scripts[] = js/wttoc.tabblocks.js
 scripts[] = js/wttoc.matchheight.js
 scripts[] = js/wttoc.allBizEvents.js
+
 ; ========================================
 ; Regions
 ; ========================================
@@ -53,15 +52,15 @@ settings[toggle_favicon] = 1
 settings[toggle_main_menu] = 1
 settings[toggle_secondary_menu] = 1
 settings[omega_toggle_front_page_content] = 1
-settings[default_logo] = 1
-settings[logo_path] = ""
+settings[default_logo] = 0
+settings[logo_path] = sites/all/themes/wttoc/images/wheretotakeourchildren_logo.png
 settings[logo_upload] = ""
-settings[default_favicon] = 1
-settings[favicon_path] = ""
+settings[default_favicon] = 0
+settings[favicon_path] = sites/all/themes/wttoc/images/prevImg/favicon_butterfly2.png
 settings[favicon_upload] = ""
 settings[omega_enable_warning] = 1
 settings[omega_toggle_extension_development] = 1
-settings[omega_enable_export_reminder] = 1
+settings[omega_enable_export_reminder] = 0
 settings[omega_rebuild_theme_registry] = 0
 settings[omega_rebuild_aggregates] = 1
 settings[omega_browser_width_indicator] = 0
@@ -69,7 +68,7 @@ settings[omega_livereload] = 0
 settings[omega_livereload_script] = http://localhost:35729/livereload.js
 settings[omega_livereload_host] = localhost
 settings[omega_livereload_port] = 35729
-settings[omega_demo_regions] = 1
+settings[omega_demo_regions] = 0
 settings[omega_demo_regions_list][superheader] = superheader
 settings[omega_demo_regions_list][branding] = branding
 settings[omega_demo_regions_list][header] = header
@@ -80,6 +79,9 @@ settings[omega_demo_regions_list][content] = content
 settings[omega_demo_regions_list][sidebar_first] = sidebar_first
 settings[omega_demo_regions_list][sidebar_second] = sidebar_second
 settings[omega_demo_regions_list][footer] = footer
+settings[omega_demo_regions_list][widetop] = 0
+settings[omega_demo_regions_list][underlighted] = 0
+settings[omega_demo_regions_list][widebottom] = 0
 settings[omega_toggle_extension_layouts] = 0
 settings[omega_layout] = off-canvas
 settings[omega_toggle_extension_assets] = 1
@@ -104,3 +106,5 @@ settings[omega_viewport_minimum_scale] = _default
 settings[omega_viewport_maximum_scale] = _default
 settings[omega_chrome_edge] = 1
 settings[omega_internet_explorer_support] = _none
+settings[jquery_update_jquery_version] = ""
+settings[favicon_mimetype] = image/png

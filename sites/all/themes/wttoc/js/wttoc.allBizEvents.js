@@ -11,20 +11,43 @@
 				var containerGridList = "<div class='containerGridList'>"+ iconGridHTML + iconListHTML + "</div>";
 				var switchGridListHtml = "<div class='switchGL'>" + searchResultsHeader +  containerGridList + "</div>";
 				var viewsPageSelector = '.view-id-businesses_and_events.view-display-id-page_results';
-				$(viewsPageSelector).addClass('listingResults');
 				$(viewsPageSelector).prepend(switchGridListHtml);
-				$('.buttonList').addClass('activeGridList');
+				globalGridOrList = $.cookie("globalGridOrList");
+				switch(globalGridOrList){
+					case "grid":
+						$('.buttonGrid').addClass('activeGridList');
+						$('.buttonList').removeClass('activeGridList');
+						$(viewsPageSelector).removeClass('listingResults').addClass('gridResults');
+						$( document ).trigger('ajaxStop');//see also matchheight.js
+						$.cookie("globalGridOrList", "grid", {expires: 7, path: '/'});
+						break;
+					case "list":
+						$('.buttonGrid').removeClass('activeGridList');
+						$('.buttonList').addClass('activeGridList');
+						$(viewsPageSelector).removeClass('gridResults').addClass('listingResults');
+						$( document ).trigger('ajaxStop');//see also matchheight.js
+						$.cookie("globalGridOrList", "list", {expires: 7, path: '/'});
+						break;
+					default:
+						$('.buttonGrid').addClass('activeGridList');
+						$('.buttonList').removeClass('activeGridList');
+						$(viewsPageSelector).removeClass('listingResults').addClass('gridResults');
+						$( document ).trigger('ajaxStop');//see also matchheight.js
+						$.cookie("globalGridOrList", "grid", {expires: 7, path: '/'});
+				}
 				$('.buttonGrid').click(function(){
 					$('.buttonGrid').addClass('activeGridList');
 					$('.buttonList').removeClass('activeGridList');
 					$(viewsPageSelector).removeClass('listingResults').addClass('gridResults');
 					$( document ).trigger('ajaxStop');//see also matchheight.js
+					$.cookie("globalGridOrList", "grid", {expires: 7, path: '/'});
 				});
 				$('.buttonList').click(function(){
 					$('.buttonGrid').removeClass('activeGridList');
 					$('.buttonList').addClass('activeGridList');
 					$(viewsPageSelector).removeClass('gridResults').addClass('listingResults');
 					$( document ).trigger('ajaxStop');//see also matchheight.js
+					$.cookie("globalGridOrList", "list", {expires: 7, path: '/'});
 				});
 
 			}

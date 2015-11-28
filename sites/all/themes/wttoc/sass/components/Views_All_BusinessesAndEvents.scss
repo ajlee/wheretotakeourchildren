@@ -13,7 +13,6 @@
 			position:absolute;
 			right:0;
 			bottom:10px;
-
 			.buttonGrid, .buttonList{
 				font-size:19px;
 				line-height:19px;
@@ -23,6 +22,10 @@
 					color:$color1;
 				}
 			}
+		}
+		display:none;
+		&:nth-child(1){
+			display:block;//don't display this if more than one is attached with js, later fix this in js not css
 		}
 	}
 }
@@ -38,7 +41,7 @@
 			//Field Row Styling
 			.views-field{
 				position:relative;
-				padding:7px 0;
+				padding:4.5px 0;
 				margin-right:7px;
 				@include fontelloBefore;
 				&:before{
@@ -61,19 +64,19 @@
 					padding-left:40px;
 				}
 			}
-			//top verified line
+			//top featured line
 			.views-field-field-featured-content{
 				padding:4px;
 				border-top:0;
 				position:absolute;
 				top:0;
-				right:0;
-				min-width:115px;
-				max-width:115px;
+				left:0;
+				min-width:105px;
+				max-width:105px;
 				min-height:30px;
 				z-index:1;
 				margin:0 0 0 0;
-				border-bottom-left-radius:3px;
+				border-bottom-right-radius:3px;
 				overflow:hidden;
 				@include backgroundOpacity($color3,0.8);
 				@include cssTransition(all 0.35s ease-in-out);
@@ -86,27 +89,54 @@
 					font-weight:bold;
 					margin-top:5px;
 					text-align:left;
-				}
-			}
-			&:hover{
-				.views-field-field-featured-content{
-					min-width:145px;
-					max-width:145px;
-					.field-content{
-						text-align:left;	
-					}
+					padding-left:5px;
 				}
 			}
 			.views-field.views-field-type{
 				&:before{
 					@include remFontSize($fontXXS);
 					border-radius: 17px;
-					padding: 5px;
-					font-size:14px;
-					line-height: 13px;
-					height:14px;
-					width: 14px;
+					padding: 4px;
+					font-size:12px;
+					line-height: 12px;
+					height:12px;
+					width: 12px;
 				}
+			}
+			.views-field-field-category, .views-field-field-category-event{
+				ul{
+					display:inline-block;
+					li{
+						display:none;
+					}
+					li:nth-child(1), li:nth-child(2){
+						display:inline-block;
+						&:after{
+							content:",";
+						}
+					}
+					li:nth-child(1), li:nth-child(2){
+						&:last-child{
+							&:after{
+								content:"";
+								display:none;
+							}
+						}
+					}
+
+				}
+			}
+			.views-field-field-address{
+				.state{
+					display:none;
+				}
+			}
+			.views-field-nothing{
+				display:none;
+			}
+			.views-field-title, .views-field-field-address, .views-field-field-date-of-event,
+			.views-field-type, .views-field-field-category, .views-field-field-category-event{
+				@include remFontSize($fontXS);
 			}
 			//content type: icons & colorings
 			&.rowContentType-business-service-or-attraction{
@@ -180,10 +210,16 @@
 				&:before{
 					content:'\e81c';
 				}
+				.date-display-range{
+					display:inline-block;
+				}
 			}
 			.views-field-field-address{
 				&:before{
 					content:'\e816';
+				}
+				a{
+					font-weight:bold;
 				}
 			}
 			.views-field-field-category-event, .views-field-field-category{
@@ -191,8 +227,7 @@
 					content:'\e830';
 				}
 			}
-			//Row Border
-			outline:1px solid $DARKERLIGHTGRAY;
+
 			@include clearfix;
 			//Row Focus Effect
 			&:hover{
@@ -201,7 +236,6 @@
 					img{
 						@include zoomImage;
 					}
-					outline:1px solid $GRAY;
 					overflow:hidden;
 				}
 			}
@@ -212,16 +246,17 @@
 }
 .js .view-id-businesses_and_events.view-display-id-page_results.listingResults{
 	.view-content{
+		@include clearfix;
 		.views-row{
+			min-height:170px;
 			position:relative;
 			padding-bottom:10px;
 			margin-bottom:15px;
 			@include clearfix;
-			//Field Row Styling
+			//All Fields
 			.views-field{
 				position:relative;
 				padding:7px 0;
-				margin-right:7px;
 				@include fontelloBefore;
 				float:left;
 				&:before{
@@ -244,69 +279,38 @@
 					padding-left:40px;
 				}
 			}
-			.views-field.views-field-field-image-gallery{
-				position:absolute;
-				top:0;
-				left:0;
-				@include fontelloBeforeClear;
-				padding:0;
-				margin:0;
-				border:0;
-				.field-content{
-					padding:0;
-				}
-				img{
-					max-width:100%;
-				}
-			}
+			// Responsive Adjustments
 			.views-field.views-field-field-image-gallery{
 				max-width:28%;
 			}
 			padding-left:30%;
+			padding-right:5px;
 			.views-field-title{
 				width:100%;
 				float:left;
 			}
 			@include breakpoint($mobile2Tablet){
-				.views-field.views-field-field-image-gallery{
+				div.views-field.views-field-field-image-gallery{
 					max-width:30%;
 				}
-				padding-left:34%;
-				.views-field-title{
+				padding-left:31%;
+				div.views-field-title{
 					width:100%;
 					float:left;
 				}
 			}
 			@include breakpoint(0 $breakpointMobile){
-				.views-field.views-field-field-image-gallery{
+				div.views-field.views-field-field-image-gallery{
 					max-width:100%;
 					position:relative;
 				}
 				padding-left:0;
-				.views-field-title{
+				div.views-field-title{
 					width:100%;
 					float:left;
 				}
 			}
-			.views-field-field-address, .views-field-field-date-of-event{
-				float:left;
-				width:40%;
-				@include breakpoint(0 $breakpointTablet){
-					width:100%;
-				}
-			}
-			.views-field-field-general-information{
-				float:left;
-				width:100%
-			}
-			.views-field-type, .views-field-field-category, .views-field-field-category-event{
-				float:left;
-				width:40%;
-				@include breakpoint(0 $breakpointTablet){
-					width:100%;
-				}
-			}
-			//top verified line
+			//Individual Fields
 			.views-field-field-featured-content{
 				padding:4px;
 				border-top:0;
@@ -318,7 +322,7 @@
 				min-height:30px;
 				z-index:1;
 				margin:0 0 0 0;
-				border-bottom-left-radius:3px;
+				border-bottom-right-radius:3px;
 				overflow:hidden;
 				@include backgroundOpacity($color3,0.8);
 				@include cssTransition(all 0.35s ease-in-out);
@@ -334,14 +338,82 @@
 					padding-left:4px;
 				}
 			}
-			&:hover{
-				.views-field-field-featured-content{
-					min-width:105px;
-					max-width:105px;
-					.field-content{
-						text-align:left;
+			.views-field.views-field-field-image-gallery{
+				position:absolute;
+				top:0;
+				left:0;
+				@include fontelloBeforeClear;
+				padding:0;
+				margin:0;
+				border:0;
+				.field-content{
+					padding:0;
+				}
+				img{
+					max-width:100%;
+				}
+			}
+			.views-field.views-field-title{
+				@include fontelloBeforeClear;
+				border:0;
+				text-align:left;
+				font-weight:bold;
+				span,a{
+					@include remFontSize($fontM);
+					text-decoration:none;
+					padding-left:5px;
+				}
+			}
+			.views-field-field-address, .views-field-field-date-of-event{
+				float:left;
+				@include breakpoint(0 $breakpointTablet){
+					width:100%;
+				}
+				@include remFontSize($fontXS);
+			}
+			.views-field-field-address{
+				a{
+					font-weight:bold;
+				}
+				.addressfield-container{
+					display:inline-block;
+					>div{
+						display: inline-block;
+						margin-right: 3px;
+					}
+					.locality{
+						&:after{
+							content:',';
+						}
+					}
+					.state{
+						display:none;
 					}
 				}
+			}
+			.views-field-field-date-of-event{
+				div, span{
+					display:inline;
+				}
+			}
+			.views-field-field-general-information{
+				float:left;
+				width:100%;
+				@include remFontSize($fontXS);
+				.field-content{
+					padding-left:10px;
+				}
+				&:before{
+					display:none;
+				}
+			}
+			.views-field-type, .views-field-field-category, .views-field-field-category-event{
+				float:left;
+				@include breakpoint(0 $breakpointTablet){
+					width:100%;
+				}
+				@include remFontSize($fontXS);
+				margin-bottom:5px;
 			}
 			.views-field.views-field-type{
 				&:before{
@@ -352,6 +424,56 @@
 					line-height: 13px;
 					height:14px;
 					width: 14px;
+				}
+			}
+			.views-field-field-category, .views-field-field-category-event{
+				ul{
+					display:inline-block;
+					li{
+						display:none;
+					}
+					li:nth-child(1), li:nth-child(2){
+						display:inline-block;
+						&:after{
+							content:",";
+						}
+					}
+					li:nth-child(1), li:nth-child(2){
+						&:last-child{
+							&:after{
+								content:"";
+								display:none;
+							}
+						}
+					}
+
+				}
+			}
+			.views-field-nothing{
+				padding-top:0;
+				&:before {
+					display: none;
+				}
+				.field-content{
+					margin-left:10px !important;
+					margin-top:0 !important;
+
+				}
+			}
+			//Fontello icons
+			.views-field-field-date-of-event{
+				&:before{
+					content:'\e81c';
+				}
+			}
+			.views-field-field-address{
+				&:before{
+					content:'\e816';
+				}
+			}
+			.views-field-field-category-event, .views-field-field-category{
+				&:before{
+					content:'\e830';
 				}
 			}
 			//content type: icons & colorings
@@ -372,6 +494,14 @@
 				.views-field-field-featured-content{
 					@include backgroundOpacity($color3,0.8);
 				}
+				.views-field-field-address{
+					width:100%;
+				}
+				.views-field-nothing{
+					.field-content{
+						@include buttonColor3OnWrapperSmall;
+					}
+				}
 			}
 			&.rowContentType-event{
 				.views-field{//other icons
@@ -390,37 +520,14 @@
 				.views-field-field-featured-content{
 					@include backgroundOpacity($color1,0.8);
 				}
-			}
-			//other fields
-			.views-field.views-field-title{
-				@include fontelloBeforeClear;
-				border:0;
-				text-align:left;
-				font-weight:bold;
-				span,a{
-					@include remFontSize($fontM);
-					text-decoration:none;
-					padding-left:5px;
-				}
-			}
-			//Fontello icons
-			.views-field-field-date-of-event{
-				&:before{
-					content:'\e81c';
-				}
-			}
-			.views-field-field-address{
-				&:before{
-					content:'\e816';
-				}
-			}
-			.views-field-field-category-event, .views-field-field-category{
-				&:before{
-					content:'\e830';
+				.views-field-nothing{
+					.field-content{
+						@include buttonColor1OnWrapperSmall;
+					}
 				}
 			}
 			//Row Border
-			outline:1px solid $DARKERLIGHTGRAY;
+			border-bottom:2px solid $LIGHTGRAY;
 			@include clearfix;
 			//Row Focus Effect
 			&:hover{
@@ -431,10 +538,15 @@
 					}
 					overflow:hidden;
 				}
+				.views-field-field-featured-content{
+					//min-width:105px;
+					//max-width:105px;
+					.field-content{
+						//text-align:left;
+					}
+				}
 			}
 		}
-		//View content
-		@include clearfix;
 	}
 }
 
@@ -536,7 +648,7 @@ form#views-exposed-form-businesses-and-events-page-results .views-widget-filter-
 
 
 /*
- * Layout Region Schemer For Search Business and Events Page
+ * SideBAR
  */
 
 body.page-search-businesses-and-events{
@@ -552,6 +664,10 @@ body.page-search-businesses-and-events{
 				}
 			}
 			@include buttonColor1;
+			.SumoSelect > .CaptionCont, input{
+				border:2px solid $LIGHTGRAY;
+				outline:none;
+			}
 		}	
 	}
 
