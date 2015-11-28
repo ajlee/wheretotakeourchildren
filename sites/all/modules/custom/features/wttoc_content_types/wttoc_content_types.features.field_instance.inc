@@ -274,7 +274,7 @@ function wttoc_content_types_field_default_field_instances() {
         ),
       ),
       'type' => 'addressfield_standard',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -310,7 +310,7 @@ function wttoc_content_types_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 17,
+      'weight' => 6,
     ),
   );
 
@@ -400,7 +400,7 @@ function wttoc_content_types_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 12,
+      'weight' => 13,
     ),
   );
 
@@ -497,7 +497,7 @@ function wttoc_content_types_field_default_field_instances() {
         ),
       ),
       'type' => 'geocoder',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -528,12 +528,12 @@ function wttoc_content_types_field_default_field_instances() {
     'settings' => array(
       'alt_field' => 1,
       'alt_field_required' => 1,
-      'default_image' => 0,
+      'default_image' => 499,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '',
-      'min_resolution' => '',
+      'min_resolution' => '1000x1000',
       'title_field' => 1,
       'title_field_required' => 1,
       'user_register_form' => FALSE,
@@ -553,7 +553,7 @@ function wttoc_content_types_field_default_field_instances() {
         'upload_event' => 'auto',
       ),
       'type' => 'dragndrop_upload_image',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -630,7 +630,7 @@ function wttoc_content_types_field_default_field_instances() {
       'module' => 'office_hours',
       'settings' => array(),
       'type' => 'office_hours',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -770,50 +770,7 @@ function wttoc_content_types_field_default_field_instances() {
       'module' => 'socialfield',
       'settings' => array(),
       'type' => 'socialfield_widget',
-      'weight' => 10,
-    ),
-  );
-
-  // Exported field_instance:
-  // 'node-business_service_or_attraction-field_verified_content'
-  $field_instances['node-business_service_or_attraction-field_verified_content'] = array(
-    'bundle' => 'business_service_or_attraction',
-    'default_value' => array(
-      0 => array(
-        'value' => 0,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 14,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_verified_content',
-    'label' => 'Verified Business',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'display_label' => 1,
-      ),
-      'type' => 'options_onoff',
-      'weight' => 15,
+      'weight' => 11,
     ),
   );
 
@@ -894,7 +851,7 @@ function wttoc_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'url_external',
-      'weight' => 11,
+      'weight' => 12,
     ),
   );
 
@@ -945,7 +902,7 @@ function wttoc_content_types_field_default_field_instances() {
         ),
       ),
       'type' => 'addressfield_standard',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -981,7 +938,7 @@ function wttoc_content_types_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 21,
+      'weight' => 7,
     ),
   );
 
@@ -1213,7 +1170,7 @@ function wttoc_content_types_field_default_field_instances() {
         ),
       ),
       'type' => 'geocoder',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -1243,12 +1200,12 @@ function wttoc_content_types_field_default_field_instances() {
     'settings' => array(
       'alt_field' => 1,
       'alt_field_required' => 1,
-      'default_image' => 0,
+      'default_image' => 500,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '',
-      'min_resolution' => '',
+      'min_resolution' => '1000x1000',
       'title_field' => 1,
       'title_field_required' => 1,
       'user_register_form' => FALSE,
@@ -1268,7 +1225,7 @@ function wttoc_content_types_field_default_field_instances() {
         'upload_event' => 'auto',
       ),
       'type' => 'dragndrop_upload_image',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -1315,7 +1272,7 @@ function wttoc_content_types_field_default_field_instances() {
         ),
       ),
       'type' => 'inline_entity_form',
-      'weight' => 12,
+      'weight' => 13,
     ),
   );
 
@@ -1392,7 +1349,7 @@ function wttoc_content_types_field_default_field_instances() {
         'placeholder' => '',
       ),
       'type' => 'telephone_default',
-      'weight' => 18,
+      'weight' => 15,
     ),
   );
 
@@ -1491,49 +1448,7 @@ function wttoc_content_types_field_default_field_instances() {
       'module' => 'socialfield',
       'settings' => array(),
       'type' => 'socialfield_widget',
-      'weight' => 10,
-    ),
-  );
-
-  // Exported field_instance: 'node-event-field_verified_content'
-  $field_instances['node-event-field_verified_content'] = array(
-    'bundle' => 'event',
-    'default_value' => array(
-      0 => array(
-        'value' => 0,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 15,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_verified_content',
-    'label' => 'Verified Event',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(
-        'display_label' => 1,
-      ),
-      'type' => 'options_onoff',
-      'weight' => 20,
+      'weight' => 11,
     ),
   );
 
@@ -1612,7 +1527,7 @@ function wttoc_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'url_external',
-      'weight' => 11,
+      'weight' => 12,
     ),
   );
 
@@ -1639,8 +1554,6 @@ function wttoc_content_types_field_default_field_instances() {
   t('Prices Information');
   t('Social Media Pages');
   t('The first image will be used as the default image throughout the site. Don\'t forget to fill the image\'s Alt and Title fields for impaired users.');
-  t('Verified Business');
-  t('Verified Event');
   t('Vouchers Information');
   t('Website Address');
 

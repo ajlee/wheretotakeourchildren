@@ -26,7 +26,7 @@ function wttoc_content_types_node_info() {
       'help' => '',
     ),
     'business_service_or_attraction' => array(
-      'name' => t('Business'),
+      'name' => t('Family Guide'),
       'base' => 'node_content',
       'description' => t('Create a business, service, or attraction to reach the public.'),
       'has_title' => '1',

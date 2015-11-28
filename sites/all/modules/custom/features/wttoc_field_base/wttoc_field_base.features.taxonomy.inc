@@ -124,5 +124,28 @@ function wttoc_field_base_taxonomy_default_vocabularies() {
         ),
       ),
     ),
+    'social_media_profiles' => array(
+      'name' => 'Social Media Profiles',
+      'machine_name' => 'social_media_profiles',
+      'description' => 'Social Media Profiles',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+      'rdf_mapping' => array(
+        'rdftype' => array(
+          0 => 'skos:ConceptScheme',
+        ),
+        'name' => array(
+          'predicates' => array(
+            0 => 'dc:title',
+          ),
+        ),
+        'description' => array(
+          'predicates' => array(
+            0 => 'rdfs:comment',
+          ),
+        ),
+      ),
+    ),
   );
 }

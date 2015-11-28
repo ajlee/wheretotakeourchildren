@@ -308,7 +308,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'mini';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '9';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '12';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
@@ -319,14 +319,14 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['empty']['area_text_custom']['id'] = 'area_text_custom';
   $handler->display->display_options['empty']['area_text_custom']['table'] = 'views';
   $handler->display->display_options['empty']['area_text_custom']['field'] = 'area_text_custom';
-  /* Field: Indexed Node: Content type */
-  $handler->display->display_options['fields']['type']['id'] = 'type';
-  $handler->display->display_options['fields']['type']['table'] = 'search_api_index_index_businesses_and_events';
-  $handler->display->display_options['fields']['type']['field'] = 'type';
-  $handler->display->display_options['fields']['type']['label'] = '';
-  $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['type']['link_to_entity'] = 0;
-  $handler->display->display_options['fields']['type']['format_name'] = 1;
+  /* Field: Indexed Node: Featured Business */
+  $handler->display->display_options['fields']['field_featured_content']['id'] = 'field_featured_content';
+  $handler->display->display_options['fields']['field_featured_content']['table'] = 'search_api_index_index_businesses_and_events';
+  $handler->display->display_options['fields']['field_featured_content']['field'] = 'field_featured_content';
+  $handler->display->display_options['fields']['field_featured_content']['label'] = '';
+  $handler->display->display_options['fields']['field_featured_content']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_featured_content']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_featured_content']['empty_zero'] = TRUE;
   /* Field: Indexed Node: Node ID */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'search_api_index_index_businesses_and_events';
@@ -338,14 +338,6 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['nid']['element_default_classes'] = FALSE;
   $handler->display->display_options['fields']['nid']['separator'] = '';
   $handler->display->display_options['fields']['nid']['link_to_entity'] = 0;
-  /* Field: Global: Custom text */
-  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<img src="/sites/all/themes/wttoc/images/defaultimage_500x370.png" title="Default Image" alt="Default Image" width="500" height="370">';
-  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Field: Indexed Node: URL */
   $handler->display->display_options['fields']['url']['id'] = 'url';
   $handler->display->display_options['fields']['url']['table'] = 'search_api_index_index_businesses_and_events';
@@ -355,34 +347,6 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['url']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['url']['display_as_link'] = FALSE;
   $handler->display->display_options['fields']['url']['link_to_entity'] = 0;
-  /* Field: Taxonomy term: Category Image */
-  $handler->display->display_options['fields']['field_category_image']['id'] = 'field_category_image';
-  $handler->display->display_options['fields']['field_category_image']['table'] = 'entity_taxonomy_term';
-  $handler->display->display_options['fields']['field_category_image']['field'] = 'field_category_image';
-  $handler->display->display_options['fields']['field_category_image']['relationship'] = 'field_category';
-  $handler->display->display_options['fields']['field_category_image']['label'] = '';
-  $handler->display->display_options['fields']['field_category_image']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_category_image']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_category_image']['empty'] = '[nothing]';
-  $handler->display->display_options['fields']['field_category_image']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_category_image']['settings'] = array(
-    'image_style' => 'rectangle_500x370',
-    'image_link' => '',
-  );
-  /* Field: Taxonomy term: Category Image */
-  $handler->display->display_options['fields']['field_category_image_1']['id'] = 'field_category_image_1';
-  $handler->display->display_options['fields']['field_category_image_1']['table'] = 'entity_taxonomy_term';
-  $handler->display->display_options['fields']['field_category_image_1']['field'] = 'field_category_image';
-  $handler->display->display_options['fields']['field_category_image_1']['relationship'] = 'field_category_event';
-  $handler->display->display_options['fields']['field_category_image_1']['label'] = '';
-  $handler->display->display_options['fields']['field_category_image_1']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_category_image_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_category_image_1']['empty'] = '[field_category_image]';
-  $handler->display->display_options['fields']['field_category_image_1']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_category_image_1']['settings'] = array(
-    'image_style' => 'rectangle_500x370',
-    'image_link' => '',
-  );
   /* Field: Indexed Node: Image Gallery */
   $handler->display->display_options['fields']['field_image_gallery']['id'] = 'field_image_gallery';
   $handler->display->display_options['fields']['field_image_gallery']['table'] = 'search_api_index_index_businesses_and_events';
@@ -391,7 +355,6 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['field_image_gallery']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['field_image_gallery']['alter']['text'] = '<a href="[url]" title="Go to content">[field_image_gallery]</a>';
   $handler->display->display_options['fields']['field_image_gallery']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_image_gallery']['empty'] = '<a href="[url]" title="Go to content">[field_category_image_1]</a>';
   $handler->display->display_options['fields']['field_image_gallery']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_image_gallery']['settings'] = array(
     'image_style' => 'rectangle_500x370',
@@ -406,17 +369,31 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_entity'] = 1;
+  /* Field: Indexed Node: Linked Business */
+  $handler->display->display_options['fields']['field_linked_business']['id'] = 'field_linked_business';
+  $handler->display->display_options['fields']['field_linked_business']['table'] = 'search_api_index_index_businesses_and_events';
+  $handler->display->display_options['fields']['field_linked_business']['field'] = 'field_linked_business';
+  $handler->display->display_options['fields']['field_linked_business']['label'] = '';
+  $handler->display->display_options['fields']['field_linked_business']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_linked_business']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_linked_business']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['field_linked_business']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_linked_business']['bypass_access'] = 0;
   /* Field: Indexed Node: Address */
   $handler->display->display_options['fields']['field_address']['id'] = 'field_address';
   $handler->display->display_options['fields']['field_address']['table'] = 'search_api_index_index_businesses_and_events';
   $handler->display->display_options['fields']['field_address']['field'] = 'field_address';
   $handler->display->display_options['fields']['field_address']['label'] = '';
+  $handler->display->display_options['fields']['field_address']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_address']['alter']['text'] = '[field_linked_business] [field_address] ';
   $handler->display->display_options['fields']['field_address']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_address']['click_sort_column'] = 'country';
   $handler->display->display_options['fields']['field_address']['settings'] = array(
-    'use_widget_handlers' => 1,
+    'use_widget_handlers' => 0,
     'format_handlers' => array(
       'address' => 'address',
+      'address-hide-street' => 'address-hide-street',
+      'address-hide-country' => 'address-hide-country',
     ),
   );
   /* Field: Indexed Node: Date of Event */
@@ -426,21 +403,43 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['field_date_of_event']['label'] = '';
   $handler->display->display_options['fields']['field_date_of_event']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_date_of_event']['settings'] = array(
-    'format_type' => 'long',
+    'format_type' => 'wttoc_short',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
     'multiple_to' => '',
     'show_remaining_days' => 0,
+    'show_repeat_rule' => 'show',
   );
+  $handler->display->display_options['fields']['field_date_of_event']['delta_limit'] = '1';
+  $handler->display->display_options['fields']['field_date_of_event']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_date_of_event']['delta_reversed'] = TRUE;
+  /* Field: Indexed Node: General Information */
+  $handler->display->display_options['fields']['field_general_information']['id'] = 'field_general_information';
+  $handler->display->display_options['fields']['field_general_information']['table'] = 'search_api_index_index_businesses_and_events';
+  $handler->display->display_options['fields']['field_general_information']['field'] = 'field_general_information';
+  $handler->display->display_options['fields']['field_general_information']['label'] = '';
+  $handler->display->display_options['fields']['field_general_information']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_general_information']['alter']['max_length'] = '160';
+  $handler->display->display_options['fields']['field_general_information']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['field_general_information']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['field_general_information']['element_label_colon'] = FALSE;
+  /* Field: Indexed Node: Content type */
+  $handler->display->display_options['fields']['type']['id'] = 'type';
+  $handler->display->display_options['fields']['type']['table'] = 'search_api_index_index_businesses_and_events';
+  $handler->display->display_options['fields']['type']['field'] = 'type';
+  $handler->display->display_options['fields']['type']['label'] = '';
+  $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['type']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['type']['format_name'] = 1;
   /* Field: Indexed Node: Business: Categories and Features */
   $handler->display->display_options['fields']['field_category']['id'] = 'field_category';
   $handler->display->display_options['fields']['field_category']['table'] = 'search_api_index_index_businesses_and_events';
   $handler->display->display_options['fields']['field_category']['field'] = 'field_category';
   $handler->display->display_options['fields']['field_category']['label'] = '';
   $handler->display->display_options['fields']['field_category']['alter']['max_length'] = '50';
-  $handler->display->display_options['fields']['field_category']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['field_category']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_category']['list']['mode'] = 'list';
   $handler->display->display_options['fields']['field_category']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['field_category']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_category']['bypass_access'] = 0;
@@ -449,9 +448,9 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['field_category_event']['table'] = 'search_api_index_index_businesses_and_events';
   $handler->display->display_options['fields']['field_category_event']['field'] = 'field_category_event';
   $handler->display->display_options['fields']['field_category_event']['label'] = '';
-  $handler->display->display_options['fields']['field_category_event']['alter']['max_length'] = '50';
-  $handler->display->display_options['fields']['field_category_event']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['field_category_event']['alter']['max_length'] = '120';
   $handler->display->display_options['fields']['field_category_event']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_category_event']['list']['mode'] = 'list';
   $handler->display->display_options['fields']['field_category_event']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['field_category_event']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_category_event']['bypass_access'] = 0;
@@ -464,11 +463,23 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['type_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['type_1']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['type_1']['format_name'] = 0;
-  /* Sort criterion: Indexed Node: Date created */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'search_api_index_index_businesses_and_events';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<a class="buttonReadMoreListing" href="[url]">Read More</a>';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  /* Sort criterion: Indexed Node: Featured Business */
+  $handler->display->display_options['sorts']['field_featured_content']['id'] = 'field_featured_content';
+  $handler->display->display_options['sorts']['field_featured_content']['table'] = 'search_api_index_index_businesses_and_events';
+  $handler->display->display_options['sorts']['field_featured_content']['field'] = 'field_featured_content';
+  $handler->display->display_options['sorts']['field_featured_content']['order'] = 'DESC';
+  /* Sort criterion: Indexed Node: Date changed */
+  $handler->display->display_options['sorts']['changed']['id'] = 'changed';
+  $handler->display->display_options['sorts']['changed']['table'] = 'search_api_index_index_businesses_and_events';
+  $handler->display->display_options['sorts']['changed']['field'] = 'changed';
+  $handler->display->display_options['sorts']['changed']['order'] = 'DESC';
   /* Filter criterion: Indexed Node: Status */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'search_api_index_index_businesses_and_events';
@@ -482,19 +493,24 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['filters']['type']['table'] = 'search_api_index_index_businesses_and_events';
   $handler->display->display_options['filters']['type']['field'] = 'type';
   $handler->display->display_options['filters']['type']['value'] = array(
-    'business_service_or_attraction' => 'business_service_or_attraction',
     'event' => 'event',
+    'business_service_or_attraction' => 'business_service_or_attraction',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
   $handler->display->display_options['filters']['type']['exposed'] = TRUE;
   $handler->display->display_options['filters']['type']['expose']['operator_id'] = 'type_op';
-  $handler->display->display_options['filters']['type']['expose']['label'] = 'Businesses or Events';
+  $handler->display->display_options['filters']['type']['expose']['label'] = 'Guide or Events';
   $handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
   $handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
   $handler->display->display_options['filters']['type']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['type']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
+    8 => 0,
+    7 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
     3 => 0,
   );
   $handler->display->display_options['filters']['type']['expose']['reduce'] = 1;
@@ -502,17 +518,23 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['filters']['field_category']['id'] = 'field_category';
   $handler->display->display_options['filters']['field_category']['table'] = 'search_api_index_index_businesses_and_events';
   $handler->display->display_options['filters']['field_category']['field'] = 'field_category';
+  $handler->display->display_options['filters']['field_category']['operator'] = 'all of';
   $handler->display->display_options['filters']['field_category']['value'] = array();
   $handler->display->display_options['filters']['field_category']['group'] = 1;
   $handler->display->display_options['filters']['field_category']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_category']['expose']['operator_id'] = 'field_category_op';
-  $handler->display->display_options['filters']['field_category']['expose']['label'] = 'Business Categories';
+  $handler->display->display_options['filters']['field_category']['expose']['label'] = 'Guide Categories';
   $handler->display->display_options['filters']['field_category']['expose']['operator'] = 'field_category_op';
   $handler->display->display_options['filters']['field_category']['expose']['identifier'] = 'field_category';
   $handler->display->display_options['filters']['field_category']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_category']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
+    8 => 0,
+    7 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
     3 => 0,
   );
   $handler->display->display_options['filters']['field_category']['expose']['reduce'] = 0;
@@ -528,6 +550,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['filters']['field_category_event']['id'] = 'field_category_event';
   $handler->display->display_options['filters']['field_category_event']['table'] = 'search_api_index_index_businesses_and_events';
   $handler->display->display_options['filters']['field_category_event']['field'] = 'field_category_event';
+  $handler->display->display_options['filters']['field_category_event']['operator'] = 'all of';
   $handler->display->display_options['filters']['field_category_event']['value'] = array();
   $handler->display->display_options['filters']['field_category_event']['group'] = 1;
   $handler->display->display_options['filters']['field_category_event']['exposed'] = TRUE;
@@ -539,6 +562,11 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['filters']['field_category_event']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
+    8 => 0,
+    7 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
     3 => 0,
   );
   $handler->display->display_options['filters']['field_category_event']['expose']['reduce'] = 0;
@@ -576,6 +604,29 @@ function wttoc_views_views_default_views() {
     3 => 0,
   );
   $handler->display->display_options['filters']['field_date_of_event_value']['widget_type'] = 'date_popup';
+  /* Filter criterion: Indexed Node: Ages */
+  $handler->display->display_options['filters']['field_ages']['id'] = 'field_ages';
+  $handler->display->display_options['filters']['field_ages']['table'] = 'search_api_index_index_businesses_and_events';
+  $handler->display->display_options['filters']['field_ages']['field'] = 'field_ages';
+  $handler->display->display_options['filters']['field_ages']['value'] = array();
+  $handler->display->display_options['filters']['field_ages']['group'] = 1;
+  $handler->display->display_options['filters']['field_ages']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_ages']['expose']['operator_id'] = 'field_ages_op';
+  $handler->display->display_options['filters']['field_ages']['expose']['label'] = 'Ages';
+  $handler->display->display_options['filters']['field_ages']['expose']['operator'] = 'field_ages_op';
+  $handler->display->display_options['filters']['field_ages']['expose']['identifier'] = 'field_ages';
+  $handler->display->display_options['filters']['field_ages']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_ages']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    8 => 0,
+    7 => 0,
+    4 => 0,
+    5 => 0,
+    6 => 0,
+    3 => 0,
+  );
+  $handler->display->display_options['filters']['field_ages']['expose']['reduce'] = 0;
   /* Filter criterion: Hidden Address Geofield: LatLong Pair (indexed) */
   $handler->display->display_options['filters']['field_hidden_address_geofield_latlon']['id'] = 'field_hidden_address_geofield_latlon';
   $handler->display->display_options['filters']['field_hidden_address_geofield_latlon']['table'] = 'search_api_index_index_businesses_and_events';
@@ -644,6 +695,8 @@ function wttoc_views_views_default_views() {
 
   /* Display: Page Search Results */
   $handler = $view->new_display('page', 'Page Search Results', 'page_results');
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'v_page_search_results';
   $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['defaults']['empty'] = FALSE;
   /* No results behavior: Global: Unfiltered text */
@@ -653,14 +706,6 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['empty']['area_text_custom']['empty'] = TRUE;
   $handler->display->display_options['empty']['area_text_custom']['content'] = '<h3>No results for this search</h3>';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Indexed Node: Business: Categories and Features */
-  $handler->display->display_options['relationships']['field_category']['id'] = 'field_category';
-  $handler->display->display_options['relationships']['field_category']['table'] = 'search_api_index_index_businesses_and_events';
-  $handler->display->display_options['relationships']['field_category']['field'] = 'field_category';
-  /* Relationship: Indexed Node: Events: Categories and Features */
-  $handler->display->display_options['relationships']['field_category_event']['id'] = 'field_category_event';
-  $handler->display->display_options['relationships']['field_category_event']['table'] = 'search_api_index_index_businesses_and_events';
-  $handler->display->display_options['relationships']['field_category_event']['field'] = 'field_category_event';
   $handler->display->display_options['path'] = 'search/businesses-and-events';
 
   /* Display: Map and Filters */
@@ -678,6 +723,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['style_options']['zoom']['initialZoom'] = '-1';
   $handler->display->display_options['style_options']['zoom']['minZoom'] = '1';
   $handler->display->display_options['style_options']['zoom']['maxZoom'] = '16';
+  $handler->display->display_options['style_options']['zoom']['scrollWheelZoom'] = 0;
   $handler->display->display_options['style_options']['vector_display']['stroke'] = 0;
   $handler->display->display_options['style_options']['vector_display']['fill'] = 0;
   $handler->display->display_options['style_options']['vector_display']['clickable'] = 0;
@@ -702,6 +748,20 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['field_hidden_address_geofield']['settings'] = array(
     'data' => 'centroid',
   );
+  /* Field: Indexed Node: Image Gallery */
+  $handler->display->display_options['fields']['field_image_gallery']['id'] = 'field_image_gallery';
+  $handler->display->display_options['fields']['field_image_gallery']['table'] = 'search_api_index_index_businesses_and_events';
+  $handler->display->display_options['fields']['field_image_gallery']['field'] = 'field_image_gallery';
+  $handler->display->display_options['fields']['field_image_gallery']['label'] = '';
+  $handler->display->display_options['fields']['field_image_gallery']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_image_gallery']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image_gallery']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image_gallery']['settings'] = array(
+    'image_style' => 'square_50x50',
+    'image_link' => '',
+  );
+  $handler->display->display_options['fields']['field_image_gallery']['delta_limit'] = '1';
+  $handler->display->display_options['fields']['field_image_gallery']['delta_offset'] = '0';
   /* Field: Indexed Node: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'search_api_index_index_businesses_and_events';
@@ -846,22 +906,6 @@ function wttoc_views_views_default_views() {
       'address' => 'address',
     ),
   );
-  /* Field: Content: Date of Event */
-  $handler->display->display_options['fields']['field_date_of_event']['id'] = 'field_date_of_event';
-  $handler->display->display_options['fields']['field_date_of_event']['table'] = 'field_data_field_date_of_event';
-  $handler->display->display_options['fields']['field_date_of_event']['field'] = 'field_date_of_event';
-  $handler->display->display_options['fields']['field_date_of_event']['label'] = '';
-  $handler->display->display_options['fields']['field_date_of_event']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_date_of_event']['alter']['text'] = '<i class="icon icon-calendar"><span class="element-invisible">date</span></i><h3>Date</h3><div class="wttocFieldEnclose">[field_date_of_event] </div>';
-  $handler->display->display_options['fields']['field_date_of_event']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_date_of_event']['settings'] = array(
-    'format_type' => 'long',
-    'fromto' => 'both',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-    'show_remaining_days' => 0,
-  );
   /* Field: Content: Event Website */
   $handler->display->display_options['fields']['field_website']['id'] = 'field_website';
   $handler->display->display_options['fields']['field_website']['table'] = 'field_data_field_website';
@@ -874,6 +918,43 @@ function wttoc_views_views_default_views() {
     'trim_length' => '80',
     'nofollow' => 1,
   );
+  /* Field: Content: Date of Event */
+  $handler->display->display_options['fields']['field_date_of_event_1']['id'] = 'field_date_of_event_1';
+  $handler->display->display_options['fields']['field_date_of_event_1']['table'] = 'field_data_field_date_of_event';
+  $handler->display->display_options['fields']['field_date_of_event_1']['field'] = 'field_date_of_event';
+  $handler->display->display_options['fields']['field_date_of_event_1']['label'] = '';
+  $handler->display->display_options['fields']['field_date_of_event_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_date_of_event_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_date_of_event_1']['settings'] = array(
+    'format_type' => 'long',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_remaining_days' => 0,
+    'show_repeat_rule' => 'show',
+  );
+  $handler->display->display_options['fields']['field_date_of_event_1']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_date_of_event_1']['separator'] = '';
+  /* Field: Content: Date of Event */
+  $handler->display->display_options['fields']['field_date_of_event']['id'] = 'field_date_of_event';
+  $handler->display->display_options['fields']['field_date_of_event']['table'] = 'field_data_field_date_of_event';
+  $handler->display->display_options['fields']['field_date_of_event']['field'] = 'field_date_of_event';
+  $handler->display->display_options['fields']['field_date_of_event']['label'] = '';
+  $handler->display->display_options['fields']['field_date_of_event']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_date_of_event']['alter']['text'] = '<i class="icon icon-calendar"><span class="element-invisible">date</span></i><h3>Date</h3><div class="wttocFieldEnclose">[field_date_of_event_1] </div>';
+  $handler->display->display_options['fields']['field_date_of_event']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_date_of_event']['settings'] = array(
+    'format_type' => 'long',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_remaining_days' => 0,
+    'show_repeat_rule' => 'show',
+  );
+  $handler->display->display_options['fields']['field_date_of_event']['delta_limit'] = '1';
+  $handler->display->display_options['fields']['field_date_of_event']['delta_offset'] = '0';
 
   /* Display: More Information */
   $handler = $view->new_display('block', 'More Information', 'block_1');
@@ -1104,7 +1185,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '12';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '9';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
@@ -1131,9 +1212,13 @@ function wttoc_views_views_default_views() {
   /* Display: Homepage Events Categories */
   $handler = $view->new_display('block', 'Homepage Events Categories', 'homepage_event_categories');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Event Categories';
+  $handler->display->display_options['title'] = 'What\'s On';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'homepage_events_categories';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '9';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Indexed Taxonomy term: Term ID */
   $handler->display->display_options['fields']['tid']['id'] = 'tid';
@@ -1154,7 +1239,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['field_category_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_category_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_category_image']['settings'] = array(
-    'image_style' => 'rectangle_700x370',
+    'image_style' => 'rectangle__462x350_',
     'image_link' => '',
   );
   /* Field: Indexed Taxonomy term: Name */
@@ -1184,7 +1269,13 @@ function wttoc_views_views_default_views() {
   /* Display: Homepage Business Categories */
   $handler = $view->new_display('block', 'Homepage Business Categories', 'homepage_business_categories');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Business Categories';
+  $handler->display->display_options['title'] = 'Family Guide';
+  $handler->display->display_options['defaults']['css_class'] = FALSE;
+  $handler->display->display_options['css_class'] = 'homepage_business_categories';
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '6';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Indexed Taxonomy term: Term ID */
   $handler->display->display_options['fields']['tid']['id'] = 'tid';
@@ -1205,7 +1296,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['field_category_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_category_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_category_image']['settings'] = array(
-    'image_style' => 'rectangle_700x370',
+    'image_style' => 'rectangle__462x350_',
     'image_link' => '',
   );
   /* Field: Indexed Taxonomy term: Name */
@@ -1292,7 +1383,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['field_body']['table'] = 'search_api_index_posts_blogs_and_news';
   $handler->display->display_options['fields']['field_body']['field'] = 'field_body';
   $handler->display->display_options['fields']['field_body']['label'] = '';
-  $handler->display->display_options['fields']['field_body']['alter']['max_length'] = '400';
+  $handler->display->display_options['fields']['field_body']['alter']['max_length'] = '280';
   $handler->display->display_options['fields']['field_body']['alter']['more_link'] = TRUE;
   $handler->display->display_options['fields']['field_body']['alter']['more_link_text'] = 'read more';
   $handler->display->display_options['fields']['field_body']['alter']['more_link_path'] = '[url]';
@@ -1388,14 +1479,37 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '2';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '3';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['style_options']['row_class'] = 'blognews_type_tid-[field_post_type_tid] ';
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Footer: Global: Text area */
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
+  /* Field: Indexed Node: Image Gallery */
+  $handler->display->display_options['fields']['field_image_gallery']['id'] = 'field_image_gallery';
+  $handler->display->display_options['fields']['field_image_gallery']['table'] = 'search_api_index_posts_blogs_and_news';
+  $handler->display->display_options['fields']['field_image_gallery']['field'] = 'field_image_gallery';
+  $handler->display->display_options['fields']['field_image_gallery']['label'] = '';
+  $handler->display->display_options['fields']['field_image_gallery']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image_gallery']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image_gallery']['settings'] = array(
+    'image_style' => 'square_100x100',
+    'image_link' => 'content',
+  );
+  $handler->display->display_options['fields']['field_image_gallery']['delta_limit'] = '1';
+  $handler->display->display_options['fields']['field_image_gallery']['delta_offset'] = '0';
+  /* Field: Indexed Node: URL */
+  $handler->display->display_options['fields']['url']['id'] = 'url';
+  $handler->display->display_options['fields']['url']['table'] = 'search_api_index_posts_blogs_and_news';
+  $handler->display->display_options['fields']['url']['field'] = 'url';
+  $handler->display->display_options['fields']['url']['label'] = '';
+  $handler->display->display_options['fields']['url']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['url']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['url']['display_as_link'] = FALSE;
+  $handler->display->display_options['fields']['url']['link_to_entity'] = 0;
   /* Field: Indexed Node: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'search_api_index_posts_blogs_and_news';
@@ -1409,7 +1523,10 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['field_body']['field'] = 'field_body';
   $handler->display->display_options['fields']['field_body']['label'] = '';
   $handler->display->display_options['fields']['field_body']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_body']['alter']['max_length'] = '300';
+  $handler->display->display_options['fields']['field_body']['alter']['max_length'] = '150';
+  $handler->display->display_options['fields']['field_body']['alter']['more_link'] = TRUE;
+  $handler->display->display_options['fields']['field_body']['alter']['more_link_text'] = 'Read More';
+  $handler->display->display_options['fields']['field_body']['alter']['more_link_path'] = '[url]';
   $handler->display->display_options['fields']['field_body']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['field_body']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_body']['type'] = 'text_plain';
@@ -1420,8 +1537,17 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['created']['label'] = '';
   $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['created']['date_format'] = 'today time ago';
-  $handler->display->display_options['fields']['created']['second_date_format'] = 'long';
+  $handler->display->display_options['fields']['created']['second_date_format'] = 'wttoc_short';
   $handler->display->display_options['fields']['created']['link_to_entity'] = 0;
+  /* Field: Post Type: Term ID (indexed) */
+  $handler->display->display_options['fields']['field_post_type_tid']['id'] = 'field_post_type_tid';
+  $handler->display->display_options['fields']['field_post_type_tid']['table'] = 'search_api_index_posts_blogs_and_news';
+  $handler->display->display_options['fields']['field_post_type_tid']['field'] = 'field_post_type_tid';
+  $handler->display->display_options['fields']['field_post_type_tid']['label'] = '';
+  $handler->display->display_options['fields']['field_post_type_tid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_post_type_tid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_post_type_tid']['separator'] = '';
+  $handler->display->display_options['fields']['field_post_type_tid']['link_to_entity'] = 0;
   /* Sort criterion: Indexed Node: Date created */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'search_api_index_posts_blogs_and_news';
@@ -1437,16 +1563,15 @@ function wttoc_views_views_default_views() {
   /* Display: Blog */
   $handler = $view->new_display('block', 'Blog', 'small_block_bn_blogs');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Blog';
+  $handler->display->display_options['title'] = 'Suffolk Kids Blog';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'small_block_bn_blogs';
   $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Footer: Global: Text area */
-  $handler->display->display_options['footer']['area']['id'] = 'area';
-  $handler->display->display_options['footer']['area']['table'] = 'views';
-  $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['content'] = '<div class="blognews_seeall"><a href="/blog">See all</a></div>';
-  $handler->display->display_options['footer']['area']['format'] = 'filtered_html';
+  /* Footer: Global: Unfiltered text */
+  $handler->display->display_options['footer']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['footer']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['footer']['area_text_custom']['field'] = 'area_text_custom';
+  $handler->display->display_options['footer']['area_text_custom']['content'] = '<div class="blognews_seeall"><a href="/blog">See all</a></div>';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Indexed Node: Date created */
@@ -1466,16 +1591,16 @@ function wttoc_views_views_default_views() {
   /* Display: News */
   $handler = $view->new_display('block', 'News', 'small_block_bn_news');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'News';
+  $handler->display->display_options['title'] = 'Suffolk Kids News';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'small_block_bn_news';
   $handler->display->display_options['defaults']['footer'] = FALSE;
-  /* Footer: Global: Text area */
-  $handler->display->display_options['footer']['area']['id'] = 'area';
-  $handler->display->display_options['footer']['area']['table'] = 'views';
-  $handler->display->display_options['footer']['area']['field'] = 'area';
-  $handler->display->display_options['footer']['area']['content'] = '<div class="blognews_seeall"><a href="/news">See all</a></div>';
-  $handler->display->display_options['footer']['area']['format'] = 'filtered_html';
+  /* Footer: Global: Unfiltered text */
+  $handler->display->display_options['footer']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['footer']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['footer']['area_text_custom']['field'] = 'area_text_custom';
+  $handler->display->display_options['footer']['area_text_custom']['label'] = 'See all';
+  $handler->display->display_options['footer']['area_text_custom']['content'] = '<div class="blognews_seeall"><a href="/news">See all</a></div>';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Indexed Node: Date created */
@@ -1519,29 +1644,6 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['style_options']['row_class'] = 'rowContentType-[type]';
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['hide_empty'] = TRUE;
-  /* Field: Indexed Node: Verified Event */
-  $handler->display->display_options['fields']['field_verified_content']['id'] = 'field_verified_content';
-  $handler->display->display_options['fields']['field_verified_content']['table'] = 'search_api_index_index_businesses_and_events';
-  $handler->display->display_options['fields']['field_verified_content']['field'] = 'field_verified_content';
-  $handler->display->display_options['fields']['field_verified_content']['label'] = '';
-  $handler->display->display_options['fields']['field_verified_content']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_verified_content']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_verified_content']['alter']['text'] = '<div class="icon_verified">[field_verified_content]</div>';
-  $handler->display->display_options['fields']['field_verified_content']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_verified_content']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_verified_content']['empty_zero'] = TRUE;
-  /* Field: Indexed Node: Verified Event */
-  $handler->display->display_options['fields']['field_verified_content_1']['id'] = 'field_verified_content_1';
-  $handler->display->display_options['fields']['field_verified_content_1']['table'] = 'search_api_index_index_businesses_and_events';
-  $handler->display->display_options['fields']['field_verified_content_1']['field'] = 'field_verified_content';
-  $handler->display->display_options['fields']['field_verified_content_1']['label'] = '';
-  $handler->display->display_options['fields']['field_verified_content_1']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_verified_content_1']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_verified_content_1']['alter']['text'] = 'typeContainerShow';
-  $handler->display->display_options['fields']['field_verified_content_1']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_verified_content_1']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['field_verified_content_1']['empty_zero'] = TRUE;
-  $handler->display->display_options['fields']['field_verified_content_1']['type'] = 'list_key';
   /* Field: Indexed Node: Image Gallery */
   $handler->display->display_options['fields']['field_image_gallery']['id'] = 'field_image_gallery';
   $handler->display->display_options['fields']['field_image_gallery']['table'] = 'search_api_index_index_businesses_and_events';
@@ -1551,7 +1653,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['field_image_gallery']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_image_gallery']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_image_gallery']['settings'] = array(
-    'image_style' => 'square_100x100',
+    'image_style' => 'rectangle__462x350_',
     'image_link' => 'content',
   );
   $handler->display->display_options['fields']['field_image_gallery']['delta_limit'] = '1';
@@ -1614,13 +1716,26 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['field_date_of_event']['label'] = '';
   $handler->display->display_options['fields']['field_date_of_event']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_date_of_event']['settings'] = array(
-    'format_type' => 'short',
-    'fromto' => 'value',
+    'format_type' => 'wttoc_short',
+    'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
     'multiple_to' => '',
     'show_remaining_days' => 0,
+    'show_repeat_rule' => 'show',
   );
+  $handler->display->display_options['fields']['field_date_of_event']['delta_limit'] = '1';
+  $handler->display->display_options['fields']['field_date_of_event']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_date_of_event']['delta_reversed'] = TRUE;
+  /* Field: Indexed Node: Content type */
+  $handler->display->display_options['fields']['type_2']['id'] = 'type_2';
+  $handler->display->display_options['fields']['type_2']['table'] = 'search_api_index_index_businesses_and_events';
+  $handler->display->display_options['fields']['type_2']['field'] = 'type';
+  $handler->display->display_options['fields']['type_2']['label'] = '';
+  $handler->display->display_options['fields']['type_2']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['type_2']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['type_2']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['type_2']['format_name'] = 0;
   /* Sort criterion: Indexed Node: Date changed */
   $handler->display->display_options['sorts']['changed']['id'] = 'changed';
   $handler->display->display_options['sorts']['changed']['table'] = 'search_api_index_index_businesses_and_events';
@@ -1677,15 +1792,15 @@ function wttoc_views_views_default_views() {
   /* Display: Feat Biz */
   $handler = $view->new_display('block', 'Feat Biz', 'small_blocks_feat_biz');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Featured Businesses';
+  $handler->display->display_options['title'] = 'Top Picks';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'small_blocks_feat_biz';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '6';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '4';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Indexed Node: Featured Event */
+  /* Sort criterion: Indexed Node: Featured Business */
   $handler->display->display_options['sorts']['field_featured_content']['id'] = 'field_featured_content';
   $handler->display->display_options['sorts']['field_featured_content']['table'] = 'search_api_index_index_businesses_and_events';
   $handler->display->display_options['sorts']['field_featured_content']['field'] = 'field_featured_content';
@@ -1713,10 +1828,103 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['css_class'] = 'small_blocks_feat_evs';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '9';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '6';
   $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Indexed Node: Image Gallery */
+  $handler->display->display_options['fields']['field_image_gallery']['id'] = 'field_image_gallery';
+  $handler->display->display_options['fields']['field_image_gallery']['table'] = 'search_api_index_index_businesses_and_events';
+  $handler->display->display_options['fields']['field_image_gallery']['field'] = 'field_image_gallery';
+  $handler->display->display_options['fields']['field_image_gallery']['label'] = '';
+  $handler->display->display_options['fields']['field_image_gallery']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_image_gallery']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_image_gallery']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_image_gallery']['settings'] = array(
+    'image_style' => 'rectangle__187x150',
+    'image_link' => 'content',
+  );
+  $handler->display->display_options['fields']['field_image_gallery']['delta_limit'] = '1';
+  $handler->display->display_options['fields']['field_image_gallery']['delta_offset'] = '0';
+  /* Field: Indexed Node: Content type */
+  $handler->display->display_options['fields']['type']['id'] = 'type';
+  $handler->display->display_options['fields']['type']['table'] = 'search_api_index_index_businesses_and_events';
+  $handler->display->display_options['fields']['type']['field'] = 'type';
+  $handler->display->display_options['fields']['type']['label'] = '';
+  $handler->display->display_options['fields']['type']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['type']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['type']['format_name'] = 0;
+  /* Field: Indexed Node: Content type */
+  $handler->display->display_options['fields']['type_1']['id'] = 'type_1';
+  $handler->display->display_options['fields']['type_1']['table'] = 'search_api_index_index_businesses_and_events';
+  $handler->display->display_options['fields']['type_1']['field'] = 'type';
+  $handler->display->display_options['fields']['type_1']['label'] = '';
+  $handler->display->display_options['fields']['type_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['type_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['type_1']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['type_1']['format_name'] = 1;
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="teaser__first-wrapper">
+<div class="verified-container [field_verified_content_1]"><div class="verified-container-inner">[field_verified_content]</div></div>
+<div class="image-container">[field_image_gallery]</div>
+<div class="type-container [type]"><div class="type-container-inner">[type_1]</div></div> 
+</div>';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  /* Field: Indexed Node: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'search_api_index_index_businesses_and_events';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_entity'] = 1;
+  /* Field: Indexed Node: Address */
+  $handler->display->display_options['fields']['field_address']['id'] = 'field_address';
+  $handler->display->display_options['fields']['field_address']['table'] = 'search_api_index_index_businesses_and_events';
+  $handler->display->display_options['fields']['field_address']['field'] = 'field_address';
+  $handler->display->display_options['fields']['field_address']['label'] = '';
+  $handler->display->display_options['fields']['field_address']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_address']['click_sort_column'] = 'country';
+  $handler->display->display_options['fields']['field_address']['settings'] = array(
+    'use_widget_handlers' => 0,
+    'format_handlers' => array(
+      'address' => 'address',
+      'address-hide-street' => 'address-hide-street',
+      'address-hide-country' => 'address-hide-country',
+    ),
+  );
+  /* Field: Indexed Node: Date of Event */
+  $handler->display->display_options['fields']['field_date_of_event']['id'] = 'field_date_of_event';
+  $handler->display->display_options['fields']['field_date_of_event']['table'] = 'search_api_index_index_businesses_and_events';
+  $handler->display->display_options['fields']['field_date_of_event']['field'] = 'field_date_of_event';
+  $handler->display->display_options['fields']['field_date_of_event']['label'] = '';
+  $handler->display->display_options['fields']['field_date_of_event']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_date_of_event']['settings'] = array(
+    'format_type' => 'wttoc_short',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_remaining_days' => 0,
+    'show_repeat_rule' => 'show',
+  );
+  $handler->display->display_options['fields']['field_date_of_event']['delta_limit'] = '1';
+  $handler->display->display_options['fields']['field_date_of_event']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_date_of_event']['delta_reversed'] = TRUE;
+  /* Field: Indexed Node: Content type */
+  $handler->display->display_options['fields']['type_2']['id'] = 'type_2';
+  $handler->display->display_options['fields']['type_2']['table'] = 'search_api_index_index_businesses_and_events';
+  $handler->display->display_options['fields']['type_2']['field'] = 'type';
+  $handler->display->display_options['fields']['type_2']['label'] = '';
+  $handler->display->display_options['fields']['type_2']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['type_2']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['type_2']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['type_2']['format_name'] = 0;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Indexed Node: Featured Event */
+  /* Sort criterion: Indexed Node: Featured Business */
   $handler->display->display_options['sorts']['field_featured_content']['id'] = 'field_featured_content';
   $handler->display->display_options['sorts']['field_featured_content']['table'] = 'search_api_index_index_businesses_and_events';
   $handler->display->display_options['sorts']['field_featured_content']['field'] = 'field_featured_content';
@@ -1736,6 +1944,90 @@ function wttoc_views_views_default_views() {
     'event' => 'event',
   );
   $export['small_blocks_businesses_and_or_events'] = $view;
+
+  $view = new view();
+  $view->name = 'social_media_icons';
+  $view->description = 'Depends on CSS from Social Field Module';
+  $view->tag = 'default';
+  $view->base_table = 'taxonomy_term_data';
+  $view->human_name = 'Social Media Icons';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Follow Us On:';
+  $handler->display->display_options['css_class'] = 'social-links-block-wttoc';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '10';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  /* Field: Icon Key */
+  $handler->display->display_options['fields']['field_social_icon']['id'] = 'field_social_icon';
+  $handler->display->display_options['fields']['field_social_icon']['table'] = 'field_data_field_social_icon';
+  $handler->display->display_options['fields']['field_social_icon']['field'] = 'field_social_icon';
+  $handler->display->display_options['fields']['field_social_icon']['ui_name'] = 'Icon Key';
+  $handler->display->display_options['fields']['field_social_icon']['label'] = '';
+  $handler->display->display_options['fields']['field_social_icon']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_social_icon']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_social_icon']['type'] = 'list_key';
+  /* Field: Icon Service Name */
+  $handler->display->display_options['fields']['field_social_icon_1']['id'] = 'field_social_icon_1';
+  $handler->display->display_options['fields']['field_social_icon_1']['table'] = 'field_data_field_social_icon';
+  $handler->display->display_options['fields']['field_social_icon_1']['field'] = 'field_social_icon';
+  $handler->display->display_options['fields']['field_social_icon_1']['ui_name'] = 'Icon Service Name';
+  $handler->display->display_options['fields']['field_social_icon_1']['label'] = '';
+  $handler->display->display_options['fields']['field_social_icon_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_social_icon_1']['element_label_colon'] = FALSE;
+  /* Field: Taxonomy term: Social Link */
+  $handler->display->display_options['fields']['field_social_link']['id'] = 'field_social_link';
+  $handler->display->display_options['fields']['field_social_link']['table'] = 'field_data_field_social_link';
+  $handler->display->display_options['fields']['field_social_link']['field'] = 'field_social_link';
+  $handler->display->display_options['fields']['field_social_link']['label'] = '';
+  $handler->display->display_options['fields']['field_social_link']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_social_link']['alter']['strip_tags'] = TRUE;
+  $handler->display->display_options['fields']['field_social_link']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_social_link']['settings'] = array(
+    'trim_length' => '80',
+    'nofollow' => 0,
+  );
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class="field-item [field_social_icon_1]"><a href="[field_social_link]" target="_blank"><i class="icon [field_social_icon]"><span class="element-invisible">[name]</span></i></a></div>';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
+  /* Sort criterion: Taxonomy term: Weight */
+  $handler->display->display_options['sorts']['weight']['id'] = 'weight';
+  $handler->display->display_options['sorts']['weight']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['sorts']['weight']['field'] = 'weight';
+  /* Filter criterion: Taxonomy vocabulary: Machine name */
+  $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
+  $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['value'] = array(
+    'social_media_profiles' => 'social_media_profiles',
+  );
+
+  /* Display: Social Media Icons */
+  $handler = $view->new_display('block', 'Social Media Icons', 'sl_block_wttoc');
+  $export['social_media_icons'] = $view;
 
   return $export;
 }

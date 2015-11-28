@@ -115,6 +115,36 @@ function wttoc_image_styles_image_default_styles() {
     ),
   );
 
+  // Exported image style: rectangle__187x150.
+  $styles['rectangle__187x150'] = array(
+    'label' => 'Rectangle (187x150)',
+    'effects' => array(
+      15 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 187,
+          'height' => 150,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  // Exported image style: rectangle__462x350_.
+  $styles['rectangle__462x350_'] = array(
+    'label' => 'Rectangle (462x350)',
+    'effects' => array(
+      14 => array(
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 462,
+          'height' => 350,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
   // Exported image style: square500x500.
   $styles['square500x500'] = array(
     'label' => 'Square 500x500',

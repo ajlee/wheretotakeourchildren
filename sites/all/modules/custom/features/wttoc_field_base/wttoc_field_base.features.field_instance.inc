@@ -247,10 +247,83 @@ function wttoc_field_base_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance:
+  // 'taxonomy_term-social_media_profiles-field_social_icon'
+  $field_instances['taxonomy_term-social_media_profiles-field_social_icon'] = array(
+    'bundle' => 'social_media_profiles',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_social_icon',
+    'label' => 'Social Icon',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'taxonomy_term-social_media_profiles-field_social_link'
+  $field_instances['taxonomy_term-social_media_profiles-field_social_link'] = array(
+    'bundle' => 'social_media_profiles',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'url',
+        'settings' => array(
+          'nofollow' => FALSE,
+          'trim_length' => 80,
+        ),
+        'type' => 'url_default',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_social_link',
+    'label' => 'Social Link',
+    'required' => 1,
+    'settings' => array(
+      'title_fetch' => 0,
+      'title_field' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'url',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'url_external',
+      'weight' => 3,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Category Image');
   t('Show on homepage');
+  t('Social Icon');
+  t('Social Link');
 
   return $field_instances;
 }

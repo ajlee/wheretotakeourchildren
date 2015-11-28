@@ -147,7 +147,7 @@ function wttoc_field_base_field_default_field_bases() {
   // Exported field_base: 'field_date_of_event'
   $field_bases['field_date_of_event'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_date_of_event',
@@ -165,6 +165,7 @@ function wttoc_field_base_field_default_field_bases() {
         'second' => 0,
         'year' => 'year',
       ),
+      'repeat' => 0,
       'timezone_db' => 'UTC',
       'todate' => 'required',
       'tz_handling' => 'site',
@@ -189,8 +190,8 @@ function wttoc_field_base_field_default_field_bases() {
     'module' => 'list',
     'settings' => array(
       'allowed_values' => array(
-        0 => 'Not Featured',
-        1 => 'Featured',
+        0 => 0,
+        1 => 'Top Picks',
       ),
       'allowed_values_function' => '',
     ),
@@ -457,6 +458,59 @@ function wttoc_field_base_field_default_field_bases() {
     'type' => 'list_boolean',
   );
 
+  // Exported field_base: 'field_social_icon'
+  $field_bases['field_social_icon'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_social_icon',
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(
+        'icon-facebook' => 'service-facebook',
+        'icon-twitter' => 'service-twitter',
+        'icon-gplus' => 'service-googleplus',
+        'icon-linkedin' => 'service-linkedin',
+        'icon-youtube' => 'service-youtube',
+        'icon-vimeo' => 'service-vimeo',
+        'icon-delicious' => 'service-delicious',
+        'icon-digg' => 'service-digg',
+        'icon-flickr' => 'service-flickr',
+        'icon-yahoo' => 'service-yahoo',
+        'icon-myspace' => 'service-myspace',
+        'icon-pinterest' => 'service-pinterest',
+        'icon-reddit' => 'service-reddit',
+        'icon-slideshare' => 'service-slideshare',
+        'icon-stumbleupon' => 'service-stumbleupon',
+      ),
+      'allowed_values_function' => '',
+    ),
+    'translatable' => 0,
+    'type' => 'list_text',
+  );
+
+  // Exported field_base: 'field_social_link'
+  $field_bases['field_social_link'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_social_link',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'url',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'url',
+  );
+
   // Exported field_base: 'field_social_media_pages'
   $field_bases['field_social_media_pages'] = array(
     'active' => 1,
@@ -470,31 +524,6 @@ function wttoc_field_base_field_default_field_bases() {
     'settings' => array(),
     'translatable' => 0,
     'type' => 'social_links_field',
-  );
-
-  // Exported field_base: 'field_verified_content'
-  $field_bases['field_verified_content'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_verified_content',
-    'indexes' => array(
-      'value' => array(
-        0 => 'value',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'list',
-    'settings' => array(
-      'allowed_values' => array(
-        0 => 'Not verified',
-        1 => 'Verified',
-      ),
-      'allowed_values_function' => '',
-    ),
-    'translatable' => 0,
-    'type' => 'list_boolean',
   );
 
   // Exported field_base: 'field_vouchers_information'
