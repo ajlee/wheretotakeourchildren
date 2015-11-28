@@ -73,4 +73,10 @@ table {
   overflow-x: auto;
   display: block; }
 
+/*
+ *
+ */
+a {
+  text-decoration: none; }
+
 /*# sourceMappingURL=wttoc.reset.css.map */

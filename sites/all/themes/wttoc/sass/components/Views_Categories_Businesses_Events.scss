@@ -73,14 +73,13 @@
 					left:0;
 					@include backgroundOpacity($WHITE, $opacity: 1);
 					@include fontelloBeforeClear;
-					width: 65%;
+					max-width: 85%;
 					margin:0;
 					border:0;
 					padding:0;
 					.field-content{
-						padding:6px;
-						padding-left:6px;
-						text-align:center;
+						padding:20px 25px 10px 15px;
+						text-align:left;
 					}
 					span,a{
 						@include remFontSize($fontM);

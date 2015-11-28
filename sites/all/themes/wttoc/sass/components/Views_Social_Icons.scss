@@ -97,3 +97,28 @@
 .social-links-block-wttoc .service-stumbleupon .icon {
   background-color: #f74425;
 }
+.l-footer{
+  .social-links-block-wttoc-container{
+    text-align:center;
+    .b_title_cont{
+      display:none;
+    }
+    .block__content{
+      padding: 0 !important;
+      margin: 0 !important;
+      display:inline-block;
+      float:none;
+      .social-links-block-wttoc {
+        .views-row{
+          padding: 2px 0;
+          .icon{
+            background-color: transparent !important;
+            color: #000;
+            font-size:15px;
+            padding:2px;
+          }
+        }
+      }
+    }
+  }
+}

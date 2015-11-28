@@ -11,7 +11,7 @@ html {
 	font-size:10px;
 	margin:0 auto;
 	@include breakpoint($breakpointXWideP1){
-		max-width:$breakpointXWide;
+		max-width:$breakpointXWide * (0.925);
 	}
 	@include breakpoint($wide2XWide){
 		max-width: 92.5%;

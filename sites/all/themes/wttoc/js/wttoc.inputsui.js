@@ -17,7 +17,7 @@
 				else{
 					var placeHolderText = "Select"
 				}
-				//SumoSelect to make it look nice - using the placeholder text as a placeholder	
+				//SumoSelect to make it look nice - using the placeholder text as a placeholder
 				$(this).SumoSelect({
 				    placeholder: placeHolderText,
 				    csvDispCount: 2,
@@ -27,8 +27,8 @@
 				    //nativeOnDevice: ['Android', 'BlackBerry', 'iPhone', 'iPad', 'iPod', 'Opera Mini', 'IEMobile', 'Silk'],
 				    nativeOnDevice: ['Android', 'BlackBerry', 'iPhone', 'iPod', 'Opera Mini', 'IEMobile'],
 				    outputAsCSV : false,
-				    csvSepChar : ',', 
-				    okCancelInMulti: false, 
+				    csvSepChar : ',',
+				    okCancelInMulti: false,
 				    triggerChangeCombined : true,
 				    selectAll: false,
 				    selectAlltext: 'Select All'
@@ -48,11 +48,11 @@
 					//special placeholder in some cases
 					if ($(this).attr('name')=='field_start_datepicker[date]'){
 						placeHolderText = "Events From";
-						$('label[for="edit-field-start-datepicker"').hide();
+						$('label[for="edit-field-start-datepicker"]').hide();
 					}
 					if ($(this).attr('name')=='field_end_datepicker[date]'){
 						placeHolderText = "Events Until";
-						$('label[for="edit-field-end-datepicker"').hide();
+						$('label[for="edit-field-end-datepicker"]').hide();
 					}
 					//hide the label, if there was a placeholder text
 					findAttrLabel.hide();
@@ -71,7 +71,7 @@
 		});
     }
   };//end of behavior
-  
-  		
+
+
 })(jQuery, Drupal);
 

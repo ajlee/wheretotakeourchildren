@@ -1,4 +1,5 @@
 #block-calendar-block-toview-calendar{
+  text-align:center;
   .block__title{
     margin-bottom: 3px;
     @include remFontSize($fontL);
@@ -14,9 +15,9 @@
       width:100%;
       .wttoc_calendar_header, .wttoc_calendar_day{
         display:inline-block;
-        width: 30px;
+        width: 34px;
         max-width: (100% / 7);
-        height:30px;
+        height:34px;
         text-align:center;
         @include remFontSize($fontS);
       }
@@ -42,6 +43,9 @@
             padding:5px 0;
           }
         }
+        .wttoc_day_inner.wttoc_day_inner_today{
+          background-color:$color1;
+        }
       }
       .wttoc_calendar_empty_day{
         visibility: hidden;
@@ -52,6 +56,7 @@
 
 
 #block-calendar-block-toview-whatson{
+  text-align:center;
   .block__title{
     margin-bottom: 3px;
     @include remFontSize($fontL);
@@ -63,7 +68,7 @@
       min-height: 150px;
       background-repeat: no-repeat;
       background-size: auto 100%;
-      background-position: 20px 0;
+      background-position: center center;
     }
   }
 }

@@ -109,6 +109,28 @@
 	width: $percentWidth - $columnPercentSpacer;
 }
 
+
+/*
+ * Chop 4 Columns For Views
+ */
+@mixin chop4VLeft($percentWidth){
+	float:left;
+	margin-right: $columnPercentSpacer/2;
+	width: $percentWidth - $columnPercentSpacer / 2;
+}
+@mixin chop4VMiddle($percentWidth){
+	float:left;
+	margin-left: $columnPercentSpacer / 2;
+	margin-right: $columnPercentSpacer / 2;
+	width: $percentWidth - $columnPercentSpacer;
+}
+@mixin chop4VRight($percentWidth){
+	float:right;
+	margin-left: $columnPercentSpacer/2;
+	width: $percentWidth - $columnPercentSpacer / 2;
+}
+
+
 /*
  * Chop 6 Columns For Views
  */
@@ -672,6 +694,54 @@
 		};
 		//Tablet Columns
 		@include breakpoint($mobile2XWide){
+			&:nth-child(2n+1){
+				@include splitVLeft(50%);
+				clear:both;
+			}
+			&:nth-child(2n+2){
+				@include splitVRight(50%);
+			}
+		};
+		//Mobile Columns
+		@include breakpoint(0 $breakpointMobile){
+			@include oneColumn(100%);
+		};
+	}
+}
+@mixin views4XWide3Wide2Tablet1MobileDefault{
+	.views-row{
+		margin-top:5px;
+		margin-bottom:5px;
+		padding-bottom:2px;
+		position:relative;
+		//XWide Columns
+		@include breakpoint($breakpointXWideP1){
+			&:nth-child(4n+1){
+				clear:both;
+				@include chop4VLeft(25%);
+			}
+			&:nth-child(4n+2),
+			&:nth-child(4n+3){
+				@include chop4VMiddle(25%);
+			}
+			&:nth-child(4n+4){
+				@include chop3VRight(25%);
+			}
+		};
+		@include breakpoint($tablet2XWide){
+			&:nth-child(3n+1){
+				clear:both;
+				@include chop3VLeft(33.33%);
+			}
+			&:nth-child(3n+2){
+				@include chop3VMiddle(33.33%);
+			}
+			&:nth-child(3n+3){
+				@include chop3VRight(33.33%);
+			}
+		};
+		//Tablet Columns
+		@include breakpoint($mobile2Tablet){
 			&:nth-child(2n+1){
 				@include splitVLeft(50%);
 				clear:both;

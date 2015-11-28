@@ -186,17 +186,22 @@ body.front{
 
 /* Space Changes */
 body.front .l-widetop .small_blocks_feat_biz-container{
-  margin-top:40px;
+  margin-top:20px;
 }
 body.front .l-widetop .small_blocks_feat_biz-container .block__content{
   margin-top:20px;
 }
-
+body.front .l-main{
+	.block.homepage_business_categories-container,
+	.block.block--calendar-block-toview-whatson{
+		margin-top:5px !important;
+	}
+}
 body.front .l-main  .block{
-  margin-top:65px
+  margin-top:35px
 }
 body.front .l-main  .block__content{
-  margin-top:35px
+  margin-top:14px
 }
 body.front .l-main #block-calendar-block-toview-whatson{
 	.block__content{

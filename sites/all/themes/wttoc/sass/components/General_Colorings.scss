@@ -86,13 +86,15 @@ footer.l-footer{
     background-position: bottom center;
     background-repeat: no-repeat;
     min-height: 200px;
-    #block-menu-menu-footer-links{
-    	@include centerXAbsoluteNoIE8;
-    	position:absolute;
-    	bottom:0; 
-    	width:70%;
-    	@include backgroundOpacity($WHITE, 0.5);
-    	padding: 5px;
+	.l-region.l-region--footer{
+		padding-top:150px;
+		padding-bottom: 0;
+		#block-menu-menu-footer-links {
+			width: 70%;
+			margin: 0 auto;
+			@include backgroundOpacity($WHITE, 0.5);
+			padding: 5px;
+		}
     }
 }
 

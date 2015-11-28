@@ -2,6 +2,34 @@
  * Behaviors for Business and Events Search Results Page (abbreviated in behaviors as Besr)
  */
 (function ($, Drupal) {
+	Drupal.behaviors.wttocPageStyles = {
+		attach: function (context){
+			if($('body.page-search-businesses-and-events').length){
+				var searchResultsHeader = "<h1 class='searchResultsHeader'>Search Results</h1>";
+				var iconGridHTML = "<div class='buttonGrid'><i class='demo-icon icon-th'></i></div>";
+				var iconListHTML = "<div class='buttonList'><i class='demo-icon icon-th-list'></i></div>";
+				var containerGridList = "<div class='containerGridList'>"+ iconGridHTML + iconListHTML + "</div>";
+				var switchGridListHtml = "<div class='switchGL'>" + searchResultsHeader +  containerGridList + "</div>";
+				var viewsPageSelector = '.view-id-businesses_and_events.view-display-id-page_results';
+				$(viewsPageSelector).addClass('listingResults');
+				$(viewsPageSelector).prepend(switchGridListHtml);
+				$('.buttonList').addClass('activeGridList');
+				$('.buttonGrid').click(function(){
+					$('.buttonGrid').addClass('activeGridList');
+					$('.buttonList').removeClass('activeGridList');
+					$(viewsPageSelector).removeClass('listingResults').addClass('gridResults');
+					$( document ).trigger('ajaxStop');//see also matchheight.js
+				});
+				$('.buttonList').click(function(){
+					$('.buttonGrid').removeClass('activeGridList');
+					$('.buttonList').addClass('activeGridList');
+					$(viewsPageSelector).removeClass('gridResults').addClass('listingResults');
+					$( document ).trigger('ajaxStop');//see also matchheight.js
+				});
+
+			}
+		}
+	}
 	//GeoCode Before Block Submission
 	Drupal.behaviors.wttocBlockGeocode= {
 		attach: function (context) {
