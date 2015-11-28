@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the WTTOC Context feature.
+ */
+
+include_once 'wttoc_context.features.inc';
