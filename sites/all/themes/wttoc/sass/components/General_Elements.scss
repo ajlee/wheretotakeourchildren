@@ -167,9 +167,9 @@ footer.l-footer{
 					&#tmenu-Search{
 						color: $color1;
 						color: transparent;
-						letter-spacing: -10px;
-						padding-left:5px;
-						padding-right:10px;
+						letter-spacing: -0.5em;
+						padding-left:10px;
+						padding-right:13px;
 					}
 					&#tmenu-Search:before{
 						content:'\e82f';
@@ -181,9 +181,11 @@ footer.l-footer{
 						content:'\e82c';
 						bottom:1px;
 						font-size:16px;
+						display:none;
 					}
 					&#tmenu-SubmitEvent:before{
 						content:'\e82b';
+						display:none;
 					}
 					&#tmenu-LogOut:before{
 						content:'\e82e';

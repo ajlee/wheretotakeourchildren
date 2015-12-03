@@ -1233,9 +1233,9 @@ footer.l-footer nav ul {
         .l-superheader nav > ul.menu > li > a#tmenu-Search {
           color: #1981CE;
           color: transparent;
-          letter-spacing: -10px;
-          padding-left: 5px;
-          padding-right: 10px; }
+          letter-spacing: -0.5em;
+          padding-left: 10px;
+          padding-right: 13px; }
         .l-superheader nav > ul.menu > li > a#tmenu-Search:before {
           content: '\e82f'; }
         .l-superheader nav > ul.menu > li > a#tmenu-SignIn:before {
@@ -1243,9 +1243,11 @@ footer.l-footer nav ul {
         .l-superheader nav > ul.menu > li > a#tmenu-SubmitListing:before {
           content: '\e82c';
           bottom: 1px;
-          font-size: 16px; }
+          font-size: 16px;
+          display: none; }
         .l-superheader nav > ul.menu > li > a#tmenu-SubmitEvent:before {
-          content: '\e82b'; }
+          content: '\e82b';
+          display: none; }
         .l-superheader nav > ul.menu > li > a#tmenu-LogOut:before {
           content: '\e82e'; }
     .l-superheader nav > ul.menu ul {
