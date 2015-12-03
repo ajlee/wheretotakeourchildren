@@ -1,0 +1,88 @@
+diff --git a/sites/all/modules/socialfield/README.txt b/sites/all/modules/socialfield/README.txt
+index 43f2f08..18dc159 100644
+--- a/sites/all/modules/socialfield/README.txt
++++ b/sites/all/modules/socialfield/README.txt
+@@ -24,6 +24,14 @@ ____________________
+ The core Social field module defines permissions for viewing, creating, editing and deleting social services. All of these permissions can be found at admin/people/permissions.
+ 
+ 
++USE WITH FEEDS IMPORTER
++____________________
++
++String argument: separate each link with a semicolon. Each link is then comprised of a serviceKey and a link - separated by a comma.
++
++E.g. string -> "twitter,http://twitter.com/username;facebook,http://facebook.com/page;pinterest,http://pinterest.com/username"
++
++
+ INSTALLATION
+ ____________________
+ 
+diff --git a/sites/all/modules/socialfield/socialfield.feeds.inc b/sites/all/modules/socialfield/socialfield.feeds.inc
+new file mode 100644
+index 0000000..4a666e0
+--- /dev/null
++++ b/sites/all/modules/socialfield/socialfield.feeds.inc
+@@ -0,0 +1,54 @@
++<?php
++
++/**
++ * @file
++ * Provides integration with Feeds module (http://drupal.org/project/feeds).
++ */
++
++/**
++ * Implements hook_feeds_processor_targets_alter().
++ */
++function socialfield_feeds_processor_targets_alter(&$targets, $entity_type, $bundle_name) {
++    foreach (field_info_instances($entity_type, $bundle_name) as $name => $instance) {
++        $info = field_info_field($name);
++
++        if ($info['type'] == 'social_links_field') {
++            $targets[$name] = array(
++                'name' => check_plain($instance['label']),
++                'callback' => 'socialfield_feeds_set_target',
++                'description' => t('The @label field of the node. Separate each link with a semicolon.
++                 Each link is then composed by a serviceKey and a link - separated by a comma.
++                 E.g. twitter,http://twitter.com/username;facebook,http://facebook.com/username',
++                    array('@label' => $instance['label'])),
++            );
++        }
++    }
++}
++
++/**
++ * Callback to set target value.
++ */
++function socialfield_feeds_set_target($source, $entity, $target, $values){
++    $field_name = $target;
++    //Each Social Link is delimited by a semicolon
++    $socialLinks = explode(';', $values[0]);
++    //Fetch the possible options for services
++    $options = array_keys(variable_get('socialfield_services'));
++    $options = array_combine($options, $options);
++    //Loop over the Social Links
++    foreach ($socialLinks as $delta => $socialLink) {
++        $socialLinkArray = explode(',',$socialLink,2);
++        $service = $socialLinkArray[0];
++        $url = $socialLinkArray[1];
++        //Subfield service must be one of the possible options
++        if(in_array($service, $options)){
++            $field['und'][$delta]['service'] = $service;
++            $field['und'][$delta]['url'] = $url;
++            $field['und'][$delta]['weight'] = $delta;
++            //Each service is allowed only once
++            $options = array_diff($options, array($service));
++        }
++    }
++    $entity->$field_name = $field;
++}
++
+diff --git a/sites/all/modules/socialfield/socialfield.info b/sites/all/modules/socialfield/socialfield.info
+index dcdfb88..6bbdc74 100644
+--- a/sites/all/modules/socialfield/socialfield.info
++++ b/sites/all/modules/socialfield/socialfield.info
+@@ -3,3 +3,4 @@ description = Provides a field for adding social services links.
+ core = 7.x
+ package = Fields
+ configure = admin/config/media/sites/all/modules/socialfield/socialfield
++files[] = socialfield.feeds.inc
