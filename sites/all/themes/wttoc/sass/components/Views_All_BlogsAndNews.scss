@@ -84,5 +84,53 @@
 			}
 		}
 	}
+}*/
+.view-id-pages_blogs_news{
+	.view-content{
+		@include views3Wide2Tablet1MobileDefault;
+		.views-row{
+			padding-top:0;
+			margin-top:1%;
+			position:relative;
+			.views-field.views-field-field-image-gallery{
+				img{
+					width:100%;
+				}
+			}
+			.views-field.views-field-title{
+				@include colorDescendantsFont($color1);
+				@include remFontSize($fontL);
+				margin:10px 0 7px 0;
+				padding: 0 5px;
+			}
+			.views-field.views-field-field-body{
+				padding:0 5px 10px 5px;
+
+			}
+			.views-field.views-field-url{
+				@include buttonColor1OnWrapperSmall;
+			}
+			.views-field.views-field-nothing{
+				position:absolute;
+				top:0;
+				right:10px;
+				.postMonthDay{
+					text-align:center;
+					.pmd_month{
+						background-color:$BLACK;
+						color: $WHITE;
+						padding:15px;
+						@include remFontSize($fontM);
+					}
+					.pmd_day{
+						background-color:$WHITE;
+						color:$DARKGRAY;
+						padding:10px;
+						@include remFontSize($fontM);
+					}
+				}
+			}
+		}
+	}
+
 }
-*/

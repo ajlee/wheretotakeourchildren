@@ -10,7 +10,7 @@
 /*
  * Tab Blocks With Jquery
  */
-/*
+
 .js .tabJS{
 	display: inline-block;
 	margin-right: 5px;
@@ -22,8 +22,6 @@
 	padding-top:12px;
 	padding-bottom: 4px;
 	vertical-align:bottom;
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
 	&:before{
 		@include cssTransition(all 0.35s ease-in-out);
 	}
@@ -62,4 +60,3 @@
 	}
 }
 
-*/

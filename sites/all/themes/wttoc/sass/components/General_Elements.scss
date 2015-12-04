@@ -60,14 +60,28 @@ fieldset{
 /*
  * Social Media Icons
  */
-.social-links ul{
-	@include clearfix;
-	li{
-		padding-top:20px !important;
-		padding-bottom:20px !important;
-		i.icon{
-		border-radius:5px;
-		}	
+.social-links {
+	.field-label {
+		@include fontelloBefore;
+		&:before {
+			display: inline-block;
+			font-size: 25px;
+			padding: 8px 8px;
+			margin: 9px;
+			margin-left: 0;
+			border-radius: 10px;
+			color: #fff;
+		}
+	}
+	ul {
+		@include clearfix;
+		li {
+			padding-top: 20px !important;
+			padding-bottom: 20px !important;
+			i.icon {
+				border-radius: 30px;
+			}
+		}
 	}
 }
 /*
@@ -202,5 +216,31 @@ footer.l-footer{
 .l-header #block-menu-menu-top-menu--2{
 	@include breakpoint($breakpointTabletP1){
 		display:none;
+	}
+}
+/*
+ * Colorbox Style
+ */
+#colorbox{
+	#cboxTitle{
+		display:none !important;
+	}
+}
+/*
+ * Gallery Formatter Overrides
+ */
+.galleryformatter {
+	.gallery-slides {
+		.gallery-frame {
+			.gallery-slide {
+				text-align: center;
+				.panel-overlay {
+					display: none;
+				}
+			}
+		}
+	}
+	.gallery-thumbs {
+		padding: 0px;
 	}
 }

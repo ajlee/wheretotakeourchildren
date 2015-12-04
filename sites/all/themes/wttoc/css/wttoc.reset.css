@@ -74,9 +74,15 @@ table {
   display: block; }
 
 /*
- *
+ * Links Default
  */
 a {
   text-decoration: none; }
+
+/*
+ * Bold Text
+ */
+b {
+  font-weight: bold; }
 
 /*# sourceMappingURL=wttoc.reset.css.map */

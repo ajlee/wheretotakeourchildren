@@ -2,6 +2,7 @@
  * Tab Blocks
  * 
  */
+
 (function ($, Drupal) {
   Drupal.behaviors.wttocTabBlock = {
     attach: function (context) {
@@ -23,7 +24,7 @@
 		for (i = 0; i < countBlocks; i++) {
 			var ip1 = i + 1;
 			var currentBlockSelector = blockSelector + ':eq(' + i + ')';
-			var currentTitleBlock = parentOfBlocks.children(currentBlockSelector).children(blockTitleSelector);
+			var currentTitleBlock = parentOfBlocks.children(currentBlockSelector).find(blockTitleSelector);
 			//Give the block an ID
 			parentOfBlocks.children(currentBlockSelector).attr('id', 'tabBlock' + ip1).addClass('tabBlockJSBlock');
 			//Create a tab and give it a link to its block id along with some classes
@@ -35,16 +36,14 @@
 			});
 			firstBlock.before('<div class="' + classesToPutInTabString +'"> <a href="#tabBlock' + ip1 + '" title="Toggle to tab '+ ip1 + '">'+ currentTitleBlock.text() + '</a></div>');
 			//Hide block titles
-			parentOfBlocks.children(currentBlockSelector).children(blockTitleSelector).hide();
+			parentOfBlocks.children(currentBlockSelector).find(blockTitleSelector).hide();
 		}
 		//Only Show First Tab Content Initially 
 		//Hide/Show Using Height:0 and visibility hidden
 		//Such that other jquery plugins can still calculate heights inside hidden Tabs e.g. using .outerHeight()
 		$(containerSelector + " " + blockSelector).not(containerSelector + " " + blockSelector + ':eq(0)').css("visibility","hidden").css("height","0");
 		$('.tabJS:eq(0) a').parent('.tabJS').addClass('active');
-		setTimeout(function(){
-					$(containerSelector + " " + blockSelector).not(containerSelector + " " + blockSelector + ':eq(0)').hide();
-		},300);//settimeout to hide content completely 300 ms later - otherwise there's problems with page height extending past
+		$(containerSelector + " " + blockSelector).not(containerSelector + " " + blockSelector + ':eq(0)').hide();
 		//Hide/Show Tabs Accordingly On Click + Add/Remove active class
 		$('.tabJS a').click(function (event) {
 			event.preventDefault();
@@ -53,6 +52,21 @@
 			$(tabJSclickedLink).css("visibility","visible").css("height","").show();
 			$(this).parent('.tabJS').siblings('.tabJS').removeClass('active');
 			$(this).parent('.tabJS').addClass('active');
+
+			//recalculate readmoreJS (see wttoc.readmore.js)
+			$('.view-business-display .wttocFieldEnclose').readmore({
+				speed: 500, //in ms
+				collapsedHeight: 300, //in px
+				moreLink: '<a href="#" title="Read More">Read more</a>',
+				lessLink: '<a href="#" title="Read Less">Read less</a>',
+			});
+			$('.view-events-display .wttocFieldEnclose').readmore({
+				speed: 500, //in ms
+				collapsedHeight: 300, //in px
+				moreLink: '<a href="#" title="Read More">Read more</a>',
+				lessLink: '<a href="#" title="Read Less">Read less</a>',
+			});
+
 		});
 	}
     }

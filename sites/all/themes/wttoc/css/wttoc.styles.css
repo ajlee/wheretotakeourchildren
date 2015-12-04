@@ -331,8 +331,8 @@
  */
 /* Blue*/
 /*Orange*/
-/*Light Green*/
-/*BrightYellow*/
+/*Green*/
+/*Yellow*/
 /*
  *  Extra Derived Variables
  */
@@ -431,6 +431,15 @@
  */
 /*
  * Tab JS Active Vs Inactive (Background, and Color)
+ */
+/*
+ * Absolute Centering - No IE8
+ */
+/*
+ * Views Responsive Stylings
+ */
+/*
+ * GalleryFormatter Responsive Mixin
  */
 /*
  * Set Up Font Size % For Rem
@@ -641,9 +650,9 @@ a {
         margin-bottom: -1px;
         margin-top: 1px; }
         .l-region--navigation > div > ul.menu > li > a:hover, .l-region--navigation > div > ul.menu > li > div:hover, .l-region--navigation > div > ul.menu > li > span:hover, .l-region--navigation > nav > ul.menu > li > a:hover, .l-region--navigation > nav > ul.menu > li > div:hover, .l-region--navigation > nav > ul.menu > li > span:hover, .l-region--navigation > ul.menu > li > a:hover, .l-region--navigation > ul.menu > li > div:hover, .l-region--navigation > ul.menu > li > span:hover {
-          background-color: #1981CE;
+          background-color: #5675CE;
           color: #fff;
-          border-bottom: 1px solid #0e4873;
+          border-bottom: 1px solid #2b4693;
           margin-bottom: -1px;
           margin-top: 1px; }
       .l-region--navigation > div > ul.menu > li > ul, .l-region--navigation > nav > ul.menu > li > ul, .l-region--navigation > ul.menu > li > ul {
@@ -663,12 +672,12 @@ a {
         .l-region--navigation > div > ul.menu > li > ul a:hover, .l-region--navigation > nav > ul.menu > li > ul a:hover, .l-region--navigation > ul.menu > li > ul a:hover {
           color: #333; }
         .l-region--navigation > div > ul.menu > li > ul > li, .l-region--navigation > nav > ul.menu > li > ul > li, .l-region--navigation > ul.menu > li > ul > li {
-          border-bottom: 1px solid #0e4873; }
+          border-bottom: 1px solid #2b4693; }
           .l-region--navigation > div > ul.menu > li > ul > li > a, .l-region--navigation > div > ul.menu > li > ul > li > div, .l-region--navigation > div > ul.menu > li > ul > li > span, .l-region--navigation > nav > ul.menu > li > ul > li > a, .l-region--navigation > nav > ul.menu > li > ul > li > div, .l-region--navigation > nav > ul.menu > li > ul > li > span, .l-region--navigation > ul.menu > li > ul > li > a, .l-region--navigation > ul.menu > li > ul > li > div, .l-region--navigation > ul.menu > li > ul > li > span {
             padding: 10px 20px;
             display: block; }
           .l-region--navigation > div > ul.menu > li > ul > li:hover, .l-region--navigation > div > ul.menu > li > ul > li.active, .l-region--navigation > nav > ul.menu > li > ul > li:hover, .l-region--navigation > nav > ul.menu > li > ul > li.active, .l-region--navigation > ul.menu > li > ul > li:hover, .l-region--navigation > ul.menu > li > ul > li.active {
-            background-color: #0e4873; }
+            background-color: #2b4693; }
             .l-region--navigation > div > ul.menu > li > ul > li:hover a, .l-region--navigation > div > ul.menu > li > ul > li.active a, .l-region--navigation > nav > ul.menu > li > ul > li:hover a, .l-region--navigation > nav > ul.menu > li > ul > li.active a, .l-region--navigation > ul.menu > li > ul > li:hover a, .l-region--navigation > ul.menu > li > ul > li.active a {
               color: #fff; }
           .l-region--navigation > div > ul.menu > li > ul > li.last, .l-region--navigation > nav > ul.menu > li > ul > li.last, .l-region--navigation > ul.menu > li > ul > li.last {
@@ -682,7 +691,13 @@ a {
  * Region Containers
  */
 html {
-  min-width: 320px; }
+  min-width: 320px;
+  word-wrap: break-word;
+  /*word-break:break-all;
+	white-space: -moz-pre-wrap;
+	white-space: -o-pre-wrap; 
+	white-space: pre-wrap;  
+	white-space: pre-line; */ }
 
 .l-main {
   margin-left: auto;
@@ -703,13 +718,7 @@ html {
 
 .l-main {
   width: 98%;
-  max-width: 1300px;
-  word-wrap: break-word;
-  /*word-break:break-all;
-	white-space: -moz-pre-wrap;
-	white-space: -o-pre-wrap; 
-	white-space: pre-wrap;  
-	white-space: pre-line; */ }
+  max-width: 1300px; }
 
 .l-footer {
   margin-bottom: 0; }
@@ -791,6 +800,15 @@ body.two-sidebars {
     width: 98%;
     padding: 1%;
     float: left; }
+    body.two-sidebars .l-content .galleryformatter, body.two-sidebars .l-content .galleryformatter .gallery-slides,
+    body.two-sidebars .l-content .galleryformatter .gallery-slides .gallery-frame .gallery-slide,
+    body.two-sidebars .l-content .galleryformatter .gallery-thumbs {
+      width: 288px !important; }
+    @media (min-width: 431px) and (max-width: 768px) {
+      body.two-sidebars .l-content .galleryformatter, body.two-sidebars .l-content .galleryformatter .gallery-slides,
+      body.two-sidebars .l-content .galleryformatter .gallery-slides .gallery-frame .gallery-slide,
+      body.two-sidebars .l-content .galleryformatter .gallery-thumbs {
+        width: 387px !important; } }
     @media (min-width: 1025px) {
       body.two-sidebars .l-content {
         float: left;
@@ -800,28 +818,65 @@ body.two-sidebars {
         width: 51.5%;
         /* BECAUSE .l-region--sidebar-first SHOULD COME BEFORE .l-content */
         /* MARGIN-LEFT = WIDTH(.l-region--sidebar-first) + $columnPercentSpacer / 4  */
-        /* margin-left: 23.5% + $columnPercentSpacer / 4; COMMENTED OUT - REARRANGED */ } }
+        /* margin-left: 23.5% + $columnPercentSpacer / 4; COMMENTED OUT - REARRANGED */ }
+        body.two-sidebars .l-content .galleryformatter, body.two-sidebars .l-content .galleryformatter .gallery-slides,
+        body.two-sidebars .l-content .galleryformatter .gallery-slides .gallery-frame .gallery-slide,
+        body.two-sidebars .l-content .galleryformatter .gallery-thumbs {
+          width: 488.448px !important; } }
     @media (min-width: 769px) and (max-width: 1024px) {
       body.two-sidebars .l-content {
         float: left;
         margin-right: 0.5%;
         padding: 0.5%;
-        width: 71.5%; } }
+        width: 71.5%; }
+        body.two-sidebars .l-content .galleryformatter, body.two-sidebars .l-content .galleryformatter .gallery-slides,
+        body.two-sidebars .l-content .galleryformatter .gallery-slides .gallery-frame .gallery-slide,
+        body.two-sidebars .l-content .galleryformatter .gallery-thumbs {
+          width: 504.576px !important; } }
   body.two-sidebars .l-region--sidebar-first {
     width: 98%;
     padding: 1%; }
+    body.two-sidebars .l-region--sidebar-first .galleryformatter, body.two-sidebars .l-region--sidebar-first .galleryformatter .gallery-slides,
+    body.two-sidebars .l-region--sidebar-first .galleryformatter .gallery-slides .gallery-frame .gallery-slide,
+    body.two-sidebars .l-region--sidebar-first .galleryformatter .gallery-thumbs {
+      width: 288px !important; }
+    @media (min-width: 431px) and (max-width: 768px) {
+      body.two-sidebars .l-region--sidebar-first .galleryformatter, body.two-sidebars .l-region--sidebar-first .galleryformatter .gallery-slides,
+      body.two-sidebars .l-region--sidebar-first .galleryformatter .gallery-slides .gallery-frame .gallery-slide,
+      body.two-sidebars .l-region--sidebar-first .galleryformatter .gallery-thumbs {
+        width: 387px !important; } }
     @media (min-width: 769px) and (max-width: 1024px) {
       body.two-sidebars .l-region--sidebar-first {
         float: left;
         margin-right: 0.5%;
         padding: 0.5%;
-        width: 25.5%; } }
+        width: 25.5%; }
+        body.two-sidebars .l-region--sidebar-first .galleryformatter, body.two-sidebars .l-region--sidebar-first .galleryformatter .gallery-slides,
+        body.two-sidebars .l-region--sidebar-first .galleryformatter .gallery-slides .gallery-frame .gallery-slide,
+        body.two-sidebars .l-region--sidebar-first .galleryformatter .gallery-thumbs {
+          width: 186.624px !important; } }
   body.two-sidebars .l-region--sidebar-second {
     width: 98%;
     padding: 1%; }
-
-body.two-sidebars .l-region--sidebar-second {
-  /*@include splitRight(100%);*/ }
+    body.two-sidebars .l-region--sidebar-second .galleryformatter, body.two-sidebars .l-region--sidebar-second .galleryformatter .gallery-slides,
+    body.two-sidebars .l-region--sidebar-second .galleryformatter .gallery-slides .gallery-frame .gallery-slide,
+    body.two-sidebars .l-region--sidebar-second .galleryformatter .gallery-thumbs {
+      width: 288px !important; }
+    @media (min-width: 431px) and (max-width: 768px) {
+      body.two-sidebars .l-region--sidebar-second .galleryformatter, body.two-sidebars .l-region--sidebar-second .galleryformatter .gallery-slides,
+      body.two-sidebars .l-region--sidebar-second .galleryformatter .gallery-slides .gallery-frame .gallery-slide,
+      body.two-sidebars .l-region--sidebar-second .galleryformatter .gallery-thumbs {
+        width: 387px !important; } }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      body.two-sidebars .l-region--sidebar-second {
+        float: right;
+        margin-left: 0.5%;
+        padding: 0.5%;
+        width: 98.5%; }
+        body.two-sidebars .l-region--sidebar-second .galleryformatter, body.two-sidebars .l-region--sidebar-second .galleryformatter .gallery-slides,
+        body.two-sidebars .l-region--sidebar-second .galleryformatter .gallery-slides .gallery-frame .gallery-slide,
+        body.two-sidebars .l-region--sidebar-second .galleryformatter .gallery-thumbs {
+          width: 691.2px !important; } }
   body.two-sidebars .l-region--sidebar-first {
     float: left; }
     @media (min-width: 1025px) {
@@ -832,7 +887,11 @@ body.two-sidebars .l-region--sidebar-second {
         width: 22.25%;
         /* BECAUSE .l-region--sidebar-first SHOULD COME BEFORE .l-content */
         /* MARGIN-LEFT = -1 * WIDTH(.l-region--sidebar-first + .l-content)  */
-        /* margin-left: -76.5%; COMMENTED OUT - REARRANGED*/ } }
+        /* margin-left: -76.5%; COMMENTED OUT - REARRANGED*/ }
+        body.two-sidebars .l-region--sidebar-first .galleryformatter, body.two-sidebars .l-region--sidebar-first .galleryformatter .gallery-slides,
+        body.two-sidebars .l-region--sidebar-first .galleryformatter .gallery-slides .gallery-frame .gallery-slide,
+        body.two-sidebars .l-region--sidebar-first .galleryformatter .gallery-thumbs {
+          width: 216.576px !important; } }
   body.two-sidebars .l-region--sidebar-second {
     float: right; }
     @media (min-width: 1025px) {
@@ -840,7 +899,11 @@ body.two-sidebars .l-region--sidebar-second {
         float: right;
         margin-left: 0.25%;
         padding: 0.5%;
-        width: 22.25%; } }
+        width: 22.25%; }
+        body.two-sidebars .l-region--sidebar-second .galleryformatter, body.two-sidebars .l-region--sidebar-second .galleryformatter .gallery-slides,
+        body.two-sidebars .l-region--sidebar-second .galleryformatter .gallery-slides .gallery-frame .gallery-slide,
+        body.two-sidebars .l-region--sidebar-second .galleryformatter .gallery-thumbs {
+          width: 216.576px !important; } }
 
 /* One sidebar */
 body.one-sidebar.sidebar-first, body.one-sidebar.sidebar-second {
@@ -850,34 +913,100 @@ body.one-sidebar.sidebar-first, body.one-sidebar.sidebar-second {
     width: 98%;
     padding: 1%;
     float: right; }
+    body.one-sidebar.sidebar-first .l-content .galleryformatter, body.one-sidebar.sidebar-first .l-content .galleryformatter .gallery-slides,
+    body.one-sidebar.sidebar-first .l-content .galleryformatter .gallery-slides .gallery-frame .gallery-slide,
+    body.one-sidebar.sidebar-first .l-content .galleryformatter .gallery-thumbs, body.one-sidebar.sidebar-second .l-content .galleryformatter, body.one-sidebar.sidebar-second .l-content .galleryformatter .gallery-slides,
+    body.one-sidebar.sidebar-second .l-content .galleryformatter .gallery-slides .gallery-frame .gallery-slide,
+    body.one-sidebar.sidebar-second .l-content .galleryformatter .gallery-thumbs {
+      width: 288px !important; }
+    @media (min-width: 431px) and (max-width: 768px) {
+      body.one-sidebar.sidebar-first .l-content .galleryformatter, body.one-sidebar.sidebar-first .l-content .galleryformatter .gallery-slides,
+      body.one-sidebar.sidebar-first .l-content .galleryformatter .gallery-slides .gallery-frame .gallery-slide,
+      body.one-sidebar.sidebar-first .l-content .galleryformatter .gallery-thumbs, body.one-sidebar.sidebar-second .l-content .galleryformatter, body.one-sidebar.sidebar-second .l-content .galleryformatter .gallery-slides,
+      body.one-sidebar.sidebar-second .l-content .galleryformatter .gallery-slides .gallery-frame .gallery-slide,
+      body.one-sidebar.sidebar-second .l-content .galleryformatter .gallery-thumbs {
+        width: 387px !important; } }
     @media (min-width: 1025px) {
       body.one-sidebar.sidebar-first .l-content, body.one-sidebar.sidebar-second .l-content {
         float: right;
         margin-left: 0.5%;
         padding: 0.5%;
-        width: 68.5%; } }
+        width: 68.5%; }
+        body.one-sidebar.sidebar-first .l-content .galleryformatter, body.one-sidebar.sidebar-first .l-content .galleryformatter .gallery-slides,
+        body.one-sidebar.sidebar-first .l-content .galleryformatter .gallery-slides .gallery-frame .gallery-slide,
+        body.one-sidebar.sidebar-first .l-content .galleryformatter .gallery-thumbs, body.one-sidebar.sidebar-second .l-content .galleryformatter, body.one-sidebar.sidebar-second .l-content .galleryformatter .gallery-slides,
+        body.one-sidebar.sidebar-second .l-content .galleryformatter .gallery-slides .gallery-frame .gallery-slide,
+        body.one-sidebar.sidebar-second .l-content .galleryformatter .gallery-thumbs {
+          width: 645.12px !important; } }
     @media (min-width: 769px) and (max-width: 1024px) {
       body.one-sidebar.sidebar-first .l-content, body.one-sidebar.sidebar-second .l-content {
         float: right;
         margin-left: 0.5%;
         padding: 0.5%;
-        width: 65.16%; } }
+        width: 65.16%; }
+        body.one-sidebar.sidebar-first .l-content .galleryformatter, body.one-sidebar.sidebar-first .l-content .galleryformatter .gallery-slides,
+        body.one-sidebar.sidebar-first .l-content .galleryformatter .gallery-slides .gallery-frame .gallery-slide,
+        body.one-sidebar.sidebar-first .l-content .galleryformatter .gallery-thumbs, body.one-sidebar.sidebar-second .l-content .galleryformatter, body.one-sidebar.sidebar-second .l-content .galleryformatter .gallery-slides,
+        body.one-sidebar.sidebar-second .l-content .galleryformatter .gallery-slides .gallery-frame .gallery-slide,
+        body.one-sidebar.sidebar-second .l-content .galleryformatter .gallery-thumbs {
+          width: 460.75392px !important; } }
   body.one-sidebar.sidebar-first .l-region--sidebar-first, body.one-sidebar.sidebar-first .l-region--sidebar-second, body.one-sidebar.sidebar-second .l-region--sidebar-first, body.one-sidebar.sidebar-second .l-region--sidebar-second {
     width: 98%;
     padding: 1%;
     float: left; }
+    body.one-sidebar.sidebar-first .l-region--sidebar-first .galleryformatter, body.one-sidebar.sidebar-first .l-region--sidebar-first .galleryformatter .gallery-slides,
+    body.one-sidebar.sidebar-first .l-region--sidebar-first .galleryformatter .gallery-slides .gallery-frame .gallery-slide,
+    body.one-sidebar.sidebar-first .l-region--sidebar-first .galleryformatter .gallery-thumbs, body.one-sidebar.sidebar-first .l-region--sidebar-second .galleryformatter, body.one-sidebar.sidebar-first .l-region--sidebar-second .galleryformatter .gallery-slides,
+    body.one-sidebar.sidebar-first .l-region--sidebar-second .galleryformatter .gallery-slides .gallery-frame .gallery-slide,
+    body.one-sidebar.sidebar-first .l-region--sidebar-second .galleryformatter .gallery-thumbs, body.one-sidebar.sidebar-second .l-region--sidebar-first .galleryformatter, body.one-sidebar.sidebar-second .l-region--sidebar-first .galleryformatter .gallery-slides,
+    body.one-sidebar.sidebar-second .l-region--sidebar-first .galleryformatter .gallery-slides .gallery-frame .gallery-slide,
+    body.one-sidebar.sidebar-second .l-region--sidebar-first .galleryformatter .gallery-thumbs, body.one-sidebar.sidebar-second .l-region--sidebar-second .galleryformatter, body.one-sidebar.sidebar-second .l-region--sidebar-second .galleryformatter .gallery-slides,
+    body.one-sidebar.sidebar-second .l-region--sidebar-second .galleryformatter .gallery-slides .gallery-frame .gallery-slide,
+    body.one-sidebar.sidebar-second .l-region--sidebar-second .galleryformatter .gallery-thumbs {
+      width: 288px !important; }
+    @media (min-width: 431px) and (max-width: 768px) {
+      body.one-sidebar.sidebar-first .l-region--sidebar-first .galleryformatter, body.one-sidebar.sidebar-first .l-region--sidebar-first .galleryformatter .gallery-slides,
+      body.one-sidebar.sidebar-first .l-region--sidebar-first .galleryformatter .gallery-slides .gallery-frame .gallery-slide,
+      body.one-sidebar.sidebar-first .l-region--sidebar-first .galleryformatter .gallery-thumbs, body.one-sidebar.sidebar-first .l-region--sidebar-second .galleryformatter, body.one-sidebar.sidebar-first .l-region--sidebar-second .galleryformatter .gallery-slides,
+      body.one-sidebar.sidebar-first .l-region--sidebar-second .galleryformatter .gallery-slides .gallery-frame .gallery-slide,
+      body.one-sidebar.sidebar-first .l-region--sidebar-second .galleryformatter .gallery-thumbs, body.one-sidebar.sidebar-second .l-region--sidebar-first .galleryformatter, body.one-sidebar.sidebar-second .l-region--sidebar-first .galleryformatter .gallery-slides,
+      body.one-sidebar.sidebar-second .l-region--sidebar-first .galleryformatter .gallery-slides .gallery-frame .gallery-slide,
+      body.one-sidebar.sidebar-second .l-region--sidebar-first .galleryformatter .gallery-thumbs, body.one-sidebar.sidebar-second .l-region--sidebar-second .galleryformatter, body.one-sidebar.sidebar-second .l-region--sidebar-second .galleryformatter .gallery-slides,
+      body.one-sidebar.sidebar-second .l-region--sidebar-second .galleryformatter .gallery-slides .gallery-frame .gallery-slide,
+      body.one-sidebar.sidebar-second .l-region--sidebar-second .galleryformatter .gallery-thumbs {
+        width: 387px !important; } }
     @media (min-width: 1025px) {
       body.one-sidebar.sidebar-first .l-region--sidebar-first, body.one-sidebar.sidebar-first .l-region--sidebar-second, body.one-sidebar.sidebar-second .l-region--sidebar-first, body.one-sidebar.sidebar-second .l-region--sidebar-second {
         float: left;
         margin-right: 0.5%;
         padding: 0.5%;
-        width: 28.5%; } }
+        width: 28.5%; }
+        body.one-sidebar.sidebar-first .l-region--sidebar-first .galleryformatter, body.one-sidebar.sidebar-first .l-region--sidebar-first .galleryformatter .gallery-slides,
+        body.one-sidebar.sidebar-first .l-region--sidebar-first .galleryformatter .gallery-slides .gallery-frame .gallery-slide,
+        body.one-sidebar.sidebar-first .l-region--sidebar-first .galleryformatter .gallery-thumbs, body.one-sidebar.sidebar-first .l-region--sidebar-second .galleryformatter, body.one-sidebar.sidebar-first .l-region--sidebar-second .galleryformatter .gallery-slides,
+        body.one-sidebar.sidebar-first .l-region--sidebar-second .galleryformatter .gallery-slides .gallery-frame .gallery-slide,
+        body.one-sidebar.sidebar-first .l-region--sidebar-second .galleryformatter .gallery-thumbs, body.one-sidebar.sidebar-second .l-region--sidebar-first .galleryformatter, body.one-sidebar.sidebar-second .l-region--sidebar-first .galleryformatter .gallery-slides,
+        body.one-sidebar.sidebar-second .l-region--sidebar-first .galleryformatter .gallery-slides .gallery-frame .gallery-slide,
+        body.one-sidebar.sidebar-second .l-region--sidebar-first .galleryformatter .gallery-thumbs, body.one-sidebar.sidebar-second .l-region--sidebar-second .galleryformatter, body.one-sidebar.sidebar-second .l-region--sidebar-second .galleryformatter .gallery-slides,
+        body.one-sidebar.sidebar-second .l-region--sidebar-second .galleryformatter .gallery-slides .gallery-frame .gallery-slide,
+        body.one-sidebar.sidebar-second .l-region--sidebar-second .galleryformatter .gallery-thumbs {
+          width: 276.48px !important; } }
     @media (min-width: 769px) and (max-width: 1024px) {
       body.one-sidebar.sidebar-first .l-region--sidebar-first, body.one-sidebar.sidebar-first .l-region--sidebar-second, body.one-sidebar.sidebar-second .l-region--sidebar-first, body.one-sidebar.sidebar-second .l-region--sidebar-second {
         float: left;
         margin-right: 0.5%;
         padding: 0.5%;
-        width: 31.83%; } }
+        width: 31.83%; }
+        body.one-sidebar.sidebar-first .l-region--sidebar-first .galleryformatter, body.one-sidebar.sidebar-first .l-region--sidebar-first .galleryformatter .gallery-slides,
+        body.one-sidebar.sidebar-first .l-region--sidebar-first .galleryformatter .gallery-slides .gallery-frame .gallery-slide,
+        body.one-sidebar.sidebar-first .l-region--sidebar-first .galleryformatter .gallery-thumbs, body.one-sidebar.sidebar-first .l-region--sidebar-second .galleryformatter, body.one-sidebar.sidebar-first .l-region--sidebar-second .galleryformatter .gallery-slides,
+        body.one-sidebar.sidebar-first .l-region--sidebar-second .galleryformatter .gallery-slides .gallery-frame .gallery-slide,
+        body.one-sidebar.sidebar-first .l-region--sidebar-second .galleryformatter .gallery-thumbs, body.one-sidebar.sidebar-second .l-region--sidebar-first .galleryformatter, body.one-sidebar.sidebar-second .l-region--sidebar-first .galleryformatter .gallery-slides,
+        body.one-sidebar.sidebar-second .l-region--sidebar-first .galleryformatter .gallery-slides .gallery-frame .gallery-slide,
+        body.one-sidebar.sidebar-second .l-region--sidebar-first .galleryformatter .gallery-thumbs, body.one-sidebar.sidebar-second .l-region--sidebar-second .galleryformatter, body.one-sidebar.sidebar-second .l-region--sidebar-second .galleryformatter .gallery-slides,
+        body.one-sidebar.sidebar-second .l-region--sidebar-second .galleryformatter .gallery-slides .gallery-frame .gallery-slide,
+        body.one-sidebar.sidebar-second .l-region--sidebar-second .galleryformatter .gallery-thumbs {
+          width: 230.37696px !important; } }
 
 /*Move second sidebar to the right*/
 body.one-sidebar.sidebar-second .l-content {
@@ -885,6 +1014,31 @@ body.one-sidebar.sidebar-second .l-content {
 
 body.one-sidebar.sidebar-second .l-region--sidebar-second {
   float: right; }
+
+/* No Sidebar */
+@media (min-width: 0) and (max-width: 430px) {
+  body.no-sidebars .galleryformatter, body.no-sidebars .galleryformatter .gallery-slides,
+  body.no-sidebars .galleryformatter .gallery-slides .gallery-frame .gallery-slide,
+  body.no-sidebars .galleryformatter .gallery-thumbs {
+    width: 288px !important; } }
+
+@media (min-width: 431px) and (max-width: 768px) {
+  body.no-sidebars .galleryformatter, body.no-sidebars .galleryformatter .gallery-slides,
+  body.no-sidebars .galleryformatter .gallery-slides .gallery-frame .gallery-slide,
+  body.no-sidebars .galleryformatter .gallery-thumbs {
+    width: 387px !important; } }
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  body.no-sidebars .galleryformatter, body.no-sidebars .galleryformatter .gallery-slides,
+  body.no-sidebars .galleryformatter .gallery-slides .gallery-frame .gallery-slide,
+  body.no-sidebars .galleryformatter .gallery-thumbs {
+    width: 691.2px !important; } }
+
+@media (min-width: 1025px) {
+  body.no-sidebars .galleryformatter, body.no-sidebars .galleryformatter .gallery-slides,
+  body.no-sidebars .galleryformatter .gallery-slides .gallery-frame .gallery-slide,
+  body.no-sidebars .galleryformatter .gallery-thumbs {
+    width: 921.6px !important; } }
 
 /* Highlighted & Help*/
 .l-region--highlighted, .l-region--help {
@@ -919,7 +1073,7 @@ body.html .l-page .l-main .l-content {
  * Header Regions Stylings
  */
 .l-header .l-superheader {
-  background-color: #1981CE;
+  background-color: #5675CE;
   color: #fff;
   box-shadow: 0px 2px 5px -1px #000;
   box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.75); }
@@ -948,14 +1102,14 @@ body.html .l-page .l-main .l-content {
   margin: 10px 0;
   padding: 1%; }
   .l-content .lc-region--inner input[type=submit], .l-content .lc-region--inner div.fakeButton {
-    border: 1px solid #1673b7;
+    border: 1px solid #4265c8;
     border-radius: 0;
     margin: 8px 2px;
     padding: 10px 20px;
     transition: all 0.35s ease-in-out;
     font-size: 17px;
     font-size: 1.7rem;
-    background-color: #1981CE;
+    background-color: #5675CE;
     color: #fff;
     cursor: pointer;
     font-weight: bold; }
@@ -970,14 +1124,14 @@ body.html .l-page .l-main .l-content {
   margin: 10px 0;
   padding: 1%; }
   .l-region--sidebar-first .lc-region--inner input[type=submit], .l-region--sidebar-first .lc-region--inner div.fakeButton {
-    border: 1px solid #f59702;
+    border: 1px solid #fe8835;
     border-radius: 0;
     margin: 8px 2px;
     padding: 10px 20px;
     transition: all 0.35s ease-in-out;
     font-size: 17px;
     font-size: 1.7rem;
-    background-color: #FDA314;
+    background-color: #FE974E;
     color: #fff;
     cursor: pointer;
     font-weight: bold; }
@@ -992,14 +1146,14 @@ body.html .l-page .l-main .l-content {
   margin: 10px 0;
   padding: 1%; }
   .l-region--sidebar-second .lc-region--inner input[type=submit], .l-region--sidebar-second .lc-region--inner div.fakeButton {
-    border: 1px solid #7eb50e;
+    border: 1px solid #55c738;
     border-radius: 0;
     margin: 8px 2px;
     padding: 10px 20px;
     transition: all 0.35s ease-in-out;
     font-size: 17px;
     font-size: 1.7rem;
-    background-color: #8FCD10;
+    background-color: #66CD4C;
     color: #fff;
     cursor: pointer;
     font-weight: bold; }
@@ -1069,14 +1223,14 @@ h4, h5, h6 {
  * Default Buttons Mixin
  */
 body input[type=submit], body div.fakeButton {
-  border: 1px solid #1673b7;
+  border: 1px solid #4265c8;
   border-radius: 0;
   margin: 8px 2px;
   padding: 10px 20px;
   transition: all 0.35s ease-in-out;
   font-size: 17px;
   font-size: 1.7rem;
-  background-color: #1981CE;
+  background-color: #5675CE;
   color: #fff;
   cursor: pointer;
   font-weight: bold; }
@@ -1118,6 +1272,36 @@ fieldset {
 /*
  * Social Media Icons
  */
+.social-links .field-label:before {
+  content: '\e81f';
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+  margin-left: .2em;
+  /* font-size: 120%; */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
+
+.social-links .field-label:before {
+  display: inline-block;
+  font-size: 25px;
+  padding: 8px 8px;
+  margin: 9px;
+  margin-left: 0;
+  border-radius: 10px;
+  color: #fff; }
+
 .social-links ul:after {
   content: "";
   display: table;
@@ -1127,7 +1311,7 @@ fieldset {
   padding-top: 20px !important;
   padding-bottom: 20px !important; }
   .social-links ul li i.icon {
-    border-radius: 5px; }
+    border-radius: 30px; }
 
 /*
  * Back To Top Z Index
@@ -1231,7 +1415,7 @@ footer.l-footer nav ul {
           font-size: 14px;
           font-weight: bold; }
         .l-superheader nav > ul.menu > li > a#tmenu-Search {
-          color: #1981CE;
+          color: #5675CE;
           color: transparent;
           letter-spacing: -0.5em;
           padding-left: 10px;
@@ -1256,6 +1440,23 @@ footer.l-footer nav ul {
 @media (min-width: 769px) {
   .l-header #block-menu-menu-top-menu--2 {
     display: none; } }
+
+/*
+ * Colorbox Style
+ */
+#colorbox #cboxTitle {
+  display: none !important; }
+
+/*
+ * Gallery Formatter Overrides
+ */
+.galleryformatter .gallery-slides .gallery-frame .gallery-slide {
+  text-align: center; }
+  .galleryformatter .gallery-slides .gallery-frame .gallery-slide .panel-overlay {
+    display: none; }
+
+.galleryformatter .gallery-thumbs {
+  padding: 0px; }
 
 /*
  * TabBlocks: Tabs Display Fontello Icon
@@ -1284,59 +1485,40 @@ footer.l-footer nav ul {
 /*
  * Tab Blocks With Jquery
  */
-/*
-.js .tabJS{
-	display: inline-block;
-	margin-right: 5px;
-	margin-top: 3px;
-	margin-bottom: 6px;
-	border: 1px solid $DARKGRAY;
-	border-bottom:0;
-	padding: 8px;
-	padding-top:12px;
-	padding-bottom: 4px;
-	vertical-align:bottom;
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
-	&:before{
-		@include cssTransition(all 0.35s ease-in-out);
-	}
-	//normal tabs
-	background-color: $LIGHTGRAY;
-	color: $DARKGRAY;
-	a{
-		text-decoration:none;
-		color:$DARKGRAY;
-	}
-	//active and hover tabs
-	&.active, &:hover{
-		padding-bottom:12px;
-		color:$WHITE;
-		a{
-			text-decoration:none;
-		}
-	}
-	//hover tabs - making this a bit different from active helps on mobile
-	&:hover{
-	}
-	//active tabs
-	&.active{
-		background-color:$DARKGRAY;
-		color:$WHITE;
-		a{
-			color:$WHITE;
-		}
-	}
-}
-//Blocks (not the tab)
-.js .tabBlockJSBlock{
-	overflow:hidden;
-	a{
-		@include cssTransition(none);
-	}
-}
+.js .tabJS {
+  display: inline-block;
+  margin-right: 5px;
+  margin-top: 3px;
+  margin-bottom: 6px;
+  border: 1px solid #333;
+  border-bottom: 0;
+  padding: 8px;
+  padding-top: 12px;
+  padding-bottom: 4px;
+  vertical-align: bottom;
+  background-color: #e8eaea;
+  color: #333; }
+  .js .tabJS:before {
+    transition: all 0.35s ease-in-out; }
+  .js .tabJS a {
+    text-decoration: none;
+    color: #333; }
+  .js .tabJS.active, .js .tabJS:hover {
+    padding-bottom: 12px;
+    color: #fff; }
+    .js .tabJS.active a, .js .tabJS:hover a {
+      text-decoration: none; }
+  .js .tabJS.active {
+    background-color: #333;
+    color: #fff; }
+    .js .tabJS.active a {
+      color: #fff; }
 
-*/
+.js .tabBlockJSBlock {
+  overflow: hidden; }
+  .js .tabBlockJSBlock a {
+    transition: none; }
+
 body.front {
   /*
 	.lc-region--inner .block > h2.block__title{
@@ -1461,9 +1643,9 @@ body.front {
         body.front .l-region--widetop .views-exposed-form-businesses-and-events-page-results .views-exposed-form .views-exposed-widget:before {
           font-size: 24px;
           margin-bottom: 10px;
-          background: #0e4873;
+          background: #2b4693;
           /* The Fallback */
-          background: rgba(14, 72, 115, 0.75);
+          background: rgba(43, 70, 147, 0.75);
           color: #fff;
           padding: 12px;
           border-radius: 5px 5px 30px 30px;
@@ -1472,34 +1654,34 @@ body.front {
           margin-top: 0; }
         body.front .l-region--widetop .views-exposed-form-businesses-and-events-page-results .views-exposed-form .views-exposed-widget#edit-field-category-wrapper:before {
           content: '\e81b';
-          background: #8FCD10;
+          background: #66CD4C;
           /* The Fallback */
-          background: rgba(143, 205, 16, 0.87); }
+          background: rgba(102, 205, 76, 0.87); }
         body.front .l-region--widetop .views-exposed-form-businesses-and-events-page-results .views-exposed-form .views-exposed-widget#edit-field-category-event-wrapper:before {
           content: '\e81c';
-          background: #1981CE;
+          background: #5675CE;
           /* The Fallback */
-          background: rgba(25, 129, 206, 0.75); }
+          background: rgba(86, 117, 206, 0.75); }
         body.front .l-region--widetop .views-exposed-form-businesses-and-events-page-results .views-exposed-form .views-exposed-widget#edit-field-start-datepicker-wrapper:before {
           content: '\e823';
-          background: #1981CE;
+          background: #5675CE;
           /* The Fallback */
-          background: rgba(25, 129, 206, 0.75); }
+          background: rgba(86, 117, 206, 0.75); }
         body.front .l-region--widetop .views-exposed-form-businesses-and-events-page-results .views-exposed-form .views-exposed-widget#edit-field-end-datepicker-wrapper:before {
           content: '\e824';
-          background: #1981CE;
+          background: #5675CE;
           /* The Fallback */
-          background: rgba(25, 129, 206, 0.75); }
+          background: rgba(86, 117, 206, 0.75); }
         body.front .l-region--widetop .views-exposed-form-businesses-and-events-page-results .views-exposed-form .views-exposed-widget#edit-field-ages-wrapper:before {
           content: '\e829';
-          background: #FDA314;
+          background: #FE974E;
           /* The Fallback */
-          background: rgba(253, 163, 20, 0.75); }
+          background: rgba(254, 151, 78, 0.75); }
         body.front .l-region--widetop .views-exposed-form-businesses-and-events-page-results .views-exposed-form .views-exposed-widget#edit-field-hidden-address-geofield-latlon-wrapper:before {
           content: '\e816';
-          background: #ffde00;
+          background: #FFC632;
           /* The Fallback */
-          background: rgba(255, 222, 0, 0.75); }
+          background: rgba(255, 198, 50, 0.75); }
         body.front .l-region--widetop .views-exposed-form-businesses-and-events-page-results .views-exposed-form .views-exposed-widget.views-submit-button {
           min-width: 40%;
           vertical-align: bottom; }
@@ -1563,7 +1745,7 @@ body.front .l-main #block-calendar-block-toview-calendar {
       cursor: pointer;
       display: inline-block; }
       .js .view-id-businesses_and_events.view-display-id-page_results .switchGL .containerGridList .buttonGrid.activeGridList, .js .view-id-businesses_and_events.view-display-id-page_results .switchGL .containerGridList .buttonList.activeGridList {
-        color: #1981CE; }
+        color: #5675CE; }
   .js .view-id-businesses_and_events.view-display-id-page_results .switchGL:nth-child(1) {
     display: block; }
 
@@ -1670,7 +1852,7 @@ body.front .l-main #block-calendar-block-toview-calendar {
       /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
     .no-js .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row .views-field:before,
     .js .view-id-businesses_and_events.view-display-id-page_results.gridResults .view-content .views-row .views-field:before {
-      background-color: #8FCD10;
+      background-color: #66CD4C;
       color: #fff;
       font-size: 18px;
       line-height: 18px;
@@ -1701,9 +1883,9 @@ body.front .l-main #block-calendar-block-toview-calendar {
     margin: 0 0 0 0;
     border-bottom-right-radius: 3px;
     overflow: hidden;
-    background: #8FCD10;
+    background: #66CD4C;
     /* The Fallback */
-    background: rgba(143, 205, 16, 0.8);
+    background: rgba(102, 205, 76, 0.8);
     transition: all 0.35s ease-in-out; }
     .no-js .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row .views-field-field-featured-content:before,
     .js .view-id-businesses_and_events.view-display-id-page_results.gridResults .view-content .views-row .views-field-field-featured-content:before {
@@ -1772,31 +1954,31 @@ body.front .l-main #block-calendar-block-toview-calendar {
   .no-js .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row.rowContentType-business-service-or-attraction .views-field:before,
   .js .view-id-businesses_and_events.view-display-id-page_results.gridResults .view-content .views-row.rowContentType-business-service-or-attraction .views-field:before {
     background-color: #fff;
-    color: #8FCD10; }
+    color: #66CD4C; }
   .no-js .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row.rowContentType-business-service-or-attraction .views-field.views-field-type:before,
   .js .view-id-businesses_and_events.view-display-id-page_results.gridResults .view-content .views-row.rowContentType-business-service-or-attraction .views-field.views-field-type:before {
     content: '\e82c';
-    background-color: #8FCD10;
+    background-color: #66CD4C;
     color: #fff; }
   .no-js .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row.rowContentType-business-service-or-attraction .views-field-field-featured-content,
   .js .view-id-businesses_and_events.view-display-id-page_results.gridResults .view-content .views-row.rowContentType-business-service-or-attraction .views-field-field-featured-content {
-    background: #8FCD10;
+    background: #66CD4C;
     /* The Fallback */
-    background: rgba(143, 205, 16, 0.8); }
+    background: rgba(102, 205, 76, 0.8); }
   .no-js .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row.rowContentType-event .views-field:before,
   .js .view-id-businesses_and_events.view-display-id-page_results.gridResults .view-content .views-row.rowContentType-event .views-field:before {
     background-color: #fff;
-    color: #1981CE; }
+    color: #5675CE; }
   .no-js .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row.rowContentType-event .views-field.views-field-type:before,
   .js .view-id-businesses_and_events.view-display-id-page_results.gridResults .view-content .views-row.rowContentType-event .views-field.views-field-type:before {
     content: '\e82b';
-    background-color: #1981CE;
+    background-color: #5675CE;
     color: #fff; }
   .no-js .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row.rowContentType-event .views-field-field-featured-content,
   .js .view-id-businesses_and_events.view-display-id-page_results.gridResults .view-content .views-row.rowContentType-event .views-field-field-featured-content {
-    background: #1981CE;
+    background: #5675CE;
     /* The Fallback */
-    background: rgba(25, 129, 206, 0.8); }
+    background: rgba(86, 117, 206, 0.8); }
   .no-js .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row .views-field.views-field-field-image-gallery,
   .js .view-id-businesses_and_events.view-display-id-page_results.gridResults .view-content .views-row .views-field.views-field-field-image-gallery {
     padding: 0;
@@ -1843,9 +2025,6 @@ body.front .l-main #block-calendar-block-toview-calendar {
   .no-js .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row .views-field-field-address:before,
   .js .view-id-businesses_and_events.view-display-id-page_results.gridResults .view-content .views-row .views-field-field-address:before {
     content: '\e816'; }
-  .no-js .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row .views-field-field-address a,
-  .js .view-id-businesses_and_events.view-display-id-page_results.gridResults .view-content .views-row .views-field-field-address a {
-    font-weight: bold; }
   .no-js .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row .views-field-field-category-event:before,
   .no-js .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row .views-field-field-category:before,
   .js .view-id-businesses_and_events.view-display-id-page_results.gridResults .view-content .views-row .views-field-field-category-event:before, .js .view-id-businesses_and_events.view-display-id-page_results.gridResults .view-content .views-row .views-field-field-category:before {
@@ -1915,7 +2094,7 @@ body.front .l-main #block-calendar-block-toview-calendar {
       -moz-osx-font-smoothing: grayscale;
       /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
     .js .view-id-businesses_and_events.view-display-id-page_results.listingResults .view-content .views-row .views-field:before {
-      background-color: #8FCD10;
+      background-color: #66CD4C;
       color: #fff;
       font-size: 18px;
       line-height: 18px;
@@ -1966,9 +2145,9 @@ body.front .l-main #block-calendar-block-toview-calendar {
     margin: 0 0 0 0;
     border-bottom-right-radius: 3px;
     overflow: hidden;
-    background: #8FCD10;
+    background: #66CD4C;
     /* The Fallback */
-    background: rgba(143, 205, 16, 0.8);
+    background: rgba(102, 205, 76, 0.8);
     transition: all 0.35s ease-in-out; }
     .js .view-id-businesses_and_events.view-display-id-page_results.listingResults .view-content .views-row .views-field-field-featured-content:before {
       display: none; }
@@ -2012,8 +2191,6 @@ body.front .l-main #block-calendar-block-toview-calendar {
     @media (min-width: 0) and (max-width: 768px) {
       .js .view-id-businesses_and_events.view-display-id-page_results.listingResults .view-content .views-row .views-field-field-address, .js .view-id-businesses_and_events.view-display-id-page_results.listingResults .view-content .views-row .views-field-field-date-of-event {
         width: 100%; } }
-  .js .view-id-businesses_and_events.view-display-id-page_results.listingResults .view-content .views-row .views-field-field-address a {
-    font-weight: bold; }
   .js .view-id-businesses_and_events.view-display-id-page_results.listingResults .view-content .views-row .views-field-field-address .addressfield-container {
     display: inline-block; }
     .js .view-id-businesses_and_events.view-display-id-page_results.listingResults .view-content .views-row .views-field-field-address .addressfield-container > div {
@@ -2077,19 +2254,19 @@ body.front .l-main #block-calendar-block-toview-calendar {
     content: '\e830'; }
   .js .view-id-businesses_and_events.view-display-id-page_results.listingResults .view-content .views-row.rowContentType-business-service-or-attraction .views-field:before {
     background-color: #fff;
-    color: #8FCD10; }
+    color: #66CD4C; }
   .js .view-id-businesses_and_events.view-display-id-page_results.listingResults .view-content .views-row.rowContentType-business-service-or-attraction .views-field.views-field-type:before {
     content: '\e82c';
-    background-color: #8FCD10;
+    background-color: #66CD4C;
     color: #fff; }
   .js .view-id-businesses_and_events.view-display-id-page_results.listingResults .view-content .views-row.rowContentType-business-service-or-attraction .views-field-field-featured-content {
-    background: #8FCD10;
+    background: #66CD4C;
     /* The Fallback */
-    background: rgba(143, 205, 16, 0.8); }
+    background: rgba(102, 205, 76, 0.8); }
   .js .view-id-businesses_and_events.view-display-id-page_results.listingResults .view-content .views-row.rowContentType-business-service-or-attraction .views-field-field-address {
     width: 100%; }
   .js .view-id-businesses_and_events.view-display-id-page_results.listingResults .view-content .views-row.rowContentType-business-service-or-attraction .views-field-nothing .field-content {
-    border: 1px solid #7eb50e;
+    border: 1px solid #55c738;
     border-radius: 0;
     margin: 4px 2px;
     padding: 7px 15px;
@@ -2097,7 +2274,7 @@ body.front .l-main #block-calendar-block-toview-calendar {
     font-size: 15px;
     font-size: 1.5rem;
     display: inline-block;
-    background-color: #8FCD10;
+    background-color: #66CD4C;
     color: #fff;
     font-weight: bold; }
     .js .view-id-businesses_and_events.view-display-id-page_results.listingResults .view-content .views-row.rowContentType-business-service-or-attraction .views-field-nothing .field-content a {
@@ -2109,17 +2286,17 @@ body.front .l-main #block-calendar-block-toview-calendar {
         color: #333; }
   .js .view-id-businesses_and_events.view-display-id-page_results.listingResults .view-content .views-row.rowContentType-event .views-field:before {
     background-color: #fff;
-    color: #1981CE; }
+    color: #5675CE; }
   .js .view-id-businesses_and_events.view-display-id-page_results.listingResults .view-content .views-row.rowContentType-event .views-field.views-field-type:before {
     content: '\e82b';
-    background-color: #1981CE;
+    background-color: #5675CE;
     color: #fff; }
   .js .view-id-businesses_and_events.view-display-id-page_results.listingResults .view-content .views-row.rowContentType-event .views-field-field-featured-content {
-    background: #1981CE;
+    background: #5675CE;
     /* The Fallback */
-    background: rgba(25, 129, 206, 0.8); }
+    background: rgba(86, 117, 206, 0.8); }
   .js .view-id-businesses_and_events.view-display-id-page_results.listingResults .view-content .views-row.rowContentType-event .views-field-nothing .field-content {
-    border: 1px solid #1673b7;
+    border: 1px solid #4265c8;
     border-radius: 0;
     margin: 4px 2px;
     padding: 7px 15px;
@@ -2127,7 +2304,7 @@ body.front .l-main #block-calendar-block-toview-calendar {
     font-size: 15px;
     font-size: 1.5rem;
     display: inline-block;
-    background-color: #1981CE;
+    background-color: #5675CE;
     color: #fff;
     font-weight: bold; }
     .js .view-id-businesses_and_events.view-display-id-page_results.listingResults .view-content .views-row.rowContentType-event .views-field-nothing .field-content a {
@@ -2233,7 +2410,7 @@ form#views-exposed-form-businesses-and-events-page-results .views-widget-filter-
  * SideBAR
  */
 body.page-search-businesses-and-events .l-region--sidebar-first .lc-region--inner .b_title_cont {
-  background-color: #1981CE;
+  background-color: #5675CE;
   padding: 8px 12px;
   margin-bottom: 10px;
   text-align: center; }
@@ -2241,14 +2418,14 @@ body.page-search-businesses-and-events .l-region--sidebar-first .lc-region--inne
     color: #fff; }
 
 body.page-search-businesses-and-events .l-region--sidebar-first .lc-region--inner input[type=submit], body.page-search-businesses-and-events .l-region--sidebar-first .lc-region--inner div.fakeButton {
-  border: 1px solid #1673b7;
+  border: 1px solid #4265c8;
   border-radius: 0;
   margin: 8px 2px;
   padding: 10px 20px;
   transition: all 0.35s ease-in-out;
   font-size: 17px;
   font-size: 1.7rem;
-  background-color: #1981CE;
+  background-color: #5675CE;
   color: #fff;
   cursor: pointer;
   font-weight: bold; }
@@ -2262,303 +2439,650 @@ body.page-search-businesses-and-events .l-region--sidebar-first .lc-region--inne
   border: 2px solid #e8eaea;
   outline: none; }
 
-/* 
- * Content Type Displays
- */
 /*
-body.node-type-event,body.node-type-business-service-or-attraction{ 
-	.l-content {
-		.lc-region--inner{
-			@include boxBorderRadiusMarginPadding(2px solid $color1Light, 3px, 10px 0, 2%);
-			@include regionInnerSchemer($color1, $WHITE, $DARKGRAY, $color1);
-			@include buttonColor1;
-		}
-		h1.mainPageTitle{
-			@include fontelloBefore;
-			@include remFontSize($fontXXL);
-			color:white;
-			padding: 14px 7px;
-			margin: 15px 0 5px 0;
-		}	
-	}
-	.l-region--sidebar-first{
-		.lc-region--inner{
-			@include boxBorderRadiusMarginPadding(2px solid $color2Light, 3px, 10px 0, 3%);
-			@include regionInnerSchemer($color2, $WHITE, $DARKGRAY, $color2);
-			@include buttonColor2;
-		}	
-	}
-	.l-region--sidebar-second{
-		.lc-region--inner{
-			@include boxBorderRadiusMarginPadding(2px solid $color3Light, 3px, 10px 0, 3%);
-			@include regionInnerSchemer($color3, $WHITE, $DARKGRAY, $color3);
-			@include buttonColor3;
-		}
-	}
-}
-body.node-type-business-service-or-attraction{
-	h1.mainPageTitle{
-		@include linearGradient(darken($color1,10%), $color1);
-		&:before{
-			background-color:transparent;
-			color:$WHITE;
-			content:'\e81b' !important;
-		}		
-	}
-}
-body.node-type-event{
-	h1.mainPageTitle{
-		@include linearGradient(darken($color1,10%), $color1);
-		&:before{
-			background-color:transparent;
-			color:$WHITE;
-			content:'\e81c' !important;
-		}	
-	}
-}
- 
- 
-.view-id-business_display, .view-id-events_display{
-	.views-row{
-		@include clearfix;
-	}
-	.views-field{
-		border-bottom: 1px solid lightgray;
-		padding: 10px 10px;
-		margin: 10px 0;
-		.field-content{
-			h3{
-				display:inline-block;
-			}
-			i.icon{
-				display:inline-block;
-				font-size: 25px;
-				padding:8px 5px;
-				margin: 9px;
-				margin-left: 0;
-				border-radius:10px;
-			}
-			.wttocFieldEnclose{
-				margin-top: 10px;
-				margin-bottom: 10px;
-			}
-		}
-		&.views-field-field-address, &.views-field-field-date-of-event, &.views-field-field-website{
-			@include breakpoint($breakpointWideP1){
-				@include chop3Left(33%);
-				border-bottom:0;
-			};
-			@include breakpoint($mobile2Wide){
-				@include splitLeft(50%);
-				border-bottom:0;
-			};
-			@include breakpoint(0 $breakpointMobile){
-				
-			};	
-		}
-		&.views-field-field-website{
-			@include breakpoint($mobile2Wide){
-				clear:both;
-			};
-		}	
-	}
-}
+ * Top Header with Image
+ */
+.view-id-business_display.view-display-id-fg_image .view-content .views-row,
+.view-id-events_display.view-display-id-e_image .view-content .views-row {
+  position: relative; }
+  .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-field-image-gallery img,
+  .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-field-image-gallery img {
+    width: 100%;
+    height: auto;
+    display: block; }
+  .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing,
+  .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    /* The Fallback */
+    background: rgba(0, 0, 0, 0.4); }
+    .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox,
+    .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox {
+      color: #fff;
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translate(0, -50%);
+      transform: translate(0, -50%);
+      width: 100%; }
+      .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox span,
+      .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox p,
+      .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox h1,
+      .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox h2,
+      .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox h3,
+      .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox h4,
+      .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox h5,
+      .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox h6,
+      .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox a,
+      .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox div,
+      .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox li,
+      .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox span, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox p, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox h1, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox h2, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox h3, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox h4, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox h5, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox h6, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox a, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox div, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox li {
+        color: #fff; }
+      .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox a:hover,
+      .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox a:hover {
+        color: #fff; }
+      @media (min-width: 0) and (max-width: 768px) {
+        .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Left,
+        .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Left {
+          display: block;
+          float: left;
+          width: 50%; } }
+      .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Left .titb_title,
+      .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Left .titb_title {
+        font-weight: bold; }
+        @media (min-width: 0) and (max-width: 430px) {
+          .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Left .titb_title,
+          .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Left .titb_title {
+            font-size: 19px;
+            font-size: 1.9rem;
+            padding-left: 23px; }
+            .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Left .titb_title:before,
+            .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Left .titb_title:before {
+              font-size: 15px; } }
+        @media (min-width: 431px) and (max-width: 768px) {
+          .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Left .titb_title,
+          .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Left .titb_title {
+            font-size: 24px;
+            font-size: 2.4rem;
+            padding-left: 30px; }
+            .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Left .titb_title:before,
+            .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Left .titb_title:before {
+              font-size: 20px; } }
+        @media (min-width: 769px) {
+          .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Left .titb_title,
+          .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Left .titb_title {
+            font-size: 43px;
+            font-size: 4.3rem;
+            padding-left: 60px; }
+            .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Left .titb_title:before,
+            .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Left .titb_title:before {
+              font-size: 40px; } }
+      .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Left .titb_address:before,
+      .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Left .titb_address:before {
+        content: '\e816'; }
+      @media (min-width: 0) and (max-width: 768px) {
+        .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Right,
+        .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Right {
+          display: block;
+          float: left;
+          width: 50%; } }
+      .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Right .titb_phone:before,
+      .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Right .titb_phone:before {
+        content: '\e832'; }
+      .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Right .titb_website:before,
+      .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Right .titb_website:before {
+        content: '\e833'; }
+      .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Right .titb_email:before,
+      .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Right .titb_email:before {
+        content: '\e834'; }
+      .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_title,
+      .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_address,
+      .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_phone,
+      .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_website,
+      .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_email,
+      .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_title, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_address, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_phone, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_website, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_email {
+        position: relative;
+        padding-left: 30px; }
+        @media (min-width: 0) and (max-width: 430px) {
+          .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_title,
+          .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_address,
+          .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_phone,
+          .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_website,
+          .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_email,
+          .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_title, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_address, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_phone, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_website, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_email {
+            font-size: 15px;
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+            margin-left: 5px; } }
+        @media (min-width: 431px) and (max-width: 768px) {
+          .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_title,
+          .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_address,
+          .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_phone,
+          .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_website,
+          .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_email,
+          .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_title, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_address, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_phone, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_website, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_email {
+            margin-bottom: 10px;
+            margin-left: 10px; } }
+        @media (min-width: 769px) {
+          .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_title,
+          .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_address,
+          .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_phone,
+          .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_website,
+          .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_email,
+          .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_title, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_address, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_phone, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_website, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_email {
+            margin-bottom: 15px;
+            margin-left: 30px; } }
+        .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_title:before,
+        .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_address:before,
+        .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_phone:before,
+        .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_website:before,
+        .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_email:before,
+        .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_title:before, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_address:before, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_phone:before, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_website:before, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_email:before {
+          content: '\e81f';
+          font-family: "fontello";
+          font-style: normal;
+          font-weight: normal;
+          speak: none;
+          display: inline-block;
+          text-decoration: inherit;
+          width: 1em;
+          margin-right: .2em;
+          text-align: center;
+          /* opacity: .8; */
+          font-variant: normal;
+          text-transform: none;
+          line-height: 1em;
+          margin-left: .2em;
+          /* font-size: 120%; */
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
+        .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_title:before,
+        .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_address:before,
+        .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_phone:before,
+        .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_website:before,
+        .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_email:before,
+        .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_title:before, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_address:before, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_phone:before, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_website:before, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_email:before {
+          position: absolute;
+          left: 0;
+          top: 0;
+          position: absolute;
+          top: 50%;
+          -webkit-transform: translate(0, -50%);
+          transform: translate(0, -50%); }
+
+/*
+ * Field Icons & Other
+ */
+.mainContentC .view-id-business_display .views-row:after, .mainContentC .view-id-events_display .views-row:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+.mainContentC .view-id-business_display .views-field, .mainContentC .view-id-events_display .views-field {
+  padding: 10px 10px;
+  margin: 10px 0; }
+  .mainContentC .view-id-business_display .views-field .field-content h3, .mainContentC .view-id-events_display .views-field .field-content h3 {
+    display: inline-block; }
+  .mainContentC .view-id-business_display .views-field .field-content i.icon, .mainContentC .view-id-events_display .views-field .field-content i.icon {
+    display: inline-block;
+    font-size: 25px;
+    padding: 8px 5px;
+    margin: 9px;
+    margin-left: 0;
+    border-radius: 10px;
+    color: #fff; }
+  .mainContentC .view-id-business_display .views-field .field-content .wttocFieldEnclose, .mainContentC .view-id-events_display .views-field .field-content .wttocFieldEnclose {
+    margin-top: 10px;
+    margin-bottom: 10px; }
+
+.mainContentC .view-id-business_display i.icon {
+  background-color: #66CD4C; }
+
+.mainContentC .view-id-events_display i.icon {
+  background-color: #5675CE; }
+
+body.node-type-event .mainPageTitle, body.node-type-business-service-or-attraction .mainPageTitle {
+  display: none; }
+
+body.node-type-event .mainContentC a, body.node-type-business-service-or-attraction .mainContentC a {
+  color: #5675CE; }
+
+body.node-type-event .l-region--sidebar-first .b_title_cont, body.node-type-event .l-region--sidebar-second .b_title_cont, body.node-type-business-service-or-attraction .l-region--sidebar-first .b_title_cont, body.node-type-business-service-or-attraction .l-region--sidebar-second .b_title_cont {
+  padding: 10px 0;
+  margin: 12px 0 8px 0; }
+  body.node-type-event .l-region--sidebar-first .b_title_cont:before, body.node-type-event .l-region--sidebar-second .b_title_cont:before, body.node-type-business-service-or-attraction .l-region--sidebar-first .b_title_cont:before, body.node-type-business-service-or-attraction .l-region--sidebar-second .b_title_cont:before {
+    display: none; }
+
+body.node-type-event .l-region--underlighted .b_title_cont, body.node-type-business-service-or-attraction .l-region--underlighted .b_title_cont {
+  background-color: #FC5161;
+  padding: 10px 0 8px 0;
+  margin: 10px 0 5px 0;
+  color: #fff; }
+  body.node-type-event .l-region--underlighted .b_title_cont span, body.node-type-event .l-region--underlighted .b_title_cont p, body.node-type-event .l-region--underlighted .b_title_cont h1, body.node-type-event .l-region--underlighted .b_title_cont h2, body.node-type-event .l-region--underlighted .b_title_cont h3, body.node-type-event .l-region--underlighted .b_title_cont h4, body.node-type-event .l-region--underlighted .b_title_cont h5, body.node-type-event .l-region--underlighted .b_title_cont h6, body.node-type-event .l-region--underlighted .b_title_cont a, body.node-type-event .l-region--underlighted .b_title_cont div, body.node-type-event .l-region--underlighted .b_title_cont li, body.node-type-business-service-or-attraction .l-region--underlighted .b_title_cont span, body.node-type-business-service-or-attraction .l-region--underlighted .b_title_cont p, body.node-type-business-service-or-attraction .l-region--underlighted .b_title_cont h1, body.node-type-business-service-or-attraction .l-region--underlighted .b_title_cont h2, body.node-type-business-service-or-attraction .l-region--underlighted .b_title_cont h3, body.node-type-business-service-or-attraction .l-region--underlighted .b_title_cont h4, body.node-type-business-service-or-attraction .l-region--underlighted .b_title_cont h5, body.node-type-business-service-or-attraction .l-region--underlighted .b_title_cont h6, body.node-type-business-service-or-attraction .l-region--underlighted .b_title_cont a, body.node-type-business-service-or-attraction .l-region--underlighted .b_title_cont div, body.node-type-business-service-or-attraction .l-region--underlighted .b_title_cont li {
+    color: #fff; }
+  body.node-type-event .l-region--underlighted .b_title_cont a:hover, body.node-type-business-service-or-attraction .l-region--underlighted .b_title_cont a:hover {
+    color: #fff; }
+  body.node-type-event .l-region--underlighted .b_title_cont .block__title, body.node-type-business-service-or-attraction .l-region--underlighted .b_title_cont .block__title {
+    padding-left: 10px; }
+
+body.node-type-event .l-region--underlighted .block__content, body.node-type-business-service-or-attraction .l-region--underlighted .block__content {
+  padding: 10px 10px 8px 5px; }
+
+body.node-type-business-service-or-attraction .l-region--sidebar-first .b_title_cont, body.node-type-business-service-or-attraction .l-region--sidebar-second .b_title_cont {
+  border-bottom: 2px solid #66CD4C; }
+
+body.node-type-business-service-or-attraction .titb_title:before {
+  content: '\e81b' !important; }
+
+body.node-type-event .l-region--sidebar-first .b_title_cont, body.node-type-event .l-region--sidebar-second .b_title_cont {
+  border-bottom: 2px solid #5675CE; }
+
+body.node-type-event .titb_title:before {
+  content: '\e81c' !important; }
+
+/*
+* Social Media Icons
+*/
+.social-links {
+  margin-top: 55px; }
+  .social-links .field-label {
+    font-size: 22px;
+    font-size: 2.2rem;
+    font-weight: bold; }
+    .social-links .field-label:before {
+      content: '\e81f';
+      font-family: "fontello";
+      font-style: normal;
+      font-weight: normal;
+      speak: none;
+      display: inline-block;
+      text-decoration: inherit;
+      width: 1em;
+      margin-right: .2em;
+      text-align: center;
+      /* opacity: .8; */
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1em;
+      margin-left: .2em;
+      /* font-size: 120%; */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
+    .social-links .field-label:before {
+      display: inline-block;
+      font-size: 25px;
+      width: 25px;
+      padding: 8px 10px;
+      margin: 9px;
+      margin-left: 0;
+      border-radius: 10px;
+      color: #fff;
+      content: '\e837'; }
+  .social-links ul:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .social-links ul li {
+    padding-top: 20px !important;
+    padding-bottom: 20px !important; }
+    .social-links ul li i.icon {
+      border-radius: 30px; }
+
+body.node-type-business-service-or-attraction .social-links .field-label:before {
+  background-color: #FC5161; }
+
+body.node-type-event .social-links .field-label:before {
+  background-color: #FC5161; }
+
 /*
  * Icon Colorings 
  */
-.js body.node-type-event .l-content .block.block--views-events-display-block, .js body.node-type-event .l-content .block.block--views-business-display-block, .js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block,
-.js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block,
-.no-js body.node-type-event .l-content .block.block--views-events-display-block, .no-js body.node-type-event .l-content .block.block--views-business-display-block, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block {
-  border: #69D1F5 2px solid;
-  border-radius: 3px; }
-  .js body.node-type-event .l-content .block.block--views-events-display-block .view i.icon, .js body.node-type-event .l-content .block.block--views-business-display-block .view i.icon, .js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block .view i.icon,
-  .js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block .view i.icon,
-  .no-js body.node-type-event .l-content .block.block--views-events-display-block .view i.icon, .no-js body.node-type-event .l-content .block.block--views-business-display-block .view i.icon, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block .view i.icon, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block .view i.icon {
-    background-color: #1981CE;
+.js body.node-type-event .l-content .fg_overview-container .block__title, .js body.node-type-event .l-content .fg_prices-container .block__title, .js body.node-type-event .l-content .fg_vouchers-container .block__title, .js body.node-type-event .l-content .fg_more_info-container .block__title, .js .node-type-business-service-or-attraction .l-content .fg_overview-container .block__title,
+.js .node-type-business-service-or-attraction .l-content .fg_prices-container .block__title,
+.js .node-type-business-service-or-attraction .l-content .fg_vouchers-container .block__title,
+.js .node-type-business-service-or-attraction .l-content .fg_more_info-container .block__title,
+.no-js body.node-type-event .l-content .fg_overview-container .block__title, .no-js body.node-type-event .l-content .fg_prices-container .block__title, .no-js body.node-type-event .l-content .fg_vouchers-container .block__title, .no-js body.node-type-event .l-content .fg_more_info-container .block__title, .no-js .node-type-business-service-or-attraction .l-content .fg_overview-container .block__title, .no-js .node-type-business-service-or-attraction .l-content .fg_prices-container .block__title, .no-js .node-type-business-service-or-attraction .l-content .fg_vouchers-container .block__title, .no-js .node-type-business-service-or-attraction .l-content .fg_more_info-container .block__title {
+  color: #fff;
+  padding: 10px 5px; }
+  .js body.node-type-event .l-content .fg_overview-container .block__title span, .js body.node-type-event .l-content .fg_overview-container .block__title p, .js body.node-type-event .l-content .fg_overview-container .block__title h1, .js body.node-type-event .l-content .fg_overview-container .block__title h2, .js body.node-type-event .l-content .fg_overview-container .block__title h3, .js body.node-type-event .l-content .fg_overview-container .block__title h4, .js body.node-type-event .l-content .fg_overview-container .block__title h5, .js body.node-type-event .l-content .fg_overview-container .block__title h6, .js body.node-type-event .l-content .fg_overview-container .block__title a, .js body.node-type-event .l-content .fg_overview-container .block__title div, .js body.node-type-event .l-content .fg_overview-container .block__title li, .js body.node-type-event .l-content .fg_prices-container .block__title span, .js body.node-type-event .l-content .fg_prices-container .block__title p, .js body.node-type-event .l-content .fg_prices-container .block__title h1, .js body.node-type-event .l-content .fg_prices-container .block__title h2, .js body.node-type-event .l-content .fg_prices-container .block__title h3, .js body.node-type-event .l-content .fg_prices-container .block__title h4, .js body.node-type-event .l-content .fg_prices-container .block__title h5, .js body.node-type-event .l-content .fg_prices-container .block__title h6, .js body.node-type-event .l-content .fg_prices-container .block__title a, .js body.node-type-event .l-content .fg_prices-container .block__title div, .js body.node-type-event .l-content .fg_prices-container .block__title li, .js body.node-type-event .l-content .fg_vouchers-container .block__title span, .js body.node-type-event .l-content .fg_vouchers-container .block__title p, .js body.node-type-event .l-content .fg_vouchers-container .block__title h1, .js body.node-type-event .l-content .fg_vouchers-container .block__title h2, .js body.node-type-event .l-content .fg_vouchers-container .block__title h3, .js body.node-type-event .l-content .fg_vouchers-container .block__title h4, .js body.node-type-event .l-content .fg_vouchers-container .block__title h5, .js body.node-type-event .l-content .fg_vouchers-container .block__title h6, .js body.node-type-event .l-content .fg_vouchers-container .block__title a, .js body.node-type-event .l-content .fg_vouchers-container .block__title div, .js body.node-type-event .l-content .fg_vouchers-container .block__title li, .js body.node-type-event .l-content .fg_more_info-container .block__title span, .js body.node-type-event .l-content .fg_more_info-container .block__title p, .js body.node-type-event .l-content .fg_more_info-container .block__title h1, .js body.node-type-event .l-content .fg_more_info-container .block__title h2, .js body.node-type-event .l-content .fg_more_info-container .block__title h3, .js body.node-type-event .l-content .fg_more_info-container .block__title h4, .js body.node-type-event .l-content .fg_more_info-container .block__title h5, .js body.node-type-event .l-content .fg_more_info-container .block__title h6, .js body.node-type-event .l-content .fg_more_info-container .block__title a, .js body.node-type-event .l-content .fg_more_info-container .block__title div, .js body.node-type-event .l-content .fg_more_info-container .block__title li, .js .node-type-business-service-or-attraction .l-content .fg_overview-container .block__title span,
+  .js .node-type-business-service-or-attraction .l-content .fg_overview-container .block__title p,
+  .js .node-type-business-service-or-attraction .l-content .fg_overview-container .block__title h1,
+  .js .node-type-business-service-or-attraction .l-content .fg_overview-container .block__title h2,
+  .js .node-type-business-service-or-attraction .l-content .fg_overview-container .block__title h3,
+  .js .node-type-business-service-or-attraction .l-content .fg_overview-container .block__title h4,
+  .js .node-type-business-service-or-attraction .l-content .fg_overview-container .block__title h5,
+  .js .node-type-business-service-or-attraction .l-content .fg_overview-container .block__title h6,
+  .js .node-type-business-service-or-attraction .l-content .fg_overview-container .block__title a,
+  .js .node-type-business-service-or-attraction .l-content .fg_overview-container .block__title div,
+  .js .node-type-business-service-or-attraction .l-content .fg_overview-container .block__title li,
+  .js .node-type-business-service-or-attraction .l-content .fg_prices-container .block__title span,
+  .js .node-type-business-service-or-attraction .l-content .fg_prices-container .block__title p,
+  .js .node-type-business-service-or-attraction .l-content .fg_prices-container .block__title h1,
+  .js .node-type-business-service-or-attraction .l-content .fg_prices-container .block__title h2,
+  .js .node-type-business-service-or-attraction .l-content .fg_prices-container .block__title h3,
+  .js .node-type-business-service-or-attraction .l-content .fg_prices-container .block__title h4,
+  .js .node-type-business-service-or-attraction .l-content .fg_prices-container .block__title h5,
+  .js .node-type-business-service-or-attraction .l-content .fg_prices-container .block__title h6,
+  .js .node-type-business-service-or-attraction .l-content .fg_prices-container .block__title a,
+  .js .node-type-business-service-or-attraction .l-content .fg_prices-container .block__title div,
+  .js .node-type-business-service-or-attraction .l-content .fg_prices-container .block__title li,
+  .js .node-type-business-service-or-attraction .l-content .fg_vouchers-container .block__title span,
+  .js .node-type-business-service-or-attraction .l-content .fg_vouchers-container .block__title p,
+  .js .node-type-business-service-or-attraction .l-content .fg_vouchers-container .block__title h1,
+  .js .node-type-business-service-or-attraction .l-content .fg_vouchers-container .block__title h2,
+  .js .node-type-business-service-or-attraction .l-content .fg_vouchers-container .block__title h3,
+  .js .node-type-business-service-or-attraction .l-content .fg_vouchers-container .block__title h4,
+  .js .node-type-business-service-or-attraction .l-content .fg_vouchers-container .block__title h5,
+  .js .node-type-business-service-or-attraction .l-content .fg_vouchers-container .block__title h6,
+  .js .node-type-business-service-or-attraction .l-content .fg_vouchers-container .block__title a,
+  .js .node-type-business-service-or-attraction .l-content .fg_vouchers-container .block__title div,
+  .js .node-type-business-service-or-attraction .l-content .fg_vouchers-container .block__title li,
+  .js .node-type-business-service-or-attraction .l-content .fg_more_info-container .block__title span,
+  .js .node-type-business-service-or-attraction .l-content .fg_more_info-container .block__title p,
+  .js .node-type-business-service-or-attraction .l-content .fg_more_info-container .block__title h1,
+  .js .node-type-business-service-or-attraction .l-content .fg_more_info-container .block__title h2,
+  .js .node-type-business-service-or-attraction .l-content .fg_more_info-container .block__title h3,
+  .js .node-type-business-service-or-attraction .l-content .fg_more_info-container .block__title h4,
+  .js .node-type-business-service-or-attraction .l-content .fg_more_info-container .block__title h5,
+  .js .node-type-business-service-or-attraction .l-content .fg_more_info-container .block__title h6,
+  .js .node-type-business-service-or-attraction .l-content .fg_more_info-container .block__title a,
+  .js .node-type-business-service-or-attraction .l-content .fg_more_info-container .block__title div,
+  .js .node-type-business-service-or-attraction .l-content .fg_more_info-container .block__title li,
+  .no-js body.node-type-event .l-content .fg_overview-container .block__title span, .no-js body.node-type-event .l-content .fg_overview-container .block__title p, .no-js body.node-type-event .l-content .fg_overview-container .block__title h1, .no-js body.node-type-event .l-content .fg_overview-container .block__title h2, .no-js body.node-type-event .l-content .fg_overview-container .block__title h3, .no-js body.node-type-event .l-content .fg_overview-container .block__title h4, .no-js body.node-type-event .l-content .fg_overview-container .block__title h5, .no-js body.node-type-event .l-content .fg_overview-container .block__title h6, .no-js body.node-type-event .l-content .fg_overview-container .block__title a, .no-js body.node-type-event .l-content .fg_overview-container .block__title div, .no-js body.node-type-event .l-content .fg_overview-container .block__title li, .no-js body.node-type-event .l-content .fg_prices-container .block__title span, .no-js body.node-type-event .l-content .fg_prices-container .block__title p, .no-js body.node-type-event .l-content .fg_prices-container .block__title h1, .no-js body.node-type-event .l-content .fg_prices-container .block__title h2, .no-js body.node-type-event .l-content .fg_prices-container .block__title h3, .no-js body.node-type-event .l-content .fg_prices-container .block__title h4, .no-js body.node-type-event .l-content .fg_prices-container .block__title h5, .no-js body.node-type-event .l-content .fg_prices-container .block__title h6, .no-js body.node-type-event .l-content .fg_prices-container .block__title a, .no-js body.node-type-event .l-content .fg_prices-container .block__title div, .no-js body.node-type-event .l-content .fg_prices-container .block__title li, .no-js body.node-type-event .l-content .fg_vouchers-container .block__title span, .no-js body.node-type-event .l-content .fg_vouchers-container .block__title p, .no-js body.node-type-event .l-content .fg_vouchers-container .block__title h1, .no-js body.node-type-event .l-content .fg_vouchers-container .block__title h2, .no-js body.node-type-event .l-content .fg_vouchers-container .block__title h3, .no-js body.node-type-event .l-content .fg_vouchers-container .block__title h4, .no-js body.node-type-event .l-content .fg_vouchers-container .block__title h5, .no-js body.node-type-event .l-content .fg_vouchers-container .block__title h6, .no-js body.node-type-event .l-content .fg_vouchers-container .block__title a, .no-js body.node-type-event .l-content .fg_vouchers-container .block__title div, .no-js body.node-type-event .l-content .fg_vouchers-container .block__title li, .no-js body.node-type-event .l-content .fg_more_info-container .block__title span, .no-js body.node-type-event .l-content .fg_more_info-container .block__title p, .no-js body.node-type-event .l-content .fg_more_info-container .block__title h1, .no-js body.node-type-event .l-content .fg_more_info-container .block__title h2, .no-js body.node-type-event .l-content .fg_more_info-container .block__title h3, .no-js body.node-type-event .l-content .fg_more_info-container .block__title h4, .no-js body.node-type-event .l-content .fg_more_info-container .block__title h5, .no-js body.node-type-event .l-content .fg_more_info-container .block__title h6, .no-js body.node-type-event .l-content .fg_more_info-container .block__title a, .no-js body.node-type-event .l-content .fg_more_info-container .block__title div, .no-js body.node-type-event .l-content .fg_more_info-container .block__title li, .no-js .node-type-business-service-or-attraction .l-content .fg_overview-container .block__title span, .no-js .node-type-business-service-or-attraction .l-content .fg_overview-container .block__title p, .no-js .node-type-business-service-or-attraction .l-content .fg_overview-container .block__title h1, .no-js .node-type-business-service-or-attraction .l-content .fg_overview-container .block__title h2, .no-js .node-type-business-service-or-attraction .l-content .fg_overview-container .block__title h3, .no-js .node-type-business-service-or-attraction .l-content .fg_overview-container .block__title h4, .no-js .node-type-business-service-or-attraction .l-content .fg_overview-container .block__title h5, .no-js .node-type-business-service-or-attraction .l-content .fg_overview-container .block__title h6, .no-js .node-type-business-service-or-attraction .l-content .fg_overview-container .block__title a, .no-js .node-type-business-service-or-attraction .l-content .fg_overview-container .block__title div, .no-js .node-type-business-service-or-attraction .l-content .fg_overview-container .block__title li, .no-js .node-type-business-service-or-attraction .l-content .fg_prices-container .block__title span, .no-js .node-type-business-service-or-attraction .l-content .fg_prices-container .block__title p, .no-js .node-type-business-service-or-attraction .l-content .fg_prices-container .block__title h1, .no-js .node-type-business-service-or-attraction .l-content .fg_prices-container .block__title h2, .no-js .node-type-business-service-or-attraction .l-content .fg_prices-container .block__title h3, .no-js .node-type-business-service-or-attraction .l-content .fg_prices-container .block__title h4, .no-js .node-type-business-service-or-attraction .l-content .fg_prices-container .block__title h5, .no-js .node-type-business-service-or-attraction .l-content .fg_prices-container .block__title h6, .no-js .node-type-business-service-or-attraction .l-content .fg_prices-container .block__title a, .no-js .node-type-business-service-or-attraction .l-content .fg_prices-container .block__title div, .no-js .node-type-business-service-or-attraction .l-content .fg_prices-container .block__title li, .no-js .node-type-business-service-or-attraction .l-content .fg_vouchers-container .block__title span, .no-js .node-type-business-service-or-attraction .l-content .fg_vouchers-container .block__title p, .no-js .node-type-business-service-or-attraction .l-content .fg_vouchers-container .block__title h1, .no-js .node-type-business-service-or-attraction .l-content .fg_vouchers-container .block__title h2, .no-js .node-type-business-service-or-attraction .l-content .fg_vouchers-container .block__title h3, .no-js .node-type-business-service-or-attraction .l-content .fg_vouchers-container .block__title h4, .no-js .node-type-business-service-or-attraction .l-content .fg_vouchers-container .block__title h5, .no-js .node-type-business-service-or-attraction .l-content .fg_vouchers-container .block__title h6, .no-js .node-type-business-service-or-attraction .l-content .fg_vouchers-container .block__title a, .no-js .node-type-business-service-or-attraction .l-content .fg_vouchers-container .block__title div, .no-js .node-type-business-service-or-attraction .l-content .fg_vouchers-container .block__title li, .no-js .node-type-business-service-or-attraction .l-content .fg_more_info-container .block__title span, .no-js .node-type-business-service-or-attraction .l-content .fg_more_info-container .block__title p, .no-js .node-type-business-service-or-attraction .l-content .fg_more_info-container .block__title h1, .no-js .node-type-business-service-or-attraction .l-content .fg_more_info-container .block__title h2, .no-js .node-type-business-service-or-attraction .l-content .fg_more_info-container .block__title h3, .no-js .node-type-business-service-or-attraction .l-content .fg_more_info-container .block__title h4, .no-js .node-type-business-service-or-attraction .l-content .fg_more_info-container .block__title h5, .no-js .node-type-business-service-or-attraction .l-content .fg_more_info-container .block__title h6, .no-js .node-type-business-service-or-attraction .l-content .fg_more_info-container .block__title a, .no-js .node-type-business-service-or-attraction .l-content .fg_more_info-container .block__title div, .no-js .node-type-business-service-or-attraction .l-content .fg_more_info-container .block__title li {
     color: #fff; }
-  .js body.node-type-event .l-content .block.block--views-events-display-block .block__title, .js body.node-type-event .l-content .block.block--views-business-display-block .block__title, .js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block .block__title,
-  .js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block .block__title,
-  .no-js body.node-type-event .l-content .block.block--views-events-display-block .block__title, .no-js body.node-type-event .l-content .block.block--views-business-display-block .block__title, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block .block__title, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block .block__title {
-    background-color: #1981CE;
+  .js body.node-type-event .l-content .fg_overview-container .block__title a:hover, .js body.node-type-event .l-content .fg_prices-container .block__title a:hover, .js body.node-type-event .l-content .fg_vouchers-container .block__title a:hover, .js body.node-type-event .l-content .fg_more_info-container .block__title a:hover, .js .node-type-business-service-or-attraction .l-content .fg_overview-container .block__title a:hover,
+  .js .node-type-business-service-or-attraction .l-content .fg_prices-container .block__title a:hover,
+  .js .node-type-business-service-or-attraction .l-content .fg_vouchers-container .block__title a:hover,
+  .js .node-type-business-service-or-attraction .l-content .fg_more_info-container .block__title a:hover,
+  .no-js body.node-type-event .l-content .fg_overview-container .block__title a:hover, .no-js body.node-type-event .l-content .fg_prices-container .block__title a:hover, .no-js body.node-type-event .l-content .fg_vouchers-container .block__title a:hover, .no-js body.node-type-event .l-content .fg_more_info-container .block__title a:hover, .no-js .node-type-business-service-or-attraction .l-content .fg_overview-container .block__title a:hover, .no-js .node-type-business-service-or-attraction .l-content .fg_prices-container .block__title a:hover, .no-js .node-type-business-service-or-attraction .l-content .fg_vouchers-container .block__title a:hover, .no-js .node-type-business-service-or-attraction .l-content .fg_more_info-container .block__title a:hover {
     color: #fff; }
-    .js body.node-type-event .l-content .block.block--views-events-display-block .block__title span, .js body.node-type-event .l-content .block.block--views-events-display-block .block__title p, .js body.node-type-event .l-content .block.block--views-events-display-block .block__title h1, .js body.node-type-event .l-content .block.block--views-events-display-block .block__title h2, .js body.node-type-event .l-content .block.block--views-events-display-block .block__title h3, .js body.node-type-event .l-content .block.block--views-events-display-block .block__title h4, .js body.node-type-event .l-content .block.block--views-events-display-block .block__title h5, .js body.node-type-event .l-content .block.block--views-events-display-block .block__title h6, .js body.node-type-event .l-content .block.block--views-events-display-block .block__title a, .js body.node-type-event .l-content .block.block--views-events-display-block .block__title div, .js body.node-type-event .l-content .block.block--views-events-display-block .block__title li, .js body.node-type-event .l-content .block.block--views-business-display-block .block__title span, .js body.node-type-event .l-content .block.block--views-business-display-block .block__title p, .js body.node-type-event .l-content .block.block--views-business-display-block .block__title h1, .js body.node-type-event .l-content .block.block--views-business-display-block .block__title h2, .js body.node-type-event .l-content .block.block--views-business-display-block .block__title h3, .js body.node-type-event .l-content .block.block--views-business-display-block .block__title h4, .js body.node-type-event .l-content .block.block--views-business-display-block .block__title h5, .js body.node-type-event .l-content .block.block--views-business-display-block .block__title h6, .js body.node-type-event .l-content .block.block--views-business-display-block .block__title a, .js body.node-type-event .l-content .block.block--views-business-display-block .block__title div, .js body.node-type-event .l-content .block.block--views-business-display-block .block__title li, .js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block .block__title span,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block .block__title p,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block .block__title h1,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block .block__title h2,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block .block__title h3,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block .block__title h4,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block .block__title h5,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block .block__title h6,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block .block__title a,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block .block__title div,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block .block__title li,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block .block__title span,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block .block__title p,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block .block__title h1,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block .block__title h2,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block .block__title h3,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block .block__title h4,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block .block__title h5,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block .block__title h6,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block .block__title a,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block .block__title div,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block .block__title li,
-    .no-js body.node-type-event .l-content .block.block--views-events-display-block .block__title span, .no-js body.node-type-event .l-content .block.block--views-events-display-block .block__title p, .no-js body.node-type-event .l-content .block.block--views-events-display-block .block__title h1, .no-js body.node-type-event .l-content .block.block--views-events-display-block .block__title h2, .no-js body.node-type-event .l-content .block.block--views-events-display-block .block__title h3, .no-js body.node-type-event .l-content .block.block--views-events-display-block .block__title h4, .no-js body.node-type-event .l-content .block.block--views-events-display-block .block__title h5, .no-js body.node-type-event .l-content .block.block--views-events-display-block .block__title h6, .no-js body.node-type-event .l-content .block.block--views-events-display-block .block__title a, .no-js body.node-type-event .l-content .block.block--views-events-display-block .block__title div, .no-js body.node-type-event .l-content .block.block--views-events-display-block .block__title li, .no-js body.node-type-event .l-content .block.block--views-business-display-block .block__title span, .no-js body.node-type-event .l-content .block.block--views-business-display-block .block__title p, .no-js body.node-type-event .l-content .block.block--views-business-display-block .block__title h1, .no-js body.node-type-event .l-content .block.block--views-business-display-block .block__title h2, .no-js body.node-type-event .l-content .block.block--views-business-display-block .block__title h3, .no-js body.node-type-event .l-content .block.block--views-business-display-block .block__title h4, .no-js body.node-type-event .l-content .block.block--views-business-display-block .block__title h5, .no-js body.node-type-event .l-content .block.block--views-business-display-block .block__title h6, .no-js body.node-type-event .l-content .block.block--views-business-display-block .block__title a, .no-js body.node-type-event .l-content .block.block--views-business-display-block .block__title div, .no-js body.node-type-event .l-content .block.block--views-business-display-block .block__title li, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block .block__title span, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block .block__title p, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block .block__title h1, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block .block__title h2, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block .block__title h3, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block .block__title h4, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block .block__title h5, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block .block__title h6, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block .block__title a, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block .block__title div, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block .block__title li, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block .block__title span, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block .block__title p, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block .block__title h1, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block .block__title h2, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block .block__title h3, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block .block__title h4, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block .block__title h5, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block .block__title h6, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block .block__title a, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block .block__title div, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block .block__title li {
-      color: #fff; }
-    .js body.node-type-event .l-content .block.block--views-events-display-block .block__title a:hover, .js body.node-type-event .l-content .block.block--views-business-display-block .block__title a:hover, .js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block .block__title a:hover,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block .block__title a:hover,
-    .no-js body.node-type-event .l-content .block.block--views-events-display-block .block__title a:hover, .no-js body.node-type-event .l-content .block.block--views-business-display-block .block__title a:hover, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block .block__title a:hover, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block .block__title a:hover {
-      color: #fff; }
 
-.js body.node-type-event .l-content .block.block--views-events-display-block-3, .js body.node-type-event .l-content .block.block--views-business-display-block-3, .js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3,
-.js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3,
-.no-js body.node-type-event .l-content .block.block--views-events-display-block-3, .no-js body.node-type-event .l-content .block.block--views-business-display-block-3, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 {
-  border: #fdb137 2px solid;
-  border-radius: 3px; }
-  .js body.node-type-event .l-content .block.block--views-events-display-block-3 .view i.icon, .js body.node-type-event .l-content .block.block--views-business-display-block-3 .view i.icon, .js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3 .view i.icon,
-  .js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 .view i.icon,
-  .no-js body.node-type-event .l-content .block.block--views-events-display-block-3 .view i.icon, .no-js body.node-type-event .l-content .block.block--views-business-display-block-3 .view i.icon, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3 .view i.icon, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 .view i.icon {
-    background-color: #FDA314;
+.js body.node-type-event .l-content .e_overview-container .block__title, .js body.node-type-event .l-content .e_prices-container .block__title, .js body.node-type-event .l-content .e_vouchers-container .block__title, .js body.node-type-event .l-content .e_more_info-container .block__title, .js .node-type-business-service-or-attraction .l-content .e_overview-container .block__title,
+.js .node-type-business-service-or-attraction .l-content .e_prices-container .block__title,
+.js .node-type-business-service-or-attraction .l-content .e_vouchers-container .block__title,
+.js .node-type-business-service-or-attraction .l-content .e_more_info-container .block__title,
+.no-js body.node-type-event .l-content .e_overview-container .block__title, .no-js body.node-type-event .l-content .e_prices-container .block__title, .no-js body.node-type-event .l-content .e_vouchers-container .block__title, .no-js body.node-type-event .l-content .e_more_info-container .block__title, .no-js .node-type-business-service-or-attraction .l-content .e_overview-container .block__title, .no-js .node-type-business-service-or-attraction .l-content .e_prices-container .block__title, .no-js .node-type-business-service-or-attraction .l-content .e_vouchers-container .block__title, .no-js .node-type-business-service-or-attraction .l-content .e_more_info-container .block__title {
+  color: #fff;
+  padding: 10px 5px; }
+  .js body.node-type-event .l-content .e_overview-container .block__title span, .js body.node-type-event .l-content .e_overview-container .block__title p, .js body.node-type-event .l-content .e_overview-container .block__title h1, .js body.node-type-event .l-content .e_overview-container .block__title h2, .js body.node-type-event .l-content .e_overview-container .block__title h3, .js body.node-type-event .l-content .e_overview-container .block__title h4, .js body.node-type-event .l-content .e_overview-container .block__title h5, .js body.node-type-event .l-content .e_overview-container .block__title h6, .js body.node-type-event .l-content .e_overview-container .block__title a, .js body.node-type-event .l-content .e_overview-container .block__title div, .js body.node-type-event .l-content .e_overview-container .block__title li, .js body.node-type-event .l-content .e_prices-container .block__title span, .js body.node-type-event .l-content .e_prices-container .block__title p, .js body.node-type-event .l-content .e_prices-container .block__title h1, .js body.node-type-event .l-content .e_prices-container .block__title h2, .js body.node-type-event .l-content .e_prices-container .block__title h3, .js body.node-type-event .l-content .e_prices-container .block__title h4, .js body.node-type-event .l-content .e_prices-container .block__title h5, .js body.node-type-event .l-content .e_prices-container .block__title h6, .js body.node-type-event .l-content .e_prices-container .block__title a, .js body.node-type-event .l-content .e_prices-container .block__title div, .js body.node-type-event .l-content .e_prices-container .block__title li, .js body.node-type-event .l-content .e_vouchers-container .block__title span, .js body.node-type-event .l-content .e_vouchers-container .block__title p, .js body.node-type-event .l-content .e_vouchers-container .block__title h1, .js body.node-type-event .l-content .e_vouchers-container .block__title h2, .js body.node-type-event .l-content .e_vouchers-container .block__title h3, .js body.node-type-event .l-content .e_vouchers-container .block__title h4, .js body.node-type-event .l-content .e_vouchers-container .block__title h5, .js body.node-type-event .l-content .e_vouchers-container .block__title h6, .js body.node-type-event .l-content .e_vouchers-container .block__title a, .js body.node-type-event .l-content .e_vouchers-container .block__title div, .js body.node-type-event .l-content .e_vouchers-container .block__title li, .js body.node-type-event .l-content .e_more_info-container .block__title span, .js body.node-type-event .l-content .e_more_info-container .block__title p, .js body.node-type-event .l-content .e_more_info-container .block__title h1, .js body.node-type-event .l-content .e_more_info-container .block__title h2, .js body.node-type-event .l-content .e_more_info-container .block__title h3, .js body.node-type-event .l-content .e_more_info-container .block__title h4, .js body.node-type-event .l-content .e_more_info-container .block__title h5, .js body.node-type-event .l-content .e_more_info-container .block__title h6, .js body.node-type-event .l-content .e_more_info-container .block__title a, .js body.node-type-event .l-content .e_more_info-container .block__title div, .js body.node-type-event .l-content .e_more_info-container .block__title li, .js .node-type-business-service-or-attraction .l-content .e_overview-container .block__title span,
+  .js .node-type-business-service-or-attraction .l-content .e_overview-container .block__title p,
+  .js .node-type-business-service-or-attraction .l-content .e_overview-container .block__title h1,
+  .js .node-type-business-service-or-attraction .l-content .e_overview-container .block__title h2,
+  .js .node-type-business-service-or-attraction .l-content .e_overview-container .block__title h3,
+  .js .node-type-business-service-or-attraction .l-content .e_overview-container .block__title h4,
+  .js .node-type-business-service-or-attraction .l-content .e_overview-container .block__title h5,
+  .js .node-type-business-service-or-attraction .l-content .e_overview-container .block__title h6,
+  .js .node-type-business-service-or-attraction .l-content .e_overview-container .block__title a,
+  .js .node-type-business-service-or-attraction .l-content .e_overview-container .block__title div,
+  .js .node-type-business-service-or-attraction .l-content .e_overview-container .block__title li,
+  .js .node-type-business-service-or-attraction .l-content .e_prices-container .block__title span,
+  .js .node-type-business-service-or-attraction .l-content .e_prices-container .block__title p,
+  .js .node-type-business-service-or-attraction .l-content .e_prices-container .block__title h1,
+  .js .node-type-business-service-or-attraction .l-content .e_prices-container .block__title h2,
+  .js .node-type-business-service-or-attraction .l-content .e_prices-container .block__title h3,
+  .js .node-type-business-service-or-attraction .l-content .e_prices-container .block__title h4,
+  .js .node-type-business-service-or-attraction .l-content .e_prices-container .block__title h5,
+  .js .node-type-business-service-or-attraction .l-content .e_prices-container .block__title h6,
+  .js .node-type-business-service-or-attraction .l-content .e_prices-container .block__title a,
+  .js .node-type-business-service-or-attraction .l-content .e_prices-container .block__title div,
+  .js .node-type-business-service-or-attraction .l-content .e_prices-container .block__title li,
+  .js .node-type-business-service-or-attraction .l-content .e_vouchers-container .block__title span,
+  .js .node-type-business-service-or-attraction .l-content .e_vouchers-container .block__title p,
+  .js .node-type-business-service-or-attraction .l-content .e_vouchers-container .block__title h1,
+  .js .node-type-business-service-or-attraction .l-content .e_vouchers-container .block__title h2,
+  .js .node-type-business-service-or-attraction .l-content .e_vouchers-container .block__title h3,
+  .js .node-type-business-service-or-attraction .l-content .e_vouchers-container .block__title h4,
+  .js .node-type-business-service-or-attraction .l-content .e_vouchers-container .block__title h5,
+  .js .node-type-business-service-or-attraction .l-content .e_vouchers-container .block__title h6,
+  .js .node-type-business-service-or-attraction .l-content .e_vouchers-container .block__title a,
+  .js .node-type-business-service-or-attraction .l-content .e_vouchers-container .block__title div,
+  .js .node-type-business-service-or-attraction .l-content .e_vouchers-container .block__title li,
+  .js .node-type-business-service-or-attraction .l-content .e_more_info-container .block__title span,
+  .js .node-type-business-service-or-attraction .l-content .e_more_info-container .block__title p,
+  .js .node-type-business-service-or-attraction .l-content .e_more_info-container .block__title h1,
+  .js .node-type-business-service-or-attraction .l-content .e_more_info-container .block__title h2,
+  .js .node-type-business-service-or-attraction .l-content .e_more_info-container .block__title h3,
+  .js .node-type-business-service-or-attraction .l-content .e_more_info-container .block__title h4,
+  .js .node-type-business-service-or-attraction .l-content .e_more_info-container .block__title h5,
+  .js .node-type-business-service-or-attraction .l-content .e_more_info-container .block__title h6,
+  .js .node-type-business-service-or-attraction .l-content .e_more_info-container .block__title a,
+  .js .node-type-business-service-or-attraction .l-content .e_more_info-container .block__title div,
+  .js .node-type-business-service-or-attraction .l-content .e_more_info-container .block__title li,
+  .no-js body.node-type-event .l-content .e_overview-container .block__title span, .no-js body.node-type-event .l-content .e_overview-container .block__title p, .no-js body.node-type-event .l-content .e_overview-container .block__title h1, .no-js body.node-type-event .l-content .e_overview-container .block__title h2, .no-js body.node-type-event .l-content .e_overview-container .block__title h3, .no-js body.node-type-event .l-content .e_overview-container .block__title h4, .no-js body.node-type-event .l-content .e_overview-container .block__title h5, .no-js body.node-type-event .l-content .e_overview-container .block__title h6, .no-js body.node-type-event .l-content .e_overview-container .block__title a, .no-js body.node-type-event .l-content .e_overview-container .block__title div, .no-js body.node-type-event .l-content .e_overview-container .block__title li, .no-js body.node-type-event .l-content .e_prices-container .block__title span, .no-js body.node-type-event .l-content .e_prices-container .block__title p, .no-js body.node-type-event .l-content .e_prices-container .block__title h1, .no-js body.node-type-event .l-content .e_prices-container .block__title h2, .no-js body.node-type-event .l-content .e_prices-container .block__title h3, .no-js body.node-type-event .l-content .e_prices-container .block__title h4, .no-js body.node-type-event .l-content .e_prices-container .block__title h5, .no-js body.node-type-event .l-content .e_prices-container .block__title h6, .no-js body.node-type-event .l-content .e_prices-container .block__title a, .no-js body.node-type-event .l-content .e_prices-container .block__title div, .no-js body.node-type-event .l-content .e_prices-container .block__title li, .no-js body.node-type-event .l-content .e_vouchers-container .block__title span, .no-js body.node-type-event .l-content .e_vouchers-container .block__title p, .no-js body.node-type-event .l-content .e_vouchers-container .block__title h1, .no-js body.node-type-event .l-content .e_vouchers-container .block__title h2, .no-js body.node-type-event .l-content .e_vouchers-container .block__title h3, .no-js body.node-type-event .l-content .e_vouchers-container .block__title h4, .no-js body.node-type-event .l-content .e_vouchers-container .block__title h5, .no-js body.node-type-event .l-content .e_vouchers-container .block__title h6, .no-js body.node-type-event .l-content .e_vouchers-container .block__title a, .no-js body.node-type-event .l-content .e_vouchers-container .block__title div, .no-js body.node-type-event .l-content .e_vouchers-container .block__title li, .no-js body.node-type-event .l-content .e_more_info-container .block__title span, .no-js body.node-type-event .l-content .e_more_info-container .block__title p, .no-js body.node-type-event .l-content .e_more_info-container .block__title h1, .no-js body.node-type-event .l-content .e_more_info-container .block__title h2, .no-js body.node-type-event .l-content .e_more_info-container .block__title h3, .no-js body.node-type-event .l-content .e_more_info-container .block__title h4, .no-js body.node-type-event .l-content .e_more_info-container .block__title h5, .no-js body.node-type-event .l-content .e_more_info-container .block__title h6, .no-js body.node-type-event .l-content .e_more_info-container .block__title a, .no-js body.node-type-event .l-content .e_more_info-container .block__title div, .no-js body.node-type-event .l-content .e_more_info-container .block__title li, .no-js .node-type-business-service-or-attraction .l-content .e_overview-container .block__title span, .no-js .node-type-business-service-or-attraction .l-content .e_overview-container .block__title p, .no-js .node-type-business-service-or-attraction .l-content .e_overview-container .block__title h1, .no-js .node-type-business-service-or-attraction .l-content .e_overview-container .block__title h2, .no-js .node-type-business-service-or-attraction .l-content .e_overview-container .block__title h3, .no-js .node-type-business-service-or-attraction .l-content .e_overview-container .block__title h4, .no-js .node-type-business-service-or-attraction .l-content .e_overview-container .block__title h5, .no-js .node-type-business-service-or-attraction .l-content .e_overview-container .block__title h6, .no-js .node-type-business-service-or-attraction .l-content .e_overview-container .block__title a, .no-js .node-type-business-service-or-attraction .l-content .e_overview-container .block__title div, .no-js .node-type-business-service-or-attraction .l-content .e_overview-container .block__title li, .no-js .node-type-business-service-or-attraction .l-content .e_prices-container .block__title span, .no-js .node-type-business-service-or-attraction .l-content .e_prices-container .block__title p, .no-js .node-type-business-service-or-attraction .l-content .e_prices-container .block__title h1, .no-js .node-type-business-service-or-attraction .l-content .e_prices-container .block__title h2, .no-js .node-type-business-service-or-attraction .l-content .e_prices-container .block__title h3, .no-js .node-type-business-service-or-attraction .l-content .e_prices-container .block__title h4, .no-js .node-type-business-service-or-attraction .l-content .e_prices-container .block__title h5, .no-js .node-type-business-service-or-attraction .l-content .e_prices-container .block__title h6, .no-js .node-type-business-service-or-attraction .l-content .e_prices-container .block__title a, .no-js .node-type-business-service-or-attraction .l-content .e_prices-container .block__title div, .no-js .node-type-business-service-or-attraction .l-content .e_prices-container .block__title li, .no-js .node-type-business-service-or-attraction .l-content .e_vouchers-container .block__title span, .no-js .node-type-business-service-or-attraction .l-content .e_vouchers-container .block__title p, .no-js .node-type-business-service-or-attraction .l-content .e_vouchers-container .block__title h1, .no-js .node-type-business-service-or-attraction .l-content .e_vouchers-container .block__title h2, .no-js .node-type-business-service-or-attraction .l-content .e_vouchers-container .block__title h3, .no-js .node-type-business-service-or-attraction .l-content .e_vouchers-container .block__title h4, .no-js .node-type-business-service-or-attraction .l-content .e_vouchers-container .block__title h5, .no-js .node-type-business-service-or-attraction .l-content .e_vouchers-container .block__title h6, .no-js .node-type-business-service-or-attraction .l-content .e_vouchers-container .block__title a, .no-js .node-type-business-service-or-attraction .l-content .e_vouchers-container .block__title div, .no-js .node-type-business-service-or-attraction .l-content .e_vouchers-container .block__title li, .no-js .node-type-business-service-or-attraction .l-content .e_more_info-container .block__title span, .no-js .node-type-business-service-or-attraction .l-content .e_more_info-container .block__title p, .no-js .node-type-business-service-or-attraction .l-content .e_more_info-container .block__title h1, .no-js .node-type-business-service-or-attraction .l-content .e_more_info-container .block__title h2, .no-js .node-type-business-service-or-attraction .l-content .e_more_info-container .block__title h3, .no-js .node-type-business-service-or-attraction .l-content .e_more_info-container .block__title h4, .no-js .node-type-business-service-or-attraction .l-content .e_more_info-container .block__title h5, .no-js .node-type-business-service-or-attraction .l-content .e_more_info-container .block__title h6, .no-js .node-type-business-service-or-attraction .l-content .e_more_info-container .block__title a, .no-js .node-type-business-service-or-attraction .l-content .e_more_info-container .block__title div, .no-js .node-type-business-service-or-attraction .l-content .e_more_info-container .block__title li {
     color: #fff; }
-  .js body.node-type-event .l-content .block.block--views-events-display-block-3 .block__title, .js body.node-type-event .l-content .block.block--views-business-display-block-3 .block__title, .js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3 .block__title,
-  .js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 .block__title,
-  .no-js body.node-type-event .l-content .block.block--views-events-display-block-3 .block__title, .no-js body.node-type-event .l-content .block.block--views-business-display-block-3 .block__title, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3 .block__title, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 .block__title {
-    background-color: #FDA314;
+  .js body.node-type-event .l-content .e_overview-container .block__title a:hover, .js body.node-type-event .l-content .e_prices-container .block__title a:hover, .js body.node-type-event .l-content .e_vouchers-container .block__title a:hover, .js body.node-type-event .l-content .e_more_info-container .block__title a:hover, .js .node-type-business-service-or-attraction .l-content .e_overview-container .block__title a:hover,
+  .js .node-type-business-service-or-attraction .l-content .e_prices-container .block__title a:hover,
+  .js .node-type-business-service-or-attraction .l-content .e_vouchers-container .block__title a:hover,
+  .js .node-type-business-service-or-attraction .l-content .e_more_info-container .block__title a:hover,
+  .no-js body.node-type-event .l-content .e_overview-container .block__title a:hover, .no-js body.node-type-event .l-content .e_prices-container .block__title a:hover, .no-js body.node-type-event .l-content .e_vouchers-container .block__title a:hover, .no-js body.node-type-event .l-content .e_more_info-container .block__title a:hover, .no-js .node-type-business-service-or-attraction .l-content .e_overview-container .block__title a:hover, .no-js .node-type-business-service-or-attraction .l-content .e_prices-container .block__title a:hover, .no-js .node-type-business-service-or-attraction .l-content .e_vouchers-container .block__title a:hover, .no-js .node-type-business-service-or-attraction .l-content .e_more_info-container .block__title a:hover {
     color: #fff; }
-    .js body.node-type-event .l-content .block.block--views-events-display-block-3 .block__title span, .js body.node-type-event .l-content .block.block--views-events-display-block-3 .block__title p, .js body.node-type-event .l-content .block.block--views-events-display-block-3 .block__title h1, .js body.node-type-event .l-content .block.block--views-events-display-block-3 .block__title h2, .js body.node-type-event .l-content .block.block--views-events-display-block-3 .block__title h3, .js body.node-type-event .l-content .block.block--views-events-display-block-3 .block__title h4, .js body.node-type-event .l-content .block.block--views-events-display-block-3 .block__title h5, .js body.node-type-event .l-content .block.block--views-events-display-block-3 .block__title h6, .js body.node-type-event .l-content .block.block--views-events-display-block-3 .block__title a, .js body.node-type-event .l-content .block.block--views-events-display-block-3 .block__title div, .js body.node-type-event .l-content .block.block--views-events-display-block-3 .block__title li, .js body.node-type-event .l-content .block.block--views-business-display-block-3 .block__title span, .js body.node-type-event .l-content .block.block--views-business-display-block-3 .block__title p, .js body.node-type-event .l-content .block.block--views-business-display-block-3 .block__title h1, .js body.node-type-event .l-content .block.block--views-business-display-block-3 .block__title h2, .js body.node-type-event .l-content .block.block--views-business-display-block-3 .block__title h3, .js body.node-type-event .l-content .block.block--views-business-display-block-3 .block__title h4, .js body.node-type-event .l-content .block.block--views-business-display-block-3 .block__title h5, .js body.node-type-event .l-content .block.block--views-business-display-block-3 .block__title h6, .js body.node-type-event .l-content .block.block--views-business-display-block-3 .block__title a, .js body.node-type-event .l-content .block.block--views-business-display-block-3 .block__title div, .js body.node-type-event .l-content .block.block--views-business-display-block-3 .block__title li, .js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3 .block__title span,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3 .block__title p,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3 .block__title h1,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3 .block__title h2,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3 .block__title h3,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3 .block__title h4,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3 .block__title h5,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3 .block__title h6,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3 .block__title a,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3 .block__title div,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3 .block__title li,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 .block__title span,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 .block__title p,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 .block__title h1,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 .block__title h2,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 .block__title h3,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 .block__title h4,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 .block__title h5,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 .block__title h6,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 .block__title a,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 .block__title div,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 .block__title li,
-    .no-js body.node-type-event .l-content .block.block--views-events-display-block-3 .block__title span, .no-js body.node-type-event .l-content .block.block--views-events-display-block-3 .block__title p, .no-js body.node-type-event .l-content .block.block--views-events-display-block-3 .block__title h1, .no-js body.node-type-event .l-content .block.block--views-events-display-block-3 .block__title h2, .no-js body.node-type-event .l-content .block.block--views-events-display-block-3 .block__title h3, .no-js body.node-type-event .l-content .block.block--views-events-display-block-3 .block__title h4, .no-js body.node-type-event .l-content .block.block--views-events-display-block-3 .block__title h5, .no-js body.node-type-event .l-content .block.block--views-events-display-block-3 .block__title h6, .no-js body.node-type-event .l-content .block.block--views-events-display-block-3 .block__title a, .no-js body.node-type-event .l-content .block.block--views-events-display-block-3 .block__title div, .no-js body.node-type-event .l-content .block.block--views-events-display-block-3 .block__title li, .no-js body.node-type-event .l-content .block.block--views-business-display-block-3 .block__title span, .no-js body.node-type-event .l-content .block.block--views-business-display-block-3 .block__title p, .no-js body.node-type-event .l-content .block.block--views-business-display-block-3 .block__title h1, .no-js body.node-type-event .l-content .block.block--views-business-display-block-3 .block__title h2, .no-js body.node-type-event .l-content .block.block--views-business-display-block-3 .block__title h3, .no-js body.node-type-event .l-content .block.block--views-business-display-block-3 .block__title h4, .no-js body.node-type-event .l-content .block.block--views-business-display-block-3 .block__title h5, .no-js body.node-type-event .l-content .block.block--views-business-display-block-3 .block__title h6, .no-js body.node-type-event .l-content .block.block--views-business-display-block-3 .block__title a, .no-js body.node-type-event .l-content .block.block--views-business-display-block-3 .block__title div, .no-js body.node-type-event .l-content .block.block--views-business-display-block-3 .block__title li, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3 .block__title span, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3 .block__title p, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3 .block__title h1, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3 .block__title h2, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3 .block__title h3, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3 .block__title h4, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3 .block__title h5, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3 .block__title h6, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3 .block__title a, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3 .block__title div, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3 .block__title li, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 .block__title span, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 .block__title p, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 .block__title h1, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 .block__title h2, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 .block__title h3, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 .block__title h4, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 .block__title h5, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 .block__title h6, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 .block__title a, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 .block__title div, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 .block__title li {
-      color: #fff; }
-    .js body.node-type-event .l-content .block.block--views-events-display-block-3 .block__title a:hover, .js body.node-type-event .l-content .block.block--views-business-display-block-3 .block__title a:hover, .js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3 .block__title a:hover,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 .block__title a:hover,
-    .no-js body.node-type-event .l-content .block.block--views-events-display-block-3 .block__title a:hover, .no-js body.node-type-event .l-content .block.block--views-business-display-block-3 .block__title a:hover, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-3 .block__title a:hover, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-3 .block__title a:hover {
-      color: #fff; }
 
-.js body.node-type-event .l-content .block.block--views-events-display-block-1, .js body.node-type-event .l-content .block.block--views-business-display-block-1, .js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1,
-.js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1,
-.no-js body.node-type-event .l-content .block.block--views-events-display-block-1, .no-js body.node-type-event .l-content .block.block--views-business-display-block-1, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 {
-  border: #a6ed14 2px solid;
-  border-radius: 3px; }
-  .js body.node-type-event .l-content .block.block--views-events-display-block-1 .view i.icon, .js body.node-type-event .l-content .block.block--views-business-display-block-1 .view i.icon, .js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1 .view i.icon,
-  .js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 .view i.icon,
-  .no-js body.node-type-event .l-content .block.block--views-events-display-block-1 .view i.icon, .no-js body.node-type-event .l-content .block.block--views-business-display-block-1 .view i.icon, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1 .view i.icon, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 .view i.icon {
-    background-color: #8FCD10;
-    color: #fff; }
-  .js body.node-type-event .l-content .block.block--views-events-display-block-1 .block__title, .js body.node-type-event .l-content .block.block--views-business-display-block-1 .block__title, .js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1 .block__title,
-  .js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 .block__title,
-  .no-js body.node-type-event .l-content .block.block--views-events-display-block-1 .block__title, .no-js body.node-type-event .l-content .block.block--views-business-display-block-1 .block__title, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1 .block__title, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 .block__title {
-    background-color: #8FCD10;
-    color: #fff; }
-    .js body.node-type-event .l-content .block.block--views-events-display-block-1 .block__title span, .js body.node-type-event .l-content .block.block--views-events-display-block-1 .block__title p, .js body.node-type-event .l-content .block.block--views-events-display-block-1 .block__title h1, .js body.node-type-event .l-content .block.block--views-events-display-block-1 .block__title h2, .js body.node-type-event .l-content .block.block--views-events-display-block-1 .block__title h3, .js body.node-type-event .l-content .block.block--views-events-display-block-1 .block__title h4, .js body.node-type-event .l-content .block.block--views-events-display-block-1 .block__title h5, .js body.node-type-event .l-content .block.block--views-events-display-block-1 .block__title h6, .js body.node-type-event .l-content .block.block--views-events-display-block-1 .block__title a, .js body.node-type-event .l-content .block.block--views-events-display-block-1 .block__title div, .js body.node-type-event .l-content .block.block--views-events-display-block-1 .block__title li, .js body.node-type-event .l-content .block.block--views-business-display-block-1 .block__title span, .js body.node-type-event .l-content .block.block--views-business-display-block-1 .block__title p, .js body.node-type-event .l-content .block.block--views-business-display-block-1 .block__title h1, .js body.node-type-event .l-content .block.block--views-business-display-block-1 .block__title h2, .js body.node-type-event .l-content .block.block--views-business-display-block-1 .block__title h3, .js body.node-type-event .l-content .block.block--views-business-display-block-1 .block__title h4, .js body.node-type-event .l-content .block.block--views-business-display-block-1 .block__title h5, .js body.node-type-event .l-content .block.block--views-business-display-block-1 .block__title h6, .js body.node-type-event .l-content .block.block--views-business-display-block-1 .block__title a, .js body.node-type-event .l-content .block.block--views-business-display-block-1 .block__title div, .js body.node-type-event .l-content .block.block--views-business-display-block-1 .block__title li, .js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1 .block__title span,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1 .block__title p,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1 .block__title h1,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1 .block__title h2,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1 .block__title h3,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1 .block__title h4,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1 .block__title h5,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1 .block__title h6,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1 .block__title a,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1 .block__title div,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1 .block__title li,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 .block__title span,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 .block__title p,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 .block__title h1,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 .block__title h2,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 .block__title h3,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 .block__title h4,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 .block__title h5,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 .block__title h6,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 .block__title a,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 .block__title div,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 .block__title li,
-    .no-js body.node-type-event .l-content .block.block--views-events-display-block-1 .block__title span, .no-js body.node-type-event .l-content .block.block--views-events-display-block-1 .block__title p, .no-js body.node-type-event .l-content .block.block--views-events-display-block-1 .block__title h1, .no-js body.node-type-event .l-content .block.block--views-events-display-block-1 .block__title h2, .no-js body.node-type-event .l-content .block.block--views-events-display-block-1 .block__title h3, .no-js body.node-type-event .l-content .block.block--views-events-display-block-1 .block__title h4, .no-js body.node-type-event .l-content .block.block--views-events-display-block-1 .block__title h5, .no-js body.node-type-event .l-content .block.block--views-events-display-block-1 .block__title h6, .no-js body.node-type-event .l-content .block.block--views-events-display-block-1 .block__title a, .no-js body.node-type-event .l-content .block.block--views-events-display-block-1 .block__title div, .no-js body.node-type-event .l-content .block.block--views-events-display-block-1 .block__title li, .no-js body.node-type-event .l-content .block.block--views-business-display-block-1 .block__title span, .no-js body.node-type-event .l-content .block.block--views-business-display-block-1 .block__title p, .no-js body.node-type-event .l-content .block.block--views-business-display-block-1 .block__title h1, .no-js body.node-type-event .l-content .block.block--views-business-display-block-1 .block__title h2, .no-js body.node-type-event .l-content .block.block--views-business-display-block-1 .block__title h3, .no-js body.node-type-event .l-content .block.block--views-business-display-block-1 .block__title h4, .no-js body.node-type-event .l-content .block.block--views-business-display-block-1 .block__title h5, .no-js body.node-type-event .l-content .block.block--views-business-display-block-1 .block__title h6, .no-js body.node-type-event .l-content .block.block--views-business-display-block-1 .block__title a, .no-js body.node-type-event .l-content .block.block--views-business-display-block-1 .block__title div, .no-js body.node-type-event .l-content .block.block--views-business-display-block-1 .block__title li, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1 .block__title span, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1 .block__title p, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1 .block__title h1, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1 .block__title h2, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1 .block__title h3, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1 .block__title h4, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1 .block__title h5, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1 .block__title h6, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1 .block__title a, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1 .block__title div, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1 .block__title li, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 .block__title span, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 .block__title p, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 .block__title h1, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 .block__title h2, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 .block__title h3, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 .block__title h4, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 .block__title h5, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 .block__title h6, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 .block__title a, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 .block__title div, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 .block__title li {
-      color: #fff; }
-    .js body.node-type-event .l-content .block.block--views-events-display-block-1 .block__title a:hover, .js body.node-type-event .l-content .block.block--views-business-display-block-1 .block__title a:hover, .js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1 .block__title a:hover,
-    .js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 .block__title a:hover,
-    .no-js body.node-type-event .l-content .block.block--views-events-display-block-1 .block__title a:hover, .no-js body.node-type-event .l-content .block.block--views-business-display-block-1 .block__title a:hover, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-events-display-block-1 .block__title a:hover, .no-js .node-type-business-service-or-attraction .l-content .block.block--views-business-display-block-1 .block__title a:hover {
-      color: #fff; }
+.js body.node-type-event .l-content .fg_overview-container .field-content i.icon,
+.js body.node-type-event .l-content .e_overview-container .field-content i.icon, .js .node-type-business-service-or-attraction .l-content .fg_overview-container .field-content i.icon,
+.js .node-type-business-service-or-attraction .l-content .e_overview-container .field-content i.icon,
+.no-js body.node-type-event .l-content .fg_overview-container .field-content i.icon,
+.no-js body.node-type-event .l-content .e_overview-container .field-content i.icon, .no-js .node-type-business-service-or-attraction .l-content .fg_overview-container .field-content i.icon,
+.no-js .node-type-business-service-or-attraction .l-content .e_overview-container .field-content i.icon {
+  background-color: #5675CE; }
+
+.js body.node-type-event .l-content .fg_overview-container .block__title,
+.js body.node-type-event .l-content .e_overview-container .block__title, .js .node-type-business-service-or-attraction .l-content .fg_overview-container .block__title,
+.js .node-type-business-service-or-attraction .l-content .e_overview-container .block__title,
+.no-js body.node-type-event .l-content .fg_overview-container .block__title,
+.no-js body.node-type-event .l-content .e_overview-container .block__title, .no-js .node-type-business-service-or-attraction .l-content .fg_overview-container .block__title,
+.no-js .node-type-business-service-or-attraction .l-content .e_overview-container .block__title {
+  background-color: #5675CE; }
+
+.js body.node-type-event .l-content .fg_prices-container .field-content i.icon,
+.js body.node-type-event .l-content .e_prices-container .field-content i.icon, .js .node-type-business-service-or-attraction .l-content .fg_prices-container .field-content i.icon,
+.js .node-type-business-service-or-attraction .l-content .e_prices-container .field-content i.icon,
+.no-js body.node-type-event .l-content .fg_prices-container .field-content i.icon,
+.no-js body.node-type-event .l-content .e_prices-container .field-content i.icon, .no-js .node-type-business-service-or-attraction .l-content .fg_prices-container .field-content i.icon,
+.no-js .node-type-business-service-or-attraction .l-content .e_prices-container .field-content i.icon {
+  background-color: #FE974E; }
+
+.js body.node-type-event .l-content .fg_prices-container .block__title,
+.js body.node-type-event .l-content .e_prices-container .block__title, .js .node-type-business-service-or-attraction .l-content .fg_prices-container .block__title,
+.js .node-type-business-service-or-attraction .l-content .e_prices-container .block__title,
+.no-js body.node-type-event .l-content .fg_prices-container .block__title,
+.no-js body.node-type-event .l-content .e_prices-container .block__title, .no-js .node-type-business-service-or-attraction .l-content .fg_prices-container .block__title,
+.no-js .node-type-business-service-or-attraction .l-content .e_prices-container .block__title {
+  background-color: #FE974E; }
+
+.js body.node-type-event .l-content .fg_vouchers-container .field-content i.icon,
+.js body.node-type-event .l-content .e_vouchers-container .field-content i.icon, .js .node-type-business-service-or-attraction .l-content .fg_vouchers-container .field-content i.icon,
+.js .node-type-business-service-or-attraction .l-content .e_vouchers-container .field-content i.icon,
+.no-js body.node-type-event .l-content .fg_vouchers-container .field-content i.icon,
+.no-js body.node-type-event .l-content .e_vouchers-container .field-content i.icon, .no-js .node-type-business-service-or-attraction .l-content .fg_vouchers-container .field-content i.icon,
+.no-js .node-type-business-service-or-attraction .l-content .e_vouchers-container .field-content i.icon {
+  background-color: #66CD4C; }
+
+.js body.node-type-event .l-content .fg_vouchers-container .block__title,
+.js body.node-type-event .l-content .e_vouchers-container .block__title, .js .node-type-business-service-or-attraction .l-content .fg_vouchers-container .block__title,
+.js .node-type-business-service-or-attraction .l-content .e_vouchers-container .block__title,
+.no-js body.node-type-event .l-content .fg_vouchers-container .block__title,
+.no-js body.node-type-event .l-content .e_vouchers-container .block__title, .no-js .node-type-business-service-or-attraction .l-content .fg_vouchers-container .block__title,
+.no-js .node-type-business-service-or-attraction .l-content .e_vouchers-container .block__title {
+  background-color: #66CD4C; }
+
+.js body.node-type-event .l-content .fg_more_info-container .field-content i.icon,
+.js body.node-type-event .l-content .e_more_info-container .field-content i.icon, .js .node-type-business-service-or-attraction .l-content .fg_more_info-container .field-content i.icon,
+.js .node-type-business-service-or-attraction .l-content .e_more_info-container .field-content i.icon,
+.no-js body.node-type-event .l-content .fg_more_info-container .field-content i.icon,
+.no-js body.node-type-event .l-content .e_more_info-container .field-content i.icon, .no-js .node-type-business-service-or-attraction .l-content .fg_more_info-container .field-content i.icon,
+.no-js .node-type-business-service-or-attraction .l-content .e_more_info-container .field-content i.icon {
+  background-color: #C861BA; }
+
+.js body.node-type-event .l-content .fg_more_info-container .block__title,
+.js body.node-type-event .l-content .e_more_info-container .block__title, .js .node-type-business-service-or-attraction .l-content .fg_more_info-container .block__title,
+.js .node-type-business-service-or-attraction .l-content .e_more_info-container .block__title,
+.no-js body.node-type-event .l-content .fg_more_info-container .block__title,
+.no-js body.node-type-event .l-content .e_more_info-container .block__title, .no-js .node-type-business-service-or-attraction .l-content .fg_more_info-container .block__title,
+.no-js .node-type-business-service-or-attraction .l-content .e_more_info-container .block__title {
+  background-color: #C861BA; }
 
 /*
  * Tab JS Blocks Tabs
  */
-.js .tabJS.tabJS_block--views-events-display-block, .js .tabJS.tabJS_block--views-business-display-block {
+.js body.node-type-business-service-or-attraction .tabJS.tabJS_block--views-business-display-fg-overview,
+.js body.node-type-business-service-or-attraction .tabJS.tabJS_block--views-events-display-e-overview,
+.js body.node-type-event .tabJS.tabJS_block--views-business-display-fg-overview,
+.js body.node-type-event .tabJS.tabJS_block--views-events-display-e-overview {
   border: 2px solid transparent;
-  border-bottom: 0;
   background-color: #69D1F5;
   color: #565656; }
-  .js .tabJS.tabJS_block--views-events-display-block:before, .js .tabJS.tabJS_block--views-business-display-block:before {
-    content: '\e820'; }
-  .js .tabJS.tabJS_block--views-events-display-block a, .js .tabJS.tabJS_block--views-business-display-block a {
+  .js body.node-type-business-service-or-attraction .tabJS.tabJS_block--views-business-display-fg-overview:before,
+  .js body.node-type-business-service-or-attraction .tabJS.tabJS_block--views-events-display-e-overview:before,
+  .js body.node-type-event .tabJS.tabJS_block--views-business-display-fg-overview:before,
+  .js body.node-type-event .tabJS.tabJS_block--views-events-display-e-overview:before {
+    content: '\e80b'; }
+  .js body.node-type-business-service-or-attraction .tabJS.tabJS_block--views-business-display-fg-overview a,
+  .js body.node-type-business-service-or-attraction .tabJS.tabJS_block--views-events-display-e-overview a,
+  .js body.node-type-event .tabJS.tabJS_block--views-business-display-fg-overview a,
+  .js body.node-type-event .tabJS.tabJS_block--views-events-display-e-overview a {
     font-size: 17px;
     font-size: 1.7rem;
     color: #565656; }
-  .js .tabJS.tabJS_block--views-events-display-block.active, .js .tabJS.tabJS_block--views-events-display-block:hover, .js .tabJS.tabJS_block--views-business-display-block.active, .js .tabJS.tabJS_block--views-business-display-block:hover {
-    border: 2px solid #69D1F5;
-    border-bottom: 0; }
-  .js .tabJS.tabJS_block--views-events-display-block.active, .js .tabJS.tabJS_block--views-business-display-block.active {
-    background-color: #1981CE;
+  .js body.node-type-business-service-or-attraction .tabJS.tabJS_block--views-business-display-fg-overview.active,
+  .js body.node-type-business-service-or-attraction .tabJS.tabJS_block--views-business-display-fg-overview:hover,
+  .js body.node-type-business-service-or-attraction .tabJS.tabJS_block--views-events-display-e-overview.active,
+  .js body.node-type-business-service-or-attraction .tabJS.tabJS_block--views-events-display-e-overview:hover,
+  .js body.node-type-event .tabJS.tabJS_block--views-business-display-fg-overview.active,
+  .js body.node-type-event .tabJS.tabJS_block--views-business-display-fg-overview:hover,
+  .js body.node-type-event .tabJS.tabJS_block--views-events-display-e-overview.active, .js body.node-type-event .tabJS.tabJS_block--views-events-display-e-overview:hover {
+    border: 2px solid transparent; }
+  .js body.node-type-business-service-or-attraction .tabJS.tabJS_block--views-business-display-fg-overview.active,
+  .js body.node-type-business-service-or-attraction .tabJS.tabJS_block--views-events-display-e-overview.active,
+  .js body.node-type-event .tabJS.tabJS_block--views-business-display-fg-overview.active,
+  .js body.node-type-event .tabJS.tabJS_block--views-events-display-e-overview.active {
+    background-color: #5675CE;
     color: #fff; }
-    .js .tabJS.tabJS_block--views-events-display-block.active a, .js .tabJS.tabJS_block--views-business-display-block.active a {
+    .js body.node-type-business-service-or-attraction .tabJS.tabJS_block--views-business-display-fg-overview.active a,
+    .js body.node-type-business-service-or-attraction .tabJS.tabJS_block--views-events-display-e-overview.active a,
+    .js body.node-type-event .tabJS.tabJS_block--views-business-display-fg-overview.active a,
+    .js body.node-type-event .tabJS.tabJS_block--views-events-display-e-overview.active a {
       color: #fff; }
 
-.js .tabJS.tabJS_block--views-events-display-block-3, .js .tabJS.tabJS_block--views-business-display-block-3 {
+.js body.node-type-business-service-or-attraction .tabJS.tabJS_block--views-business-display-fg-prices,
+.js body.node-type-business-service-or-attraction .tabJS.tabJS_block--views-events-display-e-prices,
+.js body.node-type-event .tabJS.tabJS_block--views-business-display-fg-prices,
+.js body.node-type-event .tabJS.tabJS_block--views-events-display-e-prices {
   border: 2px solid transparent;
-  border-bottom: 0;
-  background-color: #fdb137;
+  background-color: #feac71;
   color: #565656; }
-  .js .tabJS.tabJS_block--views-events-display-block-3:before, .js .tabJS.tabJS_block--views-business-display-block-3:before {
-    content: '\e821'; }
-  .js .tabJS.tabJS_block--views-events-display-block-3 a, .js .tabJS.tabJS_block--views-business-display-block-3 a {
+  .js body.node-type-business-service-or-attraction .tabJS.tabJS_block--views-business-display-fg-prices:before,
+  .js body.node-type-business-service-or-attraction .tabJS.tabJS_block--views-events-display-e-prices:before,
+  .js body.node-type-event .tabJS.tabJS_block--views-business-display-fg-prices:before,
+  .js body.node-type-event .tabJS.tabJS_block--views-events-display-e-prices:before {
+    content: '\e812'; }
+  .js body.node-type-business-service-or-attraction .tabJS.tabJS_block--views-business-display-fg-prices a,
+  .js body.node-type-business-service-or-attraction .tabJS.tabJS_block--views-events-display-e-prices a,
+  .js body.node-type-event .tabJS.tabJS_block--views-business-display-fg-prices a,
+  .js body.node-type-event .tabJS.tabJS_block--views-events-display-e-prices a {
     font-size: 17px;
     font-size: 1.7rem;
     color: #565656; }
-  .js .tabJS.tabJS_block--views-events-display-block-3.active, .js .tabJS.tabJS_block--views-events-display-block-3:hover, .js .tabJS.tabJS_block--views-business-display-block-3.active, .js .tabJS.tabJS_block--views-business-display-block-3:hover {
-    border: 2px solid #fdb137;
-    border-bottom: 0; }
-  .js .tabJS.tabJS_block--views-events-display-block-3.active, .js .tabJS.tabJS_block--views-business-display-block-3.active {
-    background-color: #FDA314;
+  .js body.node-type-business-service-or-attraction .tabJS.tabJS_block--views-business-display-fg-prices.active,
+  .js body.node-type-business-service-or-attraction .tabJS.tabJS_block--views-business-display-fg-prices:hover,
+  .js body.node-type-business-service-or-attraction .tabJS.tabJS_block--views-events-display-e-prices.active,
+  .js body.node-type-business-service-or-attraction .tabJS.tabJS_block--views-events-display-e-prices:hover,
+  .js body.node-type-event .tabJS.tabJS_block--views-business-display-fg-prices.active,
+  .js body.node-type-event .tabJS.tabJS_block--views-business-display-fg-prices:hover,
+  .js body.node-type-event .tabJS.tabJS_block--views-events-display-e-prices.active, .js body.node-type-event .tabJS.tabJS_block--views-events-display-e-prices:hover {
+    border: 2px solid transparent; }
+  .js body.node-type-business-service-or-attraction .tabJS.tabJS_block--views-business-display-fg-prices.active,
+  .js body.node-type-business-service-or-attraction .tabJS.tabJS_block--views-events-display-e-prices.active,
+  .js body.node-type-event .tabJS.tabJS_block--views-business-display-fg-prices.active,
+  .js body.node-type-event .tabJS.tabJS_block--views-events-display-e-prices.active {
+    background-color: #FE974E;
     color: #fff; }
-    .js .tabJS.tabJS_block--views-events-display-block-3.active a, .js .tabJS.tabJS_block--views-business-display-block-3.active a {
+    .js body.node-type-business-service-or-attraction .tabJS.tabJS_block--views-business-display-fg-prices.active a,
+    .js body.node-type-business-service-or-attraction .tabJS.tabJS_block--views-events-display-e-prices.active a,
+    .js body.node-type-event .tabJS.tabJS_block--views-business-display-fg-prices.active a,
+    .js body.node-type-event .tabJS.tabJS_block--views-events-display-e-prices.active a {
       color: #fff; }
 
-.js .tabJS.tabJS_block--views-events-display-block-1, .js .tabJS.tabJS_block--views-business-display-block-1 {
+.js body.node-type-business-service-or-attraction .tabJS.tabJS_block--views-business-display-fg-vouchers,
+.js body.node-type-business-service-or-attraction .tabJS.tabJS_block--views-events-display-e-vouchers,
+.js body.node-type-event .tabJS.tabJS_block--views-business-display-fg-vouchers,
+.js body.node-type-event .tabJS.tabJS_block--views-events-display-e-vouchers {
   border: 2px solid transparent;
-  border-bottom: 0;
-  background-color: #a6ed14;
+  background-color: #7ed568;
   color: #565656; }
-  .js .tabJS.tabJS_block--views-events-display-block-1:before, .js .tabJS.tabJS_block--views-business-display-block-1:before {
-    content: '\e822'; }
-  .js .tabJS.tabJS_block--views-events-display-block-1 a, .js .tabJS.tabJS_block--views-business-display-block-1 a {
+  .js body.node-type-business-service-or-attraction .tabJS.tabJS_block--views-business-display-fg-vouchers:before,
+  .js body.node-type-business-service-or-attraction .tabJS.tabJS_block--views-events-display-e-vouchers:before,
+  .js body.node-type-event .tabJS.tabJS_block--views-business-display-fg-vouchers:before,
+  .js body.node-type-event .tabJS.tabJS_block--views-events-display-e-vouchers:before {
+    content: '\e815'; }
+  .js body.node-type-business-service-or-attraction .tabJS.tabJS_block--views-business-display-fg-vouchers a,
+  .js body.node-type-business-service-or-attraction .tabJS.tabJS_block--views-events-display-e-vouchers a,
+  .js body.node-type-event .tabJS.tabJS_block--views-business-display-fg-vouchers a,
+  .js body.node-type-event .tabJS.tabJS_block--views-events-display-e-vouchers a {
     font-size: 17px;
     font-size: 1.7rem;
     color: #565656; }
-  .js .tabJS.tabJS_block--views-events-display-block-1.active, .js .tabJS.tabJS_block--views-events-display-block-1:hover, .js .tabJS.tabJS_block--views-business-display-block-1.active, .js .tabJS.tabJS_block--views-business-display-block-1:hover {
-    border: 2px solid #a6ed14;
-    border-bottom: 0; }
-  .js .tabJS.tabJS_block--views-events-display-block-1.active, .js .tabJS.tabJS_block--views-business-display-block-1.active {
-    background-color: #8FCD10;
+  .js body.node-type-business-service-or-attraction .tabJS.tabJS_block--views-business-display-fg-vouchers.active,
+  .js body.node-type-business-service-or-attraction .tabJS.tabJS_block--views-business-display-fg-vouchers:hover,
+  .js body.node-type-business-service-or-attraction .tabJS.tabJS_block--views-events-display-e-vouchers.active,
+  .js body.node-type-business-service-or-attraction .tabJS.tabJS_block--views-events-display-e-vouchers:hover,
+  .js body.node-type-event .tabJS.tabJS_block--views-business-display-fg-vouchers.active,
+  .js body.node-type-event .tabJS.tabJS_block--views-business-display-fg-vouchers:hover,
+  .js body.node-type-event .tabJS.tabJS_block--views-events-display-e-vouchers.active, .js body.node-type-event .tabJS.tabJS_block--views-events-display-e-vouchers:hover {
+    border: 2px solid transparent; }
+  .js body.node-type-business-service-or-attraction .tabJS.tabJS_block--views-business-display-fg-vouchers.active,
+  .js body.node-type-business-service-or-attraction .tabJS.tabJS_block--views-events-display-e-vouchers.active,
+  .js body.node-type-event .tabJS.tabJS_block--views-business-display-fg-vouchers.active,
+  .js body.node-type-event .tabJS.tabJS_block--views-events-display-e-vouchers.active {
+    background-color: #66CD4C;
     color: #fff; }
-    .js .tabJS.tabJS_block--views-events-display-block-1.active a, .js .tabJS.tabJS_block--views-business-display-block-1.active a {
+    .js body.node-type-business-service-or-attraction .tabJS.tabJS_block--views-business-display-fg-vouchers.active a,
+    .js body.node-type-business-service-or-attraction .tabJS.tabJS_block--views-events-display-e-vouchers.active a,
+    .js body.node-type-event .tabJS.tabJS_block--views-business-display-fg-vouchers.active a,
+    .js body.node-type-event .tabJS.tabJS_block--views-events-display-e-vouchers.active a {
+      color: #fff; }
+
+.js body.node-type-business-service-or-attraction .tabJS.tabJS_block--views-business-display-fg-more-info,
+.js body.node-type-business-service-or-attraction .tabJS.tabJS_block--views-events-display-e-more-info,
+.js body.node-type-event .tabJS.tabJS_block--views-business-display-fg-more-info,
+.js body.node-type-event .tabJS.tabJS_block--views-events-display-e-more-info {
+  border: 2px solid transparent;
+  background-color: #F881CA;
+  color: #565656; }
+  .js body.node-type-business-service-or-attraction .tabJS.tabJS_block--views-business-display-fg-more-info:before,
+  .js body.node-type-business-service-or-attraction .tabJS.tabJS_block--views-events-display-e-more-info:before,
+  .js body.node-type-event .tabJS.tabJS_block--views-business-display-fg-more-info:before,
+  .js body.node-type-event .tabJS.tabJS_block--views-events-display-e-more-info:before {
+    content: '\e819'; }
+  .js body.node-type-business-service-or-attraction .tabJS.tabJS_block--views-business-display-fg-more-info a,
+  .js body.node-type-business-service-or-attraction .tabJS.tabJS_block--views-events-display-e-more-info a,
+  .js body.node-type-event .tabJS.tabJS_block--views-business-display-fg-more-info a,
+  .js body.node-type-event .tabJS.tabJS_block--views-events-display-e-more-info a {
+    font-size: 17px;
+    font-size: 1.7rem;
+    color: #565656; }
+  .js body.node-type-business-service-or-attraction .tabJS.tabJS_block--views-business-display-fg-more-info.active,
+  .js body.node-type-business-service-or-attraction .tabJS.tabJS_block--views-business-display-fg-more-info:hover,
+  .js body.node-type-business-service-or-attraction .tabJS.tabJS_block--views-events-display-e-more-info.active,
+  .js body.node-type-business-service-or-attraction .tabJS.tabJS_block--views-events-display-e-more-info:hover,
+  .js body.node-type-event .tabJS.tabJS_block--views-business-display-fg-more-info.active,
+  .js body.node-type-event .tabJS.tabJS_block--views-business-display-fg-more-info:hover,
+  .js body.node-type-event .tabJS.tabJS_block--views-events-display-e-more-info.active, .js body.node-type-event .tabJS.tabJS_block--views-events-display-e-more-info:hover {
+    border: 2px solid transparent; }
+  .js body.node-type-business-service-or-attraction .tabJS.tabJS_block--views-business-display-fg-more-info.active,
+  .js body.node-type-business-service-or-attraction .tabJS.tabJS_block--views-events-display-e-more-info.active,
+  .js body.node-type-event .tabJS.tabJS_block--views-business-display-fg-more-info.active,
+  .js body.node-type-event .tabJS.tabJS_block--views-events-display-e-more-info.active {
+    background-color: #C861BA;
+    color: #fff; }
+    .js body.node-type-business-service-or-attraction .tabJS.tabJS_block--views-business-display-fg-more-info.active a,
+    .js body.node-type-business-service-or-attraction .tabJS.tabJS_block--views-events-display-e-more-info.active a,
+    .js body.node-type-event .tabJS.tabJS_block--views-business-display-fg-more-info.active a,
+    .js body.node-type-event .tabJS.tabJS_block--views-events-display-e-more-info.active a {
       color: #fff; }
 
 .l-widetop .homepage_events_categories-container .b_title_cont, .l-widetop .homepage_business_categories-container .b_title_cont, .l-content .homepage_events_categories-container .b_title_cont, .l-content .homepage_business_categories-container .b_title_cont, .l-region--sidebar-first .homepage_events_categories-container .b_title_cont, .l-region--sidebar-first .homepage_business_categories-container .b_title_cont, .l-region--sidebar-second .homepage_events_categories-container .b_title_cont, .l-region--sidebar-second .homepage_business_categories-container .b_title_cont {
@@ -2670,7 +3194,7 @@ body.node-type-event{
         /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
       .l-content .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .view-content .views-row .views-field:before,
       .l-content .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .view-content .views-row .views-field:before {
-        background-color: #8FCD10;
+        background-color: #66CD4C;
         color: #fff;
         line-height: 20px;
         height: 20px;
@@ -2761,25 +3285,25 @@ body.node-type-event{
     clear: both; }
 
 .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .views-field.views-field-name {
-  color: #0e4873; }
+  color: #2b4693; }
   .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .views-field.views-field-name span, .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .views-field.views-field-name p, .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .views-field.views-field-name h1, .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .views-field.views-field-name h2, .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .views-field.views-field-name h3, .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .views-field.views-field-name h4, .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .views-field.views-field-name h5, .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .views-field.views-field-name h6, .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .views-field.views-field-name a, .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .views-field.views-field-name div, .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .views-field.views-field-name li {
-    color: #0e4873; }
+    color: #2b4693; }
   .view-id-listings_business_and_event_categories.view-display-id-homepage_event_categories .views-field.views-field-name a:hover {
-    color: #0e4873; }
+    color: #2b4693; }
 
 .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .views-field.views-field-name {
-  color: #466508; }
+  color: #388425; }
   .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .views-field.views-field-name span, .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .views-field.views-field-name p, .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .views-field.views-field-name h1, .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .views-field.views-field-name h2, .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .views-field.views-field-name h3, .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .views-field.views-field-name h4, .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .views-field.views-field-name h5, .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .views-field.views-field-name h6, .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .views-field.views-field-name a, .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .views-field.views-field-name div, .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .views-field.views-field-name li {
-    color: #466508; }
+    color: #388425; }
   .view-id-listings_business_and_event_categories.view-display-id-homepage_business_categories .views-field.views-field-name a:hover {
-    color: #466508; }
+    color: #388425; }
 
 .l-widetop .small_block_bn_blogs-container .b_title_cont, .l-widetop .small_block_bn_news-container .b_title_cont, .l-content .small_block_bn_blogs-container .b_title_cont, .l-content .small_block_bn_news-container .b_title_cont, .l-region--sidebar-first .small_block_bn_blogs-container .b_title_cont, .l-region--sidebar-first .small_block_bn_news-container .b_title_cont, .l-region--sidebar-second .small_block_bn_blogs-container .b_title_cont, .l-region--sidebar-second .small_block_bn_news-container .b_title_cont {
   position: relative;
   margin: 6px 0;
   padding: 6px 0;
   text-align: center;
-  background-color: #1981CE;
+  background-color: #5675CE;
   z-index: -2; }
   .l-widetop .small_block_bn_blogs-container .b_title_cont:before, .l-widetop .small_block_bn_news-container .b_title_cont:before, .l-content .small_block_bn_blogs-container .b_title_cont:before, .l-content .small_block_bn_news-container .b_title_cont:before, .l-region--sidebar-first .small_block_bn_blogs-container .b_title_cont:before, .l-region--sidebar-first .small_block_bn_news-container .b_title_cont:before, .l-region--sidebar-second .small_block_bn_blogs-container .b_title_cont:before, .l-region--sidebar-second .small_block_bn_news-container .b_title_cont:before {
     content: " ";
@@ -2795,7 +3319,7 @@ body.node-type-event{
   .l-widetop .small_block_bn_blogs-container .b_title_cont .block__title, .l-widetop .small_block_bn_news-container .b_title_cont .block__title, .l-content .small_block_bn_blogs-container .b_title_cont .block__title, .l-content .small_block_bn_news-container .b_title_cont .block__title, .l-region--sidebar-first .small_block_bn_blogs-container .b_title_cont .block__title, .l-region--sidebar-first .small_block_bn_news-container .b_title_cont .block__title, .l-region--sidebar-second .small_block_bn_blogs-container .b_title_cont .block__title, .l-region--sidebar-second .small_block_bn_news-container .b_title_cont .block__title {
     padding: 5px 15px;
     display: inline-block;
-    background-color: #1981CE;
+    background-color: #5675CE;
     z-index: 1;
     color: #fff; }
 
@@ -2904,7 +3428,7 @@ body.node-type-event{
       font-size: 13px;
       font-size: 1.3rem; }
     .view-id-small_blocks_blogs_news .views-row.views-row .views-field-field-body a.views-more-link {
-      color: #1981CE; }
+      color: #5675CE; }
   .view-id-small_blocks_blogs_news .views-row.views-row .views-field-created {
     margin-top: 5px;
     color: #a2a2a2;
@@ -2960,7 +3484,7 @@ body.node-type-event{
       -moz-transition-duration: 250ms; }
 
 .view-id-small_blocks_blogs_news .view-footer .blognews_seeall {
-  border: 1px solid #1673b7;
+  border: 1px solid #4265c8;
   border-radius: 0;
   margin: 4px 2px;
   padding: 7px 15px;
@@ -2968,7 +3492,7 @@ body.node-type-event{
   font-size: 15px;
   font-size: 1.5rem;
   display: inline-block;
-  background-color: #1981CE;
+  background-color: #5675CE;
   color: #fff;
   font-weight: bold;
   float: right; }
@@ -3588,38 +4112,38 @@ body.node-type-event{
  * Color depending on Content Type
  */
 .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field.views-field-nothing .teaser__first-wrapper .verified-container:before {
-  background-color: #8FCD10;
+  background-color: #66CD4C;
   color: #fff; }
 
 .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field.views-field-nothing .teaser__first-wrapper .type-container:before {
-  background-color: #8FCD10;
+  background-color: #66CD4C;
   color: #fff; }
 
 .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field.views-field-nothing .teaser__first-wrapper .image-container {
-  border-bottom: 3px solid #8FCD10; }
+  border-bottom: 3px solid #66CD4C; }
 
 .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field-title .field-content a {
-  border-color: #8FCD10 !important; }
+  border-color: #66CD4C !important; }
 
 .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field-field-address .field-content:before, .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-business-service-or-attraction .views-field-field-date-of-event .field-content:before {
-  color: #8FCD10; }
+  color: #66CD4C; }
 
 .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field.views-field-nothing .teaser__first-wrapper .verified-container:before {
-  background-color: #1981CE;
+  background-color: #5675CE;
   color: #fff; }
 
 .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field.views-field-nothing .teaser__first-wrapper .type-container:before {
-  background-color: #1981CE;
+  background-color: #5675CE;
   color: #fff; }
 
 .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field.views-field-nothing .teaser__first-wrapper .image-container {
-  border-bottom: 3px solid #1981CE; }
+  border-bottom: 3px solid #5675CE; }
 
 .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field-title .field-content a {
-  border-color: #1981CE !important; }
+  border-color: #5675CE !important; }
 
 .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field-field-address .field-content:before, .view-id-small_blocks_businesses_and_or_events .views-row.rowContentType-event .views-field-field-date-of-event .field-content:before {
-  color: #1981CE; }
+  color: #5675CE; }
 
 /*.view-id-pages_blogs_news.view-display-id-page_blog,
 .view-id-pages_blogs_news.view-display-id-page_news{
@@ -3707,8 +4231,106 @@ body.node-type-event{
 			}
 		}
 	}
-}
-*/
+}*/
+.view-id-pages_blogs_news .view-content .views-row {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding-bottom: 2px;
+  position: relative; }
+  @media (min-width: 1025px) {
+    .view-id-pages_blogs_news .view-content .views-row:nth-child(3n+1) {
+      clear: both;
+      float: left;
+      margin-right: 1%;
+      width: 32.33%; }
+    .view-id-pages_blogs_news .view-content .views-row:nth-child(3n+2) {
+      float: left;
+      margin-left: 0.5%;
+      margin-right: 0.5%;
+      width: 32.33%; }
+    .view-id-pages_blogs_news .view-content .views-row:nth-child(3n+3) {
+      float: right;
+      margin-left: 1%;
+      width: 32.33%; } }
+  @media (min-width: 431px) and (max-width: 1024px) {
+    .view-id-pages_blogs_news .view-content .views-row:nth-child(2n+1) {
+      float: left;
+      margin-right: 1%;
+      width: 49%;
+      clear: both; }
+    .view-id-pages_blogs_news .view-content .views-row:nth-child(2n+2) {
+      float: right;
+      margin-left: 1%;
+      width: 49%; } }
+  @media (min-width: 0) and (max-width: 430px) {
+    .view-id-pages_blogs_news .view-content .views-row {
+      display: block;
+      clear: both;
+      padding: 1%;
+      width: 98%;
+      margin-left: auto;
+      margin-right: auto; }
+      .view-id-pages_blogs_news .view-content .views-row:after {
+        content: "";
+        display: table;
+        clear: both; } }
+
+.view-id-pages_blogs_news .view-content .views-row {
+  padding-top: 0;
+  margin-top: 1%;
+  position: relative; }
+  .view-id-pages_blogs_news .view-content .views-row .views-field.views-field-field-image-gallery img {
+    width: 100%; }
+  .view-id-pages_blogs_news .view-content .views-row .views-field.views-field-title {
+    color: #5675CE;
+    font-size: 22px;
+    font-size: 2.2rem;
+    margin: 10px 0 7px 0;
+    padding: 0 5px; }
+    .view-id-pages_blogs_news .view-content .views-row .views-field.views-field-title span, .view-id-pages_blogs_news .view-content .views-row .views-field.views-field-title p, .view-id-pages_blogs_news .view-content .views-row .views-field.views-field-title h1, .view-id-pages_blogs_news .view-content .views-row .views-field.views-field-title h2, .view-id-pages_blogs_news .view-content .views-row .views-field.views-field-title h3, .view-id-pages_blogs_news .view-content .views-row .views-field.views-field-title h4, .view-id-pages_blogs_news .view-content .views-row .views-field.views-field-title h5, .view-id-pages_blogs_news .view-content .views-row .views-field.views-field-title h6, .view-id-pages_blogs_news .view-content .views-row .views-field.views-field-title a, .view-id-pages_blogs_news .view-content .views-row .views-field.views-field-title div, .view-id-pages_blogs_news .view-content .views-row .views-field.views-field-title li {
+      color: #5675CE; }
+    .view-id-pages_blogs_news .view-content .views-row .views-field.views-field-title a:hover {
+      color: #5675CE; }
+  .view-id-pages_blogs_news .view-content .views-row .views-field.views-field-field-body {
+    padding: 0 5px 10px 5px; }
+  .view-id-pages_blogs_news .view-content .views-row .views-field.views-field-url {
+    border: 1px solid #4265c8;
+    border-radius: 0;
+    margin: 4px 2px;
+    padding: 7px 15px;
+    transition: all 0.35s ease-in-out;
+    font-size: 15px;
+    font-size: 1.5rem;
+    display: inline-block;
+    background-color: #5675CE;
+    color: #fff;
+    font-weight: bold; }
+    .view-id-pages_blogs_news .view-content .views-row .views-field.views-field-url a {
+      color: #fff;
+      cursor: pointer; }
+    .view-id-pages_blogs_news .view-content .views-row .views-field.views-field-url:hover {
+      color: #333; }
+      .view-id-pages_blogs_news .view-content .views-row .views-field.views-field-url:hover a {
+        color: #333; }
+  .view-id-pages_blogs_news .view-content .views-row .views-field.views-field-nothing {
+    position: absolute;
+    top: 0;
+    right: 10px; }
+    .view-id-pages_blogs_news .view-content .views-row .views-field.views-field-nothing .postMonthDay {
+      text-align: center; }
+      .view-id-pages_blogs_news .view-content .views-row .views-field.views-field-nothing .postMonthDay .pmd_month {
+        background-color: #000;
+        color: #fff;
+        padding: 15px;
+        font-size: 19px;
+        font-size: 1.9rem; }
+      .view-id-pages_blogs_news .view-content .views-row .views-field.views-field-nothing .postMonthDay .pmd_day {
+        background-color: #fff;
+        color: #333;
+        padding: 10px;
+        font-size: 19px;
+        font-size: 1.9rem; }
+
 .social-links-block-wttoc-container:after {
   content: "";
   display: table;
@@ -3850,7 +4472,7 @@ body.node-type-event{
       font-size: 17px;
       font-size: 1.7rem; }
     #block-calendar-block-toview-calendar .wttoc_calendar .wttoc_calendar_row .wttoc_calendar_header .wttoc_header_inner {
-      background-color: #1981CE;
+      background-color: #5675CE;
       color: #fff;
       padding: 5px 0;
       margin: 2px; }
@@ -3859,7 +4481,7 @@ body.node-type-event{
       background-color: #69D1F5;
       color: #fff; }
       #block-calendar-block-toview-calendar .wttoc_calendar .wttoc_calendar_row .wttoc_calendar_day .wttoc_day_inner:hover {
-        background-color: #1981CE; }
+        background-color: #5675CE; }
       #block-calendar-block-toview-calendar .wttoc_calendar .wttoc_calendar_row .wttoc_calendar_day .wttoc_day_inner span, #block-calendar-block-toview-calendar .wttoc_calendar .wttoc_calendar_row .wttoc_calendar_day .wttoc_day_inner p, #block-calendar-block-toview-calendar .wttoc_calendar .wttoc_calendar_row .wttoc_calendar_day .wttoc_day_inner h1, #block-calendar-block-toview-calendar .wttoc_calendar .wttoc_calendar_row .wttoc_calendar_day .wttoc_day_inner h2, #block-calendar-block-toview-calendar .wttoc_calendar .wttoc_calendar_row .wttoc_calendar_day .wttoc_day_inner h3, #block-calendar-block-toview-calendar .wttoc_calendar .wttoc_calendar_row .wttoc_calendar_day .wttoc_day_inner h4, #block-calendar-block-toview-calendar .wttoc_calendar .wttoc_calendar_row .wttoc_calendar_day .wttoc_day_inner h5, #block-calendar-block-toview-calendar .wttoc_calendar .wttoc_calendar_row .wttoc_calendar_day .wttoc_day_inner h6, #block-calendar-block-toview-calendar .wttoc_calendar .wttoc_calendar_row .wttoc_calendar_day .wttoc_day_inner a, #block-calendar-block-toview-calendar .wttoc_calendar .wttoc_calendar_row .wttoc_calendar_day .wttoc_day_inner div, #block-calendar-block-toview-calendar .wttoc_calendar .wttoc_calendar_row .wttoc_calendar_day .wttoc_day_inner li {
         color: #fff; }
       #block-calendar-block-toview-calendar .wttoc_calendar .wttoc_calendar_row .wttoc_calendar_day .wttoc_day_inner a:hover {
@@ -3869,7 +4491,7 @@ body.node-type-event{
         text-decoration: none;
         padding: 5px 0; }
     #block-calendar-block-toview-calendar .wttoc_calendar .wttoc_calendar_row .wttoc_calendar_day .wttoc_day_inner.wttoc_day_inner_today {
-      background-color: #1981CE; }
+      background-color: #5675CE; }
     #block-calendar-block-toview-calendar .wttoc_calendar .wttoc_calendar_row .wttoc_calendar_empty_day {
       visibility: hidden; }
 

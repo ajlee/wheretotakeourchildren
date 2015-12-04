@@ -3,6 +3,7 @@
  */
 html{
 	min-width:320px;
+	@include breakWord;
 }
 .l-main{
 	margin-left: auto;
@@ -18,7 +19,7 @@ html{
 .l-main{
 	width:98%;
 	max-width: $defaultWindowSize;
-	@include breakWord;
+
 }
 .l-footer{
 	margin-bottom:0;
@@ -97,28 +98,44 @@ body.two-sidebars{
 	/* Content Area Behavior Default, Tablet2Wide, and Wide. */
 	.l-content{
 		@include contentsidebarDefault;
+		@include galleryFormatterResponsive(100, $breakpointMini);
+		@include breakpoint($mobile2Tablet){
+			@include galleryFormatterResponsive(100, $breakpointMobile);
+		}
 		float:left;
 		@include breakpoint($breakpointWideP1){
 			@include chop3Middle(53%);
 			/* BECAUSE .l-region--sidebar-first SHOULD COME BEFORE .l-content */
 			/* MARGIN-LEFT = WIDTH(.l-region--sidebar-first) + $columnPercentSpacer / 4  */
 			/* margin-left: 23.5% + $columnPercentSpacer / 4; COMMENTED OUT - REARRANGED */
+			@include galleryFormatterResponsive(53, $breakpointWide);
 		};
 		@include breakpoint($tablet2Wide){
 			@include splitLeft(73%);
+			@include galleryFormatterResponsive(73, $breakpointTablet);
 		};
 	}
 	/* Sidebar Behavior Default, and Tablet2Wide. */
 	.l-region--sidebar-first{
 		@include contentsidebarDefault;
+		@include galleryFormatterResponsive(100, $breakpointMini);
+		@include breakpoint($mobile2Tablet){
+			@include galleryFormatterResponsive(100, $breakpointMobile);
+		}
 		@include breakpoint($tablet2Wide){
 			@include splitLeft(27%);
+			@include galleryFormatterResponsive(27, $breakpointTablet);
 		};
 	}
 	.l-region--sidebar-second{
 		@include contentsidebarDefault;
+		@include galleryFormatterResponsive(100, $breakpointMini);
+		@include breakpoint($mobile2Tablet){
+			@include galleryFormatterResponsive(100, $breakpointMobile);
+		}
 		@include breakpoint($tablet2Wide){
-			/*@include splitRight(100%);*/
+			@include splitRight(100%);
+			@include galleryFormatterResponsive(100, $breakpointTablet);
 		};
 	}
 	/* Sidebar Behavior Wide. */
@@ -129,6 +146,7 @@ body.two-sidebars{
 			/* BECAUSE .l-region--sidebar-first SHOULD COME BEFORE .l-content */
 			/* MARGIN-LEFT = -1 * WIDTH(.l-region--sidebar-first + .l-content)  */
 			/* margin-left: -76.5%; COMMENTED OUT - REARRANGED*/
+			@include galleryFormatterResponsive(23.5, $breakpointWide);
 		};
 
 	}
@@ -136,6 +154,7 @@ body.two-sidebars{
 		float:right;
 		@include breakpoint($breakpointWideP1){
 			@include chop3Right(23.5%);
+			@include galleryFormatterResponsive(23.5, $breakpointWide);
 		};
 	}
 
@@ -146,23 +165,35 @@ body.one-sidebar.sidebar-first, body.one-sidebar.sidebar-second{
 	/* Content Area*/
 	.l-content{
 		@include contentsidebarDefault;
+		@include galleryFormatterResponsive(100, $breakpointMini);
+		@include breakpoint($mobile2Tablet){
+			@include galleryFormatterResponsive(100, $breakpointMobile);
+		}
 		float:right;
 		@include breakpoint($breakpointWideP1){
 			@include splitRight(70%);
+			@include galleryFormatterResponsive(70, $breakpointWide);
 		};
 		@include breakpoint($tablet2Wide){
 			@include splitRight(66.66%);
+			@include galleryFormatterResponsive(66.66, $breakpointTablet);
 		};
 	}
 	/* Sidebar Area*/
 	.l-region--sidebar-first, .l-region--sidebar-second{
 		@include contentsidebarDefault;
 		float:left;
+		@include galleryFormatterResponsive(100, $breakpointMini);
+		@include breakpoint($mobile2Tablet){
+			@include galleryFormatterResponsive(100, $breakpointMobile);
+		}
 		@include breakpoint($breakpointWideP1){
 			@include splitLeft(30%);
+			@include galleryFormatterResponsive(30, $breakpointWide);
 		};
 		@include breakpoint($tablet2Wide){
 			@include splitLeft(33.33%);
+			@include galleryFormatterResponsive(33.33, $breakpointTablet);
 		};
 	}
 }
@@ -175,7 +206,21 @@ body.one-sidebar.sidebar-second{
 		float:right;
 	}
 }
-
+/* No Sidebar */
+body.no-sidebars{
+	@include breakpoint(0 $breakpointMobile){
+		@include galleryFormatterResponsive(100, $breakpointMini);
+	}
+	@include breakpoint($mobile2Tablet){
+		@include galleryFormatterResponsive(100, $breakpointMobile);
+	}
+	@include breakpoint($tablet2Wide){
+		@include galleryFormatterResponsive(100, $breakpointTablet);
+	}
+	@include breakpoint($breakpointWideP1){
+		@include galleryFormatterResponsive(100, $breakpointWide);
+	}
+}
 /* Highlighted & Help*/
 .l-region--highlighted,.l-region--help{
 	@include clearfix;

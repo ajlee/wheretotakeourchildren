@@ -73,23 +73,28 @@ $DARKERLIGHTGRAY: #a2a2a2;
 $LIGHTGRAY:#e8eaea;
 $WHITE:#fff;
 
+$colorWPink:#FC5161;
+$colorWPinkLight:#FF9191;
+$colorWViolet:#C861BA;
+$colorWVioletLight:#F881CA;
+
 
 /*
  * Theme Palette
  * Light and Blue Colors Work Better If They're Desaturated As Well
  */
 
-$color1:#1981CE;/* Blue*/
+$color1:#5675CE;/* Blue*/
 //$color1Light:lighten($color1, 10%);
 $color1Light: #69D1F5;
 $color1Dark:darken($color1, 20%);
-$color2:#FDA314;/*Orange*/
+$color2:#FE974E;/*Orange*/
 $color2Light:lighten($color2, 7%);
 $color2Dark:darken($color2, 9%);
-$color3:#8FCD10;/*Light Green*/
+$color3: #66CD4C;/*Green*/
 $color3Light:lighten($color3, 7%);
 $color3Dark:darken($color3, 22%);
-$colorAlt:#ffde00;/*BrightYellow*/
+$colorAlt:#FFC632;/*Yellow*/
 $colorAltLight: lighten($colorAlt, 3.5%);
 $colorAltDark: darken($colorAlt, 3.5%);
 

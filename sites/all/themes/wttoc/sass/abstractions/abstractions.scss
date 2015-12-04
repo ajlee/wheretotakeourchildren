@@ -558,7 +558,6 @@
  @mixin tabJScolorings($normalBackground, $normalText, $activeBackground, $activeText, $borderNormal, $borderActive){
  		//Normal tab
 		border: $borderNormal;
-		border-bottom:0;
 		background-color: $normalBackground;
 		color: $normalText;
 		a{		
@@ -568,7 +567,6 @@
 		//Active tabs
 		&.active, &:hover{
 			border: $borderActive;
-			border-bottom:0;
 		}
 		//hover tabs - making this a bit different from active helps on mobile
 		&:hover{
@@ -591,6 +589,9 @@
 		}
 }  
 
+/*
+ * Absolute Centering - No IE8
+ */
 @mixin centerXYAbsoluteNoIE8{
 	//IE8 and below not supported
 	position: absolute;
@@ -625,6 +626,10 @@
 	-ms-transform: translate(-50%,-50%); 
 	transform: translate(-50%,-50%); 
 }
+
+/*
+ * Views Responsive Stylings
+ */
 @mixin views3Wide1MobileDefault{
 	.views-row{
 		margin-top:5px;
@@ -966,3 +971,18 @@
 		};
 	}	
 }
+
+/*
+ * GalleryFormatter Responsive Mixin
+ */
+@mixin galleryFormatterResponsive($containerPercentWidth, $baseWidth){
+	//$containerPercentWidth should be only a number (do not append px or %)
+	$containerPercentWidth : $containerPercentWidth / 100;//convert to decimal
+	$containerPercentWidth : $containerPercentWidth * 0.9;//gallery formatter has some paddings
+	.galleryformatter, .galleryformatter .gallery-slides,
+	.galleryformatter .gallery-slides .gallery-frame .gallery-slide,
+	.galleryformatter .gallery-thumbs{
+		width:  $containerPercentWidth * $baseWidth  !important;
+	}
+}
+

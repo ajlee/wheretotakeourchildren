@@ -1,161 +1,349 @@
-/* 
- * Content Type Displays
+/*
+ * Top Header with Image
  */
- /*
-body.node-type-event,body.node-type-business-service-or-attraction{ 
-	.l-content {
-		.lc-region--inner{
-			@include boxBorderRadiusMarginPadding(2px solid $color1Light, 3px, 10px 0, 2%);
-			@include regionInnerSchemer($color1, $WHITE, $DARKGRAY, $color1);
-			@include buttonColor1;
+.view-id-business_display.view-display-id-fg_image,
+.view-id-events_display.view-display-id-e_image{
+	.view-content{
+		.views-row{
+			position:relative;
+			.views-field-field-image-gallery{
+				img{
+					width:100%;
+					height:auto;
+					display:block;
+				}
+			}
+			.views-field-nothing{
+				position:absolute;
+				top:0;
+				left:0;
+				width:100%;
+				height:100%;
+				@include backgroundOpacity($BLACK, 0.4);
+				.textInTopBox{
+					@include colorDescendantsFont($WHITE);
+					@include centerYAbsoluteNoIE8;
+					width:100%;
+					.titb_Left{
+						@include breakpoint(0 $breakpointTablet){
+							display:block;
+							float:left;
+							width:50%;
+						}
+						.titb_title{
+							font-weight:bold;
+							@include breakpoint(0 $breakpointMobile){
+								@include remFontSize($fontM);
+								&:before{
+									font-size:15px;
+								}
+								padding-left:23px;
+							}
+							@include breakpoint($mobile2Tablet){
+								@include remFontSize($fontXL);
+								&:before{
+									font-size:20px;
+								}
+								padding-left:30px;
+							}
+							@include breakpoint($breakpointTabletP1){
+								@include remFontSize($fontXXXL);
+								&:before{
+									font-size:40px;
+								}
+								padding-left:60px;
+							}
+						}
+						.titb_address{
+							&:before{
+								content: '\e816';
+							}
+						}
+					}
+					.titb_Right{
+						@include breakpoint(0 $breakpointTablet){
+							display:block;
+							float:left;
+							width:50%;
+						}
+						.titb_phone{
+							&:before{
+								content: '\e832';
+							}
+						}
+						.titb_website{
+							&:before{
+								content: '\e833';
+							}
+						}
+						.titb_email{
+							&:before{
+								content: '\e834';
+							}
+						}
+					}
+					.titb_title, .titb_address, .titb_phone, .titb_website, .titb_email{
+						@include breakpoint(0 $breakpointMobile){
+							@include remFontSize($fontXS);
+							margin-bottom:5px;
+							margin-left:5px;
+						}
+						@include breakpoint($mobile2Tablet){
+							margin-bottom:10px;
+							margin-left:10px;
+						}
+						@include breakpoint($breakpointTabletP1){
+							margin-bottom:15px;
+							margin-left:30px;
+						}
+						position:relative;
+						@include fontelloBefore;
+						padding-left:30px;
+						&:before{
+							position:absolute;
+							left:0;
+							top:0;
+							@include centerYAbsoluteNoIE8;
+						}
+					}
+				}
+			}
 		}
-		h1.mainPageTitle{
-			@include fontelloBefore;
-			@include remFontSize($fontXXL);
-			color:white;
-			padding: 14px 7px;
-			margin: 15px 0 5px 0;
-		}	
 	}
-	.l-region--sidebar-first{
-		.lc-region--inner{
-			@include boxBorderRadiusMarginPadding(2px solid $color2Light, 3px, 10px 0, 3%);
-			@include regionInnerSchemer($color2, $WHITE, $DARKGRAY, $color2);
-			@include buttonColor2;
-		}	
+}
+
+/*
+ * Field Icons & Other
+ */
+.mainContentC {
+	.view-id-business_display, .view-id-events_display {
+		.views-row {
+			@include clearfix;
+		}
+		.views-field {
+			padding: 10px 10px;
+			margin: 10px 0;
+			.field-content {
+				h3 {
+					display: inline-block;
+				}
+				i.icon {
+					display: inline-block;
+					font-size: 25px;
+					padding: 8px 5px;
+					margin: 9px;
+					margin-left: 0;
+					border-radius: 10px;
+					color: $WHITE;
+				}
+				.wttocFieldEnclose {
+					margin-top: 10px;
+					margin-bottom: 10px;
+				}
+			}
+		}
 	}
-	.l-region--sidebar-second{
-		.lc-region--inner{
-			@include boxBorderRadiusMarginPadding(2px solid $color3Light, 3px, 10px 0, 3%);
-			@include regionInnerSchemer($color3, $WHITE, $DARKGRAY, $color3);
-			@include buttonColor3;
+	.view-id-business_display{
+		i.icon{
+			background-color:$color3;
+		}
+	}
+	.view-id-events_display{
+		i.icon{
+			background-color:$color1;
+		}
+	}
+
+}
+body.node-type-event,body.node-type-business-service-or-attraction{
+	.mainPageTitle{
+		display:none;
+	}
+	.mainContentC{
+		a{
+			color:$color1;
+		}
+	}
+	.l-region--sidebar-first, .l-region--sidebar-second {
+		.b_title_cont {
+			padding: 10px 0;
+			margin: 12px 0 8px 0;
+			&:before {
+				display: none;
+			}
+			.block__title {
+			}
+		}
+	}
+	.l-region--underlighted{
+		.b_title_cont{
+			background-color:$colorWPink;
+			padding:10px 0 8px 0;
+			margin: 10px 0 5px 0;
+			@include colorDescendantsFont($WHITE);
+			.block__title{
+				padding-left:10px;
+			}
+		}
+		.block__content{
+			padding: 10px 10px 8px 5px;
 		}
 	}
 }
 body.node-type-business-service-or-attraction{
-	h1.mainPageTitle{
-		@include linearGradient(darken($color1,10%), $color1);
-		&:before{
-			background-color:transparent;
-			color:$WHITE;
-			content:'\e81b' !important;
-		}		
+	.l-region--sidebar-first, .l-region--sidebar-second {
+		.b_title_cont {
+			border-bottom: 2px solid $color3;
+		}
+	}
+	.titb_title:before{
+		content: '\e81b' !important;
 	}
 }
 body.node-type-event{
-	h1.mainPageTitle{
-		@include linearGradient(darken($color1,10%), $color1);
-		&:before{
-			background-color:transparent;
-			color:$WHITE;
-			content:'\e81c' !important;
-		}	
+	 .l-region--sidebar-first, .l-region--sidebar-second {
+		 .b_title_cont {
+			 border-bottom: 2px solid $color1;
+		 }
+	 }
+	.titb_title:before{
+		content: '\e81c' !important;
 	}
-}
- 
- 
-.view-id-business_display, .view-id-events_display{
-	.views-row{
+ }
+/*
+* Social Media Icons
+*/
+.social-links {
+	margin-top:55px;
+	.field-label {
+		@include fontelloBefore;
+		&:before {
+			display: inline-block;
+			font-size: 25px;
+			width:25px;
+			padding: 8px 10px;
+			margin: 9px;
+			margin-left: 0;
+			border-radius: 10px;
+			color: $WHITE;
+			content: '\e837';
+		}
+		@include remFontSize($fontL);
+		font-weight:bold;
+	}
+	ul {
 		@include clearfix;
-	}
-	.views-field{
-		border-bottom: 1px solid lightgray;
-		padding: 10px 10px;
-		margin: 10px 0;
-		.field-content{
-			h3{
-				display:inline-block;
-			}
-			i.icon{
-				display:inline-block;
-				font-size: 25px;
-				padding:8px 5px;
-				margin: 9px;
-				margin-left: 0;
-				border-radius:10px;
-			}
-			.wttocFieldEnclose{
-				margin-top: 10px;
-				margin-bottom: 10px;
+		li {
+			padding-top: 20px !important;
+			padding-bottom: 20px !important;
+			i.icon {
+				border-radius: 30px;
 			}
 		}
-		&.views-field-field-address, &.views-field-field-date-of-event, &.views-field-field-website{
-			@include breakpoint($breakpointWideP1){
-				@include chop3Left(33%);
-				border-bottom:0;
-			};
-			@include breakpoint($mobile2Wide){
-				@include splitLeft(50%);
-				border-bottom:0;
-			};
-			@include breakpoint(0 $breakpointMobile){
-				
-			};	
-		}
-		&.views-field-field-website{
-			@include breakpoint($mobile2Wide){
-				clear:both;
-			};
-		}	
 	}
 }
+body.node-type-business-service-or-attraction{
+	.social-links .field-label:before {
+		background-color: $colorWPink;
+	}
+}body.node-type-event{
+	 .social-links .field-label:before {
+		 background-color: $colorWPink;
+	 }
+ }
 /*
  * Icon Colorings 
  */
- .js body.node-type-event .l-content, .js .node-type-business-service-or-attraction .l-content, 
+ .js body.node-type-event .l-content, .js .node-type-business-service-or-attraction .l-content,
  .no-js body.node-type-event .l-content, .no-js .node-type-business-service-or-attraction .l-content{
-	//General Block
-	.block.block--views-events-display-block, .block.block--views-business-display-block{
-			@include borderRadiusIconbgIcon($color1Light 2px solid, 3px, $color1, $WHITE);
-			.block__title{
-				background-color: $color1;
-				@include colorDescendantsFont($WHITE);
-			}
+	 .fg_overview-container, .fg_prices-container, .fg_vouchers-container, .fg_more_info-container{
+		.block__title{
+			@include colorDescendantsFont($WHITE);
+			padding:10px 5px;
+		}
 	}
-	//Details Block
-	.block.block--views-events-display-block-3, .block.block--views-business-display-block-3{
-			@include borderRadiusIconbgIcon($color2Light 2px solid, 3px, $color2, $WHITE);
-			.block__title{
-				background-color: $color2;
-				@include colorDescendantsFont($WHITE);
-			}
-	}
-	//More Info Block
-	.block.block--views-events-display-block-1, .block.block--views-business-display-block-1{
-			@include borderRadiusIconbgIcon($color3Light 2px solid, 3px, $color3, $WHITE);
-			.block__title{
-				background-color: $color3;
-				@include colorDescendantsFont($WHITE);
-			}
-	}
-	
+	 .e_overview-container, .e_prices-container, .e_vouchers-container, .e_more_info-container{
+		 .block__title{
+			 @include colorDescendantsFont($WHITE);
+			 padding:10px 5px;
+		 }
+	 }
+	 .fg_overview-container,
+	 .e_overview-container{
+		.field-content i.icon{
+			background-color: $color1;
+		}
+		 .block__title{
+			 background-color: $color1;
+		 }
+	 }
+	 .fg_prices-container,
+	 .e_prices-container{
+		 .field-content i.icon{
+			 background-color: $color2;
+		 }
+		 .block__title{
+			 background-color: $color2;
+		 }
+	 }
+	 .fg_vouchers-container,
+	 .e_vouchers-container{
+		 .field-content i.icon{
+			 background-color: $color3;
+		 }
+		 .block__title{
+			 background-color: $color3;
+		 }
+	 }
+	 .fg_more_info-container,
+	 .e_more_info-container{
+		 .field-content i.icon{
+			 background-color: $colorWViolet;
+		 }
+		 .block__title{
+			 background-color: $colorWViolet;
+		 }
+	 }
 }
 /*
  * Tab JS Blocks Tabs
  */
-.js .tabJS{
- //General Tab
-	&.tabJS_block--views-events-display-block, &.tabJS_block--views-business-display-block{
-		&:before{
+.js body.node-type-business-service-or-attraction .tabJS,
+.js body.node-type-event .tabJS{
+	//General Tab
+	&.tabJS_block--views-business-display-fg-overview,
+	&.tabJS_block--views-events-display-e-overview {
+		&:before {
 			//fontello icon
-			content:'\e820';	
+			content: '\e80b';
 		}
-		@include tabJScolorings($color1Light, $LIGHTERDARKGRAY, $color1, $WHITE, 2px solid transparent, 2px solid $color1Light);
+		@include tabJScolorings($color1Light, $LIGHTERDARKGRAY, $color1, $WHITE, 2px solid transparent, 2px solid transparent);
 	}
-	//Details Tab
-	&.tabJS_block--views-events-display-block-3, &.tabJS_block--views-business-display-block-3{
-		&:before{
+	//Prices
+	&.tabJS_block--views-business-display-fg-prices,
+	&.tabJS_block--views-events-display-e-prices {
+		&:before {
 			//fontello icon
-			content:'\e821';	
+			content: '\e812';
 		}
-		@include tabJScolorings($color2Light, $LIGHTERDARKGRAY, $color2, $WHITE, 2px solid transparent, 2px solid $color2Light);
+		@include tabJScolorings($color2Light, $LIGHTERDARKGRAY, $color2, $WHITE, 2px solid transparent, 2px solid transparent);
+	}
+	//Vouchers
+	&.tabJS_block--views-business-display-fg-vouchers,
+	&.tabJS_block--views-events-display-e-vouchers {
+		&:before {
+			//fontello icon
+			content: '\e815';
+		}
+		@include tabJScolorings($color3Light, $LIGHTERDARKGRAY, $color3, $WHITE, 2px solid transparent, 2px solid transparent);
 	}
 	//More Info Tab
-	&.tabJS_block--views-events-display-block-1, &.tabJS_block--views-business-display-block-1{
-		&:before{
+	&.tabJS_block--views-business-display-fg-more-info,
+	&.tabJS_block--views-events-display-e-more-info {
+		&:before {
 			//fontello icon
-			content:'\e822';	
+			content: '\e819';
 		}
-		@include tabJScolorings($color3Light, $LIGHTERDARKGRAY, $color3, $WHITE, 2px solid transparent, 2px solid $color3Light);
+		@include tabJScolorings($colorWVioletLight, $LIGHTERDARKGRAY, $colorWViolet, $WHITE, 2px solid transparent, 2px solid transparent);
 	}
 }
