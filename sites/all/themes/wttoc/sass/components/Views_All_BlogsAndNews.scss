@@ -132,5 +132,39 @@
 			}
 		}
 	}
-
+}
+body.page-posts{
+	.l-region--sidebar-first, .l-region--sidebar-second{
+		.block__title{
+			margin: 10px 0 8px 0;
+			@include remFontSize($fontL);
+			font-weight:bold;
+		}
+		.block--facetapi{
+			margin-bottom:25px;
+			ul.facetapi-facetapi-links{
+				@include clearfix;
+				li{
+					@include fontelloAfter;
+					border-bottom:1px solid #ddd;
+					padding:10px 6px;
+					&:after{
+						float:right;
+						color:#ddd;
+						font-weight:bold;
+					}
+				}
+			}
+			ul#facetapi-facet-search-apiposts-blogs-and-news-block-field-post-categories{
+				li:after{
+					content:'\e838';
+				}
+			}
+			ul#facetapi-facet-search-apiposts-blogs-and-news-block-created{
+				li:after{
+					content:'\e81c';
+				}
+			}
+		}
+	}
 }
