@@ -7,10 +7,20 @@
 		.views-row{
 			position:relative;
 			.views-field-field-image-gallery{
+				overflow:hidden;
 				img{
-					width:100%;
+					@include breakpoint(0 $breakpointMobile){
+						height:250px;
+					}
+					@include breakpoint($mobile2Tablet){
+						height:320px;
+					}
+					@include breakpoint($tablet2Wide){
+						height:400px;
+					}
 					height:auto;
 					display:block;
+					@include centerXRelativeNoIE8;
 				}
 			}
 			.views-field-nothing{
@@ -26,21 +36,21 @@
 					width:100%;
 					.titb_Left{
 						@include breakpoint(0 $breakpointTablet){
-							display:block;
-							float:left;
-							width:50%;
+							//display:block;
+							//float:left;
+							//width:50%;
 						}
 						.titb_title{
 							font-weight:bold;
 							@include breakpoint(0 $breakpointMobile){
-								@include remFontSize($fontM);
+								@include remFontSize($fontXL);
 								&:before{
 									font-size:15px;
 								}
 								padding-left:23px;
 							}
 							@include breakpoint($mobile2Tablet){
-								@include remFontSize($fontXL);
+								@include remFontSize($fontXXL);
 								&:before{
 									font-size:20px;
 								}
@@ -62,9 +72,9 @@
 					}
 					.titb_Right{
 						@include breakpoint(0 $breakpointTablet){
-							display:block;
-							float:left;
-							width:50%;
+							//display:block;
+							//float:left;
+							//width:50%;
 						}
 						.titb_phone{
 							&:before{
@@ -84,7 +94,7 @@
 					}
 					.titb_title, .titb_address, .titb_phone, .titb_website, .titb_email{
 						@include breakpoint(0 $breakpointMobile){
-							@include remFontSize($fontXS);
+							@include remFontSize($fontS);
 							margin-bottom:5px;
 							margin-left:5px;
 						}

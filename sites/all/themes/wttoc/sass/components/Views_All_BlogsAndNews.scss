@@ -153,6 +153,10 @@ body.page-posts{
 						color:#ddd;
 						font-weight:bold;
 					}
+					&.expanded{
+						@include fontelloAfterClear;
+						border-bottom:0;
+					}
 				}
 			}
 			ul#facetapi-facet-search-apiposts-blogs-and-news-block-field-post-categories{

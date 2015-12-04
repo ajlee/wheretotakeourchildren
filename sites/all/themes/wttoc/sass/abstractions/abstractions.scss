@@ -370,6 +370,12 @@
 		/* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
 	}
 }
+@mixin fontelloAfterClear{
+	&:after{
+		content:none;
+		display:none;
+	}
+}
 /*
  * Quick Box Wizard
  */
@@ -617,14 +623,30 @@
 	-ms-transform: translate(-50%,0); 
 	transform: translate(-50%,0); 
 }
-@mixin centerXYAbsoluteNoIE8{
+@mixin centerXYRelativeNoIE8{
 	//IE8 and below not supported
-	position: absolute;
-    top: 50%;
-    left: 50%;
-	-webkit-transform: translate(-50%,-50%); 
-	-ms-transform: translate(-50%,-50%); 
-	transform: translate(-50%,-50%); 
+	//haven't tested this one yet
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	transform: translate(-50%,-50%);
+}
+@mixin centerXRelativeNoIE8{
+	//IE8 and below not supported
+	position: relative;
+	left: 50%;
+	-webkit-transform: translate(-50%,0);
+	-ms-transform: translate(-50%,0);
+	transform: translate(-50%,0);
+}
+@mixin centerYRelativeNoIE8{
+	//IE8 and below not supported
+	position: relative;
+	top: 50%;
+	-webkit-transform: translate(0,-50%);
+	-ms-transform: translate(0,-50%);
+	transform: translate(0,-50%);
 }
 
 /*

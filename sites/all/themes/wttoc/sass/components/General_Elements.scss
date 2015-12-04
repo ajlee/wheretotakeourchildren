@@ -58,33 +58,6 @@ fieldset{
 }
 
 /*
- * Social Media Icons
- */
-.social-links {
-	.field-label {
-		@include fontelloBefore;
-		&:before {
-			display: inline-block;
-			font-size: 25px;
-			padding: 8px 8px;
-			margin: 9px;
-			margin-left: 0;
-			border-radius: 10px;
-			color: #fff;
-		}
-	}
-	ul {
-		@include clearfix;
-		li {
-			padding-top: 20px !important;
-			padding-bottom: 20px !important;
-			i.icon {
-				border-radius: 30px;
-			}
-		}
-	}
-}
-/*
  * Back To Top Z Index
  */
  body #backtotop{
@@ -236,6 +209,9 @@ footer.l-footer{
 				text-align: center;
 				.panel-overlay {
 					display: none;
+				}
+				img{
+					//@include centerXRelativeNoIE8;
 				}
 			}
 		}
