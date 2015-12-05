@@ -13,6 +13,7 @@ function wttoc_field_base_field_default_field_instances() {
   // Exported field_instance: 'taxonomy_term-ages-field_category_image'
   $field_instances['taxonomy_term-ages-field_category_image'] = array(
     'bundle' => 'ages',
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -46,7 +47,7 @@ function wttoc_field_base_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'dragndrop_upload_image',
+      'module' => 'image',
       'settings' => array(
         'allow_replace' => 0,
         'droppable_area_text' => 'Drop files here to upload',
@@ -58,7 +59,7 @@ function wttoc_field_base_field_default_field_instances() {
         'upload_button_text' => 'Upload',
         'upload_event' => 'auto',
       ),
-      'type' => 'dragndrop_upload_image',
+      'type' => 'image_image',
       'weight' => 2,
     ),
   );
@@ -100,7 +101,7 @@ function wttoc_field_base_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'dragndrop_upload_image',
+      'module' => 'image',
       'settings' => array(
         'allow_replace' => 0,
         'droppable_area_text' => 'Drop files here to upload',
@@ -112,7 +113,7 @@ function wttoc_field_base_field_default_field_instances() {
         'upload_button_text' => 'Upload',
         'upload_event' => 'auto',
       ),
-      'type' => 'dragndrop_upload_image',
+      'type' => 'image_image',
       'weight' => 3,
     ),
   );
@@ -159,6 +160,7 @@ function wttoc_field_base_field_default_field_instances() {
   // 'taxonomy_term-events_categories_and_features-field_category_image'
   $field_instances['taxonomy_term-events_categories_and_features-field_category_image'] = array(
     'bundle' => 'events_categories_and_features',
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -192,7 +194,7 @@ function wttoc_field_base_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'dragndrop_upload_image',
+      'module' => 'image',
       'settings' => array(
         'allow_replace' => 0,
         'droppable_area_text' => 'Drop files here to upload',
@@ -204,7 +206,7 @@ function wttoc_field_base_field_default_field_instances() {
         'upload_button_text' => 'Upload',
         'upload_event' => 'auto',
       ),
-      'type' => 'dragndrop_upload_image',
+      'type' => 'image_image',
       'weight' => 3,
     ),
   );

@@ -93,6 +93,7 @@ function wttoc_content_types_field_default_field_instances() {
   // Exported field_instance: 'node-blog_post-field_image_gallery'
   $field_instances['node-blog_post-field_image_gallery'] = array(
     'bundle' => 'blog_post',
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -132,7 +133,7 @@ function wttoc_content_types_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'dragndrop_upload_image',
+      'module' => 'image',
       'settings' => array(
         'allow_replace' => 0,
         'droppable_area_text' => 'Drop files here to upload',
@@ -144,7 +145,7 @@ function wttoc_content_types_field_default_field_instances() {
         'upload_button_text' => 'Upload',
         'upload_event' => 'auto',
       ),
-      'type' => 'dragndrop_upload_image',
+      'type' => 'image_image',
       'weight' => 3,
     ),
   );
@@ -186,43 +187,6 @@ function wttoc_content_types_field_default_field_instances() {
       ),
       'type' => 'options_select',
       'weight' => 5,
-    ),
-  );
-
-  // Exported field_instance: 'node-blog_post-field_post_type'
-  $field_instances['node-blog_post-field_post_type'] = array(
-    'bundle' => 'blog_post',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 3,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_post_type',
-    'label' => 'Post Type',
-    'required' => 1,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 4,
     ),
   );
 
@@ -358,6 +322,44 @@ function wttoc_content_types_field_default_field_instances() {
       ),
       'type' => 'term_reference_tree',
       'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'node-business_service_or_attraction-field_email'
+  $field_instances['node-business_service_or_attraction-field_email'] = array(
+    'bundle' => 'business_service_or_attraction',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 52,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_email',
+    'label' => 'Email',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'email',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'email_textfield',
+      'weight' => 16,
     ),
   );
 
@@ -505,6 +507,7 @@ function wttoc_content_types_field_default_field_instances() {
   // 'node-business_service_or_attraction-field_image_gallery'
   $field_instances['node-business_service_or_attraction-field_image_gallery'] = array(
     'bundle' => 'business_service_or_attraction',
+    'default_value' => array(),
     'deleted' => 0,
     'description' => 'The first image will be used as the default image throughout the site. Don\'t forget to fill the image\'s Alt and Title fields for impaired users.',
     'display' => array(
@@ -540,7 +543,7 @@ function wttoc_content_types_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'dragndrop_upload_image',
+      'module' => 'image',
       'settings' => array(
         'allow_replace' => 0,
         'droppable_area_text' => 'Drop files here to upload',
@@ -552,7 +555,7 @@ function wttoc_content_types_field_default_field_instances() {
         'upload_button_text' => 'Upload',
         'upload_event' => 'auto',
       ),
-      'type' => 'dragndrop_upload_image',
+      'type' => 'image_image',
       'weight' => 8,
     ),
   );
@@ -722,7 +725,7 @@ function wttoc_content_types_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'above',
         'module' => 'socialfield',
         'settings' => array(
           'link_text' => 1,
@@ -739,7 +742,7 @@ function wttoc_content_types_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_social_media_pages',
-    'label' => 'Social Media Pages',
+    'label' => 'Follow Us',
     'required' => 0,
     'settings' => array(
       'services' => array(
@@ -1036,6 +1039,44 @@ function wttoc_content_types_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-event-field_email'
+  $field_instances['node-event-field_email'] = array(
+    'bundle' => 'event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 52,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_email',
+    'label' => 'Email',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'email',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'email_textfield',
+      'weight' => 16,
+    ),
+  );
+
   // Exported field_instance: 'node-event-field_featured_content'
   $field_instances['node-event-field_featured_content'] = array(
     'bundle' => 'event',
@@ -1177,6 +1218,7 @@ function wttoc_content_types_field_default_field_instances() {
   // Exported field_instance: 'node-event-field_image_gallery'
   $field_instances['node-event-field_image_gallery'] = array(
     'bundle' => 'event',
+    'default_value' => array(),
     'deleted' => 0,
     'description' => 'The first image will be used as the default image throughout the site. Don\'t forget to fill the image\'s Alt and Title fields for impaired users.',
     'display' => array(
@@ -1212,7 +1254,7 @@ function wttoc_content_types_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'dragndrop_upload_image',
+      'module' => 'image',
       'settings' => array(
         'allow_replace' => 0,
         'droppable_area_text' => 'Drop files here to upload',
@@ -1224,7 +1266,7 @@ function wttoc_content_types_field_default_field_instances() {
         'upload_button_text' => 'Upload',
         'upload_event' => 'auto',
       ),
-      'type' => 'dragndrop_upload_image',
+      'type' => 'image_image',
       'weight' => 10,
     ),
   );
@@ -1400,7 +1442,7 @@ function wttoc_content_types_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'above',
         'module' => 'socialfield',
         'settings' => array(
           'link_text' => FALSE,
@@ -1417,7 +1459,7 @@ function wttoc_content_types_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_social_media_pages',
-    'label' => 'Social Media Pages',
+    'label' => 'Follow Us',
     'required' => 0,
     'settings' => array(
       'services' => array(
@@ -1537,11 +1579,13 @@ function wttoc_content_types_field_default_field_instances() {
   t('Ages');
   t('Body');
   t('Date of Event');
+  t('Email');
   t('Event Website');
   t('Events: Categories and Features');
   t('Family Guide: Categories and Features');
   t('Featured Event');
   t('Featured Family Guide');
+  t('Follow Us');
   t('General Information');
   t('Hidden Address Geofield');
   t('Image Gallery');
@@ -1550,9 +1594,7 @@ function wttoc_content_types_field_default_field_instances() {
   t('Opening Hours');
   t('Phone Number');
   t('Post Categories');
-  t('Post Type');
   t('Prices Information');
-  t('Social Media Pages');
   t('The first image will be used as the default image throughout the site. Don\'t forget to fill the image\'s Alt and Title fields for impaired users.');
   t('Vouchers Information');
   t('Website Address');
