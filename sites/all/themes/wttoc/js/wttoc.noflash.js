@@ -3,7 +3,7 @@ document.write('<style type="text/css">.l-main{background:url("/sites/all/themes
 (function ($, Drupal) {
   Drupal.behaviors.wttocNoFlashJS = {
     attach: function (context) {
-		$('.l-main').css('background','none').css('opacity','1');
+        $('.l-main').css('background','none').css('opacity','1');
 		$('.l-widetop').css('height','auto').css('visibility','visible');
 		$('.l-main > aside').css('visibility','visible');
 		$('.l-main > div').css('visibility','visible');

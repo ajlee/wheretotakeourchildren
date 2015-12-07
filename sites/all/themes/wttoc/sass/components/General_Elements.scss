@@ -105,6 +105,7 @@ footer.l-footer{
 		}
 }
 
+/* Share This*/
 .sharethis-wrapper{
 	max-width:80%;
 	text-align:left;
@@ -211,12 +212,29 @@ footer.l-footer{
 					display: none;
 				}
 				img{
-					//@include centerXRelativeNoIE8;
+					width:100%;
+					@include centerXRelativeNoIE8;
 				}
 			}
 		}
 	}
 	.gallery-thumbs {
 		padding: 0px;
+	}
+}
+/*
+ * EU Cookie Compliance
+ */
+#sliding-popup{
+	@include clearfix;
+}
+
+/*
+ * Map - Make it thinner
+ */
+#leaflet-map{
+	@include breakpoint(0 $breakpointTablet){
+		width:90%;
+		margin: 0 auto;
 	}
 }

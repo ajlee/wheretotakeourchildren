@@ -10,10 +10,10 @@
 				overflow:hidden;
 				img{
 					@include breakpoint(0 $breakpointMobile){
-						height:250px;
+						height:300px;
 					}
 					@include breakpoint($mobile2Tablet){
-						height:320px;
+						height:340px;
 					}
 					@include breakpoint($tablet2Wide){
 						height:400px;
@@ -29,11 +29,21 @@
 				left:0;
 				width:100%;
 				height:100%;
-				@include backgroundOpacity($BLACK, 0.4);
+				@include backgroundOpacity($BLACK, 0.3);
 				.textInTopBox{
 					@include colorDescendantsFont($WHITE);
 					@include centerYAbsoluteNoIE8;
 					width:100%;
+					.titb_Left, .titb_Right{
+						padding-left:40px;
+						@include breakpoint(0 $breakpointTablet){
+							font-weight:bold;
+							padding-left:25px;
+						}
+						@include breakpoint($breakpointTabletP1){
+							padding-left:60px;
+						}
+					}
 					.titb_Left{
 						@include breakpoint(0 $breakpointTablet){
 							//display:block;
@@ -46,22 +56,28 @@
 								@include remFontSize($fontXL);
 								&:before{
 									font-size:15px;
+									display:none;
 								}
-								padding-left:23px;
+								margin-top:20px;
+								padding-left:0;
 							}
 							@include breakpoint($mobile2Tablet){
 								@include remFontSize($fontXXL);
 								&:before{
 									font-size:20px;
+									display:none;
 								}
-								padding-left:30px;
+								margin-top:30px;
+								padding-left:0;
 							}
 							@include breakpoint($breakpointTabletP1){
 								@include remFontSize($fontXXXL);
 								&:before{
 									font-size:40px;
+									display:none;
 								}
-								padding-left:60px;
+								margin-top:50px;
+								padding-left:0;
 							}
 						}
 						.titb_address{
@@ -95,15 +111,15 @@
 					.titb_title, .titb_address, .titb_phone, .titb_website, .titb_email{
 						@include breakpoint(0 $breakpointMobile){
 							@include remFontSize($fontS);
-							margin-bottom:5px;
-							margin-left:5px;
+							margin-bottom:8px;
+							margin-left:12px;
 						}
 						@include breakpoint($mobile2Tablet){
-							margin-bottom:10px;
-							margin-left:10px;
+							margin-bottom:14px;
+							margin-left:20px;
 						}
 						@include breakpoint($breakpointTabletP1){
-							margin-bottom:15px;
+							margin-bottom:20px;
 							margin-left:30px;
 						}
 						position:relative;
@@ -149,6 +165,13 @@
 				.wttocFieldEnclose {
 					margin-top: 10px;
 					margin-bottom: 10px;
+					line-height:1.5em;
+					ol, ol li{
+						list-style: decimal;
+					}
+					ul, ul li{
+						list-style: circle;
+					}
 				}
 			}
 		}
@@ -183,6 +206,9 @@ body.node-type-event,body.node-type-business-service-or-attraction{
 			}
 			.block__title {
 			}
+		}
+		.fg_opening_hours-container .block__content .view-content{
+
 		}
 	}
 	.l-region--underlighted{
@@ -327,16 +353,16 @@ body.node-type-business-service-or-attraction{
 			//fontello icon
 			content: '\e80b';
 		}
-		@include tabJScolorings($color1Light, $LIGHTERDARKGRAY, $color1, $WHITE, 2px solid transparent, 2px solid transparent);
+		@include tabJScolorings($color1, $WHITE, $color1, $WHITE, 2px solid transparent, 2px solid transparent);
 	}
 	//Prices
 	&.tabJS_block--views-business-display-fg-prices,
 	&.tabJS_block--views-events-display-e-prices {
 		&:before {
 			//fontello icon
-			content: '\e812';
+			content: '\e839';
 		}
-		@include tabJScolorings($color2Light, $LIGHTERDARKGRAY, $color2, $WHITE, 2px solid transparent, 2px solid transparent);
+		@include tabJScolorings($color2, $WHITE, $color2, $WHITE, 2px solid transparent, 2px solid transparent);
 	}
 	//Vouchers
 	&.tabJS_block--views-business-display-fg-vouchers,
@@ -345,7 +371,7 @@ body.node-type-business-service-or-attraction{
 			//fontello icon
 			content: '\e815';
 		}
-		@include tabJScolorings($color3Light, $LIGHTERDARKGRAY, $color3, $WHITE, 2px solid transparent, 2px solid transparent);
+		@include tabJScolorings($color3, $WHITE, $color3, $WHITE, 2px solid transparent, 2px solid transparent);
 	}
 	//More Info Tab
 	&.tabJS_block--views-business-display-fg-more-info,
@@ -354,6 +380,6 @@ body.node-type-business-service-or-attraction{
 			//fontello icon
 			content: '\e819';
 		}
-		@include tabJScolorings($colorWVioletLight, $LIGHTERDARKGRAY, $colorWViolet, $WHITE, 2px solid transparent, 2px solid transparent);
+		@include tabJScolorings($colorWViolet, $WHITE, $colorWViolet, $WHITE, 2px solid transparent, 2px solid transparent);
 	}
 }

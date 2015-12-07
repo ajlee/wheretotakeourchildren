@@ -1,0 +1,121 @@
+body.node-type-blog-post {
+  //TOP BAR
+  .view-id-content_type_posts_display.view-display-id-post_back_to_posts{
+    .view-content {
+      display: block;
+      width: 100%;
+      background-color: #6AA2B8;
+      text-align: right;
+      .views-row {
+        padding: 10px 20px;
+        .views-field-nothing {
+          display:inline-block;
+          span, a{
+            display:inline-block;
+          }
+          .field-content {
+            a {
+              @include fontelloBefore;
+              &:before{
+                content:'\e83a';
+              }
+              background-color:$color1Dark;
+              color: $WHITE;
+              padding: 10px 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+  //MAIN
+  .view-id-content_type_posts_display.view-display-id-posts_main{
+    //author top
+    .views-field.views-field-nothing-1{
+      padding: 8px 0;
+    }
+    //content: gallery
+    .views-field.views-field-field-image-gallery{
+
+    }
+    //content: body
+    .views-field.views-field-field-body{
+      line-height:1.5em;
+      ol, ol li{
+        list-style: decimal;
+      }
+      ul, ul li{
+        list-style: circle;
+      }
+    }
+    //content:categories
+    .views-field.views-field-field-post-categories{
+      .views-label, .field-content{
+        display:inline-block;
+      }
+      .views-label{
+
+      }
+      .field-content{
+        a{
+          background-color:$LIGHTGRAY;
+          color:$colorWPink;
+          padding:5px 10px;
+          border-radius:4px;
+          margin-right:8px;
+        }
+      }
+    }
+    //author bottom
+    .views-field.views-field-nothing{
+      @include clearfix;
+      .blogBoxLeft, .blogBoxRight{
+        display:block;
+        float:left;
+      }
+      .blogBoxLeft{
+        img{
+          width:100px;
+          height:auto;
+          border-radius:100px
+        }
+      }
+      .blogBoxRight{
+        .bbr_writteprev, .bbr_written, .bbr_title, .bbr_company{
+          padding-left: 15px;
+          margin-bottom: 7px;
+        }
+        .bbr_writteprev{
+          @include remFontSize($fontS);
+        }
+        .bbr_written{
+          @include remFontSize($fontL);
+          margin-bottom:10px;
+        }
+        .bbr_title{
+          @include remFontSize($fontXS);
+        }
+        .bbr_company{
+          @include remFontSize($fontXS);
+        }
+      }
+    }
+    //all fields
+    .views-field{
+      padding: 5px 0;
+    };
+    //borders and padding
+    .views-field.views-field-field-post-categories{
+      border-top: 1px solid $LIGHTGRAY
+    }
+    .views-field.views-field-field-post-categories, .views-field-nothing{
+      padding: 28px 0;
+      border-bottom:1px solid $LIGHTGRAY;
+    }
+  }
+  //PAGE TITLE
+  .mainPageTitle{
+    border-bottom: 1px solid $LIGHTGRAY;
+    margin-bottom:8px;
+  }
+}

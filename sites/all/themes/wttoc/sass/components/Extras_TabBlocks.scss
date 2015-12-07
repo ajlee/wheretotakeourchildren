@@ -4,7 +4,12 @@
  * TabBlocks: Tabs Display Fontello Icon
  */
 .js .tabJS{
+	position:relative;
 	@include fontelloBefore;
+	&:before{
+		@include centerYAbsoluteNoIE8;
+		padding-left:5px;
+	}
 }
 
 /*
@@ -13,17 +18,15 @@
 
 .js .tabJS{
 	display: inline-block;
-	margin-right: 5px;
+	margin-right:10px;
 	margin-top: 3px;
 	margin-bottom: 6px;
 	border: 1px solid $DARKGRAY;
-	border-bottom:0;
-	padding: 8px;
-	padding-top:12px;
-	padding-bottom: 4px;
-	vertical-align:bottom;
+	border-bottom: 0;
+	vertical-align: bottom;
+	padding: 0;
 	&:before{
-		@include cssTransition(all 0.35s ease-in-out);
+		//@include cssTransition(all 0.35s ease-in-out);
 	}
 	//normal tabs
 	background-color: $LIGHTGRAY;
@@ -31,13 +34,23 @@
 	a{
 		text-decoration:none;
 		color:$DARKGRAY;
+		padding:7px 9px 7px 30px;
+		display:inline-block;
+		@include breakpoint($breakpointWideP1 + 50px){
+			min-width:100px;
+		}
 	}
 	//active and hover tabs
 	&.active, &:hover{
-		padding-bottom:12px;
+		&:before{
+			//padding-bottom:13px;
+			//padding-top:13px;
+		}
 		color:$WHITE;
 		a{
 			text-decoration:none;
+			padding-bottom:13px;
+			padding-top:13px;
 		}
 	}
 	//hover tabs - making this a bit different from active helps on mobile
