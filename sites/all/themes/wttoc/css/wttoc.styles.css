@@ -2661,6 +2661,9 @@ body.page-search-businesses-and-events .l-region--sidebar-first .lc-region--inne
     .mainContentC .view-id-business_display .views-field .field-content .wttocFieldEnclose ul, .mainContentC .view-id-business_display .views-field .field-content .wttocFieldEnclose ul li, .mainContentC .view-id-events_display .views-field .field-content .wttocFieldEnclose ul, .mainContentC .view-id-events_display .views-field .field-content .wttocFieldEnclose ul li {
       list-style: disc;
       margin-left: 20px; }
+    .mainContentC .view-id-business_display .views-field .field-content .wttocFieldEnclose p, .mainContentC .view-id-business_display .views-field .field-content .wttocFieldEnclose ul, .mainContentC .view-id-business_display .views-field .field-content .wttocFieldEnclose ol, .mainContentC .view-id-business_display .views-field .field-content .wttocFieldEnclose h1, .mainContentC .view-id-business_display .views-field .field-content .wttocFieldEnclose h2, .mainContentC .view-id-business_display .views-field .field-content .wttocFieldEnclose h3, .mainContentC .view-id-business_display .views-field .field-content .wttocFieldEnclose h4, .mainContentC .view-id-business_display .views-field .field-content .wttocFieldEnclose h5, .mainContentC .view-id-events_display .views-field .field-content .wttocFieldEnclose p, .mainContentC .view-id-events_display .views-field .field-content .wttocFieldEnclose ul, .mainContentC .view-id-events_display .views-field .field-content .wttocFieldEnclose ol, .mainContentC .view-id-events_display .views-field .field-content .wttocFieldEnclose h1, .mainContentC .view-id-events_display .views-field .field-content .wttocFieldEnclose h2, .mainContentC .view-id-events_display .views-field .field-content .wttocFieldEnclose h3, .mainContentC .view-id-events_display .views-field .field-content .wttocFieldEnclose h4, .mainContentC .view-id-events_display .views-field .field-content .wttocFieldEnclose h5 {
+      margin-top: 10px;
+      margin-bottom: 10px; }
 
 .mainContentC .view-id-business_display i.icon {
   background-color: #66CD4C; }
@@ -4630,6 +4633,9 @@ body.node-type-blog-post .view-id-content_type_posts_display.view-display-id-pos
   body.node-type-blog-post .view-id-content_type_posts_display.view-display-id-posts_main .views-field.views-field-field-body ul, body.node-type-blog-post .view-id-content_type_posts_display.view-display-id-posts_main .views-field.views-field-field-body ul li {
     list-style: disc;
     margin-left: 20px; }
+  body.node-type-blog-post .view-id-content_type_posts_display.view-display-id-posts_main .views-field.views-field-field-body p, body.node-type-blog-post .view-id-content_type_posts_display.view-display-id-posts_main .views-field.views-field-field-body ul, body.node-type-blog-post .view-id-content_type_posts_display.view-display-id-posts_main .views-field.views-field-field-body ol, body.node-type-blog-post .view-id-content_type_posts_display.view-display-id-posts_main .views-field.views-field-field-body h1, body.node-type-blog-post .view-id-content_type_posts_display.view-display-id-posts_main .views-field.views-field-field-body h2, body.node-type-blog-post .view-id-content_type_posts_display.view-display-id-posts_main .views-field.views-field-field-body h3, body.node-type-blog-post .view-id-content_type_posts_display.view-display-id-posts_main .views-field.views-field-field-body h4, body.node-type-blog-post .view-id-content_type_posts_display.view-display-id-posts_main .views-field.views-field-field-body h5 {
+    margin-top: 10px;
+    margin-bottom: 10px; }
 
 body.node-type-blog-post .view-id-content_type_posts_display.view-display-id-posts_main .views-field.views-field-field-post-categories .views-label, body.node-type-blog-post .view-id-content_type_posts_display.view-display-id-posts_main .views-field.views-field-field-post-categories .field-content {
   display: inline-block; }

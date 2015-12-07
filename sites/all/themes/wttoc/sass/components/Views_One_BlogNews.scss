@@ -49,6 +49,10 @@ body.node-type-blog-post {
         list-style: disc;
         margin-left:20px;
       }
+      p, ul, ol, h1,h2,h3,h4,h5{
+        margin-top:10px;
+        margin-bottom:10px;
+      }
     }
     //content:categories
     .views-field.views-field-field-post-categories{
