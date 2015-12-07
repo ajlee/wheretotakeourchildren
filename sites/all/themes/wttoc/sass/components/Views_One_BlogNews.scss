@@ -43,9 +43,11 @@ body.node-type-blog-post {
       line-height:1.5em;
       ol, ol li{
         list-style: decimal;
+        margin-left:20px;
       }
       ul, ul li{
-        list-style: circle;
+        list-style: disc;
+        margin-left:20px;
       }
     }
     //content:categories

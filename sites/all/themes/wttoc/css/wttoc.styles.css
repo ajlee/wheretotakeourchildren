@@ -2655,6 +2655,12 @@ body.page-search-businesses-and-events .l-region--sidebar-first .lc-region--inne
     margin-top: 10px;
     margin-bottom: 10px;
     line-height: 1.5em; }
+    .mainContentC .view-id-business_display .views-field .field-content .wttocFieldEnclose ol, .mainContentC .view-id-business_display .views-field .field-content .wttocFieldEnclose ol li, .mainContentC .view-id-events_display .views-field .field-content .wttocFieldEnclose ol, .mainContentC .view-id-events_display .views-field .field-content .wttocFieldEnclose ol li {
+      list-style: decimal;
+      margin-left: 20px; }
+    .mainContentC .view-id-business_display .views-field .field-content .wttocFieldEnclose ul, .mainContentC .view-id-business_display .views-field .field-content .wttocFieldEnclose ul li, .mainContentC .view-id-events_display .views-field .field-content .wttocFieldEnclose ul, .mainContentC .view-id-events_display .views-field .field-content .wttocFieldEnclose ul li {
+      list-style: disc;
+      margin-left: 20px; }
 
 .mainContentC .view-id-business_display i.icon {
   background-color: #66CD4C; }
@@ -4618,6 +4624,12 @@ body.node-type-blog-post .view-id-content_type_posts_display.view-display-id-pos
 
 body.node-type-blog-post .view-id-content_type_posts_display.view-display-id-posts_main .views-field.views-field-field-body {
   line-height: 1.5em; }
+  body.node-type-blog-post .view-id-content_type_posts_display.view-display-id-posts_main .views-field.views-field-field-body ol, body.node-type-blog-post .view-id-content_type_posts_display.view-display-id-posts_main .views-field.views-field-field-body ol li {
+    list-style: decimal;
+    margin-left: 20px; }
+  body.node-type-blog-post .view-id-content_type_posts_display.view-display-id-posts_main .views-field.views-field-field-body ul, body.node-type-blog-post .view-id-content_type_posts_display.view-display-id-posts_main .views-field.views-field-field-body ul li {
+    list-style: disc;
+    margin-left: 20px; }
 
 body.node-type-blog-post .view-id-content_type_posts_display.view-display-id-posts_main .views-field.views-field-field-post-categories .views-label, body.node-type-blog-post .view-id-content_type_posts_display.view-display-id-posts_main .views-field.views-field-field-post-categories .field-content {
   display: inline-block; }
