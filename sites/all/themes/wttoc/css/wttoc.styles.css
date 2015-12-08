@@ -2545,6 +2545,35 @@ body.page-search-businesses-and-events .l-region--sidebar-first .lc-region--inne
       .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Left .titb_address:before,
       .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Left .titb_address:before {
         content: '\e816'; }
+      .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Left .titb_address .street-block .thoroughfare,
+      .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Left .titb_address .street-block .premise,
+      .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Left .titb_address .street-block .thoroughfare, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Left .titb_address .street-block .premise {
+        display: inline-block;
+        margin-right: 5px; }
+        .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Left .titb_address .street-block .thoroughfare:after,
+        .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Left .titb_address .street-block .premise:after,
+        .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Left .titb_address .street-block .thoroughfare:after, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Left .titb_address .street-block .premise:after {
+          content: ','; }
+        .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Left .titb_address .street-block .thoroughfare:last-child:after,
+        .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Left .titb_address .street-block .premise:last-child:after,
+        .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Left .titb_address .street-block .thoroughfare:last-child:after, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Left .titb_address .street-block .premise:last-child:after {
+          display: none; }
+      .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Left .titb_address .locality-block .locality,
+      .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Left .titb_address .locality-block .state,
+      .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Left .titb_address .locality-block .postal-code,
+      .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Left .titb_address .locality-block .locality, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Left .titb_address .locality-block .state, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Left .titb_address .locality-block .postal-code {
+        display: inline-block;
+        margin-right: 5px; }
+        .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Left .titb_address .locality-block .locality:after,
+        .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Left .titb_address .locality-block .state:after,
+        .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Left .titb_address .locality-block .postal-code:after,
+        .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Left .titb_address .locality-block .locality:after, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Left .titb_address .locality-block .state:after, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Left .titb_address .locality-block .postal-code:after {
+          content: ','; }
+        .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Left .titb_address .locality-block .locality:last-child:after,
+        .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Left .titb_address .locality-block .state:last-child:after,
+        .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Left .titb_address .locality-block .postal-code:last-child:after,
+        .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Left .titb_address .locality-block .locality:last-child:after, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Left .titb_address .locality-block .state:last-child:after, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Left .titb_address .locality-block .postal-code:last-child:after {
+          display: none; }
       .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Right .titb_phone:before,
       .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Right .titb_phone:before {
         content: '\e832'; }
@@ -2766,7 +2795,7 @@ body.node-type-event .social-links .field-label:before {
   background-color: #FC5161; }
 
 /*
- * Icon Colorings 
+ * Icon Colorings & Other
  */
 .js body.node-type-event .l-content .fg_overview-container .block__title, .js body.node-type-event .l-content .fg_prices-container .block__title, .js body.node-type-event .l-content .fg_vouchers-container .block__title, .js body.node-type-event .l-content .fg_more_info-container .block__title, .js .node-type-business-service-or-attraction .l-content .fg_overview-container .block__title,
 .js .node-type-business-service-or-attraction .l-content .fg_prices-container .block__title,
@@ -2903,6 +2932,31 @@ body.node-type-event .social-links .field-label:before {
 .no-js body.node-type-event .l-content .e_overview-container .block__title, .no-js .node-type-business-service-or-attraction .l-content .fg_overview-container .block__title,
 .no-js .node-type-business-service-or-attraction .l-content .e_overview-container .block__title {
   background-color: #5675CE; }
+
+.js body.node-type-event .l-content .fg_overview-container .views-field-field-video .player,
+.js body.node-type-event .l-content .e_overview-container .views-field-field-video .player, .js .node-type-business-service-or-attraction .l-content .fg_overview-container .views-field-field-video .player,
+.js .node-type-business-service-or-attraction .l-content .e_overview-container .views-field-field-video .player,
+.no-js body.node-type-event .l-content .fg_overview-container .views-field-field-video .player,
+.no-js body.node-type-event .l-content .e_overview-container .views-field-field-video .player, .no-js .node-type-business-service-or-attraction .l-content .fg_overview-container .views-field-field-video .player,
+.no-js .node-type-business-service-or-attraction .l-content .e_overview-container .views-field-field-video .player {
+  position: relative;
+  padding-bottom: 56.25%;
+  /* 16:9 */
+  padding-top: 25px;
+  height: 0; }
+  .js body.node-type-event .l-content .fg_overview-container .views-field-field-video .player iframe,
+  .js body.node-type-event .l-content .e_overview-container .views-field-field-video .player iframe, .js .node-type-business-service-or-attraction .l-content .fg_overview-container .views-field-field-video .player iframe,
+  .js .node-type-business-service-or-attraction .l-content .e_overview-container .views-field-field-video .player iframe,
+  .no-js body.node-type-event .l-content .fg_overview-container .views-field-field-video .player iframe,
+  .no-js body.node-type-event .l-content .e_overview-container .views-field-field-video .player iframe, .no-js .node-type-business-service-or-attraction .l-content .fg_overview-container .views-field-field-video .player iframe,
+  .no-js .node-type-business-service-or-attraction .l-content .e_overview-container .views-field-field-video .player iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 90%;
+    margin: 0 auto;
+    height: 100%; }
 
 .js body.node-type-event .l-content .fg_prices-container .field-content i.icon,
 .js body.node-type-event .l-content .e_prices-container .field-content i.icon, .js .node-type-business-service-or-attraction .l-content .fg_prices-container .field-content i.icon,
@@ -4506,6 +4560,15 @@ body.page-posts .l-region--sidebar-first .block--facetapi, body.page-posts .l-re
 
 .social-links-block-wttoc .service-stumbleupon .icon {
   background-color: #f74425; }
+
+.social-links-block-wttoc .service-instagram .icon {
+  background-color: #f7cf4c; }
+
+.social-links-block-wttoc .service-rss .icon {
+  background-color: #ff6600; }
+
+.social-links-block-wttoc .service-rss2 .icon {
+  background-color: #ffb04c; }
 
 .l-footer .social-links-block-wttoc-container {
   text-align: center; }
