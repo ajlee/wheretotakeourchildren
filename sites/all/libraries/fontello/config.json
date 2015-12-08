@@ -53,6 +53,12 @@
       "src": "fontawesome"
     },
     {
+      "uid": "0f99ab40ab0b4d64a74f2d0deeb03e42",
+      "css": "videocam",
+      "code": 59452,
+      "src": "fontawesome"
+    },
+    {
       "uid": "381da2c2f7fd51f8de877c044d7f439d",
       "css": "picture",
       "code": 59415,
@@ -116,6 +122,18 @@
       "uid": "0d08dbb1dd648a43bdea81b7e6c9e036",
       "css": "location",
       "code": 59414,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "72b1277834cba5b7944b0a6cac7ddb0d",
+      "css": "rss",
+      "code": 59453,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "de5f0a564ccf8816325330e292e11533",
+      "css": "rss-squared",
+      "code": 59454,
       "src": "fontawesome"
     },
     {
@@ -242,6 +260,12 @@
       "uid": "b8d0c7d76e87b94882329a88e8e43d3d",
       "css": "gplus",
       "code": 59408,
+      "src": "fontawesome"
+    },
+    {
+      "uid": "4c1ef492f1d2c39a2250ae457cee2a6e",
+      "css": "instagram",
+      "code": 59451,
       "src": "fontawesome"
     },
     {
