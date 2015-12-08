@@ -29,7 +29,7 @@ function wttoc_text_formats_filter_default_formats() {
         'weight' => 1,
         'status' => 1,
         'settings' => array(
-          'allowed_html' => '<a> <em> <strong> <cite> <blockquote> <code> <ul> <ol> <li> <dl> <dt> <dd><h4><h5><h3>',
+          'allowed_html' => '<a> <em> <strong> <cite> <blockquote> <code> <ul> <ol> <li> <dl> <dt> <dd><h4><h5><h3><h1><h2>',
           'filter_html_help' => 1,
           'filter_html_nofollow' => 1,
         ),

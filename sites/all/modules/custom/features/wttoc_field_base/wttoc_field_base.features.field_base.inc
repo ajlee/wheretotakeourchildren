@@ -144,6 +144,27 @@ function wttoc_field_base_field_default_field_bases() {
     'type' => 'image',
   );
 
+  // Exported field_base: 'field_company_name'
+  $field_bases['field_company_name'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_company_name',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'max_length' => 255,
+    ),
+    'translatable' => 0,
+    'type' => 'text',
+  );
+
   // Exported field_base: 'field_date_of_event'
   $field_bases['field_date_of_event'] = array(
     'active' => 1,
@@ -463,6 +484,9 @@ function wttoc_field_base_field_default_field_bases() {
         'icon-reddit' => 'service-reddit',
         'icon-slideshare' => 'service-slideshare',
         'icon-stumbleupon' => 'service-stumbleupon',
+        'icon-instagram' => 'service-instagram',
+        'icon-rss' => 'service-rss',
+        'icon-rss-squared' => 'service-rss2',
       ),
       'allowed_values_function' => '',
     ),
@@ -498,6 +522,64 @@ function wttoc_field_base_field_default_field_bases() {
     'settings' => array(),
     'translatable' => 0,
     'type' => 'social_links_field',
+  );
+
+  // Exported field_base: 'field_title'
+  $field_bases['field_title'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_title',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(
+      'max_length' => 255,
+    ),
+    'translatable' => 0,
+    'type' => 'text',
+  );
+
+  // Exported field_base: 'field_user_image'
+  $field_bases['field_user_image'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_user_image',
+    'indexes' => array(
+      'fid' => array(
+        0 => 'fid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'image',
+    'settings' => array(
+      'default_image' => 562,
+      'uri_scheme' => 'public',
+    ),
+    'translatable' => 0,
+    'type' => 'image',
+  );
+
+  // Exported field_base: 'field_video'
+  $field_bases['field_video'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_video',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'video_embed_field',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'video_embed_field',
   );
 
   // Exported field_base: 'field_vouchers_information'

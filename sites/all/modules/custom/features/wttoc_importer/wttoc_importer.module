@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the WTTOC Importer feature.
+ */
+
+include_once 'wttoc_importer.features.inc';

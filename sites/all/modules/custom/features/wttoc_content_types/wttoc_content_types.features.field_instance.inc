@@ -58,10 +58,9 @@ function wttoc_content_types_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'text',
+        'label' => 'hidden',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'hidden',
         'weight' => 2,
       ),
       'teaser' => array(
@@ -98,14 +97,10 @@ function wttoc_content_types_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'image',
-        'settings' => array(
-          'image_link' => '',
-          'image_style' => '',
-        ),
-        'type' => 'image',
-        'weight' => 1,
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -158,11 +153,10 @@ function wttoc_content_types_field_default_field_instances() {
     'description' => 'Post Categories',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
+        'label' => 'inline',
         'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 4,
+        'type' => 'hidden',
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -402,7 +396,7 @@ function wttoc_content_types_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 13,
+      'weight' => 14,
     ),
   );
 
@@ -499,7 +493,7 @@ function wttoc_content_types_field_default_field_instances() {
         ),
       ),
       'type' => 'geocoder',
-      'weight' => 10,
+      'weight' => 11,
     ),
   );
 
@@ -509,7 +503,7 @@ function wttoc_content_types_field_default_field_instances() {
     'bundle' => 'business_service_or_attraction',
     'default_value' => array(),
     'deleted' => 0,
-    'description' => 'The first image will be used as the default image throughout the site. Don\'t forget to fill the image\'s Alt and Title fields for impaired users.',
+    'description' => 'The first image will be used as the default image throughout the site. Don\'t forget to fill the image\'s Alt and Title fields for impaired users. IMPORTANT: If you don\'t upload an image, one will be automatically assigned to you, depending on your listing\'s category.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -545,15 +539,8 @@ function wttoc_content_types_field_default_field_instances() {
       'active' => 1,
       'module' => 'image',
       'settings' => array(
-        'allow_replace' => 0,
-        'droppable_area_text' => 'Drop files here to upload',
-        'media_browser' => 0,
-        'multiupload' => 1,
         'preview_image_style' => 'thumbnail',
         'progress_indicator' => 'throbber',
-        'standard_upload' => 1,
-        'upload_button_text' => 'Upload',
-        'upload_event' => 'auto',
       ),
       'type' => 'image_image',
       'weight' => 8,
@@ -633,7 +620,7 @@ function wttoc_content_types_field_default_field_instances() {
       'module' => 'office_hours',
       'settings' => array(),
       'type' => 'office_hours',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -672,7 +659,7 @@ function wttoc_content_types_field_default_field_instances() {
         'placeholder' => '',
       ),
       'type' => 'telephone_default',
-      'weight' => 14,
+      'weight' => 15,
     ),
   );
 
@@ -773,7 +760,49 @@ function wttoc_content_types_field_default_field_instances() {
       'module' => 'socialfield',
       'settings' => array(),
       'type' => 'socialfield_widget',
-      'weight' => 11,
+      'weight' => 12,
+    ),
+  );
+
+  // Exported field_instance: 'node-business_service_or_attraction-field_video'
+  $field_instances['node-business_service_or_attraction-field_video'] = array(
+    'bundle' => 'business_service_or_attraction',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Embed a video from YouTube or Vimeo. Enter the URL here: E.g. https://www.youtube.com/watch?v=fbZvU8mMmMJ or https://vimeo.com/14736f265',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 53,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_video',
+    'label' => 'Video',
+    'required' => 0,
+    'settings' => array(
+      'allowed_providers' => array(
+        'vimeo' => 'vimeo',
+        'youtube' => 'youtube',
+      ),
+      'description_field' => 0,
+      'description_length' => 128,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'video_embed_field',
+      'settings' => array(),
+      'type' => 'video_embed_field_video',
+      'weight' => 9,
     ),
   );
 
@@ -854,7 +883,7 @@ function wttoc_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'url_external',
-      'weight' => 12,
+      'weight' => 13,
     ),
   );
 
@@ -1073,7 +1102,7 @@ function wttoc_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'email_textfield',
-      'weight' => 16,
+      'weight' => 17,
     ),
   );
 
@@ -1115,7 +1144,7 @@ function wttoc_content_types_field_default_field_instances() {
         'display_label' => 1,
       ),
       'type' => 'options_onoff',
-      'weight' => 14,
+      'weight' => 15,
     ),
   );
 
@@ -1220,7 +1249,7 @@ function wttoc_content_types_field_default_field_instances() {
     'bundle' => 'event',
     'default_value' => array(),
     'deleted' => 0,
-    'description' => 'The first image will be used as the default image throughout the site. Don\'t forget to fill the image\'s Alt and Title fields for impaired users.',
+    'description' => 'The first image will be used as the default image throughout the site. Don\'t forget to fill the image\'s Alt and Title fields for impaired users. IMPORTANT: If you don\'t upload an image, one will be automatically assigned to you, depending on your listing\'s category.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -1256,15 +1285,8 @@ function wttoc_content_types_field_default_field_instances() {
       'active' => 1,
       'module' => 'image',
       'settings' => array(
-        'allow_replace' => 0,
-        'droppable_area_text' => 'Drop files here to upload',
-        'media_browser' => 0,
-        'multiupload' => 1,
         'preview_image_style' => 'thumbnail',
         'progress_indicator' => 'throbber',
-        'standard_upload' => 1,
-        'upload_button_text' => 'Upload',
-        'upload_event' => 'auto',
       ),
       'type' => 'image_image',
       'weight' => 10,
@@ -1314,7 +1336,7 @@ function wttoc_content_types_field_default_field_instances() {
         ),
       ),
       'type' => 'inline_entity_form',
-      'weight' => 13,
+      'weight' => 14,
     ),
   );
 
@@ -1391,7 +1413,7 @@ function wttoc_content_types_field_default_field_instances() {
         'placeholder' => '',
       ),
       'type' => 'telephone_default',
-      'weight' => 15,
+      'weight' => 16,
     ),
   );
 
@@ -1490,6 +1512,48 @@ function wttoc_content_types_field_default_field_instances() {
       'module' => 'socialfield',
       'settings' => array(),
       'type' => 'socialfield_widget',
+      'weight' => 12,
+    ),
+  );
+
+  // Exported field_instance: 'node-event-field_video'
+  $field_instances['node-event-field_video'] = array(
+    'bundle' => 'event',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Embed a video from YouTube or Vimeo. Enter the URL here: E.g. https://www.youtube.com/watch?v=fbZvU8mMmMJ or https://vimeo.com/14736f265',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 53,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_video',
+    'label' => 'Video',
+    'required' => 0,
+    'settings' => array(
+      'allowed_providers' => array(
+        'vimeo' => 'vimeo',
+        'youtube' => 'youtube',
+      ),
+      'description_field' => 0,
+      'description_length' => 128,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'video_embed_field',
+      'settings' => array(),
+      'type' => 'video_embed_field_video',
       'weight' => 11,
     ),
   );
@@ -1569,7 +1633,7 @@ function wttoc_content_types_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'url_external',
-      'weight' => 12,
+      'weight' => 13,
     ),
   );
 
@@ -1580,6 +1644,7 @@ function wttoc_content_types_field_default_field_instances() {
   t('Body');
   t('Date of Event');
   t('Email');
+  t('Embed a video from YouTube or Vimeo. Enter the URL here: E.g. https://www.youtube.com/watch?v=fbZvU8mMmMJ or https://vimeo.com/14736f265');
   t('Event Website');
   t('Events: Categories and Features');
   t('Family Guide: Categories and Features');
@@ -1595,7 +1660,8 @@ function wttoc_content_types_field_default_field_instances() {
   t('Phone Number');
   t('Post Categories');
   t('Prices Information');
-  t('The first image will be used as the default image throughout the site. Don\'t forget to fill the image\'s Alt and Title fields for impaired users.');
+  t('The first image will be used as the default image throughout the site. Don\'t forget to fill the image\'s Alt and Title fields for impaired users. IMPORTANT: If you don\'t upload an image, one will be automatically assigned to you, depending on your listing\'s category.');
+  t('Video');
   t('Vouchers Information');
   t('Website Address');
 

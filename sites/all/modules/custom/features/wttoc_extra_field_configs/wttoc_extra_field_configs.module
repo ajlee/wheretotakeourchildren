@@ -1,5 +1,7 @@
 <?php
 /**
  * @file
- * Drupal needs this blank file.
+ * Code for the WTTOC Extra Field Configs feature.
  */
+
+include_once 'wttoc_extra_field_configs.features.inc';

@@ -5,6 +5,15 @@
  */
 
 /**
+ * Implements hook_ctools_plugin_api().
+ */
+function wttoc_search_api_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "facetapi" && $api == "facetapi_defaults") {
+    return array("version" => "1");
+  }
+}
+
+/**
  * Implements hook_default_search_api_index().
  */
 function wttoc_search_api_default_search_api_index() {
@@ -231,9 +240,6 @@ function wttoc_search_api_default_search_api_index() {
         "field_post_categories" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_post_categories:name" : { "type" : "list\\u003Cstring\\u003E" },
         "field_post_categories:tid" : { "type" : "list\\u003Cinteger\\u003E" },
-        "field_post_type" : { "type" : "integer", "entity_type" : "taxonomy_term" },
-        "field_post_type:name" : { "type" : "string" },
-        "field_post_type:tid" : { "type" : "integer" },
         "nid" : { "type" : "integer" },
         "search_api_access_node" : { "type" : "list\\u003Cstring\\u003E" },
         "search_api_language" : { "type" : "string" },

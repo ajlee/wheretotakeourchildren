@@ -1,13 +1,14 @@
 name = WTTOC Extra Field Configs
 core = 7.x
 package = Features
+dependencies[] = ctools
 dependencies[] = eim
 dependencies[] = term_reference_tree
+dependencies[] = video_embed_field
 dependencies[] = wttoc_content_types
 dependencies[] = wttoc_field_base
 dependencies[] = wttoc_text_formats
+features[ctools][] = video_embed_field:default_video_embed_styles:1
 features[features_api][] = api:2
-features[hierarchical_select][] = taxonomy-field_category
-features[hierarchical_select][] = taxonomy-field_category_event
 features_exclude[dependencies][hierarchical_select] = hierarchical_select
 project path = sites/all/modules/custom/features

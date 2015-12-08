@@ -14,13 +14,13 @@ function wttoc_text_formats_ckeditor_profile_defaults() {
       'settings' => array(
         'ss' => 2,
         'toolbar' => '[
-    [\'Format\',\'Bold\',\'Italic\',\'-\',\'NumberedList\',\'BulletedList\',\'-\',\'Link\',\'Unlink\',\'Image\']
+    [\'Format\',\'Bold\',\'Italic\',\'-\',\'NumberedList\',\'BulletedList\',\'-\',\'Link\',\'Unlink\']
 ]',
         'expand' => 't',
         'default' => 't',
         'show_toggle' => 't',
         'uicolor' => 'default',
-        'uicolor_user' => 'default',
+        'uicolor_user' => '#E89C9C',
         'width' => '100%',
         'lang' => 'en',
         'auto_lang' => 't',

@@ -29,35 +29,53 @@ function wttoc_context_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-image_slider-block' => array(
+        'views-business_display-fg_image' => array(
           'module' => 'views',
-          'delta' => 'image_slider-block',
+          'delta' => 'business_display-fg_image',
           'region' => 'widetop',
-          'weight' => '-10',
+          'weight' => '-9',
         ),
-        'views-business_display-block' => array(
+        'views-business_display-fg_overview' => array(
           'module' => 'views',
-          'delta' => 'business_display-block',
+          'delta' => 'business_display-fg_overview',
           'region' => 'content',
-          'weight' => '-15',
+          'weight' => '-29',
         ),
-        'views-business_display-block_3' => array(
+        'views-business_display-fg_prices' => array(
           'module' => 'views',
-          'delta' => 'business_display-block_3',
+          'delta' => 'business_display-fg_prices',
           'region' => 'content',
-          'weight' => '-14',
+          'weight' => '-28',
         ),
-        'views-business_display-block_1' => array(
+        'views-business_display-fg_vouchers' => array(
           'module' => 'views',
-          'delta' => 'business_display-block_1',
+          'delta' => 'business_display-fg_vouchers',
           'region' => 'content',
-          'weight' => '-13',
+          'weight' => '-27',
         ),
-        'views-business_display-block_2' => array(
+        'views-business_display-fg_more_info' => array(
           'module' => 'views',
-          'delta' => 'business_display-block_2',
+          'delta' => 'business_display-fg_more_info',
+          'region' => 'content',
+          'weight' => '-26',
+        ),
+        'views-da8da0d0948ac9b6ed3896bf3109dcd3' => array(
+          'module' => 'views',
+          'delta' => 'da8da0d0948ac9b6ed3896bf3109dcd3',
           'region' => 'sidebar_second',
-          'weight' => '-10',
+          'weight' => '-31',
+        ),
+        'views-business_display-fg_map' => array(
+          'module' => 'views',
+          'delta' => 'business_display-fg_map',
+          'region' => 'sidebar_second',
+          'weight' => '-30',
+        ),
+        'views-e768e4c726034a3167a98d3b47ea3c24' => array(
+          'module' => 'views',
+          'delta' => 'e768e4c726034a3167a98d3b47ea3c24',
+          'region' => 'sidebar_second',
+          'weight' => '-29',
         ),
       ),
     ),
@@ -89,12 +107,6 @@ function wttoc_context_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-image_slider-block' => array(
-          'module' => 'views',
-          'delta' => 'image_slider-block',
-          'region' => 'widetop',
-          'weight' => '-10',
-        ),
         'block-6' => array(
           'module' => 'block',
           'delta' => '6',
@@ -130,35 +142,47 @@ function wttoc_context_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-image_slider-block' => array(
+        'views-events_display-e_image' => array(
           'module' => 'views',
-          'delta' => 'image_slider-block',
+          'delta' => 'events_display-e_image',
           'region' => 'widetop',
+          'weight' => '-9',
+        ),
+        'views-events_display-e_overview' => array(
+          'module' => 'views',
+          'delta' => 'events_display-e_overview',
+          'region' => 'content',
           'weight' => '-10',
         ),
-        'views-events_display-block' => array(
+        'views-events_display-e_prices' => array(
           'module' => 'views',
-          'delta' => 'events_display-block',
+          'delta' => 'events_display-e_prices',
           'region' => 'content',
-          'weight' => '-17',
+          'weight' => '-9',
         ),
-        'views-events_display-block_3' => array(
+        'views-events_display-e_vouchers' => array(
           'module' => 'views',
-          'delta' => 'events_display-block_3',
+          'delta' => 'events_display-e_vouchers',
           'region' => 'content',
-          'weight' => '-16',
+          'weight' => '-8',
         ),
-        'views-events_display-block_1' => array(
+        'views-events_display-e_more_info' => array(
           'module' => 'views',
-          'delta' => 'events_display-block_1',
+          'delta' => 'events_display-e_more_info',
           'region' => 'content',
-          'weight' => '-15',
+          'weight' => '-7',
         ),
-        'views-events_display-block_2' => array(
+        'views-events_display-e_map' => array(
           'module' => 'views',
-          'delta' => 'events_display-block_2',
+          'delta' => 'events_display-e_map',
           'region' => 'sidebar_second',
           'weight' => '-10',
+        ),
+        'views-35f66bb9fb85279b474668b2fc85ac61' => array(
+          'module' => 'views',
+          'delta' => '35f66bb9fb85279b474668b2fc85ac61',
+          'region' => 'sidebar_second',
+          'weight' => '-8',
         ),
       ),
     ),
@@ -169,6 +193,65 @@ function wttoc_context_context_default_contexts() {
   // Included for use with string extractors like potx.
   t('content_type');
   $export['content_type_event'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'content_type_post';
+  $context->description = '';
+  $context->tag = 'content_type';
+  $context->conditions = array(
+    'node' => array(
+      'values' => array(
+        'blog_post' => 'blog_post',
+      ),
+      'options' => array(
+        'node_form' => '0',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'views-182384eb67aef116ac719b65d0fcbba8' => array(
+          'module' => 'views',
+          'delta' => '182384eb67aef116ac719b65d0fcbba8',
+          'region' => 'widetop',
+          'weight' => '-10',
+        ),
+        'views-58706bf170be35d3c5264a659b28fd9f' => array(
+          'module' => 'views',
+          'delta' => '58706bf170be35d3c5264a659b28fd9f',
+          'region' => 'content',
+          'weight' => '-10',
+        ),
+        'views-cbe6c053fe5ece8dcda9324f80a4a914' => array(
+          'module' => 'views',
+          'delta' => 'cbe6c053fe5ece8dcda9324f80a4a914',
+          'region' => 'sidebar_first',
+          'weight' => '-10',
+        ),
+        'facetapi-HDmWm9cYEGcuStoZLstEOdq1Ql5WXOxo' => array(
+          'module' => 'facetapi',
+          'delta' => 'HDmWm9cYEGcuStoZLstEOdq1Ql5WXOxo',
+          'region' => 'sidebar_first',
+          'weight' => '-9',
+        ),
+        'facetapi-k8U3T1ETdPYpRgbAJrX5t30UCgjKumVN' => array(
+          'module' => 'facetapi',
+          'delta' => 'k8U3T1ETdPYpRgbAJrX5t30UCgjKumVN',
+          'region' => 'sidebar_first',
+          'weight' => '-8',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('content_type');
+  $export['content_type_post'] = $context;
 
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
@@ -424,9 +507,53 @@ function wttoc_context_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
+  $context->name = 'page_posts';
+  $context->description = '';
+  $context->tag = 'main_pages';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'posts' => 'posts',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'facetapi-HDmWm9cYEGcuStoZLstEOdq1Ql5WXOxo' => array(
+          'module' => 'facetapi',
+          'delta' => 'HDmWm9cYEGcuStoZLstEOdq1Ql5WXOxo',
+          'region' => 'sidebar_first',
+          'weight' => '-10',
+        ),
+        'facetapi-k8U3T1ETdPYpRgbAJrX5t30UCgjKumVN' => array(
+          'module' => 'facetapi',
+          'delta' => 'k8U3T1ETdPYpRgbAJrX5t30UCgjKumVN',
+          'region' => 'sidebar_first',
+          'weight' => '-9',
+        ),
+        'facetapi-mE6NK21nMdy37uDuGgNC0hEUBN193luG' => array(
+          'module' => 'facetapi',
+          'delta' => 'mE6NK21nMdy37uDuGgNC0hEUBN193luG',
+          'region' => 'sidebar_first',
+          'weight' => '-8',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('main_pages');
+  $export['page_posts'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
   $context->name = 'views_page_businesses_events';
   $context->description = '';
-  $context->tag = 'views';
+  $context->tag = 'main_pages';
   $context->conditions = array(
     'views' => array(
       'values' => array(
@@ -456,7 +583,7 @@ function wttoc_context_context_default_contexts() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('views');
+  t('main_pages');
   $export['views_page_businesses_events'] = $context;
 
   return $export;
