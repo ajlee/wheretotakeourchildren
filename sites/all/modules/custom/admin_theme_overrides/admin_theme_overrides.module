@@ -1,0 +1,10 @@
+<?php
+
+function admin_theme_overrides_init() {
+    if ( path_is_admin(current_path()) ) {
+        $path = drupal_get_path('module', 'admin_theme_overrides');
+        //drupal_add_js($path . '/js.overrides.js');
+        drupal_add_css($path . '/css/overrides.css');
+    }
+}
+

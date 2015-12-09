@@ -1,0 +1,4 @@
+name = Admin Theme Overrides
+description = Add CSS and JS Overrides to the admin pages (using the admin theme)
+core = 7.x
+package = Custom

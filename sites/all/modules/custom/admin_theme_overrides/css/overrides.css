@@ -1,0 +1,4 @@
+#sliding-popup.sliding-popup-top{
+    @include clearfix;
+    position:fixed;
+}
