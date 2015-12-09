@@ -3,6 +3,7 @@ core = 7.x
 package = Features
 dependencies[] = ctools
 dependencies[] = eim
+dependencies[] = galleryformatter
 dependencies[] = term_reference_tree
 dependencies[] = video_embed_field
 dependencies[] = wttoc_content_types
