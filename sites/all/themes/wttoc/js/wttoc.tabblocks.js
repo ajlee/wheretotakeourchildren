@@ -20,23 +20,29 @@
 		var countBlocks = $(containerSelector + " " + blockSelector).size();
 		var parentOfBlocks = $(containerSelector + " " + blockSelector).parent();
 		var firstBlock = parentOfBlocks.children(blockSelector + ':eq(0)');
-		// Go through all blocks
-		for (i = 0; i < countBlocks; i++) {
-			var ip1 = i + 1;
-			var currentBlockSelector = blockSelector + ':eq(' + i + ')';
-			var currentTitleBlock = parentOfBlocks.children(currentBlockSelector).find(blockTitleSelector);
-			//Give the block an ID
-			parentOfBlocks.children(currentBlockSelector).attr('id', 'tabBlock' + ip1).addClass('tabBlockJSBlock');
-			//Create a tab and give it a link to its block id along with some classes
-			var classList = parentOfBlocks.children(currentBlockSelector).attr('class').split(/\s+/);
-			classesToPutInTabString = "tabJS";
-			$.each(classList, function(index, item) {
-				var classToAdd = "tabJS_" + item;
-				classesToPutInTabString = classesToPutInTabString + " " + classToAdd;
-			});
-			firstBlock.before('<div class="' + classesToPutInTabString +'"> <a href="#tabBlock' + ip1 + '" title="Toggle to tab '+ ip1 + '">'+ currentTitleBlock.text() + '</a></div>');
-			//Hide block titles
-			parentOfBlocks.children(currentBlockSelector).find(blockTitleSelector).hide();
+		//we need to make sure this is not executed on ajax requests.
+		//the colorbox module loads images through ajax, so tabs keep being added
+		//this is the simplest solution since we don't load complete nodes through ajax
+		if(typeof(tabBlocksJSExecuted)==="undefined"){
+			// Go through all blocks
+			for (i = 0; i < countBlocks; i++) {
+				var ip1 = i + 1;
+				var currentBlockSelector = blockSelector + ':eq(' + i + ')';
+				var currentTitleBlock = parentOfBlocks.children(currentBlockSelector).find(blockTitleSelector);
+				//Give the block an ID
+				parentOfBlocks.children(currentBlockSelector).attr('id', 'tabBlock' + ip1).addClass('tabBlockJSBlock');
+				//Create a tab and give it a link to its block id along with some classes
+				var classList = parentOfBlocks.children(currentBlockSelector).attr('class').split(/\s+/);
+				classesToPutInTabString = "tabJS";
+				$.each(classList, function(index, item) {
+					var classToAdd = "tabJS_" + item;
+					classesToPutInTabString = classesToPutInTabString + " " + classToAdd;
+				});
+				firstBlock.before('<div class="' + classesToPutInTabString +'"> <a href="#tabBlock' + ip1 + '" title="Toggle to tab '+ ip1 + '">'+ currentTitleBlock.text() + '</a></div>');
+				//Hide block titles
+				parentOfBlocks.children(currentBlockSelector).find(blockTitleSelector).hide();
+			}
+			tabBlocksJSExecuted = true;
 		}
 		//Only Show First Tab Content Initially 
 		//Hide/Show Using Height:0 and visibility hidden

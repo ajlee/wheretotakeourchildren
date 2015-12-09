@@ -1424,10 +1424,12 @@ footer.l-footer nav ul {
 /*
  * EU Cookie Compliance
  */
-#sliding-popup:after {
-  content: "";
-  display: table;
-  clear: both; }
+#sliding-popup.sliding-popup-top {
+  position: fixed; }
+  #sliding-popup.sliding-popup-top:after {
+    content: "";
+    display: table;
+    clear: both; }
 
 /*
  * Map - Make it thinner
