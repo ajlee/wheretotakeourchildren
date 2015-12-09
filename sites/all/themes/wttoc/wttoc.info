@@ -106,5 +106,5 @@ settings[omega_viewport_minimum_scale] = _default
 settings[omega_viewport_maximum_scale] = _default
 settings[omega_chrome_edge] = 1
 settings[omega_internet_explorer_support] = _none
-settings[jquery_update_jquery_version] = ""
+settings[jquery_update_jquery_version] = 1.11
 settings[favicon_mimetype] = image/png
