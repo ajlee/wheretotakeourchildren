@@ -23,7 +23,7 @@ sites/all/libraries/README.txt
 
 
 # Ignore everything but the "sites" folder ( for non core developer )
-.htaccess
+#.htaccess #allow htaccess to be saved
 web.config
 authorize.php
 cron.php
