@@ -10,7 +10,7 @@
 function wttoc_commerce_rules_default_rules_configuration() {
   $items = array();
   $items['rules_extend_role_component_for_line_item'] = entity_import('rules_config', '{ "rules_extend_role_component_for_line_item" : {
-      "LABEL" : "Extend Role - Component for Line Item",
+      "LABEL" : "Extend Role First Time - Component for Line Item",
       "PLUGIN" : "rule",
       "OWNER" : "rules",
       "REQUIRES" : [ "rules", "interval", "role_expire" ],
@@ -103,8 +103,37 @@ function wttoc_commerce_rules_default_rules_configuration() {
             "USING" : { "list" : [ "order:commerce-line-items" ] },
             "ITEM" : { "line_item" : "Line Item" },
             "DO" : [
-              { "component_rules_extend_role_component_for_line_item" : { "line_item" : [ "line_item" ] } }
+              { "component_rules_extend_rolerecurring_component_line_item" : { "line_item" : [ "line_item" ] } }
             ]
+          }
+        }
+      ]
+    }
+  }');
+  $items['rules_extend_rolerecurring_component_line_item'] = entity_import('rules_config', '{ "rules_extend_rolerecurring_component_line_item" : {
+      "LABEL" : "Extend Role Recurring - Component for Line Item",
+      "PLUGIN" : "rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules", "interval", "role_expire" ],
+      "USES VARIABLES" : { "line_item" : { "label" : "Line Item", "type" : "commerce_line_item" } },
+      "IF" : [
+        { "data_is" : { "data" : [ "line-item:type" ], "value" : "product" } },
+        { "data_is" : { "data" : [ "line-item:commerce-product:type" ], "value" : "recurring" } }
+      ],
+      "DO" : [
+        { "interval_apply" : {
+            "USING" : {
+              "interval" : "1",
+              "period" : [ "line-item:commerce-product:commerce-recurring-rec-period:period" ],
+              "date" : "now"
+            },
+            "PROVIDE" : { "date" : { "extend_date" : "Extend Role To This Date" } }
+          }
+        },
+        { "role_expire_rules_action_set_role_expire" : {
+            "user" : [ "line-item:order:owner" ],
+            "role" : [ "line-item:commerce-product:field-role-reference" ],
+            "timestamp" : [ "extend-date" ]
           }
         }
       ]
