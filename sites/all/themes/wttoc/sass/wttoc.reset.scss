@@ -101,6 +101,12 @@ a{
 /*
  * Bold Text
  */
-b{
+b, strong{
   font-weight:bold;
+}
+/*
+ * Cursive
+ */
+em{
+  font-style: italic;
 }

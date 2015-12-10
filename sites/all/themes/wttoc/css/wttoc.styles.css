@@ -479,9 +479,12 @@ body {
 body.admin-menu #admin-menu {
   min-width: 50px;
   height: 80px; }
-
-body.admin-menu .admin-menu-icon {
-  max-width: 15px; }
+  body.admin-menu #admin-menu .dropdown#admin-menu-icon .admin-menu-icon > a {
+    padding: 0; }
+    body.admin-menu #admin-menu .dropdown#admin-menu-icon .admin-menu-icon > a img {
+      width: 18px;
+      height: auto;
+      padding: 0 5px; }
 
 body.admin-menu .l-page {
   margin-top: 80px; }
