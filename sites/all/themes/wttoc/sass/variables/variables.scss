@@ -63,23 +63,6 @@ $fontXXS:1.3;
 $fontXXXS:1.1;
 
 /*
- * Colors
- */
-$BLACK:#000;
-$DARKGRAY:#333;
-$LIGHTERDARKGRAY: #565656;
-$GRAY:#888;
-$DARKERLIGHTGRAY: #a2a2a2;
-$LIGHTGRAY:#e8eaea;
-$WHITE:#fff;
-
-$colorWPink:#FC5161;
-$colorWPinkLight:#FF9191;
-$colorWViolet:#C861BA;
-$colorWVioletLight:#F881CA;
-
-
-/*
  * Theme Palette
  * Light and Blue Colors Work Better If They're Desaturated As Well
  */
@@ -98,6 +81,23 @@ $colorAlt:#FFC632;/*Yellow*/
 $colorAltLight: lighten($colorAlt, 3.5%);
 $colorAltDark: darken($colorAlt, 3.5%);
 
+/*
+ * Colors
+ */
+$BLACK:#000;
+$DARKGRAY:#333;
+$LIGHTERDARKGRAY: #565656;
+$GRAY:#888;
+$DARKERLIGHTGRAY: #a2a2a2;
+$GRAYC: #c9c9c9;
+$LIGHTGRAY:#e8eaea;
+$WHITE:#fff;
+
+$colorWPink:#FC5161;
+$colorWPinkLight:#FF9191;
+$colorWViolet:#C861BA;
+$colorWVioletLight:#F881CA;
+$colorWGreen: $color3;
 
 /*
  *  Extra Derived Variables

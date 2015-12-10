@@ -5,22 +5,23 @@
 @import "variables/variables";
 @import "abstractions/abstractions";
 @import "base/base";
-@import "components/Off_Canvas";
-@import "components/Responsive";
-@import "components/General_Colorings";
-@import "components/General_Elements";
-@import "components/Extras_TabBlocks";
-@import "components/Page_Home.scss";
-@import "components/Views_All_BusinessesAndEvents";
-@import "components/Views_One_BusinessesAndEvents";
-@import "components/Views_Categories_Businesses_Events.scss";
-@import "components/Views_small_blocks_Blogs_news.scss";
-@import "components/Views_Unslider";
-@import "components/Views_Small_Blocks_Biz_Evs";
-@import "components/Views_All_BlogsAndNews";
-@import "components/Views_Social_Icons";
-@import "components/Wttoc_calendar";
-@import "components/Views_One_BlogNews";
+@import "components/base_components/Off_Canvas";
+@import "components/base_components/Responsive";
+@import "components/base_components/General_Colorings";
+@import "components/base_components/General_Elements";
+@import "components/base_components/Extras_TabBlocks";
+@import "components/base_components/Page_Home.scss";
+@import "components/base_components/Wttoc_calendar";
+@import "components/views/Views_One_BlogNews";
+@import "components/views/Views_All_BusinessesAndEvents";
+@import "components/views/Views_One_BusinessesAndEvents";
+@import "components/views/Views_Categories_Businesses_Events";
+@import "components/views/Views_small_blocks_Blogs_news";
+@import "components/views/Views_Unslider";
+@import "components/views/Views_Small_Blocks_Biz_Evs";
+@import "components/views/Views_All_BlogsAndNews";
+@import "components/views/Views_Social_Icons";
+@import "components/commerce/Cart";
 
 // Import variables, abstractions, base styles and components.
 // Uncomment the next lines and adjust them to your needs.
