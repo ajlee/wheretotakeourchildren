@@ -493,13 +493,13 @@ function wttoc_commerce_content_types_field_default_field_instances() {
         'weight' => 0,
       ),
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'inline',
         'module' => 'commerce_price',
         'settings' => array(
-          'calculation' => 'calculated_sell_price',
+          'calculation' => FALSE,
         ),
         'type' => 'commerce_price_formatted_amount',
-        'weight' => 0,
+        'weight' => -9,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -573,11 +573,10 @@ function wttoc_commerce_content_types_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
-        'module' => 'interval',
+        'label' => 'above',
         'settings' => array(),
-        'type' => 'interval_default',
-        'weight' => 3,
+        'type' => 'hidden',
+        'weight' => -4,
       ),
       'line_item' => array(
         'label' => 'above',
@@ -623,11 +622,11 @@ function wttoc_commerce_content_types_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'inline',
         'module' => 'interval',
         'settings' => array(),
         'type' => 'interval_default',
-        'weight' => 1,
+        'weight' => -8,
       ),
       'line_item' => array(
         'label' => 'above',
@@ -681,12 +680,13 @@ function wttoc_commerce_content_types_field_default_field_instances() {
         'weight' => 0,
       ),
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'inline',
+        'module' => 'commerce_price',
         'settings' => array(
-          'calculation' => 'calculated_sell_price',
+          'calculation' => FALSE,
         ),
-        'type' => 'hidden',
-        'weight' => 0,
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => -7,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -755,11 +755,11 @@ function wttoc_commerce_content_types_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'inline',
         'module' => 'interval',
         'settings' => array(),
         'type' => 'interval_default',
-        'weight' => 2,
+        'weight' => -6,
       ),
       'line_item' => array(
         'label' => 'above',
@@ -813,12 +813,13 @@ function wttoc_commerce_content_types_field_default_field_instances() {
         'weight' => 0,
       ),
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'inline',
+        'module' => 'commerce_price',
         'settings' => array(
-          'calculation' => 'calculated_sell_price',
+          'calculation' => FALSE,
         ),
-        'type' => 'hidden',
-        'weight' => 0,
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => -6,
       ),
       'full' => array(
         'label' => 'hidden',
@@ -892,10 +893,9 @@ function wttoc_commerce_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'role_field',
         'settings' => array(),
-        'type' => 'role_field_formatter',
-        'weight' => 4,
+        'type' => 'hidden',
+        'weight' => -3,
       ),
       'line_item' => array(
         'label' => 'above',
@@ -1061,7 +1061,7 @@ function wttoc_commerce_content_types_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'module' => 'commerce_cart',
         'settings' => array(
           'combine' => TRUE,
@@ -1071,7 +1071,7 @@ function wttoc_commerce_content_types_field_default_field_instances() {
           'show_single_product_attributes' => FALSE,
         ),
         'type' => 'commerce_cart_add_to_cart_form',
-        'weight' => 0,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1088,7 +1088,6 @@ function wttoc_commerce_content_types_field_default_field_instances() {
       'field_injection' => 1,
       'referenceable_types' => array(
         'recurring' => 'recurring',
-        'subscription_product_type' => 0,
       ),
       'user_register_form' => FALSE,
     ),

@@ -20,6 +20,17 @@ function wttoc_commerce_rules_default_rules_configuration() {
         { "data_is" : { "data" : [ "line-item:commerce-product:type" ], "value" : "recurring" } }
       ],
       "DO" : [
+        { "variable_add" : {
+            "USING" : { "type" : "list\\u003Cinteger\\u003E" },
+            "PROVIDE" : { "variable_added" : { "role_list_format" : "Role In List Format" } }
+          }
+        },
+        { "list_add" : {
+            "list" : [ "role-list-format" ],
+            "item" : [ "line-item:commerce-product:field-role-reference" ],
+            "unique" : "1"
+          }
+        },
         { "interval_apply" : {
             "USING" : {
               "interval" : "1",
@@ -27,6 +38,11 @@ function wttoc_commerce_rules_default_rules_configuration() {
               "date" : "now"
             },
             "PROVIDE" : { "date" : { "extend_date" : "Extend Role To This Date" } }
+          }
+        },
+        { "user_add_role" : {
+            "account" : [ "line-item:order:owner" ],
+            "roles" : [ "role-list-format" ]
           }
         },
         { "role_expire_rules_action_set_role_expire" : {
@@ -121,6 +137,17 @@ function wttoc_commerce_rules_default_rules_configuration() {
         { "data_is" : { "data" : [ "line-item:commerce-product:type" ], "value" : "recurring" } }
       ],
       "DO" : [
+        { "variable_add" : {
+            "USING" : { "type" : "list\\u003Cinteger\\u003E" },
+            "PROVIDE" : { "variable_added" : { "role_list_format" : "Role List Format" } }
+          }
+        },
+        { "list_add" : {
+            "list" : [ "role-list-format" ],
+            "item" : [ "line-item:commerce-product:field-role-reference" ],
+            "unique" : "1"
+          }
+        },
         { "interval_apply" : {
             "USING" : {
               "interval" : "1",
@@ -128,6 +155,11 @@ function wttoc_commerce_rules_default_rules_configuration() {
               "date" : "now"
             },
             "PROVIDE" : { "date" : { "extend_date" : "Extend Role To This Date" } }
+          }
+        },
+        { "user_add_role" : {
+            "account" : [ "line-item:order:owner" ],
+            "roles" : [ "role-list-format" ]
           }
         },
         { "role_expire_rules_action_set_role_expire" : {

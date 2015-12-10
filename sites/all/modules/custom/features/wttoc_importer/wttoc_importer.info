@@ -6,5 +6,6 @@ dependencies[] = feeds
 features[ctools][] = feeds:feeds_importer_default:1
 features[features_api][] = api:2
 features[feeds_importer][] = blog_importer
+features[feeds_importer][] = events
 features[feeds_importer][] = family_guide
 features[feeds_importer][] = news_importer

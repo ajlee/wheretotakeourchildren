@@ -281,6 +281,12 @@ function wttoc_context_context_default_contexts() {
           'region' => 'navigation',
           'weight' => '-10',
         ),
+        'commerce_cart-cart' => array(
+          'module' => 'commerce_cart',
+          'delta' => 'cart',
+          'region' => 'widetop',
+          'weight' => '-10',
+        ),
         'views-0bbcbe58991b99238c98835b8d9d1e89' => array(
           'module' => 'views',
           'delta' => '0bbcbe58991b99238c98835b8d9d1e89',

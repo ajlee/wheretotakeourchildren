@@ -3,6 +3,7 @@ core = 7.x
 package = Features
 dependencies[] = block
 dependencies[] = calendar_block_toview
+dependencies[] = commerce_cart
 dependencies[] = context
 dependencies[] = ctools
 dependencies[] = facetapi
