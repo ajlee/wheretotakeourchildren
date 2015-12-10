@@ -133,7 +133,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['field_video']['field'] = 'field_video';
   $handler->display->display_options['fields']['field_video']['label'] = '';
   $handler->display->display_options['fields']['field_video']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_video']['alter']['text'] = '<i class="icon icon-camera"><span class="element-invisible">Video</span></i><h3>Video</h3><div class="wttocFieldNoEnclose">[field_video]</div>';
+  $handler->display->display_options['fields']['field_video']['alter']['text'] = '<i class="icon icon-videocam"><span class="element-invisible">Video</span></i><h3>Video</h3><div class="wttocFieldNoEnclose">[field_video]</div>';
   $handler->display->display_options['fields']['field_video']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_video']['click_sort_column'] = 'video_url';
   $handler->display->display_options['fields']['field_video']['settings'] = array(
@@ -337,7 +337,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['field_phone_number']['settings'] = array(
     'title' => '',
   );
-  /* Field: Content: Website Address */
+  /* Field: Content: Event Website */
   $handler->display->display_options['fields']['field_website']['id'] = 'field_website';
   $handler->display->display_options['fields']['field_website']['table'] = 'field_data_field_website';
   $handler->display->display_options['fields']['field_website']['field'] = 'field_website';
@@ -1376,6 +1376,18 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['field_linked_business']['settings'] = array(
     'link' => 1,
   );
+  /* Field: Content: Video */
+  $handler->display->display_options['fields']['field_video']['id'] = 'field_video';
+  $handler->display->display_options['fields']['field_video']['table'] = 'field_data_field_video';
+  $handler->display->display_options['fields']['field_video']['field'] = 'field_video';
+  $handler->display->display_options['fields']['field_video']['label'] = '';
+  $handler->display->display_options['fields']['field_video']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_video']['alter']['text'] = '<i class="icon icon-videocam"><span class="element-invisible">Video</span></i><h3>Video</h3><div class="wttocFieldNoEnclose">[field_video]</div>';
+  $handler->display->display_options['fields']['field_video']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_video']['click_sort_column'] = 'video_url';
+  $handler->display->display_options['fields']['field_video']['settings'] = array(
+    'video_style' => 'normal',
+  );
 
   /* Display: More Information */
   $handler = $view->new_display('block', 'More Information', 'e_more_info');
@@ -1570,7 +1582,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['field_phone_number']['settings'] = array(
     'title' => '',
   );
-  /* Field: Content: Website Address */
+  /* Field: Content: Event Website */
   $handler->display->display_options['fields']['field_website']['id'] = 'field_website';
   $handler->display->display_options['fields']['field_website']['table'] = 'field_data_field_website';
   $handler->display->display_options['fields']['field_website']['field'] = 'field_website';

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the WTTOC Commerce Content Types feature.
+ */
+
+include_once 'wttoc_commerce_content_types.features.inc';
