@@ -171,5 +171,19 @@ function wttoc_commerce_rules_default_rules_configuration() {
       ]
     }
   }');
+  $items['rules_stop_recurring_entity'] = entity_import('rules_config', '{ "rules_stop_recurring_entity" : {
+      "LABEL" : "Stop Recurring Entity",
+      "PLUGIN" : "rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules" ],
+      "USES VARIABLES" : { "recurring_entity" : { "label" : "Recurring Entity", "type" : "commerce_recurring" } },
+      "IF" : [
+        { "data_is" : { "data" : [ "recurring-entity:status" ], "value" : "1" } }
+      ],
+      "DO" : [
+        { "data_set" : { "data" : [ "recurring-entity:status" ], "value" : "0" } }
+      ]
+    }
+  }');
   return $items;
 }
