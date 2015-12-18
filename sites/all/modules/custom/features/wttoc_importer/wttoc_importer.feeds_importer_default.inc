@@ -347,6 +347,21 @@ function wttoc_importer_feeds_importer_default() {
             'target' => 'field_email',
             'unique' => FALSE,
           ),
+          18 => array(
+            'source' => 'opening_day',
+            'target' => 'field_opening_hours:day',
+            'unique' => FALSE,
+          ),
+          19 => array(
+            'source' => 'opening_day_hour_start',
+            'target' => 'field_opening_hours:hours:start',
+            'unique' => FALSE,
+          ),
+          20 => array(
+            'source' => 'opening_day_hour_end',
+            'target' => 'field_opening_hours:hours:end',
+            'unique' => FALSE,
+          ),
         ),
         'update_existing' => '2',
         'update_non_existent' => 'skip',

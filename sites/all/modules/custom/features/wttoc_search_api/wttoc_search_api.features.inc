@@ -26,7 +26,7 @@ function wttoc_search_api_default_search_api_index() {
     "item_type" : "taxonomy_term",
     "options" : {
       "datasource" : { "bundles" : [ "business_type", "events_categories_and_features" ] },
-      "index_directly" : 1,
+      "index_directly" : 0,
       "cron_limit" : "50",
       "fields" : {
         "description" : { "type" : "text", "boost" : "0.3" },
@@ -116,7 +116,7 @@ function wttoc_search_api_default_search_api_index() {
     "item_type" : "node",
     "options" : {
       "datasource" : { "bundles" : [ "business_service_or_attraction", "event" ] },
-      "index_directly" : 1,
+      "index_directly" : 0,
       "cron_limit" : "50",
       "fields" : {
         "author" : { "type" : "integer", "entity_type" : "user" },
@@ -225,7 +225,7 @@ function wttoc_search_api_default_search_api_index() {
     "item_type" : "node",
     "options" : {
       "datasource" : { "bundles" : [ "blog_post", "news_post" ] },
-      "index_directly" : 1,
+      "index_directly" : 0,
       "cron_limit" : "50",
       "fields" : {
         "author" : { "type" : "integer", "entity_type" : "user" },

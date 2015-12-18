@@ -14,7 +14,10 @@ function wttoc_rules_default_rules_configuration() {
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
       "REQUIRES" : [ "rules" ],
-      "ON" : { "node_insert--event" : { "bundle" : "event" } },
+      "ON" : {
+        "node_insert--event" : { "bundle" : "event" },
+        "node_update--event" : { "bundle" : "event" }
+      },
       "IF" : [ { "data_is_empty" : { "data" : [ "node:field-image-gallery" ] } } ],
       "DO" : [
         { "data_set" : {
@@ -30,7 +33,10 @@ function wttoc_rules_default_rules_configuration() {
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
       "REQUIRES" : [ "rules" ],
-      "ON" : { "node_insert--business_service_or_attraction" : { "bundle" : "business_service_or_attraction" } },
+      "ON" : {
+        "node_insert--business_service_or_attraction" : { "bundle" : "business_service_or_attraction" },
+        "node_update--business_service_or_attraction" : { "bundle" : "business_service_or_attraction" }
+      },
       "IF" : [ { "data_is_empty" : { "data" : [ "node:field-image-gallery" ] } } ],
       "DO" : [
         { "data_set" : {
