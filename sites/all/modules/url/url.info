@@ -5,6 +5,7 @@ core = 7.x
 dependencies[] = field
 recommends[] = elements
 files[] = url.test
+files[] = telephone.feeds.inc
 
 ; Information added by drupal.org packaging script on 2013-01-26
 version = "7.x-1.0"
