@@ -1,3 +1,6 @@
+
+--------------------------------------------------------------------
+
 FILE: views__js__ajax_view.js.patch
 PATH: sites/all/modules/custom/devversions/views/js/ajax_view.js
 This patch was introduced because empty select filters from term reference, were using the argument from the URL.
@@ -16,8 +19,32 @@ This patch is not necessarily the perfect way to solve this, because there are s
 Luckily for us, we don't need any of those use cases in this website for now.
 //See addition to this solution at themes/wttoc/js/wttoc.allBizEvents.js
 
+--------------------------------------------------------------------
+
 FILE: telephone__telephone_info.patch
 PATH: /sites/all/modules/telephone/telephone.feeds.inc
 PATH: /sites/all/modules/telephone/telephone.info
 
-Allows for feeds to work with the telephone field
+Allows for feeds to work with the socialfield field
+
+More info: https://www.drupal.org/node/2109227
+
+--------------------------------------------------------------------
+
+FILE: socialfield-feeds_integration-2627828-1.patch
+PATH: /sites/all/modules/socialfield/socialfield.feeds.inc
+PATH: /sites/all/modules/socialfield/socialfield.info
+
+Allows for feeds to work with the socialfield field
+
+More info: https://www.drupal.org/node/2627828
+
+--------------------------------------------------------------------
+
+FILE: url-n2013238-22.patch
+PATH: /sites/all/modules/url/url.feeds.inc
+PATH: /sites/all/modules/url/url.info
+
+Allows for feeds to work with the url field
+
+More info: https://www.drupal.org/node/2013238
