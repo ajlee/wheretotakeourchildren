@@ -1,0 +1,243 @@
+<?php
+
+
+/**
+ * Helper function to load the facebook php sdk library.
+ *
+ * @param string $basename
+ *   Optional basename where to find the library
+ *
+ */
+function _load_facebook_sdk() {
+    $systemPath = DRUPAL_ROOT;
+    $lib_path = $systemPath . '/sites/all/libraries/facebook-php-sdk';
+    if (!file_exists($lib_path . '/src/Facebook/Facebook.php')) {
+        // In case we cannot find the file display an error and redirect to the
+        // report status page (if the user can access it).
+        if (user_access('view site reports')) {
+            drupal_set_message(
+                t('You need to install the Facebook PHP SDK Library to use the
+                Facebook Events Importer module. Please download the library to
+                sites/all/libraries/facebook-php-sdk, such that there is a valid
+                path at sites/all/libraries/facebook-php-sdk/src/Facebook/Facebook.php'), 'error');
+        }
+    }
+    else {
+        require_once $lib_path . '/src/Facebook/autoload.php';
+    }
+}
+
+/**
+ * Load the facebook library using the function above
+ */
+
+_load_facebook_sdk();
+
+/**
+ * Implements hook_menu()
+ * Page: Facebook Events Importer
+ * Route: admin/config/facebook_events_importer.
+ */
+function facebook_events_importer_menu() {
+    $items = array();
+    $items['admin/config/facebook_events_importer'] = array(
+        'title' => 'Facebook Events Importer',
+        'description' => 'Configuration for facebook_events_importer',
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('facebook_events_importer_form'),
+        'access arguments' => array('facebook_events_importer_use'),
+        'type' => MENU_NORMAL_ITEM,
+    );
+    return $items;
+}
+
+/**
+ * Implements hook_permission
+ * Define permission To Use This Module's Importer
+ */
+function facebook_events_importer_permission() {
+    return array(
+        'facebook_events_importer_use' => array(
+            'title' => t('Use the Facebook Events Importer')
+        ),
+    );
+}
+
+/**
+ * Page callback:
+ *
+ * @see facebook_events_importer_menu()
+ */
+function facebook_events_importer_form($form, &$form_state){
+    $form['feed_importer_id'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Importer Id'),
+        '#default_value' => "facebook_events_importer",
+        '#size' => 50,
+        '#maxlength' => 250,
+        '#description' => t('Feed Importer Machine Name'),
+        '#required' => TRUE,
+        '#disabled' => TRUE,
+    );
+    $form['fb_app_id'] = array(
+        '#type' => 'textfield',
+        '#title' => t('FB App ID'),
+        '#default_value' => variable_get("facebook_events_importer_app_id", "test"),
+        '#size' => 50,
+        '#maxlength' => 250,
+        '#description' => t('Your Facebook App ID - Saved for future use'),
+        '#required' => TRUE,
+    );
+    $form['fb_app_secret'] = array(
+        '#type' => 'textfield',
+        '#title' => t('FB App Secret'),
+        '#default_value' => variable_get("facebook_events_importer_app_secret", "test"),
+        '#size' => 50,
+        '#maxlength' => 250,
+        '#description' => t('Your Facebook App Secret - Saved for future use'),
+        '#required' => TRUE,
+    );
+    global $base_url;
+    $form['fb_currentsiteurl'] = array(
+        '#type' => 'textfield',
+        '#title' => t('Current Site URL'),
+        '#default_value' => $base_url,
+        '#size' => 50,
+        '#maxlength' => 250,
+        '#description' => t('This site\'s URL - Programmer\'s note: default value is fetched from $site_url in settings.php'),
+        '#required' => TRUE,
+    );
+    $form['fb_event_ids'] = array(
+        '#title' => t('Facebook Event IDs'),
+        '#type' => 'textarea',
+        '#description' => t('Enter one event id per line'),
+        '#required' => TRUE,
+
+    );
+    $form['submit'] = array(
+        '#type' => 'submit',
+        '#value' => t('Submit'),
+    );
+    return $form;
+}
+
+/**
+ * Page: Facebook Events Importer
+ * Form: Submit Action
+ */
+
+function facebook_events_importer_form_submit($form, &$form_state){
+    //Importer ID Parameter
+    $importer_id = $form_state['values']['feed_importer_id'];
+
+    //Current Site URL
+    $currentSiteURL = $form_state['values']['fb_currentsiteurl'];
+
+    //FB App ID & App Secret
+    $app_id = $form_state['values']['fb_app_id'];
+    variable_set("facebook_events_importer_app_id", $app_id);
+    $app_secret = $form_state['values']['fb_app_secret'];
+    variable_set("facebook_events_importer_app_secret", $app_secret);
+    $app_token = $app_id . '|' . $app_secret;
+
+    //FB Event IDs Parameter
+    $event_ids_val = $form_state['values']['fb_event_ids'];
+    $event_ids_array = explode("\r\n", $event_ids_val);
+
+    $fb = new Facebook\Facebook([
+        'app_id' => $app_id,
+        'app_secret' => $app_secret,
+        'default_graph_version' => 'v2.5',
+    ]);
+
+    // Iterate over each Event ID
+    foreach($event_ids_array as $event_id) {
+        try {
+            // Returns a `Facebook\FacebookResponse` object
+            $response = $fb->get('/' . $event_id, $app_token);
+            //Save responses for later
+            $eventResponse = $response->getGraphEvent();
+            $eventResponseArray["events"][$event_id]["id"] = $eventResponse->getId();
+            $eventResponseArray["events"][$event_id]["name"] = $eventResponse->getName();
+            $eventResponseArray["events"][$event_id]["description"] = $eventResponse->getDescription();
+            $eventResponseArray["events"][$event_id]["start_time"] = $eventResponse->getStartTime()->format("U");
+            $eventResponseArray["events"][$event_id]["end_time"] = $eventResponse->getEndTime()->format("U");
+            if(!is_null($eventResponse->getPlace())) {
+                $eventResponseArray["events"][$event_id]["place"]["name"] = $eventResponse->getPlace()->getName();
+                if (!is_null($eventResponse->getPlace()->getLocation())) {
+                    $eventResponseArray["events"][$event_id]["place"]["location"]["street"] = $eventResponse->getPlace()->getLocation()->getStreet();
+                    $eventResponseArray["events"][$event_id]["place"]["location"]["city"] = $eventResponse->getPlace()->getLocation()->getCity();
+                    $eventResponseArray["events"][$event_id]["place"]["location"]["country"] = $eventResponse->getPlace()->getLocation()->getCountry();
+                    $eventResponseArray["events"][$event_id]["place"]["location"]["zip"] = $eventResponse->getPlace()->getLocation()->getZip();
+                }
+            }
+            //Save Picture Response - do this last so that other fields load if there's errors here
+            $responsePhotos = $fb->get('/' . $event_id . '/photos', $app_token);
+            if(!is_null($responsePhotos->getGraphEdge())){
+                $photosResponse = $responsePhotos->getGraphEdge()->asArray();
+                //get first photo posted to the album
+                $photoID = $photosResponse[count($photosResponse)-1]["id"];
+                //if redirect isn't set to false, there's no response
+                $responsePicture = $fb->get('/' . $photoID . '/picture?redirect=false', $app_token);
+                if(!is_null($responsePicture->getGraphNode())){
+                    //use that photo as the event's main picture
+                    $fbPic = $responsePicture->getGraphNode()->asArray();
+                    $eventResponseArray["events"][$event_id]["picture"] = $fbPic["url"];
+                }
+
+            }
+
+
+
+
+        } catch(Facebook\Exceptions\FacebookResponseException $e) {
+            drupal_set_message('Facebook Response returned an error: ' . $e->getMessage(), "warning");
+        } catch(Facebook\Exceptions\FacebookSDKException $e) {
+            drupal_set_message('Facebook SDK returned an error: ' . $e->getMessage(), "warning");
+        }
+    }
+
+
+    //Create a file that will contain the content from Facebook's Graph API
+    $realpath = drupal_realpath('public://');
+    $filename = 'facebook_events_importer_8ajhsdf7712hJASDfY7.json';
+    $filepath = $realpath . '/' . $filename;
+
+
+    //Write To Public File
+    $filewriter = fopen($filepath, "w") or die("Unable to open Json File!");
+    //unescaped slashes because there's urls
+    fwrite($filewriter, json_encode($eventResponseArray, JSON_UNESCAPED_SLASHES));
+    fclose($filewriter);
+
+    //Use Feeds Import
+    $relativeFiles= $currentSiteURL . '/' .  variable_get('file_' . file_default_scheme() . '_path', conf_path() . '/files');
+    $relativeFileURL = $relativeFiles . '/' . $filename;
+    $public_file_url = $relativeFileURL;
+    _facebook_events_importer_execute_http_based($importer_id, $public_file_url);
+
+}
+
+/**
+ * Helper Function - HTTP Based Feed Trigger
+ * @param $importer_id
+ * @param $url_path
+ */
+
+function _facebook_events_importer_execute_http_based($importer_id, $url_path){
+    // Load the Feeds Source object.
+    $source = feeds_source($importer_id);
+
+    // Tweak the importer configuration
+    $config = $source->getConfig();
+    if (isset($config['FeedsHTTPFetcher'])) {
+        $config['FeedsHTTPFetcher']['source'] = $url_path;
+    }
+    $config['process_in_background'] = FALSE;
+    // Permanent changes require $source->save() after $source->setConfig($config)
+    $source->setConfig($config);
+    $source->save();
+
+    // Execute the import.
+    $source->startImport();
+}

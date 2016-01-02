@@ -1,0 +1,11 @@
+<?php
+
+/**
+ * Implements hook_uninstall
+ * Remove variables set
+ */
+
+function facebook_events_importer_uninstall(){
+  variable_del('facebook_events_importer_app_id');
+  variable_del('facebook_events_importer_app_secret');
+}

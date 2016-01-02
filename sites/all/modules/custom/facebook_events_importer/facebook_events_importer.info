@@ -1,0 +1,8 @@
+name = Facebook Events Importer
+description =  Facebook Events Importer
+core = 7.x
+package = Custom
+configure = admin/config/facebook_events_importer
+dependencies[] = feeds
+dependencies[] = libraries
+dependencies[] = wttoc_importer
