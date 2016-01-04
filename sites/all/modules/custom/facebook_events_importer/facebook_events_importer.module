@@ -160,8 +160,12 @@ function facebook_events_importer_form_submit($form, &$form_state){
             $eventResponseArray["events"][$event_id]["id"] = $eventResponse->getId();
             $eventResponseArray["events"][$event_id]["name"] = $eventResponse->getName();
             $eventResponseArray["events"][$event_id]["description"] = $eventResponse->getDescription();
-            $eventResponseArray["events"][$event_id]["start_time"] = $eventResponse->getStartTime()->format("U");
-            $eventResponseArray["events"][$event_id]["end_time"] = $eventResponse->getEndTime()->format("U");
+            if(!is_null($eventResponse->getStartTime()) && !is_null($eventResponse->getEndTime())) {
+                $eventResponseArray["events"][$event_id]["start_time"] = $eventResponse->getStartTime()
+                  ->format("U");
+                $eventResponseArray["events"][$event_id]["end_time"] = $eventResponse->getEndTime()
+                  ->format("U");
+            }
             if(!is_null($eventResponse->getPlace())) {
                 $eventResponseArray["events"][$event_id]["place"]["name"] = $eventResponse->getPlace()->getName();
                 if (!is_null($eventResponse->getPlace()->getLocation())) {
@@ -186,14 +190,11 @@ function facebook_events_importer_form_submit($form, &$form_state){
                 }
 
             }
-
-
-
-
         } catch(Facebook\Exceptions\FacebookResponseException $e) {
-            drupal_set_message('Facebook Response returned an error: ' . $e->getMessage(), "warning");
+            drupal_set_message('Facebook Response returned an error: '. $event_id, "warning");
         } catch(Facebook\Exceptions\FacebookSDKException $e) {
-            drupal_set_message('Facebook SDK returned an error: ' . $e->getMessage(), "warning");
+            drupal_set_message('Facebook Response returned an error: '. $event_id, "warning");
+            //drupal_set_message('Facebook SDK returned an error: ' . $e->getMessage(), "warning");
         }
     }
 
