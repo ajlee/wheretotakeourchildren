@@ -152,30 +152,30 @@ footer.l-footer{
 						font-size: 14px;
 						font-weight:bold;
 					}
-					&#tmenu-Search{
+					&.tmenu-Search{
 						color: $color1;
 						color: transparent;
 						letter-spacing: -0.5em;
 						padding-left:10px;
 						padding-right:13px;
 					}
-					&#tmenu-Search:before{
+					&.tmenu-Search:before{
 						content:'\e82f';
 					}
-					&#tmenu-SignIn:before{
+					&.tmenu-SignIn:before{
 						content:'\e82d';
 					}
-					&#tmenu-SubmitListing:before{
+					&.tmenu-SubmitListing:before{
 						content:'\e82c';
 						bottom:1px;
 						font-size:16px;
 						display:none;
 					}
-					&#tmenu-SubmitEvent:before{
+					&.tmenu-SubmitEvent:before{
 						content:'\e82b';
 						display:none;
 					}
-					&#tmenu-LogOut:before{
+					&.tmenu-LogOut:before{
 						content:'\e82e';
 					}
 				}
@@ -238,4 +238,109 @@ footer.l-footer{
 		width:90%;
 		margin: 0 auto;
 	}
+}
+
+
+/**
+ * Tables.
+ */
+table {
+	width: 100%;
+	margin: 0 0 10px;
+}
+
+table td,table th {
+	vertical-align: middle;
+	padding: 8px 10px;
+	border: 0;
+	color: #000;
+}
+
+tr.even,tr.odd {
+	border-style: solid;
+	border-color: #ddd;
+	background: #f3f4ee;
+}
+
+tr.odd {
+	background: #fff;
+}
+
+tr.drag {
+	background: #fe7;
+}
+
+tr.drag-previous {
+	background: #ffb;
+}
+
+table th {
+	background: none repeat scroll 0 0 #E1E2DC;
+	font-family: "Open Sans", "Segoe UI", "Helvetica", sans-serif;
+	font-size: 18px;
+	font-weight: 300;
+	padding: 10px;
+}
+
+table th.active {
+	background: #0074BD;
+	color: #fff;
+}
+
+table th a {
+	display: block;
+}
+
+table th.active a {
+	padding: 0 25px 0 0;/* LTR */
+	color: #fff;
+}
+
+table th.active img {
+	float: right;
+	position: relative;
+	right: -20px;
+	top: 3px;/* LTR */
+}
+
+table td.active {
+	background: transparent;
+}
+
+table tr.odd td.active {
+	background: transparent;
+}
+
+table tr.selected td.active,table tr.selected td {
+	background: #ffc;
+	border-color: #eeb;
+}
+
+table.system-status-report tr {
+	border-bottom: 1px solid #ccc;
+	border-color: rgba(0,0,0,0.1);
+}
+
+table.system-status-report tr.ok {
+	color: #255b1e;
+	background-color: #e5ffe2;
+}
+
+table.system-status-report tr.info {
+	color: #040f37;
+	background-color: #bdf;
+}
+
+table.system-status-report tr.warning {
+	color: #840;
+	background-color: #fffbe2;
+}
+
+.adminimal-theme table tr.error {
+	color: #C70000;
+	background-color: #FFDDDD;
+}
+
+.adminimal-theme table tr.error td {
+	color: #C70000;
 }
