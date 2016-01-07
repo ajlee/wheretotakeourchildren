@@ -1,7 +1,7 @@
 .l-widetop, .l-content, .l-region--sidebar-first, .l-region--sidebar-second{
 	.small_blocks_feat_biz-container, .small_blocks_feat_evs-container,
 	.smallblocks_businesses-container, .smallblocks_events-container, 
-	.smallblocks_busineses_n_events-container{
+	.smallblocks_busineses_n_events-container, .small_blocks_biz_evs-container{
 		.b_title_cont{
 			@include doubleLineBackgroundBefore(4px, $LIGHTGRAY);
 			&:before{
@@ -23,7 +23,7 @@
 .l-widetop{
 	.small_blocks_feat_biz-container, .small_blocks_feat_evs-container,
 	.smallblocks_businesses-container, .smallblocks_events-container, 
-	.smallblocks_busineses_n_events-container{
+	.smallblocks_busineses_n_events-container, .small_blocks_biz_evs-container{
 		.b_title_cont{
 			text-align:left !important;
 			.block__title{

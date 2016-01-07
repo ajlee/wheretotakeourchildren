@@ -1374,6 +1374,14 @@ footer.l-footer nav ul {
           color: #fff;
           font-size: 14px;
           font-weight: bold; }
+        .l-superheader nav > ul.menu > li > a.tmenu-Dashboard {
+          color: #5675CE;
+          color: transparent;
+          letter-spacing: -0.5em;
+          padding-left: 10px;
+          padding-right: 13px; }
+        .l-superheader nav > ul.menu > li > a.tmenu-Dashboard:before {
+          content: '\e826'; }
         .l-superheader nav > ul.menu > li > a.tmenu-Search {
           color: #5675CE;
           color: transparent;
@@ -2846,12 +2854,16 @@ body.page-search-businesses-and-events .l-region--sidebar-first .lc-region--inne
       .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Right .titb_email:before,
       .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Right .titb_email:before {
         content: '\e834'; }
+      .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Right .titb_dateevents:before,
+      .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_Right .titb_dateevents:before {
+        content: '\e81c'; }
       .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_title,
       .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_address,
       .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_phone,
       .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_website,
       .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_email,
-      .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_title, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_address, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_phone, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_website, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_email {
+      .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_dateevents,
+      .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_title, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_address, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_phone, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_website, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_email, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_dateevents {
         position: relative;
         padding-left: 30px; }
         @media (min-width: 0) and (max-width: 430px) {
@@ -2860,7 +2872,8 @@ body.page-search-businesses-and-events .l-region--sidebar-first .lc-region--inne
           .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_phone,
           .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_website,
           .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_email,
-          .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_title, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_address, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_phone, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_website, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_email {
+          .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_dateevents,
+          .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_title, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_address, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_phone, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_website, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_email, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_dateevents {
             font-size: 17px;
             font-size: 1.7rem;
             margin-bottom: 8px;
@@ -2871,7 +2884,8 @@ body.page-search-businesses-and-events .l-region--sidebar-first .lc-region--inne
           .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_phone,
           .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_website,
           .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_email,
-          .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_title, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_address, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_phone, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_website, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_email {
+          .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_dateevents,
+          .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_title, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_address, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_phone, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_website, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_email, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_dateevents {
             margin-bottom: 14px;
             margin-left: 20px; } }
         @media (min-width: 769px) {
@@ -2880,7 +2894,8 @@ body.page-search-businesses-and-events .l-region--sidebar-first .lc-region--inne
           .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_phone,
           .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_website,
           .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_email,
-          .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_title, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_address, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_phone, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_website, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_email {
+          .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_dateevents,
+          .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_title, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_address, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_phone, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_website, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_email, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_dateevents {
             margin-bottom: 20px;
             margin-left: 30px; } }
         .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_title:before,
@@ -2888,7 +2903,8 @@ body.page-search-businesses-and-events .l-region--sidebar-first .lc-region--inne
         .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_phone:before,
         .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_website:before,
         .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_email:before,
-        .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_title:before, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_address:before, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_phone:before, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_website:before, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_email:before {
+        .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_dateevents:before,
+        .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_title:before, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_address:before, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_phone:before, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_website:before, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_email:before, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_dateevents:before {
           content: '\e81f';
           font-family: "fontello";
           font-style: normal;
@@ -2913,7 +2929,8 @@ body.page-search-businesses-and-events .l-region--sidebar-first .lc-region--inne
         .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_phone:before,
         .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_website:before,
         .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_email:before,
-        .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_title:before, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_address:before, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_phone:before, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_website:before, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_email:before {
+        .view-id-business_display.view-display-id-fg_image .view-content .views-row .views-field-nothing .textInTopBox .titb_dateevents:before,
+        .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_title:before, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_address:before, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_phone:before, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_website:before, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_email:before, .view-id-events_display.view-display-id-e_image .view-content .views-row .views-field-nothing .textInTopBox .titb_dateevents:before {
           position: absolute;
           left: 0;
           top: 0;
@@ -2963,6 +2980,9 @@ body.page-search-businesses-and-events .l-region--sidebar-first .lc-region--inne
 .mainContentC .view-id-events_display i.icon {
   background-color: #5675CE; }
 
+.mainContentC .view-id-events_display .views-field-field-date-of-event-1 .wttocFieldEnclose div {
+  display: inline-block; }
+
 body.node-type-event .mainPageTitle, body.node-type-business-service-or-attraction .mainPageTitle {
   display: none; }
 
@@ -2992,6 +3012,9 @@ body.node-type-event .l-region--underlighted .block__content, body.node-type-bus
 
 body.node-type-business-service-or-attraction .l-region--sidebar-first .b_title_cont, body.node-type-business-service-or-attraction .l-region--sidebar-second .b_title_cont {
   border-bottom: 2px solid #66CD4C; }
+
+body.node-type-business-service-or-attraction .l-region--sidebar-first .small_blocks_biz_evs-container .b_title_cont, body.node-type-business-service-or-attraction .l-region--sidebar-second .small_blocks_biz_evs-container .b_title_cont {
+  border-bottom: 2px solid #5675CE; }
 
 body.node-type-business-service-or-attraction .titb_title:before {
   content: '\e81b' !important; }
@@ -3938,24 +3961,24 @@ body.node-type-event .social-links .field-label:before {
 
 .l-widetop .small_blocks_feat_biz-container .b_title_cont, .l-widetop .small_blocks_feat_evs-container .b_title_cont,
 .l-widetop .smallblocks_businesses-container .b_title_cont, .l-widetop .smallblocks_events-container .b_title_cont,
-.l-widetop .smallblocks_busineses_n_events-container .b_title_cont, .l-content .small_blocks_feat_biz-container .b_title_cont, .l-content .small_blocks_feat_evs-container .b_title_cont,
+.l-widetop .smallblocks_busineses_n_events-container .b_title_cont, .l-widetop .small_blocks_biz_evs-container .b_title_cont, .l-content .small_blocks_feat_biz-container .b_title_cont, .l-content .small_blocks_feat_evs-container .b_title_cont,
 .l-content .smallblocks_businesses-container .b_title_cont, .l-content .smallblocks_events-container .b_title_cont,
-.l-content .smallblocks_busineses_n_events-container .b_title_cont, .l-region--sidebar-first .small_blocks_feat_biz-container .b_title_cont, .l-region--sidebar-first .small_blocks_feat_evs-container .b_title_cont,
+.l-content .smallblocks_busineses_n_events-container .b_title_cont, .l-content .small_blocks_biz_evs-container .b_title_cont, .l-region--sidebar-first .small_blocks_feat_biz-container .b_title_cont, .l-region--sidebar-first .small_blocks_feat_evs-container .b_title_cont,
 .l-region--sidebar-first .smallblocks_businesses-container .b_title_cont, .l-region--sidebar-first .smallblocks_events-container .b_title_cont,
-.l-region--sidebar-first .smallblocks_busineses_n_events-container .b_title_cont, .l-region--sidebar-second .small_blocks_feat_biz-container .b_title_cont, .l-region--sidebar-second .small_blocks_feat_evs-container .b_title_cont,
+.l-region--sidebar-first .smallblocks_busineses_n_events-container .b_title_cont, .l-region--sidebar-first .small_blocks_biz_evs-container .b_title_cont, .l-region--sidebar-second .small_blocks_feat_biz-container .b_title_cont, .l-region--sidebar-second .small_blocks_feat_evs-container .b_title_cont,
 .l-region--sidebar-second .smallblocks_businesses-container .b_title_cont, .l-region--sidebar-second .smallblocks_events-container .b_title_cont,
-.l-region--sidebar-second .smallblocks_busineses_n_events-container .b_title_cont {
+.l-region--sidebar-second .smallblocks_busineses_n_events-container .b_title_cont, .l-region--sidebar-second .small_blocks_biz_evs-container .b_title_cont {
   position: relative;
   text-align: left; }
   .l-widetop .small_blocks_feat_biz-container .b_title_cont:before, .l-widetop .small_blocks_feat_evs-container .b_title_cont:before,
   .l-widetop .smallblocks_businesses-container .b_title_cont:before, .l-widetop .smallblocks_events-container .b_title_cont:before,
-  .l-widetop .smallblocks_busineses_n_events-container .b_title_cont:before, .l-content .small_blocks_feat_biz-container .b_title_cont:before, .l-content .small_blocks_feat_evs-container .b_title_cont:before,
+  .l-widetop .smallblocks_busineses_n_events-container .b_title_cont:before, .l-widetop .small_blocks_biz_evs-container .b_title_cont:before, .l-content .small_blocks_feat_biz-container .b_title_cont:before, .l-content .small_blocks_feat_evs-container .b_title_cont:before,
   .l-content .smallblocks_businesses-container .b_title_cont:before, .l-content .smallblocks_events-container .b_title_cont:before,
-  .l-content .smallblocks_busineses_n_events-container .b_title_cont:before, .l-region--sidebar-first .small_blocks_feat_biz-container .b_title_cont:before, .l-region--sidebar-first .small_blocks_feat_evs-container .b_title_cont:before,
+  .l-content .smallblocks_busineses_n_events-container .b_title_cont:before, .l-content .small_blocks_biz_evs-container .b_title_cont:before, .l-region--sidebar-first .small_blocks_feat_biz-container .b_title_cont:before, .l-region--sidebar-first .small_blocks_feat_evs-container .b_title_cont:before,
   .l-region--sidebar-first .smallblocks_businesses-container .b_title_cont:before, .l-region--sidebar-first .smallblocks_events-container .b_title_cont:before,
-  .l-region--sidebar-first .smallblocks_busineses_n_events-container .b_title_cont:before, .l-region--sidebar-second .small_blocks_feat_biz-container .b_title_cont:before, .l-region--sidebar-second .small_blocks_feat_evs-container .b_title_cont:before,
+  .l-region--sidebar-first .smallblocks_busineses_n_events-container .b_title_cont:before, .l-region--sidebar-first .small_blocks_biz_evs-container .b_title_cont:before, .l-region--sidebar-second .small_blocks_feat_biz-container .b_title_cont:before, .l-region--sidebar-second .small_blocks_feat_evs-container .b_title_cont:before,
   .l-region--sidebar-second .smallblocks_businesses-container .b_title_cont:before, .l-region--sidebar-second .smallblocks_events-container .b_title_cont:before,
-  .l-region--sidebar-second .smallblocks_busineses_n_events-container .b_title_cont:before {
+  .l-region--sidebar-second .smallblocks_busineses_n_events-container .b_title_cont:before, .l-region--sidebar-second .small_blocks_biz_evs-container .b_title_cont:before {
     content: " ";
     position: absolute;
     width: 100%;
@@ -3966,23 +3989,23 @@ body.node-type-event .social-links .field-label:before {
     left: 0; }
   .l-widetop .small_blocks_feat_biz-container .b_title_cont:before, .l-widetop .small_blocks_feat_evs-container .b_title_cont:before,
   .l-widetop .smallblocks_businesses-container .b_title_cont:before, .l-widetop .smallblocks_events-container .b_title_cont:before,
-  .l-widetop .smallblocks_busineses_n_events-container .b_title_cont:before, .l-content .small_blocks_feat_biz-container .b_title_cont:before, .l-content .small_blocks_feat_evs-container .b_title_cont:before,
+  .l-widetop .smallblocks_busineses_n_events-container .b_title_cont:before, .l-widetop .small_blocks_biz_evs-container .b_title_cont:before, .l-content .small_blocks_feat_biz-container .b_title_cont:before, .l-content .small_blocks_feat_evs-container .b_title_cont:before,
   .l-content .smallblocks_businesses-container .b_title_cont:before, .l-content .smallblocks_events-container .b_title_cont:before,
-  .l-content .smallblocks_busineses_n_events-container .b_title_cont:before, .l-region--sidebar-first .small_blocks_feat_biz-container .b_title_cont:before, .l-region--sidebar-first .small_blocks_feat_evs-container .b_title_cont:before,
+  .l-content .smallblocks_busineses_n_events-container .b_title_cont:before, .l-content .small_blocks_biz_evs-container .b_title_cont:before, .l-region--sidebar-first .small_blocks_feat_biz-container .b_title_cont:before, .l-region--sidebar-first .small_blocks_feat_evs-container .b_title_cont:before,
   .l-region--sidebar-first .smallblocks_businesses-container .b_title_cont:before, .l-region--sidebar-first .smallblocks_events-container .b_title_cont:before,
-  .l-region--sidebar-first .smallblocks_busineses_n_events-container .b_title_cont:before, .l-region--sidebar-second .small_blocks_feat_biz-container .b_title_cont:before, .l-region--sidebar-second .small_blocks_feat_evs-container .b_title_cont:before,
+  .l-region--sidebar-first .smallblocks_busineses_n_events-container .b_title_cont:before, .l-region--sidebar-first .small_blocks_biz_evs-container .b_title_cont:before, .l-region--sidebar-second .small_blocks_feat_biz-container .b_title_cont:before, .l-region--sidebar-second .small_blocks_feat_evs-container .b_title_cont:before,
   .l-region--sidebar-second .smallblocks_businesses-container .b_title_cont:before, .l-region--sidebar-second .smallblocks_events-container .b_title_cont:before,
-  .l-region--sidebar-second .smallblocks_busineses_n_events-container .b_title_cont:before {
+  .l-region--sidebar-second .smallblocks_busineses_n_events-container .b_title_cont:before, .l-region--sidebar-second .small_blocks_biz_evs-container .b_title_cont:before {
     z-index: -1; }
   .l-widetop .small_blocks_feat_biz-container .b_title_cont .block__title, .l-widetop .small_blocks_feat_evs-container .b_title_cont .block__title,
   .l-widetop .smallblocks_businesses-container .b_title_cont .block__title, .l-widetop .smallblocks_events-container .b_title_cont .block__title,
-  .l-widetop .smallblocks_busineses_n_events-container .b_title_cont .block__title, .l-content .small_blocks_feat_biz-container .b_title_cont .block__title, .l-content .small_blocks_feat_evs-container .b_title_cont .block__title,
+  .l-widetop .smallblocks_busineses_n_events-container .b_title_cont .block__title, .l-widetop .small_blocks_biz_evs-container .b_title_cont .block__title, .l-content .small_blocks_feat_biz-container .b_title_cont .block__title, .l-content .small_blocks_feat_evs-container .b_title_cont .block__title,
   .l-content .smallblocks_businesses-container .b_title_cont .block__title, .l-content .smallblocks_events-container .b_title_cont .block__title,
-  .l-content .smallblocks_busineses_n_events-container .b_title_cont .block__title, .l-region--sidebar-first .small_blocks_feat_biz-container .b_title_cont .block__title, .l-region--sidebar-first .small_blocks_feat_evs-container .b_title_cont .block__title,
+  .l-content .smallblocks_busineses_n_events-container .b_title_cont .block__title, .l-content .small_blocks_biz_evs-container .b_title_cont .block__title, .l-region--sidebar-first .small_blocks_feat_biz-container .b_title_cont .block__title, .l-region--sidebar-first .small_blocks_feat_evs-container .b_title_cont .block__title,
   .l-region--sidebar-first .smallblocks_businesses-container .b_title_cont .block__title, .l-region--sidebar-first .smallblocks_events-container .b_title_cont .block__title,
-  .l-region--sidebar-first .smallblocks_busineses_n_events-container .b_title_cont .block__title, .l-region--sidebar-second .small_blocks_feat_biz-container .b_title_cont .block__title, .l-region--sidebar-second .small_blocks_feat_evs-container .b_title_cont .block__title,
+  .l-region--sidebar-first .smallblocks_busineses_n_events-container .b_title_cont .block__title, .l-region--sidebar-first .small_blocks_biz_evs-container .b_title_cont .block__title, .l-region--sidebar-second .small_blocks_feat_biz-container .b_title_cont .block__title, .l-region--sidebar-second .small_blocks_feat_evs-container .b_title_cont .block__title,
   .l-region--sidebar-second .smallblocks_businesses-container .b_title_cont .block__title, .l-region--sidebar-second .smallblocks_events-container .b_title_cont .block__title,
-  .l-region--sidebar-second .smallblocks_busineses_n_events-container .b_title_cont .block__title {
+  .l-region--sidebar-second .smallblocks_busineses_n_events-container .b_title_cont .block__title, .l-region--sidebar-second .small_blocks_biz_evs-container .b_title_cont .block__title {
     position: relative;
     top: 4px;
     text-align: left;
@@ -3993,16 +4016,16 @@ body.node-type-event .social-links .field-label:before {
 
 .l-widetop .small_blocks_feat_biz-container .b_title_cont, .l-widetop .small_blocks_feat_evs-container .b_title_cont,
 .l-widetop .smallblocks_businesses-container .b_title_cont, .l-widetop .smallblocks_events-container .b_title_cont,
-.l-widetop .smallblocks_busineses_n_events-container .b_title_cont {
+.l-widetop .smallblocks_busineses_n_events-container .b_title_cont, .l-widetop .small_blocks_biz_evs-container .b_title_cont {
   text-align: left !important; }
   .l-widetop .small_blocks_feat_biz-container .b_title_cont .block__title, .l-widetop .small_blocks_feat_evs-container .b_title_cont .block__title,
   .l-widetop .smallblocks_businesses-container .b_title_cont .block__title, .l-widetop .smallblocks_events-container .b_title_cont .block__title,
-  .l-widetop .smallblocks_busineses_n_events-container .b_title_cont .block__title {
+  .l-widetop .smallblocks_busineses_n_events-container .b_title_cont .block__title, .l-widetop .small_blocks_biz_evs-container .b_title_cont .block__title {
     padding: 5px 15px; }
 
 .l-widetop .small_blocks_feat_biz-container .view-content, .l-widetop .small_blocks_feat_evs-container .view-content,
 .l-widetop .smallblocks_businesses-container .view-content, .l-widetop .smallblocks_events-container .view-content,
-.l-widetop .smallblocks_busineses_n_events-container .view-content {
+.l-widetop .smallblocks_busineses_n_events-container .view-content, .l-widetop .small_blocks_biz_evs-container .view-content {
   width: 90%;
   margin: 0 auto; }
 
@@ -4991,5 +5014,104 @@ body.page-cart .view-id-commerce_cart_form.view-display-id-default .commerce-lin
   body.page-cart .view-id-commerce_cart_form.view-display-id-default .commerce-line-item-actions #edit-checkout {
     background-color: #66CD4C;
     border: 0; }
+
+/*
+ * Dashboard Styling
+ */
+.ced-container .ced-container__inner {
+  padding: 10px;
+  /* First Level Item */ }
+  .ced-container .ced-container__inner:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .ced-container .ced-container__inner > .ced-item {
+    display: block;
+    float: left; }
+    @media (min-width: 0) and (max-width: 768px) {
+      .ced-container .ced-container__inner > .ced-item {
+        width: 100%;
+        clear: both; } }
+    @media (min-width: 769px) and (max-width: 1024px) {
+      .ced-container .ced-container__inner > .ced-item {
+        width: 50%; }
+        .ced-container .ced-container__inner > .ced-item:nth-child(2n+1) {
+          clear: both; } }
+    @media (min-width: 1025px) {
+      .ced-container .ced-container__inner > .ced-item {
+        width: 33.333%; }
+        .ced-container .ced-container__inner > .ced-item:nth-child(3n+1) {
+          clear: both; } }
+    .ced-container .ced-container__inner > .ced-item > .ced-item__inner {
+      margin: 15px;
+      background-color: #5675CE;
+      color: #fff; }
+      .ced-container .ced-container__inner > .ced-item > .ced-item__inner span, .ced-container .ced-container__inner > .ced-item > .ced-item__inner p, .ced-container .ced-container__inner > .ced-item > .ced-item__inner h1, .ced-container .ced-container__inner > .ced-item > .ced-item__inner h2, .ced-container .ced-container__inner > .ced-item > .ced-item__inner h3, .ced-container .ced-container__inner > .ced-item > .ced-item__inner h4, .ced-container .ced-container__inner > .ced-item > .ced-item__inner h5, .ced-container .ced-container__inner > .ced-item > .ced-item__inner h6, .ced-container .ced-container__inner > .ced-item > .ced-item__inner a, .ced-container .ced-container__inner > .ced-item > .ced-item__inner div, .ced-container .ced-container__inner > .ced-item > .ced-item__inner li {
+        color: #fff; }
+      .ced-container .ced-container__inner > .ced-item > .ced-item__inner a:hover {
+        color: #fff; }
+      .ced-container .ced-container__inner > .ced-item > .ced-item__inner > .ced-item__title {
+        font-size: 22px;
+        font-size: 2.2rem;
+        padding: 15px 7px;
+        cursor: pointer;
+        text-transform: uppercase;
+        text-align: center; }
+      .ced-container .ced-container__inner > .ced-item > .ced-item__inner > .ced-item__children {
+        /* Second Level Item */ }
+        .ced-container .ced-container__inner > .ced-item > .ced-item__inner > .ced-item__children > .ced-item > .ced-item__inner {
+          background-color: #69D1F5; }
+          .ced-container .ced-container__inner > .ced-item > .ced-item__inner > .ced-item__children > .ced-item > .ced-item__inner > .ced-item__title {
+            font-size: 17px;
+            font-size: 1.7rem;
+            padding: 7px;
+            text-align: center; }
+            .ced-container .ced-container__inner > .ced-item > .ced-item__inner > .ced-item__children > .ced-item > .ced-item__inner > .ced-item__title a {
+              display: block; }
+
+/*
+ * Hide Children On JS - To be Toggled Open with JS
+ */
+.js .ced-item__children {
+  display: none; }
+
+/*
+ * Fontello Icons
+ */
+.ced_top_level > .ced-item__inner > .ced-item__title:before {
+  content: '\e81f';
+  font-family: "fontello";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: .2em;
+  text-align: center;
+  /* opacity: .8; */
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+  margin-left: .2em;
+  /* font-size: 120%; */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */ }
+
+.ced_top_level > .ced-item__inner > .ced-item__title:before {
+  margin-right: 15px; }
+
+.ced_top_level.ced_content > .ced-item__inner > .ced-item__title:before {
+  content: '\e82a'; }
+
+.ced_top_level.ced_categories > .ced-item__inner > .ced-item__title:before {
+  content: '\e81e'; }
+
+.ced_top_level.ced_store > .ced-item__inner > .ced-item__title:before {
+  content: '\e814'; }
+
+.ced_top_level.ced_other > .ced-item__inner > .ced-item__title:before {
+  content: '\e819'; }
 
 /*# sourceMappingURL=wttoc.styles.css.map */

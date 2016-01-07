@@ -1,0 +1,101 @@
+/*
+ * Dashboard Styling
+ */
+
+.ced-container {
+  .ced-container__inner {
+    @include clearfix;
+    padding: 10px;
+    /* First Level Item */
+    > .ced-item {
+      display: block;
+      float: left;
+      @include breakpoint(0 $breakpointTablet) {
+        width: 100%;
+        clear: both;
+      }
+      @include breakpoint($tablet2Wide) {
+        width: 50%;
+        &:nth-child(2n+1) {
+          clear: both;
+        }
+      }
+      @include breakpoint($breakpointWideP1) {
+        width: 33.333%;
+        &:nth-child(3n+1) {
+          clear: both;
+        }
+      }
+      > .ced-item__inner {
+        margin: 15px;
+        background-color: $color1;
+        @include colorDescendantsFont($WHITE);
+        > .ced-item__title {
+          @include remFontSize($fontL);
+          padding: 15px 7px;
+          cursor: pointer;
+          text-transform: uppercase;
+          text-align: center;
+        }
+        > .ced-item__children {
+          /* Second Level Item */
+          > .ced-item {
+            > .ced-item__inner {
+              background-color: $color1Light;
+              > .ced-item__title {
+                @include remFontSize($fontS);
+                padding: 7px;
+                text-align: center;
+                a {
+                  display: block;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/*
+ * Hide Children On JS - To be Toggled Open with JS
+ */
+.js {
+  .ced-item__children{
+    display:none;
+  }
+}
+
+/*
+ * Fontello Icons
+ */
+.ced_top_level{
+  >.ced-item__inner >.ced-item__title{
+    @include fontelloBefore;
+    &:before{
+      margin-right: 15px;
+    }
+  }
+}
+.ced_top_level.ced_content{
+  >.ced-item__inner >.ced-item__title:before{
+    content:'\e82a';
+  }
+}
+.ced_top_level.ced_categories{
+  >.ced-item__inner >.ced-item__title:before{
+    content:'\e81e';
+  }
+}
+.ced_top_level.ced_store{
+  >.ced-item__inner >.ced-item__title:before{
+    content:'\e814';
+  }
+}
+.ced_top_level.ced_other{
+  >.ced-item__inner >.ced-item__title:before{
+    content:'\e819';
+  }
+}

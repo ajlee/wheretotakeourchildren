@@ -131,8 +131,13 @@
 								content: '\e834';
 							}
 						}
+						.titb_dateevents{
+							&:before{
+								content: '\e81c';
+							}
+						}
 					}
-					.titb_title, .titb_address, .titb_phone, .titb_website, .titb_email{
+					.titb_title, .titb_address, .titb_phone, .titb_website, .titb_email,.titb_dateevents{
 						@include breakpoint(0 $breakpointMobile){
 							@include remFontSize($fontS);
 							margin-bottom:8px;
@@ -215,6 +220,9 @@
 		i.icon{
 			background-color:$color1;
 		}
+		.views-field-field-date-of-event-1 .wttocFieldEnclose div{
+			display:inline-block;
+		}
 	}
 
 }
@@ -260,6 +268,11 @@ body.node-type-business-service-or-attraction{
 	.l-region--sidebar-first, .l-region--sidebar-second {
 		.b_title_cont {
 			border-bottom: 2px solid $color3;
+		}
+		.small_blocks_biz_evs-container{
+			.b_title_cont {
+				border-bottom: 2px solid $color1;
+			}
 		}
 	}
 	.titb_title:before{

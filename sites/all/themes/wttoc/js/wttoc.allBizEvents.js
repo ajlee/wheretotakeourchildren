@@ -432,7 +432,7 @@
 					function sumoSelectResetHierarchy(wrapperSelector){ 
 						var listElements = $(wrapperSelector + ' .SumoSelect ul li');
 						//1) hide all children elements (not top level) initially, unless they're selected
-						$.each(listElements, function(index, value){	
+						$.each(listElements, function(index, value){
 							var liStartingDashes = startingDashes($(value).text());
 							//exception: very first children shouldn't be hidden
 							if(liStartingDashes>0){
@@ -459,11 +459,11 @@
 								}
 							}
 						});						
-					
+
 						//3) select(tick) and show all parent elements, of selected children
 						$.each(listElements, function(index, value){
 							//only execute this for selected elements
-							if($(value).hasClass("selected")){	
+							if($(value).hasClass("selected")) {
 								var childElementDashes = startingDashes($(value).text());
 								//only execute this for child elements, not first level elements, since first level elements don't have parents
 								if(childElementDashes !== 0){
@@ -471,16 +471,19 @@
 									for(i=childElementDashes-1; i>=0; i--){
 										//if the previous element is a parent, select it (by clicking) and show it
 										var currentElement = $(value);
-										while(startingDashes(currentElement.text()) !== i 
+										while(startingDashes(currentElement.text()) !== i
 											&& startingDashes(currentElement.text()) !== 0 
 										){
+											var tempI = i;
 											if( startingDashes(currentElement.prev().text()) === i){
 												currentElement.prev().show();
 												if(!(currentElement.prev().hasClass("selected")) ){
+													//something in this click is resetting our i value - hence the use of tempI
 													currentElement.prev().click();
-												}	
+												}
 											}
 											currentElement = currentElement.prev();
+											i = tempI;
 										}
 									}
 								}

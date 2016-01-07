@@ -152,6 +152,16 @@ footer.l-footer{
 						font-size: 14px;
 						font-weight:bold;
 					}
+					&.tmenu-Dashboard{
+						color: $color1;
+						color: transparent;
+						letter-spacing: -0.5em;
+						padding-left:10px;
+						padding-right:13px;
+					}
+					&.tmenu-Dashboard:before{
+						content:'\e826';
+					}
 					&.tmenu-Search{
 						color: $color1;
 						color: transparent;

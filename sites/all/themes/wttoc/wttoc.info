@@ -21,6 +21,7 @@ scripts[] = js/wttoc.readmore.js
 scripts[] = js/wttoc.tabblocks.js
 scripts[] = js/wttoc.matchheight.js
 scripts[] = js/wttoc.allBizEvents.js
+scripts[] = js/wttoc.EditorDashboard.js
 
 ; ========================================
 ; Regions
