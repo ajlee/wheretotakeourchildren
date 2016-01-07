@@ -1,0 +1,105 @@
+<?php
+
+/**
+ * Implements hook_menu()
+ * Page: Facebook Events Importer
+ * Route: editor/tools/editor-dashboard
+ */
+function custom_editor_dashboard_menu() {
+  $items = array();
+  $items['editor/tools/editor-dashboard'] = array(
+    'title' => 'Editor Dashboard',
+    'description' => 'The editor dashboard for important administrative tasks',
+    'page callback' => 'custom_editor_dashboard_page',
+    //'page arguments' => array(),
+    'access arguments' => array('custom_editor_dashboard_use'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+  return $items;
+}
+
+/**
+ * Implements hook_permission
+ * Define permission To Use The Editor Dashboard
+ */
+function custom_editor_dashboard_permission(){
+  return array(
+    'custom_editor_dashboard_use' => array(
+      'title' => t('Use the Editor Dashboard'),
+      'description' => t('Editors will further require access to all paths specified by this module.'),
+    ),
+  );
+}
+
+/**
+ * Page callback
+ * @see custom_editor_dashboard_menu()
+ */
+function custom_editor_dashboard_page(){
+  $stringReturn = "";
+  $menu = array();
+  /**
+   * Content
+   */
+  $menu[0]["item"] = new CEDashboardMenuItem(null , "Content", "ced_top_level ced_content");
+  $menu[0]["children"][0]["item"] = new CEDashboardMenuItem("/admin/content" , "Administer Content", "ced_admin_content");
+  $menu[0]["children"][1]["item"] = new CEDashboardMenuItem("/node/add" , "Add Content", "ced_add_content");
+
+  /**
+   * Taxonomy
+   */
+  $menu[1]["item"] = new CEDashboardMenuItem(null , "Categories", "ced_top_level ced_categories");
+  $menu[1]["children"][0]["item"] = new CEDashboardMenuItem("/admin/structure/taxonomy/business_type", "Family Guide Categories");
+  $menu[1]["children"][1]["item"] = new CEDashboardMenuItem("/admin/structure/taxonomy/events_categories_and_features", "Event Categories");
+  /**
+   * Store
+   */
+  $menu[2]["item"] = new CEDashboardMenuItem(null , "Store", "ced_top_level ced_store");
+  $menu[2]["children"][0]["item"] = new CEDashboardMenuItem("/admin/tools/recurring" , "Subscriptions", "ced_admin_content");
+  $menu[2]["children"][1]["item"] = new CEDashboardMenuItem("/admin/tools/commerce/orders/list" , "Orders", "ced_admin_content");
+  /**
+   * Other
+   */
+  $menu[3]["item"] = new CEDashboardMenuItem(null , "Other", "ced_top_level ced_other");
+  $menu[3]["children"][0]["item"] = new CEDashboardMenuItem("/admin/config/facebook_events_importer" , "Facebook Events Import", "ced_fb_events");
+  $menu[3]["children"][1]["item"] = new CEDashboardMenuItem("/admin/tools/users" , "Administer Users", "ced_fb_events");
+
+  /**
+   * stringReturn -  HTML to be printed
+   */
+  $stringReturn .= "<div class='ced-container'><div class='ced-container__inner'>";
+
+  // could be done recursively, to descend through all levels,
+  // with a recursive function that has a foreach loop
+  foreach($menu as $key => $value){
+    $itemObject = $value["item"];
+    $itemObjectClasses = is_null($itemObject->getClasses()) ? "" : ($itemObject->getClasses());
+    $itemObjectText = is_null($itemObject->getLinkText()) ? "" : ($itemObject->getLinkText());
+    $itemObjectTextAHref = is_null($itemObject->getPath()) ? $itemObjectText : "<a href ='{$itemObject->getPath()}'>$itemObjectText</a>";
+    $stringReturn .= "<div class='ced-item $itemObjectClasses'><div class='ced-item__inner'>";
+    $stringReturn .= "<div class='ced-item__title'>$itemObjectTextAHref</div>";
+    if(isset($value["children"])){
+      $stringReturn .= "<div class='ced-item__children'>";
+      foreach($value["children"] as $key => $value){
+        $itemObject = $value["item"];
+        $itemObjectClasses = is_null($itemObject->getClasses()) ? "" : ($itemObject->getClasses());
+        $itemObjectText = is_null($itemObject->getLinkText()) ? "" : ($itemObject->getLinkText());
+        $itemObjectTextAHref = is_null($itemObject->getPath()) ? $itemObjectText : "<a href ='{$itemObject->getPath()}'>$itemObjectText</a>";
+        $stringReturn .= "<div class='ced-item $itemObjectClasses'><div class='ced-item__inner'>";
+        $stringReturn .= "<div class='ced-item__title'>$itemObjectTextAHref</div>";
+        //"ends ced-item and ced-item__inner
+        $stringReturn .= "</div></div>";
+      }
+      //end of ced-item__children
+      $stringReturn .="</div>";
+    }
+    //"ends ced-item and ced-item__inner
+    $stringReturn .= "</div></div>";
+  }
+  //"ends ced-container and ced-container__inner
+  $stringReturn .= "</div></div>";
+  return $stringReturn;
+}
+
+
+

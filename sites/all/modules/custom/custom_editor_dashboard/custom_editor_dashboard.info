@@ -1,0 +1,5 @@
+name = Custom Editor Dashboard
+description = A custom dashboard, with links to important site management tools.
+core = 7.x
+package = Custom
+files[] = custom_editor_dashboard_items.inc
