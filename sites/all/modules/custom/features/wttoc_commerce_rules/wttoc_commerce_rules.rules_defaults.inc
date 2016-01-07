@@ -13,6 +13,7 @@ function wttoc_commerce_rules_default_rules_configuration() {
       "LABEL" : "Extend Role First Time - Component for Line Item",
       "PLUGIN" : "rule",
       "OWNER" : "rules",
+      "TAGS" : [ "WTTOC" ],
       "REQUIRES" : [ "rules", "interval", "role_expire" ],
       "USES VARIABLES" : { "line_item" : { "label" : "Line Item", "type" : "commerce_line_item" } },
       "IF" : [
@@ -58,6 +59,7 @@ function wttoc_commerce_rules_default_rules_configuration() {
       "LABEL" : "Extend Role Duration - First Time",
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
+      "TAGS" : [ "WTTOC" ],
       "REQUIRES" : [ "commerce_order", "rules", "commerce_payment" ],
       "ON" : { "commerce_payment_order_paid_in_full" : [] },
       "IF" : [
@@ -85,6 +87,7 @@ function wttoc_commerce_rules_default_rules_configuration() {
       "LABEL" : "Extend Role Duration - Free Order",
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
+      "TAGS" : [ "WTTOC" ],
       "REQUIRES" : [ "commerce_order", "rules", "commerce_checkout" ],
       "ON" : { "commerce_checkout_complete" : [] },
       "IF" : [
@@ -112,6 +115,7 @@ function wttoc_commerce_rules_default_rules_configuration() {
       "LABEL" : "Extend Role Duration - Recurring Charge",
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
+      "TAGS" : [ "WTTOC" ],
       "REQUIRES" : [ "rules", "commerce_cardonfile" ],
       "ON" : { "commerce_cardonfile_charge_success" : [] },
       "DO" : [
@@ -130,6 +134,7 @@ function wttoc_commerce_rules_default_rules_configuration() {
       "LABEL" : "Extend Role Recurring - Component for Line Item",
       "PLUGIN" : "rule",
       "OWNER" : "rules",
+      "TAGS" : [ "WTTOC" ],
       "REQUIRES" : [ "rules", "interval", "role_expire" ],
       "USES VARIABLES" : { "line_item" : { "label" : "Line Item", "type" : "commerce_line_item" } },
       "IF" : [
@@ -175,6 +180,7 @@ function wttoc_commerce_rules_default_rules_configuration() {
       "LABEL" : "Stop Recurring Entity",
       "PLUGIN" : "rule",
       "OWNER" : "rules",
+      "TAGS" : [ "WTTOC" ],
       "REQUIRES" : [ "rules" ],
       "USES VARIABLES" : { "recurring_entity" : { "label" : "Recurring Entity", "type" : "commerce_recurring" } },
       "IF" : [
@@ -182,6 +188,24 @@ function wttoc_commerce_rules_default_rules_configuration() {
       ],
       "DO" : [
         { "data_set" : { "data" : [ "recurring-entity:status" ], "value" : "0" } }
+      ]
+    }
+  }');
+  $items['rules_unpublish_content_of_inactive_free_accounts'] = entity_import('rules_config', '{ "rules_unpublish_content_of_inactive_free_accounts" : {
+      "LABEL" : "Unpublish Content of Inactive FREE Accounts",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "WTTOC" ],
+      "REQUIRES" : [ "views_rules", "rules" ],
+      "ON" : { "cron" : [] },
+      "DO" : [
+        { "VIEW LOOP" : {
+            "VIEW" : "unpublish_listings_of_inactive_users",
+            "DISPLAY" : "views_rules_1",
+            "ROW VARIABLES" : { "nid" : { "current_node" : "Current Node" } },
+            "DO" : [ { "node_unpublish" : { "node" : [ "current-node" ] } } ]
+          }
+        }
       ]
     }
   }');

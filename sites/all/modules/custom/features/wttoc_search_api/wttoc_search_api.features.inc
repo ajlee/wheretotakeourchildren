@@ -26,7 +26,7 @@ function wttoc_search_api_default_search_api_index() {
     "item_type" : "taxonomy_term",
     "options" : {
       "datasource" : { "bundles" : [ "business_type", "events_categories_and_features" ] },
-      "index_directly" : 0,
+      "index_directly" : 1,
       "cron_limit" : "50",
       "fields" : {
         "description" : { "type" : "text", "boost" : "0.3" },
@@ -116,10 +116,12 @@ function wttoc_search_api_default_search_api_index() {
     "item_type" : "node",
     "options" : {
       "datasource" : { "bundles" : [ "business_service_or_attraction", "event" ] },
-      "index_directly" : 0,
+      "index_directly" : 1,
       "cron_limit" : "50",
       "fields" : {
         "author" : { "type" : "integer", "entity_type" : "user" },
+        "author:last_access" : { "type" : "date" },
+        "author:roles" : { "type" : "list\\u003Cinteger\\u003E" },
         "changed" : { "type" : "date" },
         "created" : { "type" : "date" },
         "field_ages" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
@@ -225,7 +227,7 @@ function wttoc_search_api_default_search_api_index() {
     "item_type" : "node",
     "options" : {
       "datasource" : { "bundles" : [ "blog_post", "news_post" ] },
-      "index_directly" : 0,
+      "index_directly" : 1,
       "cron_limit" : "50",
       "fields" : {
         "author" : { "type" : "integer", "entity_type" : "user" },
@@ -292,6 +294,123 @@ function wttoc_search_api_default_search_api_index() {
           "weight" : "30",
           "settings" : {
             "fields" : { "title" : true, "field_body:value" : true },
+            "file" : "",
+            "stopwords" : "but\\r\\ndid\\r\\nthe this that those\\r\\netc"
+          }
+        },
+        "search_api_highlighting" : {
+          "status" : 0,
+          "weight" : "35",
+          "settings" : {
+            "prefix" : "\\u003Cstrong\\u003E",
+            "suffix" : "\\u003C\\/strong\\u003E",
+            "excerpt" : 1,
+            "excerpt_length" : "256",
+            "exclude_fields" : [],
+            "highlight" : "always"
+          }
+        }
+      }
+    },
+    "enabled" : "1",
+    "read_only" : "0",
+    "rdf_mapping" : []
+  }');
+  $items['user_index'] = entity_import('search_api_index', '{
+    "name" : "User Index",
+    "machine_name" : "user_index",
+    "description" : "User Index",
+    "server" : "wheretodrupal",
+    "item_type" : "user",
+    "options" : {
+      "index_directly" : 1,
+      "cron_limit" : "50",
+      "fields" : {
+        "created" : { "type" : "date" },
+        "edit_url" : { "type" : "uri" },
+        "feed_nid" : { "type" : "integer" },
+        "feed_node" : { "type" : "integer", "entity_type" : "node" },
+        "field_company_name" : { "type" : "text" },
+        "field_title" : { "type" : "text" },
+        "last_access" : { "type" : "date" },
+        "last_login" : { "type" : "date" },
+        "mail" : { "type" : "text" },
+        "name" : { "type" : "text" },
+        "roles" : { "type" : "list\\u003Cinteger\\u003E" },
+        "search_api_language" : { "type" : "string" },
+        "search_api_url" : { "type" : "uri" },
+        "status" : { "type" : "integer" },
+        "theme" : { "type" : "text" },
+        "uid" : { "type" : "integer" },
+        "url" : { "type" : "uri" }
+      },
+      "data_alter_callbacks" : {
+        "search_api_alter_role_filter" : {
+          "status" : 0,
+          "weight" : "-10",
+          "settings" : { "default" : "1", "roles" : [] }
+        },
+        "search_api_alter_user_status" : { "status" : 0, "weight" : "0", "settings" : [] },
+        "search_api_alter_add_hierarchy" : { "status" : 0, "weight" : "0", "settings" : { "fields" : [] } },
+        "search_api_alter_add_aggregation" : { "status" : 0, "weight" : "0", "settings" : [] },
+        "search_api_alter_add_url" : { "status" : 1, "weight" : "0", "settings" : [] },
+        "search_api_alter_add_viewed_entity" : { "status" : 0, "weight" : "0", "settings" : { "mode" : "full" } }
+      },
+      "processors" : {
+        "search_api_case_ignore" : {
+          "status" : 1,
+          "weight" : "0",
+          "settings" : { "fields" : {
+              "name" : true,
+              "mail" : true,
+              "theme" : true,
+              "field_title" : true,
+              "field_company_name" : true
+            }
+          }
+        },
+        "search_api_html_filter" : {
+          "status" : 0,
+          "weight" : "10",
+          "settings" : {
+            "fields" : {
+              "name" : true,
+              "mail" : true,
+              "theme" : true,
+              "field_title" : true,
+              "field_company_name" : true
+            },
+            "title" : 0,
+            "alt" : 1,
+            "tags" : "h1 = 5\\r\\nh2 = 3\\r\\nh3 = 2\\r\\nstrong = 2\\r\\nb = 2\\r\\nem = 1.5\\r\\nu = 1.5"
+          }
+        },
+        "search_api_tokenizer" : {
+          "status" : 0,
+          "weight" : "20",
+          "settings" : {
+            "fields" : {
+              "name" : true,
+              "mail" : true,
+              "theme" : true,
+              "field_title" : true,
+              "field_company_name" : true
+            },
+            "spaces" : "[^[:alnum:]]",
+            "ignorable" : "[\\u0027]"
+          }
+        },
+        "search_api_stopwords" : {
+          "status" : 0,
+          "weight" : "30",
+          "settings" : {
+            "fields" : {
+              "name" : true,
+              "mail" : true,
+              "theme" : true,
+              "field_title" : true,
+              "field_company_name" : true
+            },
             "file" : "",
             "stopwords" : "but\\r\\ndid\\r\\nthe this that those\\r\\netc"
           }

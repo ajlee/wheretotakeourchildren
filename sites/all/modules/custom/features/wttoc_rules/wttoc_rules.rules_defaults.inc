@@ -13,6 +13,7 @@ function wttoc_rules_default_rules_configuration() {
       "LABEL" : "Event - Default Image",
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
+      "TAGS" : [ "WTTOC" ],
       "REQUIRES" : [ "rules" ],
       "ON" : {
         "node_insert--event" : { "bundle" : "event" },
@@ -32,6 +33,7 @@ function wttoc_rules_default_rules_configuration() {
       "LABEL" : "Family Guide - Default Image",
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
+      "TAGS" : [ "WTTOC" ],
       "REQUIRES" : [ "rules" ],
       "ON" : {
         "node_insert--business_service_or_attraction" : { "bundle" : "business_service_or_attraction" },

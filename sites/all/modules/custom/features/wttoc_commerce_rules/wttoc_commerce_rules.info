@@ -19,3 +19,4 @@ features[rules_config][] = rules_extend_role_duration_free_order
 features[rules_config][] = rules_extend_role_duration_recurring_charge
 features[rules_config][] = rules_extend_rolerecurring_component_line_item
 features[rules_config][] = rules_stop_recurring_entity
+features[rules_config][] = rules_unpublish_content_of_inactive_free_accounts

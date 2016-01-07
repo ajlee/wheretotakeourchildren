@@ -37,5 +37,6 @@ features[features_api][] = api:2
 features[search_api_index][] = business_and_events_categories
 features[search_api_index][] = index_businesses_and_events
 features[search_api_index][] = posts_blogs_and_news
+features[search_api_index][] = user_index
 features[search_api_server][] = wheretodrupal
 project path = sites/all/modules/custom/features
