@@ -55,6 +55,15 @@ DirectoryIndex index.php index.html index.htm
 # Various rewrite rules.
 <IfModule mod_rewrite.c>
   RewriteEngine on
+    #Force Domain
+     RewriteCond %{HTTP_HOST} .
+     RewriteCond %{HTTP_HOST} !^development.wheretotakeourchildren\.co\.uk [NC]
+     RewriteRule (.*) http://development.wheretotakeourchildren\.co\.uk/$1 [R=302,L]
+
+    # Force HTTPS
+     RewriteCond %{HTTPS} off
+     RewriteCond %{HTTP:X-Forwarded-Proto} !https
+     RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=302]
 
   # Set "protossl" to "s" if we were accessed via https://.  This is used later
   # if you enable "www." stripping or enforcement, in order to ensure that
@@ -116,15 +125,7 @@ DirectoryIndex index.php index.html index.htm
   RewriteCond %{REQUEST_URI} !=/favicon.ico
   RewriteRule ^ index.php [L]
 
-  #Force Domain
-   RewriteCond %{HTTP_HOST} .
-   RewriteCond %{HTTP_HOST} !^development.wheretotakeourchildren\.co\.uk [NC]
-   RewriteRule (.*) http://development.wheretotakeourchildren\.co\.uk/$1 [R=301,L]
 
-  # Force HTTPS
-   RewriteCond %{HTTPS} off
-   RewriteCond %{HTTP:X-Forwarded-Proto} !https
-   RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
   # Rules to correctly serve gzip compressed CSS and JS files.
   # Requires both mod_rewrite and mod_headers to be enabled.
