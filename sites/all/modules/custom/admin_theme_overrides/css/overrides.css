@@ -2,3 +2,11 @@
     @include clearfix;
     position:fixed;
 }
+
+/* Fixes for adminimal theme*/
+.field-name-commerce-discount-offer input.form-radio{
+    display: inline-block !important;
+}
+.commerce-discount-form #commerce-discount-fields-wrapper > .form-wrapper{
+    clear:both;
+}
