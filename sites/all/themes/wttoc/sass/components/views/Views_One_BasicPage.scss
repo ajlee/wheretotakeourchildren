@@ -1,0 +1,26 @@
+body.node-type-basic-page{
+  //MAIN
+  .view-id-content_type_basic_page_display.view-display-id-pages_main{
+    //content: body
+    .views-field.views-field-field-body{
+      line-height:1.5em;
+      ol, ol li{
+        list-style: decimal;
+        margin-left:20px;
+      }
+      ul, ul li{
+        list-style: disc;
+        margin-left:20px;
+      }
+      p, ul, ol, h1,h2,h3,h4,h5{
+        margin-top:10px;
+        margin-bottom:10px;
+      }
+    }
+  }
+  //PAGE TITLE
+  .mainPageTitle{
+    border-bottom: 1px solid $LIGHTGRAY;
+    margin-bottom:8px;
+  }
+}

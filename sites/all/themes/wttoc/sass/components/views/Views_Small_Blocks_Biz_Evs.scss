@@ -125,7 +125,7 @@
 				&:before{
 					@include centerYAbsoluteNoIE8;
 				}
-				> div, >span{
+				> div, > span{
 					display:inline-block;
 					padding-left:22px;
 				}
@@ -133,6 +133,12 @@
 				.locality, .state, .postal-code,span, .date-display-range{
 					@include remFontSize($fontXS);
 				}
+			}
+			//venue (linked business as link)
+			.views-field-field-address .field-content a{
+				display: inline-block;
+				padding-left: 22px;
+				@include remFontSize($fontXS);
 			}
 			//per field icons
 			//address icon
@@ -288,6 +294,12 @@ $vsbPadMarg: 4px;
 					.locality, .state, .postal-code,span, .date-display-range{
 						@include remFontSize($fontXXS);
 					}
+				}
+				//venue (linked business as link)
+				.views-field-field-address .field-content a{
+					display: block;
+					padding-left: 22px;
+					@include remFontSize($fontXXS);
 				}
 				//per field icons
 				//address icon

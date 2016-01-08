@@ -76,25 +76,46 @@ body.page-cart, body.page-checkout{
     display:none;
   }
 }
-body.page-cart{
-  .mainPageTitle{
+body.page-cart, body.page-checkout{
+  //title
+  .mainPageTitle {
     background: $color1;
     padding: 10px 15px 10px 15px;
     color: $WHITE;
-    margin:0;
+    margin: 0;
     @include fontelloBefore;
-    &:before{
-      content:'\e814';
+    &:before {
+      content: '\e814';
     }
   }
-  .view-id-commerce_cart_form.view-display-id-default{
+  //adjustments
+  legend, .checkout-help{
+    @include accesibleHide;
+  }
+  .commerce-checkout-form-checkout{
+    overflow-x:hidden;
+  }
+  .cart_contents.form-wrapper{
+    width:100%;
+    max-width:100%;
+    min-width:100%;
+  }
+  //views
+  .view-id-commerce_cart_form.view-display-id-default,
+  .view-id-commerce_cart_summary.view-display-id-default{
     .view-content{
       background-color:$LIGHTGRAY;
       padding:30px 0 10px 0;
       text-align:center;
       table{
         display:inline-block;
-        max-width:95%;
+        @include breakpoint($breakpointTabletP1){
+          //a centered inline-table doesn't allow us to do a responsive table (overflow-x auto)
+          //we need this on smaller resolutions
+          //on larger resolutions we can center the table
+          display:inline-table;
+        }
+        max-width:85%;
       }
       tbody, tr{
         background:none;
@@ -107,6 +128,7 @@ body.page-cart{
         border-bottom: 2px solid $GRAYC;
       }
     }
+    //cart form view
     .line-item-summary{
       margin-top:15px;
       text-align: center;
@@ -115,6 +137,25 @@ body.page-cart{
         display:inline-block;
       }
     }
+    //cart summary view
+    .view-footer {
+      background-color:$LIGHTGRAY;
+      .commerce-order-handler-area-order-total{
+        padding-top: 15px;
+        text-align: center;
+        @include remFontSize($fontL);
+        .field--name-commerce-order-total {
+          display:inline-block;
+          .commerce-price-formatted-components {
+            width: 100%;
+            tr{
+              background-color:$LIGHTGRAY;
+            }
+          }
+        }
+      }
+    }
+    //
     .commerce-line-item-actions{
       text-align:center;
       padding-left:20px;
@@ -129,5 +170,110 @@ body.page-cart{
       }
     }
   }
+  //cart summary - coupon codes
+  .commerce_coupon.form-wrapper{
+    background-color:$GRAYC;
+    padding: 15px 25px;
+    text-align:center;
+    .form-item-commerce-coupon-coupon-code {
+      text-align:center;
+      input{
+        @include remFontSize($fontM);
+        @include remLineHeight(2*$fontM);
+        width: 52%;
+        @include breakpoint(0 $breakpointTablet){
+          width:90%;
+        }
+        padding: 0 1%;
+        display:inline-block;
+      }
+      .description{
+        @include remFontSize($fontXS);
+        @include remLineHeight(2*$fontXS);
+        width: 52%;
+        @include breakpoint(0 $breakpointTablet){
+          width:90%;
+        }
+        padding: 0 1%;
+        display:inline-block;
+      }
+    }
+    input[type="submit"]{
+      max-width:25%;
+      @include breakpoint(0 $breakpointTablet){
+        max-width:75%;
+      }
+      display:inline-block;
+    }
+  }
+  //billing profile
+  .customer_profile_billing.form-wrapper{
+    background-color:$LIGHTGRAY;
+    .fieldset-wrapper{
+      padding:15px 25px;
+      text-align:center;
+      .form-item{
+        display:inline-block;
+        min-width: 100%;
+      }
+      .SlectBox{
+        @include remFontSize($fontM);
+        @include remLineHeight(2*$fontM);
+      }
+      input[type="text"]{
+        @include remFontSize($fontM);
+        @include remLineHeight(2*$fontM);
+        width: 52%;
+        @include breakpoint(0 $breakpointTablet){
+          width:90%;
+        }
+        padding: 0 1%;
+        display:inline-block;
+      }
+    }
+  }
+  //bottom checkout buttons
 
+  .checkout-buttons.form-wrapper{
+    .button-operator{
+      display:none !important;
+    }
+    text-align:center;
+    input{
+      display:inline-block;
+    }
+    input.checkout-continue{
+      background-color:$color3;
+      border:1px solid $color3;
+    }
+    input.checkout-cancel, input.checkout-back{
+      background-color:$colorWPink;
+      border:1px solid $colorWPink;
+    }
+  }
+}
+body.page-checkout-review{
+  .checkout_review.form-wrapper{
+    padding: 10px;
+    background-color:$LIGHTGRAY;
+    text-align:center;
+    table.checkout-review{
+      > tbody >tr{
+        background:none !important;
+        display:inline-block;
+      }
+      > tbody, > tbody tr.pane-data, > tbody tr.pane-data > td{
+        display:block;
+        padding:0;
+      }
+    }
+  }
+  .commerce_payment.form-wrapper{
+    padding: 10px;
+    text-align: center;
+    background: $GRAYC;
+    input[type="radio"], input[type="checkbox"]{
+      max-width:15px;
+    }
+  }
 }

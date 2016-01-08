@@ -1,0 +1,38 @@
+#block-formblock-contact-site{
+  .b_title_cont{
+    padding: 8px 30px;
+    .block__title{
+      @include remFontSize($fontXXL);
+      font-weight:bold;
+    }
+  }
+}
+
+.contact-site-form{
+  padding: 5px 30px;
+  margin: 5px 0 20px 0;
+  .form-item {
+    input {
+      font-size: 16px !important;
+      line-height: 24px;
+      width: 97%;
+      padding: 0 1%;
+    }
+    input[type="checkbox"] {
+      text-align: left;
+      display: inline-block;
+      width: 15px;
+    }
+    label{
+      margin-top:5px;
+      margin-bottom:5px;
+    }
+  }
+  .form-actions{
+    input[type="submit"]{
+      border: 1px solid $color2;
+      background-color: $color2;
+      max-width: 250px;
+    }
+  }
+}

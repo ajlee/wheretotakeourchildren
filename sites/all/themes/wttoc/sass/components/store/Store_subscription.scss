@@ -1,0 +1,91 @@
+body.node-type-subscription{
+  .mainPageTitle{
+    text-align:center;
+  }
+  .node__content{
+    @include clearfix;
+    .commerce-product-extra-field, .commerce-product-field {
+      display: block;
+      float:left;
+      width:50%;
+      &:nth-child(2n+1){
+        clear:both;
+      }
+      @include breakpoint(0 $breakpointTablet){
+        width:100%;
+        clear:both;
+      }
+      position:relative;
+      @include fontelloBefore;
+      &:before{
+        @include centerYAbsoluteNoIE8;
+        left: 13px;
+        font-size: 35px;
+        color:$WHITE;
+      }
+      >div{
+        margin: 20px 10px;
+        padding: 50px 20px 50px 55px;
+        background-color:$color1;
+        @include colorDescendantsFont($WHITE);
+      }
+      .field__label, .commerce-product-title-label{
+        display:block;
+        float:none;
+      }
+    }
+    .commerce-product-field.commerce-product-field-commerce-recurring-ini-period{
+      &:before{
+        content: '\e829';
+      }
+      >div{
+        background-color: $color1;
+        @include remFontSize($fontL);
+      }
+    }
+    .commerce-product-field.commerce-product-field-commerce-recurring-ini-price{
+      &:before{
+        content: '\e839';
+      }
+      >div{
+        background-color: $color2;
+        @include remFontSize($fontL);
+      }
+    }
+    .commerce-product-field.commerce-product-field-commerce-recurring-rec-period{
+      &:before {
+        content:'\e83f';
+        font-size: 25px;
+        left: 20px;
+      }
+      >div{
+        background-color: $color1;
+        @include remFontSize($fontXS);
+        padding-top:25px;
+        padding-bottom:25px;
+      }
+    }
+    .commerce-product-field.commerce-product-field-commerce-recurring-rec-price{
+      &:before {
+        content: '\e839';
+        font-size: 25px;
+        left: 20px;
+      }
+      >div{
+        background-color: $color2;
+        @include remFontSize($fontXS);
+        padding-top:25px;
+        padding-bottom:25px;
+      }
+    }
+    .field--name-field-product{
+      clear:both;
+      text-align:center;
+    }
+    input[type="submit"]{
+      background-color:$color3;
+      border:1px solid $color3;
+      max-width:230px;
+    }
+  }
+}
