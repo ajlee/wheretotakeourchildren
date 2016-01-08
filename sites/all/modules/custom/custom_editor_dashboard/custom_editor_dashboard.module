@@ -42,8 +42,8 @@ function custom_editor_dashboard_page(){
    * Content
    */
   $menu[0]["item"] = new CEDashboardMenuItem(null , "Content", "ced_top_level ced_content");
-  $menu[0]["children"][0]["item"] = new CEDashboardMenuItem("/admin/content" , "Administer Content", "ced_admin_content");
-  $menu[0]["children"][1]["item"] = new CEDashboardMenuItem("/node/add" , "Add Content", "ced_add_content");
+  $menu[0]["children"][0]["item"] = new CEDashboardMenuItem("/admin/content" , "Administer Content");
+  $menu[0]["children"][1]["item"] = new CEDashboardMenuItem("/node/add" , "Add Content");
 
   /**
    * Taxonomy
@@ -51,18 +51,23 @@ function custom_editor_dashboard_page(){
   $menu[1]["item"] = new CEDashboardMenuItem(null , "Categories", "ced_top_level ced_categories");
   $menu[1]["children"][0]["item"] = new CEDashboardMenuItem("/admin/structure/taxonomy/business_type", "Family Guide Categories");
   $menu[1]["children"][1]["item"] = new CEDashboardMenuItem("/admin/structure/taxonomy/events_categories_and_features", "Event Categories");
+  $menu[1]["children"][2]["item"] = new CEDashboardMenuItem("/admin/structure/taxonomy/ages", "Ages");
+  $menu[1]["children"][3]["item"] = new CEDashboardMenuItem("/admin/structure/taxonomy/post_categories", "Post Categories");
+
   /**
    * Store
    */
   $menu[2]["item"] = new CEDashboardMenuItem(null , "Store", "ced_top_level ced_store");
-  $menu[2]["children"][0]["item"] = new CEDashboardMenuItem("/admin/tools/recurring" , "Subscriptions", "ced_admin_content");
-  $menu[2]["children"][1]["item"] = new CEDashboardMenuItem("/admin/tools/commerce/orders/list" , "Orders", "ced_admin_content");
+  $menu[2]["children"][0]["item"] = new CEDashboardMenuItem("/admin/tools/recurring" , "Subscriptions");
+  $menu[2]["children"][1]["item"] = new CEDashboardMenuItem("/admin/tools/commerce/orders/list" , "Orders");
+  $menu[2]["children"][2]["item"] = new CEDashboardMenuItem("/admin/commerce/discounts" , "Discounts and Coupons");
+
   /**
    * Other
    */
   $menu[3]["item"] = new CEDashboardMenuItem(null , "Other", "ced_top_level ced_other");
-  $menu[3]["children"][0]["item"] = new CEDashboardMenuItem("/admin/config/facebook_events_importer" , "Facebook Events Import", "ced_fb_events");
-  $menu[3]["children"][1]["item"] = new CEDashboardMenuItem("/admin/tools/users" , "Administer Users", "ced_fb_events");
+  $menu[3]["children"][0]["item"] = new CEDashboardMenuItem("/admin/config/facebook_events_importer" , "Facebook Events Import");
+  $menu[3]["children"][1]["item"] = new CEDashboardMenuItem("/admin/tools/users" , "Administer Users");
 
   /**
    * stringReturn -  HTML to be printed
