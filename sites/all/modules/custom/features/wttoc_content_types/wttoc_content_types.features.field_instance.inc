@@ -19,9 +19,8 @@ function wttoc_content_types_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'hidden',
-        'module' => 'text',
         'settings' => array(),
-        'type' => 'text_default',
+        'type' => 'hidden',
         'weight' => 0,
       ),
       'teaser' => array(
@@ -1289,9 +1288,9 @@ function wttoc_content_types_field_default_field_instances() {
   // Exported field_instance: 'node-event-field_linked_business'
   $field_instances['node-event-field_linked_business'] = array(
     'bundle' => 'event',
-    'default_value' => array(),
+    'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'Search for a business that belongs to your account.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -1315,20 +1314,13 @@ function wttoc_content_types_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'inline_entity_form',
+      'module' => 'entityreference',
       'settings' => array(
-        'fields' => array(),
-        'type_settings' => array(
-          'allow_existing' => 1,
-          'allow_new' => 1,
-          'delete_references' => 0,
-          'label_plural' => 'nodes',
-          'label_singular' => 'node',
-          'match_operator' => 'STARTS_WITH',
-          'override_labels' => 0,
-        ),
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
       ),
-      'type' => 'inline_entity_form',
+      'type' => 'entityreference_autocomplete',
       'weight' => 14,
     ),
   );
@@ -1653,6 +1645,7 @@ function wttoc_content_types_field_default_field_instances() {
   t('Phone Number');
   t('Post Categories');
   t('Prices Information');
+  t('Search for a business that belongs to your account.');
   t('The first image will be used as the default image throughout the site. Don\'t forget to fill the image\'s Alt and Title fields for impaired users. IMPORTANT: If you don\'t upload an image, one will be automatically assigned to you, depending on your listing\'s category.');
   t('Video');
   t('Vouchers Information');

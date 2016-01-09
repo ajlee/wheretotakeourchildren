@@ -34,6 +34,99 @@ function wttoc_commerce_field_base_field_default_field_bases() {
     'type' => 'commerce_customer_profile_reference',
   );
 
+  // Exported field_base: 'commerce_compatibility_selection'
+  $field_bases['commerce_compatibility_selection'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'commerce_compatibility_selection',
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 1,
+    'module' => 'entityreference',
+    'settings' => array(
+      'handler' => 'base',
+      'handler_settings' => array(
+        'sort' => array(
+          'direction' => 'ASC',
+          'property' => 'label',
+          'type' => 'property',
+        ),
+      ),
+      'target_type' => 'commerce_discount',
+    ),
+    'translatable' => 0,
+    'type' => 'entityreference',
+  );
+
+  // Exported field_base: 'commerce_compatibility_strategy'
+  $field_bases['commerce_compatibility_strategy'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'commerce_compatibility_strategy',
+    'indexes' => array(
+      'value' => array(
+        0 => 'value',
+      ),
+    ),
+    'locked' => 1,
+    'module' => 'list',
+    'settings' => array(
+      'allowed_values' => array(),
+      'allowed_values_function' => 'commerce_discount_compatibility_strategies',
+    ),
+    'translatable' => 0,
+    'type' => 'list_text',
+  );
+
+  // Exported field_base: 'commerce_coupon_conditions'
+  $field_bases['commerce_coupon_conditions'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(
+      0 => 'commerce_coupon',
+    ),
+    'field_name' => 'commerce_coupon_conditions',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'inline_conditions',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'inline_conditions',
+  );
+
+  // Exported field_base: 'commerce_coupons'
+  $field_bases['commerce_coupons'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(
+      0 => 'commerce_order',
+    ),
+    'field_name' => 'commerce_coupons',
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 1,
+    'module' => 'entityreference',
+    'settings' => array(
+      'handler' => 'base',
+      'handler_settings' => array(),
+      'target_type' => 'commerce_coupon',
+    ),
+    'translatable' => 0,
+    'type' => 'entityreference',
+  );
+
   // Exported field_base: 'commerce_customer_address'
   $field_bases['commerce_customer_address'] = array(
     'active' => 1,
@@ -75,6 +168,88 @@ function wttoc_commerce_field_base_field_default_field_bases() {
     'type' => 'commerce_customer_profile_reference',
   );
 
+  // Exported field_base: 'commerce_discount_offer'
+  $field_bases['commerce_discount_offer'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(
+      0 => 'commerce_discount',
+    ),
+    'field_name' => 'commerce_discount_offer',
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 1,
+    'module' => 'entityreference',
+    'settings' => array(
+      'handler' => 'base',
+      'handler_settings' => array(
+        'target_bundles' => array(
+          0 => 'fixed_amount',
+        ),
+      ),
+      'target_type' => 'commerce_discount_offer',
+    ),
+    'translatable' => 0,
+    'type' => 'entityreference',
+  );
+
+  // Exported field_base: 'commerce_discount_reference'
+  $field_bases['commerce_discount_reference'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(
+      0 => 'commerce_coupon',
+    ),
+    'field_name' => 'commerce_discount_reference',
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 1,
+    'module' => 'entityreference',
+    'settings' => array(
+      'handler' => 'base',
+      'handler_setting' => array(),
+      'handler_settings' => array(),
+      'target_type' => 'commerce_discount',
+    ),
+    'translatable' => 0,
+    'type' => 'entityreference',
+  );
+
+  // Exported field_base: 'commerce_discounts'
+  $field_bases['commerce_discounts'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(
+      0 => 'commerce_order',
+    ),
+    'field_name' => 'commerce_discounts',
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'entityreference',
+    'settings' => array(
+      'handler' => 'base',
+      'handler_settings' => array(
+        'target_bundles' => array(),
+      ),
+      'target_type' => 'commerce_discount',
+    ),
+    'translatable' => 0,
+    'type' => 'entityreference',
+  );
+
   // Exported field_base: 'commerce_display_path'
   $field_bases['commerce_display_path'] = array(
     'active' => 1,
@@ -96,6 +271,51 @@ function wttoc_commerce_field_base_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'text',
+  );
+
+  // Exported field_base: 'commerce_fixed_amount'
+  $field_bases['commerce_fixed_amount'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(
+      0 => 'commerce_discount_offer',
+    ),
+    'field_name' => 'commerce_fixed_amount',
+    'indexes' => array(
+      'currency_price' => array(
+        0 => 'amount',
+        1 => 'currency_code',
+      ),
+    ),
+    'locked' => 1,
+    'module' => 'commerce_price',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'commerce_price',
+  );
+
+  // Exported field_base: 'commerce_free_products'
+  $field_bases['commerce_free_products'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(
+      0 => 'commerce_discount_offer',
+    ),
+    'field_name' => 'commerce_free_products',
+    'indexes' => array(
+      'product_id' => array(
+        0 => 'product_id',
+      ),
+    ),
+    'locked' => 1,
+    'module' => 'commerce_product_reference',
+    'settings' => array(
+      'options_list_limit' => NULL,
+    ),
+    'translatable' => 0,
+    'type' => 'commerce_product_reference',
   );
 
   // Exported field_base: 'commerce_line_items'
@@ -139,6 +359,27 @@ function wttoc_commerce_field_base_field_default_field_bases() {
     'settings' => array(),
     'translatable' => 0,
     'type' => 'commerce_price',
+  );
+
+  // Exported field_base: 'commerce_percentage'
+  $field_bases['commerce_percentage'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(
+      0 => 'commerce_discount_offer',
+    ),
+    'field_name' => 'commerce_percentage',
+    'indexes' => array(),
+    'locked' => 1,
+    'module' => 'number',
+    'settings' => array(
+      'decimal_separator' => '.',
+      'precision' => 10,
+      'scale' => 2,
+    ),
+    'translatable' => 0,
+    'type' => 'number_decimal',
   );
 
   // Exported field_base: 'commerce_price'
@@ -451,6 +692,26 @@ function wttoc_commerce_field_base_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'role',
+  );
+
+  // Exported field_base: 'inline_conditions'
+  $field_bases['inline_conditions'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(
+      0 => 'commerce_discount',
+    ),
+    'field_name' => 'inline_conditions',
+    'indexes' => array(),
+    'instance_settings' => array(
+      'entity_type' => 'commerce_order',
+    ),
+    'locked' => 0,
+    'module' => 'inline_conditions',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'inline_conditions',
   );
 
   return $field_bases;

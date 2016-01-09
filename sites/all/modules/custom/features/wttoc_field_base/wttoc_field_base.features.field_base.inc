@@ -195,6 +195,21 @@ function wttoc_field_base_field_default_field_bases() {
     'type' => 'datetime',
   );
 
+  // Exported field_base: 'field_email'
+  $field_bases['field_email'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_email',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'email',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'email',
+  );
+
   // Exported field_base: 'field_featured_content'
   $field_bases['field_featured_content'] = array(
     'active' => 1,
@@ -318,6 +333,9 @@ function wttoc_field_base_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_linked_business',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
@@ -326,24 +344,42 @@ function wttoc_field_base_field_default_field_bases() {
     'locked' => 0,
     'module' => 'entityreference',
     'settings' => array(
-      'handler' => 'base',
+      'handler' => 'views',
       'handler_settings' => array(
         'behaviors' => array(
           'views-select-list' => array(
             'status' => 0,
           ),
         ),
-        'sort' => array(
-          'type' => 'none',
-        ),
-        'target_bundles' => array(
-          'business_service_or_attraction' => 'business_service_or_attraction',
+        'view' => array(
+          'args' => array(),
+          'display_name' => 'entityreference_1',
+          'view_name' => 'entity_reference_linked_business_on_event',
         ),
       ),
       'target_type' => 'node',
     ),
     'translatable' => 0,
     'type' => 'entityreference',
+  );
+
+  // Exported field_base: 'field_more_information'
+  $field_bases['field_more_information'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_more_information',
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'text_long',
   );
 
   // Exported field_base: 'field_opening_hours'

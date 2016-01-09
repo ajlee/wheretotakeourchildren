@@ -1,0 +1,7 @@
+name = WTTOC Commerce Coupon / Discount
+core = 7.x
+package = Features
+dependencies[] = commerce_discount
+dependencies[] = entity
+features[commerce_discount][] = discount_full_order_100_percent_off
+features[features_api][] = api:2

@@ -55,6 +55,73 @@ function wttoc_commerce_content_types_field_default_field_instances() {
   );
 
   // Exported field_instance:
+  // 'commerce_coupon-discount_coupon-commerce_coupon_conditions'
+  $field_instances['commerce_coupon-discount_coupon-commerce_coupon_conditions'] = array(
+    'bundle' => 'discount_coupon',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'commerce_coupon',
+    'field_name' => 'commerce_coupon_conditions',
+    'label' => 'Conditions',
+    'required' => FALSE,
+    'settings' => array(
+      'entity_type' => 'commerce_coupon',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'inline_conditions',
+      'settings' => array(),
+      'type' => 'inline_conditions',
+      'weight' => 10,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_coupon-discount_coupon-commerce_discount_reference'
+  $field_instances['commerce_coupon-discount_coupon-commerce_discount_reference'] = array(
+    'bundle' => 'discount_coupon',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'commerce_coupon',
+    'field_name' => 'commerce_discount_reference',
+    'label' => 'Discount reference',
+    'required' => TRUE,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance:
   // 'commerce_customer_profile-billing-commerce_customer_address'
   $field_instances['commerce_customer_profile-billing-commerce_customer_address'] = array(
     'bundle' => 'billing',
@@ -118,6 +185,522 @@ function wttoc_commerce_content_types_field_default_field_instances() {
       ),
       'type' => 'addressfield_standard',
       'weight' => -10,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_discount-order_discount-commerce_compatibility_selection'
+  $field_instances['commerce_discount-order_discount-commerce_compatibility_selection'] = array(
+    'bundle' => 'order_discount',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'commerce_discount',
+    'field_name' => 'commerce_compatibility_selection',
+    'label' => 'Selected discounts',
+    'required' => FALSE,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => -9,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_discount-order_discount-commerce_compatibility_strategy'
+  $field_instances['commerce_discount-order_discount-commerce_compatibility_strategy'] = array(
+    'bundle' => 'order_discount',
+    'default_value' => array(
+      0 => array(
+        'value' => 'any',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'commerce_discount',
+    'field_name' => 'commerce_compatibility_strategy',
+    'label' => 'Compatibility with other discounts',
+    'required' => TRUE,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => -10,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_discount-order_discount-commerce_discount_offer'
+  $field_instances['commerce_discount-order_discount-commerce_discount_offer'] = array(
+    'bundle' => 'order_discount',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'commerce_discount',
+    'field_name' => 'commerce_discount_offer',
+    'label' => 'Discount offer reference',
+    'required' => TRUE,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'inline_entity_form',
+      'settings' => array(
+        'fields' => array(),
+        'type_settings' => array(),
+      ),
+      'type' => 'inline_entity_form_single',
+      'weight' => -12,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_discount-order_discount-inline_conditions'
+  $field_instances['commerce_discount-order_discount-inline_conditions'] = array(
+    'bundle' => 'order_discount',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
+    ),
+    'entity_type' => 'commerce_discount',
+    'field_name' => 'inline_conditions',
+    'label' => 'Order discount conditions',
+    'required' => FALSE,
+    'settings' => array(
+      'entity_type' => 'commerce_order',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'inline_conditions',
+      'settings' => array(),
+      'type' => 'inline_conditions',
+      'weight' => -13,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_discount-product_discount-commerce_compatibility_selection'
+  $field_instances['commerce_discount-product_discount-commerce_compatibility_selection'] = array(
+    'bundle' => 'product_discount',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'commerce_discount',
+    'field_name' => 'commerce_compatibility_selection',
+    'label' => 'Selected discounts',
+    'required' => FALSE,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => -9,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_discount-product_discount-commerce_compatibility_strategy'
+  $field_instances['commerce_discount-product_discount-commerce_compatibility_strategy'] = array(
+    'bundle' => 'product_discount',
+    'default_value' => array(
+      0 => array(
+        'value' => 'any',
+      ),
+    ),
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'commerce_discount',
+    'field_name' => 'commerce_compatibility_strategy',
+    'label' => 'Compatibility with other discounts',
+    'required' => TRUE,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => -10,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_discount-product_discount-commerce_discount_offer'
+  $field_instances['commerce_discount-product_discount-commerce_discount_offer'] = array(
+    'bundle' => 'product_discount',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'commerce_discount',
+    'field_name' => 'commerce_discount_offer',
+    'label' => 'Discount offer reference',
+    'required' => TRUE,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'inline_entity_form',
+      'settings' => array(
+        'fields' => array(),
+        'type_settings' => array(),
+      ),
+      'type' => 'inline_entity_form_single',
+      'weight' => -12,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_discount-product_discount-inline_conditions'
+  $field_instances['commerce_discount-product_discount-inline_conditions'] = array(
+    'bundle' => 'product_discount',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 3,
+      ),
+    ),
+    'entity_type' => 'commerce_discount',
+    'field_name' => 'inline_conditions',
+    'label' => 'Product discount conditions',
+    'required' => FALSE,
+    'settings' => array(
+      'entity_type' => 'commerce_line_item',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'inline_conditions',
+      'settings' => array(),
+      'type' => 'inline_conditions',
+      'weight' => -13,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_discount_offer-fixed_amount-commerce_fixed_amount'
+  $field_instances['commerce_discount_offer-fixed_amount-commerce_fixed_amount'] = array(
+    'bundle' => 'fixed_amount',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => FALSE,
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'commerce_discount_offer',
+    'field_name' => 'commerce_fixed_amount',
+    'label' => 'Fixed amount',
+    'required' => TRUE,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'commerce_price',
+      'settings' => array(
+        'currency_code' => 'default',
+      ),
+      'type' => 'commerce_price_simple',
+      'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_discount_offer-free_products-commerce_free_products'
+  $field_instances['commerce_discount_offer-free_products-commerce_free_products'] = array(
+    'bundle' => 'free_products',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Enter a comma-separated list of SKUs. Each product is added to customer order with a quantity of 1.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'commerce_cart',
+        'settings' => array(
+          'combine' => TRUE,
+          'default_quantity' => 1,
+          'line_item_type' => 'product',
+          'show_quantity' => FALSE,
+          'show_single_product_attributes' => FALSE,
+        ),
+        'type' => 'commerce_cart_add_to_cart_form',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'commerce_discount_offer',
+    'field_name' => 'commerce_free_products',
+    'label' => 'Select free products',
+    'required' => TRUE,
+    'settings' => array(
+      'field_injection' => TRUE,
+      'referenceable_types' => array(),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'commerce_product_reference',
+      'settings' => array(
+        'autocomplete_match' => 'contains',
+        'autocomplete_path' => 'commerce_product/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'commerce_product_reference_autocomplete',
+      'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_discount_offer-percentage-commerce_percentage'
+  $field_instances['commerce_discount_offer-percentage-commerce_percentage'] = array(
+    'bundle' => 'percentage',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 2,
+          'thousand_separator' => '',
+        ),
+        'type' => 'number_decimal',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'commerce_discount_offer',
+    'field_name' => 'commerce_percentage',
+    'label' => 'Percentage',
+    'required' => TRUE,
+    'settings' => array(
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '%',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_line_item-commerce_discount-commerce_total'
+  $field_instances['commerce_line_item-commerce_discount-commerce_total'] = array(
+    'bundle' => 'commerce_discount',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => FALSE,
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 1,
+      ),
+      'display' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => FALSE,
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 1,
+      ),
+      'node_teaser' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => FALSE,
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 1,
+      ),
+      'token' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => FALSE,
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'commerce_line_item',
+    'field_name' => 'commerce_total',
+    'label' => 'Total',
+    'required' => TRUE,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'commerce_price',
+      'settings' => array(
+        'currency_code' => 'default',
+      ),
+      'type' => 'commerce_price_full',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_line_item-commerce_discount-commerce_unit_price'
+  $field_instances['commerce_line_item-commerce_discount-commerce_unit_price'] = array(
+    'bundle' => 'commerce_discount',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => FALSE,
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 0,
+      ),
+      'display' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => FALSE,
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 0,
+      ),
+      'node_teaser' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => FALSE,
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 0,
+      ),
+      'token' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => FALSE,
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'commerce_line_item',
+    'field_name' => 'commerce_unit_price',
+    'label' => 'Unit price',
+    'required' => TRUE,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'commerce_price',
+      'settings' => array(
+        'currency_code' => 'default',
+      ),
+      'type' => 'commerce_price_full',
+      'weight' => 0,
     ),
   );
 
@@ -321,6 +904,263 @@ function wttoc_commerce_content_types_field_default_field_instances() {
   );
 
   // Exported field_instance:
+  // 'commerce_line_item-product_discount-commerce_display_path'
+  $field_instances['commerce_line_item-product_discount-commerce_display_path'] = array(
+    'bundle' => 'product_discount',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 3,
+      ),
+      'display' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'commerce_line_item',
+    'field_name' => 'commerce_display_path',
+    'label' => 'Display path',
+    'required' => TRUE,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_line_item-product_discount-commerce_product'
+  $field_instances['commerce_line_item-product_discount-commerce_product'] = array(
+    'bundle' => 'product_discount',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'commerce_cart',
+        'settings' => array(
+          'combine' => TRUE,
+          'default_quantity' => 1,
+          'line_item_type' => 'product',
+          'show_quantity' => FALSE,
+          'show_single_product_attributes' => FALSE,
+        ),
+        'type' => 'commerce_cart_add_to_cart_form',
+        'weight' => 2,
+      ),
+      'display' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_cart',
+        'settings' => array(
+          'combine' => TRUE,
+          'default_quantity' => 1,
+          'line_item_type' => 'product',
+          'show_quantity' => FALSE,
+          'show_single_product_attributes' => FALSE,
+        ),
+        'type' => 'commerce_cart_add_to_cart_form',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'commerce_line_item',
+    'field_name' => 'commerce_product',
+    'label' => 'Product',
+    'required' => TRUE,
+    'settings' => array(
+      'field_injection' => TRUE,
+      'referenceable_types' => array(),
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'commerce_product_reference',
+      'settings' => array(
+        'autocomplete_match' => 'contains',
+        'autocomplete_path' => 'commerce_product/autocomplete',
+        'size' => 60,
+      ),
+      'type' => 'commerce_product_reference_autocomplete',
+      'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_line_item-product_discount-commerce_total'
+  $field_instances['commerce_line_item-product_discount-commerce_total'] = array(
+    'bundle' => 'product_discount',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => FALSE,
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 1,
+      ),
+      'display' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => FALSE,
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 1,
+      ),
+      'node_teaser' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => FALSE,
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 1,
+      ),
+      'token' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => FALSE,
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'commerce_line_item',
+    'field_name' => 'commerce_total',
+    'label' => 'Total',
+    'required' => TRUE,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'commerce_price',
+      'settings' => array(
+        'currency_code' => 'default',
+      ),
+      'type' => 'commerce_price_full',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_line_item-product_discount-commerce_unit_price'
+  $field_instances['commerce_line_item-product_discount-commerce_unit_price'] = array(
+    'bundle' => 'product_discount',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => FALSE,
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 0,
+      ),
+      'display' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => FALSE,
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 0,
+      ),
+      'node_teaser' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => FALSE,
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 0,
+      ),
+      'token' => array(
+        'label' => 'hidden',
+        'module' => 'commerce_price',
+        'settings' => array(
+          'calculation' => FALSE,
+        ),
+        'type' => 'commerce_price_formatted_amount',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'commerce_line_item',
+    'field_name' => 'commerce_unit_price',
+    'label' => 'Unit price',
+    'required' => TRUE,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'commerce_price',
+      'settings' => array(
+        'currency_code' => 'default',
+      ),
+      'type' => 'commerce_price_full',
+      'weight' => 0,
+    ),
+  );
+
+  // Exported field_instance: 'commerce_order-commerce_order-commerce_coupons'
+  $field_instances['commerce_order-commerce_order-commerce_coupons'] = array(
+    'bundle' => 'commerce_order',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => -3,
+      ),
+    ),
+    'entity_type' => 'commerce_order',
+    'field_name' => 'commerce_coupons',
+    'label' => 'Coupons',
+    'required' => FALSE,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => -3,
+    ),
+  );
+
+  // Exported field_instance:
   // 'commerce_order-commerce_order-commerce_customer_billing'
   $field_instances['commerce_order-commerce_order-commerce_customer_billing'] = array(
     'bundle' => 'commerce_order',
@@ -361,6 +1201,42 @@ function wttoc_commerce_content_types_field_default_field_instances() {
       'settings' => array(),
       'type' => 'commerce_customer_profile_manager',
       'weight' => -5,
+    ),
+  );
+
+  // Exported field_instance: 'commerce_order-commerce_order-commerce_discounts'
+  $field_instances['commerce_order-commerce_order-commerce_discounts'] = array(
+    'bundle' => 'commerce_order',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => -4,
+      ),
+    ),
+    'entity_type' => 'commerce_order',
+    'field_name' => 'commerce_discounts',
+    'label' => 'Discount reference',
+    'required' => FALSE,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'entityreference',
+      'settings' => array(
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
+      ),
+      'type' => 'entityreference_autocomplete',
+      'weight' => -4,
     ),
   );
 
@@ -496,7 +1372,7 @@ function wttoc_commerce_content_types_field_default_field_instances() {
         'label' => 'inline',
         'module' => 'commerce_price',
         'settings' => array(
-          'calculation' => FALSE,
+          'calculation' => 0,
         ),
         'type' => 'commerce_price_formatted_amount',
         'weight' => -9,
@@ -1056,7 +1932,7 @@ function wttoc_commerce_content_types_field_default_field_instances() {
   // Exported field_instance: 'node-subscription-field_product'
   $field_instances['node-subscription-field_product'] = array(
     'bundle' => 'subscription',
-    'default_value' => NULL,
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -1093,13 +1969,13 @@ function wttoc_commerce_content_types_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'commerce_product_reference',
+      'module' => 'options',
       'settings' => array(
         'autocomplete_match' => 'contains',
         'autocomplete_path' => 'commerce_product/autocomplete',
         'size' => 60,
       ),
-      'type' => 'commerce_product_reference_autocomplete',
+      'type' => 'options_buttons',
       'weight' => -4,
     ),
   );
@@ -1109,20 +1985,32 @@ function wttoc_commerce_content_types_field_default_field_instances() {
   t('Address');
   t('Billing Profile');
   t('Billing information');
+  t('Compatibility with other discounts');
+  t('Conditions');
+  t('Coupons');
+  t('Discount offer reference');
+  t('Discount reference');
   t('Display path');
   t('End period');
+  t('Enter a comma-separated list of SKUs. Each product is added to customer order with a quantity of 1.');
+  t('Fixed amount');
   t('Fixed price');
   t('Initial period');
   t('Initial price');
   t('Line items');
+  t('Order discount conditions');
   t('Order total');
+  t('Percentage');
   t('Price');
   t('Product');
+  t('Product discount conditions');
   t('Recurring period');
   t('Recurring price');
   t('Referenced orders');
   t('Referenced product');
   t('Role Reference');
+  t('Select free products');
+  t('Selected discounts');
   t('Total');
   t('Unit price');
 

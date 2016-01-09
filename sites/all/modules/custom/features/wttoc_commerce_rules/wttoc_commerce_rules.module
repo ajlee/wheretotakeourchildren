@@ -1,5 +1,7 @@
 <?php
 /**
  * @file
- * Drupal needs this blank file.
+ * Code for the WTTOC Commerce Rules feature.
  */
+
+include_once 'wttoc_commerce_rules.features.inc';
