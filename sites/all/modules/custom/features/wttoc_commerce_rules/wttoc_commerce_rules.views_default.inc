@@ -11,11 +11,75 @@ function wttoc_commerce_rules_views_default_views() {
   $export = array();
 
   $view = new view();
+  $view->name = 'rules_tools_de_feature_listings_of_expired_users';
+  $view->description = '';
+  $view->tag = 'wttoc';
+  $view->base_table = 'search_api_index_index_businesses_and_events';
+  $view->human_name = 'Rules Tools: De-Feature Listings of Expired Premium Users';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'De-Feature Listings of Expired Premium Users';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'none';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['search_api_bypass_access'] = 1;
+  $handler->display->display_options['query']['options']['entity_access'] = 0;
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '100';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Indexed Content: Node ID */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'search_api_index_index_businesses_and_events';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['nid']['separator'] = '';
+  $handler->display->display_options['fields']['nid']['link_to_entity'] = 0;
+  /* Filter criterion: Author: User roles (indexed) */
+  $handler->display->display_options['filters']['author_roles']['id'] = 'author_roles';
+  $handler->display->display_options['filters']['author_roles']['table'] = 'search_api_index_index_businesses_and_events';
+  $handler->display->display_options['filters']['author_roles']['field'] = 'author_roles';
+  $handler->display->display_options['filters']['author_roles']['operator'] = 'all of';
+  $handler->display->display_options['filters']['author_roles']['value'] = array(
+    7 => '7',
+  );
+  $handler->display->display_options['filters']['author_roles']['group'] = 1;
+  /* Filter criterion: Indexed Content: Featured Family Guide */
+  $handler->display->display_options['filters']['field_featured_content']['id'] = 'field_featured_content';
+  $handler->display->display_options['filters']['field_featured_content']['table'] = 'search_api_index_index_businesses_and_events';
+  $handler->display->display_options['filters']['field_featured_content']['field'] = 'field_featured_content';
+  $handler->display->display_options['filters']['field_featured_content']['value'] = array(
+    1 => '1',
+  );
+
+  /* Display: De-Feature Listings of Expired Premium Users */
+  $handler = $view->new_display('views_rules', 'De-Feature Listings of Expired Premium Users', 'views_rules_1');
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '20';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['rules_variables'] = array(
+    'nid' => array(
+      'enabled' => 1,
+      'rendered' => 0,
+      'type' => 'node',
+      'label' => 'Node ID',
+      'name' => 'nid',
+    ),
+  );
+  $export['rules_tools_de_feature_listings_of_expired_users'] = $view;
+
+  $view = new view();
   $view->name = 'unpublish_listings_of_inactive_users';
   $view->description = '';
   $view->tag = 'wttoc';
   $view->base_table = 'search_api_index_index_businesses_and_events';
-  $view->human_name = 'Tools: Unpublish Listings of Inactive Users';
+  $view->human_name = 'Rules Tools: Unpublish Listings of Inactive Users';
   $view->core = 7;
   $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */

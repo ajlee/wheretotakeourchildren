@@ -9,6 +9,50 @@
  */
 function wttoc_commerce_rules_default_rules_configuration() {
   $items = array();
+  $items['rules_de_feature_listings_of_expired_premium_users'] = entity_import('rules_config', '{ "rules_de_feature_listings_of_expired_premium_users" : {
+      "LABEL" : "De-Feature Listings of Expired Premium Users",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "WTTOC" ],
+      "REQUIRES" : [ "views_rules", "rules" ],
+      "ON" : { "cron" : [] },
+      "DO" : [
+        { "VIEW LOOP" : {
+            "VIEW" : "rules_tools_de_feature_listings_of_expired_users",
+            "DISPLAY" : "views_rules_1",
+            "ROW VARIABLES" : { "nid" : { "current_node" : "Node" } },
+            "DO" : [
+              { "component_rules_de_feature_listings_of_expired_premium_users_component" : { "node_fetched" : [ "current-node" ] } }
+            ]
+          }
+        }
+      ]
+    }
+  }');
+  $items['rules_de_feature_listings_of_expired_premium_users_component'] = entity_import('rules_config', '{ "rules_de_feature_listings_of_expired_premium_users_component" : {
+      "LABEL" : "De-Feature Listings of Expired Premium Users - Component",
+      "PLUGIN" : "rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "WTTOC" ],
+      "REQUIRES" : [ "rules" ],
+      "USES VARIABLES" : { "node_fetched" : { "label" : "node_fetched", "type" : "node" } },
+      "IF" : [
+        { "entity_is_of_bundle" : {
+            "entity" : [ "node-fetched" ],
+            "type" : "node",
+            "bundle" : { "value" : {
+                "event" : "event",
+                "business_service_or_attraction" : "business_service_or_attraction"
+              }
+            }
+          }
+        }
+      ],
+      "DO" : [
+        { "data_set" : { "data" : [ "node-fetched:field-featured-content" ], "value" : "0" } }
+      ]
+    }
+  }');
   $items['rules_extend_role_component_for_line_item'] = entity_import('rules_config', '{ "rules_extend_role_component_for_line_item" : {
       "LABEL" : "Extend Role First Time - Component for Line Item",
       "PLUGIN" : "rule",
