@@ -94,6 +94,16 @@
     content:'\e814';
   }
 }
+.ced_top_level.ced_import{
+  >.ced-item__inner >.ced-item__title:before{
+    content:'\e840';
+  }
+}
+.ced_top_level.ced_user{
+  >.ced-item__inner >.ced-item__title:before{
+    content:'\e837';
+  }
+}
 .ced_top_level.ced_other{
   >.ced-item__inner >.ced-item__title:before{
     content:'\e819';

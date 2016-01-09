@@ -32,13 +32,17 @@
 				//Give the block an ID
 				parentOfBlocks.children(currentBlockSelector).attr('id', 'tabBlock' + ip1).addClass('tabBlockJSBlock');
 				//Create a tab and give it a link to its block id along with some classes
-				var classList = parentOfBlocks.children(currentBlockSelector).attr('class').split(/\s+/);
-				classesToPutInTabString = "tabJS";
-				$.each(classList, function(index, item) {
-					var classToAdd = "tabJS_" + item;
-					classesToPutInTabString = classesToPutInTabString + " " + classToAdd;
-				});
-				firstBlock.before('<div class="' + classesToPutInTabString +'"> <a href="#tabBlock' + ip1 + '" title="Toggle to tab '+ ip1 + '">'+ currentTitleBlock.text() + '</a></div>');
+				var doesBlockHaveContent = parentOfBlocks.children(currentBlockSelector).find(".view-content .views-row-1 > div");
+				if(doesBlockHaveContent.length > 0){
+					console.log(doesBlockHaveContent, currentBlockSelector);
+					var classList = parentOfBlocks.children(currentBlockSelector).attr('class').split(/\s+/);
+					classesToPutInTabString = "tabJS";
+					$.each(classList, function (index, item) {
+						var classToAdd = "tabJS_" + item;
+						classesToPutInTabString = classesToPutInTabString + " " + classToAdd;
+					});
+					firstBlock.before('<div class="' + classesToPutInTabString + '"> <a href="#tabBlock' + ip1 + '" title="Toggle to tab ' + ip1 + '">' + currentTitleBlock.text() + '</a></div>');
+				}
 				//Hide block titles
 				parentOfBlocks.children(currentBlockSelector).find(blockTitleSelector).hide();
 			}
