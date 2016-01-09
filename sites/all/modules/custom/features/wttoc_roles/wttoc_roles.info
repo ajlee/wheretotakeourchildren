@@ -1,0 +1,10 @@
+name = WTTOC Roles
+core = 7.x
+package = Features
+dependencies[] = features
+features[features_api][] = api:2
+features[user_role][] = Free
+features[user_role][] = Premium
+features[user_role][] = Regular User
+features[user_role][] = Site Editor
+features[user_role][] = administrator

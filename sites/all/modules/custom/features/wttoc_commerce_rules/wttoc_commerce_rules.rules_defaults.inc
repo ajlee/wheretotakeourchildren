@@ -220,6 +220,29 @@ function wttoc_commerce_rules_default_rules_configuration() {
       ]
     }
   }');
+  $items['rules_feature_content_from_premium_accounts'] = entity_import('rules_config', '{ "rules_feature_content_from_premium_accounts" : {
+      "LABEL" : "Feature Content From Premium Accounts",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "WTTOC" ],
+      "REQUIRES" : [ "rules" ],
+      "ON" : { "node_update" : [], "node_insert" : [] },
+      "IF" : [
+        { "node_is_of_type" : {
+            "node" : [ "node" ],
+            "type" : { "value" : {
+                "event" : "event",
+                "business_service_or_attraction" : "business_service_or_attraction"
+              }
+            }
+          }
+        }
+      ],
+      "DO" : [
+        { "data_set" : { "data" : [ "node:field-featured-content" ], "value" : "1" } }
+      ]
+    }
+  }');
   $items['rules_stop_recurring_entity'] = entity_import('rules_config', '{ "rules_stop_recurring_entity" : {
       "LABEL" : "Stop Recurring Entity",
       "PLUGIN" : "rule",
