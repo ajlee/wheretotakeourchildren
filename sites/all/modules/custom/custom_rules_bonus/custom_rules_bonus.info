@@ -2,4 +2,4 @@ name = Custom Rules Bonus
 description = Extra triggers, conditions, and actions to be used with Rules.
 core = 7.x
 package = Custom
-dependencies = Rules
+dependencies[] = rules
