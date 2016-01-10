@@ -1,0 +1,124 @@
+<?php
+
+/**
+ * Define custom Rules actions
+ * Implements hook_rules_action_info
+ */
+
+function custom_rules_bonus_rules_action_info(){
+    return array(
+        //Random Integer From Min + Max
+        'crb_random_int' => array(
+            'label' => t('Random integer from interval'),
+            'group' => t('Custom Rules Bonus'),
+            'base' => '_crb_rand_int',
+            'parameter' => array(
+                'int_min' => array(
+                    'type' => 'integer',
+                    'label' => t('Integer: lower bound'),
+                ),
+                'int_max' => array(
+                    'type' => 'integer',
+                    'label' => t('Integer: upper bound'),
+                ),
+            ),
+            'provides' => array(
+                'random_int' => array(
+                    'type' => 'integer',
+                    'label' => t('Random integer'),
+                ),
+            ),
+        ),
+        //Return The Length of a List
+        'crb_list_length' => array(
+            'label' => t('Get length of list'),
+            'group' => t('Custom Rules Bonus'),
+            'base' => '_crb_list_length',
+            'parameter' => array(
+                'list' => array(
+                    'type' => 'list',
+                    'label' => t('List'),
+                ),
+            ),
+            'provides' => array(
+                'list_length' => array(
+                    'type' => 'integer',
+                    'label' => t('List length'),
+                ),
+            ),
+        ),
+        //Return Item From A List Based on a Key
+        'crb_get_item_with_key' => array(
+            'label' => t('Get item from a list'),
+            'group' => t('Custom Rules Bonus'),
+            'base' => '_crb_get_item_with_key',
+            'parameter' => array(
+                'list' => array(
+                    'type' => 'list',
+                    'label' => t('List'),
+                ),
+                'list_item_key' => array(
+                    'type' => 'integer',
+                    'label' => t('Key of the item'),
+                ),
+            ),
+            'provides' => array(
+                'list_item' => array(
+                    'type' => 'unknown',
+                    'label' => t('Item returned'),
+                ),
+            ),
+        ),
+        //Return Term Item From A Terms List Based on a Key
+        'crb_get_term_item_with_key' => array(
+            'label' => t('Get term item from a terms list'),
+            'group' => t('Custom Rules Bonus'),
+            'base' => '_crb_get_term_item_with_key',
+            'parameter' => array(
+                'terms_list' => array(
+                    'type' => 'list<taxonomy_term>',
+                    'label' => t('List of terms'),
+                ),
+                'list_item_key' => array(
+                    'type' => 'integer',
+                    'label' => t('Key of the term item'),
+                ),
+            ),
+            'provides' => array(
+                'list_term_item' => array(
+                    'type' => 'taxonomy_term',
+                    'label' => t('Term Returned'),
+                ),
+            ),
+        ),
+    );
+}
+
+
+
+/**
+ * Callback Functions
+ */
+
+function _crb_rand_int($int_min, $int_max){
+    return array(
+        'random_int' => rand($int_min, $int_max),
+    );
+}
+
+function _crb_list_length($list){
+    return array(
+        'list_length' => is_array($list) ? count($list) : NULL,
+    );
+}
+
+function _crb_get_item_with_key($list, $list_item_key){
+    return array(
+        'list_item' => is_array($list) ? $list[$list_item_key] : NULL,
+    );
+}
+function _crb_get_term_item_with_key($terms_list, $list_item_key){
+    return array(
+        'list_term_item' => is_array($terms_list) ? $terms_list[$list_item_key] : NULL,
+    );
+}
