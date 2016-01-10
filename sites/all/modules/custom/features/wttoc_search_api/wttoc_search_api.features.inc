@@ -142,6 +142,7 @@ function wttoc_search_api_default_search_api_index() {
         "field_opening_hours:starthours" : { "type" : "list\\u003Cdate\\u003E" },
         "field_phone_number" : { "type" : "text" },
         "search_api_access_node" : { "type" : "list\\u003Cstring\\u003E" },
+        "search_api_aggregation_1" : { "type" : "date" },
         "search_api_language" : { "type" : "string" },
         "status" : { "type" : "boolean" },
         "title" : { "type" : "text" },
@@ -158,7 +159,18 @@ function wttoc_search_api_default_search_api_index() {
         "search_api_alter_add_hierarchy" : { "status" : 0, "weight" : "0", "settings" : { "fields" : [] } },
         "search_api_alter_add_viewed_entity" : { "status" : 0, "weight" : "0", "settings" : { "mode" : "full" } },
         "search_api_alter_add_url" : { "status" : 0, "weight" : "0", "settings" : [] },
-        "search_api_alter_add_aggregation" : { "status" : 0, "weight" : "0", "settings" : [] }
+        "search_api_alter_add_aggregation" : {
+          "status" : 1,
+          "weight" : "0",
+          "settings" : { "fields" : { "search_api_aggregation_1" : {
+                "name" : "Start Date - First Value",
+                "type" : "first",
+                "fields" : [ "field_date_of_event:value" ],
+                "description" : "A First aggregation of the following fields: Date of Event \\u00bb Start date."
+              }
+            }
+          }
+        }
       },
       "processors" : {
         "search_api_case_ignore" : {

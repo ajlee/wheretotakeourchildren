@@ -103,7 +103,7 @@ function wttoc_importer_feeds_importer_default() {
       'plugin_key' => 'FeedsNodeProcessor',
       'config' => array(
         'expire' => '-1',
-        'author' => '1',
+        'author' => '38',
         'authorize' => 0,
         'mappings' => array(
           0 => array(
@@ -457,7 +457,7 @@ function wttoc_importer_feeds_importer_default() {
       'plugin_key' => 'FeedsNodeProcessor',
       'config' => array(
         'expire' => '-1',
-        'author' => '1',
+        'author' => '38',
         'authorize' => 0,
         'mappings' => array(
           0 => array(

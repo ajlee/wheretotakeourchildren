@@ -14,7 +14,7 @@ function wttoc_commerce_coupon_discount_default_commerce_discount() {
     "label" : "full_order_100_percent_off",
     "type" : "order_discount",
     "status" : "1",
-    "component_title" : "Discount",
+    "component_title" : "100% Discount",
     "sort_order" : "10",
     "commerce_discount_offer" : {
       "type" : "percentage",

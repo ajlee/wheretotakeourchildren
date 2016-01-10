@@ -42,7 +42,7 @@ function custom_editor_dashboard_page(){
    * Content
    */
   $menu[0]["item"] = new CEDashboardMenuItem(null , "Content", "ced_top_level ced_content");
-  $menu[0]["children"][0]["item"] = new CEDashboardMenuItem("/admin/content" , "Administer Content");
+  $menu[0]["children"][0]["item"] = new CEDashboardMenuItem("/admin/tools/admin-content" , "Administer Content");
   $menu[0]["children"][1]["item"] = new CEDashboardMenuItem("/node/add" , "Add Content");
 
   /**
