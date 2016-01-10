@@ -79,10 +79,9 @@ function custom_editor_dashboard_page(){
   /**
    * Other
    */
-  $menu[5]["item"] = new CEDashboardMenuItem(null , "Other", "ced_top_level ced_other");
-  $menu[5]["children"][0]["item"] = new CEDashboardMenuItem("/admin/config/facebook_events_importer" , "Facebook Events Import");
-  $menu[5]["children"][1]["item"] = new CEDashboardMenuItem("/admin/tools/users" , "Administer Users");
-
+  /*$menu[5]["item"] = new CEDashboardMenuItem(null , "Other", "ced_top_level ced_other");
+  $menu[5]["children"][0]["item"] = new CEDashboardMenuItem("/admin/tools/users" , "Administer Users");
+  */
   /**
    * stringReturn -  HTML to be printed
    */
