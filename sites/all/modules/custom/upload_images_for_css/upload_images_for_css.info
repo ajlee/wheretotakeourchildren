@@ -1,0 +1,4 @@
+name = Upload Images For CSS
+description = Provides forms to change images
+core = 7.x
+package = Custom

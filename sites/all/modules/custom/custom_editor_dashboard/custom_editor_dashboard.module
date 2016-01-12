@@ -77,10 +77,16 @@ function custom_editor_dashboard_page(){
   $menu[4]["children"][0]["item"] = new CEDashboardMenuItem("/admin/tools/users" , "Administer Users");
 
   /**
+   * Theme Management
+   */
+  $menu[5]["item"] = new CEDashboardMenuItem(null , "Theme Management", "ced_top_level ced_theme");
+  $menu[5]["children"][0]["item"] = new CEDashboardMenuItem("/admin/tools/images_css/front_page" , "Change Frontpage Image");
+
+  /**
    * Other
    */
-  /*$menu[5]["item"] = new CEDashboardMenuItem(null , "Other", "ced_top_level ced_other");
-  $menu[5]["children"][0]["item"] = new CEDashboardMenuItem("/admin/tools/users" , "Administer Users");
+  /*$menu[99]["item"] = new CEDashboardMenuItem(null , "Other", "ced_top_level ced_other");
+  $menu[99]["children"][0]["item"] = new CEDashboardMenuItem("/admin/tools/users" , "Administer Users");
   */
   /**
    * stringReturn -  HTML to be printed

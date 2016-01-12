@@ -1,0 +1,59 @@
+<?php
+
+require_once dirname(__FILE__) . '/forms/upload_images_for_css_frontpageimage_form.inc';
+
+/**
+ * Implements hook_permission
+ * Define permission To Use This Module's Functionality
+ */
+function upload_images_for_css_permission(){
+    return array(
+        'upload_images_for_css_use' => array(
+            'title' => t('Use the Upload Images for CSS Module')
+        ),
+    );
+}
+
+/**
+ * Implements hook_menu()
+ * Page: Change Front Page Image
+ * Route: admin/tools/images_css/front_page
+ */
+function upload_images_for_css_menu(){
+    $items = array();
+    //This page is used to change the Drupal variable upload_images_for_css_frontpageimage
+    //This variable locates the image used for the front page banner image
+    $items['admin/tools/images_css/front_page'] = array(
+        'title' => 'Change Front Page Image',
+        'description' => 'Change Front Page Image',
+        'page callback' => 'drupal_get_form',
+        'page arguments' => array('upload_images_for_css_frontpageimage_form'),
+        'access arguments' => array('upload_images_for_css_use'),
+        'type' => MENU_NORMAL_ITEM,
+    );
+    return $items;
+}
+
+/**
+ * Add CSS From Variables Defined In Forms
+ */
+
+function upload_images_for_css_preprocess_page(){
+    _upload_images_for_css_frontpageimage_css();
+}
+
+/**
+ * Helper functions to add CSS
+ */
+function _upload_images_for_css_frontpageimage_css(){
+    $var_get = variable_get("upload_images_for_css_frontpageimage", "");
+    if(!empty($var_get)){
+        $image_url = file_create_url($var_get);
+        drupal_add_css("html body.front .l-region--widetop .v_page_search_results-container{
+            background: url('$image_url');
+            background-size: auto 100%;
+            background-repeat: no-repeat;
+            background-position: center center;
+            }", array('type' => 'inline'));
+    }
+}
