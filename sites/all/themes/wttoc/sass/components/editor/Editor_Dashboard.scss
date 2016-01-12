@@ -103,6 +103,10 @@
   >.ced-item__inner >.ced-item__title:before{
     content:'\e837';
   }
+}.ced_top_level.ced_theme{
+  >.ced-item__inner >.ced-item__title:before{
+    content:'\e841';
+  }
 }
 .ced_top_level.ced_other{
   >.ced-item__inner >.ced-item__title:before{

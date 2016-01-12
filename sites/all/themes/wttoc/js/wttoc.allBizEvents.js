@@ -145,7 +145,7 @@
 				var viewsBlockSelector = '.view-id-businesses_and_events.view-display-id-map_and_filters';
 				var sFormSelector = 'form .views-exposed-form .views-exposed-widgets';
 				var exposedSubmitSelector = 'input#edit-submit-businesses-and-events';
-				var fieldSyncB2PArray = ['#edit-type', '#edit-field-category','#edit-field-category-event','#edit-field-hidden-address-geofield-latlon',
+				var fieldSyncB2PArray = ["#edit-title",'#edit-type', '#edit-field-category','#edit-field-category-event','#edit-field-hidden-address-geofield-latlon',
 				'#edit-field-hidden-address-geofield-latlon-1','#edit-field-ages','input[name="field_start_datepicker[date]"]','input[name="field_end_datepicker[date]"]'];
 				//On Block Submit Click
 				$(viewsBlockSelector + sp + sFormSelector + sp + exposedSubmitSelector).on("click",function(){

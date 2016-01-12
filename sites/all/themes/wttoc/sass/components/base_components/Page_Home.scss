@@ -161,6 +161,9 @@ body.front{
 							@include backgroundOpacity($colorAlt, .75);
 						}
 					}
+					&#edit-title-wrapper{
+						display:none;
+					}
 					&.views-submit-button{
 						@include fontelloBeforeClear;
 						min-width:40%;
@@ -172,7 +175,7 @@ body.front{
 		.v_page_search_results-container{
 			//background
 			background: url("#{$pathToTheme}/images/prevImg/header.jpg");
-			background-size: auto 100%;
+			background-size: auto 100% !important;
 			@include breakpoint($breakpointTabletP1){
 				background-size: auto 100%;
 			};
