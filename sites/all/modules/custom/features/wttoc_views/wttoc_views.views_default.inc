@@ -337,7 +337,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['field_phone_number']['settings'] = array(
     'title' => '',
   );
-  /* Field: Content: Event Website */
+  /* Field: Content: Website Address */
   $handler->display->display_options['fields']['field_website']['id'] = 'field_website';
   $handler->display->display_options['fields']['field_website']['table'] = 'field_data_field_website';
   $handler->display->display_options['fields']['field_website']['field'] = 'field_website';
@@ -1916,7 +1916,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['field_phone_number']['settings'] = array(
     'title' => '',
   );
-  /* Field: Content: Event Website */
+  /* Field: Content: Website Address */
   $handler->display->display_options['fields']['field_website']['id'] = 'field_website';
   $handler->display->display_options['fields']['field_website']['table'] = 'field_data_field_website';
   $handler->display->display_options['fields']['field_website']['field'] = 'field_website';
@@ -3822,7 +3822,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['changed']['field'] = 'changed';
   $handler->display->display_options['fields']['changed']['label'] = 'Updated';
   $handler->display->display_options['fields']['changed']['date_format'] = 'short';
-  /* Field: Content: Featured Event */
+  /* Field: Content: Featured Family Guide */
   $handler->display->display_options['fields']['field_featured_content']['id'] = 'field_featured_content';
   $handler->display->display_options['fields']['field_featured_content']['table'] = 'field_data_field_featured_content';
   $handler->display->display_options['fields']['field_featured_content']['field'] = 'field_featured_content';
@@ -4340,6 +4340,24 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'commerce_recurring';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
+  /* Field: Bulk operations: Commerce recurring entity */
+  $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'commerce_recurring';
+  $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['display_type'] = '0';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['enable_select_all_pages'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['row_clickable'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
+    'rules_component::rules_stop_subscription' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 1,
+      'label' => 'Stop Subscription',
+    ),
+  );
   /* Field: Commerce recurring entity: Commerce recurring ID */
   $handler->display->display_options['fields']['id']['id'] = 'id';
   $handler->display->display_options['fields']['id']['table'] = 'commerce_recurring';
@@ -4380,12 +4398,6 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['status']['field'] = 'status';
   $handler->display->display_options['fields']['status']['type'] = 'unicode-yes-no';
   $handler->display->display_options['fields']['status']['not'] = 0;
-  /* Field: Commerce recurring entity: Operations links */
-  $handler->display->display_options['fields']['operations']['id'] = 'operations';
-  $handler->display->display_options['fields']['operations']['table'] = 'commerce_recurring';
-  $handler->display->display_options['fields']['operations']['field'] = 'operations';
-  $handler->display->display_options['fields']['operations']['label'] = 'Operations';
-  $handler->display->display_options['fields']['operations']['add_destination'] = 0;
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'admin_page');
@@ -4618,7 +4630,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['changed']['field'] = 'changed';
   $handler->display->display_options['fields']['changed']['label'] = 'Updated';
   $handler->display->display_options['fields']['changed']['date_format'] = 'short';
-  /* Field: Content: Featured Event */
+  /* Field: Content: Featured Family Guide */
   $handler->display->display_options['fields']['field_featured_content']['id'] = 'field_featured_content';
   $handler->display->display_options['fields']['field_featured_content']['table'] = 'field_data_field_featured_content';
   $handler->display->display_options['fields']['field_featured_content']['field'] = 'field_featured_content';
