@@ -1,0 +1,4 @@
+name = Make Pages Admin
+description =  Makes some paths administrative, so that they can benefit from the administrative theme.
+core = 7.x
+package = Custom

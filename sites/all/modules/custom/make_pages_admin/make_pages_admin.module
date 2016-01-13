@@ -1,0 +1,12 @@
+<?php
+
+function make_pages_admin_admin_paths(){
+    $paths = array(
+        'user/*/my-content' => TRUE,
+        'user/*/user-recurring-entities' => TRUE,
+        'user/*/cards' => TRUE,
+        'user/*/contact' => TRUE,
+        'user/*/orders' => TRUE,
+    );
+    return $paths;
+}
