@@ -277,3 +277,13 @@ body.page-checkout-review{
     }
   }
 }
+
+body.page-checkout{
+  input[name="account[login][mail]"]{
+    @include remFontSize($fontXL);
+    text-align: center;
+    margin: 10px 0;
+    border: 5px solid $GRAY;
+    padding: 10px 0;
+  }
+}

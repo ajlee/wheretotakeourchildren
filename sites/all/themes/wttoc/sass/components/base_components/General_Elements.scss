@@ -162,6 +162,16 @@ footer.l-footer{
 					&.tmenu-Dashboard:before{
 						content:'\e826';
 					}
+					&.tmenu-UserDashboard{
+						color: $color1;
+						color: transparent;
+						letter-spacing: -0.5em;
+						padding-left:10px;
+						padding-right:13px;
+					}
+					&.tmenu-UserDashboard:before{
+						content:'\e842';
+					}
 					&.tmenu-Search{
 						color: $color1;
 						color: transparent;

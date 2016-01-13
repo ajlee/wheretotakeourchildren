@@ -1382,6 +1382,14 @@ footer.l-footer nav ul {
           padding-right: 13px; }
         .l-superheader nav > ul.menu > li > a.tmenu-Dashboard:before {
           content: '\e826'; }
+        .l-superheader nav > ul.menu > li > a.tmenu-UserDashboard {
+          color: #5675CE;
+          color: transparent;
+          letter-spacing: -0.5em;
+          padding-left: 10px;
+          padding-right: 13px; }
+        .l-superheader nav > ul.menu > li > a.tmenu-UserDashboard:before {
+          content: '\e842'; }
         .l-superheader nav > ul.menu > li > a.tmenu-Search {
           color: #5675CE;
           color: transparent;
@@ -4823,6 +4831,10 @@ body.page-posts .l-region--sidebar-first .block--facetapi, body.page-posts .l-re
 .social-links-block-wttoc.circle-icons .icon {
   border-radius: 50%; }
 
+.social-links-block-wttoc .icon:before {
+  margin: 0;
+  padding: 0 5px; }
+
 /* Service-specific style */
 .social-links-block-wttoc .service-reddit .icon {
   padding: 8px 7px 8px 1px;
@@ -5209,6 +5221,14 @@ body.page-checkout-review .commerce_payment.form-wrapper {
   body.page-checkout-review .commerce_payment.form-wrapper input[type="radio"], body.page-checkout-review .commerce_payment.form-wrapper input[type="checkbox"] {
     max-width: 15px; }
 
+body.page-checkout input[name="account[login][mail]"] {
+  font-size: 24px;
+  font-size: 2.4rem;
+  text-align: center;
+  margin: 10px 0;
+  border: 5px solid #888;
+  padding: 10px 0; }
+
 /*
  * Dashboard Styling
  */
@@ -5343,6 +5363,16 @@ body.page-checkout-review .commerce_payment.form-wrapper {
     border: 1px solid #FE974E;
     background-color: #FE974E;
     max-width: 250px; }
+
+body.page-user-register input[type=text],
+body.page-user-register input[type=password],
+body.page-user input[type=text],
+body.page-user input[type=password],
+body.page-user-password input[type=text],
+body.page-user-password input[type=password] {
+  margin: 5px 0;
+  font-size: 24px;
+  font-size: 2.4rem; }
 
 body.node-type-subscription .mainPageTitle {
   text-align: center; }

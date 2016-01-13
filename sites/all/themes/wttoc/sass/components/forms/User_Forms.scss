@@ -1,0 +1,9 @@
+body.page-user-register,
+body.page-user,
+body.page-user-password{
+  input[type=text],
+  input[type=password]{
+    margin: 5px 0;
+    @include remFontSize($fontXL);
+  }
+}

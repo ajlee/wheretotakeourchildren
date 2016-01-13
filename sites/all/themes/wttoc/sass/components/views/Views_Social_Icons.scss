@@ -45,6 +45,12 @@
   border-radius: 50%;
 }
 
+.social-links-block-wttoc .icon{
+  &:before{
+    margin: 0;
+    padding: 0 5px;
+  }
+}
 /* Service-specific style */
 .social-links-block-wttoc .service-reddit .icon {
   padding: 8px 7px 8px 1px;
