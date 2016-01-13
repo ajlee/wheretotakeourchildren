@@ -13,7 +13,7 @@ function custom_editor_dashboard_menu() {
     'page callback' => 'custom_editor_dashboard_page',
     //'page arguments' => array(),
     'access arguments' => array('custom_editor_dashboard_use'),
-    'type' => MENU_NORMAL_ITEM,
+    'type' => MENU_DEFAULT_LOCAL_TASK,
   );
   return $items;
 }
@@ -53,6 +53,7 @@ function custom_editor_dashboard_page(){
   $menu[1]["children"][1]["item"] = new CEDashboardMenuItem("/admin/structure/taxonomy/events_categories_and_features", "Event Categories");
   $menu[1]["children"][2]["item"] = new CEDashboardMenuItem("/admin/structure/taxonomy/ages", "Ages");
   $menu[1]["children"][3]["item"] = new CEDashboardMenuItem("/admin/structure/taxonomy/post_categories", "Post Categories");
+  $menu[1]["children"][4]["item"] = new CEDashboardMenuItem("/admin/tools/homepage-categories", "Edit Homepage Categories");
 
   /**
    * Store
