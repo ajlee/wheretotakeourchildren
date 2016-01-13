@@ -9,7 +9,7 @@ function upload_images_for_css_frontpageimage_form($form, &$form_state){
     $form['background_image'] = array(
         '#type' => 'managed_file',
         '#title' => t('Choose a background image'),
-        '#description' => t('Select an image to upload - jpg, jpeg, png, gif'),
+        '#description' => t('Select an image to upload - jpg, jpeg, png, gif. <br> 1. Use images at least twice as wide, as they are tall. <br> 2. If possible, the ideal size is 5000x700 px'),
         '#required' => FALSE,
         '#upload_validators' => array('file_validate_extensions' => array('jpeg jpg png gif')),
         '#upload_location' => 'public://upload_images_for_css/',

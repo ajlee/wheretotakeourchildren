@@ -29,7 +29,7 @@ function upload_images_for_css_menu(){
         'page callback' => 'drupal_get_form',
         'page arguments' => array('upload_images_for_css_frontpageimage_form'),
         'access arguments' => array('upload_images_for_css_use'),
-        'type' => MENU_NORMAL_ITEM,
+        'type' => MENU_DEFAULT_LOCAL_TASK,
     );
     return $items;
 }
