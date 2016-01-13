@@ -110,6 +110,43 @@
 	.js .l-off-canvas.is-visible{
 		.l-region--navigation{
 			@include colorDescendantsFont($WHITE);
+			.block--menu-menu-top-menu--2{
+				ul.menu{
+					text-align:center;
+					li {
+						background-color:$DARKGRAY;
+						list-style: none;
+						display: inline-block;
+						border: 1px solid $WHITE;
+						margin: 5px;
+						a {
+							padding: 5px 15px;
+							display: block;
+						}
+					}
+				}
+			}
+			.block--system-main-menu{
+				margin-top: 15px;
+				padding-bottom:2.5px;
+				.block__title{
+					display:none;
+				}
+				ul.menu li{
+					list-style: none;
+					padding: 10px 5px;
+					margin: 5px;
+					text-align: center;
+					@include remFontSize($fontXL);
+					border-top: 3px solid $GRAY;
+				}
+			}
+			.block--menu-menu-top-menu--2,
+			.block--system-main-menu{
+				ul.menu{
+
+				}
+			}
 		}
 	}
 	//No JS Fallback: In Place Menu
