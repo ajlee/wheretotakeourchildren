@@ -9,6 +9,56 @@
  */
 function wttoc_rules_default_rules_configuration() {
   $items = array();
+  $items['rules_editor_tools_feature_content'] = entity_import('rules_config', '{ "rules_editor_tools_feature_content" : {
+      "LABEL" : "Editor Tools: Feature Content - Component",
+      "PLUGIN" : "rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "Editor Tools", "WTTOC" ],
+      "REQUIRES" : [ "rules" ],
+      "ACCESS_EXPOSED" : "1",
+      "USES VARIABLES" : { "node_to_feature" : { "label" : "node_to_feature", "type" : "node" } },
+      "IF" : [
+        { "entity_is_of_bundle" : {
+            "entity" : [ "node-to-feature" ],
+            "type" : "node",
+            "bundle" : { "value" : {
+                "event" : "event",
+                "business_service_or_attraction" : "business_service_or_attraction"
+              }
+            }
+          }
+        }
+      ],
+      "DO" : [
+        { "data_set" : { "data" : [ "node-to-feature:field-featured-content" ], "value" : "1" } }
+      ]
+    }
+  }');
+  $items['rules_editor_tools_unfeature_content'] = entity_import('rules_config', '{ "rules_editor_tools_unfeature_content" : {
+      "LABEL" : "Editor Tools: Unfeature Content - Component",
+      "PLUGIN" : "rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "Editor Tools", "WTTOC" ],
+      "REQUIRES" : [ "rules" ],
+      "ACCESS_EXPOSED" : "1",
+      "USES VARIABLES" : { "node_to_unfeature" : { "label" : "node_to_unfeature", "type" : "node" } },
+      "IF" : [
+        { "entity_is_of_bundle" : {
+            "entity" : [ "node-to-unfeature" ],
+            "type" : "node",
+            "bundle" : { "value" : {
+                "event" : "event",
+                "business_service_or_attraction" : "business_service_or_attraction"
+              }
+            }
+          }
+        }
+      ],
+      "DO" : [
+        { "data_set" : { "data" : [ "node-to-unfeature:field-featured-content" ], "value" : "0" } }
+      ]
+    }
+  }');
   $items['rules_event_default_image'] = entity_import('rules_config', '{ "rules_event_default_image" : {
       "LABEL" : "Event - Default Image",
       "PLUGIN" : "reaction rule",
@@ -99,8 +149,36 @@ function wttoc_rules_default_rules_configuration() {
       ]
     }
   }');
+  $items['rules_promote_category_to_homepage'] = entity_import('rules_config', '{ "rules_promote_category_to_homepage" : {
+      "LABEL" : "Promote Category To Homepage",
+      "PLUGIN" : "rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "Editor Tools", "WTTOC" ],
+      "REQUIRES" : [ "rules" ],
+      "USES VARIABLES" : { "term_to_feature_or_unfeature" : { "label" : "term_to_feature_or_unfeature", "type" : "taxonomy_term" } },
+      "IF" : [
+        { "entity_is_of_bundle" : {
+            "entity" : [ "term-to-feature-or-unfeature" ],
+            "type" : "taxonomy_term",
+            "bundle" : { "value" : {
+                "business_type" : "business_type",
+                "events_categories_and_features" : "events_categories_and_features"
+              }
+            }
+          }
+        }
+      ],
+      "DO" : [
+        { "data_set" : {
+            "data" : [ "term-to-feature-or-unfeature:field-show-on-homepage" ],
+            "value" : "1"
+          }
+        }
+      ]
+    }
+  }');
   $items['rules_set_image_on_node_from_term'] = entity_import('rules_config', '{ "rules_set_image_on_node_from_term" : {
-      "LABEL" : "Set Image On Node From Term",
+      "LABEL" : "Set Image On Node From Term - Component",
       "PLUGIN" : "rule",
       "OWNER" : "rules",
       "TAGS" : [ "WTTOC" ],
@@ -135,6 +213,34 @@ function wttoc_rules_default_rules_configuration() {
         { "data_set" : {
             "data" : [ "node-being-edited:field-image-gallery:0" ],
             "value" : [ "term-used:field-category-image" ]
+          }
+        }
+      ]
+    }
+  }');
+  $items['rules_unpromote_category_to_homepage'] = entity_import('rules_config', '{ "rules_unpromote_category_to_homepage" : {
+      "LABEL" : "Unpromote Category To Homepage",
+      "PLUGIN" : "rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "Editor Tools", "WTTOC" ],
+      "REQUIRES" : [ "rules" ],
+      "USES VARIABLES" : { "term_to_feature_or_unfeature" : { "label" : "term_to_feature_or_unfeature", "type" : "taxonomy_term" } },
+      "IF" : [
+        { "entity_is_of_bundle" : {
+            "entity" : [ "term-to-feature-or-unfeature" ],
+            "type" : "taxonomy_term",
+            "bundle" : { "value" : {
+                "business_type" : "business_type",
+                "events_categories_and_features" : "events_categories_and_features"
+              }
+            }
+          }
+        }
+      ],
+      "DO" : [
+        { "data_set" : {
+            "data" : [ "term-to-feature-or-unfeature:field-show-on-homepage" ],
+            "value" : "0"
           }
         }
       ]

@@ -11,6 +11,72 @@ function wttoc_commerce_rules_views_default_views() {
   $export = array();
 
   $view = new view();
+  $view->name = 'rules_tools_author_s_featured_nodes';
+  $view->description = '';
+  $view->tag = 'wttoc';
+  $view->base_table = 'node';
+  $view->human_name = 'Rules Tools: Author\'s Featured Nodes';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'perm';
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['style_plugin'] = 'default';
+  $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
+  /* Contextual filter: Content: Author uid */
+  $handler->display->display_options['arguments']['uid']['id'] = 'uid';
+  $handler->display->display_options['arguments']['uid']['table'] = 'node';
+  $handler->display->display_options['arguments']['uid']['field'] = 'uid';
+  $handler->display->display_options['arguments']['uid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['uid']['default_argument_type'] = 'current_user';
+  $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'event' => 'event',
+    'business_service_or_attraction' => 'business_service_or_attraction',
+  );
+
+  /* Display: Author's Featured Nodes */
+  $handler = $view->new_display('views_rules', 'Author\'s Featured Nodes', 'views_rules_1');
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['rules_parameter'] = array(
+    'uid' => array(
+      'enabled' => 1,
+      'type' => 'integer',
+      'label' => 'Integer: Author uid',
+      'name' => 'uid_integer',
+    ),
+  );
+  $handler->display->display_options['rules_variables'] = array(
+    'nid' => array(
+      'enabled' => 1,
+      'rendered' => 0,
+      'type' => 'node',
+      'label' => 'Content: Node Fetched',
+      'name' => 'node_fetched',
+    ),
+  );
+  $export['rules_tools_author_s_featured_nodes'] = $view;
+
+  $view = new view();
   $view->name = 'rules_tools_de_feature_listings_of_expired_users';
   $view->description = '';
   $view->tag = 'wttoc';

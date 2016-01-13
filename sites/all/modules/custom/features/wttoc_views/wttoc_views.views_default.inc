@@ -478,6 +478,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '12';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['total_pages'] = '20';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['style_options']['row_class'] = 'rowContentType-[type_1]';
   $handler->display->display_options['row_plugin'] = 'fields';
@@ -802,7 +803,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['filters']['field_hidden_address_geofield_latlon']['id'] = 'field_hidden_address_geofield_latlon';
   $handler->display->display_options['filters']['field_hidden_address_geofield_latlon']['table'] = 'search_api_index_index_businesses_and_events';
   $handler->display->display_options['filters']['field_hidden_address_geofield_latlon']['field'] = 'field_hidden_address_geofield_latlon';
-  $handler->display->display_options['filters']['field_hidden_address_geofield_latlon']['operator'] = '32.18';
+  $handler->display->display_options['filters']['field_hidden_address_geofield_latlon']['operator'] = '-';
   $handler->display->display_options['filters']['field_hidden_address_geofield_latlon']['group'] = 1;
   $handler->display->display_options['filters']['field_hidden_address_geofield_latlon']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_hidden_address_geofield_latlon']['expose']['operator_id'] = 'field_hidden_address_geofield_latlon_op';
@@ -812,6 +813,10 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['filters']['field_hidden_address_geofield_latlon']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
+    8 => 0,
+    7 => 0,
+    5 => 0,
+    6 => 0,
     3 => 0,
   );
   $handler->display->display_options['filters']['field_hidden_address_geofield_latlon']['plugin'] = 'geocoder';
@@ -837,21 +842,26 @@ function wttoc_views_views_default_views() {
 5 5 km
 10 10 km
 16.09 10 mi
+19.3 12 mi
 32.18 20 mi';
   /* Filter criterion: Hidden Address Geofield: LatLong Pair (indexed) */
   $handler->display->display_options['filters']['field_hidden_address_geofield_latlon_1']['id'] = 'field_hidden_address_geofield_latlon_1';
   $handler->display->display_options['filters']['field_hidden_address_geofield_latlon_1']['table'] = 'search_api_index_index_businesses_and_events';
   $handler->display->display_options['filters']['field_hidden_address_geofield_latlon_1']['field'] = 'field_hidden_address_geofield_latlon';
-  $handler->display->display_options['filters']['field_hidden_address_geofield_latlon_1']['operator'] = '32.18';
+  $handler->display->display_options['filters']['field_hidden_address_geofield_latlon_1']['operator'] = '24.13';
   $handler->display->display_options['filters']['field_hidden_address_geofield_latlon_1']['group'] = 1;
   $handler->display->display_options['filters']['field_hidden_address_geofield_latlon_1']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_hidden_address_geofield_latlon_1']['expose']['operator_id'] = 'field_hidden_address_geofield_latlon_1_op';
-  $handler->display->display_options['filters']['field_hidden_address_geofield_latlon_1']['expose']['label'] = 'within 20 miles of LatLon';
+  $handler->display->display_options['filters']['field_hidden_address_geofield_latlon_1']['expose']['label'] = 'within 15 miles of LatLon';
   $handler->display->display_options['filters']['field_hidden_address_geofield_latlon_1']['expose']['operator'] = 'field_hidden_address_geofield_latlon_1_op';
   $handler->display->display_options['filters']['field_hidden_address_geofield_latlon_1']['expose']['identifier'] = 'field_hidden_address_geofield_latlon_1';
   $handler->display->display_options['filters']['field_hidden_address_geofield_latlon_1']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
+    8 => 0,
+    7 => 0,
+    5 => 0,
+    6 => 0,
     3 => 0,
   );
   $handler->display->display_options['filters']['field_hidden_address_geofield_latlon_1']['plugin'] = 'raw';
@@ -862,7 +872,28 @@ function wttoc_views_views_default_views() {
 5 5 km
 10 10 km
 16.09 10 mi
+19.3 12 mi
+24.13 15 mi
 32.18 20 mi';
+  /* Filter criterion: Indexed Content: Title */
+  $handler->display->display_options['filters']['title']['id'] = 'title';
+  $handler->display->display_options['filters']['title']['table'] = 'search_api_index_index_businesses_and_events';
+  $handler->display->display_options['filters']['title']['field'] = 'title';
+  $handler->display->display_options['filters']['title']['group'] = 1;
+  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Keyword';
+  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
+  $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    8 => 0,
+    7 => 0,
+    5 => 0,
+    6 => 0,
+    3 => 0,
+  );
   /* Filter criterion: Date of Event: Start date (indexed) */
   $handler->display->display_options['filters']['field_date_of_event_value_1']['id'] = 'field_date_of_event_value_1';
   $handler->display->display_options['filters']['field_date_of_event_value_1']['table'] = 'search_api_index_index_businesses_and_events';
@@ -1961,6 +1992,208 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['field_vouchers_information']['alter']['text'] = '<i class="icon icon-tag"><span class="element-invisible">vouchers</span></i><h3>Vouchers</h3><div class="wttocFieldEnclose">[field_vouchers_information]</div>';
   $handler->display->display_options['fields']['field_vouchers_information']['element_label_colon'] = FALSE;
   $export['events_display'] = $view;
+
+  $view = new view();
+  $view->name = 'homepage_categories';
+  $view->description = '';
+  $view->tag = 'default';
+  $view->base_table = 'taxonomy_term_data';
+  $view->human_name = 'Tools: Editor Homepage Categories';
+  $view->core = 7;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Master */
+  $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['title'] = 'Homepage Categories';
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    3 => '3',
+    6 => '6',
+  );
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '100';
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'views_bulk_operations' => 'views_bulk_operations',
+    'name' => 'name',
+    'name_1' => 'name_1',
+    'field_show_on_homepage' => 'field_show_on_homepage',
+    'field_category_image' => 'field_category_image',
+  );
+  $handler->display->display_options['style_options']['default'] = 'field_show_on_homepage';
+  $handler->display->display_options['style_options']['info'] = array(
+    'views_bulk_operations' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'name' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'name_1' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_show_on_homepage' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'desc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_category_image' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  /* Field: Bulk operations: Taxonomy term */
+  $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['display_type'] = '0';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['enable_select_all_pages'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['row_clickable'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
+    'rules_component::rules_promote_category_to_homepage' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 1,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'rules_component::rules_unpromote_category_to_homepage' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 1,
+      'override_label' => 0,
+      'label' => '',
+    ),
+  );
+  /* Field: Taxonomy term: Term edit link */
+  $handler->display->display_options['fields']['edit_term']['id'] = 'edit_term';
+  $handler->display->display_options['fields']['edit_term']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['edit_term']['field'] = 'edit_term';
+  $handler->display->display_options['fields']['edit_term']['label'] = '';
+  $handler->display->display_options['fields']['edit_term']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['edit_term']['element_label_colon'] = FALSE;
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['text'] = '[name] - [edit_term]';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  /* Field: Taxonomy vocabulary: Name */
+  $handler->display->display_options['fields']['name_1']['id'] = 'name_1';
+  $handler->display->display_options['fields']['name_1']['table'] = 'taxonomy_vocabulary';
+  $handler->display->display_options['fields']['name_1']['field'] = 'name';
+  $handler->display->display_options['fields']['name_1']['label'] = 'Which Category?';
+  /* Field: Taxonomy term: Show on homepage */
+  $handler->display->display_options['fields']['field_show_on_homepage']['id'] = 'field_show_on_homepage';
+  $handler->display->display_options['fields']['field_show_on_homepage']['table'] = 'field_data_field_show_on_homepage';
+  $handler->display->display_options['fields']['field_show_on_homepage']['field'] = 'field_show_on_homepage';
+  $handler->display->display_options['fields']['field_show_on_homepage']['empty_zero'] = TRUE;
+  /* Field: Taxonomy term: Category Image */
+  $handler->display->display_options['fields']['field_category_image']['id'] = 'field_category_image';
+  $handler->display->display_options['fields']['field_category_image']['table'] = 'field_data_field_category_image';
+  $handler->display->display_options['fields']['field_category_image']['field'] = 'field_category_image';
+  $handler->display->display_options['fields']['field_category_image']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_category_image']['settings'] = array(
+    'image_style' => 'thumbnail',
+    'image_link' => '',
+  );
+  /* Filter criterion: Taxonomy vocabulary: Machine name */
+  $handler->display->display_options['filters']['machine_name']['id'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['table'] = 'taxonomy_vocabulary';
+  $handler->display->display_options['filters']['machine_name']['field'] = 'machine_name';
+  $handler->display->display_options['filters']['machine_name']['value'] = array(
+    'events_categories_and_features' => 'events_categories_and_features',
+    'business_type' => 'business_type',
+  );
+  /* Filter criterion: Taxonomy term: Name */
+  $handler->display->display_options['filters']['name']['id'] = 'name';
+  $handler->display->display_options['filters']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['filters']['name']['field'] = 'name';
+  $handler->display->display_options['filters']['name']['operator'] = 'contains';
+  $handler->display->display_options['filters']['name']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['name']['expose']['operator_id'] = 'name_op';
+  $handler->display->display_options['filters']['name']['expose']['label'] = 'Name';
+  $handler->display->display_options['filters']['name']['expose']['description'] = 'contains this value';
+  $handler->display->display_options['filters']['name']['expose']['operator'] = 'name_op';
+  $handler->display->display_options['filters']['name']['expose']['identifier'] = 'name';
+  $handler->display->display_options['filters']['name']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    8 => 0,
+    7 => 0,
+    5 => 0,
+    6 => 0,
+    3 => 0,
+  );
+  /* Filter criterion: Taxonomy term: Vocabulary */
+  $handler->display->display_options['filters']['vid']['id'] = 'vid';
+  $handler->display->display_options['filters']['vid']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['filters']['vid']['field'] = 'vid';
+  $handler->display->display_options['filters']['vid']['value'] = array(
+    3 => '3',
+    2 => '2',
+  );
+  $handler->display->display_options['filters']['vid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['vid']['expose']['operator_id'] = 'vid_op';
+  $handler->display->display_options['filters']['vid']['expose']['label'] = 'Which Category?';
+  $handler->display->display_options['filters']['vid']['expose']['operator'] = 'vid_op';
+  $handler->display->display_options['filters']['vid']['expose']['identifier'] = 'vid';
+  $handler->display->display_options['filters']['vid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    8 => 0,
+    7 => 0,
+    5 => 0,
+    6 => 0,
+    3 => 0,
+  );
+  $handler->display->display_options['filters']['vid']['expose']['reduce'] = TRUE;
+  /* Filter criterion: Taxonomy term: Show on homepage (field_show_on_homepage) */
+  $handler->display->display_options['filters']['field_show_on_homepage_value']['id'] = 'field_show_on_homepage_value';
+  $handler->display->display_options['filters']['field_show_on_homepage_value']['table'] = 'field_data_field_show_on_homepage';
+  $handler->display->display_options['filters']['field_show_on_homepage_value']['field'] = 'field_show_on_homepage_value';
+  $handler->display->display_options['filters']['field_show_on_homepage_value']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_show_on_homepage_value']['expose']['operator_id'] = 'field_show_on_homepage_value_op';
+  $handler->display->display_options['filters']['field_show_on_homepage_value']['expose']['label'] = 'Show on homepage?';
+  $handler->display->display_options['filters']['field_show_on_homepage_value']['expose']['operator'] = 'field_show_on_homepage_value_op';
+  $handler->display->display_options['filters']['field_show_on_homepage_value']['expose']['identifier'] = 'field_show_on_homepage_value';
+  $handler->display->display_options['filters']['field_show_on_homepage_value']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    8 => 0,
+    7 => 0,
+    5 => 0,
+    6 => 0,
+    3 => 0,
+  );
+
+  /* Display: Homepage Categories */
+  $handler = $view->new_display('page', 'Homepage Categories', 'page');
+  $handler->display->display_options['path'] = 'admin/tools/homepage-categories';
+  $export['homepage_categories'] = $view;
 
   $view = new view();
   $view->name = 'image_slider';
@@ -3378,7 +3611,7 @@ function wttoc_views_views_default_views() {
   $view = new view();
   $view->name = 'tools_admin_content';
   $view->description = 'Find and manage content.';
-  $view->tag = 'WTTOC';
+  $view->tag = 'wttoc';
   $view->base_table = 'node';
   $view->human_name = 'Tools: Editor Admin Content';
   $view->core = 0;
@@ -3414,6 +3647,7 @@ function wttoc_views_views_default_views() {
     'changed' => 'changed',
     'edit_node' => 'edit_node',
     'delete_node' => 'edit_node',
+    'field_featured_content' => 'field_featured_content',
   );
   $handler->display->display_options['style_options']['default'] = 'changed';
   $handler->display->display_options['style_options']['info'] = array(
@@ -3472,6 +3706,13 @@ function wttoc_views_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
+    'field_featured_content' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'desc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
   );
   $handler->display->display_options['style_options']['sticky'] = TRUE;
   $handler->display->display_options['style_options']['empty_table'] = TRUE;
@@ -3520,6 +3761,20 @@ function wttoc_views_views_default_views() {
       'override_label' => 1,
       'label' => 'Delete',
     ),
+    'rules_component::rules_editor_tools_feature_content' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'rules_component::rules_editor_tools_unfeature_content' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
     'action::node_publish_action' => array(
       'selected' => 1,
       'postpone_processing' => 0,
@@ -3567,6 +3822,13 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['changed']['field'] = 'changed';
   $handler->display->display_options['fields']['changed']['label'] = 'Updated';
   $handler->display->display_options['fields']['changed']['date_format'] = 'short';
+  /* Field: Content: Featured Event */
+  $handler->display->display_options['fields']['field_featured_content']['id'] = 'field_featured_content';
+  $handler->display->display_options['fields']['field_featured_content']['table'] = 'field_data_field_featured_content';
+  $handler->display->display_options['fields']['field_featured_content']['field'] = 'field_featured_content';
+  $handler->display->display_options['fields']['field_featured_content']['label'] = 'Featured / Top Pick';
+  $handler->display->display_options['fields']['field_featured_content']['empty'] = 'Not Featured';
+  $handler->display->display_options['fields']['field_featured_content']['empty_zero'] = TRUE;
   /* Field: Content: Edit link */
   $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
   $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
@@ -3702,7 +3964,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
     'action::user_block_user_action' => array(
       'selected' => 1,
-      'postpone_processing' => 1,
+      'postpone_processing' => 0,
       'skip_confirmation' => 0,
       'override_label' => 0,
       'label' => '',
@@ -3936,9 +4198,10 @@ function wttoc_views_views_default_views() {
   $handler = $view->new_display('page', 'Admin page', 'admin_page');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['path'] = 'admin/tools/commerce/orders/list';
-  $handler->display->display_options['menu']['type'] = 'default tab';
   $handler->display->display_options['menu']['title'] = 'Orders';
   $handler->display->display_options['menu']['weight'] = '-10';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
   $handler->display->display_options['tab_options']['type'] = 'normal';
   $handler->display->display_options['tab_options']['title'] = 'Orders';
   $handler->display->display_options['tab_options']['description'] = 'Manage orders in the store.';
@@ -4128,16 +4391,321 @@ function wttoc_views_views_default_views() {
   $handler = $view->new_display('page', 'Page', 'admin_page');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['path'] = 'admin/tools/recurring';
-  $handler->display->display_options['menu']['type'] = 'default tab';
   $handler->display->display_options['menu']['title'] = 'List';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
   $handler->display->display_options['tab_options']['type'] = 'normal';
   $handler->display->display_options['tab_options']['title'] = 'Recurring entities';
   $handler->display->display_options['tab_options']['description'] = 'Manage recurring entities in the store';
   $handler->display->display_options['tab_options']['weight'] = '0';
   $handler->display->display_options['tab_options']['name'] = 'management';
   $export['tools_editor_recurring_entities'] = $view;
+
+  $view = new view();
+  $view->name = 'user_tools_my_content';
+  $view->description = 'Find and manage content.';
+  $view->tag = 'wttoc';
+  $view->base_table = 'node';
+  $view->human_name = 'User Tools: My Content';
+  $view->core = 0;
+  $view->api_version = '3.0';
+  $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
+
+  /* Display: Defaults */
+  $handler = $view->new_display('default', 'Defaults', 'default');
+  $handler->display->display_options['title'] = 'Content';
+  $handler->display->display_options['css_class'] = 'admin-views-view';
+  $handler->display->display_options['use_ajax'] = TRUE;
+  $handler->display->display_options['use_more_always'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    3 => '3',
+    7 => '7',
+    5 => '5',
+  );
+  $handler->display->display_options['cache']['type'] = 'none';
+  $handler->display->display_options['query']['type'] = 'views_query';
+  $handler->display->display_options['query']['options']['distinct'] = TRUE;
+  $handler->display->display_options['query']['options']['query_comment'] = FALSE;
+  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['reset_button'] = TRUE;
+  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = 50;
+  $handler->display->display_options['style_plugin'] = 'table';
+  $handler->display->display_options['style_options']['columns'] = array(
+    'views_bulk_operations' => 'views_bulk_operations',
+    'title' => 'title',
+    'timestamp' => 'title',
+    'type' => 'type',
+    'name' => 'name',
+    'status' => 'status',
+    'changed' => 'changed',
+    'edit_node' => 'edit_node',
+    'delete_node' => 'edit_node',
+    'field_featured_content' => 'field_featured_content',
+  );
+  $handler->display->display_options['style_options']['default'] = 'changed';
+  $handler->display->display_options['style_options']['info'] = array(
+    'views_bulk_operations' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'title' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '&nbsp;',
+      'empty_column' => 0,
+    ),
+    'timestamp' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'type' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'name' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'status' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'desc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'changed' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'desc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'edit_node' => array(
+      'align' => '',
+      'separator' => '&emsp;',
+      'empty_column' => 0,
+    ),
+    'delete_node' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'field_featured_content' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'desc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
+  $handler->display->display_options['style_options']['sticky'] = TRUE;
+  $handler->display->display_options['style_options']['empty_table'] = TRUE;
+  /* Header: Global: Text area */
+  $handler->display->display_options['header']['area']['id'] = 'area';
+  $handler->display->display_options['header']['area']['table'] = 'views';
+  $handler->display->display_options['header']['area']['field'] = 'area';
+  $handler->display->display_options['header']['area']['empty'] = TRUE;
+  $handler->display->display_options['header']['area']['content'] = '<h3>Note: <b>Premium Users</b> are allowed to feature up to 7 listings. </h3>';
+  $handler->display->display_options['header']['area']['format'] = 'full_html';
+  /* No results behavior: Global: Unfiltered text */
+  $handler->display->display_options['empty']['area_text_custom']['id'] = 'area_text_custom';
+  $handler->display->display_options['empty']['area_text_custom']['table'] = 'views';
+  $handler->display->display_options['empty']['area_text_custom']['field'] = 'area_text_custom';
+  $handler->display->display_options['empty']['area_text_custom']['empty'] = TRUE;
+  $handler->display->display_options['empty']['area_text_custom']['content'] = 'No content available.';
+  /* Relationship: Content: Author */
+  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['table'] = 'node';
+  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
+  /* Relationship: Content: Taxonomy terms on node */
+  $handler->display->display_options['relationships']['term_node_tid']['id'] = 'term_node_tid';
+  $handler->display->display_options['relationships']['term_node_tid']['table'] = 'node';
+  $handler->display->display_options['relationships']['term_node_tid']['field'] = 'term_node_tid';
+  $handler->display->display_options['relationships']['term_node_tid']['vocabularies'] = array(
+    'forums' => 0,
+    'tags' => 0,
+  );
+  /* Field: Bulk operations: Content */
+  $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'node';
+  $handler->display->display_options['fields']['views_bulk_operations']['field'] = 'views_bulk_operations';
+  $handler->display->display_options['fields']['views_bulk_operations']['label'] = '';
+  $handler->display->display_options['fields']['views_bulk_operations']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['views_bulk_operations']['hide_alter_empty'] = FALSE;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['display_type'] = '0';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['enable_select_all_pages'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['row_clickable'] = 1;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['force_single'] = 0;
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_settings']['entity_load_capacity'] = '10';
+  $handler->display->display_options['fields']['views_bulk_operations']['vbo_operations'] = array(
+    'action::views_bulk_operations_delete_item' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 1,
+      'label' => 'Delete',
+    ),
+    'rules_component::rules_feature_content_vbo_component_part_1' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 1,
+      'override_label' => 1,
+      'label' => 'Feature Content as Top Pick',
+    ),
+    'action::node_publish_action' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 1,
+      'override_label' => 1,
+      'label' => 'Publish',
+    ),
+    'rules_component::rules_unfeature_content_by_premium_vbo_component_part_1_cloned_' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 1,
+      'override_label' => 1,
+      'label' => 'Unfeature Content as Top Pick',
+    ),
+    'action::node_unpublish_action' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 1,
+      'override_label' => 1,
+      'label' => 'Unpublish',
+    ),
+  );
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  /* Field: Content: Has new content */
+  $handler->display->display_options['fields']['timestamp']['id'] = 'timestamp';
+  $handler->display->display_options['fields']['timestamp']['table'] = 'history';
+  $handler->display->display_options['fields']['timestamp']['field'] = 'timestamp';
+  $handler->display->display_options['fields']['timestamp']['label'] = '';
+  $handler->display->display_options['fields']['timestamp']['element_label_colon'] = FALSE;
+  /* Field: Content: Type */
+  $handler->display->display_options['fields']['type']['id'] = 'type';
+  $handler->display->display_options['fields']['type']['table'] = 'node';
+  $handler->display->display_options['fields']['type']['field'] = 'type';
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['name']['label'] = 'Author';
+  $handler->display->display_options['fields']['name']['hide_alter_empty'] = FALSE;
+  /* Field: Content: Published */
+  $handler->display->display_options['fields']['status']['id'] = 'status';
+  $handler->display->display_options['fields']['status']['table'] = 'node';
+  $handler->display->display_options['fields']['status']['field'] = 'status';
+  $handler->display->display_options['fields']['status']['not'] = 0;
+  /* Field: Content: Updated date */
+  $handler->display->display_options['fields']['changed']['id'] = 'changed';
+  $handler->display->display_options['fields']['changed']['table'] = 'node';
+  $handler->display->display_options['fields']['changed']['field'] = 'changed';
+  $handler->display->display_options['fields']['changed']['label'] = 'Updated';
+  $handler->display->display_options['fields']['changed']['date_format'] = 'short';
+  /* Field: Content: Featured Event */
+  $handler->display->display_options['fields']['field_featured_content']['id'] = 'field_featured_content';
+  $handler->display->display_options['fields']['field_featured_content']['table'] = 'field_data_field_featured_content';
+  $handler->display->display_options['fields']['field_featured_content']['field'] = 'field_featured_content';
+  $handler->display->display_options['fields']['field_featured_content']['label'] = 'Featured / Top Pick';
+  $handler->display->display_options['fields']['field_featured_content']['empty'] = 'Not Featured';
+  $handler->display->display_options['fields']['field_featured_content']['empty_zero'] = TRUE;
+  /* Field: Content: Edit link */
+  $handler->display->display_options['fields']['edit_node']['id'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['edit_node']['field'] = 'edit_node';
+  $handler->display->display_options['fields']['edit_node']['label'] = 'Operations';
+  /* Field: Content: Delete link */
+  $handler->display->display_options['fields']['delete_node']['id'] = 'delete_node';
+  $handler->display->display_options['fields']['delete_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['delete_node']['field'] = 'delete_node';
+  $handler->display->display_options['fields']['delete_node']['label'] = '';
+  /* Contextual filter: Content: Author uid */
+  $handler->display->display_options['arguments']['uid']['id'] = 'uid';
+  $handler->display->display_options['arguments']['uid']['table'] = 'node';
+  $handler->display->display_options['arguments']['uid']['field'] = 'uid';
+  $handler->display->display_options['arguments']['uid']['default_action'] = 'not found';
+  $handler->display->display_options['arguments']['uid']['default_argument_type'] = 'fixed';
+  $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['arguments']['uid']['specify_validation'] = TRUE;
+  $handler->display->display_options['arguments']['uid']['validate']['type'] = 'current_user_or_role';
+  $handler->display->display_options['arguments']['uid']['validate']['fail'] = 'access denied';
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type_1']['id'] = 'type_1';
+  $handler->display->display_options['filters']['type_1']['table'] = 'node';
+  $handler->display->display_options['filters']['type_1']['field'] = 'type';
+  $handler->display->display_options['filters']['type_1']['value'] = array(
+    'event' => 'event',
+    'business_service_or_attraction' => 'business_service_or_attraction',
+  );
+  $handler->display->display_options['filters']['type_1']['group'] = 1;
+  /* Filter criterion: Content: Title */
+  $handler->display->display_options['filters']['title']['id'] = 'title';
+  $handler->display->display_options['filters']['title']['table'] = 'node';
+  $handler->display->display_options['filters']['title']['field'] = 'title';
+  $handler->display->display_options['filters']['title']['operator'] = 'contains';
+  $handler->display->display_options['filters']['title']['group'] = 1;
+  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Title';
+  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
+  $handler->display->display_options['filters']['title']['expose']['remember'] = TRUE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'event' => 'event',
+    'business_service_or_attraction' => 'business_service_or_attraction',
+  );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  $handler->display->display_options['filters']['type']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['type']['expose']['operator_id'] = 'type_op';
+  $handler->display->display_options['filters']['type']['expose']['label'] = 'Type';
+  $handler->display->display_options['filters']['type']['expose']['operator'] = 'type_op';
+  $handler->display->display_options['filters']['type']['expose']['identifier'] = 'type';
+  $handler->display->display_options['filters']['type']['expose']['remember'] = TRUE;
+  $handler->display->display_options['filters']['type']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    8 => 0,
+    7 => 0,
+    5 => 0,
+    6 => 0,
+    3 => 0,
+  );
+  $handler->display->display_options['filters']['type']['expose']['reduce'] = TRUE;
+
+  /* Display: Manage Listings */
+  $handler = $view->new_display('page', 'Manage Listings', 'page_1');
+  $handler->display->display_options['path'] = 'user/%/my-content';
+  $handler->display->display_options['menu']['type'] = 'tab';
+  $handler->display->display_options['menu']['title'] = 'Manage Listings';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['name'] = 'management';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
+  $handler->display->display_options['tab_options']['title'] = 'User';
+  $handler->display->display_options['tab_options']['weight'] = '0';
+  $export['user_tools_my_content'] = $view;
 
   return $export;
 }

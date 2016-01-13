@@ -13,7 +13,7 @@ function wttoc_commerce_rules_default_rules_configuration() {
       "LABEL" : "De-Feature Listings of Expired Premium Users",
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
-      "TAGS" : [ "WTTOC" ],
+      "TAGS" : [ "WTTOC Commerce" ],
       "REQUIRES" : [ "views_rules", "rules" ],
       "ON" : { "cron" : [] },
       "DO" : [
@@ -33,7 +33,7 @@ function wttoc_commerce_rules_default_rules_configuration() {
       "LABEL" : "De-Feature Listings of Expired Premium Users - Component",
       "PLUGIN" : "rule",
       "OWNER" : "rules",
-      "TAGS" : [ "WTTOC" ],
+      "TAGS" : [ "WTTOC Commerce" ],
       "REQUIRES" : [ "rules" ],
       "USES VARIABLES" : { "node_fetched" : { "label" : "node_fetched", "type" : "node" } },
       "IF" : [
@@ -57,7 +57,7 @@ function wttoc_commerce_rules_default_rules_configuration() {
       "LABEL" : "Extend Role First Time - Component for Line Item",
       "PLUGIN" : "rule",
       "OWNER" : "rules",
-      "TAGS" : [ "WTTOC" ],
+      "TAGS" : [ "WTTOC Commerce" ],
       "REQUIRES" : [ "rules", "interval", "role_expire" ],
       "USES VARIABLES" : { "line_item" : { "label" : "Line Item", "type" : "commerce_line_item" } },
       "IF" : [
@@ -103,7 +103,7 @@ function wttoc_commerce_rules_default_rules_configuration() {
       "LABEL" : "Extend Role Duration - First Time",
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
-      "TAGS" : [ "WTTOC" ],
+      "TAGS" : [ "WTTOC Commerce" ],
       "REQUIRES" : [ "commerce_order", "rules", "commerce_payment" ],
       "ON" : { "commerce_payment_order_paid_in_full" : [] },
       "IF" : [
@@ -131,7 +131,7 @@ function wttoc_commerce_rules_default_rules_configuration() {
       "LABEL" : "Extend Role Duration - Free Order",
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
-      "TAGS" : [ "WTTOC" ],
+      "TAGS" : [ "WTTOC Commerce" ],
       "REQUIRES" : [ "commerce_order", "rules", "commerce_checkout" ],
       "ON" : { "commerce_checkout_complete" : [] },
       "IF" : [
@@ -159,7 +159,7 @@ function wttoc_commerce_rules_default_rules_configuration() {
       "LABEL" : "Extend Role Duration - Recurring Charge",
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
-      "TAGS" : [ "WTTOC" ],
+      "TAGS" : [ "WTTOC Commerce" ],
       "REQUIRES" : [ "rules", "commerce_cardonfile" ],
       "ON" : { "commerce_cardonfile_charge_success" : [] },
       "DO" : [
@@ -178,7 +178,7 @@ function wttoc_commerce_rules_default_rules_configuration() {
       "LABEL" : "Extend Role Recurring - Component for Line Item",
       "PLUGIN" : "rule",
       "OWNER" : "rules",
-      "TAGS" : [ "WTTOC" ],
+      "TAGS" : [ "WTTOC Commerce" ],
       "REQUIRES" : [ "rules", "interval", "role_expire" ],
       "USES VARIABLES" : { "line_item" : { "label" : "Line Item", "type" : "commerce_line_item" } },
       "IF" : [
@@ -220,17 +220,46 @@ function wttoc_commerce_rules_default_rules_configuration() {
       ]
     }
   }');
-  $items['rules_feature_content_from_premium_accounts'] = entity_import('rules_config', '{ "rules_feature_content_from_premium_accounts" : {
-      "LABEL" : "Feature Content From Premium Accounts",
-      "PLUGIN" : "reaction rule",
+  $items['rules_feature_content_by_premium_vbo_component_part_3'] = entity_import('rules_config', '{ "rules_feature_content_by_premium_vbo_component_part_3" : {
+      "LABEL" : "Feature Content By Premium - VBO Component - Part 2 Complement",
+      "PLUGIN" : "rule",
       "OWNER" : "rules",
-      "TAGS" : [ "WTTOC" ],
+      "TAGS" : [ "Featured Content", "WTTOC" ],
       "REQUIRES" : [ "rules" ],
-      "ON" : { "node_update" : [], "node_insert" : [] },
+      "USES VARIABLES" : {
+        "nodes_currently_featured" : { "label" : "Nodes Currently Featured", "type" : "integer" },
+        "node_to_feature" : { "label" : "Node To Feature", "type" : "node" }
+      },
       "IF" : [
-        { "node_is_of_type" : {
-            "node" : [ "node" ],
-            "type" : { "value" : {
+        { "data_is" : {
+            "data" : [ "nodes-currently-featured" ],
+            "op" : "\\u003E",
+            "value" : "7"
+          }
+        }
+      ],
+      "DO" : [
+        { "drupal_message" : {
+            "message" : "[node-to-feature:title] was not featured. This would exceed your limit!",
+            "type" : "error"
+          }
+        }
+      ]
+    }
+  }');
+  $items['rules_feature_content_vbo_component_part_1'] = entity_import('rules_config', '{ "rules_feature_content_vbo_component_part_1" : {
+      "LABEL" : "Feature Content By Premium - VBO Component - Part 1",
+      "PLUGIN" : "rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "Featured Content", "WTTOC" ],
+      "REQUIRES" : [ "rules", "views_rules", "custom_rules_bonus" ],
+      "ACCESS_EXPOSED" : "1",
+      "USES VARIABLES" : { "node_to_feature" : { "label" : "node_to_feature", "type" : "node" } },
+      "IF" : [
+        { "entity_is_of_bundle" : {
+            "entity" : [ "node-to-feature" ],
+            "type" : "node",
+            "bundle" : { "value" : {
                 "event" : "event",
                 "business_service_or_attraction" : "business_service_or_attraction"
               }
@@ -239,15 +268,83 @@ function wttoc_commerce_rules_default_rules_configuration() {
         }
       ],
       "DO" : [
-        { "data_set" : { "data" : [ "node:field-featured-content" ], "value" : "1" } }
+        { "variable_add" : {
+            "USING" : { "type" : "list\\u003Cnode\\u003E", "value" : [ "" ] },
+            "PROVIDE" : { "variable_added" : { "authors_featured_nodes" : " Author\\u0027s Featured Nodes" } }
+          }
+        },
+        { "VIEW LOOP" : {
+            "VIEW" : "rules_tools_author_s_featured_nodes",
+            "DISPLAY" : "views_rules_1",
+            "USING" : { "uid_integer" : [ "site:current-user:uid" ] },
+            "ROW VARIABLES" : { "node_fetched" : { "node_fetched" : "Content: Node Fetched" } },
+            "DO" : [
+              { "list_add" : {
+                  "list" : [ "authors-featured-nodes" ],
+                  "item" : [ "node-fetched" ],
+                  "unique" : "1"
+                }
+              }
+            ]
+          }
+        },
+        { "crb_list_length" : {
+            "USING" : { "list" : [ "authors-featured-nodes" ] },
+            "PROVIDE" : { "list_length" : { "nodes_currently_featured" : "Nodes Currently Featured" } }
+          }
+        },
+        { "component_rules_feature_content_vbo_component_part_2" : {
+            "nodes_currently_featured" : [ "nodes_currently_featured" ],
+            "node_to_feature" : [ "node_to_feature" ]
+          }
+        },
+        { "component_rules_feature_content_by_premium_vbo_component_part_3" : {
+            "nodes_currently_featured" : [ "nodes_currently_featured" ],
+            "node_to_feature" : [ "node_to_feature" ]
+          }
+        }
+      ]
+    }
+  }');
+  $items['rules_feature_content_vbo_component_part_2'] = entity_import('rules_config', '{ "rules_feature_content_vbo_component_part_2" : {
+      "LABEL" : "Feature Content By Premium - VBO Component - Part 2",
+      "PLUGIN" : "rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "Featured Content", "WTTOC" ],
+      "REQUIRES" : [ "rules" ],
+      "USES VARIABLES" : {
+        "nodes_currently_featured" : { "label" : "Nodes Currently Featured", "type" : "integer" },
+        "node_to_feature" : { "label" : "Node To Feature", "type" : "node" }
+      },
+      "IF" : [
+        { "data_is" : {
+            "data" : [ "nodes-currently-featured" ],
+            "op" : "\\u003C",
+            "value" : "7"
+          }
+        },
+        { "entity_is_of_bundle" : {
+            "entity" : [ "node-to-feature" ],
+            "type" : "node",
+            "bundle" : { "value" : {
+                "event" : "event",
+                "business_service_or_attraction" : "business_service_or_attraction"
+              }
+            }
+          }
+        }
+      ],
+      "DO" : [
+        { "data_set" : { "data" : [ "node-to-feature:field-featured-content" ], "value" : "1" } },
+        { "drupal_message" : { "message" : "[node-to-feature:title] was Featured" } }
       ]
     }
   }');
   $items['rules_stop_recurring_entity'] = entity_import('rules_config', '{ "rules_stop_recurring_entity" : {
-      "LABEL" : "Stop Recurring Entity",
+      "LABEL" : "Stop Recurring Entity - Component",
       "PLUGIN" : "rule",
       "OWNER" : "rules",
-      "TAGS" : [ "WTTOC" ],
+      "TAGS" : [ "WTTOC Commerce" ],
       "REQUIRES" : [ "rules" ],
       "USES VARIABLES" : { "recurring_entity" : { "label" : "Recurring Entity", "type" : "commerce_recurring" } },
       "IF" : [
@@ -258,11 +355,49 @@ function wttoc_commerce_rules_default_rules_configuration() {
       ]
     }
   }');
+  $items['rules_stop_subscription'] = entity_import('rules_config', '{ "rules_stop_subscription" : {
+      "LABEL" : "Stop Subscription - Component",
+      "PLUGIN" : "rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "WTTOC Commerce" ],
+      "REQUIRES" : [ "rules" ],
+      "ACCESS_EXPOSED" : "1",
+      "USES VARIABLES" : { "commerce_recurring_entity" : { "label" : "commerce_recurring_entity", "type" : "commerce_recurring" } },
+      "DO" : [
+        { "data_set" : { "data" : [ "commerce-recurring-entity:status" ], "value" : "0" } }
+      ]
+    }
+  }');
+  $items['rules_unfeature_content_by_premium_vbo_component_part_1_cloned_'] = entity_import('rules_config', '{ "rules_unfeature_content_by_premium_vbo_component_part_1_cloned_" : {
+      "LABEL" : "Unfeature Content By Premium - VBO Component",
+      "PLUGIN" : "rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "Featured Content", "WTTOC" ],
+      "REQUIRES" : [ "rules" ],
+      "ACCESS_EXPOSED" : "1",
+      "USES VARIABLES" : { "node_to_unfeature" : { "label" : "node_to_unfeature", "type" : "node" } },
+      "IF" : [
+        { "entity_is_of_bundle" : {
+            "entity" : [ "node_to_unfeature" ],
+            "type" : "node",
+            "bundle" : { "value" : {
+                "event" : "event",
+                "business_service_or_attraction" : "business_service_or_attraction"
+              }
+            }
+          }
+        }
+      ],
+      "DO" : [
+        { "data_set" : { "data" : [ "node_to_unfeature:field-featured-content" ], "value" : "0" } }
+      ]
+    }
+  }');
   $items['rules_unpublish_content_of_inactive_free_accounts'] = entity_import('rules_config', '{ "rules_unpublish_content_of_inactive_free_accounts" : {
       "LABEL" : "Unpublish Content of Inactive FREE Accounts",
       "PLUGIN" : "reaction rule",
       "OWNER" : "rules",
-      "TAGS" : [ "WTTOC" ],
+      "TAGS" : [ "WTTOC Commerce" ],
       "REQUIRES" : [ "views_rules", "rules" ],
       "ON" : { "cron" : [] },
       "DO" : [
