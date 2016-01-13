@@ -679,7 +679,7 @@ function wttoc_content_types_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_prices_information',
     'label' => 'Prices Information',
-    'required' => 1,
+    'required' => 0,
     'settings' => array(
       'text_processing' => 1,
       'user_register_form' => FALSE,
@@ -1047,7 +1047,7 @@ function wttoc_content_types_field_default_field_instances() {
       'module' => 'date',
       'settings' => array(
         'increment' => 15,
-        'input_format' => 'm/d/Y - H:i:s',
+        'input_format' => 'd/m/Y - H:i:s',
         'input_format_custom' => '',
         'label_position' => 'above',
         'no_fieldset' => 0,

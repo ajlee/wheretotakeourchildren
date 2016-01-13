@@ -2051,6 +2051,67 @@ function wttoc_permissions_user_default_permissions() {
     'module' => 'commerce_payment',
   );
 
+  // Exported permission: 'upload_images_for_css_use'.
+  $permissions['upload_images_for_css_use'] = array(
+    'name' => 'upload_images_for_css_use',
+    'roles' => array(
+      'Site Editor' => 'Site Editor',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'upload_images_for_css',
+  );
+
+  // Exported permission: 'use Rules component rules_editor_tools_feature_content'.
+  $permissions['use Rules component rules_editor_tools_feature_content'] = array(
+    'name' => 'use Rules component rules_editor_tools_feature_content',
+    'roles' => array(
+      'Site Editor' => 'Site Editor',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'rules',
+  );
+
+  // Exported permission: 'use Rules component rules_editor_tools_unfeature_content'.
+  $permissions['use Rules component rules_editor_tools_unfeature_content'] = array(
+    'name' => 'use Rules component rules_editor_tools_unfeature_content',
+    'roles' => array(
+      'Site Editor' => 'Site Editor',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'rules',
+  );
+
+  // Exported permission: 'use Rules component rules_feature_content_vbo_component_part_1'.
+  $permissions['use Rules component rules_feature_content_vbo_component_part_1'] = array(
+    'name' => 'use Rules component rules_feature_content_vbo_component_part_1',
+    'roles' => array(
+      'Premium' => 'Premium',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'rules',
+  );
+
+  // Exported permission: 'use Rules component rules_stop_subscription'.
+  $permissions['use Rules component rules_stop_subscription'] = array(
+    'name' => 'use Rules component rules_stop_subscription',
+    'roles' => array(
+      'Premium' => 'Premium',
+      'Site Editor' => 'Site Editor',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'rules',
+  );
+
+  // Exported permission: 'use Rules component rules_unfeature_content_by_premium_vbo_component_part_1_cloned_'.
+  $permissions['use Rules component rules_unfeature_content_by_premium_vbo_component_part_1_cloned_'] = array(
+    'name' => 'use Rules component rules_unfeature_content_by_premium_vbo_component_part_1_cloned_',
+    'roles' => array(
+      'Premium' => 'Premium',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'rules',
+  );
+
   // Exported permission: 'use ctools import'.
   $permissions['use ctools import'] = array(
     'name' => 'use ctools import',
@@ -2321,6 +2382,8 @@ function wttoc_permissions_user_default_permissions() {
   $permissions['view own unpublished content'] = array(
     'name' => 'view own unpublished content',
     'roles' => array(
+      'Free' => 'Free',
+      'Premium' => 'Premium',
       'Site Editor' => 'Site Editor',
       'administrator' => 'administrator',
     ),
