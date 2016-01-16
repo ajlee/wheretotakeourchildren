@@ -171,7 +171,7 @@ function facebook_events_importer_form_submit($form, &$form_state){
             //if there is no end date, use the start date to create an end date
             elseif(!is_null($eventResponse->getStartTime())){
                 $startDate = $eventResponse->getStartTime()->format("U");
-                $endDate = intval($startDate) + 21600; //add six hours to unix timestamp
+                $endDate = intval($startDate); //add 0 hours to unix timestamp
                 $eventResponseArray["events"][$event_id]["end_time"] = strval($endDate);
             }
             if(!is_null($eventResponse->getPlace())) {
