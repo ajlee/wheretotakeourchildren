@@ -1368,7 +1368,7 @@ footer.l-footer nav ul {
       list-style: none;
       display: inline-block; }
       .l-superheader nav > ul.menu > li > a {
-        display: block;
+        display: inline-block;
         text-decoration: none;
         padding: 12px 30px;
         border-left: 1px solid white; }

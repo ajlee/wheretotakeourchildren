@@ -25,10 +25,11 @@
 				    floatWidth: 400,
 				    forceCustomRendering: false,
 				    //nativeOnDevice: ['Android', 'BlackBerry', 'iPhone', 'iPad', 'iPod', 'Opera Mini', 'IEMobile', 'Silk'],
-				    nativeOnDevice: ['Android', 'BlackBerry', 'iPhone', 'iPod', 'Opera Mini', 'IEMobile'],
+				    //nativeOnDevice: ['Android', 'BlackBerry', 'iPhone', 'iPod', 'Opera Mini', 'IEMobile'],
+				    nativeOnDevice: [],
 				    outputAsCSV : false,
 				    csvSepChar : ',',
-				    okCancelInMulti: false,
+				    okCancelInMulti: true,
 				    triggerChangeCombined : true,
 				    selectAll: false,
 				    selectAlltext: 'Select All'
