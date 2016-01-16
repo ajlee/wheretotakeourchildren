@@ -894,13 +894,13 @@ function wttoc_views_views_default_views() {
     6 => 0,
     3 => 0,
   );
-  /* Filter criterion: Date of Event: Start date (indexed) */
-  $handler->display->display_options['filters']['field_date_of_event_value_1']['id'] = 'field_date_of_event_value_1';
-  $handler->display->display_options['filters']['field_date_of_event_value_1']['table'] = 'search_api_index_index_businesses_and_events';
-  $handler->display->display_options['filters']['field_date_of_event_value_1']['field'] = 'field_date_of_event_value';
-  $handler->display->display_options['filters']['field_date_of_event_value_1']['operator'] = '>=';
-  $handler->display->display_options['filters']['field_date_of_event_value_1']['value'] = 'now - 1 day';
-  $handler->display->display_options['filters']['field_date_of_event_value_1']['group'] = 2;
+  /* Filter criterion: Date of Event: End date (indexed) */
+  $handler->display->display_options['filters']['field_date_of_event_value2_1']['id'] = 'field_date_of_event_value2_1';
+  $handler->display->display_options['filters']['field_date_of_event_value2_1']['table'] = 'search_api_index_index_businesses_and_events';
+  $handler->display->display_options['filters']['field_date_of_event_value2_1']['field'] = 'field_date_of_event_value2';
+  $handler->display->display_options['filters']['field_date_of_event_value2_1']['operator'] = '>=';
+  $handler->display->display_options['filters']['field_date_of_event_value2_1']['value'] = 'now - 1 day';
+  $handler->display->display_options['filters']['field_date_of_event_value2_1']['group'] = 2;
   /* Filter criterion: Indexed Content: Content type */
   $handler->display->display_options['filters']['type_1']['id'] = 'type_1';
   $handler->display->display_options['filters']['type_1']['table'] = 'search_api_index_index_businesses_and_events';

@@ -844,7 +844,7 @@ function wttoc_content_types_field_default_field_instances() {
     'bundle' => 'business_service_or_attraction',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'E.g. http://example.com, http://www.example.com, https://example.com',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -1587,7 +1587,7 @@ function wttoc_content_types_field_default_field_instances() {
     'bundle' => 'event',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'E.g. http://example.com, http://www.example.com, https://example.com',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -1628,6 +1628,7 @@ function wttoc_content_types_field_default_field_instances() {
   t('Ages');
   t('Body');
   t('Date of Event');
+  t('E.g. http://example.com, http://www.example.com, https://example.com');
   t('Email');
   t('Embed a video from YouTube or Vimeo. Enter the URL here: E.g. https://www.youtube.com/watch?v=fbZvU8mMmMJ or https://vimeo.com/14736f265');
   t('Event Website');

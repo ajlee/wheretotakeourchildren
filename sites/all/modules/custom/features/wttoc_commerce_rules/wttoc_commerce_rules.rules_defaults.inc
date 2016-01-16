@@ -340,6 +340,66 @@ function wttoc_commerce_rules_default_rules_configuration() {
       ]
     }
   }');
+  $items['rules_new_user_gets_a_free_account'] = entity_import('rules_config', '{ "rules_new_user_gets_a_free_account" : {
+      "LABEL" : "New User Gets a Free Account",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "WTTOC Commerce" ],
+      "REQUIRES" : [ "rules" ],
+      "ON" : { "user_insert" : [] },
+      "IF" : [
+        { "NOT user_has_role" : {
+            "account" : [ "account" ],
+            "roles" : { "value" : { "8" : "8", "5" : "5", "6" : "6", "3" : "3" } },
+            "operation" : "OR"
+          }
+        }
+      ],
+      "DO" : [
+        { "user_add_role" : { "account" : [ "account" ], "roles" : { "value" : { "7" : "7" } } } }
+      ]
+    }
+  }');
+  $items['rules_premium_role_removed_gives_free_role'] = entity_import('rules_config', '{ "rules_premium_role_removed_gives_free_role" : {
+      "LABEL" : "Premium Role Removed, Gives Free Role",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "WTTOC Commerce" ],
+      "REQUIRES" : [ "rules" ],
+      "ON" : { "user_update" : [] },
+      "IF" : [
+        { "user_has_role" : {
+            "account" : [ "account-unchanged" ],
+            "roles" : { "value" : { "5" : "5" } }
+          }
+        },
+        { "NOT user_has_role" : { "account" : [ "account" ], "roles" : { "value" : { "5" : "5" } } } }
+      ],
+      "DO" : [
+        { "user_add_role" : { "account" : [ "account" ], "roles" : { "value" : { "7" : "7" } } } }
+      ]
+    }
+  }');
+  $items['rules_premium_role_removes_free_role'] = entity_import('rules_config', '{ "rules_premium_role_removes_free_role" : {
+      "LABEL" : "Premium Role Given, Removes Free Role",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "WTTOC Commerce" ],
+      "REQUIRES" : [ "rules" ],
+      "ON" : { "user_update" : [] },
+      "IF" : [
+        { "NOT user_has_role" : {
+            "account" : [ "account-unchanged" ],
+            "roles" : { "value" : { "5" : "5" } }
+          }
+        },
+        { "user_has_role" : { "account" : [ "account" ], "roles" : { "value" : { "5" : "5" } } } }
+      ],
+      "DO" : [
+        { "user_remove_role" : { "account" : [ "account" ], "roles" : { "value" : { "7" : "7" } } } }
+      ]
+    }
+  }');
   $items['rules_stop_recurring_entity'] = entity_import('rules_config', '{ "rules_stop_recurring_entity" : {
       "LABEL" : "Stop Recurring Entity - Component",
       "PLUGIN" : "rule",
