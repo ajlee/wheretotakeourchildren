@@ -10,3 +10,7 @@
 .commerce-discount-form #commerce-discount-fields-wrapper > .form-wrapper{
     clear:both;
 }
+
+body.page-user-edit #edit-contact{
+    display:none;
+}
