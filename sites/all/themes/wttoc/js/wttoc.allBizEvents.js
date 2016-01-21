@@ -106,9 +106,13 @@
 					event.preventDefault;
 					return false;
 				});
-				//Preserve Address Field After Reloads
+				//Preserve Address Field After Reloads / Submissions / Pagers
 				$globalPreviousAddress =  $.cookie("globalPreviousAddress") === ""  ? "" : $.cookie("globalPreviousAddress");
 				$(viewsBlockFormSelector + sp + exposedAddressSelector).val($globalPreviousAddress);
+				//The following three lines help us remove the preserved address field when we navigate to other pages
+				setTimeout(function(){
+					$.cookie("globalPreviousAddress", "", {expires: 7, path: '/'});
+				}, 750);
 				//Helper Functions For Geocoding Client Side
 				geocodeAsync = function(address, f){
 					//returns a string "empty address", "error", or "lat,lon" (where lat lon are coordinates) 
@@ -179,16 +183,25 @@
 				var sp = " ";
 				var viewsPageSelector = '.view-id-businesses_and_events.view-display-id-page_results';
 				var viewsBlockSelector = '.view-id-businesses_and_events.view-display-id-map_and_filters';
-				var pagerLinksSelectorArray = ['.pager-previous a', '.pager-next a']
+				var pagerLinksSelectorArray = ['.pager-previous a', '.pager-next a'];
+				var exposedAddressSelector = 'input#edit-field-hidden-address-geofield-latlon';
 				//Submit Search Block Pagers To Main Page
 				$.each(pagerLinksSelectorArray, function(index, pagerCurrentSelector){
 					$(viewsBlockSelector + sp + pagerCurrentSelector).one("click",function(event){
+						//help keep addresses between paging
+						var address = $(viewsBlockSelector + sp +exposedAddressSelector).val();
+						$.cookie("globalPreviousAddress", address, {expires: 7, path: '/'});
+						//click
 						$(viewsPageSelector + sp + pagerCurrentSelector).click();
 					});
 				});
 				//Submit Search Page Pagers To Main Page
 				$.each(pagerLinksSelectorArray, function(index, pagerCurrentSelector){
 					$(viewsPageSelector + sp + pagerCurrentSelector).one("click",function(event){
+						//help keep addresses between paging
+						var address = $(viewsBlockSelector + sp +exposedAddressSelector).val();
+						$.cookie("globalPreviousAddress", address, {expires: 7, path: '/'});
+						//click
 						$(viewsBlockSelector + sp + pagerCurrentSelector).click();
 					});
 				});
@@ -293,7 +306,7 @@
 						}
 					});
 				});
-				//Preserve Address Field After Reloads
+				//Preserve Address Field After Reloads / Submissions / Pagers
 				$globalPreviousAddress = ( $.cookie("globalPreviousAddress") == "" ) ? "" : $.cookie("globalPreviousAddress");
 				$(viewsExposedFormSelector + sp + exposedAddressSelector).val($globalPreviousAddress);
 				//Helper Functions For Geocoding Client Side
@@ -324,7 +337,7 @@
 	// If Content Type Business Is Selected, Reset All Event Filters' Values and Display Business Filters
 	// If Content Type Events Is Selected, Reset All Business Filters' Values and Display Event Filters
 	// If Both Content Types Are Selected, Display Both Filters 
-	// If No Content Type Is Selected, Reset All Values and Hide Both Filters
+	// If No Content Type Is Selected, Reset All Values and Hide Both Filters, {expires: 7, path: '/'}
 	Drupal.behaviors.wttocContentTypeDisplay = {
 		attach: function (context) {
 				if($('body.front').length || $('body.page-search-businesses-and-events').length){
