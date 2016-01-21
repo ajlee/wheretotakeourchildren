@@ -86,7 +86,7 @@ function cbtv_build_calendar($month,$year) {
             $calendar .= "<div class='wttoc_day_inner'>";
         }
         $calendar .= "<a href='";
-        $calendar .= cbtv_linkOneDay($currentDay, $monthNumeric, $year);
+        $calendar .= cbtv_linkOneDay($currentDay, $monthNumeric, $year, $numberDays);
         $calendar .= "' 'title='Search This Day'> $currentDay</a>";
         $calendar .= "</div></div>";
 
@@ -121,12 +121,29 @@ function cbtv_build_calendar($month,$year) {
 /**
  * Helper Function - Create Link Out Of Date
  */
-function cbtv_linkOneDay($day, $month, $year){
+function cbtv_linkOneDay($day, $month, $year, $daysInMonth){
     $basepath = 'search/businesses-and-events?';
+    //The following can be used when the interval should be from the current day to the next
+    /*
+    if($daysInMonth == $day){
+        $arguments = array(
+            "type[]" => "event",
+            "field_start_datepicker[date]" => $month . "/"  . ($day) . "/" .$year,
+            "field_end_datepicker[date]" => ($month + 1) . "/" . (1) . "/" .$year,
+        );
+    }
+    else{
+        $arguments = array(
+            "type[]" => "event",
+            "field_start_datepicker[date]" => $month . "/"  . ($day) . "/" .$year,
+            "field_end_datepicker[date]" => $month . "/" . ($day + 1) . "/" .$year,
+        );
+    }
+    */
     $arguments = array(
         "type[]" => "event",
         "field_start_datepicker[date]" => $month . "/"  . ($day) . "/" .$year,
-        "field_end_datepicker[date]" => $month . "/" . ($day + 1) . "/" .$year,
+        "field_end_datepicker[date]" => $month . "/" . ($day) . "/" .$year,
     );
     $return = $basepath;
     foreach($arguments as $key => $value){
