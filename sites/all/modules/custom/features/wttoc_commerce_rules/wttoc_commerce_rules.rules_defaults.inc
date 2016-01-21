@@ -234,7 +234,7 @@ function wttoc_commerce_rules_default_rules_configuration() {
         { "data_is" : {
             "data" : [ "nodes-currently-featured" ],
             "op" : "\\u003E",
-            "value" : "7"
+            "value" : "3"
           }
         }
       ],
@@ -320,7 +320,7 @@ function wttoc_commerce_rules_default_rules_configuration() {
         { "data_is" : {
             "data" : [ "nodes-currently-featured" ],
             "op" : "\\u003C",
-            "value" : "7"
+            "value" : "4"
           }
         },
         { "entity_is_of_bundle" : {

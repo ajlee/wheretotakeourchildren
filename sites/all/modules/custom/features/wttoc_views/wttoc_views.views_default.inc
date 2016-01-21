@@ -474,6 +474,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['expose_sort_order'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'mini';
   $handler->display->display_options['pager']['options']['items_per_page'] = '12';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -648,6 +649,20 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['sorts']['changed']['table'] = 'search_api_index_index_businesses_and_events';
   $handler->display->display_options['sorts']['changed']['field'] = 'changed';
   $handler->display->display_options['sorts']['changed']['order'] = 'DESC';
+  $handler->display->display_options['sorts']['changed']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['changed']['expose']['label'] = 'Sort by Recent';
+  /* Sort criterion: Indexed Content: Start Date - First Value */
+  $handler->display->display_options['sorts']['search_api_aggregation_1']['id'] = 'search_api_aggregation_1';
+  $handler->display->display_options['sorts']['search_api_aggregation_1']['table'] = 'search_api_index_index_businesses_and_events';
+  $handler->display->display_options['sorts']['search_api_aggregation_1']['field'] = 'search_api_aggregation_1';
+  $handler->display->display_options['sorts']['search_api_aggregation_1']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['search_api_aggregation_1']['expose']['label'] = 'Sort by Event Date';
+  /* Sort criterion: Hidden Address Geofield: LatLong Pair (indexed) */
+  $handler->display->display_options['sorts']['field_hidden_address_geofield_latlon']['id'] = 'field_hidden_address_geofield_latlon';
+  $handler->display->display_options['sorts']['field_hidden_address_geofield_latlon']['table'] = 'search_api_index_index_businesses_and_events';
+  $handler->display->display_options['sorts']['field_hidden_address_geofield_latlon']['field'] = 'field_hidden_address_geofield_latlon';
+  $handler->display->display_options['sorts']['field_hidden_address_geofield_latlon']['exposed'] = TRUE;
+  $handler->display->display_options['sorts']['field_hidden_address_geofield_latlon']['expose']['label'] = 'Sort by Distance';
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',
     2 => 'OR',
@@ -882,7 +897,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['filters']['title']['group'] = 1;
   $handler->display->display_options['filters']['title']['exposed'] = TRUE;
   $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
-  $handler->display->display_options['filters']['title']['expose']['label'] = 'Keyword';
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Search By Title';
   $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
   $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
   $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
@@ -921,7 +936,8 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['empty']['area_text_custom']['table'] = 'views';
   $handler->display->display_options['empty']['area_text_custom']['field'] = 'area_text_custom';
   $handler->display->display_options['empty']['area_text_custom']['empty'] = TRUE;
-  $handler->display->display_options['empty']['area_text_custom']['content'] = '<h3>No results for this search</h3>';
+  $handler->display->display_options['empty']['area_text_custom']['content'] = '<h3>No results for this search!</h3>
+<ul><li>Make sure to check for mispellings</li><li>Note that finished events will not show up</li></ul>';
   $handler->display->display_options['defaults']['relationships'] = FALSE;
   $handler->display->display_options['metatags'] = array(
     'und' => array(
@@ -1779,6 +1795,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['field_ages_1']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_ages_1']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['field_ages_1']['type'] = 'taxonomy_term_reference_plain';
+  $handler->display->display_options['fields']['field_ages_1']['delta_limit'] = '1';
   $handler->display->display_options['fields']['field_ages_1']['delta_offset'] = '0';
 
   /* Display: Event Map */
@@ -2316,7 +2333,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['css_class'] = 'homepage_events_categories';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '9';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '18';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Indexed Taxonomy term: Term ID */
@@ -2334,7 +2351,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['field_category_image']['field'] = 'field_category_image';
   $handler->display->display_options['fields']['field_category_image']['label'] = '';
   $handler->display->display_options['fields']['field_category_image']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_category_image']['alter']['text'] = '<a href="/search/businesses-and-events?type%5B%5D=event&field_category_event%5B%5D=[tid]" title="Go to this category">[field_category_image]</a>';
+  $handler->display->display_options['fields']['field_category_image']['alter']['text'] = '<a href="/search/businesses-and-events?type%5B%5D=event&field_category_event%5B%5D=[tid]&sort_by=search_api_aggregation_1" title="Go to this category">[field_category_image]</a>';
   $handler->display->display_options['fields']['field_category_image']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_category_image']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_category_image']['settings'] = array(
@@ -2347,7 +2364,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['label'] = '';
   $handler->display->display_options['fields']['name']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['name']['alter']['text'] = '<a href="/search/businesses-and-events?type%5B%5D=event&field_category_event%5B%5D=[tid]" title="Go to this category">[name]</a>';
+  $handler->display->display_options['fields']['name']['alter']['text'] = '<a href="/search/businesses-and-events?type%5B%5D=event&field_category_event%5B%5D=[tid]&sort_by=search_api_aggregation_1" title="Go to this category">[name]</a>';
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['name']['link_to_entity'] = 0;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
@@ -2373,7 +2390,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['css_class'] = 'homepage_business_categories';
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '6';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '18';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Indexed Taxonomy term: Term ID */
@@ -3173,6 +3190,10 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['sorts']['field_featured_content']['table'] = 'search_api_index_index_businesses_and_events';
   $handler->display->display_options['sorts']['field_featured_content']['field'] = 'field_featured_content';
   $handler->display->display_options['sorts']['field_featured_content']['order'] = 'DESC';
+  /* Sort criterion: Indexed Content: Start Date - First Value */
+  $handler->display->display_options['sorts']['search_api_aggregation_1']['id'] = 'search_api_aggregation_1';
+  $handler->display->display_options['sorts']['search_api_aggregation_1']['table'] = 'search_api_index_index_businesses_and_events';
+  $handler->display->display_options['sorts']['search_api_aggregation_1']['field'] = 'search_api_aggregation_1';
   /* Sort criterion: Indexed Content: Date changed */
   $handler->display->display_options['sorts']['changed']['id'] = 'changed';
   $handler->display->display_options['sorts']['changed']['table'] = 'search_api_index_index_businesses_and_events';
@@ -3197,7 +3218,7 @@ function wttoc_views_views_default_views() {
   /* Display: Feat Biz - Home */
   $handler = $view->new_display('block', 'Feat Biz - Home', 'small_blocks_feat_biz');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Top Picks';
+  $handler->display->display_options['title'] = 'Top Family Guide Picks';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'small_blocks_feat_biz';
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -3228,7 +3249,7 @@ function wttoc_views_views_default_views() {
   /* Display: Feat Evs - Home */
   $handler = $view->new_display('block', 'Feat Evs - Home', 'small_blocks_feat_evs');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Featured Events';
+  $handler->display->display_options['title'] = 'Top Event Picks';
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'small_blocks_feat_evs';
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -3346,6 +3367,10 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['sorts']['field_featured_content']['table'] = 'search_api_index_index_businesses_and_events';
   $handler->display->display_options['sorts']['field_featured_content']['field'] = 'field_featured_content';
   $handler->display->display_options['sorts']['field_featured_content']['order'] = 'DESC';
+  /* Sort criterion: Indexed Content: Start Date - First Value */
+  $handler->display->display_options['sorts']['search_api_aggregation_1']['id'] = 'search_api_aggregation_1';
+  $handler->display->display_options['sorts']['search_api_aggregation_1']['table'] = 'search_api_index_index_businesses_and_events';
+  $handler->display->display_options['sorts']['search_api_aggregation_1']['field'] = 'search_api_aggregation_1';
   /* Sort criterion: Indexed Content: Date changed */
   $handler->display->display_options['sorts']['changed']['id'] = 'changed';
   $handler->display->display_options['sorts']['changed']['table'] = 'search_api_index_index_businesses_and_events';
@@ -3946,12 +3971,55 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '30';
   $handler->display->display_options['style_plugin'] = 'table';
-  /* Field: User: Name */
-  $handler->display->display_options['fields']['name']['id'] = 'name';
-  $handler->display->display_options['fields']['name']['table'] = 'users';
-  $handler->display->display_options['fields']['name']['field'] = 'name';
-  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['style_options']['columns'] = array(
+    'views_bulk_operations' => 'views_bulk_operations',
+    'mail' => 'mail',
+    'name' => 'name',
+    'status' => 'status',
+    'rid' => 'rid',
+    'access' => 'access',
+  );
+  $handler->display->display_options['style_options']['default'] = 'name';
+  $handler->display->display_options['style_options']['info'] = array(
+    'views_bulk_operations' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'mail' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'name' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'status' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'rid' => array(
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'access' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+  );
   /* Field: Bulk operations: User */
   $handler->display->display_options['fields']['views_bulk_operations']['id'] = 'views_bulk_operations';
   $handler->display->display_options['fields']['views_bulk_operations']['table'] = 'users';
@@ -3969,7 +4037,45 @@ function wttoc_views_views_default_views() {
       'override_label' => 0,
       'label' => '',
     ),
+    'action::views_bulk_operations_user_cancel_action' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
   );
+  /* Field: User: E-mail */
+  $handler->display->display_options['fields']['mail']['id'] = 'mail';
+  $handler->display->display_options['fields']['mail']['table'] = 'users';
+  $handler->display->display_options['fields']['mail']['field'] = 'mail';
+  $handler->display->display_options['fields']['mail']['label'] = '';
+  $handler->display->display_options['fields']['mail']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['mail']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['mail']['link_to_user'] = '0';
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['name']['alter']['text'] = ' [name]<br>[mail]';
+  $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
+  /* Field: User: Active */
+  $handler->display->display_options['fields']['status']['id'] = 'status';
+  $handler->display->display_options['fields']['status']['table'] = 'users';
+  $handler->display->display_options['fields']['status']['field'] = 'status';
+  $handler->display->display_options['fields']['status']['not'] = 0;
+  /* Field: User: Last access */
+  $handler->display->display_options['fields']['access']['id'] = 'access';
+  $handler->display->display_options['fields']['access']['table'] = 'users';
+  $handler->display->display_options['fields']['access']['field'] = 'access';
+  $handler->display->display_options['fields']['access']['date_format'] = 'long';
+  $handler->display->display_options['fields']['access']['second_date_format'] = 'long';
+  /* Field: User: Roles */
+  $handler->display->display_options['fields']['rid']['id'] = 'rid';
+  $handler->display->display_options['fields']['rid']['table'] = 'users_roles';
+  $handler->display->display_options['fields']['rid']['field'] = 'rid';
   /* Sort criterion: User: Created date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'users';
@@ -3979,17 +4085,102 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['filters']['rid']['id'] = 'rid';
   $handler->display->display_options['filters']['rid']['table'] = 'users_roles';
   $handler->display->display_options['filters']['rid']['field'] = 'rid';
-  $handler->display->display_options['filters']['rid']['operator'] = 'not';
   $handler->display->display_options['filters']['rid']['value'] = array(
-    6 => '6',
-    3 => '3',
+    7 => '7',
+    5 => '5',
   );
+  $handler->display->display_options['filters']['rid']['group'] = 1;
   /* Filter criterion: User: The user ID */
   $handler->display->display_options['filters']['uid_raw']['id'] = 'uid_raw';
   $handler->display->display_options['filters']['uid_raw']['table'] = 'users';
   $handler->display->display_options['filters']['uid_raw']['field'] = 'uid_raw';
   $handler->display->display_options['filters']['uid_raw']['operator'] = '>=';
   $handler->display->display_options['filters']['uid_raw']['value']['value'] = '2';
+  $handler->display->display_options['filters']['uid_raw']['group'] = 1;
+  /* Filter criterion: User: Name (raw) */
+  $handler->display->display_options['filters']['name']['id'] = 'name';
+  $handler->display->display_options['filters']['name']['table'] = 'users';
+  $handler->display->display_options['filters']['name']['field'] = 'name';
+  $handler->display->display_options['filters']['name']['operator'] = 'contains';
+  $handler->display->display_options['filters']['name']['group'] = 1;
+  $handler->display->display_options['filters']['name']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['name']['expose']['operator_id'] = 'name_op';
+  $handler->display->display_options['filters']['name']['expose']['label'] = 'Name ';
+  $handler->display->display_options['filters']['name']['expose']['operator'] = 'name_op';
+  $handler->display->display_options['filters']['name']['expose']['identifier'] = 'name';
+  $handler->display->display_options['filters']['name']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    8 => 0,
+    7 => 0,
+    5 => 0,
+    6 => 0,
+    3 => 0,
+  );
+  /* Filter criterion: User: E-mail */
+  $handler->display->display_options['filters']['mail']['id'] = 'mail';
+  $handler->display->display_options['filters']['mail']['table'] = 'users';
+  $handler->display->display_options['filters']['mail']['field'] = 'mail';
+  $handler->display->display_options['filters']['mail']['operator'] = 'contains';
+  $handler->display->display_options['filters']['mail']['group'] = 1;
+  $handler->display->display_options['filters']['mail']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['mail']['expose']['operator_id'] = 'mail_op';
+  $handler->display->display_options['filters']['mail']['expose']['label'] = 'E-mail';
+  $handler->display->display_options['filters']['mail']['expose']['operator'] = 'mail_op';
+  $handler->display->display_options['filters']['mail']['expose']['identifier'] = 'mail';
+  $handler->display->display_options['filters']['mail']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    8 => 0,
+    7 => 0,
+    5 => 0,
+    6 => 0,
+    3 => 0,
+  );
+  /* Filter criterion: User: Active */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'users';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 'All';
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['status']['expose']['operator_id'] = '';
+  $handler->display->display_options['filters']['status']['expose']['label'] = 'Active';
+  $handler->display->display_options['filters']['status']['expose']['operator'] = 'status_op';
+  $handler->display->display_options['filters']['status']['expose']['identifier'] = 'status';
+  $handler->display->display_options['filters']['status']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    8 => 0,
+    7 => 0,
+    5 => 0,
+    6 => 0,
+    3 => 0,
+  );
+  /* Filter criterion: User: Roles */
+  $handler->display->display_options['filters']['rid_1']['id'] = 'rid_1';
+  $handler->display->display_options['filters']['rid_1']['table'] = 'users_roles';
+  $handler->display->display_options['filters']['rid_1']['field'] = 'rid';
+  $handler->display->display_options['filters']['rid_1']['value'] = array(
+    7 => '7',
+    5 => '5',
+  );
+  $handler->display->display_options['filters']['rid_1']['group'] = 1;
+  $handler->display->display_options['filters']['rid_1']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['rid_1']['expose']['operator_id'] = 'rid_1_op';
+  $handler->display->display_options['filters']['rid_1']['expose']['label'] = 'Roles';
+  $handler->display->display_options['filters']['rid_1']['expose']['operator'] = 'rid_1_op';
+  $handler->display->display_options['filters']['rid_1']['expose']['identifier'] = 'rid_1';
+  $handler->display->display_options['filters']['rid_1']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    8 => 0,
+    7 => 0,
+    5 => 0,
+    6 => 0,
+    3 => 0,
+  );
+  $handler->display->display_options['filters']['rid_1']['expose']['reduce'] = TRUE;
 
   /* Display: Tools: Editor Users */
   $handler = $view->new_display('page', 'Tools: Editor Users', 'admin_tools_users');
@@ -4529,7 +4720,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['header']['area']['table'] = 'views';
   $handler->display->display_options['header']['area']['field'] = 'area';
   $handler->display->display_options['header']['area']['empty'] = TRUE;
-  $handler->display->display_options['header']['area']['content'] = '<h3>Note: <b>Premium Users</b> are allowed to feature up to 7 listings. </h3>';
+  $handler->display->display_options['header']['area']['content'] = '<h3>Note: <b>Premium Users</b> are allowed to feature up to 4 listings. </h3>';
   $handler->display->display_options['header']['area']['format'] = 'full_html';
   /* No results behavior: Global: Unfiltered text */
   $handler->display->display_options['empty']['area_text_custom']['id'] = 'area_text_custom';
