@@ -26,7 +26,7 @@
 				    forceCustomRendering: false,
 				    //nativeOnDevice: ['Android', 'BlackBerry', 'iPhone', 'iPad', 'iPod', 'Opera Mini', 'IEMobile', 'Silk'],
 				    //nativeOnDevice: ['Android', 'BlackBerry', 'iPhone', 'iPod', 'Opera Mini', 'IEMobile'],
-				    nativeOnDevice: [],
+				    nativeOnDevice: ['GT-I9300'],//galaxy s-3 problematic
 				    outputAsCSV : false,
 				    csvSepChar : ',',
 				    okCancelInMulti: true,
