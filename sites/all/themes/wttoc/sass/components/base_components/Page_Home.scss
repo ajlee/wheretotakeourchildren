@@ -161,7 +161,7 @@ body.front{
 							@include backgroundOpacity($colorAlt, .75);
 						}
 					}
-					&#edit-title-wrapper{
+					&#edit-title-wrapper, &.views-widget-sort-by{
 						display:none;
 					}
 					&.views-submit-button{

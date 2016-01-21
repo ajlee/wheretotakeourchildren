@@ -1802,7 +1802,7 @@ body.front {
           background: #FFC632;
           /* The Fallback */
           background: rgba(255, 198, 50, 0.75); }
-        body.front .l-region--widetop .views-exposed-form-businesses-and-events-page-results .views-exposed-form .views-exposed-widget#edit-title-wrapper {
+        body.front .l-region--widetop .views-exposed-form-businesses-and-events-page-results .views-exposed-form .views-exposed-widget#edit-title-wrapper, body.front .l-region--widetop .views-exposed-form-businesses-and-events-page-results .views-exposed-form .views-exposed-widget.views-widget-sort-by {
           display: none; }
         body.front .l-region--widetop .views-exposed-form-businesses-and-events-page-results .views-exposed-form .views-exposed-widget.views-submit-button {
           min-width: 40%;
@@ -2061,14 +2061,13 @@ body.node-type-blog-post .mainPageTitle {
     .js .view-id-businesses_and_events.view-display-id-page_results.gridResults .view-content .views-row:nth-child(4n+2),
     .js .view-id-businesses_and_events.view-display-id-page_results.gridResults .view-content .views-row:nth-child(4n+3) {
       float: left;
-      margin-left: 0.5%;
       margin-right: 0.5%;
-      width: 24%; }
+      width: 24.5%; }
     .no-js .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row:nth-child(4n+4),
     .js .view-id-businesses_and_events.view-display-id-page_results.gridResults .view-content .views-row:nth-child(4n+4) {
-      float: right;
-      margin-left: 1%;
-      width: 24%; } }
+      float: left;
+      margin-right: 0.5%;
+      width: 24.5%; } }
   @media (min-width: 769px) and (max-width: 1280px) {
     .no-js .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row:nth-child(3n+1),
     .js .view-id-businesses_and_events.view-display-id-page_results.gridResults .view-content .views-row:nth-child(3n+1) {
@@ -2079,13 +2078,12 @@ body.node-type-blog-post .mainPageTitle {
     .no-js .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row:nth-child(3n+2),
     .js .view-id-businesses_and_events.view-display-id-page_results.gridResults .view-content .views-row:nth-child(3n+2) {
       float: left;
-      margin-left: 0.5%;
-      margin-right: 0.5%;
+      margin-right: 1%;
       width: 32.33%; }
     .no-js .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row:nth-child(3n+3),
     .js .view-id-businesses_and_events.view-display-id-page_results.gridResults .view-content .views-row:nth-child(3n+3) {
-      float: right;
-      margin-left: 1%;
+      float: left;
+      margin-right: 1%;
       width: 32.33%; } }
   @media (min-width: 431px) and (max-width: 768px) {
     .no-js .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row:nth-child(2n+1),
@@ -2625,9 +2623,9 @@ body.node-type-blog-post .mainPageTitle {
 /*
  *  Form Stylings
  */
-.view-id-businesses_and_events.view-display-id-page_results .SlectBox span.placeholder, .view-id-businesses_and_events.view-display-id-page_results input[type="text"], .view-id-businesses_and_events.view-display-id-page_results .SlectBox span, #block-views-d400f6dac6873ec2ddd895ba96987fce .SlectBox span.placeholder,
-#block-views-d400f6dac6873ec2ddd895ba96987fce input[type="text"],
-#block-views-d400f6dac6873ec2ddd895ba96987fce .SlectBox span,
+.view-id-businesses_and_events.view-display-id-page_results .SlectBox span.placeholder, .view-id-businesses_and_events.view-display-id-page_results input[type="text"], .view-id-businesses_and_events.view-display-id-page_results .SlectBox span, .block--views.v_page_search_results-container .SlectBox span.placeholder,
+.block--views.v_page_search_results-container input[type="text"],
+.block--views.v_page_search_results-container .SlectBox span,
 form#views-exposed-form-businesses-and-events-page-results .SlectBox span.placeholder, form#views-exposed-form-businesses-and-events-page-results input[type="text"], form#views-exposed-form-businesses-and-events-page-results .SlectBox span, form#views-exposed-form-businesses-and-events-map-and-filters .SlectBox span.placeholder, form#views-exposed-form-businesses-and-events-map-and-filters input[type="text"], form#views-exposed-form-businesses-and-events-map-and-filters .SlectBox span {
   font-style: normal;
   padding: 5px;
@@ -2636,17 +2634,17 @@ form#views-exposed-form-businesses-and-events-page-results .SlectBox span.placeh
   font-size: 17px;
   font-size: 1.7rem; }
 
-.view-id-businesses_and_events.view-display-id-page_results .SlectBox span.placeholder, #block-views-d400f6dac6873ec2ddd895ba96987fce .SlectBox span.placeholder,
+.view-id-businesses_and_events.view-display-id-page_results .SlectBox span.placeholder, .block--views.v_page_search_results-container .SlectBox span.placeholder,
 form#views-exposed-form-businesses-and-events-page-results .SlectBox span.placeholder, form#views-exposed-form-businesses-and-events-map-and-filters .SlectBox span.placeholder {
   font-style: normal;
   color: #888; }
 
-.view-id-businesses_and_events.view-display-id-page_results .SlectBox span, #block-views-d400f6dac6873ec2ddd895ba96987fce .SlectBox span,
+.view-id-businesses_and_events.view-display-id-page_results .SlectBox span, .block--views.v_page_search_results-container .SlectBox span,
 form#views-exposed-form-businesses-and-events-page-results .SlectBox span, form#views-exposed-form-businesses-and-events-map-and-filters .SlectBox span {
   font-style: italic;
   color: #000; }
 
-.view-id-businesses_and_events.view-display-id-page_results .fakeButton, #block-views-d400f6dac6873ec2ddd895ba96987fce .fakeButton,
+.view-id-businesses_and_events.view-display-id-page_results .fakeButton, .block--views.v_page_search_results-container .fakeButton,
 form#views-exposed-form-businesses-and-events-page-results .fakeButton, form#views-exposed-form-businesses-and-events-map-and-filters .fakeButton {
   border-radius: 1px;
   margin: 0;

@@ -771,10 +771,10 @@
 			}
 			&:nth-child(4n+2),
 			&:nth-child(4n+3){
-				@include chop4VMiddle(25%);
+				@include chop4VLeft(25%);
 			}
 			&:nth-child(4n+4){
-				@include chop3VRight(25%);
+				@include chop4VLeft(25%);
 			}
 		};
 		@include breakpoint($tablet2XWide){
@@ -783,10 +783,10 @@
 				@include chop3VLeft(33.33%);
 			}
 			&:nth-child(3n+2){
-				@include chop3VMiddle(33.33%);
+				@include chop3VLeft(33.33%);
 			}
 			&:nth-child(3n+3){
-				@include chop3VRight(33.33%);
+				@include chop3VLeft(33.33%);
 			}
 		};
 		//Tablet Columns

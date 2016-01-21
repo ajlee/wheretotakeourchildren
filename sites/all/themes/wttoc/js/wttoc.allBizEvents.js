@@ -115,7 +115,7 @@
 				}, 750);
 				//Helper Functions For Geocoding Client Side
 				geocodeAsync = function(address, f){
-					//returns a string "empty address", "error", or "lat,lon" (where lat lon are coordinates) 
+					//returns a string "empty address", "error", or "lat,lon" (where lat lon are coordinates)
 					//introduce delay to geocoding such that requests aren't sent too often
 					setTimeout(function(){
 						if(!(address.length)){
@@ -150,7 +150,8 @@
 				var sFormSelector = 'form .views-exposed-form .views-exposed-widgets';
 				var exposedSubmitSelector = 'input#edit-submit-businesses-and-events';
 				var fieldSyncB2PArray = ["#edit-title",'#edit-type', '#edit-field-category','#edit-field-category-event','#edit-field-hidden-address-geofield-latlon',
-				'#edit-field-hidden-address-geofield-latlon-1','#edit-field-ages','input[name="field_start_datepicker[date]"]','input[name="field_end_datepicker[date]"]'];
+					'#edit-field-hidden-address-geofield-latlon-1','#edit-field-ages','input[name="field_start_datepicker[date]"]','input[name="field_end_datepicker[date]"]',
+					'#edit-sort-by', '#edit-sort-order'];
 				//On Block Submit Click
 				$(viewsBlockSelector + sp + sFormSelector + sp + exposedSubmitSelector).on("click",function(){
 					//sync values to page
@@ -244,7 +245,7 @@
 /*
  * Behaviors for Business and Events Search Results Exposed Form Block
  * This Exposed Form Block, appears on other pages, not on the search results page
- */	
+ */
 	//GeoCode Before Exposed Form Block Submission
 	Drupal.behaviors.wttocBesrExposedFormBlock= {
 		attach: function (context) {
@@ -311,7 +312,7 @@
 				$(viewsExposedFormSelector + sp + exposedAddressSelector).val($globalPreviousAddress);
 				//Helper Functions For Geocoding Client Side
 				geocodeAsync = function(address, f){
-					//returns a string "empty address", "error", or "lat,lon" (where lat lon are coordinates) 
+					//returns a string "empty address", "error", or "lat,lon" (where lat lon are coordinates)
 					//introduce delay to geocoding such that requests aren't sent too often
 					setTimeout(function(){
 						if(!(address.length)){
@@ -336,7 +337,7 @@
 	};//end of behavior
 	// If Content Type Business Is Selected, Reset All Event Filters' Values and Display Business Filters
 	// If Content Type Events Is Selected, Reset All Business Filters' Values and Display Event Filters
-	// If Both Content Types Are Selected, Display Both Filters 
+	// If Both Content Types Are Selected, Display Both Filters
 	// If No Content Type Is Selected, Reset All Values and Hide Both Filters, {expires: 7, path: '/'}
 	Drupal.behaviors.wttocContentTypeDisplay = {
 		attach: function (context) {
@@ -353,6 +354,8 @@
 					var fieldsEventsWrappersArray = ['#edit-field-category-event-wrapper','#edit-field-start-datepicker-wrapper','#edit-field-end-datepicker-wrapper'];
 					var fieldsEventsSelectsArray = ['select[name="field_category_event[]"]'];//separate these because of SumoSelect - see js/selectui.js
 					var fieldEventsInputsArray = ['input[name="field_start_datepicker[date]"]','input[name="field_end_datepicker[date]"]'];
+					var sortByEventDate ='li[data-val="search_api_aggregation_1"]';
+					var noSortOption ='li[data-val="changed"]';
 					//Helper functions
 					//Hide and unset either the business, or event select/inputs of a form (considering that we're using SumoSelect- see js/selectui.js).
 					function hideResetSearch(typeToHideReset,formSelector){
@@ -391,7 +394,7 @@
 								$(formSelector + sp + this).val("");
 							});
 						}
-					}		
+					}
 					//Show either the business, or event select/inputs of a form (considering that we're using SumoSelect- see js/selectui.js).
 					function showValuesSearch(typeToHideReset, formSelector){
 						if(typeToHideReset === "business"){
@@ -414,7 +417,7 @@
 						}
 					}
 					//The function that should execute, when the business/event value changes
-					function businessOrEventChangeEvent(valueChangedTo, formSelector){			
+					function businessOrEventChangeEvent(valueChangedTo, formSelector, isInitialLoad){
 						var currentVal = valueChangedTo;
 						//We can't join a null, so don't try that
 						if(currentVal!=null){
@@ -423,26 +426,42 @@
 								case optionBusiness:
 									hideResetSearch("event",formSelector);
 									showValuesSearch("business",formSelector);
+									//modify sort options
+									$(formSelector + sp + sortByEventDate).hide();
+									$(formSelector + sp + noSortOption).click();
 									break;
 								//Event Content Type Selected
 								case optionEvent:
 									hideResetSearch("business",formSelector);
 									showValuesSearch("event",formSelector);
+									//modify sort options
+									$(formSelector + sp + sortByEventDate).show();
+									//on any further changes (not on the initial page load)
+									//if the event type  was selected, switch the default sorting to event
+									if(isInitialLoad === false){
+										$(formSelector + sp + sortByEventDate).click();
+									}
 									break;
-								//Both Values Selected	
+								//Both Values Selected
 								default:
 									hideResetSearch("event",formSelector);
 									hideResetSearch("business",formSelector);
+									//modify sort options
+									$(formSelector + sp + sortByEventDate).hide();
+									$(formSelector + sp + noSortOption).click();
 							}
 						}
 						//No Values Selected
 						else{
 							hideResetSearch("event",formSelector);
 							hideResetSearch("business",formSelector);
+							//modify sort options
+							$(formSelector + sp + sortByEventDate).hide();
+							$(formSelector + sp + noSortOption).click();
 						}
 					}
 					//use hierarchy (based on dashes) inside a particular sumoselect
-					function sumoSelectResetHierarchy(wrapperSelector){ 
+					function sumoSelectResetHierarchy(wrapperSelector){
 						var listElements = $(wrapperSelector + ' .SumoSelect ul li');
 						//1) hide all children elements (not top level) initially, unless they're selected
 						$.each(listElements, function(index, value){
@@ -459,7 +478,7 @@
 						});
 						//2 show all children of selected categories
 						$.each(listElements, function(index, value){
-							if($(value).hasClass("selected")){	
+							if($(value).hasClass("selected")){
 								var parentElementDashes = startingDashes($(value).text());
 								var currentElement = $(value);
 								//keep searching until we run into an element in the same level as the clicked element
@@ -471,7 +490,7 @@
 									currentElement = currentElement.next();
 								}
 							}
-						});						
+						});
 
 						//3) select(tick) and show all parent elements, of selected children
 						$.each(listElements, function(index, value){
@@ -480,12 +499,12 @@
 								var childElementDashes = startingDashes($(value).text());
 								//only execute this for child elements, not first level elements, since first level elements don't have parents
 								if(childElementDashes !== 0){
-									//find parents with levels between 0 and childElementDashes -1 
+									//find parents with levels between 0 and childElementDashes -1
 									for(i=childElementDashes-1; i>=0; i--){
 										//if the previous element is a parent, select it (by clicking) and show it
 										var currentElement = $(value);
 										while(startingDashes(currentElement.text()) !== i
-											&& startingDashes(currentElement.text()) !== 0 
+											&& startingDashes(currentElement.text()) !== 0
 										){
 											var tempI = i;
 											if( startingDashes(currentElement.prev().text()) === i){
@@ -546,26 +565,26 @@
 							}
 							index++;
 						}
-						return numberOfDashes;   
-					}	
-					// end of helper functions	
+						return numberOfDashes;
+					}
+					// end of helper functions
 					//On Change Of Business/Event Field
 					if($('body.front').length){
 						var currentVal = $(viewsExposedFormSelector + sp + contentTypeSelect).val();
-						businessOrEventChangeEvent(currentVal, viewsExposedFormSelector);
+						businessOrEventChangeEvent(currentVal, viewsExposedFormSelector, true);
 						$(viewsExposedFormSelector + sp + contentTypeSelect).change(function(){
 							var currentVal = $(this).val();
-							businessOrEventChangeEvent(currentVal, viewsExposedFormSelector);
-						});	
+							businessOrEventChangeEvent(currentVal, viewsExposedFormSelector, false);
+						});
 					}
 					if($('body.page-search-businesses-and-events').length){
 						var currentVal = $(viewsBlockSelector + sp + contentTypeSelect).val();
-						businessOrEventChangeEvent(currentVal, viewsBlockSelector);
+						businessOrEventChangeEvent(currentVal, viewsBlockSelector, true);
 						$(viewsBlockSelector + sp + contentTypeSelect).change(function(){
 							var currentVal = $(this).val();
-							businessOrEventChangeEvent(currentVal, viewsBlockSelector);
-						});	
-					}				
+							businessOrEventChangeEvent(currentVal, viewsBlockSelector, false);
+						});
+					}
 				}//end of check for homepage or search page
 		}//end of attach
 	};//end of behavior
