@@ -10,13 +10,55 @@
 function wttoc_text_formats_filter_default_formats() {
   $formats = array();
 
+  // Exported format: Editor HTML.
+  $formats['editor_html'] = array(
+    'format' => 'editor_html',
+    'name' => 'Editor HTML',
+    'cache' => 1,
+    'status' => 1,
+    'weight' => -9,
+    'filters' => array(
+      'filter_html' => array(
+        'weight' => -10,
+        'status' => 1,
+        'settings' => array(
+          'allowed_html' => '<a> <em> <strong> <cite> <blockquote> <code> <ul> <ol> <li> <dl> <dt> <dd><h4><h5><h3><h1><h2><img> <p><input>',
+          'filter_html_help' => 1,
+          'filter_html_nofollow' => 1,
+        ),
+      ),
+      'filter_autop' => array(
+        'weight' => 0,
+        'status' => 1,
+        'settings' => array(),
+      ),
+      'filter_url' => array(
+        'weight' => 0,
+        'status' => 1,
+        'settings' => array(
+          'filter_url_length' => 72,
+        ),
+      ),
+      'media_filter' => array(
+        'weight' => 2,
+        'status' => 1,
+        'settings' => array(),
+      ),
+      'filter_htmlcorrector' => array(
+        'weight' => 10,
+        'status' => 1,
+        'settings' => array(),
+      ),
+    ),
+  );
+
   // Exported format: Filtered HTML.
   $formats['filtered_html'] = array(
     'format' => 'filtered_html',
     'name' => 'Filtered HTML',
     'cache' => 1,
     'status' => 1,
-    'weight' => 0,
+    'weight' => -10,
     'filters' => array(
       'filter_url' => array(
         'weight' => 0,
@@ -53,7 +95,7 @@ function wttoc_text_formats_filter_default_formats() {
     'name' => 'Full HTML',
     'cache' => 1,
     'status' => 1,
-    'weight' => 1,
+    'weight' => -8,
     'filters' => array(
       'filter_htmlcorrector' => array(
         'weight' => 10,
@@ -69,7 +111,7 @@ function wttoc_text_formats_filter_default_formats() {
     'name' => 'Plain text',
     'cache' => 1,
     'status' => 1,
-    'weight' => 10,
+    'weight' => -7,
     'filters' => array(
       'filter_html_escape' => array(
         'weight' => 0,

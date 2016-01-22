@@ -1,0 +1,15 @@
+name = WTTOC Metatags
+core = 7.x
+package = Features
+dependencies[] = metatag
+dependencies[] = wttoc_context
+dependencies[] = wttoc_views
+features[features_api][] = api:2
+features[metatag][] = global
+features[metatag][] = global:403
+features[metatag][] = global:404
+features[metatag][] = global:frontpage
+features[metatag][] = node
+features[metatag][] = taxonomy_term
+features[metatag][] = user
+features[metatag][] = view

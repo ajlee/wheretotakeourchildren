@@ -1,0 +1,16 @@
+name = WTTOC Menus
+core = 7.x
+package = Features
+dependencies[] = custom_editor_dashboard
+dependencies[] = features
+dependencies[] = menu
+dependencies[] = wttoc_content_types
+features[features_api][] = api:2
+features[menu_custom][] = main-menu
+features[menu_custom][] = menu-footer-links
+features[menu_custom][] = menu-top-menu
+features[menu_links][] = main-menu_blog:posts
+features[menu_links][] = main-menu_events:search/businesses-and-events
+features[menu_links][] = main-menu_family-guide:search/businesses-and-events
+features[menu_links][] = main-menu_home:<front>
+features[menu_links][] = main-menu_what-to-do:search/businesses-and-events

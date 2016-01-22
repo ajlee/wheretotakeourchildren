@@ -10,6 +10,39 @@
 function wttoc_commerce_content_types_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'comment-comment_node_subscription-comment_body'
+  $field_instances['comment-comment_node_subscription-comment_body'] = array(
+    'bundle' => 'comment_node_subscription',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'comment',
+    'field_name' => 'comment_body',
+    'label' => 'Comment',
+    'required' => TRUE,
+    'settings' => array(
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 0,
+    ),
+  );
+
   // Exported field_instance:
   // 'commerce_cardonfile-commerce_cardonfile-commerce_cardonfile_profile'
   $field_instances['commerce_cardonfile-commerce_cardonfile-commerce_cardonfile_profile'] = array(
@@ -1985,6 +2018,7 @@ function wttoc_commerce_content_types_field_default_field_instances() {
   t('Address');
   t('Billing Profile');
   t('Billing information');
+  t('Comment');
   t('Compatibility with other discounts');
   t('Conditions');
   t('Coupons');

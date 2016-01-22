@@ -2831,13 +2831,6 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['created']['date_format'] = 'today time ago';
   $handler->display->display_options['fields']['created']['second_date_format'] = 'wttoc_short';
   $handler->display->display_options['fields']['created']['link_to_entity'] = 0;
-  /* Field: Broken/missing handler */
-  $handler->display->display_options['fields']['field_post_type_tid']['id'] = 'field_post_type_tid';
-  $handler->display->display_options['fields']['field_post_type_tid']['table'] = 'search_api_index_posts_blogs_and_news';
-  $handler->display->display_options['fields']['field_post_type_tid']['field'] = 'field_post_type_tid';
-  $handler->display->display_options['fields']['field_post_type_tid']['label'] = '';
-  $handler->display->display_options['fields']['field_post_type_tid']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['field_post_type_tid']['element_label_colon'] = FALSE;
   /* Sort criterion: Indexed Content: Date created */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'search_api_index_posts_blogs_and_news';
@@ -2861,7 +2854,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['footer']['area_text_custom']['id'] = 'area_text_custom';
   $handler->display->display_options['footer']['area_text_custom']['table'] = 'views';
   $handler->display->display_options['footer']['area_text_custom']['field'] = 'area_text_custom';
-  $handler->display->display_options['footer']['area_text_custom']['content'] = '<div class="blognews_seeall"><a href="/blog">See all</a></div>';
+  $handler->display->display_options['footer']['area_text_custom']['content'] = '<div class="blognews_seeall"><a href="/posts?f[0]=field_post_categories%3A205">See all</a></div>';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Indexed Content: Date created */
@@ -2870,12 +2863,12 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['filters']['created']['field'] = 'created';
   $handler->display->display_options['filters']['created']['operator'] = '<=';
   $handler->display->display_options['filters']['created']['value'] = 'now';
-  /* Filter criterion: Broken/missing handler */
-  $handler->display->display_options['filters']['field_post_type']['id'] = 'field_post_type';
-  $handler->display->display_options['filters']['field_post_type']['table'] = 'search_api_index_posts_blogs_and_news';
-  $handler->display->display_options['filters']['field_post_type']['field'] = 'field_post_type';
-  $handler->display->display_options['filters']['field_post_type']['value'] = array(
-    193 => '193',
+  /* Filter criterion: Indexed Content: Post Categories */
+  $handler->display->display_options['filters']['field_post_categories']['id'] = 'field_post_categories';
+  $handler->display->display_options['filters']['field_post_categories']['table'] = 'search_api_index_posts_blogs_and_news';
+  $handler->display->display_options['filters']['field_post_categories']['field'] = 'field_post_categories';
+  $handler->display->display_options['filters']['field_post_categories']['value'] = array(
+    205 => '205',
   );
 
   /* Display: News */
@@ -2890,7 +2883,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['footer']['area_text_custom']['table'] = 'views';
   $handler->display->display_options['footer']['area_text_custom']['field'] = 'area_text_custom';
   $handler->display->display_options['footer']['area_text_custom']['label'] = 'See all';
-  $handler->display->display_options['footer']['area_text_custom']['content'] = '<div class="blognews_seeall"><a href="/news">See all</a></div>';
+  $handler->display->display_options['footer']['area_text_custom']['content'] = '<div class="blognews_seeall"><a href="/posts?f[0]=field_post_categories%3A206">See all</a></div>';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Indexed Content: Date created */
@@ -2899,12 +2892,12 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['filters']['created']['field'] = 'created';
   $handler->display->display_options['filters']['created']['operator'] = '<=';
   $handler->display->display_options['filters']['created']['value'] = 'now';
-  /* Filter criterion: Broken/missing handler */
-  $handler->display->display_options['filters']['field_post_type']['id'] = 'field_post_type';
-  $handler->display->display_options['filters']['field_post_type']['table'] = 'search_api_index_posts_blogs_and_news';
-  $handler->display->display_options['filters']['field_post_type']['field'] = 'field_post_type';
-  $handler->display->display_options['filters']['field_post_type']['value'] = array(
-    194 => '194',
+  /* Filter criterion: Indexed Content: Post Categories */
+  $handler->display->display_options['filters']['field_post_categories']['id'] = 'field_post_categories';
+  $handler->display->display_options['filters']['field_post_categories']['table'] = 'search_api_index_posts_blogs_and_news';
+  $handler->display->display_options['filters']['field_post_categories']['field'] = 'field_post_categories';
+  $handler->display->display_options['filters']['field_post_categories']['value'] = array(
+    206 => '206',
   );
   $export['small_blocks_blogs_news'] = $view;
 

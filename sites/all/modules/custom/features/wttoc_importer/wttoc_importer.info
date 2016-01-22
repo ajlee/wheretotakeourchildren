@@ -17,6 +17,7 @@ features[feeds_tamper][] = events-ages-explode
 features[feeds_tamper][] = events-category-explode
 features[feeds_tamper][] = events-event_end_date-strtotime
 features[feeds_tamper][] = events-event_start_date-strtotime
+features[feeds_tamper][] = facebook_events_importer-fb_id-rewrite
 features[feeds_tamper][] = facebook_events_importer-fb_id_2tamper-rewrite
 features[feeds_tamper][] = facebook_events_importer-fb_id_2tamper_b-rewrite
 features[feeds_tamper][] = facebook_events_importer-fb_place_location_country-default_value
