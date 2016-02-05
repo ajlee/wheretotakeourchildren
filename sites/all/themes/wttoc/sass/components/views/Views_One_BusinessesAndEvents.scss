@@ -19,6 +19,7 @@
 						height:400px;
 					}
 					height:auto;
+					max-width:none;
 					display:block;
 					@include centerXRelativeNoIE8;
 				}
