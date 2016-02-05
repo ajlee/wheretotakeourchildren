@@ -337,7 +337,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['field_phone_number']['settings'] = array(
     'title' => '',
   );
-  /* Field: Content: Website Address */
+  /* Field: Content: Event Website */
   $handler->display->display_options['fields']['field_website']['id'] = 'field_website';
   $handler->display->display_options['fields']['field_website']['table'] = 'field_data_field_website';
   $handler->display->display_options['fields']['field_website']['field'] = 'field_website';
@@ -566,11 +566,35 @@ function wttoc_views_views_default_views() {
     ),
   );
   /* Field: Indexed Content: Date of Event */
+  $handler->display->display_options['fields']['field_date_of_event_1']['id'] = 'field_date_of_event_1';
+  $handler->display->display_options['fields']['field_date_of_event_1']['table'] = 'search_api_index_index_businesses_and_events';
+  $handler->display->display_options['fields']['field_date_of_event_1']['field'] = 'field_date_of_event';
+  $handler->display->display_options['fields']['field_date_of_event_1']['label'] = '';
+  $handler->display->display_options['fields']['field_date_of_event_1']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_date_of_event_1']['alter']['text'] = 'This event has multiple dates';
+  $handler->display->display_options['fields']['field_date_of_event_1']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_date_of_event_1']['settings'] = array(
+    'format_type' => 'wttoc_short',
+    'fromto' => 'both',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+    'show_remaining_days' => 0,
+    'show_repeat_rule' => 'show',
+  );
+  $handler->display->display_options['fields']['field_date_of_event_1']['delta_limit'] = '1';
+  $handler->display->display_options['fields']['field_date_of_event_1']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_date_of_event_1']['delta_reversed'] = TRUE;
+  $handler->display->display_options['fields']['field_date_of_event_1']['separator'] = '';
+  /* Field: Indexed Content: Date of Event */
   $handler->display->display_options['fields']['field_date_of_event']['id'] = 'field_date_of_event';
   $handler->display->display_options['fields']['field_date_of_event']['table'] = 'search_api_index_index_businesses_and_events';
   $handler->display->display_options['fields']['field_date_of_event']['field'] = 'field_date_of_event';
   $handler->display->display_options['fields']['field_date_of_event']['label'] = '';
+  $handler->display->display_options['fields']['field_date_of_event']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_date_of_event']['alter']['text'] = 'Multiple Dates';
   $handler->display->display_options['fields']['field_date_of_event']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_date_of_event']['empty'] = '[field_date_of_event_1]';
   $handler->display->display_options['fields']['field_date_of_event']['settings'] = array(
     'format_type' => 'wttoc_short',
     'fromto' => 'both',
@@ -581,7 +605,7 @@ function wttoc_views_views_default_views() {
     'show_repeat_rule' => 'show',
   );
   $handler->display->display_options['fields']['field_date_of_event']['delta_limit'] = '1';
-  $handler->display->display_options['fields']['field_date_of_event']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['field_date_of_event']['delta_offset'] = '1';
   $handler->display->display_options['fields']['field_date_of_event']['delta_reversed'] = TRUE;
   /* Field: Indexed Content: General Information */
   $handler->display->display_options['fields']['field_general_information']['id'] = 'field_general_information';
@@ -719,7 +743,6 @@ function wttoc_views_views_default_views() {
     1 => 0,
     8 => 0,
     7 => 0,
-    4 => 0,
     5 => 0,
     6 => 0,
     3 => 0,
@@ -737,7 +760,6 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['filters']['field_category_event']['id'] = 'field_category_event';
   $handler->display->display_options['filters']['field_category_event']['table'] = 'search_api_index_index_businesses_and_events';
   $handler->display->display_options['filters']['field_category_event']['field'] = 'field_category_event';
-  $handler->display->display_options['filters']['field_category_event']['operator'] = 'all of';
   $handler->display->display_options['filters']['field_category_event']['value'] = array();
   $handler->display->display_options['filters']['field_category_event']['group'] = 1;
   $handler->display->display_options['filters']['field_category_event']['exposed'] = TRUE;
@@ -751,7 +773,6 @@ function wttoc_views_views_default_views() {
     1 => 0,
     8 => 0,
     7 => 0,
-    4 => 0,
     5 => 0,
     6 => 0,
     3 => 0,
@@ -1070,11 +1091,13 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['field_hidden_address_geofield']['table'] = 'search_api_index_index_businesses_and_events';
   $handler->display->display_options['fields']['field_hidden_address_geofield']['field'] = 'field_hidden_address_geofield';
   $handler->display->display_options['fields']['field_hidden_address_geofield']['label'] = '';
-  $handler->display->display_options['fields']['field_hidden_address_geofield']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_hidden_address_geofield']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_hidden_address_geofield']['click_sort_column'] = 'geom';
+  $handler->display->display_options['fields']['field_hidden_address_geofield']['type'] = 'geofield_latlon';
   $handler->display->display_options['fields']['field_hidden_address_geofield']['settings'] = array(
     'data' => 'centroid',
+    'format' => 'decimal_degrees',
+    'labels' => 1,
   );
   /* Field: Indexed Content: Image Gallery */
   $handler->display->display_options['fields']['field_image_gallery']['id'] = 'field_image_gallery';
@@ -1933,7 +1956,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['field_phone_number']['settings'] = array(
     'title' => '',
   );
-  /* Field: Content: Website Address */
+  /* Field: Content: Event Website */
   $handler->display->display_options['fields']['field_website']['id'] = 'field_website';
   $handler->display->display_options['fields']['field_website']['table'] = 'field_data_field_website';
   $handler->display->display_options['fields']['field_website']['field'] = 'field_website';
@@ -3840,7 +3863,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['changed']['field'] = 'changed';
   $handler->display->display_options['fields']['changed']['label'] = 'Updated';
   $handler->display->display_options['fields']['changed']['date_format'] = 'short';
-  /* Field: Content: Featured Family Guide */
+  /* Field: Content: Featured Event */
   $handler->display->display_options['fields']['field_featured_content']['id'] = 'field_featured_content';
   $handler->display->display_options['fields']['field_featured_content']['table'] = 'field_data_field_featured_content';
   $handler->display->display_options['fields']['field_featured_content']['field'] = 'field_featured_content';
@@ -4814,7 +4837,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['changed']['field'] = 'changed';
   $handler->display->display_options['fields']['changed']['label'] = 'Updated';
   $handler->display->display_options['fields']['changed']['date_format'] = 'short';
-  /* Field: Content: Featured Family Guide */
+  /* Field: Content: Featured Event */
   $handler->display->display_options['fields']['field_featured_content']['id'] = 'field_featured_content';
   $handler->display->display_options['fields']['field_featured_content']['table'] = 'field_data_field_featured_content';
   $handler->display->display_options['fields']['field_featured_content']['field'] = 'field_featured_content';

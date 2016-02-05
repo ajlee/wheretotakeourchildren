@@ -36,7 +36,7 @@ function wttoc_field_base_taxonomy_default_vocabularies() {
       'name' => 'Family Guide: Categories and Features',
       'machine_name' => 'business_type',
       'description' => 'Describes a business, services, or attraction category. Contains subcategories as well.',
-      'hierarchy' => 0,
+      'hierarchy' => 1,
       'module' => 'taxonomy',
       'weight' => 0,
       'rdf_mapping' => array(
@@ -82,7 +82,7 @@ function wttoc_field_base_taxonomy_default_vocabularies() {
       'name' => 'Post Categories',
       'machine_name' => 'post_categories',
       'description' => 'Post Categories',
-      'hierarchy' => 0,
+      'hierarchy' => 1,
       'module' => 'taxonomy',
       'weight' => 0,
       'rdf_mapping' => array(
