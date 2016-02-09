@@ -146,7 +146,8 @@
 				var sFormSelector = 'form .views-exposed-form .views-exposed-widgets';
 				var exposedSubmitSelector = 'input#edit-submit-businesses-and-events';
 				var fieldSyncB2PArray = ['#edit-type', '#edit-field-category','#edit-field-category-event','#edit-field-hidden-address-geofield-latlon',
-				'#edit-field-hidden-address-geofield-latlon-1','#edit-field-ages','input[name="field_start_datepicker[date]"]','input[name="field_end_datepicker[date]"]'];
+				'#edit-field-hidden-address-geofield-latlon-1','#edit-field-ages','input[name="field_start_datepicker[date]"]','input[name="field_end_datepicker[date]"]',
+				'input[name="title"]', '#edit-sort-by'];
 				//On Block Submit Click
 				$(viewsBlockSelector + sp + sFormSelector + sp + exposedSubmitSelector).on("click",function(){
 					//sync values to page
@@ -503,7 +504,7 @@
 							//5) when an item is unselected
 							// hide all its children elements and unselect those children (by clicking, if they're selected)
 							else{
-								/*var parentElementDashes = startingDashes($(this).text());
+								var parentElementDashes = startingDashes($(this).text());
 								var currentElement = $(this);
 								while( parentElementDashes < startingDashes(currentElement.next().text()) ){
 									currentElement.next().hide();
@@ -511,7 +512,7 @@
 										currentElement.next().click();
 									}
 									currentElement = currentElement.next();
-								}*/
+								}
 							}
 						});
 					}

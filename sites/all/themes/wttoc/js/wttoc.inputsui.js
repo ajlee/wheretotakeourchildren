@@ -23,13 +23,13 @@
 				    csvDispCount: 2,
 				    captionFormat: '{0} Selected',
 				    floatWidth: 400,
-				    forceCustomRendering: false,
+				    forceCustomRendering: true,
 				    //nativeOnDevice: ['Android', 'BlackBerry', 'iPhone', 'iPad', 'iPod', 'Opera Mini', 'IEMobile', 'Silk'],
 				    nativeOnDevice: ['Android', 'BlackBerry', 'iPhone', 'iPod', 'Opera Mini', 'IEMobile'],
 				    outputAsCSV : false,
 				    csvSepChar : ',',
-				    okCancelInMulti: false,
-				    triggerChangeCombined : true,
+				    okCancelInMulti: true,
+				    triggerChangeCombined : false,
 				    selectAll: false,
 				    selectAlltext: 'Select All'
 				});
@@ -72,6 +72,6 @@
     }
   };//end of behavior
 
-
+console.log("test");
 })(jQuery, Drupal);
 
