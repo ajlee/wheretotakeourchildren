@@ -76,15 +76,15 @@ function wttoc_search_api_facetapi_default_facet_settings() {
   $facet->enabled = FALSE;
   $facet->settings = array(
     'operator' => 'and',
-    'hard_limit' => '50',
+    'hard_limit' => '-1',
     'dependencies' => array(
       'bundle' => 'none',
       'bundle_selected' => array(),
       'roles' => array(),
     ),
     'facet_mincount' => '1',
-    'facet_missing' => '1',
-    'flatten' => '0',
+    'facet_missing' => '0',
+    'flatten' => '1',
     'individual_parent' => '0',
     'query_type' => 'term',
     'limit_active_items' => 0,
@@ -529,7 +529,7 @@ function wttoc_search_api_facetapi_default_facet_settings() {
     'empty_behavior' => 'none',
     'facet_more_text' => 'Show more',
     'facet_fewer_text' => 'Show fewer',
-    'soft_limit' => '20',
+    'soft_limit' => '0',
     'nofollow' => 1,
     'show_expanded' => 0,
     'checkboxes_update_results' => 1,
