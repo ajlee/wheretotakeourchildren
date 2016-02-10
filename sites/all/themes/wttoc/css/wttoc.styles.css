@@ -1296,6 +1296,12 @@ ul {
 fieldset {
   clear: both; }
 
+/**
+ * OPT WRAP
+ */
+.optWrapper ul.options {
+  min-height: 150px; }
+
 /*
  * Back To Top Z Index
  */
