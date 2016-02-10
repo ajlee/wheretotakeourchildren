@@ -72,6 +72,5 @@
     }
   };//end of behavior
 
-console.log("test");
 })(jQuery, Drupal);
 
