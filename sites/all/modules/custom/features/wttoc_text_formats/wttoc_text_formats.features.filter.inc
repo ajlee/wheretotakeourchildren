@@ -18,34 +18,25 @@ function wttoc_text_formats_filter_default_formats() {
     'status' => 1,
     'weight' => -9,
     'filters' => array(
-      'filter_html' => array(
-        'weight' => -10,
+      'media_filter' => array(
+        'weight' => -50,
         'status' => 1,
-        'settings' => array(
-          'allowed_html' => '<a> <em> <strong> <cite> <blockquote> <code> <ul> <ol> <li> <dl> <dt> <dd><h4><h5><h3><h1><h2><img> <p><input>',
-          'filter_html_help' => 1,
-          'filter_html_nofollow' => 1,
-        ),
+        'settings' => array(),
       ),
       'filter_autop' => array(
-        'weight' => 0,
+        'weight' => -47,
         'status' => 1,
         'settings' => array(),
       ),
       'filter_url' => array(
-        'weight' => 0,
+        'weight' => -46,
         'status' => 1,
         'settings' => array(
           'filter_url_length' => 72,
         ),
       ),
-      'media_filter' => array(
-        'weight' => 2,
-        'status' => 1,
-        'settings' => array(),
-      ),
       'filter_htmlcorrector' => array(
-        'weight' => 10,
+        'weight' => -44,
         'status' => 1,
         'settings' => array(),
       ),

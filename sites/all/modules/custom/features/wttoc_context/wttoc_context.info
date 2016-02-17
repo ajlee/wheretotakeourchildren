@@ -12,6 +12,7 @@ dependencies[] = menu
 dependencies[] = sharethis
 dependencies[] = views
 dependencies[] = wttoc_content_types
+features[context][] = checkout_pages
 features[context][] = content_type_business
 features[context][] = content_type_business_and_events
 features[context][] = content_type_event

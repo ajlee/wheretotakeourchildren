@@ -475,7 +475,7 @@ function wttoc_field_base_field_default_field_bases() {
     'module' => 'office_hours',
     'settings' => array(
       'cardinality' => 1,
-      'granularity' => 15,
+      'granularity' => 1,
       'hoursformat' => 0,
       'limitend' => '',
       'limitstart' => '',

@@ -82,7 +82,7 @@ function wttoc_field_base_taxonomy_default_vocabularies() {
       'name' => 'Post Categories',
       'machine_name' => 'post_categories',
       'description' => 'Post Categories',
-      'hierarchy' => 1,
+      'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => 0,
       'rdf_mapping' => array(

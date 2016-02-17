@@ -69,6 +69,14 @@ function wttoc_recaptcha_settings_captcha_default_points() {
   $captcha = new stdClass();
   $captcha->disabled = FALSE; /* Edit this to true to make a default captcha disabled initially */
   $captcha->api_version = 1;
+  $captcha->form_id = 'user_email_verification_request';
+  $captcha->module = '';
+  $captcha->captcha_type = 'default';
+  $export['user_email_verification_request'] = $captcha;
+
+  $captcha = new stdClass();
+  $captcha->disabled = FALSE; /* Edit this to true to make a default captcha disabled initially */
+  $captcha->api_version = 1;
   $captcha->form_id = 'user_login';
   $captcha->module = '';
   $captcha->captcha_type = 'default';

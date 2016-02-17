@@ -13,6 +13,43 @@ function wttoc_context_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
+  $context->name = 'checkout_pages';
+  $context->description = '';
+  $context->tag = 'pages';
+  $context->conditions = array(
+    'path' => array(
+      'values' => array(
+        'subscriptions/premium-subscription' => 'subscriptions/premium-subscription',
+        'cart' => 'cart',
+        'checkout' => 'checkout',
+        'checkout/*' => 'checkout/*',
+        'checkout/*/*' => 'checkout/*/*',
+        'page/advertising-and-pricing' => 'page/advertising-and-pricing',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'block-7' => array(
+          'module' => 'block',
+          'delta' => '7',
+          'region' => 'widebottom',
+          'weight' => '-35',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('pages');
+  $export['checkout_pages'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
   $context->name = 'content_type_business';
   $context->description = '';
   $context->tag = 'content_type';
