@@ -276,6 +276,36 @@ body.page-checkout-review{
       max-width:15px;
     }
   }
+  .commerce_payment.form-wrapper {
+    background-color: $LIGHTGRAY;
+    .fieldset-wrapper {
+      padding: 15px 25px;
+      text-align: center;
+      .form-item {
+        display: inline-block;
+        min-width: 100%;
+      }
+      .commerce-credit-card-start .form-item,
+      .commerce-credit-card-expiration .form-item{
+        min-width:initial;
+      }
+      .SlectBox {
+        margin-top:20px;
+        @include remFontSize($fontM);
+        @include remLineHeight(2*$fontM);
+      }
+      input[type="text"] {
+        @include remFontSize($fontM);
+        @include remLineHeight(2*$fontM);
+        width: 52%;
+        @include breakpoint(0 $breakpointTablet) {
+          width: 90%;
+        }
+        padding: 0 1%;
+        display: inline-block;
+      }
+    }
+  }
 }
 
 body.page-checkout{
@@ -285,5 +315,12 @@ body.page-checkout{
     margin: 10px 0;
     border: 5px solid $GRAY;
     padding: 10px 0;
+  }
+  fieldset.terms_conditions.form-wrapper{
+    .form-item{
+      margin-bottom:0;
+      padding: 20px 0;
+      text-align:center;
+    }
   }
 }

@@ -132,6 +132,7 @@
 				}
 			}
 			.views-field-field-date-of-event{
+				@include colorDescendantsFont($LIGHTERDARKGRAY);
 				div, span{
 					font-weight:bold;
 				}
@@ -398,6 +399,7 @@
 			}
 			.views-field-field-date-of-event{
 				clear:both;
+				@include colorDescendantsFont($LIGHTERDARKGRAY);
 				div, span{
 					display:inline;
 					font-weight:bold;

@@ -2236,10 +2236,29 @@ body.node-type-blog-post .mainPageTitle {
   .no-js .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row .views-field-field-address .state,
   .js .view-id-businesses_and_events.view-display-id-page_results.gridResults .view-content .views-row .views-field-field-address .state {
     display: none; }
-  .no-js .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row .views-field-field-date-of-event div,
-  .no-js .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row .views-field-field-date-of-event span,
-  .js .view-id-businesses_and_events.view-display-id-page_results.gridResults .view-content .views-row .views-field-field-date-of-event div, .js .view-id-businesses_and_events.view-display-id-page_results.gridResults .view-content .views-row .views-field-field-date-of-event span {
-    font-weight: bold; }
+  .no-js .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row .views-field-field-date-of-event,
+  .js .view-id-businesses_and_events.view-display-id-page_results.gridResults .view-content .views-row .views-field-field-date-of-event {
+    color: #565656; }
+    .no-js .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row .views-field-field-date-of-event span,
+    .no-js .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row .views-field-field-date-of-event p,
+    .no-js .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row .views-field-field-date-of-event h1,
+    .no-js .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row .views-field-field-date-of-event h2,
+    .no-js .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row .views-field-field-date-of-event h3,
+    .no-js .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row .views-field-field-date-of-event h4,
+    .no-js .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row .views-field-field-date-of-event h5,
+    .no-js .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row .views-field-field-date-of-event h6,
+    .no-js .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row .views-field-field-date-of-event a,
+    .no-js .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row .views-field-field-date-of-event div,
+    .no-js .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row .views-field-field-date-of-event li,
+    .js .view-id-businesses_and_events.view-display-id-page_results.gridResults .view-content .views-row .views-field-field-date-of-event span, .js .view-id-businesses_and_events.view-display-id-page_results.gridResults .view-content .views-row .views-field-field-date-of-event p, .js .view-id-businesses_and_events.view-display-id-page_results.gridResults .view-content .views-row .views-field-field-date-of-event h1, .js .view-id-businesses_and_events.view-display-id-page_results.gridResults .view-content .views-row .views-field-field-date-of-event h2, .js .view-id-businesses_and_events.view-display-id-page_results.gridResults .view-content .views-row .views-field-field-date-of-event h3, .js .view-id-businesses_and_events.view-display-id-page_results.gridResults .view-content .views-row .views-field-field-date-of-event h4, .js .view-id-businesses_and_events.view-display-id-page_results.gridResults .view-content .views-row .views-field-field-date-of-event h5, .js .view-id-businesses_and_events.view-display-id-page_results.gridResults .view-content .views-row .views-field-field-date-of-event h6, .js .view-id-businesses_and_events.view-display-id-page_results.gridResults .view-content .views-row .views-field-field-date-of-event a, .js .view-id-businesses_and_events.view-display-id-page_results.gridResults .view-content .views-row .views-field-field-date-of-event div, .js .view-id-businesses_and_events.view-display-id-page_results.gridResults .view-content .views-row .views-field-field-date-of-event li {
+      color: #565656; }
+    .no-js .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row .views-field-field-date-of-event a:hover,
+    .js .view-id-businesses_and_events.view-display-id-page_results.gridResults .view-content .views-row .views-field-field-date-of-event a:hover {
+      color: #565656; }
+    .no-js .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row .views-field-field-date-of-event div,
+    .no-js .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row .views-field-field-date-of-event span,
+    .js .view-id-businesses_and_events.view-display-id-page_results.gridResults .view-content .views-row .views-field-field-date-of-event div, .js .view-id-businesses_and_events.view-display-id-page_results.gridResults .view-content .views-row .views-field-field-date-of-event span {
+      font-weight: bold; }
   .no-js .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row .views-field-nothing,
   .js .view-id-businesses_and_events.view-display-id-page_results.gridResults .view-content .views-row .views-field-nothing {
     display: none; }
@@ -2503,7 +2522,12 @@ body.node-type-blog-post .mainPageTitle {
     .js .view-id-businesses_and_events.view-display-id-page_results.listingResults .view-content .views-row .views-field-field-address .addressfield-container .state {
       display: none; }
   .js .view-id-businesses_and_events.view-display-id-page_results.listingResults .view-content .views-row .views-field-field-date-of-event {
-    clear: both; }
+    clear: both;
+    color: #565656; }
+    .js .view-id-businesses_and_events.view-display-id-page_results.listingResults .view-content .views-row .views-field-field-date-of-event span, .js .view-id-businesses_and_events.view-display-id-page_results.listingResults .view-content .views-row .views-field-field-date-of-event p, .js .view-id-businesses_and_events.view-display-id-page_results.listingResults .view-content .views-row .views-field-field-date-of-event h1, .js .view-id-businesses_and_events.view-display-id-page_results.listingResults .view-content .views-row .views-field-field-date-of-event h2, .js .view-id-businesses_and_events.view-display-id-page_results.listingResults .view-content .views-row .views-field-field-date-of-event h3, .js .view-id-businesses_and_events.view-display-id-page_results.listingResults .view-content .views-row .views-field-field-date-of-event h4, .js .view-id-businesses_and_events.view-display-id-page_results.listingResults .view-content .views-row .views-field-field-date-of-event h5, .js .view-id-businesses_and_events.view-display-id-page_results.listingResults .view-content .views-row .views-field-field-date-of-event h6, .js .view-id-businesses_and_events.view-display-id-page_results.listingResults .view-content .views-row .views-field-field-date-of-event a, .js .view-id-businesses_and_events.view-display-id-page_results.listingResults .view-content .views-row .views-field-field-date-of-event div, .js .view-id-businesses_and_events.view-display-id-page_results.listingResults .view-content .views-row .views-field-field-date-of-event li {
+      color: #565656; }
+    .js .view-id-businesses_and_events.view-display-id-page_results.listingResults .view-content .views-row .views-field-field-date-of-event a:hover {
+      color: #565656; }
     .js .view-id-businesses_and_events.view-display-id-page_results.listingResults .view-content .views-row .views-field-field-date-of-event div, .js .view-id-businesses_and_events.view-display-id-page_results.listingResults .view-content .views-row .views-field-field-date-of-event span {
       display: inline;
       font-weight: bold; }
@@ -5257,6 +5281,35 @@ body.page-checkout-review .commerce_payment.form-wrapper {
   body.page-checkout-review .commerce_payment.form-wrapper input[type="radio"], body.page-checkout-review .commerce_payment.form-wrapper input[type="checkbox"] {
     max-width: 15px; }
 
+body.page-checkout-review .commerce_payment.form-wrapper {
+  background-color: #e8eaea; }
+  body.page-checkout-review .commerce_payment.form-wrapper .fieldset-wrapper {
+    padding: 15px 25px;
+    text-align: center; }
+    body.page-checkout-review .commerce_payment.form-wrapper .fieldset-wrapper .form-item {
+      display: inline-block;
+      min-width: 100%; }
+    body.page-checkout-review .commerce_payment.form-wrapper .fieldset-wrapper .commerce-credit-card-start .form-item,
+    body.page-checkout-review .commerce_payment.form-wrapper .fieldset-wrapper .commerce-credit-card-expiration .form-item {
+      min-width: initial; }
+    body.page-checkout-review .commerce_payment.form-wrapper .fieldset-wrapper .SlectBox {
+      margin-top: 20px;
+      font-size: 19px;
+      font-size: 1.9rem;
+      line-height: 38px;
+      line-height: 3.8rem; }
+    body.page-checkout-review .commerce_payment.form-wrapper .fieldset-wrapper input[type="text"] {
+      font-size: 19px;
+      font-size: 1.9rem;
+      line-height: 38px;
+      line-height: 3.8rem;
+      width: 52%;
+      padding: 0 1%;
+      display: inline-block; }
+      @media (min-width: 0) and (max-width: 768px) {
+        body.page-checkout-review .commerce_payment.form-wrapper .fieldset-wrapper input[type="text"] {
+          width: 90%; } }
+
 body.page-checkout input[name="account[login][mail]"] {
   font-size: 24px;
   font-size: 2.4rem;
@@ -5264,6 +5317,11 @@ body.page-checkout input[name="account[login][mail]"] {
   margin: 10px 0;
   border: 5px solid #888;
   padding: 10px 0; }
+
+body.page-checkout fieldset.terms_conditions.form-wrapper .form-item {
+  margin-bottom: 0;
+  padding: 20px 0;
+  text-align: center; }
 
 /*
  * Dashboard Styling
@@ -5518,5 +5576,8 @@ body.node-type-subscription .node__content input[type="submit"] {
   background-color: #66CD4C;
   border: 1px solid #66CD4C;
   max-width: 230px; }
+
+.site_seals_wrap {
+  text-align: center; }
 
 /*# sourceMappingURL=wttoc.styles.css.map */
