@@ -131,6 +131,11 @@
 					display:none;
 				}
 			}
+			.views-field-field-date-of-event{
+				div, span{
+					font-weight:bold;
+				}
+			}
 			.views-field-nothing{
 				display:none;
 			}
@@ -392,8 +397,10 @@
 				}
 			}
 			.views-field-field-date-of-event{
+				clear:both;
 				div, span{
 					display:inline;
+					font-weight:bold;
 				}
 			}
 			.views-field-field-general-information{

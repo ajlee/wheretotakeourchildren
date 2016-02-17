@@ -343,7 +343,7 @@
  *
  */
 /*
- * One Column 
+ * One Column
  */
 /*
  * Split Columns
@@ -369,7 +369,7 @@
 /*
  * Chop left - No Padding
  */
-/* 
+/*
  * Headers Font Style
  */
 /*
@@ -2236,6 +2236,10 @@ body.node-type-blog-post .mainPageTitle {
   .no-js .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row .views-field-field-address .state,
   .js .view-id-businesses_and_events.view-display-id-page_results.gridResults .view-content .views-row .views-field-field-address .state {
     display: none; }
+  .no-js .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row .views-field-field-date-of-event div,
+  .no-js .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row .views-field-field-date-of-event span,
+  .js .view-id-businesses_and_events.view-display-id-page_results.gridResults .view-content .views-row .views-field-field-date-of-event div, .js .view-id-businesses_and_events.view-display-id-page_results.gridResults .view-content .views-row .views-field-field-date-of-event span {
+    font-weight: bold; }
   .no-js .view-id-businesses_and_events.view-display-id-page_results .view-content .views-row .views-field-nothing,
   .js .view-id-businesses_and_events.view-display-id-page_results.gridResults .view-content .views-row .views-field-nothing {
     display: none; }
@@ -2498,8 +2502,11 @@ body.node-type-blog-post .mainPageTitle {
       content: ','; }
     .js .view-id-businesses_and_events.view-display-id-page_results.listingResults .view-content .views-row .views-field-field-address .addressfield-container .state {
       display: none; }
-  .js .view-id-businesses_and_events.view-display-id-page_results.listingResults .view-content .views-row .views-field-field-date-of-event div, .js .view-id-businesses_and_events.view-display-id-page_results.listingResults .view-content .views-row .views-field-field-date-of-event span {
-    display: inline; }
+  .js .view-id-businesses_and_events.view-display-id-page_results.listingResults .view-content .views-row .views-field-field-date-of-event {
+    clear: both; }
+    .js .view-id-businesses_and_events.view-display-id-page_results.listingResults .view-content .views-row .views-field-field-date-of-event div, .js .view-id-businesses_and_events.view-display-id-page_results.listingResults .view-content .views-row .views-field-field-date-of-event span {
+      display: inline;
+      font-weight: bold; }
   .js .view-id-businesses_and_events.view-display-id-page_results.listingResults .view-content .views-row .views-field-field-general-information {
     float: left;
     width: 100%;
@@ -5511,3 +5518,5 @@ body.node-type-subscription .node__content input[type="submit"] {
   background-color: #66CD4C;
   border: 1px solid #66CD4C;
   max-width: 230px; }
+
+/*# sourceMappingURL=wttoc.styles.css.map */

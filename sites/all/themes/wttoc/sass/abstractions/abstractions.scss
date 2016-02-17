@@ -23,7 +23,7 @@
 	white-space: pre-line; */ 
 }
 /*
- * One Column 
+ * One Column
  */
 
 @mixin oneColumn($percentWidth){
@@ -73,14 +73,14 @@
 	float:left;
 	margin-right: $columnPercentSpacer / 4;
 	padding: $columnPercentPadder / 2;
-	width: $percentWidth - $columnPercentSpacer / 4 - $columnPercentPadder;	
+	width: $percentWidth - $columnPercentSpacer / 4 - $columnPercentPadder;
 }
 @mixin chop3Middle($percentWidth){
 	float:left;
 	margin-left: $columnPercentSpacer / 4;
 	margin-right: $columnPercentSpacer / 4;
 	padding: $columnPercentPadder / 2;
-	width: $percentWidth - $columnPercentSpacer / 2 - $columnPercentPadder; 
+	width: $percentWidth - $columnPercentSpacer / 2 - $columnPercentPadder;
 }
 @mixin chop3Right($percentWidth){
 	float:right;
@@ -95,13 +95,13 @@
 @mixin chop3VLeft($percentWidth){
 	float:left;
 	margin-right: $columnPercentSpacer;
-	width: $percentWidth - $columnPercentSpacer;	
+	width: $percentWidth - $columnPercentSpacer;
 }
 @mixin chop3VMiddle($percentWidth){
 	float:left;
 	margin-left: $columnPercentSpacer / 2;
 	margin-right: $columnPercentSpacer / 2;
-	width: $percentWidth - $columnPercentSpacer; 
+	width: $percentWidth - $columnPercentSpacer;
 }
 @mixin chop3VRight($percentWidth){
 	float:right;
@@ -159,13 +159,13 @@
 @mixin chop6VLeft($percentWidth){
 	float:left;
 	margin-right: $columnPercentSpacer/2;
-	width: $percentWidth - $columnPercentSpacer / 2;	
+	width: $percentWidth - $columnPercentSpacer / 2;
 }
 @mixin chop6VMiddle($percentWidth){
 	float:left;
 	margin-left: $columnPercentSpacer / 2;
 	margin-right: $columnPercentSpacer / 2;
-	width: $percentWidth - $columnPercentSpacer; 
+	width: $percentWidth - $columnPercentSpacer;
 }
 @mixin chop6VRight($percentWidth){
 	float:right;
@@ -177,13 +177,13 @@
  */
 @mixin chopLeftNoPadding($percentWidth){
 	float:left;
-	width: $percentWidth; 
+	width: $percentWidth;
 }
 
-/* 
+/*
  * Headers Font Style
  */
-@mixin headerFontStyle{	
+@mixin headerFontStyle{
 	line-height: 120%;
 	padding: 0;
 	font-weight: bold;
