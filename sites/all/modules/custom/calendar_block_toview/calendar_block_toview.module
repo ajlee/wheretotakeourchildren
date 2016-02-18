@@ -160,7 +160,7 @@ function calendar_block_toview_block_view($delta = '') {
     $block = array();
     switch ($delta) {
         case 'calendar':
-            $block['subject'] = t('Events Calendar');
+            $block['subject'] = '<a href=\'/search/businesses-and-events?type%5B%5D=event&sort_by=search_api_aggregation_1\'>Events Calendar</a>';
             $dateString = "now";
             $dateComponents = getdate(strtotime($dateString));
             $month = $dateComponents['mon'];
@@ -169,8 +169,8 @@ function calendar_block_toview_block_view($delta = '') {
             $block['content'] = $blockHtml;
             break;
         case 'whatson':
-            $block['subject'] = t('What\'s on this month?');
-            $blockHtml = "<div class='whatson_block_imageholder'></div>";
+            $block['subject'] = '<a href=\'/search/businesses-and-events?type%5B%5D=event&sort_by=search_api_aggregation_1\'>What\'s on this month?</a>';
+            $blockHtml = "<a href='/search/businesses-and-events?type%5B%5D=event&sort_by=search_api_aggregation_1'><div class='whatson_block_imageholder'></div></a>";
             $block['content'] = $blockHtml;
             break;
     }

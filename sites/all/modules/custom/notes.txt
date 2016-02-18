@@ -1,0 +1,5 @@
+other modules in dev versions:
+commerce_coupon
+commerce_discount
+
+left in default sites/all/modules folder to prevent from executing a registry reset
