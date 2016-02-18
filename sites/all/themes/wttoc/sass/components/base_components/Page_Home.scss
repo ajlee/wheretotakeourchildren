@@ -217,3 +217,8 @@ body.front .l-main #block-calendar-block-toview-calendar{
 		margin-top:5px;
 	}
 }
+#block-calendar-block-toview-whatson, #block-calendar-block-toview-calendar{
+	.block__title a{
+		color: $color1Light;
+	}
+}

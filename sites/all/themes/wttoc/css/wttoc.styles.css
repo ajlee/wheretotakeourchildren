@@ -1851,6 +1851,9 @@ body.front .l-main #block-calendar-block-toview-calendar {
   body.front .l-main #block-calendar-block-toview-calendar .block__content {
     margin-top: 5px; }
 
+#block-calendar-block-toview-whatson .block__title a, #block-calendar-block-toview-calendar .block__title a {
+  color: #69D1F5; }
+
 #block-calendar-block-toview-calendar {
   text-align: center; }
   #block-calendar-block-toview-calendar .block__title {
