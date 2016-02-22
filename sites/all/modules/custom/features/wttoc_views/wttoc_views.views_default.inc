@@ -337,7 +337,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['field_phone_number']['settings'] = array(
     'title' => '',
   );
-  /* Field: Content: Event Website */
+  /* Field: Content: Website Address */
   $handler->display->display_options['fields']['field_website']['id'] = 'field_website';
   $handler->display->display_options['fields']['field_website']['table'] = 'field_data_field_website';
   $handler->display->display_options['fields']['field_website']['field'] = 'field_website';
@@ -935,7 +935,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['filters']['field_date_of_event_value2_1']['table'] = 'search_api_index_index_businesses_and_events';
   $handler->display->display_options['filters']['field_date_of_event_value2_1']['field'] = 'field_date_of_event_value2';
   $handler->display->display_options['filters']['field_date_of_event_value2_1']['operator'] = '>=';
-  $handler->display->display_options['filters']['field_date_of_event_value2_1']['value'] = 'now - 1 day';
+  $handler->display->display_options['filters']['field_date_of_event_value2_1']['value'] = 'now - 1 hour';
   $handler->display->display_options['filters']['field_date_of_event_value2_1']['group'] = 2;
   /* Filter criterion: Indexed Content: Content type */
   $handler->display->display_options['filters']['type_1']['id'] = 'type_1';
@@ -1956,7 +1956,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['field_phone_number']['settings'] = array(
     'title' => '',
   );
-  /* Field: Content: Event Website */
+  /* Field: Content: Website Address */
   $handler->display->display_options['fields']['field_website']['id'] = 'field_website';
   $handler->display->display_options['fields']['field_website']['table'] = 'field_data_field_website';
   $handler->display->display_options['fields']['field_website']['field'] = 'field_website';
@@ -3926,7 +3926,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['changed']['field'] = 'changed';
   $handler->display->display_options['fields']['changed']['label'] = 'Updated';
   $handler->display->display_options['fields']['changed']['date_format'] = 'short';
-  /* Field: Content: Featured Event */
+  /* Field: Content: Featured Family Guide */
   $handler->display->display_options['fields']['field_featured_content']['id'] = 'field_featured_content';
   $handler->display->display_options['fields']['field_featured_content']['table'] = 'field_data_field_featured_content';
   $handler->display->display_options['fields']['field_featured_content']['field'] = 'field_featured_content';
@@ -4900,7 +4900,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['changed']['field'] = 'changed';
   $handler->display->display_options['fields']['changed']['label'] = 'Updated';
   $handler->display->display_options['fields']['changed']['date_format'] = 'short';
-  /* Field: Content: Featured Event */
+  /* Field: Content: Featured Family Guide */
   $handler->display->display_options['fields']['field_featured_content']['id'] = 'field_featured_content';
   $handler->display->display_options['fields']['field_featured_content']['table'] = 'field_data_field_featured_content';
   $handler->display->display_options['fields']['field_featured_content']['field'] = 'field_featured_content';

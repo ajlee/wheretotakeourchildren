@@ -24,6 +24,9 @@ function wttoc_commerce_coupon_discount_default_commerce_discount() {
     "commerce_compatibility_strategy" : { "und" : [ { "value" : "none" } ] },
     "commerce_compatibility_selection" : [],
     "inline_conditions" : [],
+    "commerce_discount_date" : [],
+    "discount_usage_per_person" : [],
+    "discount_usage_limit" : [],
     "rdf_mapping" : []
   }');
   $items['discount_initial_50_percent_off'] = entity_import('commerce_discount', '{
@@ -44,6 +47,7 @@ function wttoc_commerce_coupon_discount_default_commerce_discount() {
         {
           "condition_name" : "commerce_order_contains_products",
           "condition_settings" : {
+            "operator" : "exactly",
             "products" : [ { "product_id" : "5" } ],
             "condition_logic_operator" : null
           },
@@ -51,6 +55,9 @@ function wttoc_commerce_coupon_discount_default_commerce_discount() {
         }
       ]
     },
+    "commerce_discount_date" : [],
+    "discount_usage_per_person" : [],
+    "discount_usage_limit" : { "und" : [ { "value" : "50" } ] },
     "rdf_mapping" : []
   }');
   return $items;

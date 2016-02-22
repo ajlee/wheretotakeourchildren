@@ -2112,6 +2112,8 @@ function wttoc_permissions_user_default_permissions() {
     'name' => 'redeem coupons of type discount_coupon',
     'roles' => array(
       'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'commerce_coupon',
   );
