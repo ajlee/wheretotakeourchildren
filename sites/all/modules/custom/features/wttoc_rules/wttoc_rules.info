@@ -6,6 +6,7 @@ dependencies[] = entity
 dependencies[] = rules
 dependencies[] = wttoc_content_types
 features[features_api][] = api:2
+features[rules_config][] = rules_delete_user_override
 features[rules_config][] = rules_editor_tools_feature_content
 features[rules_config][] = rules_editor_tools_unfeature_content
 features[rules_config][] = rules_event_default_image

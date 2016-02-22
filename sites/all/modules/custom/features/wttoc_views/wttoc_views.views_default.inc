@@ -337,7 +337,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['field_phone_number']['settings'] = array(
     'title' => '',
   );
-  /* Field: Content: Website Address */
+  /* Field: Content: Event Website */
   $handler->display->display_options['fields']['field_website']['id'] = 'field_website';
   $handler->display->display_options['fields']['field_website']['table'] = 'field_data_field_website';
   $handler->display->display_options['fields']['field_website']['field'] = 'field_website';
@@ -1956,7 +1956,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['field_phone_number']['settings'] = array(
     'title' => '',
   );
-  /* Field: Content: Website Address */
+  /* Field: Content: Event Website */
   $handler->display->display_options['fields']['field_website']['id'] = 'field_website';
   $handler->display->display_options['fields']['field_website']['table'] = 'field_data_field_website';
   $handler->display->display_options['fields']['field_website']['field'] = 'field_website';
@@ -3926,7 +3926,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['changed']['field'] = 'changed';
   $handler->display->display_options['fields']['changed']['label'] = 'Updated';
   $handler->display->display_options['fields']['changed']['date_format'] = 'short';
-  /* Field: Content: Featured Family Guide */
+  /* Field: Content: Featured Event */
   $handler->display->display_options['fields']['field_featured_content']['id'] = 'field_featured_content';
   $handler->display->display_options['fields']['field_featured_content']['table'] = 'field_data_field_featured_content';
   $handler->display->display_options['fields']['field_featured_content']['field'] = 'field_featured_content';
@@ -4116,12 +4116,12 @@ function wttoc_views_views_default_views() {
       'override_label' => 0,
       'label' => '',
     ),
-    'action::views_bulk_operations_user_cancel_action' => array(
+    'rules_component::rules_delete_user_override' => array(
       'selected' => 1,
       'postpone_processing' => 0,
       'skip_confirmation' => 0,
-      'override_label' => 0,
-      'label' => '',
+      'override_label' => 1,
+      'label' => 'Delete User and Content',
     ),
   );
   /* Field: User: E-mail */
@@ -4900,7 +4900,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['changed']['field'] = 'changed';
   $handler->display->display_options['fields']['changed']['label'] = 'Updated';
   $handler->display->display_options['fields']['changed']['date_format'] = 'short';
-  /* Field: Content: Featured Family Guide */
+  /* Field: Content: Featured Event */
   $handler->display->display_options['fields']['field_featured_content']['id'] = 'field_featured_content';
   $handler->display->display_options['fields']['field_featured_content']['table'] = 'field_data_field_featured_content';
   $handler->display->display_options['fields']['field_featured_content']['field'] = 'field_featured_content';

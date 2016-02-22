@@ -9,6 +9,26 @@
  */
 function wttoc_rules_default_rules_configuration() {
   $items = array();
+  $items['rules_delete_user_override'] = entity_import('rules_config', '{ "rules_delete_user_override" : {
+      "LABEL" : "Delete User Override",
+      "PLUGIN" : "rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "WTTOC" ],
+      "REQUIRES" : [ "rules" ],
+      "ACCESS_EXPOSED" : "1",
+      "USES VARIABLES" : { "user_to_delete" : { "label" : "user_to_delete", "type" : "user" } },
+      "IF" : [
+        { "data_is" : { "data" : [ "user-to-delete:uid" ], "op" : "\\u003E", "value" : "1" } },
+        { "NOT user_has_role" : {
+            "account" : [ "user-to-delete" ],
+            "roles" : { "value" : { "6" : "6", "3" : "3" } },
+            "operation" : "OR"
+          }
+        }
+      ],
+      "DO" : [ { "entity_delete" : { "data" : [ "user-to-delete" ] } } ]
+    }
+  }');
   $items['rules_editor_tools_feature_content'] = entity_import('rules_config', '{ "rules_editor_tools_feature_content" : {
       "LABEL" : "Editor Tools: Feature Content - Component",
       "PLUGIN" : "rule",
