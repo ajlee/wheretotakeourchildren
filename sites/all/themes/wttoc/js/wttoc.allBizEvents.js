@@ -341,6 +341,8 @@
 					var fieldsEventsWrappersArray = ['#edit-field-category-event-wrapper','#edit-field-start-datepicker-wrapper','#edit-field-end-datepicker-wrapper'];
 					var fieldsEventsSelectsArray = ['select[name="field_category_event[]"]'];//separate these because of SumoSelect - see js/selectui.js
 					var fieldEventsInputsArray = ['input[name="field_start_datepicker[date]"]','input[name="field_end_datepicker[date]"]'];
+					var sortByEventDate ='li[data-val="search_api_aggregation_1"]';
+					var noSortOption ='li[data-val="changed"]';
 					//Helper functions
 					//Hide and unset either the business, or event select/inputs of a form (considering that we're using SumoSelect- see js/selectui.js).
 					function hideResetSearch(typeToHideReset,formSelector){
@@ -402,7 +404,7 @@
 						}
 					}
 					//The function that should execute, when the business/event value changes
-					function businessOrEventChangeEvent(valueChangedTo, formSelector){			
+					function businessOrEventChangeEvent(valueChangedTo, formSelector, isInitialLoad){
 						var currentVal = valueChangedTo;
 						//We can't join a null, so don't try that
 						if(currentVal!=null){
@@ -411,22 +413,38 @@
 								case optionBusiness:
 									hideResetSearch("event",formSelector);
 									showValuesSearch("business",formSelector);
+									//modify sort options
+									$(formSelector + sp + sortByEventDate).hide();
+									$(formSelector + sp + noSortOption).click();
 									break;
 								//Event Content Type Selected
 								case optionEvent:
 									hideResetSearch("business",formSelector);
 									showValuesSearch("event",formSelector);
+									//modify sort options
+									$(formSelector + sp + sortByEventDate).show();
+									//on any further changes (not on the initial page load)
+									//if the event type  was selected, switch the default sorting to event
+									if(isInitialLoad === false) {
+										$(formSelector + sp + sortByEventDate).click();
+									}
 									break;
 								//Both Values Selected	
 								default:
 									hideResetSearch("event",formSelector);
 									hideResetSearch("business",formSelector);
+									//modify sort options
+									$(formSelector + sp + sortByEventDate).hide();
+									$(formSelector + sp + noSortOption).click();
 							}
 						}
 						//No Values Selected
 						else{
 							hideResetSearch("event",formSelector);
 							hideResetSearch("business",formSelector);
+							//modify sort options
+							$(formSelector + sp + sortByEventDate).hide();
+							$(formSelector + sp + noSortOption).click();
 						}
 					}
 					//use hierarchy (based on dashes) inside a particular sumoselect
@@ -475,6 +493,7 @@
 										while(startingDashes(currentElement.text()) !== i 
 											&& startingDashes(currentElement.text()) !== 0 
 										){
+											var tempI = i;
 											if( startingDashes(currentElement.prev().text()) === i){
 												currentElement.prev().show();
 												if(!(currentElement.prev().hasClass("selected")) ){
@@ -482,6 +501,7 @@
 												}	
 											}
 											currentElement = currentElement.prev();
+											i = tempI;
 										}
 									}
 								}
@@ -537,18 +557,18 @@
 					//On Change Of Business/Event Field
 					if($('body.front').length){
 						var currentVal = $(viewsExposedFormSelector + sp + contentTypeSelect).val();
-						businessOrEventChangeEvent(currentVal, viewsExposedFormSelector);
+						businessOrEventChangeEvent(currentVal, viewsExposedFormSelector, true);
 						$(viewsExposedFormSelector + sp + contentTypeSelect).change(function(){
 							var currentVal = $(this).val();
-							businessOrEventChangeEvent(currentVal, viewsExposedFormSelector);
+							businessOrEventChangeEvent(currentVal, viewsExposedFormSelector, false);
 						});	
 					}
 					if($('body.page-search-businesses-and-events').length){
 						var currentVal = $(viewsBlockSelector + sp + contentTypeSelect).val();
-						businessOrEventChangeEvent(currentVal, viewsBlockSelector);
+						businessOrEventChangeEvent(currentVal, viewsBlockSelector, true);
 						$(viewsBlockSelector + sp + contentTypeSelect).change(function(){
 							var currentVal = $(this).val();
-							businessOrEventChangeEvent(currentVal, viewsBlockSelector);
+							businessOrEventChangeEvent(currentVal, viewsBlockSelector, false);
 						});	
 					}				
 				}//end of check for homepage or search page
