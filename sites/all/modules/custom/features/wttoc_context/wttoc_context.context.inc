@@ -314,11 +314,17 @@ function wttoc_context_context_default_contexts() {
           'region' => 'widetop',
           'weight' => '-10',
         ),
+        'block-5' => array(
+          'module' => 'block',
+          'delta' => '5',
+          'region' => 'content',
+          'weight' => '-10',
+        ),
         'views-58706bf170be35d3c5264a659b28fd9f' => array(
           'module' => 'views',
           'delta' => '58706bf170be35d3c5264a659b28fd9f',
           'region' => 'content',
-          'weight' => '-10',
+          'weight' => '-9',
         ),
         'views-cbe6c053fe5ece8dcda9324f80a4a914' => array(
           'module' => 'views',
@@ -337,6 +343,18 @@ function wttoc_context_context_default_contexts() {
           'delta' => 'k8U3T1ETdPYpRgbAJrX5t30UCgjKumVN',
           'region' => 'sidebar_first',
           'weight' => '-8',
+        ),
+        'block-3' => array(
+          'module' => 'block',
+          'delta' => '3',
+          'region' => 'sidebar_first',
+          'weight' => '-7',
+        ),
+        'block-8' => array(
+          'module' => 'block',
+          'delta' => '8',
+          'region' => 'widebottom',
+          'weight' => '-10',
         ),
       ),
     ),
@@ -559,11 +577,17 @@ function wttoc_context_context_default_contexts() {
           'region' => 'content',
           'weight' => '-10',
         ),
+        'block-5' => array(
+          'module' => 'block',
+          'delta' => '5',
+          'region' => 'content',
+          'weight' => '-9',
+        ),
         'views-4c2750af452669f48149adba863f8fb0' => array(
           'module' => 'views',
           'delta' => '4c2750af452669f48149adba863f8fb0',
           'region' => 'content',
-          'weight' => '-9',
+          'weight' => '-8',
         ),
         'views-9bc9d8ca0a25d6b82e61cd69a69f3fa4' => array(
           'module' => 'views',
@@ -575,25 +599,37 @@ function wttoc_context_context_default_contexts() {
           'module' => 'calendar_block_toview',
           'delta' => 'whatson',
           'region' => 'sidebar_second',
-          'weight' => '-25',
+          'weight' => '-35',
         ),
         'calendar_block_toview-calendar' => array(
           'module' => 'calendar_block_toview',
           'delta' => 'calendar',
           'region' => 'sidebar_second',
-          'weight' => '-24',
+          'weight' => '-34',
+        ),
+        'block-3' => array(
+          'module' => 'block',
+          'delta' => '3',
+          'region' => 'sidebar_second',
+          'weight' => '-33',
         ),
         'views-31f2dac756ca525bbccadd8e18cfd305' => array(
           'module' => 'views',
           'delta' => '31f2dac756ca525bbccadd8e18cfd305',
           'region' => 'sidebar_second',
-          'weight' => '-23',
+          'weight' => '-32',
         ),
         'views-5c1f58618977b3132d2afde5f9635e97' => array(
           'module' => 'views',
           'delta' => '5c1f58618977b3132d2afde5f9635e97',
           'region' => 'sidebar_second',
-          'weight' => '-21',
+          'weight' => '-31',
+        ),
+        'block-8' => array(
+          'module' => 'block',
+          'delta' => '8',
+          'region' => 'widebottom',
+          'weight' => '-10',
         ),
       ),
     ),
@@ -621,6 +657,12 @@ function wttoc_context_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'block-5' => array(
+          'module' => 'block',
+          'delta' => '5',
+          'region' => 'highlighted',
+          'weight' => '-10',
+        ),
         'facetapi-HDmWm9cYEGcuStoZLstEOdq1Ql5WXOxo' => array(
           'module' => 'facetapi',
           'delta' => 'HDmWm9cYEGcuStoZLstEOdq1Ql5WXOxo',
@@ -633,11 +675,17 @@ function wttoc_context_context_default_contexts() {
           'region' => 'sidebar_first',
           'weight' => '-9',
         ),
-        'facetapi-mE6NK21nMdy37uDuGgNC0hEUBN193luG' => array(
-          'module' => 'facetapi',
-          'delta' => 'mE6NK21nMdy37uDuGgNC0hEUBN193luG',
+        'block-3' => array(
+          'module' => 'block',
+          'delta' => '3',
           'region' => 'sidebar_first',
           'weight' => '-8',
+        ),
+        'block-8' => array(
+          'module' => 'block',
+          'delta' => '8',
+          'region' => 'widebottom',
+          'weight' => '-10',
         ),
       ),
     ),
@@ -665,6 +713,12 @@ function wttoc_context_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'block-5' => array(
+          'module' => 'block',
+          'delta' => '5',
+          'region' => 'content',
+          'weight' => '-10',
+        ),
         'views-d400f6dac6873ec2ddd895ba96987fce' => array(
           'module' => 'views',
           'delta' => 'd400f6dac6873ec2ddd895ba96987fce',
@@ -675,6 +729,18 @@ function wttoc_context_context_default_contexts() {
           'module' => 'views',
           'delta' => 'af90360638c7d20f57c8909dd0acc14b',
           'region' => 'sidebar_first',
+          'weight' => '-10',
+        ),
+        'block-3' => array(
+          'module' => 'block',
+          'delta' => '3',
+          'region' => 'sidebar_first',
+          'weight' => '-9',
+        ),
+        'block-8' => array(
+          'module' => 'block',
+          'delta' => '8',
+          'region' => 'widebottom',
           'weight' => '-10',
         ),
       ),
