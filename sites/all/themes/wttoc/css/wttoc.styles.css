@@ -5600,4 +5600,5 @@ body.node-type-subscription .node__content input[type="submit"] {
   max-width: 230px; }
 
 .site_seals_wrap {
-  text-align: center; }
+  text-align: center;
+  margin: 20px auto 40px auto; }
