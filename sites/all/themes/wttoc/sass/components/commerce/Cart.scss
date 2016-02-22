@@ -180,6 +180,7 @@ body.page-cart, body.page-checkout{
       input{
         @include remFontSize($fontM);
         @include remLineHeight(2*$fontM);
+        @include remHeight(2*$fontM);
         width: 52%;
         @include breakpoint(0 $breakpointTablet){
           width:90%;
@@ -190,6 +191,7 @@ body.page-cart, body.page-checkout{
       .description{
         @include remFontSize($fontXS);
         @include remLineHeight(2*$fontXS);
+        @include remHeight(2*$fontXS);
         width: 52%;
         @include breakpoint(0 $breakpointTablet){
           width:90%;
@@ -219,10 +221,12 @@ body.page-cart, body.page-checkout{
       .SlectBox{
         @include remFontSize($fontM);
         @include remLineHeight(2*$fontM);
+        @include remHeight(2*$fontM);
       }
       input[type="text"]{
         @include remFontSize($fontM);
         @include remLineHeight(2*$fontM);
+        @include remHeight(2*$fontM);
         width: 52%;
         @include breakpoint(0 $breakpointTablet){
           width:90%;
@@ -293,10 +297,12 @@ body.page-checkout-review{
         margin-top:20px;
         @include remFontSize($fontM);
         @include remLineHeight(2*$fontM);
+        @include remHeight(2*$fontM);
       }
       input[type="text"] {
         @include remFontSize($fontM);
         @include remLineHeight(2*$fontM);
+        @include remHeight(2*$fontM);
         width: 52%;
         @include breakpoint(0 $breakpointTablet) {
           width: 90%;

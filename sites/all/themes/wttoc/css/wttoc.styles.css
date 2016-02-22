@@ -385,6 +385,9 @@
  * Rem Line Height
  */
 /*
+ * Rem  Height
+ */
+/*
  * Color Descendants
  */
 /*
@@ -5204,6 +5207,8 @@ body.page-cart .commerce_coupon.form-wrapper, body.page-checkout .commerce_coupo
       font-size: 1.9rem;
       line-height: 38px;
       line-height: 3.8rem;
+      height: 38px;
+      height: 3.8rem;
       width: 52%;
       padding: 0 1%;
       display: inline-block; }
@@ -5215,6 +5220,8 @@ body.page-cart .commerce_coupon.form-wrapper, body.page-checkout .commerce_coupo
       font-size: 1.5rem;
       line-height: 30px;
       line-height: 3rem;
+      height: 30px;
+      height: 3rem;
       width: 52%;
       padding: 0 1%;
       display: inline-block; }
@@ -5240,12 +5247,16 @@ body.page-cart .customer_profile_billing.form-wrapper, body.page-checkout .custo
       font-size: 19px;
       font-size: 1.9rem;
       line-height: 38px;
-      line-height: 3.8rem; }
+      line-height: 3.8rem;
+      height: 38px;
+      height: 3.8rem; }
     body.page-cart .customer_profile_billing.form-wrapper .fieldset-wrapper input[type="text"], body.page-checkout .customer_profile_billing.form-wrapper .fieldset-wrapper input[type="text"] {
       font-size: 19px;
       font-size: 1.9rem;
       line-height: 38px;
       line-height: 3.8rem;
+      height: 38px;
+      height: 3.8rem;
       width: 52%;
       padding: 0 1%;
       display: inline-block; }
@@ -5300,12 +5311,16 @@ body.page-checkout-review .commerce_payment.form-wrapper {
       font-size: 19px;
       font-size: 1.9rem;
       line-height: 38px;
-      line-height: 3.8rem; }
+      line-height: 3.8rem;
+      height: 38px;
+      height: 3.8rem; }
     body.page-checkout-review .commerce_payment.form-wrapper .fieldset-wrapper input[type="text"] {
       font-size: 19px;
       font-size: 1.9rem;
       line-height: 38px;
       line-height: 3.8rem;
+      height: 38px;
+      height: 3.8rem;
       width: 52%;
       padding: 0 1%;
       display: inline-block; }
@@ -5582,5 +5597,3 @@ body.node-type-subscription .node__content input[type="submit"] {
 
 .site_seals_wrap {
   text-align: center; }
-
-/*# sourceMappingURL=wttoc.styles.css.map */

@@ -237,6 +237,14 @@
 }
 
 /*
+ * Rem  Height
+ */
+@mixin remHeight($sizeValue: 1.6) {
+	height: ($sizeValue * 10) + px;
+	height: $sizeValue + rem;
+}
+
+/*
  * Color Descendants
  */
 @mixin colorDescendantsFont($color){
