@@ -1969,6 +1969,8 @@ body.node-type-blog-post .view-id-content_type_posts_display.view-display-id-pos
   body.node-type-blog-post .view-id-content_type_posts_display.view-display-id-posts_main .views-field.views-field-field-body p, body.node-type-blog-post .view-id-content_type_posts_display.view-display-id-posts_main .views-field.views-field-field-body ul, body.node-type-blog-post .view-id-content_type_posts_display.view-display-id-posts_main .views-field.views-field-field-body ol, body.node-type-blog-post .view-id-content_type_posts_display.view-display-id-posts_main .views-field.views-field-field-body h1, body.node-type-blog-post .view-id-content_type_posts_display.view-display-id-posts_main .views-field.views-field-field-body h2, body.node-type-blog-post .view-id-content_type_posts_display.view-display-id-posts_main .views-field.views-field-field-body h3, body.node-type-blog-post .view-id-content_type_posts_display.view-display-id-posts_main .views-field.views-field-field-body h4, body.node-type-blog-post .view-id-content_type_posts_display.view-display-id-posts_main .views-field.views-field-field-body h5 {
     margin-top: 10px;
     margin-bottom: 10px; }
+  body.node-type-blog-post .view-id-content_type_posts_display.view-display-id-posts_main .views-field.views-field-field-body a {
+    color: #5675CE; }
 
 body.node-type-blog-post .view-id-content_type_posts_display.view-display-id-posts_main .views-field.views-field-field-post-categories .views-label, body.node-type-blog-post .view-id-content_type_posts_display.view-display-id-posts_main .views-field.views-field-field-post-categories .field-content {
   display: inline-block; }
@@ -3538,6 +3540,8 @@ body.node-type-basic-page .view-id-content_type_basic_page_display.view-display-
   body.node-type-basic-page .view-id-content_type_basic_page_display.view-display-id-pages_main .views-field.views-field-field-body p, body.node-type-basic-page .view-id-content_type_basic_page_display.view-display-id-pages_main .views-field.views-field-field-body ul, body.node-type-basic-page .view-id-content_type_basic_page_display.view-display-id-pages_main .views-field.views-field-field-body ol, body.node-type-basic-page .view-id-content_type_basic_page_display.view-display-id-pages_main .views-field.views-field-field-body h1, body.node-type-basic-page .view-id-content_type_basic_page_display.view-display-id-pages_main .views-field.views-field-field-body h2, body.node-type-basic-page .view-id-content_type_basic_page_display.view-display-id-pages_main .views-field.views-field-field-body h3, body.node-type-basic-page .view-id-content_type_basic_page_display.view-display-id-pages_main .views-field.views-field-field-body h4, body.node-type-basic-page .view-id-content_type_basic_page_display.view-display-id-pages_main .views-field.views-field-field-body h5 {
     margin-top: 10px;
     margin-bottom: 10px; }
+  body.node-type-basic-page .view-id-content_type_basic_page_display.view-display-id-pages_main .views-field.views-field-field-body a {
+    color: #5675CE; }
 
 body.node-type-basic-page .mainPageTitle {
   border-bottom: 1px solid #e8eaea;
