@@ -34,7 +34,6 @@
 				//Create a tab and give it a link to its block id along with some classes
 				var doesBlockHaveContent = parentOfBlocks.children(currentBlockSelector).find(".view-content .views-row-1 > div");
 				if(doesBlockHaveContent.length > 0){
-					console.log(doesBlockHaveContent, currentBlockSelector);
 					var classList = parentOfBlocks.children(currentBlockSelector).attr('class').split(/\s+/);
 					classesToPutInTabString = "tabJS";
 					$.each(classList, function (index, item) {
