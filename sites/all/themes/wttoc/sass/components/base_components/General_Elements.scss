@@ -372,3 +372,12 @@ table.system-status-report tr.warning {
 .adminimal-theme table tr.error td {
 	color: #C70000;
 }
+
+/*
+ * Tabs primary
+ */
+ul.tabs--primary{
+	> li{
+		margin-bottom: 5px;
+	}
+}

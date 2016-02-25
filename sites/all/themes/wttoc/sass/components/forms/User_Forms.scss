@@ -5,5 +5,8 @@ body.page-user-password{
   input[type=password]{
     margin: 5px 0;
     @include remFontSize($fontXL);
+    @include breakpoint(0 $breakpointMobile){
+      max-width: ($breakpointMini * 0.9);
+    }
   }
 }

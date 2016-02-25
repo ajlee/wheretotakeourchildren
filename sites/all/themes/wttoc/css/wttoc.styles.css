@@ -1578,6 +1578,12 @@ table.system-status-report tr.warning {
   color: #C70000; }
 
 /*
+ * Tabs primary
+ */
+ul.tabs--primary > li {
+  margin-bottom: 5px; }
+
+/*
  * TabBlocks: Tabs Display Fontello Icon
  */
 .js .tabJS {
@@ -5489,6 +5495,14 @@ body.page-user-password input[type=password] {
   margin: 5px 0;
   font-size: 24px;
   font-size: 2.4rem; }
+  @media (min-width: 0) and (max-width: 430px) {
+    body.page-user-register input[type=text],
+    body.page-user-register input[type=password],
+    body.page-user input[type=text],
+    body.page-user input[type=password],
+    body.page-user-password input[type=text],
+    body.page-user-password input[type=password] {
+      max-width: 288px; } }
 
 body.node-type-subscription .mainPageTitle {
   text-align: center; }
