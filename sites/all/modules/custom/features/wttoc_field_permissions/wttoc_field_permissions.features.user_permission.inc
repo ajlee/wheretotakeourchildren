@@ -232,7 +232,6 @@ function wttoc_field_permissions_user_default_permissions() {
   $permissions['edit field_user_image'] = array(
     'name' => 'edit field_user_image',
     'roles' => array(
-      'Site Editor' => 'Site Editor',
       'administrator' => 'administrator',
     ),
     'module' => 'field_permissions',
@@ -469,8 +468,9 @@ function wttoc_field_permissions_user_default_permissions() {
   $permissions['view field_user_image'] = array(
     'name' => 'view field_user_image',
     'roles' => array(
-      'Site Editor' => 'Site Editor',
       'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'field_permissions',
   );
