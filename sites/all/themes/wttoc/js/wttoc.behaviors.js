@@ -78,7 +78,9 @@
             (typeof($('body.front'))!= "undefined") &&
             (typeof($('.messages--status'))!= "undefined")
         ){
-            $('.messages--status').scrollView();
+            setTimeout(function(){
+                $('.messages--status').scrollView();
+            }, 500);
         }
     }
   };
