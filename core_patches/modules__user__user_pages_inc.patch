@@ -1,5 +1,5 @@
 diff --git a/modules/user/user.pages.inc b/modules/user/user.pages.inc
-index 2d3c13d..1f10418 100644
+index 2d3c13d..d4a6166 100644
 --- a/modules/user/user.pages.inc
 +++ b/modules/user/user.pages.inc
 @@ -135,14 +135,14 @@ function user_pass_reset($form, &$form_state, $uid, $timestamp, $hashed_pass, $a
@@ -19,3 +19,12 @@ index 2d3c13d..1f10418 100644
            $form['help'] = array('#markup' => '<p>' . t('This login can be used only once.') . '</p>');
            $form['actions'] = array('#type' => 'actions');
            $form['actions']['submit'] = array('#type' => 'submit', '#value' => t('Log in'));
+@@ -331,7 +331,7 @@ function user_profile_form_submit($form, &$form_state) {
+   // Clear the page cache because pages can contain usernames and/or profile information:
+   cache_clear_all();
+ 
+-  drupal_set_message(t('The changes have been saved.'));
++  drupal_set_message(t('The changes have been saved. Please <a href="/" title="Click here to go to the homepage" style="text-decoration:underline">click here</a> to go to the homepage.'));
+ }
+ 
+ /**
