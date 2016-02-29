@@ -294,6 +294,57 @@ function wttoc_commerce_content_types_field_default_field_instances() {
   );
 
   // Exported field_instance:
+  // 'commerce_discount-order_discount-commerce_discount_date'
+  $field_instances['commerce_discount-order_discount-commerce_discount_date'] = array(
+    'bundle' => 'order_discount',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+          'show_remaining_days' => FALSE,
+          'show_repeat_rule' => 'show',
+        ),
+        'type' => 'date_default',
+        'weight' => 4,
+      ),
+    ),
+    'entity_type' => 'commerce_discount',
+    'field_name' => 'commerce_discount_date',
+    'label' => 'Discount dates',
+    'required' => FALSE,
+    'settings' => array(
+      'default_value' => 'blank',
+      'default_value2' => 'blank',
+      'default_value_code' => '',
+      'default_value_code2' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'date',
+      'settings' => array(
+        'increment' => 15,
+        'input_format' => 'Y-m-d H:i:s',
+        'input_format_custom' => '',
+        'label_position' => 'above',
+        'no_fieldset' => TRUE,
+        'repeat_collapsed' => 0,
+        'text_parts' => array(),
+        'year_range' => '-3:+3',
+      ),
+      'type' => 'date_popup',
+      'weight' => -11,
+    ),
+  );
+
+  // Exported field_instance:
   // 'commerce_discount-order_discount-commerce_discount_offer'
   $field_instances['commerce_discount-order_discount-commerce_discount_offer'] = array(
     'bundle' => 'order_discount',
@@ -325,6 +376,86 @@ function wttoc_commerce_content_types_field_default_field_instances() {
       ),
       'type' => 'inline_entity_form_single',
       'weight' => -12,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_discount-order_discount-discount_usage_limit'
+  $field_instances['commerce_discount-order_discount-discount_usage_limit'] = array(
+    'bundle' => 'order_discount',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Enter the maximum number of times this discount may be used on the site, by anyone. Leave blank for unlimited.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => '',
+        ),
+        'type' => 'number_integer',
+        'weight' => 6,
+      ),
+    ),
+    'entity_type' => 'commerce_discount',
+    'field_name' => 'discount_usage_limit',
+    'label' => 'Maximum overall usage',
+    'required' => FALSE,
+    'settings' => array(
+      'max' => '',
+      'min' => 0,
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 100,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_discount-order_discount-discount_usage_per_person'
+  $field_instances['commerce_discount-order_discount-discount_usage_per_person'] = array(
+    'bundle' => 'order_discount',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Enter the maximum number of times a specific person (as identified by email) may use this discount. Leave blank for unlimited.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => '',
+        ),
+        'type' => 'number_integer',
+        'weight' => 5,
+      ),
+    ),
+    'entity_type' => 'commerce_discount',
+    'field_name' => 'discount_usage_per_person',
+    'label' => 'Maximum usage per customer',
+    'required' => FALSE,
+    'settings' => array(
+      'max' => '',
+      'min' => 0,
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 100,
     ),
   );
 
@@ -431,6 +562,57 @@ function wttoc_commerce_content_types_field_default_field_instances() {
   );
 
   // Exported field_instance:
+  // 'commerce_discount-product_discount-commerce_discount_date'
+  $field_instances['commerce_discount-product_discount-commerce_discount_date'] = array(
+    'bundle' => 'product_discount',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+          'show_remaining_days' => FALSE,
+          'show_repeat_rule' => 'show',
+        ),
+        'type' => 'date_default',
+        'weight' => 4,
+      ),
+    ),
+    'entity_type' => 'commerce_discount',
+    'field_name' => 'commerce_discount_date',
+    'label' => 'Discount dates',
+    'required' => FALSE,
+    'settings' => array(
+      'default_value' => 'blank',
+      'default_value2' => 'blank',
+      'default_value_code' => '',
+      'default_value_code2' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'date',
+      'settings' => array(
+        'increment' => 15,
+        'input_format' => 'Y-m-d H:i:s',
+        'input_format_custom' => '',
+        'label_position' => 'above',
+        'no_fieldset' => TRUE,
+        'repeat_collapsed' => 0,
+        'text_parts' => array(),
+        'year_range' => '-3:+3',
+      ),
+      'type' => 'date_popup',
+      'weight' => -11,
+    ),
+  );
+
+  // Exported field_instance:
   // 'commerce_discount-product_discount-commerce_discount_offer'
   $field_instances['commerce_discount-product_discount-commerce_discount_offer'] = array(
     'bundle' => 'product_discount',
@@ -462,6 +644,86 @@ function wttoc_commerce_content_types_field_default_field_instances() {
       ),
       'type' => 'inline_entity_form_single',
       'weight' => -12,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_discount-product_discount-discount_usage_limit'
+  $field_instances['commerce_discount-product_discount-discount_usage_limit'] = array(
+    'bundle' => 'product_discount',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Enter the maximum number of times this discount may be used on the site, by anyone. Leave blank for unlimited.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => '',
+        ),
+        'type' => 'number_integer',
+        'weight' => 6,
+      ),
+    ),
+    'entity_type' => 'commerce_discount',
+    'field_name' => 'discount_usage_limit',
+    'label' => 'Maximum overall usage',
+    'required' => FALSE,
+    'settings' => array(
+      'max' => '',
+      'min' => 0,
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 100,
+    ),
+  );
+
+  // Exported field_instance:
+  // 'commerce_discount-product_discount-discount_usage_per_person'
+  $field_instances['commerce_discount-product_discount-discount_usage_per_person'] = array(
+    'bundle' => 'product_discount',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Enter the maximum number of times a specific person (as identified by email) may use this discount. Leave blank for unlimited.',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => '',
+        ),
+        'type' => 'number_integer',
+        'weight' => 5,
+      ),
+    ),
+    'entity_type' => 'commerce_discount',
+    'field_name' => 'discount_usage_per_person',
+    'label' => 'Maximum usage per customer',
+    'required' => FALSE,
+    'settings' => array(
+      'max' => '',
+      'min' => 0,
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 100,
     ),
   );
 
@@ -2022,16 +2284,21 @@ function wttoc_commerce_content_types_field_default_field_instances() {
   t('Compatibility with other discounts');
   t('Conditions');
   t('Coupons');
+  t('Discount dates');
   t('Discount offer reference');
   t('Discount reference');
   t('Display path');
   t('End period');
   t('Enter a comma-separated list of SKUs. Each product is added to customer order with a quantity of 1.');
+  t('Enter the maximum number of times a specific person (as identified by email) may use this discount. Leave blank for unlimited.');
+  t('Enter the maximum number of times this discount may be used on the site, by anyone. Leave blank for unlimited.');
   t('Fixed amount');
   t('Fixed price');
   t('Initial period');
   t('Initial price');
   t('Line items');
+  t('Maximum overall usage');
+  t('Maximum usage per customer');
   t('Order discount conditions');
   t('Order total');
   t('Percentage');

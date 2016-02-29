@@ -317,7 +317,7 @@ function wttoc_context_context_default_contexts() {
         'block-5' => array(
           'module' => 'block',
           'delta' => '5',
-          'region' => 'content',
+          'region' => 'highlighted',
           'weight' => '-10',
         ),
         'views-58706bf170be35d3c5264a659b28fd9f' => array(
@@ -661,7 +661,7 @@ function wttoc_context_context_default_contexts() {
           'module' => 'block',
           'delta' => '5',
           'region' => 'highlighted',
-          'weight' => '-10',
+          'weight' => '-35',
         ),
         'facetapi-HDmWm9cYEGcuStoZLstEOdq1Ql5WXOxo' => array(
           'module' => 'facetapi',

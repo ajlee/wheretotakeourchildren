@@ -169,6 +169,50 @@ function wttoc_rules_default_rules_configuration() {
       ]
     }
   }');
+  $items['rules_give_premium_role_six_month'] = entity_import('rules_config', '{ "rules_give_premium_role_six_month" : {
+      "LABEL" : "Give Six Months Premium",
+      "PLUGIN" : "rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules", "role_expire" ],
+      "ACCESS_EXPOSED" : "1",
+      "USES VARIABLES" : { "user_six_months" : { "label" : "user_six_months", "type" : "user" } },
+      "DO" : [
+        { "user_add_role" : {
+            "account" : [ "user-six-months" ],
+            "roles" : { "value" : { "5" : "5" } }
+          }
+        },
+        { "role_expire_rules_action_set_role_expire" : {
+            "user" : [ "user-six-months" ],
+            "role" : "5",
+            "timestamp" : "+6 months"
+          }
+        }
+      ]
+    }
+  }');
+  $items['rules_give_twelve_months_premium'] = entity_import('rules_config', '{ "rules_give_twelve_months_premium" : {
+      "LABEL" : "Give Twelve Months Premium",
+      "PLUGIN" : "rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules", "role_expire" ],
+      "ACCESS_EXPOSED" : "1",
+      "USES VARIABLES" : { "user_twelve_months" : { "label" : "user_twelve_months", "type" : "user" } },
+      "DO" : [
+        { "user_add_role" : {
+            "account" : [ "user_twelve_months" ],
+            "roles" : { "value" : { "5" : "5" } }
+          }
+        },
+        { "role_expire_rules_action_set_role_expire" : {
+            "user" : [ "user_twelve_months" ],
+            "role" : "5",
+            "timestamp" : "+6 months"
+          }
+        }
+      ]
+    }
+  }');
   $items['rules_promote_category_to_homepage'] = entity_import('rules_config', '{ "rules_promote_category_to_homepage" : {
       "LABEL" : "Promote Category To Homepage",
       "PLUGIN" : "rule",

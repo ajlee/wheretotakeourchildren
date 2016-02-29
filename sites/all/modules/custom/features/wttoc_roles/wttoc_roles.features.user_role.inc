@@ -13,7 +13,7 @@ function wttoc_roles_user_default_roles() {
   // Exported role: Free.
   $roles['Free'] = array(
     'name' => 'Free',
-    'weight' => 3,
+    'weight' => 4,
   );
 
   // Exported role: Premium.
@@ -25,7 +25,7 @@ function wttoc_roles_user_default_roles() {
   // Exported role: Regular User.
   $roles['Regular User'] = array(
     'name' => 'Regular User',
-    'weight' => 2,
+    'weight' => 3,
   );
 
   // Exported role: Site Editor.

@@ -116,6 +116,16 @@ function wttoc_field_permissions_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: 'create field_user_image'.
+  $permissions['create field_user_image'] = array(
+    'name' => 'create field_user_image',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
+    ),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: 'create field_video'.
   $permissions['create field_video'] = array(
     'name' => 'create field_video',
@@ -211,6 +221,16 @@ function wttoc_field_permissions_user_default_permissions() {
   // Exported permission: 'edit field_social_media_pages'.
   $permissions['edit field_social_media_pages'] = array(
     'name' => 'edit field_social_media_pages',
+    'roles' => array(
+      'Site Editor' => 'Site Editor',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'edit field_user_image'.
+  $permissions['edit field_user_image'] = array(
+    'name' => 'edit field_user_image',
     'roles' => array(
       'Site Editor' => 'Site Editor',
       'administrator' => 'administrator',
@@ -319,6 +339,16 @@ function wttoc_field_permissions_user_default_permissions() {
     'name' => 'edit own field_social_media_pages',
     'roles' => array(
       'Premium' => 'Premium',
+      'Site Editor' => 'Site Editor',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'edit own field_user_image'.
+  $permissions['edit own field_user_image'] = array(
+    'name' => 'edit own field_user_image',
+    'roles' => array(
       'Site Editor' => 'Site Editor',
       'administrator' => 'administrator',
     ),
@@ -435,6 +465,16 @@ function wttoc_field_permissions_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: 'view field_user_image'.
+  $permissions['view field_user_image'] = array(
+    'name' => 'view field_user_image',
+    'roles' => array(
+      'Site Editor' => 'Site Editor',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'field_permissions',
+  );
+
   // Exported permission: 'view field_video'.
   $permissions['view field_video'] = array(
     'name' => 'view field_video',
@@ -541,6 +581,16 @@ function wttoc_field_permissions_user_default_permissions() {
       'administrator' => 'administrator',
       'anonymous user' => 'anonymous user',
       'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'field_permissions',
+  );
+
+  // Exported permission: 'view own field_user_image'.
+  $permissions['view own field_user_image'] = array(
+    'name' => 'view own field_user_image',
+    'roles' => array(
+      'Site Editor' => 'Site Editor',
+      'administrator' => 'administrator',
     ),
     'module' => 'field_permissions',
   );

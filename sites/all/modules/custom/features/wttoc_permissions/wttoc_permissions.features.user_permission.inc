@@ -2335,6 +2335,16 @@ function wttoc_permissions_user_default_permissions() {
     'module' => 'upload_images_for_css',
   );
 
+  // Exported permission: 'use Rules component rules_delete_user_override'.
+  $permissions['use Rules component rules_delete_user_override'] = array(
+    'name' => 'use Rules component rules_delete_user_override',
+    'roles' => array(
+      'Site Editor' => 'Site Editor',
+      'administrator' => 'administrator',
+    ),
+    'module' => 'rules',
+  );
+
   // Exported permission: 'use Rules component rules_editor_tools_feature_content'.
   $permissions['use Rules component rules_editor_tools_feature_content'] = array(
     'name' => 'use Rules component rules_editor_tools_feature_content',
@@ -2361,6 +2371,24 @@ function wttoc_permissions_user_default_permissions() {
     'roles' => array(
       'Premium' => 'Premium',
       'administrator' => 'administrator',
+    ),
+    'module' => 'rules',
+  );
+
+  // Exported permission: 'use Rules component rules_give_premium_role_six_month'.
+  $permissions['use Rules component rules_give_premium_role_six_month'] = array(
+    'name' => 'use Rules component rules_give_premium_role_six_month',
+    'roles' => array(
+      'Site Editor' => 'Site Editor',
+    ),
+    'module' => 'rules',
+  );
+
+  // Exported permission: 'use Rules component rules_give_twelve_months_premium'.
+  $permissions['use Rules component rules_give_twelve_months_premium'] = array(
+    'name' => 'use Rules component rules_give_twelve_months_premium',
+    'roles' => array(
+      'Site Editor' => 'Site Editor',
     ),
     'module' => 'rules',
   );

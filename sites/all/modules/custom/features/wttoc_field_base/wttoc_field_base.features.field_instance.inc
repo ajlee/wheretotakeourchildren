@@ -332,7 +332,7 @@ function wttoc_field_base_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'user',
@@ -359,19 +359,19 @@ function wttoc_field_base_field_default_field_instances() {
     'bundle' => 'user',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'E.g. owner, manager, head of marketing.',
     'display' => array(
       'default' => array(
         'label' => 'above',
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 1,
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'user',
     'field_name' => 'field_title',
-    'label' => 'Title',
+    'label' => 'Title (in your company)',
     'required' => 0,
     'settings' => array(
       'text_processing' => 0,
@@ -396,9 +396,13 @@ function wttoc_field_base_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'module' => 'image',
+        'settings' => array(
+          'image_link' => '',
+          'image_style' => 'rectangle200x80',
+        ),
+        'type' => 'image',
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'user',
@@ -416,7 +420,7 @@ function wttoc_field_base_field_default_field_instances() {
       'min_resolution' => '1000x1000',
       'title_field' => 1,
       'title_field_required' => 1,
-      'user_register_form' => 1,
+      'user_register_form' => 0,
     ),
     'widget' => array(
       'active' => 1,
@@ -434,10 +438,11 @@ function wttoc_field_base_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Category Image');
   t('Company Name');
+  t('E.g. owner, manager, head of marketing.');
   t('Show on homepage');
   t('Social Icon');
   t('Social Link');
-  t('Title');
+  t('Title (in your company)');
   t('User Image');
 
   return $field_instances;

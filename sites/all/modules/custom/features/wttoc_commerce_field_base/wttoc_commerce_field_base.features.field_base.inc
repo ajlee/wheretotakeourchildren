@@ -168,6 +168,38 @@ function wttoc_commerce_field_base_field_default_field_bases() {
     'type' => 'commerce_customer_profile_reference',
   );
 
+  // Exported field_base: 'commerce_discount_date'
+  $field_bases['commerce_discount_date'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(
+      0 => 'commerce_discount',
+    ),
+    'field_name' => 'commerce_discount_date',
+    'indexes' => array(),
+    'locked' => 1,
+    'module' => 'date',
+    'settings' => array(
+      'granularity' => array(
+        'day' => 'day',
+        'month' => 'month',
+        'year' => 'year',
+      ),
+      'handler' => 'base',
+      'handler_settings' => array(
+        'target_bundles' => array(),
+      ),
+      'repeat' => 0,
+      'target_type' => 'commerce_discount',
+      'timezone_db' => '',
+      'todate' => 'optional',
+      'tz_handling' => 'none',
+    ),
+    'translatable' => 0,
+    'type' => 'datestamp',
+  );
+
   // Exported field_base: 'commerce_discount_offer'
   $field_bases['commerce_discount_offer'] = array(
     'active' => 1,
@@ -651,6 +683,40 @@ function wttoc_commerce_field_base_field_default_field_bases() {
     'settings' => array(),
     'translatable' => 0,
     'type' => 'commerce_price',
+  );
+
+  // Exported field_base: 'discount_usage_limit'
+  $field_bases['discount_usage_limit'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(
+      0 => 'commerce_discount',
+    ),
+    'field_name' => 'discount_usage_limit',
+    'indexes' => array(),
+    'locked' => 1,
+    'module' => 'number',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'number_integer',
+  );
+
+  // Exported field_base: 'discount_usage_per_person'
+  $field_bases['discount_usage_per_person'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(
+      0 => 'commerce_discount',
+    ),
+    'field_name' => 'discount_usage_per_person',
+    'indexes' => array(),
+    'locked' => 1,
+    'module' => 'number',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'number_integer',
   );
 
   // Exported field_base: 'field_product'

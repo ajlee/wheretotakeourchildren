@@ -654,6 +654,9 @@ function wttoc_field_base_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_title',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
     'indexes' => array(
       'format' => array(
         0 => 'format',
@@ -675,6 +678,9 @@ function wttoc_field_base_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_user_image',
+    'field_permissions' => array(
+      'type' => 2,
+    ),
     'indexes' => array(
       'fid' => array(
         0 => 'fid',
