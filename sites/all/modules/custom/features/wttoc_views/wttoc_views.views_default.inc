@@ -337,7 +337,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['field_phone_number']['settings'] = array(
     'title' => '',
   );
-  /* Field: Content: Event Website */
+  /* Field: Content: Website Address */
   $handler->display->display_options['fields']['field_website']['id'] = 'field_website';
   $handler->display->display_options['fields']['field_website']['table'] = 'field_data_field_website';
   $handler->display->display_options['fields']['field_website']['field'] = 'field_website';
@@ -1377,7 +1377,7 @@ function wttoc_views_views_default_views() {
     'image_style' => 'square_100x100',
     'image_link' => '',
   );
-  /* Field: User: Title */
+  /* Field: User: Title (in your company) */
   $handler->display->display_options['fields']['field_title']['id'] = 'field_title';
   $handler->display->display_options['fields']['field_title']['table'] = 'field_data_field_title';
   $handler->display->display_options['fields']['field_title']['field'] = 'field_title';
@@ -1956,7 +1956,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['field_phone_number']['settings'] = array(
     'title' => '',
   );
-  /* Field: Content: Event Website */
+  /* Field: Content: Website Address */
   $handler->display->display_options['fields']['field_website']['id'] = 'field_website';
   $handler->display->display_options['fields']['field_website']['table'] = 'field_data_field_website';
   $handler->display->display_options['fields']['field_website']['field'] = 'field_website';
@@ -3926,7 +3926,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['changed']['field'] = 'changed';
   $handler->display->display_options['fields']['changed']['label'] = 'Updated';
   $handler->display->display_options['fields']['changed']['date_format'] = 'short';
-  /* Field: Content: Featured Event */
+  /* Field: Content: Featured Family Guide */
   $handler->display->display_options['fields']['field_featured_content']['id'] = 'field_featured_content';
   $handler->display->display_options['fields']['field_featured_content']['table'] = 'field_data_field_featured_content';
   $handler->display->display_options['fields']['field_featured_content']['field'] = 'field_featured_content';
@@ -4123,6 +4123,20 @@ function wttoc_views_views_default_views() {
       'override_label' => 1,
       'label' => 'Delete User and Content',
     ),
+    'rules_component::rules_give_premium_role_six_month' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
+    'rules_component::rules_give_twelve_months_premium' => array(
+      'selected' => 1,
+      'postpone_processing' => 0,
+      'skip_confirmation' => 0,
+      'override_label' => 0,
+      'label' => '',
+    ),
   );
   /* Field: User: E-mail */
   $handler->display->display_options['fields']['mail']['id'] = 'mail';
@@ -4155,6 +4169,13 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['rid']['id'] = 'rid';
   $handler->display->display_options['fields']['rid']['table'] = 'users_roles';
   $handler->display->display_options['fields']['rid']['field'] = 'rid';
+  /* Field: User: Role expiration date/time */
+  $handler->display->display_options['fields']['expiry_timestamp']['id'] = 'expiry_timestamp';
+  $handler->display->display_options['fields']['expiry_timestamp']['table'] = 'role_expire';
+  $handler->display->display_options['fields']['expiry_timestamp']['field'] = 'expiry_timestamp';
+  $handler->display->display_options['fields']['expiry_timestamp']['label'] = 'Premium Expiration Date';
+  $handler->display->display_options['fields']['expiry_timestamp']['date_format'] = 'short';
+  $handler->display->display_options['fields']['expiry_timestamp']['second_date_format'] = 'long';
   /* Sort criterion: User: Created date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'users';
@@ -4900,7 +4921,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['changed']['field'] = 'changed';
   $handler->display->display_options['fields']['changed']['label'] = 'Updated';
   $handler->display->display_options['fields']['changed']['date_format'] = 'short';
-  /* Field: Content: Featured Event */
+  /* Field: Content: Featured Family Guide */
   $handler->display->display_options['fields']['field_featured_content']['id'] = 'field_featured_content';
   $handler->display->display_options['fields']['field_featured_content']['table'] = 'field_data_field_featured_content';
   $handler->display->display_options['fields']['field_featured_content']['field'] = 'field_featured_content';
@@ -4928,6 +4949,10 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['arguments']['uid']['specify_validation'] = TRUE;
   $handler->display->display_options['arguments']['uid']['validate']['type'] = 'current_user_or_role';
+  $handler->display->display_options['arguments']['uid']['validate_options']['restrict_roles'] = TRUE;
+  $handler->display->display_options['arguments']['uid']['validate_options']['roles'] = array(
+    3 => '3',
+  );
   $handler->display->display_options['arguments']['uid']['validate']['fail'] = 'access denied';
   /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type_1']['id'] = 'type_1';
