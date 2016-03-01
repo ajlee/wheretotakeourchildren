@@ -76,9 +76,17 @@ function wttoc_commerce_rules_default_rules_configuration() {
             "unique" : "1"
           }
         },
+        { "data_convert" : {
+            "USING" : {
+              "type" : "integer",
+              "value" : [ "line-item:commerce-product:commerce-recurring-ini-period:interval" ]
+            },
+            "PROVIDE" : { "conversion_result" : { "interval_multiplier" : "interval_multiplier" } }
+          }
+        },
         { "interval_apply" : {
             "USING" : {
-              "interval" : "1",
+              "interval" : [ "interval-multiplier" ],
               "period" : [ "line-item:commerce-product:commerce-recurring-ini-period:period" ],
               "date" : "now"
             },
@@ -197,9 +205,17 @@ function wttoc_commerce_rules_default_rules_configuration() {
             "unique" : "1"
           }
         },
+        { "data_convert" : {
+            "USING" : {
+              "type" : "integer",
+              "value" : [ "line-item:commerce-product:commerce-recurring-rec-period:interval" ]
+            },
+            "PROVIDE" : { "conversion_result" : { "interval_multiplier" : "interval_multiplier" } }
+          }
+        },
         { "interval_apply" : {
             "USING" : {
-              "interval" : "1",
+              "interval" : [ "interval-multiplier" ],
               "period" : [ "line-item:commerce-product:commerce-recurring-rec-period:period" ],
               "date" : "now"
             },
