@@ -36,6 +36,7 @@ function upload_images_for_css_frontpageimage_form_submit($form, &$form_state){
         $file = file_load($form_state['values']['background_image']);
         $fpath = $file->uri;
         variable_set("upload_images_for_css_frontpageimage", $fpath);
+        file_save_upload('background_image');
     }
     if(isset($form_state['values']['reset_image']) && !empty($form_state['values']['reset_image'])) {
         variable_set("upload_images_for_css_frontpageimage", "");
