@@ -74,6 +74,9 @@
   <meta name="theme-color" content="#ffffff">
   <meta name="norton-safeweb-site-verification" content="a7nq0you59682nzihu-trns1ttee-yt589xijo-sokd4mrvtwl8-75xw5rmbp1qcbuh3evff0cso1kx0qkprywnrx3y9o8kudx0r33b4ly9r7kubr1qj-oal5r4d7wqd" />
   <!--END FAVICON SECTION -->
+  <!--FORCE SSL SECTION-->
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <!--END FORCE SSL SECTION -->
   <?php print $styles; ?>
   <?php print $scripts; ?>
   <script>
