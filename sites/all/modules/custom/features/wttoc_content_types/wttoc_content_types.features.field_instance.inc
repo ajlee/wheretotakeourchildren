@@ -730,7 +730,7 @@ function wttoc_content_types_field_default_field_instances() {
     'bundle' => 'business_service_or_attraction',
     'default_value' => array(),
     'deleted' => 0,
-    'description' => 'The first image will be used as the default image throughout the site. Don\'t forget to fill the image\'s Alt and Title fields for impaired users. IMPORTANT: If you don\'t upload an image, one will be automatically assigned to you, depending on your listing\'s category.',
+    'description' => 'The first image will be used as the default image throughout the site. Don\'t forget to fill the image\'s Alt and Title fields for impaired users. IMPORTANT: If you don\'t upload an image, one will be automatically assigned to you, depending on your listing\'s category.<br><br><b>Recommended image size:</b> 1000px minimum width, 1000px minimum height.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -747,7 +747,7 @@ function wttoc_content_types_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_image_gallery',
-    'label' => 'Image Gallery',
+    'label' => 'Image Gallery ',
     'required' => 0,
     'settings' => array(
       'alt_field' => 1,
@@ -757,7 +757,7 @@ function wttoc_content_types_field_default_field_instances() {
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '',
-      'min_resolution' => '1000x1000',
+      'min_resolution' => '',
       'title_field' => 1,
       'title_field_required' => 1,
       'user_register_form' => FALSE,
@@ -1476,7 +1476,7 @@ function wttoc_content_types_field_default_field_instances() {
     'bundle' => 'event',
     'default_value' => array(),
     'deleted' => 0,
-    'description' => 'The first image will be used as the default image throughout the site. Don\'t forget to fill the image\'s Alt and Title fields for impaired users. IMPORTANT: If you don\'t upload an image, one will be automatically assigned to you, depending on your listing\'s category.',
+    'description' => 'The first image will be used as the default image throughout the site. Don\'t forget to fill the image\'s Alt and Title fields for impaired users. IMPORTANT: If you don\'t upload an image, one will be automatically assigned to you, depending on your listing\'s category.<br><br><b>Recommended image size:</b> 1000px minimum width, 1000px minimum height.',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -1523,7 +1523,7 @@ function wttoc_content_types_field_default_field_instances() {
   // Exported field_instance: 'node-event-field_linked_business'
   $field_instances['node-event-field_linked_business'] = array(
     'bundle' => 'event',
-    'default_value' => NULL,
+    'default_value' => array(),
     'deleted' => 0,
     'description' => 'Search for a business that belongs to your account.',
     'display' => array(
@@ -1878,6 +1878,7 @@ function wttoc_content_types_field_default_field_instances() {
   t('General Information');
   t('Hidden Address Geofield');
   t('Image Gallery');
+  t('Image Gallery ');
   t('Linked Business');
   t('More Information');
   t('Opening Hours');
@@ -1885,7 +1886,7 @@ function wttoc_content_types_field_default_field_instances() {
   t('Post Categories');
   t('Prices Information');
   t('Search for a business that belongs to your account.');
-  t('The first image will be used as the default image throughout the site. Don\'t forget to fill the image\'s Alt and Title fields for impaired users. IMPORTANT: If you don\'t upload an image, one will be automatically assigned to you, depending on your listing\'s category.');
+  t('The first image will be used as the default image throughout the site. Don\'t forget to fill the image\'s Alt and Title fields for impaired users. IMPORTANT: If you don\'t upload an image, one will be automatically assigned to you, depending on your listing\'s category.<br><br><b>Recommended image size:</b> 1000px minimum width, 1000px minimum height.');
   t('Title Text');
   t('Title text is used in the tool tip when a user hovers their mouse over the image. Adding title text makes it easier to understand the context of an image and improves usability.');
   t('Video');
