@@ -87,7 +87,9 @@ function wttoc_field_permissions_user_default_permissions() {
   $permissions['create field_opening_hours'] = array(
     'name' => 'create field_opening_hours',
     'roles' => array(
+      'Free' => 'Free',
       'Premium' => 'Premium',
+      'Regular User' => 'Regular User',
       'Site Editor' => 'Site Editor',
       'administrator' => 'administrator',
     ),
@@ -315,7 +317,9 @@ function wttoc_field_permissions_user_default_permissions() {
   $permissions['edit own field_opening_hours'] = array(
     'name' => 'edit own field_opening_hours',
     'roles' => array(
+      'Free' => 'Free',
       'Premium' => 'Premium',
+      'Regular User' => 'Regular User',
       'Site Editor' => 'Site Editor',
       'administrator' => 'administrator',
     ),
