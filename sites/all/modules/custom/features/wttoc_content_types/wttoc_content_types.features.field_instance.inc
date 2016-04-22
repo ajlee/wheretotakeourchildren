@@ -1503,7 +1503,7 @@ function wttoc_content_types_field_default_field_instances() {
       'file_extensions' => 'png gif jpg jpeg',
       'max_filesize' => '',
       'max_resolution' => '',
-      'min_resolution' => '1000x1000',
+      'min_resolution' => '',
       'title_field' => 1,
       'title_field_required' => 1,
       'user_register_form' => FALSE,
