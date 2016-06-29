@@ -415,7 +415,9 @@
 									showValuesSearch("business",formSelector);
 									//modify sort options
 									$(formSelector + sp + sortByEventDate).hide();
-									$(formSelector + sp + noSortOption).click();
+									if($(formSelector + sp + sortByEventDate).hasClass('selected')){
+										$(formSelector + sp + noSortOption).click();
+									}
 									break;
 								//Event Content Type Selected
 								case optionEvent:
@@ -435,7 +437,9 @@
 									hideResetSearch("business",formSelector);
 									//modify sort options
 									$(formSelector + sp + sortByEventDate).hide();
-									$(formSelector + sp + noSortOption).click();
+									if($(formSelector + sp + sortByEventDate).hasClass('selected')){
+										$(formSelector + sp + noSortOption).click();
+									}
 							}
 						}
 						//No Values Selected
@@ -444,7 +448,9 @@
 							hideResetSearch("business",formSelector);
 							//modify sort options
 							$(formSelector + sp + sortByEventDate).hide();
-							$(formSelector + sp + noSortOption).click();
+							if($(formSelector + sp + sortByEventDate).hasClass('selected')){
+								$(formSelector + sp + noSortOption).click();
+							}
 						}
 					}
 					//use hierarchy (based on dashes) inside a particular sumoselect

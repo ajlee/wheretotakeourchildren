@@ -33,7 +33,7 @@ function wttoc_preprocess_page(&$variables) {
 		drupal_add_library('system', 'jquery.cookie');
 	//LOAD EXTERNAL JAVASCRIPT
 	$loadedJSexternal = array(
-		'https://maps.googleapis.com/maps/api/js',
+		'https://maps.googleapis.com/maps/api/js?key=AIzaSyBZMNHPvS6JRRd3Aj_Tr0KdagOMsDPhh-0&libraries=places',
 		);
         for($i=0; $i<count($loadedJSexternal); $i++){
                 drupal_add_js($loadedJSexternal[$i],
