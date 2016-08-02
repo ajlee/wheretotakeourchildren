@@ -567,7 +567,7 @@
 						$(viewsExposedFormSelector + sp + contentTypeSelect).change(function(){
 							var currentVal = $(this).val();
 							businessOrEventChangeEvent(currentVal, viewsExposedFormSelector, false);
-						});	
+						});
 					}
 					if($('body.page-search-businesses-and-events').length){
 						var currentVal = $(viewsBlockSelector + sp + contentTypeSelect).val();
@@ -578,6 +578,27 @@
 						});	
 					}				
 				}//end of check for homepage or search page
+		}//end of attach
+	};//end of behavior
+	//When There's GeoCoding on Front Page
+	//Set Sort By Filter to: Sort By Distance
+	Drupal.behaviors.wttocSortByDistanceFrontPage = {
+		attach: function (context){
+			if($('body.front').length){
+				var viewsExposedFormSelector = 'form#views-exposed-form-businesses-and-events-page-results';
+				var sp = " ";
+				var addressFieldSelector = '#edit-field-hidden-address-geofield-latlon';
+				var fakeButtonSelector = ".bizEventsExposedFormFake";
+				var sortByElement_Selector = '#edit-sort-by';
+				var sortByDistance_Option = 'field_hidden_address_geofield_latlon';
+				$(viewsExposedFormSelector + sp + fakeButtonSelector).click(function(){
+					var addressVal = $(viewsExposedFormSelector + sp + addressFieldSelector).val();
+					console.log(addressVal);
+					if(typeof(addressVal) !== "undefined" && typeof(addressVal) === "string" && addressVal !== ""){
+						$(viewsExposedFormSelector + sp + sortByElement_Selector).val(sortByDistance_Option);
+					}
+				});
+			}
 		}//end of attach
 	};//end of behavior
 })(jQuery, Drupal)
