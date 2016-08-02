@@ -123,23 +123,13 @@ class views_plugin_style extends views_plugin {
   function get_row_class($row_index) {
     if ($this->uses_row_class()) {
       $class = $this->options['row_class'];
-
       if ($this->uses_fields() && $this->view->field) {
-        $classes = array();
-
-        // Explode the value by whitespace, this allows the function to handle
-        // a single class name and multiple class names that are then tokenized.
-        foreach(explode(' ', $class) as $token_class) {
-          $classes[] = strip_tags($this->tokenize_value($token_class, $row_index));
-        }
-      }
-      else {
-        $classes = explode(' ', $class);
+        $class = strip_tags($this->tokenize_value($class, $row_index));
       }
 
-      // Convert whatever the result is to a nice clean class name
+      $classes = explode(' ', $class);
       foreach ($classes as &$class) {
-        $class = drupal_html_class($class);
+        $class = drupal_clean_css_identifier($class);
       }
       return implode(' ', $classes);
     }

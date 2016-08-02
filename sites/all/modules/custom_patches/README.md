@@ -48,3 +48,10 @@ PATH: /sites/all/modules/url/url.info
 Allows for feeds to work with the url field
 
 More info: https://www.drupal.org/node/2013238
+
+---------------------------------------------------------------------
+FILE: views_old_class_plugin.patch
+PATH: /sites/all/modules/custom/devversions/views/plugins/views_plugin_style.inc
+
+Class names should stay the same - the new views security update breaks some classes.
+This patch reverts to the old way of doing things!
