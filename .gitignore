@@ -8,7 +8,7 @@ sites/*/private
 
 # Ignore default text files
 robots.txt
-/CHANGELOG.txt
+#/CHANGELOG.txt
 /COPYRIGHT.txt
 /INSTALL*.txt
 /LICENSE.txt
