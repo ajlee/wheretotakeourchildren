@@ -45,6 +45,10 @@ function wttoc_commerce_rules_views_default_views() {
   $handler->display->display_options['arguments']['uid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['uid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['uid']['summary_options']['items_per_page'] = '25';
+  $handler->display->display_options['filter_groups']['groups'] = array(
+    1 => 'AND',
+    2 => 'OR',
+  );
   /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
@@ -53,6 +57,23 @@ function wttoc_commerce_rules_views_default_views() {
     'event' => 'event',
     'business_service_or_attraction' => 'business_service_or_attraction',
   );
+  $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Featured Family Guide (field_featured_content) */
+  $handler->display->display_options['filters']['field_featured_content_value_1']['id'] = 'field_featured_content_value_1';
+  $handler->display->display_options['filters']['field_featured_content_value_1']['table'] = 'field_data_field_featured_content';
+  $handler->display->display_options['filters']['field_featured_content_value_1']['field'] = 'field_featured_content_value';
+  $handler->display->display_options['filters']['field_featured_content_value_1']['value'] = array(
+    1 => '1',
+  );
+  $handler->display->display_options['filters']['field_featured_content_value_1']['group'] = 2;
+  /* Filter criterion: Content: Featured Family Guide (field_featured_content) */
+  $handler->display->display_options['filters']['field_featured_content_value']['id'] = 'field_featured_content_value';
+  $handler->display->display_options['filters']['field_featured_content_value']['table'] = 'field_data_field_featured_content';
+  $handler->display->display_options['filters']['field_featured_content_value']['field'] = 'field_featured_content_value';
+  $handler->display->display_options['filters']['field_featured_content_value']['value'] = array(
+    1 => '1',
+  );
+  $handler->display->display_options['filters']['field_featured_content_value']['group'] = 2;
 
   /* Display: Author's Featured Nodes */
   $handler = $view->new_display('views_rules', 'Author\'s Featured Nodes', 'views_rules_1');
