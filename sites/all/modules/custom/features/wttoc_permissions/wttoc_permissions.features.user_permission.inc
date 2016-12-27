@@ -960,7 +960,6 @@ function wttoc_permissions_user_default_permissions() {
   $permissions['create event content'] = array(
     'name' => 'create event content',
     'roles' => array(
-      'Free' => 'Free',
       'Premium' => 'Premium',
       'Site Editor' => 'Site Editor',
       'administrator' => 'administrator',

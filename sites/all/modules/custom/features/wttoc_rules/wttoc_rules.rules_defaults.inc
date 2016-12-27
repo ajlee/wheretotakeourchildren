@@ -9,6 +9,90 @@
  */
 function wttoc_rules_default_rules_configuration() {
   $items = array();
+  $items['rules_default_event_lat_lon'] = entity_import('rules_config', '{ "rules_default_event_lat_lon" : {
+      "LABEL" : "Default Event Lat Lon",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules" ],
+      "ON" : { "node_insert" : [] },
+      "IF" : [
+        { "entity_has_field" : { "entity" : [ "node" ], "field" : "field_hidden_address_geofield" } },
+        { "OR" : [
+            { "data_is_empty" : { "data" : [ "node:field-hidden-address-geofield:lat" ] } },
+            { "data_is_empty" : { "data" : [ "node:field-hidden-address-geofield:lon" ] } }
+          ]
+        }
+      ],
+      "DO" : [
+        { "data_set" : {
+            "data" : [ "node:field-hidden-address-geofield:lat" ],
+            "value" : "51.5"
+          }
+        },
+        { "data_set" : {
+            "data" : [ "node:field-hidden-address-geofield:lon" ],
+            "value" : "0.12"
+          }
+        }
+      ]
+    }
+  }');
+  $items['rules_default_lat_lon_node_creation'] = entity_import('rules_config', '{ "rules_default_lat_lon_node_creation" : {
+      "LABEL" : "Default Lat Lon - Node Creation",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules" ],
+      "ON" : { "node_insert" : [] },
+      "IF" : [
+        { "entity_has_field" : { "entity" : [ "node" ], "field" : "field_hidden_address_geofield" } },
+        { "OR" : [
+            { "data_is_empty" : { "data" : [ "node:field-hidden-address-geofield:lat" ] } },
+            { "data_is_empty" : { "data" : [ "node:field-hidden-address-geofield:lon" ] } }
+          ]
+        }
+      ],
+      "DO" : [
+        { "data_set" : {
+            "data" : [ "node:field-hidden-address-geofield:lat" ],
+            "value" : "51.5"
+          }
+        },
+        { "data_set" : {
+            "data" : [ "node:field-hidden-address-geofield:lon" ],
+            "value" : "0.12"
+          }
+        }
+      ]
+    }
+  }');
+  $items['rules_default_lat_lon_node_updated'] = entity_import('rules_config', '{ "rules_default_lat_lon_node_updated" : {
+      "LABEL" : "Default Lat Lon - Node Updated",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules" ],
+      "ON" : { "node_update" : [] },
+      "IF" : [
+        { "entity_has_field" : { "entity" : [ "node" ], "field" : "field_hidden_address_geofield" } },
+        { "OR" : [
+            { "data_is_empty" : { "data" : [ "node:field-hidden-address-geofield:lat" ] } },
+            { "data_is_empty" : { "data" : [ "node:field-hidden-address-geofield:lon" ] } }
+          ]
+        }
+      ],
+      "DO" : [
+        { "data_set" : {
+            "data" : [ "node:field-hidden-address-geofield:lat" ],
+            "value" : "51.5"
+          }
+        },
+        { "data_set" : {
+            "data" : [ "node:field-hidden-address-geofield:lon" ],
+            "value" : "0.12"
+          }
+        }
+      ]
+    }
+  }');
   $items['rules_delete_user_override'] = entity_import('rules_config', '{ "rules_delete_user_override" : {
       "LABEL" : "Delete User Override",
       "PLUGIN" : "rule",

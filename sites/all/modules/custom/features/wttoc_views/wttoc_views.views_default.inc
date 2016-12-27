@@ -337,7 +337,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['field_phone_number']['settings'] = array(
     'title' => '',
   );
-  /* Field: Content: Website Address */
+  /* Field: Content: Event Website */
   $handler->display->display_options['fields']['field_website']['id'] = 'field_website';
   $handler->display->display_options['fields']['field_website']['table'] = 'field_data_field_website';
   $handler->display->display_options['fields']['field_website']['field'] = 'field_website';
@@ -516,7 +516,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['url']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['url']['display_as_link'] = FALSE;
   $handler->display->display_options['fields']['url']['link_to_entity'] = 0;
-  /* Field: Indexed Content: Image Gallery */
+  /* Field: Indexed Content: Image Gallery  */
   $handler->display->display_options['fields']['field_image_gallery']['id'] = 'field_image_gallery';
   $handler->display->display_options['fields']['field_image_gallery']['table'] = 'search_api_index_index_businesses_and_events';
   $handler->display->display_options['fields']['field_image_gallery']['field'] = 'field_image_gallery';
@@ -1099,7 +1099,7 @@ function wttoc_views_views_default_views() {
     'format' => 'decimal_degrees',
     'labels' => 1,
   );
-  /* Field: Indexed Content: Image Gallery */
+  /* Field: Indexed Content: Image Gallery  */
   $handler->display->display_options['fields']['field_image_gallery']['id'] = 'field_image_gallery';
   $handler->display->display_options['fields']['field_image_gallery']['table'] = 'search_api_index_index_businesses_and_events';
   $handler->display->display_options['fields']['field_image_gallery']['field'] = 'field_image_gallery';
@@ -1956,7 +1956,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['field_phone_number']['settings'] = array(
     'title' => '',
   );
-  /* Field: Content: Website Address */
+  /* Field: Content: Event Website */
   $handler->display->display_options['fields']['field_website']['id'] = 'field_website';
   $handler->display->display_options['fields']['field_website']['table'] = 'field_data_field_website';
   $handler->display->display_options['fields']['field_website']['field'] = 'field_website';
@@ -2493,7 +2493,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['empty']['area_text_custom']['field'] = 'area_text_custom';
   $handler->display->display_options['empty']['area_text_custom']['empty'] = TRUE;
   $handler->display->display_options['empty']['area_text_custom']['content'] = '<h2>No results for this search.</h2>';
-  /* Field: Indexed Content: Image Gallery */
+  /* Field: Indexed Content: Image Gallery  */
   $handler->display->display_options['fields']['field_image_gallery']['id'] = 'field_image_gallery';
   $handler->display->display_options['fields']['field_image_gallery']['table'] = 'search_api_index_posts_blogs_and_news';
   $handler->display->display_options['fields']['field_image_gallery']['field'] = 'field_image_gallery';
@@ -2803,7 +2803,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['footer']['area']['id'] = 'area';
   $handler->display->display_options['footer']['area']['table'] = 'views';
   $handler->display->display_options['footer']['area']['field'] = 'area';
-  /* Field: Indexed Content: Image Gallery */
+  /* Field: Indexed Content: Image Gallery  */
   $handler->display->display_options['fields']['field_image_gallery']['id'] = 'field_image_gallery';
   $handler->display->display_options['fields']['field_image_gallery']['table'] = 'search_api_index_posts_blogs_and_news';
   $handler->display->display_options['fields']['field_image_gallery']['field'] = 'field_image_gallery';
@@ -2951,7 +2951,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['style_options']['row_class'] = 'rowContentType-[type]';
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['row_options']['hide_empty'] = TRUE;
-  /* Field: Indexed Content: Image Gallery */
+  /* Field: Indexed Content: Image Gallery  */
   $handler->display->display_options['fields']['field_image_gallery']['id'] = 'field_image_gallery';
   $handler->display->display_options['fields']['field_image_gallery']['table'] = 'search_api_index_index_businesses_and_events';
   $handler->display->display_options['fields']['field_image_gallery']['field'] = 'field_image_gallery';
@@ -3097,7 +3097,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['defaults']['css_class'] = FALSE;
   $handler->display->display_options['css_class'] = 'smallblocks_events';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Indexed Content: Image Gallery */
+  /* Field: Indexed Content: Image Gallery  */
   $handler->display->display_options['fields']['field_image_gallery']['id'] = 'field_image_gallery';
   $handler->display->display_options['fields']['field_image_gallery']['table'] = 'search_api_index_index_businesses_and_events';
   $handler->display->display_options['fields']['field_image_gallery']['field'] = 'field_image_gallery';
@@ -3294,7 +3294,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '6';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Indexed Content: Image Gallery */
+  /* Field: Indexed Content: Image Gallery  */
   $handler->display->display_options['fields']['field_image_gallery']['id'] = 'field_image_gallery';
   $handler->display->display_options['fields']['field_image_gallery']['table'] = 'search_api_index_index_businesses_and_events';
   $handler->display->display_options['fields']['field_image_gallery']['field'] = 'field_image_gallery';
@@ -3461,7 +3461,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '6';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Indexed Content: Image Gallery */
+  /* Field: Indexed Content: Image Gallery  */
   $handler->display->display_options['fields']['field_image_gallery']['id'] = 'field_image_gallery';
   $handler->display->display_options['fields']['field_image_gallery']['table'] = 'search_api_index_index_businesses_and_events';
   $handler->display->display_options['fields']['field_image_gallery']['field'] = 'field_image_gallery';
@@ -3926,7 +3926,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['changed']['field'] = 'changed';
   $handler->display->display_options['fields']['changed']['label'] = 'Updated';
   $handler->display->display_options['fields']['changed']['date_format'] = 'short';
-  /* Field: Content: Featured Family Guide */
+  /* Field: Content: Featured Event */
   $handler->display->display_options['fields']['field_featured_content']['id'] = 'field_featured_content';
   $handler->display->display_options['fields']['field_featured_content']['table'] = 'field_data_field_featured_content';
   $handler->display->display_options['fields']['field_featured_content']['field'] = 'field_featured_content';
@@ -4055,8 +4055,10 @@ function wttoc_views_views_default_views() {
     'mail' => 'mail',
     'name' => 'name',
     'status' => 'status',
-    'rid' => 'rid',
     'access' => 'access',
+    'expiry_timestamp' => 'expiry_timestamp',
+    'created' => 'created',
+    'rid' => 'rid',
   );
   $handler->display->display_options['style_options']['default'] = 'name';
   $handler->display->display_options['style_options']['info'] = array(
@@ -4086,14 +4088,28 @@ function wttoc_views_views_default_views() {
       'separator' => '',
       'empty_column' => 0,
     ),
-    'rid' => array(
+    'access' => array(
+      'sortable' => 1,
+      'default_sort_order' => 'asc',
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
     ),
-    'access' => array(
+    'expiry_timestamp' => array(
+      'sortable' => 0,
+      'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'created' => array(
       'sortable' => 1,
       'default_sort_order' => 'asc',
+      'align' => '',
+      'separator' => '',
+      'empty_column' => 0,
+    ),
+    'rid' => array(
       'align' => '',
       'separator' => '',
       'empty_column' => 0,
@@ -4165,6 +4181,12 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['access']['field'] = 'access';
   $handler->display->display_options['fields']['access']['date_format'] = 'long';
   $handler->display->display_options['fields']['access']['second_date_format'] = 'long';
+  /* Field: User: Created date */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'users';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['date_format'] = 'long';
+  $handler->display->display_options['fields']['created']['second_date_format'] = 'search_api_facetapi_YEAR';
   /* Field: User: Roles */
   $handler->display->display_options['fields']['rid']['id'] = 'rid';
   $handler->display->display_options['fields']['rid']['table'] = 'users_roles';
@@ -4676,7 +4698,8 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['due_date']['table'] = 'commerce_recurring';
   $handler->display->display_options['fields']['due_date']['field'] = 'due_date';
   $handler->display->display_options['fields']['due_date']['label'] = 'Due date';
-  $handler->display->display_options['fields']['due_date']['date_format'] = 'raw time hence';
+  $handler->display->display_options['fields']['due_date']['date_format'] = 'long';
+  $handler->display->display_options['fields']['due_date']['second_date_format'] = 'search_api_facetapi_YEAR';
   /* Field: Commerce recurring entity: Commerce recurring end date */
   $handler->display->display_options['fields']['end_date']['id'] = 'end_date';
   $handler->display->display_options['fields']['end_date']['table'] = 'commerce_recurring';
@@ -4921,7 +4944,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['changed']['field'] = 'changed';
   $handler->display->display_options['fields']['changed']['label'] = 'Updated';
   $handler->display->display_options['fields']['changed']['date_format'] = 'short';
-  /* Field: Content: Featured Family Guide */
+  /* Field: Content: Featured Event */
   $handler->display->display_options['fields']['field_featured_content']['id'] = 'field_featured_content';
   $handler->display->display_options['fields']['field_featured_content']['table'] = 'field_data_field_featured_content';
   $handler->display->display_options['fields']['field_featured_content']['field'] = 'field_featured_content';
