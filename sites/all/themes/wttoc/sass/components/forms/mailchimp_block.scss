@@ -1,0 +1,55 @@
+.mailchimp__block{
+  display:none;
+  background: $color1;
+  .mc-nl-title{
+    text-align: center;
+    position: relative;
+    margin: 6px 0 10px 0;
+    padding: 6px 0;
+    h2{
+        padding: 5px 15px;
+        display: inline-block;
+        color: $WHITE;
+    }
+  }
+  .mc-nl-field{
+    text-align:center;
+    padding: 3px 12px;
+    input{
+      @include remFontSize($fontS);
+      @include remLineHeight(2*$fontS);
+      @include remHeight(2*$fontS);
+      width: 90%;
+      display:block;
+      margin: 0 auto;
+      padding: 5px;
+      border-radius: 5px;
+      border: 2px solid #ccc;
+    }
+  }
+  .mc-nl-privacy{
+    padding: 3px 7px;
+    text-align:center;
+    p{
+      @include remFontSize($fontXXS);
+      color: $LIGHTGRAY;
+      font-style: italic;
+    }
+  }
+  .mc-nl-submit{
+    text-align:right;
+    padding: 9px 7px 3px 7px;
+    input[type=submit]{
+      @include cssTransition(all 0.35s ease-in-out);
+      @include remFontSize($fontXS);
+      border: 1px solid $color3 !important;
+      background: $color3 !important;
+      max-width: initial !important;
+      width: initial !important;
+      margin: 0 5% 10px 0;
+      padding: 7px 15px;
+      display: inline-block;
+      color: #fff;
+    }
+  }
+}

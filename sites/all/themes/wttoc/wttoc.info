@@ -22,6 +22,7 @@ scripts[] = js/wttoc.tabblocks.js
 scripts[] = js/wttoc.matchheight.js
 scripts[] = js/wttoc.allBizEvents.js
 scripts[] = js/wttoc.EditorDashboard.js
+scripts[] = js/wttoc.mailchimp.js
 
 ; ========================================
 ; Regions

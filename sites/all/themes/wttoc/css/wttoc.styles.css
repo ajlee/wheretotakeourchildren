@@ -5504,6 +5504,141 @@ body.page-user-password input[type=password] {
     body.page-user-password input[type=password] {
       max-width: 288px; } }
 
+.mailchimp__block {
+  display: none;
+  background: #5675CE; }
+  .mailchimp__block .mc-nl-title {
+    text-align: center;
+    position: relative;
+    margin: 6px 0 10px 0;
+    padding: 6px 0; }
+    .mailchimp__block .mc-nl-title h2 {
+      padding: 5px 15px;
+      display: inline-block;
+      color: #fff; }
+  .mailchimp__block .mc-nl-field {
+    text-align: center;
+    padding: 3px 12px; }
+    .mailchimp__block .mc-nl-field input {
+      font-size: 17px;
+      font-size: 1.7rem;
+      line-height: 34px;
+      line-height: 3.4rem;
+      height: 34px;
+      height: 3.4rem;
+      width: 90%;
+      display: block;
+      margin: 0 auto;
+      padding: 5px;
+      border-radius: 5px;
+      border: 2px solid #ccc; }
+  .mailchimp__block .mc-nl-privacy {
+    padding: 3px 7px;
+    text-align: center; }
+    .mailchimp__block .mc-nl-privacy p {
+      font-size: 13px;
+      font-size: 1.3rem;
+      color: #e8eaea;
+      font-style: italic; }
+  .mailchimp__block .mc-nl-submit {
+    text-align: right;
+    padding: 9px 7px 3px 7px; }
+    .mailchimp__block .mc-nl-submit input[type=submit] {
+      transition: all 0.35s ease-in-out;
+      font-size: 15px;
+      font-size: 1.5rem;
+      border: 1px solid #66CD4C !important;
+      background: #66CD4C !important;
+      max-width: initial !important;
+      width: initial !important;
+      margin: 0 5% 10px 0;
+      padding: 7px 15px;
+      display: inline-block;
+      color: #fff; }
+
+.mailchimp__popup__container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.5); }
+  .mailchimp__popup__container .mailchimp__popup {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    box-shadow: 2px 2px 6px 1px #000;
+    box-shadow: 2px 2px 6px 1px rgba(0, 0, 0, 0.75);
+    background: #fff; }
+    .mailchimp__popup__container .mailchimp__popup .mc-nl-title {
+      background: #66CD4C;
+      text-align: center;
+      margin: 0 0 10px 0;
+      padding: 6px 0;
+      border: 2px dotted #ffffff;
+      position: relative; }
+      .mailchimp__popup__container .mailchimp__popup .mc-nl-title .mailchimp_close_popup {
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 17px;
+        font-size: 1.7rem;
+        color: #fff;
+        font-weight: bold;
+        font-family: sans-serif;
+        cursor: pointer;
+        padding: 5px; }
+      .mailchimp__popup__container .mailchimp__popup .mc-nl-title h2 {
+        padding: 5px 45px;
+        display: inline-block;
+        color: #fff; }
+    .mailchimp__popup__container .mailchimp__popup .mc-nl-field {
+      text-align: center;
+      padding: 3px 12px; }
+      .mailchimp__popup__container .mailchimp__popup .mc-nl-field input {
+        font-size: 17px;
+        font-size: 1.7rem;
+        line-height: 34px;
+        line-height: 3.4rem;
+        height: 34px;
+        height: 3.4rem;
+        width: 90%;
+        display: block;
+        margin: 0 auto;
+        padding: 5px;
+        border-radius: 5px;
+        border: 2px solid #ccc; }
+    .mailchimp__popup__container .mailchimp__popup .mc-nl-privacy {
+      padding: 3px 7px;
+      text-align: center; }
+      .mailchimp__popup__container .mailchimp__popup .mc-nl-privacy p {
+        font-size: 13px;
+        font-size: 1.3rem;
+        color: #c9c9c9;
+        font-style: italic;
+        width: 90%;
+        display: block;
+        margin: 0 auto; }
+    .mailchimp__popup__container .mailchimp__popup .mc-nl-submit {
+      text-align: right;
+      padding: 9px 7px 3px 7px; }
+      .mailchimp__popup__container .mailchimp__popup .mc-nl-submit input[type=submit] {
+        transition: all 0.35s ease-in-out;
+        font-size: 15px;
+        font-size: 1.5rem;
+        border: 1px solid #FE974E !important;
+        background: #FE974E !important;
+        max-width: initial !important;
+        width: initial !important;
+        margin: 0 5% 10px 0;
+        padding: 7px 15px;
+        display: inline-block;
+        color: #fff; }
+
 body.node-type-subscription .mainPageTitle {
   text-align: center; }
 
