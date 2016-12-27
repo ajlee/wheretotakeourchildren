@@ -337,7 +337,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['field_phone_number']['settings'] = array(
     'title' => '',
   );
-  /* Field: Content: Event Website */
+  /* Field: Content: Website Address */
   $handler->display->display_options['fields']['field_website']['id'] = 'field_website';
   $handler->display->display_options['fields']['field_website']['table'] = 'field_data_field_website';
   $handler->display->display_options['fields']['field_website']['field'] = 'field_website';
@@ -843,7 +843,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['filters']['field_hidden_address_geofield_latlon']['group'] = 1;
   $handler->display->display_options['filters']['field_hidden_address_geofield_latlon']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_hidden_address_geofield_latlon']['expose']['operator_id'] = 'field_hidden_address_geofield_latlon_op';
-  $handler->display->display_options['filters']['field_hidden_address_geofield_latlon']['expose']['label'] = 'Location';
+  $handler->display->display_options['filters']['field_hidden_address_geofield_latlon']['expose']['label'] = 'Town or Postcode';
   $handler->display->display_options['filters']['field_hidden_address_geofield_latlon']['expose']['operator'] = 'field_hidden_address_geofield_latlon_op';
   $handler->display->display_options['filters']['field_hidden_address_geofield_latlon']['expose']['identifier'] = 'field_hidden_address_geofield_latlon';
   $handler->display->display_options['filters']['field_hidden_address_geofield_latlon']['expose']['remember_roles'] = array(
@@ -1956,7 +1956,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['field_phone_number']['settings'] = array(
     'title' => '',
   );
-  /* Field: Content: Event Website */
+  /* Field: Content: Website Address */
   $handler->display->display_options['fields']['field_website']['id'] = 'field_website';
   $handler->display->display_options['fields']['field_website']['table'] = 'field_data_field_website';
   $handler->display->display_options['fields']['field_website']['field'] = 'field_website';
@@ -3926,7 +3926,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['changed']['field'] = 'changed';
   $handler->display->display_options['fields']['changed']['label'] = 'Updated';
   $handler->display->display_options['fields']['changed']['date_format'] = 'short';
-  /* Field: Content: Featured Event */
+  /* Field: Content: Featured Family Guide */
   $handler->display->display_options['fields']['field_featured_content']['id'] = 'field_featured_content';
   $handler->display->display_options['fields']['field_featured_content']['table'] = 'field_data_field_featured_content';
   $handler->display->display_options['fields']['field_featured_content']['field'] = 'field_featured_content';
@@ -4944,7 +4944,7 @@ function wttoc_views_views_default_views() {
   $handler->display->display_options['fields']['changed']['field'] = 'changed';
   $handler->display->display_options['fields']['changed']['label'] = 'Updated';
   $handler->display->display_options['fields']['changed']['date_format'] = 'short';
-  /* Field: Content: Featured Event */
+  /* Field: Content: Featured Family Guide */
   $handler->display->display_options['fields']['field_featured_content']['id'] = 'field_featured_content';
   $handler->display->display_options['fields']['field_featured_content']['table'] = 'field_data_field_featured_content';
   $handler->display->display_options['fields']['field_featured_content']['field'] = 'field_featured_content';
