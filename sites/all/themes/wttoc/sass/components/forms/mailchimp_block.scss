@@ -1,24 +1,27 @@
 .mailchimp__block{
-  display:none;
   background: $color1;
+  max-width:238px;
+  margin-left:auto;
+  margin-right:auto;
   .mc-nl-title{
     text-align: center;
     position: relative;
     margin: 6px 0 10px 0;
     padding: 6px 0;
     h2{
-        padding: 5px 15px;
-        display: inline-block;
-        color: $WHITE;
+      padding: 5px 15px;
+      display: inline-block;
+      color: $WHITE;
+      @include remFontSize($fontM);
     }
   }
   .mc-nl-field{
     text-align:center;
     padding: 3px 12px;
     input{
-      @include remFontSize($fontS);
-      @include remLineHeight(2*$fontS);
-      @include remHeight(2*$fontS);
+      @include remFontSize($fontXS);
+      @include remLineHeight(2*$fontXS);
+      @include remHeight(2*$fontXS);
       width: 90%;
       display:block;
       margin: 0 auto;
@@ -31,7 +34,7 @@
     padding: 3px 7px;
     text-align:center;
     p{
-      @include remFontSize($fontXXS);
+      @include remFontSize($fontXXXS);
       color: $LIGHTGRAY;
       font-style: italic;
     }
@@ -51,5 +54,14 @@
       display: inline-block;
       color: #fff;
     }
+  }
+}
+
+// responsive
+
+.mailchimp__block{
+
+  h2{
+    @include remFontSize($fontM + .2);
   }
 }

@@ -5505,8 +5505,10 @@ body.page-user-password input[type=password] {
       max-width: 288px; } }
 
 .mailchimp__block {
-  display: none;
-  background: #5675CE; }
+  background: #5675CE;
+  max-width: 238px;
+  margin-left: auto;
+  margin-right: auto; }
   .mailchimp__block .mc-nl-title {
     text-align: center;
     position: relative;
@@ -5515,17 +5517,19 @@ body.page-user-password input[type=password] {
     .mailchimp__block .mc-nl-title h2 {
       padding: 5px 15px;
       display: inline-block;
-      color: #fff; }
+      color: #fff;
+      font-size: 19px;
+      font-size: 1.9rem; }
   .mailchimp__block .mc-nl-field {
     text-align: center;
     padding: 3px 12px; }
     .mailchimp__block .mc-nl-field input {
-      font-size: 17px;
-      font-size: 1.7rem;
-      line-height: 34px;
-      line-height: 3.4rem;
-      height: 34px;
-      height: 3.4rem;
+      font-size: 15px;
+      font-size: 1.5rem;
+      line-height: 30px;
+      line-height: 3rem;
+      height: 30px;
+      height: 3rem;
       width: 90%;
       display: block;
       margin: 0 auto;
@@ -5536,8 +5540,8 @@ body.page-user-password input[type=password] {
     padding: 3px 7px;
     text-align: center; }
     .mailchimp__block .mc-nl-privacy p {
-      font-size: 13px;
-      font-size: 1.3rem;
+      font-size: 11px;
+      font-size: 1.1rem;
       color: #e8eaea;
       font-style: italic; }
   .mailchimp__block .mc-nl-submit {
@@ -5555,6 +5559,10 @@ body.page-user-password input[type=password] {
       padding: 7px 15px;
       display: inline-block;
       color: #fff; }
+
+.mailchimp__block h2 {
+  font-size: 21px;
+  font-size: 2.1rem; }
 
 .mailchimp__popup__container {
   display: none;
@@ -5585,27 +5593,29 @@ body.page-user-password input[type=password] {
         position: absolute;
         top: 0;
         right: 0;
-        font-size: 17px;
-        font-size: 1.7rem;
+        font-size: 22px;
+        font-size: 2.2rem;
         color: #fff;
         font-weight: bold;
         font-family: sans-serif;
         cursor: pointer;
         padding: 5px; }
       .mailchimp__popup__container .mailchimp__popup .mc-nl-title h2 {
-        padding: 5px 45px;
+        padding: 12px 15px;
         display: inline-block;
-        color: #fff; }
+        color: #fff;
+        font-size: 19px;
+        font-size: 1.9rem; }
     .mailchimp__popup__container .mailchimp__popup .mc-nl-field {
       text-align: center;
       padding: 3px 12px; }
       .mailchimp__popup__container .mailchimp__popup .mc-nl-field input {
-        font-size: 17px;
-        font-size: 1.7rem;
-        line-height: 34px;
-        line-height: 3.4rem;
-        height: 34px;
-        height: 3.4rem;
+        font-size: 15px;
+        font-size: 1.5rem;
+        line-height: 30px;
+        line-height: 3rem;
+        height: 30px;
+        height: 3rem;
         width: 90%;
         display: block;
         margin: 0 auto;

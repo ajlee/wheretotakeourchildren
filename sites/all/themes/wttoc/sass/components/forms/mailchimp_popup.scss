@@ -22,7 +22,7 @@
         position: absolute;
         top: 0;
         right: 0;
-        @include remFontSize($fontS);
+        @include remFontSize($fontL);
         color: $WHITE;
         font-weight:bold;
         font-family: sans-serif;
@@ -30,18 +30,19 @@
         padding: 5px;
       }
       h2{
-        padding: 5px 45px;
+        padding: 12px 15px;
         display: inline-block;
         color: $WHITE;
+        @include remFontSize($fontM);
       }
     }
     .mc-nl-field{
       text-align:center;
       padding: 3px 12px;
       input{
-        @include remFontSize($fontS);
-        @include remLineHeight(2*$fontS);
-        @include remHeight(2*$fontS);
+        @include remFontSize($fontXS);
+        @include remLineHeight(2*$fontXS);
+        @include remHeight(2*$fontXS);
         width: 90%;
         display:block;
         margin: 0 auto;
