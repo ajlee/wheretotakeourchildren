@@ -10,7 +10,7 @@
 function wttoc_content_types_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'comment-comment_node_basic_page-comment_body'
+  // Exported field_instance: 'comment-comment_node_basic_page-comment_body'.
   $field_instances['comment-comment_node_basic_page-comment_body'] = array(
     'bundle' => 'comment_node_basic_page',
     'default_value' => NULL,
@@ -43,7 +43,7 @@ function wttoc_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'comment-comment_node_blog_post-comment_body'
+  // Exported field_instance: 'comment-comment_node_blog_post-comment_body'.
   $field_instances['comment-comment_node_blog_post-comment_body'] = array(
     'bundle' => 'comment_node_blog_post',
     'default_value' => NULL,
@@ -77,7 +77,7 @@ function wttoc_content_types_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'comment-comment_node_business_service_or_attraction-comment_body'
+  // 'comment-comment_node_business_service_or_attraction-comment_body'.
   $field_instances['comment-comment_node_business_service_or_attraction-comment_body'] = array(
     'bundle' => 'comment_node_business_service_or_attraction',
     'default_value' => NULL,
@@ -110,7 +110,7 @@ function wttoc_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'comment-comment_node_event-comment_body'
+  // Exported field_instance: 'comment-comment_node_event-comment_body'.
   $field_instances['comment-comment_node_event-comment_body'] = array(
     'bundle' => 'comment_node_event',
     'default_value' => NULL,
@@ -143,7 +143,7 @@ function wttoc_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'file-image-field_file_image_alt_text'
+  // Exported field_instance: 'file-image-field_file_image_alt_text'.
   $field_instances['file-image-field_file_image_alt_text'] = array(
     'bundle' => 'image',
     'default_value' => NULL,
@@ -194,7 +194,7 @@ function wttoc_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'file-image-field_file_image_title_text'
+  // Exported field_instance: 'file-image-field_file_image_title_text'.
   $field_instances['file-image-field_file_image_title_text'] = array(
     'bundle' => 'image',
     'default_value' => NULL,
@@ -245,7 +245,7 @@ function wttoc_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-basic_page-field_body'
+  // Exported field_instance: 'node-basic_page-field_body'.
   $field_instances['node-basic_page-field_body'] = array(
     'bundle' => 'basic_page',
     'default_value' => NULL,
@@ -284,7 +284,7 @@ function wttoc_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-blog_post-field_body'
+  // Exported field_instance: 'node-blog_post-field_body'.
   $field_instances['node-blog_post-field_body'] = array(
     'bundle' => 'blog_post',
     'default_value' => NULL,
@@ -323,7 +323,7 @@ function wttoc_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-blog_post-field_image_gallery'
+  // Exported field_instance: 'node-blog_post-field_image_gallery'.
   $field_instances['node-blog_post-field_image_gallery'] = array(
     'bundle' => 'blog_post',
     'default_value' => array(),
@@ -372,7 +372,7 @@ function wttoc_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-blog_post-field_post_categories'
+  // Exported field_instance: 'node-blog_post-field_post_categories'.
   $field_instances['node-blog_post-field_post_categories'] = array(
     'bundle' => 'blog_post',
     'default_value' => array(),
@@ -412,7 +412,7 @@ function wttoc_content_types_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-business_service_or_attraction-field_address'
+  // 'node-business_service_or_attraction-field_address'.
   $field_instances['node-business_service_or_attraction-field_address'] = array(
     'bundle' => 'business_service_or_attraction',
     'default_value' => NULL,
@@ -463,7 +463,7 @@ function wttoc_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-business_service_or_attraction-field_ages'
+  // Exported field_instance: 'node-business_service_or_attraction-field_ages'.
   $field_instances['node-business_service_or_attraction-field_ages'] = array(
     'bundle' => 'business_service_or_attraction',
     'default_value' => NULL,
@@ -500,7 +500,7 @@ function wttoc_content_types_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-business_service_or_attraction-field_category'
+  // 'node-business_service_or_attraction-field_category'.
   $field_instances['node-business_service_or_attraction-field_category'] = array(
     'bundle' => 'business_service_or_attraction',
     'default_value' => NULL,
@@ -546,7 +546,7 @@ function wttoc_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-business_service_or_attraction-field_email'
+  // Exported field_instance: 'node-business_service_or_attraction-field_email'.
   $field_instances['node-business_service_or_attraction-field_email'] = array(
     'bundle' => 'business_service_or_attraction',
     'default_value' => NULL,
@@ -585,7 +585,7 @@ function wttoc_content_types_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-business_service_or_attraction-field_featured_content'
+  // 'node-business_service_or_attraction-field_featured_content'.
   $field_instances['node-business_service_or_attraction-field_featured_content'] = array(
     'bundle' => 'business_service_or_attraction',
     'default_value' => array(
@@ -628,7 +628,7 @@ function wttoc_content_types_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-business_service_or_attraction-field_general_information'
+  // 'node-business_service_or_attraction-field_general_information'.
   $field_instances['node-business_service_or_attraction-field_general_information'] = array(
     'bundle' => 'business_service_or_attraction',
     'default_value' => NULL,
@@ -668,9 +668,10 @@ function wttoc_content_types_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-business_service_or_attraction-field_hidden_address_geofield'
+  // 'node-business_service_or_attraction-field_hidden_address_geofield'.
   $field_instances['node-business_service_or_attraction-field_hidden_address_geofield'] = array(
     'bundle' => 'business_service_or_attraction',
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -725,7 +726,7 @@ function wttoc_content_types_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-business_service_or_attraction-field_image_gallery'
+  // 'node-business_service_or_attraction-field_image_gallery'.
   $field_instances['node-business_service_or_attraction-field_image_gallery'] = array(
     'bundle' => 'business_service_or_attraction',
     'default_value' => array(),
@@ -775,7 +776,7 @@ function wttoc_content_types_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-business_service_or_attraction-field_more_information'
+  // 'node-business_service_or_attraction-field_more_information'.
   $field_instances['node-business_service_or_attraction-field_more_information'] = array(
     'bundle' => 'business_service_or_attraction',
     'default_value' => NULL,
@@ -815,7 +816,7 @@ function wttoc_content_types_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-business_service_or_attraction-field_opening_hours'
+  // 'node-business_service_or_attraction-field_opening_hours'.
   $field_instances['node-business_service_or_attraction-field_opening_hours'] = array(
     'bundle' => 'business_service_or_attraction',
     'default_value' => NULL,
@@ -852,7 +853,7 @@ function wttoc_content_types_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-business_service_or_attraction-field_phone_number'
+  // 'node-business_service_or_attraction-field_phone_number'.
   $field_instances['node-business_service_or_attraction-field_phone_number'] = array(
     'bundle' => 'business_service_or_attraction',
     'default_value' => NULL,
@@ -891,7 +892,7 @@ function wttoc_content_types_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-business_service_or_attraction-field_prices_information'
+  // 'node-business_service_or_attraction-field_prices_information'.
   $field_instances['node-business_service_or_attraction-field_prices_information'] = array(
     'bundle' => 'business_service_or_attraction',
     'default_value' => NULL,
@@ -931,7 +932,7 @@ function wttoc_content_types_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-business_service_or_attraction-field_social_media_pages'
+  // 'node-business_service_or_attraction-field_social_media_pages'.
   $field_instances['node-business_service_or_attraction-field_social_media_pages'] = array(
     'bundle' => 'business_service_or_attraction',
     'default_value' => NULL,
@@ -991,7 +992,7 @@ function wttoc_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-business_service_or_attraction-field_video'
+  // Exported field_instance: 'node-business_service_or_attraction-field_video'.
   $field_instances['node-business_service_or_attraction-field_video'] = array(
     'bundle' => 'business_service_or_attraction',
     'default_value' => NULL,
@@ -1034,7 +1035,7 @@ function wttoc_content_types_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-business_service_or_attraction-field_vouchers_information'
+  // 'node-business_service_or_attraction-field_vouchers_information'.
   $field_instances['node-business_service_or_attraction-field_vouchers_information'] = array(
     'bundle' => 'business_service_or_attraction',
     'default_value' => NULL,
@@ -1074,7 +1075,7 @@ function wttoc_content_types_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'node-business_service_or_attraction-field_website'
+  // 'node-business_service_or_attraction-field_website'.
   $field_instances['node-business_service_or_attraction-field_website'] = array(
     'bundle' => 'business_service_or_attraction',
     'default_value' => NULL,
@@ -1114,7 +1115,7 @@ function wttoc_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_address'
+  // Exported field_instance: 'node-event-field_address'.
   $field_instances['node-event-field_address'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -1165,7 +1166,7 @@ function wttoc_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_ages'
+  // Exported field_instance: 'node-event-field_ages'.
   $field_instances['node-event-field_ages'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -1201,7 +1202,7 @@ function wttoc_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_category_event'
+  // Exported field_instance: 'node-event-field_category_event'.
   $field_instances['node-event-field_category_event'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -1247,7 +1248,7 @@ function wttoc_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_date_of_event'
+  // Exported field_instance: 'node-event-field_date_of_event'.
   $field_instances['node-event-field_date_of_event'] = array(
     'bundle' => 'event',
     'deleted' => 0,
@@ -1295,7 +1296,7 @@ function wttoc_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_email'
+  // Exported field_instance: 'node-event-field_email'.
   $field_instances['node-event-field_email'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -1333,7 +1334,7 @@ function wttoc_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_featured_content'
+  // Exported field_instance: 'node-event-field_featured_content'.
   $field_instances['node-event-field_featured_content'] = array(
     'bundle' => 'event',
     'default_value' => array(
@@ -1375,7 +1376,7 @@ function wttoc_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_general_information'
+  // Exported field_instance: 'node-event-field_general_information'.
   $field_instances['node-event-field_general_information'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -1414,7 +1415,7 @@ function wttoc_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_hidden_address_geofield'
+  // Exported field_instance: 'node-event-field_hidden_address_geofield'.
   $field_instances['node-event-field_hidden_address_geofield'] = array(
     'bundle' => 'event',
     'default_value' => array(),
@@ -1471,7 +1472,7 @@ function wttoc_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_image_gallery'
+  // Exported field_instance: 'node-event-field_image_gallery'.
   $field_instances['node-event-field_image_gallery'] = array(
     'bundle' => 'event',
     'default_value' => array(),
@@ -1520,7 +1521,7 @@ function wttoc_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_linked_business'
+  // Exported field_instance: 'node-event-field_linked_business'.
   $field_instances['node-event-field_linked_business'] = array(
     'bundle' => 'event',
     'default_value' => array(),
@@ -1560,7 +1561,7 @@ function wttoc_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_more_information'
+  // Exported field_instance: 'node-event-field_more_information'.
   $field_instances['node-event-field_more_information'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -1599,7 +1600,7 @@ function wttoc_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_phone_number'
+  // Exported field_instance: 'node-event-field_phone_number'.
   $field_instances['node-event-field_phone_number'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -1637,7 +1638,7 @@ function wttoc_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_prices_information'
+  // Exported field_instance: 'node-event-field_prices_information'.
   $field_instances['node-event-field_prices_information'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -1676,7 +1677,7 @@ function wttoc_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_social_media_pages'
+  // Exported field_instance: 'node-event-field_social_media_pages'.
   $field_instances['node-event-field_social_media_pages'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -1736,7 +1737,7 @@ function wttoc_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_video'
+  // Exported field_instance: 'node-event-field_video'.
   $field_instances['node-event-field_video'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -1778,7 +1779,7 @@ function wttoc_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_vouchers_information'
+  // Exported field_instance: 'node-event-field_vouchers_information'.
   $field_instances['node-event-field_vouchers_information'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
@@ -1817,7 +1818,7 @@ function wttoc_content_types_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-event-field_website'
+  // Exported field_instance: 'node-event-field_website'.
   $field_instances['node-event-field_website'] = array(
     'bundle' => 'event',
     'default_value' => NULL,
