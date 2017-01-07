@@ -1,0 +1,6 @@
+name = Handle Bad Map
+description = Handle Bad Map, when there is no lat/lon.
+core = 7.x
+package = Custom
+dependencies[] = views
+dependencies[] = geofield

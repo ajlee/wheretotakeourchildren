@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @param $node
+ */
+/**
+ * Implements hook_node_presave().
+ */
+function handle_bad_map_node_presave($node)
+{
+    if ($node->type !== 'business_service_or_attraction' && $node->type !== 'event') {
+        return;
+    }
+    if (
+        count($node->field_hidden_address_geofield) === 0 &&
+        count($node->field_hidden_address_geofield['und']) === 0
+    ) {
+        $node->field_hidden_address_geofield['und'][0] = geofield_compute_values(
+            array(
+                'lat' => '0.0',
+                'lon' => '0.0',
+            ), GEOFIELD_INPUT_LAT_LON);
+    }
+}
