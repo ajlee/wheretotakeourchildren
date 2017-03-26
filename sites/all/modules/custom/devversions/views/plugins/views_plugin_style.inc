@@ -126,7 +126,7 @@ class views_plugin_style extends views_plugin {
       if ($this->uses_fields() && $this->view->field) {
         $class = strip_tags($this->tokenize_value($class, $row_index));
       }
-
+      $classes = explode(' ', $class);
       foreach ($classes as &$class) {
         $class = drupal_clean_css_identifier($class);
       }
