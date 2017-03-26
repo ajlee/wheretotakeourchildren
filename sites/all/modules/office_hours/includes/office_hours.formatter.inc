@@ -100,6 +100,7 @@ function office_hours_field_formatter_settings_form($field, $instance, $view_mod
       2 => t('24 hrs') . ' (09:00)',
       0 => t('24 hrs') . ' (9:00)',
       1 => t('12 hrs') . ' (9:00 am)',
+      3 => t('12 hrs') . ' (9:00 a.m.)',
     ),
     '#default_value' => $settings['hoursformat'],
     '#required' => FALSE,
@@ -242,6 +243,18 @@ function office_hours_field_formatter_view($entity_type, $entity, $field, $insta
     return $element;
   }
 
+  // Allow other modules to alter the items before the calculations are done.
+  // @see office_hours.api.php for an example.
+  $context = array(
+    'entity_type' => $entity_type,
+    'entity' => $entity,
+    'field' => $field,
+    'instance' => $instance,
+    'langcode' => $langcode,
+    'display' => $display,
+  );
+  drupal_alter('office_hours_field_formatter_view', $items, $context);
+
   // Initialize formatter settings.
   $settings = _office_hours_field_formatter_defaults($display['settings']);
 
@@ -300,10 +313,12 @@ function office_hours_field_formatter_view($entity_type, $entity, $field, $insta
     $day = $el['day'];
     $start = _office_hours_time_to_mil($el['starthours']); // 'Gi' format.
     $end   = _office_hours_time_to_mil($el['endhours']); // 'Gi' format.
+    $comment = $el['comment'];
 
     $times = array(
       'start' => $start,
       'end' => $end,
+      'comment' => $comment,
     );
     $days[$day]['times'][] = $times;
 
@@ -411,6 +426,15 @@ function office_hours_field_formatter_view($entity_type, $entity, $field, $insta
         'daynames' => $daynames,
         'open'     => $open,
         'timezone' => $timezone,
+        'context' => array(
+          'entity_type' => $entity_type,
+          'entity' => $entity,
+          'field' => $field,
+          'instance' => $instance,
+          'langcode' => $langcode,
+          'items' => $items,
+          'display' => $display,
+        ),
       )
     ),
   );
