@@ -238,11 +238,6 @@
           if (info.attributes[a]) {
             element.attr(a, info.attributes[a]);
           }
-          else if (element.attr(a)) {
-            // If the element has the attribute, but the value is empty, be
-            // sure to clear it.
-            element.removeAttr(a);
-          }
         });
         delete(info.attributes);
 
