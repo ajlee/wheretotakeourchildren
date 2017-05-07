@@ -58,7 +58,7 @@ function wttoc_commerce_rules_views_default_views() {
     'business_service_or_attraction' => 'business_service_or_attraction',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Featured Family Guide (field_featured_content) */
+  /* Filter criterion: Content: Featured Event (field_featured_content) */
   $handler->display->display_options['filters']['field_featured_content_value_1']['id'] = 'field_featured_content_value_1';
   $handler->display->display_options['filters']['field_featured_content_value_1']['table'] = 'field_data_field_featured_content';
   $handler->display->display_options['filters']['field_featured_content_value_1']['field'] = 'field_featured_content_value';
@@ -66,7 +66,7 @@ function wttoc_commerce_rules_views_default_views() {
     1 => '1',
   );
   $handler->display->display_options['filters']['field_featured_content_value_1']['group'] = 2;
-  /* Filter criterion: Content: Featured Family Guide (field_featured_content) */
+  /* Filter criterion: Content: Featured Event (field_featured_content) */
   $handler->display->display_options['filters']['field_featured_content_value']['id'] = 'field_featured_content_value';
   $handler->display->display_options['filters']['field_featured_content_value']['table'] = 'field_data_field_featured_content';
   $handler->display->display_options['filters']['field_featured_content_value']['field'] = 'field_featured_content_value';

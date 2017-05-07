@@ -9,6 +9,35 @@
  */
 function wttoc_commerce_rules_default_rules_configuration() {
   $items = array();
+  $items['rules_change_order_status_according_to_card_response'] = entity_import('rules_config', '{ "rules_change_order_status_according_to_card_response" : {
+      "LABEL" : "Change Order Status According To Card Response",
+      "PLUGIN" : "rule",
+      "OWNER" : "rules",
+      "TAGS" : [ "WTTOC Commerce" ],
+      "REQUIRES" : [ "commerce_payment", "rules", "commerce_order" ],
+      "USES VARIABLES" : {
+        "card_response" : {
+          "label" : "card_response",
+          "type" : "commerce_cardonfile_charge_card_response"
+        },
+        "order" : { "label" : "order", "type" : "commerce_order" }
+      },
+      "IF" : [
+        { "commerce_payment_order_balance_comparison" : { "commerce_order" : [ "order" ], "value" : "0.01" } }
+      ],
+      "DO" : [
+        { "LOOP" : {
+            "USING" : { "list" : [ "order:commerce-line-items" ] },
+            "ITEM" : { "list_item" : "Current list item" },
+            "DO" : [
+              { "component_rules_extend_rolerecurring_component_line_item" : { "line_item" : [ "list-item" ] } }
+            ]
+          }
+        },
+        { "commerce_order_update_status" : { "commerce_order" : [ "order" ], "order_status" : "cardonfile_charged" } }
+      ]
+    }
+  }');
   $items['rules_de_feature_listings_of_expired_premium_users'] = entity_import('rules_config', '{ "rules_de_feature_listings_of_expired_premium_users" : {
       "LABEL" : "De-Feature Listings of Expired Premium Users",
       "PLUGIN" : "reaction rule",
@@ -166,6 +195,7 @@ function wttoc_commerce_rules_default_rules_configuration() {
   $items['rules_extend_role_duration_recurring_charge'] = entity_import('rules_config', '{ "rules_extend_role_duration_recurring_charge" : {
       "LABEL" : "Extend Role Duration - Recurring Charge",
       "PLUGIN" : "reaction rule",
+      "ACTIVE" : false,
       "OWNER" : "rules",
       "TAGS" : [ "WTTOC Commerce" ],
       "REQUIRES" : [ "rules", "commerce_cardonfile" ],

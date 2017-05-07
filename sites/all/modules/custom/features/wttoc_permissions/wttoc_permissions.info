@@ -275,6 +275,7 @@ features[user_permission][] = geocoder_service_handler_json
 features[user_permission][] = geocoder_service_handler_kml
 features[user_permission][] = geocoder_service_handler_latlon
 features[user_permission][] = geocoder_service_handler_mapquest_nominatim
+features[user_permission][] = geocoder_service_handler_openstreetmap_nominatim
 features[user_permission][] = geocoder_service_handler_wkt
 features[user_permission][] = geocoder_service_handler_yahoo
 features[user_permission][] = geocoder_service_handler_yandex

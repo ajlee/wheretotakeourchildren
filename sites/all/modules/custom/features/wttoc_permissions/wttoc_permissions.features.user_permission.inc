@@ -2002,6 +2002,13 @@ function wttoc_permissions_user_default_permissions() {
     'module' => 'geocoder',
   );
 
+  // Exported permission: 'geocoder_service_handler_openstreetmap_nominatim'.
+  $permissions['geocoder_service_handler_openstreetmap_nominatim'] = array(
+    'name' => 'geocoder_service_handler_openstreetmap_nominatim',
+    'roles' => array(),
+    'module' => 'geocoder',
+  );
+
   // Exported permission: 'geocoder_service_handler_wkt'.
   $permissions['geocoder_service_handler_wkt'] = array(
     'name' => 'geocoder_service_handler_wkt',

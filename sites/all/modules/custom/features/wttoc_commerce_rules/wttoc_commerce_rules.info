@@ -19,6 +19,7 @@ dependencies[] = wttoc_commerce_field_base
 dependencies[] = wttoc_context
 features[ctools][] = views:views_default:3.0
 features[features_api][] = api:2
+features[rules_config][] = rules_change_order_status_according_to_card_response
 features[rules_config][] = rules_de_feature_listings_of_expired_premium_users
 features[rules_config][] = rules_de_feature_listings_of_expired_premium_users_component
 features[rules_config][] = rules_extend_role_component_for_line_item

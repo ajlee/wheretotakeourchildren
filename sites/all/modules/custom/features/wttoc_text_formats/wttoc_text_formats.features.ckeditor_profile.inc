@@ -133,7 +133,7 @@ function wttoc_text_formats_ckeditor_profile_defaults() {
         'css_path' => '',
         'css_style' => 'theme',
         'styles_path' => '',
-        'filebrowser' => 'none',
+        'filebrowser' => 'ckfinder',
         'filebrowser_image' => '',
         'filebrowser_flash' => '',
         'UserFilesPath' => '%b%f/',
@@ -158,8 +158,8 @@ function wttoc_text_formats_ckeditor_profile_defaults() {
           ),
           'media' => array(
             'name' => 'media',
-            'desc' => 'Plugin for inserting images from Drupal media module',
-            'path' => '%base_path%sites/all/modules/media/modules/media_wysiwyg/wysiwyg_plugins/media_ckeditor/',
+            'desc' => 'Plugin for embedding files using Media CKEditor',
+            'path' => '%base_path%sites/all/modules/media_ckeditor/js/plugins/media/',
             'buttons' => array(
               'Media' => array(
                 'icon' => 'images/icon.gif',

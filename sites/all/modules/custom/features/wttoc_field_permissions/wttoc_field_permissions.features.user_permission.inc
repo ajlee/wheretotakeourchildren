@@ -29,6 +29,15 @@ function wttoc_field_permissions_user_default_permissions() {
     'module' => 'field_permissions',
   );
 
+  // Exported permission: 'administer fields'.
+  $permissions['administer fields'] = array(
+    'name' => 'administer fields',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'field',
+  );
+
   // Exported permission: 'create field_email'.
   $permissions['create field_email'] = array(
     'name' => 'create field_email',
