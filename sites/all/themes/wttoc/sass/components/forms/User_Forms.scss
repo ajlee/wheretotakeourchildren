@@ -4,9 +4,14 @@ body.page-user-password{
   input[type=text],
   input[type=password]{
     margin: 5px 0;
+    max-width:60%;
     @include remFontSize($fontXL);
     @include breakpoint(0 $breakpointMobile){
       max-width: ($breakpointMini * 0.9);
     }
+  }
+  .field-name-field-title,
+  .field-name-field-company-name {
+	display:none;
   }
 }

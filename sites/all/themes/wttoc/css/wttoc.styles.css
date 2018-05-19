@@ -5761,3 +5761,8 @@ body.node-type-subscription .node__content input[type="submit"] {
 .site_seals_wrap {
   text-align: center;
   margin: 20px auto 40px auto; }
+
+#user-register-form,
+#user-login {
+  width: 75%;
+}
