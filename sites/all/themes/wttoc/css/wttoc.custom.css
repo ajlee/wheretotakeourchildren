@@ -1,11 +1,25 @@
-.fb_user-login-button-wrapper {
-	text-align:center;
-	width:800px;
-	margin-top:-45px;
-	margin-left:30px;
+.tabs--primary:nth-child(1) li {
+	margin-right:0;
+}
+	
+.tabs--primary a[href="/user/simple-fb-connect"] {
+	display:none;
 }
 
+.fb_user-login-button-wrapper {
+	text-align:center;
+	width:75%;
+	margin:8px 2px 8px 2px;
+	max-width:100%;
+}
+
+
 @media (min-width: 0) and (max-width: 420px) {
+	.fb_user-login-button-wrapper {
+		width:90%;
+		text-align:left;
+		margin-left:-24px;
+	}	
 	.password-strength {
 		float:none;
 	}	
