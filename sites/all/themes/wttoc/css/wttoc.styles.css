@@ -1415,14 +1415,6 @@ footer.l-footer nav ul {
           padding-right: 13px; }
         .l-superheader nav > ul.menu > li > a.tmenu-Dashboard:before {
           content: '\e826'; }
-        .l-superheader nav > ul.menu > li > a.tmenu-UserDashboard {
-          color: #5675CE;
-          color: transparent;
-          letter-spacing: -0.5em;
-          padding-left: 10px;
-          padding-right: 13px; }
-        .l-superheader nav > ul.menu > li > a.tmenu-UserDashboard:before {
-          content: '\e842'; }
         .l-superheader nav > ul.menu > li > a.tmenu-Search {
           color: #5675CE;
           color: transparent;
