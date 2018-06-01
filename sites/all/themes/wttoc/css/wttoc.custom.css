@@ -1,3 +1,13 @@
+a.link-style {
+  text-decoration:underline;
+  color:#0000EE;
+}
+
+.lc-region--inner .messages a {
+  text-decoration:underline;
+  color:#0000EE;
+}
+
 .tabs--primary:nth-child(1) li {
 	margin-right:0;
 }
