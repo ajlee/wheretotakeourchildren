@@ -450,9 +450,21 @@ function interval_apply_interval($date, $item, $limit = FALSE) {
     $datetime = interval_php_interval($item);
     $date->modify($datetime);
 
+    // "modify()" uses "strtotime()", so is really just adding X seconds. When
+    // working with months, this can have counter-intuitive results. $limit is
+    // supposed to fix these behaviors:
     if ($limit && $interval['php'] == 'months') {
       $dateinterval = $date->diff($old_date);
-      if ($dateinterval->d <> 0) {
+      // Assert that the month interval is properly 1 month:
+      while ($dateinterval->m < $interval['multiplier']) {
+        // We went 30x days but didn't reach the right month: Dec 1 to Dec 31.
+        // Appropriate behavior is to go to Jan 1.
+        $date->modify("first day of next month");
+        $dateinterval = $date->diff($old_date);
+      }
+      if ($dateinterval->d != 0) {
+        // We went too far, which can happen around February. Collapse back to
+        // the end of the proper (prior) month.
         $date->modify("last day of last month");
       }
     }
