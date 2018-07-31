@@ -320,7 +320,7 @@
  */
 /*
  * Font Size (1 =~ 10px)
- * Do not use px, rem, or em here. 
+ * Do not use px, rem, or em here.
  */
 /*
  * Theme Palette
@@ -378,7 +378,7 @@
 /*
  * doubleLineBackground
  */
-/* 
+/*
  * Rem Font Size With FallBack
  */
 /*
@@ -391,7 +391,7 @@
  * Color Descendants
  */
 /*
- * Linear Gradient 
+ * Linear Gradient
  */
 /*
  * Hide Text Without Breaking Accessibility
@@ -470,7 +470,7 @@ body {
   color: #333; }
 
 /*
- * Max Width Responsive  
+ * Max Width Responsive
  */
 body {
   max-width: 100%;
@@ -725,8 +725,8 @@ html {
   word-wrap: break-word;
   /*word-break:break-all;
 	white-space: -moz-pre-wrap;
-	white-space: -o-pre-wrap; 
-	white-space: pre-wrap;  
+	white-space: -o-pre-wrap;
+	white-space: pre-wrap;
 	white-space: pre-line; */ }
 
 .l-main {
@@ -2723,7 +2723,7 @@ form#views-exposed-form-businesses-and-events-page-results .fakeButton, form#vie
 .no-js .view-id-businesses_and_events #leaflet-map {
   display: none; }
 
-/* 
+/*
  * We have two Views, one as a Block and one as a Page
  * Only one of each filter/pager should be visible
  * More at theme's js/wttoc.allBizEvents.js
@@ -5769,3 +5769,42 @@ a.link-style {
   color:#0000EE;
 }
 
+.entity-entityform-type{
+  padding: 5px 30px;
+  margin: 5px 0 20px 0;
+  .form-item {
+    input {
+      font-size: 16px !important;
+      line-height: 24px;
+      width: 97%;
+      padding: 0 1%;
+    }
+    input[type="checkbox"] {
+      text-align: left;
+      display: inline-block;
+      width: 15px;
+    }
+    label{
+      margin-top:5px;
+      margin-bottom:5px;
+    }
+  }
+
+  .form-actions{
+    input[type="submit"]{
+      border: 1px solid $color2;
+      background-color: $color2;
+      max-width: 250px;
+    }
+  }
+}
+#edit-field-contact-name-und-0-value, #edit-field-phone-number-und-0-value,
+#edit-field-company-name-und-0-value, #edit-field-email-und-0-email {
+  line-height: 24px;
+}
+#edit-field-advertiser-type .description {
+  padding-top: 24px;
+}
+.pre-instructions {
+  padding: 12px 0;
+}
