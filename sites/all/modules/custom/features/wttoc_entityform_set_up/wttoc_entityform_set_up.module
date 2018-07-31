@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the WTTOC Entityform set up feature.
+ */
+
+include_once 'wttoc_entityform_set_up.features.inc';
