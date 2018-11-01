@@ -9,32 +9,45 @@
 // See http://drupal.org/node/756722 for conversion to D7 and Drupal.behaviors.
 
 (function ($) {
-  
+
   Drupal.behaviors.role_expire = {
     attach: function (context, settings) {
       $('input.role-expire-role-expiry', context).parent().hide();
 
-      $('#edit-roles input.form-checkbox', context).each(function() {
-        var textfieldId = this.id.replace("roles", "role-expire");
+      // Change rolesKey if Role Delegation or Role Assign modules are used.
+      if ($('#edit-roles-change').length > 0) {
+        var rolesKey = 'roles-change';
+      }
+      else if ($('#edit-roleassign-roles').length > 0) {
+        rolesKey = 'roleassign-roles';
+      }
+      else {
+        rolesKey = 'roles';
+      }
+
+      var checkBoxes = $('#edit-' + rolesKey + ' input.form-checkbox', context);
+
+      checkBoxes.each(function() {
+        var textfieldId = this.id.replace(rolesKey, "role-expire");
 
         // Move all expiry date fields under corresponding checkboxes
-        $(this).parent().after($('#'+textfieldId).parent());
+        $(this).closest('div.form-item').after($('#' + textfieldId).parent());
 
         // Show all expiry date fields that have checkboxes checked
-        if ($(this).attr("checked")) {
-          $('#'+textfieldId).parent().show();
+        if ($(this).is(":checked")) {
+          $('#' + textfieldId).parent().show();
         }
       });
 
-      $('#edit-roles input.form-checkbox', context).click(function() {
-        var textfieldId = this.id.replace("roles", "role-expire");
+      checkBoxes.click(function() {
+        var textfieldId = this.id.replace(rolesKey, "role-expire");
 
         // Toggle expiry date fields
-        if ($(this).attr("checked")) {
-          $('#'+textfieldId).parent().show(200);
+        if ($(this).is(":checked")) {
+          $('#' + textfieldId).parent().show(200);
         }
         else {
-          $('#'+textfieldId).parent().hide(200);
+          $('#' + textfieldId).parent().hide(200);
         }
       });
     }

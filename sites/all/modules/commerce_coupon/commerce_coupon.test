@@ -220,7 +220,8 @@ class CommerceCouponTest extends CommerceCouponTestBase {
     $this->drupalGet('admin/commerce/coupons/add');
 
     $values = array(
-      'code' => 'TEST_COUPON',
+      // Add a trailing space to test trimming.
+      'code' => 'TEST_COUPON ',
       'commerce_discount_reference[und][0][target_id]' => $discount->label . ' (' . $discount->internalIdentifier() . ')',
     );
     $this->drupalPost(NULL, $values, t('Save coupon'));
@@ -235,6 +236,48 @@ class CommerceCouponTest extends CommerceCouponTestBase {
 
   }
 
+  public function testCommerceCouponUICartForm() {
+    // Login as administrator and add the field to the footer of the cart View.
+    $this->drupalLogin($this->store_admin);
+    $view = views_get_view('commerce_cart_form');
+    $view->add_item('default', 'footer', 'commerce_order', 'coupon_cart_form');
+    $view->save();
+
+    // Create a cart order and ensure we can see the code form on the cart
+    // management page.
+    $this->createDummyOrder($this->store_admin->uid, array($this->product->product_id => 1), $status = 'cart');
+    $this->drupalGet('cart');
+    $this->assertFieldByName('coupon_code', NULL, 'Coupon code field is present on cart management page.');
+    $this->assertFieldByName('coupon_add', NULL, 'Coupon add submit button is present on cart management page.');
+
+    // Test coupon code validation.
+    $this->drupalPost(NULL, array(), t('Add coupon'));
+    $this->assertText(t('Please enter a coupon code.'), 'Validation message for missing code.');
+    // Load a fresh form.
+    $this->drupalGet('cart');
+    $values = array('coupon_code' => 'BLAH');
+    $this->drupalPost(NULL, $values, t('Add coupon'));
+    $this->assertText(t('Please enter a valid coupon code.'), 'Validation message for code that doesn\'t exist.');
+
+    // Create a discount and add a coupon to it. Test it applies correctly.
+    $discount = $this->createDiscount('order_discount', 'fixed_amount', 300);
+    $coupon = commerce_coupon_create('discount_coupon');
+    $coupon->code = 'HALF OFF';
+    $coupon->commerce_discount_reference['und'][0]['target_id'] = $discount->discount_id;
+    commerce_coupon_save($coupon);
+    // Load a fresh form.
+    $this->drupalGet('cart');
+    $values = array('coupon_code' => 'HALF OFF');
+    $this->drupalPost(NULL, $values, t('Add coupon'));
+    $this->assertText(t('Coupon code applied.'), 'Coupon applied message for valid code.');
+
+    // Load a fresh form and try to apply the same code with a trailing space.
+    $this->drupalGet('cart');
+    $values = array('coupon_code' => 'HALF OFF ');
+    $this->drupalPost(NULL, $values, t('Add coupon'));
+    $this->assertText(t('The coupon you have entered has already been applied to your order'), 'Coupon applied message for valid code.');
+  }
+
   public function testCommerceCouponTypeAccess() {
     // Login with store admin.
     $this->drupalLogin($this->store_admin);
@@ -244,4 +287,86 @@ class CommerceCouponTest extends CommerceCouponTestBase {
     $this->drupalPost(NULL, array(), t('Save configuration'));
     $this->assertText(t('The configuration options have been saved.'));
   }
+
+  public function testCommerceCouponCouponCount() {
+    // Login with store admin.
+    $this->drupalLogin($this->store_admin);
+
+    // Create a discount and make a legit coupon.
+    $discount = $this->createDiscount('order_discount', 'fixed_amount', 300);
+    $discount_wrapper = entity_metadata_wrapper('commerce_discount', $discount);
+
+    // Load a fresh form.
+    $this->drupalGet('admin/commerce/coupons/add');
+
+    $values = array(
+      'code' => 'TEST_COUPON',
+      'commerce_discount_reference[und][0][target_id]' => $discount->label . ' (' . $discount->internalIdentifier() . ')',
+    );
+    $this->drupalPost(NULL, $values, t('Save coupon'));
+
+    // Enabled coupons contribute to the discount coupon count.
+    $this->assertEqual($discount_wrapper->coupon_count->value(), 1, 'Enabled discount coupon contributes to discount coupon count.');
+
+    $coupon = commerce_coupon_load(1);
+    $coupon->status = 0;
+    commerce_coupon_save($coupon);
+    // We need to save the discount to clear the coupon count cache.
+    entity_save('commerce_discount', $discount);
+    $discount_wrapper = entity_metadata_wrapper('commerce_discount', $discount);
+
+    // Disabled coupons also contribute to the discount coupon count.
+    $this->assertEqual($discount_wrapper->coupon_count->value(), 1, 'Disabled discount coupon contributes to discount coupon count.');
+  }
+
+}
+
+/**
+ * Testing commerce coupon UI and functionality.
+ */
+class CommerceCouponLoadCouponCodeDiscountsTest extends CommerceCouponTestBase {
+
+  /**
+   * Implementation of getInfo().
+   */
+  public static function getInfo() {
+    return array(
+      'name' => 'Coupons commerce_coupon_load_coupon_code_discounts',
+      'description' => 'Test commerce_coupon_load_coupon_code_discounts',
+      'group' => 'Commerce Coupon',
+    );
+  }
+
+  public function testCommerceCouponLoadCouponCodeDiscounts() {
+    // Login with store admin.
+    $this->drupalLogin($this->store_admin);
+
+    // Create a discount and make a legit coupon.
+    $discount = $this->createDiscount('order_discount', 'fixed_amount', 300);
+
+    // Load a fresh form.
+    $this->drupalGet('admin/commerce/coupons/add');
+
+    $values = array(
+      'code' => 'TEST_COUPON',
+      'commerce_discount_reference[und][0][target_id]' => $discount->label . ' (' . $discount->internalIdentifier() . ')',
+    );
+    $this->drupalPost(NULL, $values, t('Save coupon'));
+
+    $discounts = commerce_coupon_load_coupon_code_discounts('TEST_COUPON');
+    $this->assertTrue(!empty($discounts));
+    $this->assertEqual(1, count($discounts));
+
+    // Test the discount returned.
+    $returned_discount = reset($discounts);
+    $this->assertTrue($returned_discount !== FALSE);
+    $this->assertEqual($discount->label, $returned_discount->label);
+
+    $discount->status = 0;
+    $discount->save();
+
+    $discounts = commerce_coupon_load_coupon_code_discounts('TEST_COUPON');
+    $this->assertEqual(0, count($discounts));
+  }
+
 }

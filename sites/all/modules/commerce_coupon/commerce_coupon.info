@@ -13,12 +13,13 @@ files[] = includes/views/handlers/commerce_coupon_handler_field_coupon_edit.inc
 files[] = includes/views/handlers/commerce_coupon_handler_field_coupon_link.inc
 files[] = includes/views/handlers/commerce_coupon_handler_argument_coupon_id.inc
 files[] = includes/views/handlers/commerce_coupon_handler_argument_coupon_code.inc
+files[] = includes/views/handlers/commerce_coupon_handler_area_cart_form.inc
 files[] = commerce_coupon.info.inc
 files[] = commerce_coupon.test
 
-; Information added by Drupal.org packaging script on 2015-12-16
-version = "7.x-2.0-rc2+11-dev"
+; Information added by Drupal.org packaging script on 2017-07-10
+version = "7.x-2.0"
 core = "7.x"
 project = "commerce_coupon"
-datestamp = "1450306441"
+datestamp = "1499723046"
 

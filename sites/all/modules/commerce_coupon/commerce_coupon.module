@@ -662,9 +662,7 @@ function commerce_coupon_get_discount_properties($discount, $options, $name) {
         $query = db_select('commerce_coupon', 'c')
            ->fields('c', array('coupon_id'));
         $query->join('field_data_commerce_discount_reference', 'd', 'c.coupon_id=d.entity_id');
-        $query
-           ->condition('c.status', 1)
-           ->condition('d.commerce_discount_reference_target_id', $discount->discount_id)
+        $query->condition('d.commerce_discount_reference_target_id', $discount->discount_id)
            ->condition('d.deleted', 0)
            ->condition('d.entity_type', 'commerce_coupon');
 
@@ -776,7 +774,7 @@ function commerce_coupon_redeem_coupon_code($code, $order, &$error) {
 
   $coupon = commerce_coupon_load_by_code($code);
 
-  if ($coupon) {
+  if ($coupon && $coupon->status) {
     // The same coupon cannot be added twice.
 
     foreach ($order_wrapper->commerce_coupons as $order_coupon_wrapper) {
@@ -788,7 +786,7 @@ function commerce_coupon_redeem_coupon_code($code, $order, &$error) {
 
     $coupon_wrapper = entity_metadata_wrapper('commerce_coupon', $coupon);
 
-    if (commerce_coupon_evaluate_conditions($coupon_wrapper, $order_wrapper)) {
+    if (empty($error) && commerce_coupon_evaluate_conditions($coupon_wrapper, $order_wrapper)) {
       // Add the coupon to the order.
       $order_wrapper->commerce_coupons[] = $coupon_wrapper->value();
 
@@ -798,7 +796,7 @@ function commerce_coupon_redeem_coupon_code($code, $order, &$error) {
     else {
       // If the coupon was not added, check the static error variable - one of
       // the coupon conditions may have set something specific.
-      $error = &drupal_static('commerce_coupon_error_' . strtolower($code));
+      $error = drupal_static('commerce_coupon_error_' . strtolower($code));
 
       if (!$error) {
         // If no condition has specified an error message, set a default one.
@@ -1258,16 +1256,19 @@ function commerce_coupon_load_coupon_code_discounts($code) {
   $discounts = array();
   $coupon = commerce_coupon_load_by_code($code);
 
-  $query = new EntityFieldQuery();
-  $results = $query
-    ->entityCondition('entity_type', 'commerce_discount')
-    ->fieldCondition('commerce_coupon_reference', 'target_id', $coupon->coupon_id)
-    ->propertyCondition('enabled', 1)
-    ->execute();
-
-  if (!empty($results['commerce_discount'])) {
-    $discounts = entity_load('commerce_discount', array_keys($results['commerce_discount']));
+  if ($coupon) {
+    /** @var \EntityDrupalWrapper $coupon_wrapper */
+    $coupon_wrapper = entity_metadata_wrapper('commerce_coupon',$coupon);
+    if ($coupon_wrapper->getBundle() == 'discount_coupon') {
+      /** @var CommerceDiscount $discount */
+      foreach ($coupon_wrapper->commerce_discount_reference->value() as $discount) {
+        if ($discount->status) {
+          $discounts[] = $discount;
+        }
+      }
+    }
   }
+
   return $discounts;
 }
 
@@ -1943,6 +1944,7 @@ function commerce_coupon_attach_coupon_entity_form(array &$form, array &$form_st
     '#default_value' => $coupon->code,
     '#coupon_id' => isset($coupon->coupon_id) ? $coupon->coupon_id : '',
     '#element_validate' => array('commerce_coupon_validate_code'),
+    '#weight' => -10,
   );
 
   // Generate code.
@@ -1951,6 +1953,7 @@ function commerce_coupon_attach_coupon_entity_form(array &$form, array &$form_st
     '#title' => t('Generate code'),
     '#description' => t('If you check this, a random code will be generated.'),
     '#default_value' => FALSE,
+    '#weight' => -8,
   );
 
   // Set user id.
@@ -1959,6 +1962,7 @@ function commerce_coupon_attach_coupon_entity_form(array &$form, array &$form_st
   $form['uid'] = array(
     '#type' => 'value',
     '#value' => $uid,
+    '#weight' => -7,
   );
 
   $coupon->uid = $uid;
@@ -1968,6 +1972,7 @@ function commerce_coupon_attach_coupon_entity_form(array &$form, array &$form_st
   $form['commerce_coupon_fields'] = array(
     '#type' => 'container',
     '#parents' => $field_parents,
+    '#weight' => -6,
   );
 
   // Attach fields.
@@ -1983,6 +1988,7 @@ function commerce_coupon_attach_coupon_entity_form(array &$form, array &$form_st
     '#type' => 'checkbox',
     '#title' => t('Enabled'),
     '#default_value' => $coupon->status,
+    '#weight' => -6,
   );
 
   // Allow other modules to alter this form whereever it appears.
@@ -2060,7 +2066,7 @@ function commerce_coupon_validate_code($element, &$form_state) {
       return;
     }
 
-    $code = $element['#value'];
+    $code = trim($element['#value']);
 
     // Do not allow existing coupon codes, unless it is merely saving itself.
     $coupon = commerce_coupon_load_by_code($code);
@@ -2125,7 +2131,7 @@ function commerce_coupon_form_commerce_checkout_form_alter(&$form, &$form_state)
   // might need to be rolled back. This is to handle when giftcard validation
   // was successful but the payment method or some other form element has thrown
   // an error.
-  if (isset($form['commerce_payment'])) {
+  if (isset($form['commerce_payment']) && isset($form['buttons']['continue'])) {
     $order = commerce_order_load($form_state['order']->order_id);
 
     // Rollback any transactions if necessary. Pass the "save" argument so that

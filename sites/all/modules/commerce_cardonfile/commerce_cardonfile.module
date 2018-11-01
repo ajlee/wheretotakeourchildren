@@ -79,21 +79,16 @@ function commerce_cardonfile_menu() {
     }
   }
 
-  $items['user/%user/cards/%commerce_cardonfile'] = array(
+  $items['user/%user/cards/%commerce_cardonfile/edit'] = array(
     'title callback' => 'commerce_cardonfile_card_title',
     'title arguments' => array(3),
     'page callback' => 'commerce_cardonfile_card_form_page',
     'page arguments' => array('update', 3, 1),
     'access callback' => 'commerce_cardonfile_access',
     'access arguments' => array('update', 3),
-    'file' => 'includes/commerce_cardonfile.pages.inc',
     'context' => MENU_CONTEXT_PAGE | MENU_CONTEXT_INLINE,
-  );
-  $items['user/%user/cards/%commerce_cardonfile/edit'] = array(
-    'title' => 'Edit',
-    'type' => MENU_DEFAULT_LOCAL_TASK,
     'weight' => -10,
-    'context' => MENU_CONTEXT_PAGE | MENU_CONTEXT_INLINE,
+    'file' => 'includes/commerce_cardonfile.pages.inc',
   );
   $items['user/%user/cards/%commerce_cardonfile/delete'] = array(
     'title' => 'Delete',
@@ -101,7 +96,6 @@ function commerce_cardonfile_menu() {
     'page arguments' => array('commerce_cardonfile_delete_form', 3),
     'access callback' => 'commerce_cardonfile_access',
     'access arguments' => array('delete', 3),
-    'type' => MENU_LOCAL_TASK,
     'context' => MENU_CONTEXT_INLINE,
     'weight' => 5,
     'file' => 'includes/commerce_cardonfile.pages.inc',
@@ -654,7 +648,7 @@ function commerce_cardonfile_form_alter(&$form, &$form_state, $form_id) {
   );
 
   // Allow others to alter this alter
-  drupal_alter('commerce_cardonfile_checkout_pane_form', $form['commerce_payment']['payment_details'], $form);
+  drupal_alter('commerce_cardonfile_checkout_pane_form', $form['commerce_payment']['payment_details'], $form, $form_state);
 
   // Add submit handler
   if (isset($form['buttons']['continue'])) {
@@ -699,6 +693,95 @@ function commerce_cardonfile_commerce_checkout_form_submit($form, &$form_state) 
     }
 
   }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Adds card on file options to the admin payment terminal for card on file
+ * enabled payment methods.
+ */
+function commerce_cardonfile_form_commerce_payment_order_transaction_add_form_alter(&$form, &$form_state) {
+  $payment_method = isset($form_state['payment_method']) ? $form_state['payment_method'] : NULL;
+  $form['payment_terminal']['#prefix'] = '<div id="payment-terminal-ajax-wrapper">';
+  $form['payment_terminal']['#suffix'] = '</div>';
+
+  if (!_commerce_cardonfile_capable_payment_method_check($payment_method) || (isset($payment_method['settings']['cardonfile']) && !$payment_method['settings']['cardonfile'])) {
+    return;
+  }
+
+  // Load existing active cards for the payment method instance and user.
+  $stored_cards = commerce_cardonfile_load_multiple_by_uid($form_state['order']->uid, $payment_method['instance_id']);
+
+  // Build options form
+  $cardonfile_options_form = array();
+  $instance_default_card_id = NULL;
+
+  // If have stored cards ...
+  if (!empty($stored_cards)) {
+    $valid_cards = array_filter($stored_cards, 'commerce_cardonfile_validate_card_expiration');
+
+    // If have un-expired cards ...
+    if (!empty($valid_cards)) {
+      // get options list with labels
+      $card_option_element_type = variable_get('commerce_cardonfile_selector', 'radios');
+      $card_options = commerce_cardonfile_element_options_list($valid_cards, $card_option_element_type);
+
+      // determine default option
+      $card_options_default_value = key($card_options);
+      foreach (array_keys($card_options) as $card_id) {
+        if (isset($valid_cards[$card_id]) && !empty($valid_cards[$card_id]->instance_default)) {
+          $card_options_default_value = $instance_default_card_id = $card_id;
+
+          // move instance default to the top of the list
+          $card_option_label = $card_options[$card_id];
+          unset($card_options[$card_id]);
+          $card_options = array($card_id => $card_option_label) + $card_options;
+          break;
+        }
+      }
+
+      // create options element
+      $cardonfile_options_form = array(
+        '#type' => $card_option_element_type,
+        '#title' => t('Select a stored card'),
+        '#options' => $card_options,
+        '#default_value' => $card_options_default_value,
+        '#weight' => -10,
+        '#ajax' => array(
+          'callback' => 'commerce_cardonfile_payment_terminal_ajax',
+          'wrapper' => 'payment-terminal-ajax-wrapper',
+        ),
+      );
+    }
+  }
+
+  // update form with options
+  if (!empty($cardonfile_options_form)) {
+    $form['payment_terminal']['payment_details']['cardonfile'] = $cardonfile_options_form;
+
+    // If the current value for the card selection element is not to use
+    // a different credit card, then hide the credit card form elements.
+    if (empty($form_state['values']['payment_details']['cardonfile']) || $form_state['values']['payment_details']['cardonfile'] !== 'new') {
+      $form['payment_terminal']['payment_details']['credit_card']['#access'] = FALSE;
+    }
+  }
+  else {
+    $form['payment_terminal']['payment_details']['cardonfile'] = array(
+      '#type' => 'value',
+      '#value' => 'new',
+    );
+  }
+
+  // Allow other modules to alter the card on file form elements.
+  drupal_alter('commerce_cardonfile_payment_terminal_form', $form, $form_state);
+}
+
+/**
+ * Ajax callback for payment terminal card on file operations.
+ */
+function commerce_cardonfile_payment_terminal_ajax($form, &$form_state) {
+  return $form['payment_terminal'];
 }
 
 /**
@@ -1056,6 +1139,11 @@ function commerce_cardonfile_payment_method_implements($callback) {
     foreach ($payment_methods as $method_id => $payment_method) {
       foreach ($available_callbacks as $available_callback) {
         if (!empty($payment_method['cardonfile'][$available_callback])) {
+          // Include the payment method file if specified.
+          if (!empty($payment_method['file'])) {
+            $parts = explode('.', $payment_method['file']);
+            module_load_include(array_pop($parts), $payment_method['module'], implode('.', $parts));
+          }
           $func = $payment_method['cardonfile'][$available_callback];
           if (function_exists($func)) {
             $cache[$available_callback][$method_id] = $func;

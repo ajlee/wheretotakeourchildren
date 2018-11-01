@@ -199,3 +199,10 @@ function commerce_cardonfile_update_7103(&$sandbox) {
 
   return t('Card data table has been updated.');
 }
+
+/**
+ * Add the Customer Billing Profile field to the card on file entity.
+ */
+function commerce_cardonfile_update_7104(&$sandbox = NULL) {
+  // No longer needed, fields are now created on hook_flush_caches().
+}

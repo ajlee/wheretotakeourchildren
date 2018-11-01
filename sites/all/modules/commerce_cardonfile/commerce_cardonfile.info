@@ -22,9 +22,9 @@ files[] = includes/views/handlers/commerce_cardonfile_handler_field_card_exp.inc
 files[] = includes/views/handlers/commerce_cardonfile_handler_field_card_operations.inc
 files[] = includes/views/handlers/commerce_cardonfile_plugin_argument_validate_owner.inc
 
-; Information added by Drupal.org packaging script on 2014-06-18
-version = "7.x-2.0-beta5"
+; Information added by Drupal.org packaging script on 2017-03-29
+version = "7.x-2.0-beta6"
 core = "7.x"
 project = "commerce_cardonfile"
-datestamp = "1403088228"
+datestamp = "1490805789"
 

@@ -172,6 +172,24 @@ function commerce_cardonfile_views_default_views() {
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['name'] = 'management';
   $handler->display->display_options['menu']['context'] = 0;
+  $translatables['commerce_card_on_file_user_cards'] = array(
+    t('Master'),
+    t('Stored cards'),
+    t('more'),
+    t('Apply'),
+    t('Reset'),
+    t('Sort by'),
+    t('Asc'),
+    t('Desc'),
+    t('Credit Card'),
+    t('Name on Card'),
+    t('Default'),
+    t('Expires On'),
+    t('Operations'),
+    t('All'),
+    t('Page'),
+  );
+
   $views[$view->name] = $view;
 
   return $views;

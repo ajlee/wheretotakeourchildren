@@ -48,7 +48,8 @@
     }
 
     this.element_settings = {
-      url: ajax_path + queryString,
+      //url: ajax_path + queryString,
+	  url: ajax_path,
       submit: settings,
       setClick: true,
       event: 'click',

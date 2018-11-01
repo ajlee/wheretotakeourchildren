@@ -35,6 +35,7 @@
 						$( document ).trigger('ajaxStop');//see also matchheight.js
 						$.cookie("globalGridOrList", "grid", {expires: 7, path: '/'});
 				}
+
 				$('.buttonGrid').click(function(){
 					$('.buttonGrid').addClass('activeGridList');
 					$('.buttonList').removeClass('activeGridList');
@@ -49,7 +50,7 @@
 					$( document ).trigger('ajaxStop');//see also matchheight.js
 					$.cookie("globalGridOrList", "list", {expires: 7, path: '/'});
 				});
-
+        console.log(viewsPageSelector);
 			}
 		}
 	}
@@ -111,7 +112,7 @@
 				$(viewsBlockFormSelector + sp + exposedAddressSelector).val($globalPreviousAddress);
 				//Helper Functions For Geocoding Client Side
 				geocodeAsync = function(address, f){
-					//returns a string "empty address", "error", or "lat,lon" (where lat lon are coordinates) 
+					//returns a string "empty address", "error", or "lat,lon" (where lat lon are coordinates)
 					//introduce delay to geocoding such that requests aren't sent too often
 					setTimeout(function(){
 						if(!(address.length)){
@@ -232,7 +233,7 @@
 /*
  * Behaviors for Business and Events Search Results Exposed Form Block
  * This Exposed Form Block, appears on other pages, not on the search results page
- */	
+ */
 	//GeoCode Before Exposed Form Block Submission
 	Drupal.behaviors.wttocBesrExposedFormBlock= {
 		attach: function (context) {
@@ -299,7 +300,7 @@
 				$(viewsExposedFormSelector + sp + exposedAddressSelector).val($globalPreviousAddress);
 				//Helper Functions For Geocoding Client Side
 				geocodeAsync = function(address, f){
-					//returns a string "empty address", "error", or "lat,lon" (where lat lon are coordinates) 
+					//returns a string "empty address", "error", or "lat,lon" (where lat lon are coordinates)
 					//introduce delay to geocoding such that requests aren't sent too often
 					setTimeout(function(){
 						if(!(address.length)){
@@ -324,7 +325,7 @@
 	};//end of behavior
 	// If Content Type Business Is Selected, Reset All Event Filters' Values and Display Business Filters
 	// If Content Type Events Is Selected, Reset All Business Filters' Values and Display Event Filters
-	// If Both Content Types Are Selected, Display Both Filters 
+	// If Both Content Types Are Selected, Display Both Filters
 	// If No Content Type Is Selected, Reset All Values and Hide Both Filters
 	Drupal.behaviors.wttocContentTypeDisplay = {
 		attach: function (context) {
@@ -381,7 +382,7 @@
 								$(formSelector + sp + this).val("");
 							});
 						}
-					}		
+					}
 					//Show either the business, or event select/inputs of a form (considering that we're using SumoSelect- see js/selectui.js).
 					function showValuesSearch(typeToHideReset, formSelector){
 						if(typeToHideReset === "business"){
@@ -431,7 +432,7 @@
 										$(formSelector + sp + sortByEventDate).click();
 									}
 									break;
-								//Both Values Selected	
+								//Both Values Selected
 								default:
 									hideResetSearch("event",formSelector);
 									hideResetSearch("business",formSelector);
@@ -454,10 +455,10 @@
 						}
 					}
 					//use hierarchy (based on dashes) inside a particular sumoselect
-					function sumoSelectResetHierarchy(wrapperSelector){ 
+					function sumoSelectResetHierarchy(wrapperSelector){
 						var listElements = $(wrapperSelector + ' .SumoSelect ul li');
 						//1) hide all children elements (not top level) initially, unless they're selected
-						$.each(listElements, function(index, value){	
+						$.each(listElements, function(index, value){
 							var liStartingDashes = startingDashes($(value).text());
 							//exception: very first children shouldn't be hidden
 							if(liStartingDashes>0){
@@ -471,7 +472,7 @@
 						});
 						//2 show all children of selected categories
 						$.each(listElements, function(index, value){
-							if($(value).hasClass("selected")){	
+							if($(value).hasClass("selected")){
 								var parentElementDashes = startingDashes($(value).text());
 								var currentElement = $(value);
 								//keep searching until we run into an element in the same level as the clicked element
@@ -483,28 +484,28 @@
 									currentElement = currentElement.next();
 								}
 							}
-						});						
-					
+						});
+
 						//3) select(tick) and show all parent elements, of selected children
 						$.each(listElements, function(index, value){
 							//only execute this for selected elements
-							if($(value).hasClass("selected")){	
+							if($(value).hasClass("selected")){
 								var childElementDashes = startingDashes($(value).text());
 								//only execute this for child elements, not first level elements, since first level elements don't have parents
 								if(childElementDashes !== 0){
-									//find parents with levels between 0 and childElementDashes -1 
+									//find parents with levels between 0 and childElementDashes -1
 									for(i=childElementDashes-1; i>=0; i--){
 										//if the previous element is a parent, select it (by clicking) and show it
 										var currentElement = $(value);
-										while(startingDashes(currentElement.text()) !== i 
-											&& startingDashes(currentElement.text()) !== 0 
+										while(startingDashes(currentElement.text()) !== i
+											&& startingDashes(currentElement.text()) !== 0
 										){
 											var tempI = i;
 											if( startingDashes(currentElement.prev().text()) === i){
 												currentElement.prev().show();
 												if(!(currentElement.prev().hasClass("selected")) ){
 													currentElement.prev().click();
-												}	
+												}
 											}
 											currentElement = currentElement.prev();
 											i = tempI;
@@ -557,9 +558,9 @@
 							}
 							index++;
 						}
-						return numberOfDashes;   
-					}	
-					// end of helper functions	
+						return numberOfDashes;
+					}
+					// end of helper functions
 					//On Change Of Business/Event Field
 					if($('body.front').length){
 						var currentVal = $(viewsExposedFormSelector + sp + contentTypeSelect).val();
@@ -575,8 +576,8 @@
 						$(viewsBlockSelector + sp + contentTypeSelect).change(function(){
 							var currentVal = $(this).val();
 							businessOrEventChangeEvent(currentVal, viewsBlockSelector, false);
-						});	
-					}				
+						});
+					}
 				}//end of check for homepage or search page
 		}//end of attach
 	};//end of behavior
