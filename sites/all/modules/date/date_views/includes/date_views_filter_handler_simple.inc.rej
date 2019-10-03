@@ -1,0 +1,25 @@
+--- date_views/includes/date_views_filter_handler_simple.inc
++++ date_views/includes/date_views_filter_handler_simple.inc
+@@ -134,9 +134,19 @@ function get_filter_value($prefix, $input) {
+   function accept_exposed_input($input) {
+     if (!empty($this->options['exposed'])) {
+       $element_input = $input[$this->options['expose']['identifier']];
+-      $element_input['value'] = $this->get_filter_value('value', !empty($element_input['value']) ? $element_input['value'] : '');
+-      $element_input['min'] = $this->get_filter_value('min', !empty($element_input['min']) ? $element_input['min'] : '');
+-      $element_input['max'] = $this->get_filter_value('max', !empty($element_input['max']) ? $element_input['max'] : '');
++      if ($this->options['is_grouped']) {
++        foreach (array('value', 'min', 'max') as $key) {
++          $element_input[$key] = '';
++          if (!empty($element_input[$key . '_group'])) {
++            $element_input[$key] = $this->date_default_value($key, $element_input[$key . '_group']);
++          }
++        }
++      }
++      else {
++        $element_input['value'] = $this->get_filter_value('value', !empty($element_input['value']) ? $element_input['value'] : '');
++        $element_input['min'] = $this->get_filter_value('min', !empty($element_input['min']) ? $element_input['min'] : '');
++        $element_input['max'] = $this->get_filter_value('max', !empty($element_input['max']) ? $element_input['max'] : '');
++      }
+       if (is_array($element_input) && isset($element_input['default_date'])) {
+         unset($element_input['default_date']);
+       }

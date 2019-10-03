@@ -11,7 +11,7 @@ a.link-style {
 .tabs--primary:nth-child(1) li {
 	margin-right:0;
 }
-	
+
 .tabs--primary a[href="/user/simple-fb-connect"] {
 	display:none;
 }
@@ -23,14 +23,31 @@ a.link-style {
 	max-width:100%;
 }
 
-
+input.facetapi-checkbox {
+  top: 17px;
+  position: relative;
+  margin-left: 10rem;
+}
+.leaf {
+  margin-left: 4rem;
+}
+ul#facetapi-facet-search-apiindex-businesses-and-events-block-field-category li ,
+ul#facetapi-facet-search-apiindex-businesses-and-events-block-field-category-event li{
+  line-height: 3rem;
+}
+ul#facetapi-facet-search-apiindex-businesses-and-events-block-field-category li a:hover ,
+ul#facetapi-facet-search-apiindex-businesses-and-events-block-field-category-event li a:hover,
+ul#facetapi-facet-search-apiindex-businesses-and-events-block-field-category li a:active ,
+ul#facetapi-facet-search-apiindex-businesses-and-events-block-field-category-event li a:active{
+  color:#5675CE;
+}
 @media (min-width: 0) and (max-width: 420px) {
 	.fb_user-login-button-wrapper {
 		width:90%;
 		text-align:left;
 		margin-left:-24px;
-	}	
+	}
 	.password-strength {
 		float:none;
-	}	
+	}
 }

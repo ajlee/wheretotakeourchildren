@@ -1,0 +1,417 @@
+<?php
+/**
+ * @file
+ * This is module file for d8 migration check.
+ */
+
+/**
+ * Implements hook_help().
+ */
+function d8_migration_check_help($path, $arg) {
+  switch ($path) {
+    case 'admin/help#d8_migration_check':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('D8 migration check modules helps you estimate effort in upgrading your D7 website to D8. It generates a JSON file which is then analyzed by our Migration Check Tool. See the <a href="@d8_migration_check-help">Migrate Tool </a> for more information about obtaining estimate.', array('@d8_migration_check-help' => url('http://migrate.opensenselabs.com'))) . '</p>';
+      return $output;
+  }
+}
+
+/**
+ * Implements hook_permission().
+ */
+function d8_migration_permission() {
+  return array(
+    'administer d8_migration_check' => array(
+      'title' => t('Administer D8 Migration Check'),
+    ),
+    'administer json_download' => array(
+      'title' => t('Administer JSON Download'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_menu().
+ */
+
+function d8_migration_check_menu() {
+
+  $items['admin/config/d8_migration'] = array(
+    'title' => 'D8 Migration',
+    'description' => 'Get Migration Score',
+    'page callback' => 'system_admin_menu_block_page',
+    'access arguments' => array('access administration pages'),
+    'file' => 'system.admin.inc',
+    'file path' => drupal_get_path('module', 'system'),
+  );
+
+  $items['admin/config/d8_migration/d8_migration_check'] = array(
+    'title' => 'D8 Migration Check',
+    'description' => 'Get Migration Score',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('d8_migration_check_form'),
+    'access arguments' => array('administer d8_migration_check'), 
+  );
+
+  $items['admin/config/d8_migration/json_download'] = array(
+    'title' => 'Follow the Steps to get your Migration Score',
+    'description' => 'Download Json',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('d8_migration_json_form'),
+    'access arguments' => array('administer json_download'),
+  );
+  return $items;
+}
+/**
+ * Implements hook_form().
+ */
+
+function d8_migration_check_form() {
+  $form['description'] = array(
+    '#type' => 'markup',
+    '#markup' => t('Welcome to D8 Migration Check. <br> Click on the link to get the migration score of your website. <br>'
+  ));
+
+  $form['submit'] = array(
+    '#type' => 'submit',
+    '#value' => 'Analyze Website',
+  );
+
+  return $form;
+}
+
+
+/**
+ * Implement hook_form_submit
+ */
+function d8_migration_check_form_submit($form, &$form_state) {
+
+  $data = array();
+  //Fetching Info of the website.
+  $site_name =  variable_get('site_name', 'Drupal');
+  global $base_url;
+  $site_url = $base_url;
+
+  $info = array('site_name' => $site_name, 'base_url' => $site_url);
+  //Adding Info to Data array
+  $data['info'] = $info;
+  
+  //Fetching files managed
+  $query = db_select('file_managed', 'f')
+    ->fields('f', array('fid')) 
+    ->execute()
+    ->fetchAll();
+
+  $files_managed = count($query); 
+
+  $data['files_managed'] = $files_managed; 
+  
+  //Fetching Nodes
+  $query = db_select('node', 'n')
+    ->fields('n', array('nid')) 
+    ->execute()
+    ->fetchAll();
+
+  $nodes = count($query);  
+  $data['nodes'] = $nodes; 
+
+  //Fetching users
+  $query = db_select('users', 'u')
+    ->fields('u', array('uid')) 
+    ->execute()
+    ->fetchAll();
+
+  $users = count($query);  
+  $data['users'] = $users;
+
+  //Fetching taxo terms
+  $query = db_select('taxonomy_term_data', 't')
+    ->fields('t', array('tid')) 
+    ->execute()
+    ->fetchAll();
+
+  $terms = count($query);  
+  $data['terms'] = $terms;
+
+  //Adding viewsdata
+  $viewsdata = array();
+  if ( module_exists('views')) {
+    //Fetching views data
+    $query = db_select('views_view', 'v')
+      ->fields('v', array('vid', 'name', 'description')) 
+      ->execute();
+
+    foreach ($query as $view) {
+      
+      $query2 = db_select('views_display', 'v')
+        ->fields('v', array('id', 'display_title'))
+        ->condition('vid', $view->vid, '=')
+        ->execute()
+        ->fetchAll();
+
+      $display_count = count($query2);
+      array_push($viewsdata, array('view' => $view->name, 'description' => $view->description, 'displays' => $display_count));        
+    }
+  }
+  $data['viewsdata'] = $viewsdata;
+
+  //Fetch Data of all enabled Modules
+  $query = db_select('system', 's')
+    ->fields('s', array('filename', 'name', 'schema_version'))
+    ->condition('status', 1, '=') 
+    ->condition('type', 'module', '=') 
+    ->execute()
+    ->fetchAll();
+
+  $operations = array();
+  foreach ($query as $module) {  
+    if ($module->name == 'd8_migration_check' || $module->name == 'standard') {
+      continue;
+    }
+    $operations[] = array('d8_module_parsing', array('module' => $module));    
+  }
+
+  //Fetch Data of all enabled Themes
+  $query2 = db_select('system', 's')
+    ->fields('s', array('filename', 'name'))
+    ->condition('status', 1, '=') 
+    ->condition('type', 'theme', '=') 
+    ->execute();
+
+  foreach ($query2 as $theme) {  
+    $operations[] = array('d8_themes_parsing', array('theme' => $theme));    
+  }
+  $operations[] = array('d8_migration_create_json', array('data' => $data));
+
+  $batch = array(
+    'operations' => $operations,
+    'finished' => 'd8_migration_json_finished',
+    // Message displayed while processing the batch. Available placeholders are:
+    // @current, @remaining, @total, @percentage, @estimate and @elapsed.
+    // These placeholders are replaced with actual values in _batch_process(),
+    // using strtr() instead of t(). The values are determined based on the
+    // number of operations in the 'operations' array (above), NOT by the number
+    // of nodes that will be processed. In this example, there are 20
+    // operations, so @total will always be 20, even though there are multiple
+    // nodes per operation.
+    // Defaults to t('Completed @current of @total.').
+    'title' => t('Analyzing your website to get Migration Score'),
+    'init_message' => t('File Processing Starts'),
+    'progress_message' => t('Analyzing Your Website.....'),
+    'error_message' => t('An error has occurred .Please try again'),
+  );
+
+  batch_set($batch); 
+}
+
+/**
+ * Calculates number of lines in a file.
+ */
+
+function countlines($file) {
+
+  $linecount =  0 ;
+  $handle = fopen($file, "r");
+  while (!feof($handle)) {
+    $line = fgets($handle);
+    $linecount++;
+  }
+  fclose($handle);
+  return  $linecount ;
+}
+
+/*
+* 
+*/
+function d8_module_parsing($module, &$context) {
+
+  if (empty($context['sandbox'])) {
+    $context['sandbox']['progress'] = 0;
+    $count=0;
+    $first=0;
+    $second=0;
+  }
+  
+  $type = "Custom";
+  $version = $module->schema_version;
+  $lines = 0;
+  $files = array();
+
+  $filelocation = substr($module->filename, 0, strripos($module->filename, '/'));
+  if (substr($filelocation, '0', '1') == 'm') {
+    $type = "Core";
+  }
+  else {
+    $directory = new RecursivedirectoryIterator($filelocation);
+    $iterator = new RecursiveIteratorIterator($directory);
+        
+    foreach ($iterator as $name => $object) {
+            
+      $filename = $filelocation . "/" . $module->name . ".module";
+      //if(strpos($name,'.module') !== FALSE && strpos($name,$module->name) !== FALSE)
+      if ($first == 0) {
+        if (file_exists($filename))
+          $modulefile = file_get_contents($filename);
+        else
+          $modulefile = "No Such File";
+        if (strpos($modulefile, 'include_once') !== FALSE && strpos($modulefile, $module->name . '.features.inc') !== FALSE) {
+          $type = "Feature";
+        }
+      }
+
+      //$filename = str_replace(substr($name,strrpos($name,'.')),'.info',$name);
+      //echo $filename."<br>";
+      $filename = $filelocation . "/" . $module->name . ".info";
+      // if(strpos($name,'.info') !== FALSE && strpos($name,$module->name.".info") !== FALSE)
+      if ($second ==0) {
+        if (file_exists($filename))
+          $modulefile = file_get_contents($filename);
+        else
+          $modulefile = "No Such File";
+
+        if (strpos($modulefile, 'Information added by Drupal.org') !== FALSE || strpos($modulefile, 'Information added by drupal.org') !== FALSE) {
+          $type = "Contrib";
+        }
+        $second = 1;
+      }
+      if (strpos($name, '.info') !== FALSE || strpos($name, '.txt') !== FALSE || strpos($name, '/.') !== FALSE || strpos($name, '/..') !== FALSE || strpos($name, '.png') !== FALSE || strpos($name, '.gif') !== FALSE || strpos($name, '.jpeg') !== FALSE) {
+        continue;
+      }
+      else {
+        $line = countlines($name);
+        $lines += $line;
+        $files[$name] = $line;
+      }
+    }
+  }
+  $modules = array();
+
+  $modules['name']= $module->name;
+  $modules['version']= $version;
+  $modules['type'] = $type;
+  $modules['files'] = $files;
+  $modules['lines'] = $lines;
+
+  $lines = 0;
+  $first = 0;
+  $second = 0;
+
+  $context['results']['modules'][]=$modules;
+  $context['sandbox']['progress']++;
+}
+
+function d8_themes_parsing($theme, &$context) {
+  $themes = array();
+  $files = NULL;
+  $lines = 0;
+  $type = "Enabled";
+  $theme_path = drupal_get_path('theme', variable_get('theme_default', NULL));
+  $default_theme = substr($theme_path, strrpos($theme_path, "/")+1);
+
+  if ($theme->name == $default_theme)
+    $type = "Default";
+
+  $filelocation = substr($theme->filename, 0, strripos($theme->filename, '/'));
+  $directory = new RecursivedirectoryIterator($filelocation);
+  $iterator = new RecursiveIteratorIterator($directory);
+
+  foreach ($iterator as $name => $object) {
+    
+    if (strpos($name, '.info') !== FALSE || strpos($name, '.txt') !== FALSE || strpos($name, '/.') !== FALSE || strpos($name, '/..') !== FALSE || strpos($name, '.png') !== FALSE || strpos($name, '.gif') !== FALSE || strpos($name, '.jpeg') !== FALSE)
+      continue;
+    else {
+      $line = countlines($name);
+      $lines += $line;
+      $files[$name] = $line;
+    }
+  }
+
+  $themes['name'] = $theme->name;
+  $themes['lines'] = $lines;
+  $themes['files'] = $files;
+  $themes['type'] = $type;
+  $lines = 0;
+  $context['results']['themes'][] = $themes;
+}
+
+/*
+* Creating Json file
+*/
+function d8_migration_create_json($data, &$context) {
+    
+  $data['modules'] = $context['results']['modules'];
+  $data['themes']  = $context['results']['themes'];
+  $response = array();
+  $response['data'] = $data;
+
+  $file_name = $response['data']['info']['site_name'] . "." . "json";
+  $file_path = file_unmanaged_save_data(json_encode($response), $file_name, FILE_EXISTS_REPLACE);
+  variable_set("JSONFilePath", $file_path);
+}
+
+/**
+ * Function called after batch processing
+ */
+function d8_migration_json_finished($success, $results, $operations) {
+  if ($success) {
+    drupal_goto('admin/config/d8_migration/json_download');
+  }
+  else {
+    drupal_set_message(t('There were errors during creating json file.Please try again'));
+  }
+
+}
+
+function d8_migration_json_form() {
+   
+  if (file_exists(variable_get("JSONFilePath"))) {
+
+  $upload_link = '<a href="http://migrate.opensenselabs.com/">Upload Json</a>';
+  $form['description'] = array(
+  '#type' => 'markup',
+  '#markup' => t('Please follow the steps to complete migration check process <br>
+                  1.Download Json File from the given below link<br>
+                  2.Upload the json file here  ---->' . $upload_link . '<br>' ),
+                );
+
+  $form['submit'] = array(
+  '#type' => 'submit',
+  '#value' => 'Download JSON',
+  );
+
+  return $form;
+  }
+  else {
+    drupal_set_message(t('Their is no json file to download.Please Create one by clicking the below link'));
+    drupal_goto('admin/config/d8_migration/d8_migration_check');
+  }
+}
+
+function d8_migration_json_form_submit() {
+  $site_name =  variable_get('site_name', 'Drupal');
+  $file_name = $site_name . "." . "json";
+  $file_path = variable_get("JSONFilePath");
+
+  $file = fopen($file_path, 'r') or die("Please give suitable Permission to files folder");
+  $file_size = filesize($file_path);
+  header("Content-type: application/json"); // add here more headers for diff. extensions
+  header("Content-Type: application/force-download");
+  header("Content-Type: application/download");
+  header("Content-Description: File Transfer");
+  header("Content-Disposition: attachment;filename=" . $file_name);
+  // use 'attachment' to force a download
+  // header("Content-Disposition: attachment; filename=\"".$file_name); // use 'attachment' to force a download
+  header("Content-length: $file_size");
+  header("Cache-control: private"); //use this to open files directly
+
+  while (!feof($file)) {
+    $buffer = fread($file, 2048);
+    echo $buffer;
+    flush();
+  }
+  fclose($file);
+  file_unmanaged_delete(variable_get("JSONFilePath"));
+  variable_del("JSONFilePath");
+  drupal_exit();
+}
